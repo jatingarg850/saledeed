@@ -10,7 +10,7 @@ export default function Home() {
               <h2 className="text-text-light dark:text-text-dark text-2xl font-bold tracking-tight font-display">SaleDeed.com</h2>
             </div>
             <nav className="hidden md:flex items-center gap-8">
-              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">Services</a>
+              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/services">Services</a>
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">About</a>
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">FAQ</a>
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">Contact</a>
@@ -132,9 +132,9 @@ export default function Home() {
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-3xl font-bold font-playfair">Sale Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-base mt-2 flex-grow">A crucial legal document proving the sale and transfer of property ownership from a seller to a buyer.</p>
-                    <button className="mt-6 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
+                    <a href="/services/sale-deed" className="mt-6 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
                       <span className="truncate">Draft a Sale Deed</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
                 
@@ -143,9 +143,9 @@ export default function Home() {
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-3xl font-bold font-playfair">Gift Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-base mt-2 flex-grow">Transfer property ownership to a loved one as a gift, without any monetary exchange, through this document.</p>
-                    <button className="mt-6 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
+                    <a href="/services/gift-deed" className="mt-6 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
                       <span className="truncate">Create a Gift Deed</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
                 
@@ -154,9 +154,9 @@ export default function Home() {
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-3xl font-bold font-playfair">Relinquishment Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-base mt-2 flex-grow">Allows a co-owner to gracefully give up their share in a joint property in favour of other co-owners.</p>
-                    <button className="mt-6 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
+                    <a href="/services/relinquishment-deed" className="mt-6 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
                       <span className="truncate">Make a Relinquishment Deed</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
