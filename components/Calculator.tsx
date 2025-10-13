@@ -11,7 +11,11 @@ const Calculator = () => {
     gender: ''
   })
 
-  const [result, setResult] = useState(null)
+  const [result, setResult] = useState<{
+    stampDuty: number;
+    registrationFee: number;
+    total: number;
+  } | null>(null)
 
   const locations = [
     { value: 'delhi', label: 'Delhi (All Other Areas)' },
