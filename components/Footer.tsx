@@ -26,12 +26,12 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-float" style={{ animationDelay: '4s' }}></div>
+    <footer className="bg-gray-900 text-white">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -46,27 +46,27 @@ const Footer = () => {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Shield className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">saledeed.com</h3>
-                <p className="text-sm text-gray-300">privacy kept at every step</p>
+                <h3 className="text-2xl font-bold">SaleDeed</h3>
+                <p className="text-sm text-gray-400">Professional Property Services</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              A one-stop shop for every property need - indeed!
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Comprehensive property documentation services with complete legal compliance and privacy protection.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">support@saledeed.com</span>
+                <span className="text-gray-400">support@saledeed.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-green-400" />
-                <span className="text-gray-300">+91 88005 05050</span>
+                <Phone className="w-5 h-5 text-blue-400" />
+                <span className="text-gray-400">+91 88005 05050</span>
               </div>
             </div>
           </motion.div>
@@ -79,8 +79,8 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-lg font-semibold mb-6 relative">
-              Product
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+              Services
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-blue-600"></span>
             </h4>
             <ul className="space-y-3">
               {productLinks.map((link, index) => (
@@ -112,7 +112,7 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-6 relative">
               Company
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-blue-600"></span>
             </h4>
             <ul className="space-y-3">
               {companyLinks.map((link, index) => (
@@ -144,7 +144,7 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-6 relative">
               Support
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-blue-600"></span>
             </h4>
             <ul className="space-y-4">
               {supportLinks.map((link, index) => (
@@ -187,9 +187,9 @@ const Footer = () => {
             <div className="text-gray-400 text-sm">
               © 2025{' '}
               <a href="https://saledeed.com" className="hover:text-white transition-colors duration-300">
-                saledeed.com
+                SaleDeed
               </a>{' '}
-              A Unit of Bharatiya Bhoomi Group | Powered By: 31 SON – Redefining The Defined
+              Professional Property Documentation Services. All rights reserved.
             </div>
             <div className="flex items-center space-x-4 text-sm text-gray-400">
               <span>All Rights Reserved</span>
@@ -206,8 +206,8 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+      {/* Professional accent */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-600"></div>
     </footer>
   )
 }

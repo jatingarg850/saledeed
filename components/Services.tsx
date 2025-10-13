@@ -85,11 +85,13 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Explore tailored solutions for{' '}
-            <span className="gradient-text">everyone</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Comprehensive Solutions for Every Client
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Professional property documentation services tailored to your specific needs
+          </p>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mt-6"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
@@ -100,11 +102,11 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group"
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 group border border-gray-100"
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-8 h-8 text-white" />
+              <div className={`w-14 h-14 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-6`}>
+                <service.icon className="w-7 h-7 text-white" />
               </div>
               
               <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
@@ -120,9 +122,9 @@ const Services = () => {
               </ul>
               
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-white py-3 rounded-xl font-semibold flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gray-900 hover:bg-black text-white py-3 rounded-lg font-medium flex items-center justify-center space-x-2 transition-all duration-300"
               >
                 <span>Learn More</span>
                 <ArrowRight size={16} />
@@ -139,10 +141,13 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why <span className="gradient-text">saledeed.com</span>?
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why Choose SaleDeed?
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our commitment to excellence and client satisfaction sets us apart
+          </p>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mt-6"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -153,10 +158,10 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+              whileHover={{ y: -3 }}
+              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-center border border-gray-100"
             >
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <item.icon className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>

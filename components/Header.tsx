@@ -37,15 +37,15 @@ const Header = () => {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <motion.div 
-            className="flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-3"
+            whileHover={{ scale: 1.02 }}
           >
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
               <Shield className="w-6 h-6 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900">saledeed</span>
-              <span className="text-xs text-gray-600 -mt-1">privacy kept at every step</span>
+              <span className="text-xl font-bold text-gray-900">SaleDeed</span>
+              <span className="text-xs text-gray-500 -mt-1">Professional Property Services</span>
             </div>
           </motion.div>
 
@@ -66,11 +66,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden lg:block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="hidden lg:block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300"
           >
-            Get Started
+            Contact Us
           </motion.button>
 
           {/* Mobile Menu Button */}
@@ -106,10 +106,10 @@ const Header = () => {
                 </motion.a>
               ))}
               <motion.button
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-full font-medium mt-4"
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium mt-4 transition-colors duration-300"
               >
-                Get Started
+                Contact Us
               </motion.button>
             </div>
           </motion.div>
