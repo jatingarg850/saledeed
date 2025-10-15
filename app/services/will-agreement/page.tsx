@@ -12,12 +12,12 @@ export default function WillAgreementPage() {
     { name: 'Relinquishment Deed', href: '/services/relinquishment-deed' },
     { name: 'Will Agreement', href: '/services/will-agreement' },
     { name: 'Partition Deed', href: '/services/partition-deed' },
-    { name: 'General Power of Authority', href: '#' },
-    { name: 'Agreement to Sell', href: '#' },
-    { name: 'Builder Buyer Agreement', href: '#' },
-    { name: 'Rent Agreement', href: '#' },
-    { name: 'Mutation Legal Document', href: '#' },
-    { name: 'Other Deed & Agreement', href: '#' }
+    { name: 'General Power of Authority', href: '/services/general-power-of-authority' },
+    { name: 'Agreement to Sell', href: '/services/agreement-to-sell' },
+    { name: 'Builder Buyer Agreement', href: '/services/builder-buyer-agreement' },
+    { name: 'Rent Agreement', href: '/services/rent-agreement' },
+    { name: 'Mutation Legal Document', href: '/services/mutation-legal-document' },
+    { name: 'Other Deed & Agreement', href: '/services/other-deed-agreement' }
   ]
 
   const tabs = [

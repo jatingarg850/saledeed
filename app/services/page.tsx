@@ -79,7 +79,55 @@ export default function ServicesPage() {
 
                 {/* Main Content */}
                 <main className="flex-1">
-                    <div className="px-4 md:px-10 lg:px-20 py-10 md:py-20">
+                    <div className="flex">
+                        {/* Left Sidebar */}
+                        <div className="w-64 bg-gray-100 dark:bg-slate-800 min-h-screen p-4 hidden lg:block">
+                            <div className="mb-4">
+                                <div className="flex items-center gap-2 text-primary mb-4">
+                                    <i data-lucide="map-pin"></i>
+                                    <span className="font-medium">Delhi</span>
+                                </div>
+                            </div>
+                            
+                            <div className="space-y-2">
+                                <Link href="/services/sale-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Sale Deed
+                                </Link>
+                                <Link href="/services/gift-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Gift Deed
+                                </Link>
+                                <Link href="/services/relinquishment-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Relinquishment Deed
+                                </Link>
+                                <Link href="/services/will-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Will Agreement
+                                </Link>
+                                <Link href="/services/partition-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Partition Deed
+                                </Link>
+                                <Link href="/services/general-power-of-authority" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    General Power of Authority
+                                </Link>
+                                <Link href="/services/agreement-to-sell" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Agreement to Sell
+                                </Link>
+                                <Link href="/services/builder-buyer-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Builder Buyer Agreement
+                                </Link>
+                                <Link href="/services/rent-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Rent Agreement
+                                </Link>
+                                <Link href="/services/mutation-legal-document" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Mutation Legal Document
+                                </Link>
+                                <Link href="/services/other-deed-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
+                                    Other Deed & Agreement
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Main Content Area */}
+                        <div className="flex-1 px-4 md:px-10 lg:px-20 py-10 md:py-20">
                         <div className="layout-content-container flex flex-col max-w-6xl mx-auto items-center text-center">
                             {/* Hero Section */}
                             <div className="flex min-h-[400px] w-full flex-col gap-6 items-center justify-center p-4">
@@ -232,6 +280,7 @@ export default function ServicesPage() {
                             </div>
                         </div>
                     </div>
+                    </div>
                 </main>
 
                 {/* Footer */}
@@ -250,8 +299,11 @@ export default function ServicesPage() {
                                 <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Services</h4>
                                 <ul className="space-y-2">
                                     <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/sale-deed">Sale Deed</Link></li>
-                                    <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</a></li>
-                                    <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/relinquishment-deed">Relinquishment Deed</a></li>
+                                    <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</Link></li>
+                                    <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/relinquishment-deed">Relinquishment Deed</Link></li>
+                                    <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/will-agreement">Will Agreement</Link></li>
+                                    <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/partition-deed">Partition Deed</Link></li>
+                                    <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/general-power-of-authority">General Power of Authority</Link></li>
                                 </ul>
                             </div>
                             <div>
