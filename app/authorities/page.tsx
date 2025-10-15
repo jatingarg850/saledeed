@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Navigation from '../../components/Navigation'
 
 export default function AuthoritiesPage() {
   const authorities = [
@@ -111,31 +112,7 @@ export default function AuthoritiesPage() {
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
       <div className="layout-container flex h-full grow flex-col">
-        {/* Header */}
-        <header className="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm shadow-sm">
-          <div className="px-4 md:px-10 lg:px-20">
-            <div className="flex items-center justify-between whitespace-nowrap border-b border-solid border-yellow-200/50 dark:border-slate-700 py-4">
-              <div className="flex items-center gap-4 text-primary">
-                <i className="text-3xl" data-lucide="home"></i>
-                <h2 className="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em] font-display">SaleDeed.com</h2>
-              </div>
-              <div className="hidden md:flex flex-1 justify-end gap-8">
-                <div className="flex items-center gap-9">
-                  <Link className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="/">Home</Link>
-                  <Link className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="/services">Services</Link>
-                  <span className="text-primary text-sm font-bold leading-normal">Authorities</span>
-                  <a className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contact</a>
-                </div>
-
-              </div>
-              <div className="md:hidden">
-                <button className="p-2">
-                  <i className="text-text-light dark:text-text-dark" data-lucide="menu"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Navigation currentPage="authorities" />
 
         {/* Main Content */}
         <main className="flex-1">

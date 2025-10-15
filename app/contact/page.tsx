@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Navigation from '../../components/Navigation'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -87,29 +88,7 @@ export default function ContactPage() {
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
       <div className="layout-container flex h-full grow flex-col">
-        {/* Header */}
-        <header className="bg-background-light/95 dark:bg-background-dark/95 shadow-sm backdrop-blur-md sticky top-0 z-50">
-          <div className="container mx-auto px-6 py-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4 text-text-light dark:text-text-dark">
-                <i className="text-primary text-3xl" data-lucide="home"></i>
-                <h2 className="text-lg font-bold font-display">SaleDeed.com</h2>
-              </div>
-              <div className="hidden md:flex items-center gap-8">
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="/">Home</a>
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Services</a>
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="/authorities">Authorities</a>
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a>
-                <a className="text-sm font-medium text-primary dark:text-secondary" href="/contact">Contact</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <button className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20">
-                  <i data-lucide="menu"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Navigation currentPage="contact" />
 
         {/* Main Content */}
         <main className="flex-1 container mx-auto px-6 py-8">

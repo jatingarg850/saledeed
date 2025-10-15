@@ -1,22 +1,11 @@
+import Navigation from '../components/Navigation';
+
 export default function Home() {
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
       <div className="layout-container flex h-full grow flex-col">
         <div className="w-full">
-          {/* Header */}
-          <header className="flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10">
-            <div className="flex items-center gap-3">
-              <i className="text-primary" data-lucide="home"></i>
-              <h2 className="text-text-light dark:text-text-dark text-2xl font-bold tracking-tight font-display">SaleDeed.com</h2>
-            </div>
-            <nav className="hidden md:flex items-center gap-8">
-              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/services">Services</a>
-              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/authorities">Authorities</a>
-              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/about">About</a>
-              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/contact">Contact</a>
-            </nav>
-
-          </header>
+          <Navigation currentPage="home" />
 
           {/* Main Content */}
           <main className="px-6 md:px-10 lg:px-20 py-10">
