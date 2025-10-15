@@ -1,29 +1,11 @@
+import Navigation from '../../components/Navigation';
+
 export default function About() {
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden bg-background-light dark:bg-background-dark">
       <div className="layout-container flex h-full grow flex-col">
         <div className="w-full">
-          {/* Header */}
-          <header className="flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10">
-            <div className="flex items-center gap-3">
-              <i className="text-amber-700" data-lucide="home"></i>
-              <h2 className="text-black dark:text-text-dark text-2xl font-bold tracking-tight font-display">SaleDeed.com</h2>
-            </div>
-            <nav className="hidden md:flex items-center gap-8">
-              <a className="text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/services">Services</a>
-              <a className="text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/authorities">Authorities</a>
-              <a className="text-amber-700 dark:text-secondary text-base font-medium leading-normal transition-colors font-semibold" href="/about">About</a>
-              <a className="text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">Contact</a>
-            </nav>
-            <div className="flex items-center gap-3">
-              <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-5 bg-transparent text-amber-700 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] border-2 border-amber-700 hover:bg-amber-700/10 transition-all duration-300 hover:-translate-y-1">
-                <span className="truncate">Log In</span>
-              </button>
-              <button className="group flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-5 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-secondary/40">
-                <span className="truncate">Sign Up</span>
-              </button>
-            </div>
-          </header>
+          <Navigation currentPage="about" />
 
           {/* Main Content */}
           <main className="px-6 md:px-10 lg:px-20 py-10">
