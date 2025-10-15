@@ -165,14 +165,14 @@ export default function About() {
                   Let our three generations of expertise work for you. Get started with a free consultation and discover why thousands trust us with their most valuable assets.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="group flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-gradient-to-r from-primary to-secondary text-white text-lg font-bold leading-normal tracking-wide transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-primary/30">
+                  <a href="/contact" className="group flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-gradient-to-r from-primary to-secondary text-white text-lg font-bold leading-normal tracking-wide transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-primary/30">
                     <span className="truncate">Get Free Consultation</span>
                     <i className="ml-2 transition-transform duration-300 group-hover:translate-x-1" data-lucide="arrow-right"></i>
-                  </button>
-                  <button className="flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-transparent text-amber-700 dark:text-white text-lg font-bold leading-normal tracking-wide border-2 border-amber-700 hover:bg-amber-700/10 transition-all duration-300 hover:-translate-y-1">
+                  </a>
+                  <a href="/contact" className="flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-transparent text-amber-700 dark:text-white text-lg font-bold leading-normal tracking-wide border-2 border-amber-700 hover:bg-amber-700/10 transition-all duration-300 hover:-translate-y-1">
                     <span className="truncate">Call Us Now</span>
                     <i className="ml-2" data-lucide="phone"></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -193,10 +193,10 @@ export default function About() {
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Deed Drafting</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Document Verification</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Registration Assistance</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Stamp Duty Calculation</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Deed Drafting</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Document Verification</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Registration Assistance</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Stamp Duty Calculation</a></li>
                   </ul>
                 </div>
                 
@@ -204,17 +204,17 @@ export default function About() {
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Company</h3>
                   <ul className="mt-4 space-y-3 text-base">
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Contact Us</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Careers</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Press</a></li>
                   </ul>
                 </div>
                 
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Terms of Service</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</a></li>
                   </ul>
                 </div>
               </div>

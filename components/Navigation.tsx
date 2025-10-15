@@ -5,10 +5,10 @@ interface NavigationProps {
 export default function Navigation({ currentPage }: NavigationProps) {
   return (
     <header className="flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10">
-      <div className="flex items-center gap-3">
+      <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <i className="text-amber-700" data-lucide="home"></i>
         <h2 className="text-black dark:text-text-dark text-2xl font-bold tracking-tight font-display">SaleDeed.com</h2>
-      </div>
+      </a>
       
       <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
         <a className={`text-base font-medium leading-normal transition-colors ${
