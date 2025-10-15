@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export default function OtherDeedAgreementPage() {
     const [activeTab, setActiveTab] = useState('what-is')
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const services = [
         { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -137,13 +138,86 @@ export default function OtherDeedAgreementPage() {
                                 <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="#">Contact</a>
                             </div>
                             <div className="flex items-center gap-2">
-                                <button className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20">
-                                    <i data-lucide="menu"></i>
+                                <button
+                                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                    className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors"
+                                >
+                                    <i data-lucide={isMobileMenuOpen ? "x" : "menu"}></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </header>
+
+                {/* Mobile Menu Dropdown */}
+                {isMobileMenuOpen && (
+                    <div className="lg:hidden bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 shadow-lg">
+                        <div className="container mx-auto px-6 py-4">
+                            <div className="flex items-center gap-2 text-primary mb-4">
+                                <i data-lucide="map-pin"></i>
+                                <span className="font-medium">Delhi</span>
+                            </div>
+                            <div className="grid grid-cols-1 gap-2">
+                                {services.map((service, index) => (
+                                    <Link
+                                        key={index}
+                                        href={service.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className={`block w-full text-left px-4 py-3 rounded-lg text-sm transition-colors ${service.name === 'Other Deed & Agreement'
+                                            ? 'bg-primary text-white font-medium'
+                                            : 'text-text-light dark:text-text-dark hover:bg-primary/10 hover:text-primary'
+                                            }`}
+                                    >
+                                        {service.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Mobile Menu Overlay */}
+                {isMobileMenuOpen && (
+                    <div className="fixed inset-0 z-[9999] lg:hidden">
+                        <div
+                            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        ></div>
+                        <div className="fixed top-0 left-0 w-80 h-full bg-white dark:bg-slate-800 shadow-2xl transform transition-transform duration-300 ease-in-out">
+                            <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-slate-700">
+                                <div className="flex items-center gap-2 text-primary">
+                                    <i data-lucide="map-pin"></i>
+                                    <span className="font-medium">Delhi</span>
+                                </div>
+                                <button
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+                                >
+                                    <i data-lucide="x" className="text-text-light dark:text-text-dark text-lg"></i>
+                                </button>
+                            </div>
+
+                            <div className="p-4">
+                                <h3 className="text-lg font-semibold text-text-light dark:text-text-dark mb-4">Our Services</h3>
+                                <div className="space-y-1">
+                                    {services.map((service, index) => (
+                                        <Link
+                                            key={index}
+                                            href={service.href}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                            className={`block w-full text-left px-4 py-3 rounded-lg text-sm transition-colors ${service.name === 'Other Deed & Agreement'
+                                                ? 'bg-primary text-white font-medium shadow-md'
+                                                : 'text-text-light dark:text-text-dark hover:bg-primary/10 hover:text-primary'
+                                                }`}
+                                        >
+                                            {service.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 <div className="flex">
                     {/* Left Sidebar */}

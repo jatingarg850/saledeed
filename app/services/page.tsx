@@ -6,6 +6,21 @@ import Navigation from '../../components/Navigation'
 
 export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+    const services = [
+        { name: 'Sale Deed', href: '/services/sale-deed' },
+        { name: 'Gift Deed', href: '/services/gift-deed' },
+        { name: 'Relinquishment Deed', href: '/services/relinquishment-deed' },
+        { name: 'Will Agreement', href: '/services/will-agreement' },
+        { name: 'Partition Deed', href: '/services/partition-deed' },
+        { name: 'General Power of Authority', href: '/services/general-power-of-authority' },
+        { name: 'Agreement to Sell', href: '/services/agreement-to-sell' },
+        { name: 'Builder Buyer Agreement', href: '/services/builder-buyer-agreement' },
+        { name: 'Rent Agreement', href: '/services/rent-agreement' },
+        { name: 'Mutation Legal Document', href: '/services/mutation-legal-document' },
+        { name: 'Other Deed & Agreement', href: '/services/other-deed-agreement' }
+    ]
 
     const packages = [
         {

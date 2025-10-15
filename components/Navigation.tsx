@@ -1,10 +1,30 @@
+'use client'
+
+import { useState } from 'react'
+
 interface NavigationProps {
   currentPage?: string;
 }
 
 export default function Navigation({ currentPage }: NavigationProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const services = [
+    { name: 'Sale Deed', href: '/services/sale-deed' },
+    { name: 'Gift Deed', href: '/services/gift-deed' },
+    { name: 'Relinquishment Deed', href: '/services/relinquishment-deed' },
+    { name: 'Will Agreement', href: '/services/will-agreement' },
+    { name: 'Partition Deed', href: '/services/partition-deed' },
+    { name: 'General Power of Authority', href: '/services/general-power-of-authority' },
+    { name: 'Agreement to Sell', href: '/services/agreement-to-sell' },
+    { name: 'Builder Buyer Agreement', href: '/services/builder-buyer-agreement' },
+    { name: 'Rent Agreement', href: '/services/rent-agreement' },
+    { name: 'Mutation Legal Document', href: '/services/mutation-legal-document' },
+    { name: 'Other Deed & Agreement', href: '/services/other-deed-agreement' }
+  ]
   return (
-    <header className="flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10">
+    <>
+      <header className="flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10">
       <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <i className="text-amber-700" data-lucide="home"></i>
         <h2 className="text-black dark:text-text-dark text-2xl font-bold tracking-tight font-display">SaleDeed.com</h2>
@@ -79,11 +99,102 @@ export default function Navigation({ currentPage }: NavigationProps) {
         </div>
       </nav>
       
-      <div className="flex items-center">
-        <a href="/contact" className="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-secondary/40">
+      <div className="flex items-center gap-4">
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors"
+        >
+          <i data-lucide={isMobileMenuOpen ? "x" : "menu"} className="text-text-light dark:text-text-dark"></i>
+        </button>
+
+        <a href="/contact" className="hidden md:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-secondary/40">
           <span className="truncate">Contact Us</span>
         </a>
       </div>
     </header>
+
+    {/* Mobile Menu Dropdown */}
+    {isMobileMenuOpen && (
+      <div className="md:hidden bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 shadow-lg">
+        <div className="px-6 py-4 space-y-4">
+          {/* Navigation Links */}
+          <div className="space-y-3">
+            <a 
+              href="/" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block text-base font-medium transition-colors ${
+                currentPage === 'home' 
+                  ? 'text-amber-700 dark:text-secondary font-semibold' 
+                  : 'text-black dark:text-subtext-dark'
+              }`}
+            >
+              Home
+            </a>
+            
+            <a 
+              href="/services" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block text-base font-medium transition-colors ${
+                currentPage === 'services' 
+                  ? 'text-amber-700 dark:text-secondary font-semibold' 
+                  : 'text-black dark:text-subtext-dark'
+              }`}
+            >
+              Services
+            </a>
+
+            <a 
+              href="/about" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block text-base font-medium transition-colors ${
+                currentPage === 'about' 
+                  ? 'text-amber-700 dark:text-secondary font-semibold' 
+                  : 'text-black dark:text-subtext-dark'
+              }`}
+            >
+              About Us
+            </a>
+
+            <a 
+              href="/contact" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-base font-medium text-black dark:text-subtext-dark"
+            >
+              Contact
+            </a>
+          </div>
+
+          {/* Services Section */}
+          <div className="border-t border-gray-200 dark:border-slate-700 pt-4">
+            <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Our Services</h3>
+            <div className="grid grid-cols-1 gap-2">
+              {services.map((service, index) => (
+                <a
+                  key={index}
+                  href={service.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+                >
+                  {service.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact Button */}
+          <div className="border-t border-gray-200 dark:border-slate-700 pt-4">
+            <a 
+              href="/contact" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block w-full text-center py-3 px-6 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold rounded-full transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }

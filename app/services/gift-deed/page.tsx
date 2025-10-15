@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export default function GiftDeedPage() {
   const [activeTab, setActiveTab] = useState('what-is')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const services = [
     { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -110,13 +111,44 @@ export default function GiftDeedPage() {
                 <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="#">Contact</a>
               </div>
               <div className="flex items-center gap-2">
-                <button className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20">
-                  <i data-lucide="menu"></i>
+                <button 
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors"
+                >
+                  <i data-lucide={isMobileMenuOpen ? "x" : "menu"}></i>
                 </button>
               </div>
             </div>
           </div>
         </header>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 shadow-lg">
+            <div className="container mx-auto px-6 py-4">
+              <div className="flex items-center gap-2 text-primary mb-4">
+                <i data-lucide="map-pin"></i>
+                <span className="font-medium">Delhi</span>
+              </div>
+              <div className="grid grid-cols-1 gap-2">
+                {services.map((service, index) => (
+                  <Link
+                    key={index}
+                    href={service.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg text-sm transition-colors ${
+                      service.name === 'Gift Deed'
+                        ? 'bg-primary text-white font-medium'
+                        : 'text-text-light dark:text-text-dark hover:bg-primary/10 hover:text-primary'
+                    }`}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="flex">
           {/* Left Sidebar */}
