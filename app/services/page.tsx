@@ -87,11 +87,9 @@ export default function ServicesPage() {
                                     <Link className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="/">Home</Link>
                                     <a className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About</a>
                                     <span className="text-primary text-sm font-bold leading-normal">Services</span>
-                                    <a className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contact</a>
+                                    <a className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="/contact">Contact</a>
                                 </div>
-                                <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-                                    <span className="truncate">Login</span>
-                                </button>
+
                             </div>
                             <div className="md:hidden">
                                 <button className="p-2">
@@ -275,8 +273,8 @@ export default function ServicesPage() {
                                 <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Services</h4>
                                 <ul className="space-y-2">
                                     <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/sale-deed">Sale Deed</Link></li>
-                                    <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Gift Deed</a></li>
-                                    <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Relinquishment Deed</a></li>
+                                    <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</a></li>
+                                    <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/relinquishment-deed">Relinquishment Deed</a></li>
                                 </ul>
                             </div>
                             <div>
