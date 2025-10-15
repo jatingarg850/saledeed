@@ -12,7 +12,7 @@ export default function Home() {
             <nav className="hidden md:flex items-center gap-8">
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/services">Services</a>
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/authorities">Authorities</a>
-              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">About</a>
+              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/about">About</a>
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">Contact</a>
             </nav>
             <div className="flex items-center gap-3">
