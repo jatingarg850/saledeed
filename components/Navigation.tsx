@@ -10,7 +10,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
         <h2 className="text-black dark:text-text-dark text-2xl font-bold tracking-tight font-display">SaleDeed.com</h2>
       </div>
       
-      <nav className="hidden md:flex items-center gap-8">
+      <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
         <a className={`text-base font-medium leading-normal transition-colors ${
           currentPage === 'home' 
             ? 'text-amber-700 dark:text-secondary font-semibold' 
@@ -40,13 +40,13 @@ export default function Navigation({ currentPage }: NavigationProps) {
             Solution
             <i className="text-xs" data-lucide="chevron-down"></i>
           </button>
-          <div className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-yellow-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-yellow-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div className="py-2">
-              <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/solutions/buyer">I am a Buyer</a>
-              <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/solutions/seller">I am a Seller</a>
-              <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/solutions/landlord">I am a Landlord</a>
-              <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/solutions/tenant">I am a Tenant</a>
-              <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/solutions/developer">I am a Developer / Builder / Institution / Society</a>
+              <a className="block px-4 py-3 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors whitespace-nowrap" href="/solutions/buyer">I am a Buyer</a>
+              <a className="block px-4 py-3 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors whitespace-nowrap" href="/solutions/seller">I am a Seller</a>
+              <a className="block px-4 py-3 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors whitespace-nowrap" href="/solutions/landlord">I am a Landlord</a>
+              <a className="block px-4 py-3 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors whitespace-nowrap" href="/solutions/tenant">I am a Tenant</a>
+              <a className="block px-4 py-3 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/solutions/developer">I am a Developer / Builder / Institution / Society</a>
             </div>
           </div>
         </div>
@@ -79,13 +79,10 @@ export default function Navigation({ currentPage }: NavigationProps) {
         </div>
       </nav>
       
-      <div className="flex items-center gap-3">
-        <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-5 bg-transparent text-amber-700 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] border-2 border-amber-700 hover:bg-amber-700/10 transition-all duration-300 hover:-translate-y-1">
-          <span className="truncate">Log In</span>
-        </button>
-        <button className="group flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-5 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-secondary/40">
-          <span className="truncate">Sign Up</span>
-        </button>
+      <div className="flex items-center">
+        <a href="/contact" className="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-secondary/40">
+          <span className="truncate">Contact Us</span>
+        </a>
       </div>
     </header>
   );
