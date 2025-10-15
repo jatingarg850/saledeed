@@ -6,7 +6,6 @@ import Navigation from '../../components/Navigation'
 
 export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null)
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const services = [
         { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -94,65 +93,173 @@ export default function ServicesPage() {
 
                 {/* Main Content */}
                 <main className="flex-1">
-                    <div className="flex">
-                        {/* Left Sidebar */}
-                        <div className="w-64 bg-gray-100 dark:bg-slate-800 min-h-screen p-4 hidden lg:block">
-                            <div className="mb-4">
-                                <div className="flex items-center gap-2 text-primary mb-4">
-                                    <i data-lucide="map-pin"></i>
-                                    <span className="font-medium">Delhi</span>
-                                </div>
+                    {/* Services Card Slider */}
+                    <div className="relative mb-16 mx-6 md:mx-10 lg:mx-20 mt-10">
+                        {/* Header */}
+                        <div className="text-center mb-8">
+                            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                <i data-lucide="briefcase" className="w-4 h-4"></i>
+                                Our Legal Services
                             </div>
-                            
-                            <div className="space-y-2">
-                                <Link href="/services/sale-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Sale Deed
-                                </Link>
-                                <Link href="/services/gift-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Gift Deed
-                                </Link>
-                                <Link href="/services/relinquishment-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Relinquishment Deed
-                                </Link>
-                                <Link href="/services/will-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Will Agreement
-                                </Link>
-                                <Link href="/services/partition-deed" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Partition Deed
-                                </Link>
-                                <Link href="/services/general-power-of-authority" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    General Power of Authority
-                                </Link>
-                                <Link href="/services/agreement-to-sell" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Agreement to Sell
-                                </Link>
-                                <Link href="/services/builder-buyer-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Builder Buyer Agreement
-                                </Link>
-                                <Link href="/services/rent-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Rent Agreement
-                                </Link>
-                                <Link href="/services/mutation-legal-document" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Mutation Legal Document
-                                </Link>
-                                <Link href="/services/other-deed-agreement" className="block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors text-text-light dark:text-text-dark hover:bg-primary/10">
-                                    Other Deed & Agreement
-                                </Link>
+                            <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-2">
+                                Professional Property Documentation
+                            </h2>
+                            <p className="text-lg text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
+                                Comprehensive legal services with expert guidance for all your property needs
+                            </p>
+                        </div>
+
+                        {/* Card Slider Container */}
+                        <div className="relative overflow-hidden py-8">
+                            <div className="flex gap-6 animate-slide-infinite hover:pause-animation">
+                                {/* First set of cards */}
+                                {services.map((service, index) => (
+                                    <Link
+                                        key={`first-${index}`}
+                                        href={service.href}
+                                        className="flex-shrink-0 w-96 group"
+                                    >
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700 group-hover:border-primary/50 h-64">
+                                            <div className="flex items-start gap-4 mb-6">
+                                                <div className="w-14 h-14 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                                    <i data-lucide="file-text" className="w-7 h-7 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="font-bold text-xl text-text-light dark:text-text-dark group-hover:text-primary transition-colors duration-300 mb-3">
+                                                        {service.name}
+                                                    </h3>
+                                                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                                                        Professional legal documentation and registration services with expert guidance and complete compliance.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-between mt-auto">
+                                                <div className="flex items-center gap-2 text-sm text-subtext-light dark:text-subtext-dark">
+                                                    <i data-lucide="clock" className="w-4 h-4"></i>
+                                                    <span>7-15 days</span>
+                                                </div>
+                                                <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
+                                                    <span>Learn More</span>
+                                                    <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                                
+                                {/* Duplicate set for seamless loop */}
+                                {services.map((service, index) => (
+                                    <Link
+                                        key={`second-${index}`}
+                                        href={service.href}
+                                        className="flex-shrink-0 w-96 group"
+                                    >
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700 group-hover:border-primary/50 h-64">
+                                            <div className="flex items-start gap-4 mb-6">
+                                                <div className="w-14 h-14 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                                    <i data-lucide="file-text" className="w-7 h-7 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="font-bold text-xl text-text-light dark:text-text-dark group-hover:text-primary transition-colors duration-300 mb-3">
+                                                        {service.name}
+                                                    </h3>
+                                                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                                                        Professional legal documentation and registration services with expert guidance and complete compliance.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-between mt-auto">
+                                                <div className="flex items-center gap-2 text-sm text-subtext-light dark:text-subtext-dark">
+                                                    <i data-lucide="clock" className="w-4 h-4"></i>
+                                                    <span>7-15 days</span>
+                                                </div>
+                                                <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
+                                                    <span>Learn More</span>
+                                                    <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Main Content Area */}
-                        <div className="flex-1 px-4 md:px-10 lg:px-20 py-10 md:py-20">
+                        {/* Location Badge */}
+                        <div className="absolute top-0 left-0 flex items-center gap-2 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-primary/20">
+                            <i data-lucide="map-pin" className="w-4 h-4 text-primary"></i>
+                            <span className="font-medium text-text-light dark:text-text-dark">Delhi</span>
+                        </div>
+
+                        {/* View All Button */}
+                        <div className="text-center mt-8">
+                            <Link
+                                href="#all-services"
+                                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                            >
+                                <span>View All Services</span>
+                                <i data-lucide="chevron-down" className="w-4 h-4"></i>
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Main Content Area */}
+                    <div className="px-4 md:px-10 lg:px-20 py-10 md:py-20">
                         <div className="layout-content-container flex flex-col max-w-6xl mx-auto items-center text-center">
-                            {/* Hero Section */}
-                            <div className="flex min-h-[400px] w-full flex-col gap-6 items-center justify-center p-4">
-                                <div className="flex flex-col gap-4 text-center">
-                                    <h1 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black leading-tight tracking-tight font-display">
-                                        Comprehensive Property Document Packages
-                                    </h1>
-                                    <h2 className="text-subtext-light dark:text-subtext-dark text-base md:text-lg font-normal leading-normal max-w-3xl mx-auto">
-                                        Choose a package tailored to your needs. We handle the complexities of property documentation so you don't have to.
+                            
+                            {/* Services Overview Section */}
+                            <div className="w-full mb-16">
+                                <div className="text-center mb-12">
+                                    <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4 font-display">
+                                        Our Legal Services
                                     </h2>
+                                    <p className="text-lg text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
+                                        Comprehensive property documentation services with expert legal guidance
+                                    </p>
+                                </div>
+                                
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {services.slice(0, 6).map((service, index) => (
+                                        <Link
+                                            key={index}
+                                            href={service.href}
+                                            className="group bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700"
+                                        >
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                                                    <i data-lucide="file-text" className="w-5 h-5 text-white"></i>
+                                                </div>
+                                                <h3 className="font-semibold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">
+                                                    {service.name}
+                                                </h3>
+                                            </div>
+                                            <div className="flex items-center text-sm text-primary font-medium">
+                                                <span>Learn More</span>
+                                                <i data-lucide="arrow-right" className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                                
+                                <div className="mt-8 text-center">
+                                    <Link
+                                        href="#all-services"
+                                        className="inline-flex items-center gap-2 text-primary hover:text-secondary font-medium"
+                                    >
+                                        View All Services
+                                        <i data-lucide="chevron-down" className="w-4 h-4"></i>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* Packages Section Header */}
+                            <div className="w-full mb-12">
+                                <div className="text-center">
+                                    <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4 font-display">
+                                        Choose Your Package
+                                    </h2>
+                                    <p className="text-lg text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
+                                        Select the package that best fits your property documentation needs
+                                    </p>
                                 </div>
                             </div>
 
@@ -281,20 +388,97 @@ export default function ServicesPage() {
                                 </div>
                             </div>
 
+                            {/* All Services Section */}
+                            <div id="all-services" className="w-full mt-20">
+                                <div className="text-center mb-12">
+                                    <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-4 font-display">
+                                        Complete Service Portfolio
+                                    </h2>
+                                    <p className="text-lg text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
+                                        Explore our full range of property documentation and legal services
+                                    </p>
+                                </div>
+                                
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {services.map((service, index) => (
+                                        <Link
+                                            key={index}
+                                            href={service.href}
+                                            className="group bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700"
+                                        >
+                                            <div className="flex items-center gap-3 mb-4">
+                                                <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                                                    <i data-lucide="file-text" className="w-6 h-6 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="font-semibold text-text-light dark:text-text-dark group-hover:text-primary transition-colors text-left">
+                                                        {service.name}
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-sm text-subtext-light dark:text-subtext-dark">
+                                                    Professional Service
+                                                </span>
+                                                <div className="flex items-center text-sm text-primary font-medium">
+                                                    <span>Learn More</span>
+                                                    <i data-lucide="arrow-right" className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+
                             {/* Contact CTA */}
-                            <div className="w-full mt-20 text-center py-10 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl border border-primary/20">
-                                <h2 className="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-[-0.015em] mb-4 font-display">
-                                    Still have questions?
-                                </h2>
-                                <p className="text-subtext-light dark:text-subtext-dark mb-6">
-                                    Our team is here to help. Contact us for any inquiries.
-                                </p>
-                                <button className="flex mx-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                                    <span className="truncate">Contact Support</span>
-                                </button>
+                            <div className="w-full mt-20 relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary rounded-3xl p-12 text-center">
+                                <div className="absolute inset-0 bg-black/10"></div>
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
+                                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
+                                
+                                <div className="relative">
+                                    <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                        <i data-lucide="headphones" className="w-10 h-10 text-white"></i>
+                                    </div>
+                                    
+                                    <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
+                                        Need Expert Guidance?
+                                    </h2>
+                                    <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
+                                        Our legal experts are here to help you choose the right service and guide you through the process
+                                    </p>
+                                    
+                                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                        <Link
+                                            href="/contact"
+                                            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                                        >
+                                            <i data-lucide="phone" className="w-5 h-5"></i>
+                                            Contact Support
+                                        </Link>
+                                        <button className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
+                                            <i data-lucide="calendar" className="w-5 h-5"></i>
+                                            Schedule Consultation
+                                        </button>
+                                    </div>
+                                    
+                                    <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <i data-lucide="check-circle" className="w-4 h-4"></i>
+                                            <span>Free Consultation</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <i data-lucide="shield" className="w-4 h-4"></i>
+                                            <span>100% Secure</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <i data-lucide="clock" className="w-4 h-4"></i>
+                                            <span>Quick Response</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </main>
 

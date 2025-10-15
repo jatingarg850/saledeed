@@ -2,23 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Navigation from '../../../components/Navigation'
 
 export default function GeneralPowerOfAuthorityPage() {
   const [activeTab, setActiveTab] = useState('what-is')
-
-  const services = [
-    { name: 'Sale Deed', href: '/services/sale-deed' },
-    { name: 'Gift Deed', href: '/services/gift-deed' },
-    { name: 'Relinquishment Deed', href: '/services/relinquishment-deed' },
-    { name: 'Will Agreement', href: '/services/will-agreement' },
-    { name: 'Partition Deed', href: '/services/partition-deed' },
-    { name: 'General Power of Authority', href: '/services/general-power-of-authority' },
-    { name: 'Agreement to Sell', href: '/services/agreement-to-sell' },
-    { name: 'Builder Buyer Agreement', href: '/services/builder-buyer-agreement' },
-    { name: 'Rent Agreement', href: '/services/rent-agreement' },
-    { name: 'Mutation Legal Document', href: '/services/mutation-legal-document' },
-    { name: 'Other Deed & Agreement', href: '/services/other-deed-agreement' }
-  ]
 
   const tabs = [
     { id: 'what-is', label: 'What is a General Power of Attorney?' },
@@ -48,243 +35,296 @@ export default function GeneralPowerOfAuthorityPage() {
       description: 'Recent passport-size photographs of both principal and agent for document verification and notarization.'
     },
     {
-      title: 'Witness Details',
-      description: 'Identity and address proof of two witnesses who will attest to the execution of the power of attorney document.'
+      title: 'Medical Certificate (if required)',
+      description: 'Medical fitness certificate from a qualified doctor confirming the principal\'s mental capacity and sound mind.'
+    },
+    {
+      title: 'Witness Information',
+      description: 'Identity proof and contact details of at least two witnesses who will sign the power of attorney document.'
     }
   ]
 
   const process = [
     {
       step: 1,
-      title: 'Consultation & Scope Definition',
-      description: 'We discuss your requirements and define the specific powers and limitations to be granted in the document.'
+      title: 'Requirement Analysis',
+      description: 'We understand your specific needs and the scope of powers to be granted in the General Power of Attorney.'
     },
     {
       step: 2,
       title: 'Legal Drafting',
-      description: 'Our legal experts draft a comprehensive power of attorney document with all necessary clauses and conditions.'
+      description: 'Our legal experts prepare a comprehensive Power of Attorney document as per law with all necessary clauses.'
     },
     {
       step: 3,
-      title: 'Document Review',
-      description: 'Thorough review of the draft with both parties to ensure all requirements are accurately captured.'
+      title: 'Document Verification',
+      description: 'We verify all party details, witness information, and ensure the document meets legal requirements.'
     },
     {
       step: 4,
-      title: 'Notarization & Attestation',
-      description: 'Proper notarization and attestation of the document as per legal requirements for validity.'
+      title: 'Notarization Process',
+      description: 'Complete assistance with notarization and attestation of the Power of Attorney document.'
     },
     {
       step: 5,
-      title: 'Registration (if required)',
-      description: 'Registration at Sub-Registrar Office if the power of attorney involves immovable property transactions.'
+      title: 'Registration & Delivery',
+      description: 'Final registration (if required) and delivery of the executed Power of Attorney with all compliance certificates.'
     }
   ]
 
   const tabContent = {
-    'what-is': 'A General Power of Attorney is a legal document that grants broad authority to an agent (attorney-in-fact) to act on behalf of the principal in various matters. This document allows the agent to handle financial transactions, property dealings, legal matters, and other important decisions when the principal is unable to do so personally. The scope can include banking operations, property transactions, tax matters, insurance claims, and business dealings. It\'s a powerful legal instrument that requires careful consideration of the powers granted and the trustworthiness of the appointed agent.',
-    'when-to-use': 'A General Power of Attorney is used when you need someone to handle your affairs during extended travel, illness, or incapacity. It\'s commonly used by NRIs (Non-Resident Indians) to manage property and financial matters in India, by elderly individuals who want trusted family members to handle their affairs, during medical treatment when you cannot personally attend to legal or financial matters, for business operations when you need someone to act on your behalf, or when relocating and need someone to handle property transactions or legal formalities in your absence.',
-    'legal-implications': 'A General Power of Attorney grants significant authority to the agent, making it crucial to choose a trustworthy person. The document becomes effective immediately upon execution unless specified otherwise. The principal retains the right to revoke the power at any time while mentally competent. The agent has a fiduciary duty to act in the principal\'s best interests. For property transactions, registration may be mandatory. The power automatically terminates upon the principal\'s death, mental incapacity (unless it\'s a durable power), or revocation. Misuse of power can result in legal action against the agent.'
+    'what-is': 'A General Power of Attorney is a legal document that grants broad authority to an agent (attorney-in-fact) to act on behalf of the principal in various matters. This document allows the agent to handle financial transactions, property dealings, legal matters, and other important decisions when the principal is unable to do so personally. The power of attorney contains specific powers granted, limitations (if any), duration of authority, and conditions for revocation. It serves as legal authorization for the agent to represent the principal in dealings with banks, government offices, courts, and other institutions.',
+    'when-to-use': 'A General Power of Attorney is used when you need someone to handle your affairs due to travel, illness, old age, or other circumstances that prevent personal attendance. It is commonly used for property transactions, bank operations, legal proceedings, business dealings, and government work. This document is essential for NRIs, elderly persons, busy professionals, and anyone who needs reliable representation. It is required for property sales/purchases, bank account operations, tax filings, court appearances, and various administrative tasks.',
+    'legal-implications': 'A properly executed General Power of Attorney creates a legal relationship between principal and agent with specific rights and obligations. The agent must act in the principal\'s best interest, maintain proper records, and avoid conflicts of interest. The document must be notarized, properly witnessed, and may require registration depending on the powers granted. Once executed, it gives the agent legal authority to bind the principal in authorized transactions, provides legal protection for third parties dealing with the agent, and remains valid until revoked or the principal\'s death.'
   }
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
       <div className="layout-container flex h-full grow flex-col">
-        {/* Header */}
-        <header className="bg-background-light/95 dark:bg-background-dark/95 shadow-sm backdrop-blur-md sticky top-0 z-50">
-          <div className="container mx-auto px-6 py-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4 text-text-light dark:text-text-dark">
-                <i className="text-primary text-3xl" data-lucide="home"></i>
-                <h2 className="text-lg font-bold font-display">SaleDeed.com</h2>
-              </div>
-              <div className="hidden md:flex items-center gap-8">
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="/">Home</a>
-                <a className="text-sm font-medium text-primary dark:text-secondary" href="/services">Our Services</a>
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="/authorities">Authorities</a>
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a>
-                <a className="text-sm font-medium hover:text-primary dark:hover:text-secondary transition-colors" href="#">Contact</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <button className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20">
-                  <i data-lucide="menu"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Navigation currentPage="services" />
 
-        <div className="flex">
-          {/* Left Sidebar */}
-          <div className="w-64 bg-gray-100 dark:bg-slate-800 min-h-screen p-4 hidden lg:block">
-            <div className="mb-4">
-              <div className="flex items-center gap-2 text-primary mb-4">
-                <i data-lucide="map-pin"></i>
-                <span className="font-medium">Delhi</span>
-              </div>
-            </div>
-            
-            <div className="space-y-2">
-              {services.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                    service.name === 'General Power of Authority'
-                      ? 'bg-primary text-white font-medium'
-                      : 'text-text-light dark:text-text-dark hover:bg-primary/10'
-                  }`}
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
+        {/* Main Content */}
+        <main className="flex-1 px-6 md:px-10 lg:px-20 py-10">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm mb-8">
+            <Link href="/" className="text-primary hover:underline">Home</Link>
+            <i className="text-gray-400" data-lucide="chevron-right"></i>
+            <Link href="/services" className="text-primary hover:underline">Our Services</Link>
+            <i className="text-gray-400" data-lucide="chevron-right"></i>
+            <span className="text-text-light dark:text-text-dark">General Power of Authority</span>
           </div>
 
-          {/* Main Content */}
-          <div className="flex-1 p-6 lg:p-8">
-            <div className="max-w-6xl mx-auto">
-              {/* Breadcrumb */}
-              <div className="flex items-center gap-2 text-sm mb-6">
-                <Link href="/" className="text-primary hover:underline">Home</Link>
-                <span className="text-gray-400">/</span>
-                <Link href="/services" className="text-primary hover:underline">Our Services</Link>
-                <span className="text-gray-400">/</span>
-                <span className="text-text-light dark:text-text-dark">General Power of Authority</span>
-              </div>
+          {/* Hero Section */}
+          <div className="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16">
+            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+            <div className="relative max-w-6xl mx-auto px-8 py-16 md:py-24">
+              <div className="text-center">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
+                  <i data-lucide="user-check" className="w-4 h-4"></i>
+                  Legal Authorization Document
+                </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Left Content */}
-                <div className="lg:col-span-2">
-                  <h1 className="text-4xl font-black mb-4 text-text-light dark:text-text-dark">General Power of Authority</h1>
-                  
-                  {/* Tab Navigation */}
-                  <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700">
-                    <div className="pb-3 border-b border-yellow-200 dark:border-slate-700">
-                      <div className="flex px-4 gap-8 overflow-x-auto">
-                        {tabs.map((tab) => (
-                          <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4 whitespace-nowrap transition-colors ${
-                              activeTab === tab.id
-                                ? 'border-b-primary text-text-light dark:text-text-dark'
-                                : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-text-light dark:hover:text-text-dark'
-                            }`}
-                          >
-                            <p className="text-sm font-bold leading-normal tracking-[0.015em]">{tab.label}</p>
-                          </button>
-                        ))}
-                      </div>
+                {/* Main Heading */}
+                <h1 className="text-text-light dark:text-text-dark text-5xl md:text-7xl font-black tracking-tight font-display mb-8 leading-tight">
+                  General Power of Authority
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                    Services
+                  </span>
+                </h1>
+
+                {/* Description */}
+                <p className="text-subtext-light dark:text-subtext-dark text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed mb-12 font-medium">
+                  Professional power of attorney drafting and notarization services with complete legal compliance and expert guidance.
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    Start Your Power of Attorney
+                  </Link>
+                  <button className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300">
+                    <i data-lucide="download" className="w-5 h-5"></i>
+                    Download Sample
+                  </button>
+                </div>
+
+                {/* Trust Indicators */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                  <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
+                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="shield-check" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
                     </div>
-                    <div className="p-6">
-                      <p className="text-subtext-light dark:text-subtext-dark text-base font-normal leading-relaxed">
-                        {tabContent[activeTab as keyof typeof tabContent]}
-                      </p>
+                    <div className="text-left">
+                      <div className="font-bold text-text-light dark:text-text-dark">100% Legal</div>
+                      <div className="text-sm text-subtext-light dark:text-subtext-dark">Compliance Guaranteed</div>
                     </div>
                   </div>
 
-                  {/* How it Works Section */}
-                  <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
-                    <div className="flex items-center gap-3 mb-6">
-                      <i className="text-primary text-2xl" data-lucide="workflow"></i>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">How it Works</h3>
+                  <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="clock" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
                     </div>
-                    
-                    <div className="space-y-4">
-                      {process.map((item, index) => (
-                        <div key={index} className="flex items-start gap-4 p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
-                          <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white font-bold text-sm">{item.step}</span>
+                    <div className="text-left">
+                      <div className="font-bold text-text-light dark:text-text-dark">Quick Process</div>
+                      <div className="text-sm text-subtext-light dark:text-subtext-dark">3-5 Business Days</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
+                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="users" className="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold text-text-light dark:text-text-dark">Expert Team</div>
+                      <div className="text-sm text-subtext-light dark:text-subtext-dark">Qualified Lawyers</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Content Sections */}
+          <div className="max-w-6xl mx-auto space-y-16">
+            {/* Tab Navigation */}
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="border-b border-yellow-200 dark:border-slate-700 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700">
+                <div className="flex px-6 gap-8 overflow-x-auto">
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`flex flex-col items-center justify-center border-b-[3px] pb-4 pt-6 whitespace-nowrap transition-all duration-300 ${activeTab === tab.id
+                          ? 'border-b-primary text-primary font-bold'
+                          : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-primary hover:border-b-primary/50'
+                        }`}
+                    >
+                      <p className="text-sm font-semibold leading-normal tracking-[0.015em]">{tab.label}</p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="p-8">
+                <p className="text-subtext-light dark:text-subtext-dark text-lg font-normal leading-relaxed">
+                  {tabContent[activeTab as keyof typeof tabContent]}
+                </p>
+              </div>
+            </div>
+
+            {/* How it Works Section */}
+            <div className="bg-gradient-to-br from-white via-yellow-50/50 to-orange-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-secondary/10 to-primary/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+              <div className="relative">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="workflow"></i>
+                    </div>
+                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How it Works</h3>
+                  </div>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                    Our streamlined process ensures your power of attorney is completed efficiently and legally
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {process.map((item, index) => (
+                    <div key={index} className="group relative">
+                      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <span className="text-white font-bold text-lg">{item.step}</span>
                           </div>
-                          <div>
-                            <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">{item.title}</h4>
-                            <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">{item.description}</p>
+                          <div className="flex-1">
+                            <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">{item.title}</h4>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">{item.description}</p>
 
-                  {/* Documents Section */}
-                  <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <i className="text-primary text-2xl" data-lucide="file-text"></i>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">Documents You'll Need</h3>
+                        {/* Connector Line */}
+                        {index < process.length - 1 && (
+                          <div className="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-secondary opacity-30"></div>
+                        )}
+                      </div>
                     </div>
-                    <div className="space-y-3">
-                      {documents.map((doc, index) => (
-                        <details key={index} className="group">
-                          <summary className="flex items-center justify-between cursor-pointer p-3 rounded-lg bg-background-light/50 dark:bg-slate-700/50 hover:bg-secondary/10 dark:hover:bg-slate-700 transition-colors">
-                            <h4 className="font-medium text-text-light dark:text-text-dark">{doc.title}</h4>
-                            <i className="transition-transform duration-300 group-open:rotate-180 text-primary" data-lucide="chevron-down"></i>
-                          </summary>
-                          <p className="mt-2 px-3 text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
-                            {doc.description}
-                          </p>
-                        </details>
-                      ))}
-                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Documents Section */}
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-yellow-200/50 dark:border-slate-700">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="file-text"></i>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-text-light dark:text-text-dark font-display">Documents You'll Need</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark">Essential documents for your power of attorney process</p>
                   </div>
                 </div>
+              </div>
 
-                {/* Right Sidebar */}
-                <div className="space-y-6">
-                  {/* Draft This Document Card */}
-                  <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md p-6 border-2 border-primary/30 hover:border-primary/50 transition-colors">
-                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Draft Power of Attorney</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark mb-4 text-sm leading-relaxed">
-                      Create a legally binding General Power of Attorney with our expert guidance and comprehensive templates.
-                    </p>
-                    <button className="w-full flex items-center justify-center rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                      <span>Start Drafting Now</span>
-                      <i className="ml-2" data-lucide="arrow-right"></i>
-                    </button>
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {documents.map((doc, index) => (
+                    <details key={index} className="group bg-gradient-to-br from-gray-50 to-white dark:from-slate-700 dark:to-slate-600 rounded-xl border border-gray-200 dark:border-slate-600 overflow-hidden">
+                      <summary className="flex items-center justify-between cursor-pointer p-6 hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                            <span className="text-primary font-bold text-sm">{index + 1}</span>
+                          </div>
+                          <h4 className="font-semibold text-text-light dark:text-text-dark">{doc.title}</h4>
+                        </div>
+                        <i className="transition-transform duration-300 group-open:rotate-180 text-primary" data-lucide="chevron-down"></i>
+                      </summary>
+                      <div className="px-6 pb-6">
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed pl-11">
+                          {doc.description}
+                        </p>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Final CTA Section */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary rounded-3xl p-12 text-center">
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
+
+              <div className="relative">
+                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <i data-lucide="rocket" className="w-10 h-10 text-white"></i>
+                </div>
+
+                <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Power of Attorney?</h3>
+                <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
+                  Get expert legal assistance for your authorization needs with complete documentation support
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    Get Expert Help Now
+                  </Link>
+                  <button className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
+                    <i data-lucide="download" className="w-5 h-5"></i>
+                    Download Sample
+                  </button>
+                </div>
+
+                <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
+                  <div className="flex items-center gap-2">
+                    <i data-lucide="check-circle" className="w-4 h-4"></i>
+                    <span>100% Legal Compliance</span>
                   </div>
-
-                  {/* Expert Assistance Card */}
-                  <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md p-6 border border-yellow-200/50 dark:border-slate-700">
-                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Get Expert Assistance</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark mb-4 text-sm leading-relaxed">
-                      Our legal experts will help you create a comprehensive power of attorney document tailored to your specific needs.
-                    </p>
-                    <button className="w-full flex items-center justify-center rounded-full h-12 px-6 bg-secondary/20 text-primary text-base font-bold leading-normal tracking-[0.015em] hover:bg-secondary/30 transition-all transform hover:-translate-y-1 border-2 border-primary/20 hover:border-primary/40">
-                      <span>Request a Callback</span>
-                      <i className="ml-2" data-lucide="phone"></i>
-                    </button>
+                  <div className="flex items-center gap-2">
+                    <i data-lucide="shield" className="w-4 h-4"></i>
+                    <span>Secure Process</span>
                   </div>
-
-                  {/* Quick Info Card */}
-                  <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-6 border border-primary/20">
-                    <h3 className="text-lg font-bold mb-3 text-text-light dark:text-text-dark font-display">Key Features</h3>
-                    <ul className="space-y-2 text-sm text-subtext-light dark:text-subtext-dark">
-                      <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Broad authority to act on your behalf</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Covers financial and legal matters</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Notarization required for validity</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Can be revoked at any time</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Registration may be required for property</span>
-                      </li>
-                    </ul>
+                  <div className="flex items-center gap-2">
+                    <i data-lucide="clock" className="w-4 h-4"></i>
+                    <span>Quick Turnaround</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </main>
 
         {/* Footer */}
         <footer className="bg-yellow-50 dark:bg-gray-900 border-t border-yellow-200 dark:border-slate-800 mt-12">
@@ -301,9 +341,9 @@ export default function GeneralPowerOfAuthorityPage() {
               <div>
                 <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Services</h4>
                 <ul className="space-y-2">
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/sale-deed">Sale Deed</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/general-power-of-authority">General Power of Authority</a></li>
+                  <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/sale-deed">Sale Deed</Link></li>
+                  <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</Link></li>
+                  <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/general-power-of-authority">General Power of Authority</Link></li>
                 </ul>
               </div>
               <div>
