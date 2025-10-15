@@ -179,7 +179,7 @@ export default function About() {
                 <h2 className="text-black dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-6">
                   Ready to Experience the Difference?
                 </h2>
-                <p className="text-black dark:text-subtext-dark text-lg mb-8 max-w-3xl mx-auto">o">
+                <p className="text-black dark:text-subtext-dark text-lg mb-8 max-w-3xl mx-auto">
                   Let our three generations of expertise work for you. Get started with a free consultation and discover why thousands trust us with their most valuable assets.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

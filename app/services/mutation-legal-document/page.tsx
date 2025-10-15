@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-export default function BuilderBuyerAgreementPage() {
+export default function MutationLegalDocumentPage() {
   const [activeTab, setActiveTab] = useState('what-is')
 
   const services = [
@@ -21,74 +21,74 @@ export default function BuilderBuyerAgreementPage() {
   ]
 
   const tabs = [
-    { id: 'what-is', label: 'What is a Builder Buyer Agreement?' },
+    { id: 'what-is', label: 'What is Property Mutation?' },
     { id: 'when-to-use', label: 'When to Use It' },
     { id: 'legal-implications', label: 'Legal Implications' }
   ]
 
   const documents = [
     {
-      title: 'Builder\'s Legal Documents',
-      description: 'Builder\'s incorporation certificate, RERA registration, land title documents, approved building plans, and environmental clearances.'
+      title: 'Original Property Transfer Document',
+      description: 'Sale deed, gift deed, inheritance deed, or any other document that proves the transfer of property ownership.'
     },
     {
-      title: 'Buyer\'s Identity & Financial Proof',
-      description: 'Aadhaar Card, PAN Card, address proof, income proof, bank statements, and loan approval letter (if applicable).'
+      title: 'Previous Property Tax Receipts',
+      description: 'Latest property tax receipts and clearance certificates showing all dues paid by the previous owner.'
     },
     {
-      title: 'Project Approvals',
-      description: 'Sanctioned building plans, environmental clearance, fire safety certificate, and completion certificate (if applicable).'
+      title: 'Identity Proof of New Owner',
+      description: 'Aadhaar Card, Voter ID, Passport, or Driver\'s License of the person in whose name mutation is being done.'
     },
     {
-      title: 'RERA Registration Certificate',
-      description: 'Valid RERA registration certificate of the project and builder with all project details and compliance documents.'
+      title: 'Address Proof',
+      description: 'Current address proof of the new property owner including utility bills or bank statements.'
     },
     {
-      title: 'Land Title Documents',
-      description: 'Clear title documents of the land, conversion certificates, and NOCs from relevant authorities for the project land.'
+      title: 'Death Certificate (if applicable)',
+      description: 'Death certificate of the previous owner in case of inheritance-based mutation along with legal heir certificate.'
     },
     {
-      title: 'Payment Schedule & Terms',
-      description: 'Detailed payment schedule, construction milestones, possession timeline, and penalty clauses for delays.'
+      title: 'Encumbrance Certificate',
+      description: 'Encumbrance certificate showing the chain of ownership and confirming the legal transfer of property.'
     },
     {
-      title: 'Specifications Document',
-      description: 'Detailed specifications of the unit, common areas, amenities, and quality standards as promised by the builder.'
+      title: 'Survey Settlement Records',
+      description: 'Revenue records, survey numbers, and settlement documents related to the property from revenue department.'
     }
   ]
 
   const process = [
     {
       step: 1,
-      title: 'Project & Builder Verification',
-      description: 'Comprehensive verification of builder credentials, RERA registration, project approvals, and legal compliance.'
+      title: 'Document Verification',
+      description: 'Comprehensive verification of property transfer documents and ownership proof for mutation eligibility.'
     },
     {
       step: 2,
-      title: 'Unit Selection & Booking',
-      description: 'Selection of specific unit, floor plan review, amenities discussion, and initial booking with token amount.'
+      title: 'Application Preparation',
+      description: 'Preparation of mutation application with all required documents and proper format as per revenue department.'
     },
     {
       step: 3,
-      title: 'Agreement Drafting',
-      description: 'Professional drafting of comprehensive agreement covering all aspects including specifications, timelines, and legal clauses.'
+      title: 'Revenue Department Submission',
+      description: 'Submission of mutation application to the concerned Tehsildar or Village Revenue Officer with prescribed fees.'
     },
     {
       step: 4,
-      title: 'Legal Review & Negotiation',
-      description: 'Detailed legal review of terms, negotiation of clauses, and ensuring buyer protection and RERA compliance.'
+      title: 'Field Verification',
+      description: 'Revenue officials conduct field verification and inquiry to confirm the legitimacy of the ownership transfer.'
     },
     {
       step: 5,
-      title: 'Execution & Registration',
-      description: 'Signing of agreement by both parties with witnesses and registration as per RERA and local registration requirements.'
+      title: 'Mutation Order & Update',
+      description: 'Issuance of mutation order and updating of revenue records with new owner\'s name and details.'
     }
   ]
 
   const tabContent = {
-    'what-is': 'A Builder Buyer Agreement is a comprehensive legal contract between a real estate developer/builder and a property buyer for the purchase of an under-construction or ready-to-move property. This agreement outlines all terms and conditions including unit specifications, payment schedule, possession timeline, amenities, and legal obligations of both parties. Under RERA (Real Estate Regulation and Development Act), this agreement must be registered and should include detailed project information, construction timeline, penalty clauses for delays, and buyer protection measures. It serves as the primary legal document governing the relationship between builder and buyer throughout the construction and handover process.',
-    'when-to-use': 'A Builder Buyer Agreement is used when purchasing property directly from a builder or developer, buying an under-construction property or in a new project, investing in pre-launch or early-stage projects, purchasing apartments in residential complexes or commercial spaces in new developments. It\'s mandatory for all new real estate projects registered under RERA. The agreement is also used when booking a unit with construction-linked payment plans, when the property involves common areas and shared amenities, or when purchasing property where possession will be given after completion of construction.',
-    'legal-implications': 'Under RERA, Builder Buyer Agreements must be registered and provide strong legal protection to buyers. The agreement creates binding obligations on both parties with specific timelines and penalties. Builders are liable for delays and must compensate buyers as per agreed terms. The agreement must include carpet area measurements, not super built-up area. Buyers have the right to withdraw from the project with refund if builders fail to meet obligations. The agreement provides legal recourse through RERA tribunals for dispute resolution. Non-compliance with RERA provisions can result in penalties for builders and protection for buyers.'
+    'what-is': 'Property Mutation is the process of transferring or changing the title of ownership of a property in the revenue records of the local municipal corporation or gram panchayat. It involves updating the property ownership details in government records when ownership changes due to sale, inheritance, gift, or any other legal transfer. Mutation ensures that property tax and other civic responsibilities are transferred to the new owner. It\'s an administrative process that updates the revenue records but doesn\'t create or transfer ownership rights - it merely records the change that has already occurred through a legal document like a sale deed or gift deed.',
+    'when-to-use': 'Property Mutation is required after purchasing property through sale deed to transfer tax liability, when inheriting property from deceased family members, after receiving property as a gift through gift deed, when property ownership changes due to partition among family members, after court orders or legal settlements affecting property ownership, when there are errors in existing revenue records that need correction, or for obtaining various certificates and approvals that require updated ownership records. It\'s essential for legal compliance and to avoid future complications in property transactions.',
+    'legal-implications': 'Mutation is primarily an administrative process and doesn\'t confer ownership rights - it only records existing ownership. However, it\'s crucial for legal compliance and tax purposes. Non-mutation can lead to continued tax liability for the previous owner and complications for the new owner. Mutated records serve as supporting evidence of ownership but are not conclusive proof of title. The process helps in maintaining accurate revenue records and prevents disputes. Mutation is mandatory in most states and failure to complete it within prescribed time limits may result in penalties. It\'s essential for obtaining building permissions, loans, and other property-related approvals.'
   }
 
   return (
@@ -134,7 +134,7 @@ export default function BuilderBuyerAgreementPage() {
                   key={index}
                   href={service.href}
                   className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                    service.name === 'Builder Buyer Agreement'
+                    service.name === 'Mutation Legal Document'
                       ? 'bg-primary text-white font-medium'
                       : 'text-text-light dark:text-text-dark hover:bg-primary/10'
                   }`}
@@ -154,13 +154,13 @@ export default function BuilderBuyerAgreementPage() {
                 <span className="text-gray-400">/</span>
                 <Link href="/services" className="text-primary hover:underline">Our Services</Link>
                 <span className="text-gray-400">/</span>
-                <span className="text-text-light dark:text-text-dark">Builder Buyer Agreement</span>
+                <span className="text-text-light dark:text-text-dark">Mutation Legal Document</span>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Left Content */}
                 <div className="lg:col-span-2">
-                  <h1 className="text-4xl font-black mb-4 text-text-light dark:text-text-dark">Builder Buyer Agreement</h1>
+                  <h1 className="text-4xl font-black mb-4 text-text-light dark:text-text-dark">Mutation Legal Document</h1>
                   
                   {/* Tab Navigation */}
                   <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700">
@@ -231,40 +231,60 @@ export default function BuilderBuyerAgreementPage() {
                     </div>
                   </div>
 
-                  {/* RERA Compliance Section */}
-                  <div className="mt-8 bg-gradient-to-br from-blue-50 to-blue-100 dark:bg-slate-800/50 rounded-xl p-6 border border-blue-200">
-                    <div className="flex items-center gap-3 mb-4">
-                      <i className="text-blue-600 text-2xl" data-lucide="shield-check"></i>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">RERA Compliance & Protection</h3>
+                  {/* Types of Mutation */}
+                  <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <i className="text-primary text-2xl" data-lucide="git-branch"></i>
+                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">Types of Mutation</h3>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-3">
-                        <div className="flex items-start gap-2">
-                          <i className="text-blue-600 mt-1 text-sm" data-lucide="check-circle"></i>
-                          <span className="text-sm text-subtext-light dark:text-subtext-dark">Mandatory registration under RERA</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <i className="text-blue-600 mt-1 text-sm" data-lucide="check-circle"></i>
-                          <span className="text-sm text-subtext-light dark:text-subtext-dark">Carpet area based pricing</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <i className="text-blue-600 mt-1 text-sm" data-lucide="check-circle"></i>
-                          <span className="text-sm text-subtext-light dark:text-subtext-dark">Penalty clauses for delays</span>
-                        </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-2">Sale Mutation</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
+                          Transfer of ownership records after property sale through registered sale deed.
+                        </p>
+                        <ul className="text-xs text-subtext-light dark:text-subtext-dark space-y-1">
+                          <li>• Requires registered sale deed</li>
+                          <li>• Payment of stamp duty</li>
+                          <li>• Transfer of tax liability</li>
+                        </ul>
                       </div>
-                      <div className="space-y-3">
-                        <div className="flex items-start gap-2">
-                          <i className="text-blue-600 mt-1 text-sm" data-lucide="check-circle"></i>
-                          <span className="text-sm text-subtext-light dark:text-subtext-dark">Buyer protection measures</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <i className="text-blue-600 mt-1 text-sm" data-lucide="check-circle"></i>
-                          <span className="text-sm text-subtext-light dark:text-subtext-dark">Dispute resolution mechanism</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <i className="text-blue-600 mt-1 text-sm" data-lucide="check-circle"></i>
-                          <span className="text-sm text-subtext-light dark:text-subtext-dark">Refund rights for buyers</span>
-                        </div>
+
+                      <div className="p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-2">Inheritance Mutation</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
+                          Transfer of property records to legal heirs after owner's death.
+                        </p>
+                        <ul className="text-xs text-subtext-light dark:text-subtext-dark space-y-1">
+                          <li>• Death certificate required</li>
+                          <li>• Legal heir certificate</li>
+                          <li>• Family tree documentation</li>
+                        </ul>
+                      </div>
+
+                      <div className="p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-2">Gift Mutation</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
+                          Transfer of ownership records after property gifted through gift deed.
+                        </p>
+                        <ul className="text-xs text-subtext-light dark:text-subtext-dark space-y-1">
+                          <li>• Registered gift deed</li>
+                          <li>• Donor-donee relationship proof</li>
+                          <li>• Acceptance by donee</li>
+                        </ul>
+                      </div>
+
+                      <div className="p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-2">Partition Mutation</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
+                          Division of joint property among co-owners through partition deed.
+                        </p>
+                        <ul className="text-xs text-subtext-light dark:text-subtext-dark space-y-1">
+                          <li>• Partition deed required</li>
+                          <li>• Consent of all co-owners</li>
+                          <li>• Survey and demarcation</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -272,14 +292,14 @@ export default function BuilderBuyerAgreementPage() {
 
                 {/* Right Sidebar */}
                 <div className="space-y-6">
-                  {/* Draft This Agreement Card */}
+                  {/* Apply for Mutation Card */}
                   <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md p-6 border-2 border-primary/30 hover:border-primary/50 transition-colors">
-                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Draft Builder Buyer Agreement</h3>
+                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Apply for Mutation</h3>
                     <p className="text-subtext-light dark:text-subtext-dark mb-4 text-sm leading-relaxed">
-                      Create a RERA-compliant Builder Buyer Agreement with comprehensive buyer protection and legal safeguards.
+                      Get expert assistance for property mutation process with complete documentation and follow-up.
                     </p>
                     <button className="w-full flex items-center justify-center rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                      <span>Start Drafting Now</span>
+                      <span>Start Application</span>
                       <i className="ml-2" data-lucide="arrow-right"></i>
                     </button>
                   </div>
@@ -288,7 +308,7 @@ export default function BuilderBuyerAgreementPage() {
                   <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md p-6 border border-yellow-200/50 dark:border-slate-700">
                     <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Get Expert Assistance</h3>
                     <p className="text-subtext-light dark:text-subtext-dark mb-4 text-sm leading-relaxed">
-                      Our RERA experts will help you review and negotiate the agreement terms to ensure maximum buyer protection.
+                      Our experts will handle the entire mutation process including documentation, submission, and follow-up with revenue authorities.
                     </p>
                     <button className="w-full flex items-center justify-center rounded-full h-12 px-6 bg-secondary/20 text-primary text-base font-bold leading-normal tracking-[0.015em] hover:bg-secondary/30 transition-all transform hover:-translate-y-1 border-2 border-primary/20 hover:border-primary/40">
                       <span>Request a Callback</span>
@@ -302,25 +322,48 @@ export default function BuilderBuyerAgreementPage() {
                     <ul className="space-y-2 text-sm text-subtext-light dark:text-subtext-dark">
                       <li className="flex items-start gap-2">
                         <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>RERA compliant agreement</span>
+                        <span>Updates revenue records</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Carpet area based measurements</span>
+                        <span>Transfers tax liability</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Construction timeline with penalties</span>
+                        <span>Legal compliance requirement</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Buyer protection clauses</span>
+                        <span>Prevents future disputes</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Mandatory registration required</span>
+                        <span>Required for approvals</span>
                       </li>
                     </ul>
+                  </div>
+
+                  {/* Timeline Info */}
+                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:bg-slate-800/50 rounded-xl p-6 border border-orange-200">
+                    <h3 className="text-lg font-bold mb-3 text-text-light dark:text-text-dark font-display">Processing Timeline</h3>
+                    <div className="space-y-2 text-sm text-subtext-light dark:text-subtext-dark">
+                      <div className="flex justify-between">
+                        <span>Document Verification:</span>
+                        <span className="font-medium">2-3 days</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Field Verification:</span>
+                        <span className="font-medium">7-15 days</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Mutation Order:</span>
+                        <span className="font-medium">15-30 days</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Record Update:</span>
+                        <span className="font-medium">30-45 days</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -345,7 +388,7 @@ export default function BuilderBuyerAgreementPage() {
                 <ul className="space-y-2">
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/sale-deed">Sale Deed</a></li>
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/builder-buyer-agreement">Builder Buyer Agreement</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/mutation-legal-document">Mutation Legal Document</a></li>
                 </ul>
               </div>
               <div>

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-export default function AgreementToSellPage() {
+export default function OtherDeedAgreementPage() {
   const [activeTab, setActiveTab] = useState('what-is')
 
   const services = [
@@ -16,79 +16,106 @@ export default function AgreementToSellPage() {
     { name: 'Agreement to Sell', href: '/services/agreement-to-sell' },
     { name: 'Builder Buyer Agreement', href: '/services/builder-buyer-agreement' },
     { name: 'Rent Agreement', href: '/services/rent-agreement' },
-    { name: 'Mutation Legal Document', href: '/services/mutation-legal-document' },
+    { name:'Mutation Legal Document', href: '/services/mutation-legal-document' },
     { name: 'Other Deed & Agreement', href: '/services/other-deed-agreement' }
   ]
 
   const tabs = [
-    { id: 'what-is', label: 'What is an Agreement to Sell?' },
-    { id: 'when-to-use', label: 'When to Use It' },
+    { id: 'what-is', label: 'What are Other Legal Documents?' },
+    { id: 'when-to-use', label: 'When to Use Them' },
     { id: 'legal-implications', label: 'Legal Implications' }
   ]
 
-  const documents = [
+  const otherDocuments = [
     {
-      title: 'Property Title Documents',
-      description: 'Original title deeds, sale deed, mother deed, and chain of title documents proving clear ownership of the property.'
+      title: 'Mortgage Deed',
+      description: 'Legal document for securing loans against property, creating a charge on the property until loan repayment.',
+      uses: ['Home loans', 'Business loans', 'Property financing'],
+      icon: 'building-2'
     },
     {
-      title: 'Identity Proof of Both Parties',
-      description: 'Aadhaar Card, Voter ID, Passport, or Driver\'s License for both seller and buyer parties.'
+      title: 'Lease Deed',
+      description: 'Long-term rental agreement typically for commercial properties or extended residential tenancies.',
+      uses: ['Commercial leasing', 'Long-term rentals', 'Industrial properties'],
+      icon: 'calendar'
     },
     {
-      title: 'Property Tax Receipts',
-      description: 'Latest property tax receipts and clearance certificates showing all dues are paid up to date.'
+      title: 'Joint Development Agreement',
+      description: 'Agreement between landowner and developer for joint development of property with shared profits.',
+      uses: ['Real estate development', 'Construction projects', 'Land development'],
+      icon: 'users'
     },
     {
-      title: 'Encumbrance Certificate',
-      description: 'Encumbrance certificate for the last 15-30 years showing the property\'s transaction history and clear title.'
+      title: 'Conveyance Deed',
+      description: 'Transfer of ownership from builder/society to individual flat owners in apartment complexes.',
+      uses: ['Apartment ownership', 'Society transfers', 'Flat purchases'],
+      icon: 'key'
     },
     {
-      title: 'Approved Building Plans',
-      description: 'Sanctioned building plans, completion certificate, and occupancy certificate from local authorities.'
+      title: 'Settlement Deed',
+      description: 'Legal document for resolving property disputes and settling ownership matters among parties.',
+      uses: ['Dispute resolution', 'Family settlements', 'Court settlements'],
+      icon: 'scale'
     },
     {
-      title: 'NOC Certificates',
-      description: 'No Objection Certificates from relevant authorities like electricity board, water department, and society (if applicable).'
+      title: 'Indemnity Bond',
+      description: 'Legal protection document against losses or damages in property transactions.',
+      uses: ['Risk protection', 'Transaction security', 'Loss coverage'],
+      icon: 'shield'
+    }
+  ]
+
+  const specializedServices = [
+    {
+      category: 'Commercial Documents',
+      items: ['Shop Purchase Agreement', 'Office Lease Deed', 'Warehouse Rental', 'Commercial Mortgage']
     },
     {
-      title: 'PAN Card and Address Proof',
-      description: 'PAN cards and current address proof of both buyer and seller for legal compliance and verification.'
+      category: 'Agricultural Documents',
+      items: ['Agricultural Land Sale', 'Crop Sharing Agreement', 'Farm Lease Deed', 'Water Rights Agreement']
+    },
+    {
+      category: 'Industrial Documents',
+      items: ['Industrial Plot Sale', 'Factory Lease Agreement', 'Manufacturing License', 'Industrial Mortgage']
+    },
+    {
+      category: 'Family Settlements',
+      items: ['Family Arrangement Deed', 'Maintenance Agreement', 'Adoption Deed', 'Guardianship Document']
     }
   ]
 
   const process = [
     {
       step: 1,
-      title: 'Property Verification',
-      description: 'Comprehensive verification of property documents, title clearance, and legal status of the property.'
+      title: 'Requirement Analysis',
+      description: 'Detailed consultation to understand your specific legal document requirements and objectives.'
     },
     {
       step: 2,
-      title: 'Terms Negotiation',
-      description: 'Detailed discussion and finalization of sale terms including price, payment schedule, and possession date.'
+      title: 'Document Selection',
+      description: 'Expert guidance on selecting the most appropriate legal document type for your specific situation.'
     },
     {
       step: 3,
-      title: 'Agreement Drafting',
-      description: 'Professional drafting of the agreement with all terms, conditions, and legal clauses as per applicable laws.'
+      title: 'Custom Drafting',
+      description: 'Professional drafting of the document with customized clauses and terms as per your requirements.'
     },
     {
       step: 4,
       title: 'Legal Review',
-      description: 'Thorough legal review of the draft agreement by both parties and their legal representatives.'
+      description: 'Comprehensive legal review and validation to ensure compliance with applicable laws and regulations.'
     },
     {
       step: 5,
-      title: 'Execution & Registration',
-      description: 'Signing of the agreement by both parties with witnesses and registration if the value exceeds ₹100.'
+      title: 'Execution Support',
+      description: 'Complete support for document execution, registration, and compliance with legal formalities.'
     }
   ]
 
   const tabContent = {
-    'what-is': 'An Agreement to Sell is a legal contract between a seller and buyer that outlines the terms and conditions for the future sale of a property. Unlike a Sale Deed which transfers ownership immediately, an Agreement to Sell creates a contractual obligation to transfer ownership at a future date upon fulfillment of specified conditions. It typically includes details about the property, sale price, payment terms, possession date, and other conditions. This document is essential for securing the buyer\'s interest in the property and provides legal protection to both parties during the transaction process.',
-    'when-to-use': 'An Agreement to Sell is used when you want to secure a property purchase but the actual sale will happen later, during under-construction property purchases where possession is pending, when payment is to be made in installments over time, for booking a property with a token amount before final payment, when certain conditions need to be fulfilled before the sale (like loan approval, clearances), or when the seller needs time to clear title issues or obtain necessary approvals. It\'s also used in cases where immediate registration is not possible due to documentation or procedural delays.',
-    'legal-implications': 'An Agreement to Sell creates a binding contract but does not transfer ownership until the actual sale deed is executed. If registered, it provides stronger legal protection and can be enforced in court. The buyer gets a right to claim specific performance if the seller defaults. The seller cannot sell the property to another party during the agreement period. Breach of agreement can result in legal action and compensation claims. The agreement should clearly specify consequences of default by either party. Registration is mandatory if the agreement value exceeds ₹100 and provides better legal standing in disputes.'
+    'what-is': 'Other Deed & Agreement services encompass a wide range of specialized legal documents beyond the common property deeds. These include mortgage deeds, lease deeds, joint development agreements, conveyance deeds, settlement deeds, indemnity bonds, and various commercial, agricultural, and industrial agreements. Each document serves specific legal purposes and is tailored to meet unique requirements in different sectors. Our comprehensive service covers drafting, review, and execution of any legal document related to property, business, or personal matters that require legal documentation and compliance.',
+    'when-to-use': 'These specialized documents are used for unique legal situations not covered by standard deeds - such as securing loans through mortgage deeds, long-term commercial leasing, joint property development projects, resolving family or business disputes through settlement deeds, transferring apartment ownership through conveyance deeds, or creating legal protection through indemnity bonds. They\'re essential for complex transactions, specialized business arrangements, agricultural dealings, industrial operations, and any situation requiring customized legal documentation with specific terms and conditions.',
+    'legal-implications': 'Each specialized document creates specific legal obligations and rights for the parties involved. The legal implications vary based on the document type - mortgage deeds create security interests, lease deeds establish landlord-tenant relationships, settlement deeds resolve disputes with finality, and indemnity bonds provide legal protection against losses. Proper drafting and execution are crucial as these documents are legally binding and enforceable in courts. Registration requirements, stamp duty, and compliance obligations differ for each document type and must be carefully followed to ensure legal validity and enforceability.'
   }
 
   return (
@@ -134,7 +161,7 @@ export default function AgreementToSellPage() {
                   key={index}
                   href={service.href}
                   className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                    service.name === 'Agreement to Sell'
+                    service.name === 'Other Deed & Agreement'
                       ? 'bg-primary text-white font-medium'
                       : 'text-text-light dark:text-text-dark hover:bg-primary/10'
                   }`}
@@ -154,13 +181,13 @@ export default function AgreementToSellPage() {
                 <span className="text-gray-400">/</span>
                 <Link href="/services" className="text-primary hover:underline">Our Services</Link>
                 <span className="text-gray-400">/</span>
-                <span className="text-text-light dark:text-text-dark">Agreement to Sell</span>
+                <span className="text-text-light dark:text-text-dark">Other Deed & Agreement</span>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Left Content */}
                 <div className="lg:col-span-2">
-                  <h1 className="text-4xl font-black mb-4 text-text-light dark:text-text-dark">Agreement to Sell</h1>
+                  <h1 className="text-4xl font-black mb-4 text-text-light dark:text-text-dark">Other Deed & Agreement</h1>
                   
                   {/* Tab Navigation */}
                   <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700">
@@ -188,6 +215,65 @@ export default function AgreementToSellPage() {
                     </div>
                   </div>
 
+                  {/* Document Types Section */}
+                  <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <i className="text-primary text-2xl" data-lucide="file-stack"></i>
+                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">Specialized Document Types</h3>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {otherDocuments.map((doc, index) => (
+                        <div key={index} className="p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg border border-gray-200 dark:border-slate-600">
+                          <div className="flex items-start gap-3 mb-3">
+                            <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <i className={`text-primary text-lg`} data-lucide={doc.icon}></i>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">{doc.title}</h4>
+                              <p className="text-sm text-subtext-light dark:text-subtext-dark mb-2">{doc.description}</p>
+                            </div>
+                          </div>
+                          <div className="ml-13">
+                            <p className="text-xs font-medium text-text-light dark:text-text-dark mb-1">Common Uses:</p>
+                            <ul className="text-xs text-subtext-light dark:text-subtext-dark space-y-1">
+                              {doc.uses.map((use, useIndex) => (
+                                <li key={useIndex}>• {use}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Specialized Services Section */}
+                  <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <i className="text-primary text-2xl" data-lucide="layers"></i>
+                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">Specialized Services</h3>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {specializedServices.map((service, index) => (
+                        <div key={index} className="p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                          <h4 className="font-semibold text-text-light dark:text-text-dark mb-3 flex items-center gap-2">
+                            <i className="text-primary text-sm" data-lucide="folder"></i>
+                            {service.category}
+                          </h4>
+                          <ul className="space-y-2">
+                            {service.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className="text-sm text-subtext-light dark:text-subtext-dark flex items-center gap-2">
+                                <i className="text-primary text-xs" data-lucide="check-circle"></i>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* How it Works Section */}
                   <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
                     <div className="flex items-center gap-3 mb-6">
@@ -209,80 +295,77 @@ export default function AgreementToSellPage() {
                       ))}
                     </div>
                   </div>
-
-                  {/* Documents Section */}
-                  <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <i className="text-primary text-2xl" data-lucide="file-text"></i>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">Documents You'll Need</h3>
-                    </div>
-                    <div className="space-y-3">
-                      {documents.map((doc, index) => (
-                        <details key={index} className="group">
-                          <summary className="flex items-center justify-between cursor-pointer p-3 rounded-lg bg-background-light/50 dark:bg-slate-700/50 hover:bg-secondary/10 dark:hover:bg-slate-700 transition-colors">
-                            <h4 className="font-medium text-text-light dark:text-text-dark">{doc.title}</h4>
-                            <i className="transition-transform duration-300 group-open:rotate-180 text-primary" data-lucide="chevron-down"></i>
-                          </summary>
-                          <p className="mt-2 px-3 text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
-                            {doc.description}
-                          </p>
-                        </details>
-                      ))}
-                    </div>
-                  </div>
                 </div>
 
                 {/* Right Sidebar */}
                 <div className="space-y-6">
-                  {/* Draft This Agreement Card */}
+                  {/* Custom Document Card */}
                   <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md p-6 border-2 border-primary/30 hover:border-primary/50 transition-colors">
-                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Draft Agreement to Sell</h3>
+                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Custom Legal Document</h3>
                     <p className="text-subtext-light dark:text-subtext-dark mb-4 text-sm leading-relaxed">
-                      Create a comprehensive Agreement to Sell with all necessary legal clauses and protection for both parties.
+                      Need a specialized legal document? Our experts will create custom agreements tailored to your specific requirements.
                     </p>
                     <button className="w-full flex items-center justify-center rounded-full h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                      <span>Start Drafting Now</span>
+                      <span>Get Custom Document</span>
                       <i className="ml-2" data-lucide="arrow-right"></i>
                     </button>
                   </div>
 
-                  {/* Expert Assistance Card */}
+                  {/* Expert Consultation Card */}
                   <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md p-6 border border-yellow-200/50 dark:border-slate-700">
-                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Get Expert Assistance</h3>
+                    <h3 className="text-xl font-bold mb-2 text-text-light dark:text-text-dark font-display">Expert Consultation</h3>
                     <p className="text-subtext-light dark:text-subtext-dark mb-4 text-sm leading-relaxed">
-                      Our legal experts will help you create a foolproof agreement that protects your interests and ensures smooth property transaction.
+                      Not sure which document you need? Our legal experts will analyze your situation and recommend the best solution.
                     </p>
                     <button className="w-full flex items-center justify-center rounded-full h-12 px-6 bg-secondary/20 text-primary text-base font-bold leading-normal tracking-[0.015em] hover:bg-secondary/30 transition-all transform hover:-translate-y-1 border-2 border-primary/20 hover:border-primary/40">
-                      <span>Request a Callback</span>
-                      <i className="ml-2" data-lucide="phone"></i>
+                      <span>Book Consultation</span>
+                      <i className="ml-2" data-lucide="calendar"></i>
                     </button>
                   </div>
 
-                  {/* Quick Info Card */}
+                  {/* Document Categories */}
                   <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-6 border border-primary/20">
-                    <h3 className="text-lg font-bold mb-3 text-text-light dark:text-text-dark font-display">Key Features</h3>
+                    <h3 className="text-lg font-bold mb-3 text-text-light dark:text-text-dark font-display">Popular Categories</h3>
                     <ul className="space-y-2 text-sm text-subtext-light dark:text-subtext-dark">
                       <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Secures buyer's interest in property</span>
+                        <i className="text-primary mt-0.5 text-xs" data-lucide="building"></i>
+                        <span>Commercial Agreements</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Flexible payment terms</span>
+                        <i className="text-primary mt-0.5 text-xs" data-lucide="tractor"></i>
+                        <span>Agricultural Documents</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Legal protection for both parties</span>
+                        <i className="text-primary mt-0.5 text-xs" data-lucide="factory"></i>
+                        <span>Industrial Agreements</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Registration recommended for values &gt;₹100</span>
+                        <i className="text-primary mt-0.5 text-xs" data-lucide="users"></i>
+                        <span>Family Settlements</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <i className="text-primary mt-0.5 text-xs" data-lucide="check"></i>
-                        <span>Enforceable in court</span>
+                        <i className="text-primary mt-0.5 text-xs" data-lucide="shield"></i>
+                        <span>Security Documents</span>
                       </li>
                     </ul>
+                  </div>
+
+                  {/* Quick Contact */}
+                  <div className="bg-gradient-to-br from-green-50 to-green-100 dark:bg-slate-800/50 rounded-xl p-6 border border-green-200">
+                    <h3 className="text-lg font-bold mb-3 text-text-light dark:text-text-dark font-display">Quick Contact</h3>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark mb-4">
+                      Have a specific requirement? Contact our legal experts directly for immediate assistance.
+                    </p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2">
+                        <i className="text-green-600 text-xs" data-lucide="phone"></i>
+                        <span className="text-subtext-light dark:text-subtext-dark">+91 98765 43210</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i className="text-green-600 text-xs" data-lucide="mail"></i>
+                        <span className="text-subtext-light dark:text-subtext-dark">legal@saledeed.com</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -307,7 +390,7 @@ export default function AgreementToSellPage() {
                 <ul className="space-y-2">
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/sale-deed">Sale Deed</a></li>
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/agreement-to-sell">Agreement to Sell</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/other-deed-agreement">Other Deed & Agreement</a></li>
                 </ul>
               </div>
               <div>
