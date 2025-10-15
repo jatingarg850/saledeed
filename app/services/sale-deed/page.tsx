@@ -191,6 +191,94 @@ export default function SaleDeedPage() {
                   </ul>
                 </div>
               </div>
+
+              {/* Authorities Process Section */}
+              <div className="mt-8 bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <i className="text-primary text-2xl" data-lucide="building"></i>
+                  <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display">Government Authorities Process</h3>
+                </div>
+                
+                <p className="text-subtext-light dark:text-subtext-dark mb-6 leading-relaxed">
+                  Our sale deed process involves coordination with multiple government authorities to ensure complete legal compliance and smooth registration.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3 p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-bold text-sm">1</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">MCD Verification</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Property tax clearance and building plan verification from Municipal Corporation of Delhi.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-bold text-sm">2</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">DDA Clearance</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Layout approval and development permissions from Delhi Development Authority.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-bold text-sm">3</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">L&DO Documentation</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Land records verification and conversion certificates from Land & Development Office.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3 p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-bold text-sm">4</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">SRO Registration</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Final document registration and stamp duty payment at Sub-Registrar Office.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-bold text-sm">5</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">Collector Office</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Property tax assessment and mutation of ownership records.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-4 bg-background-light/50 dark:bg-slate-700/50 rounded-lg">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-bold text-sm">6</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-text-light dark:text-text-dark mb-1">Final Handover</h4>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Complete documentation package with all authority clearances and certificates.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg border border-primary/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <i className="text-primary" data-lucide="clock"></i>
+                    <span className="font-semibold text-text-light dark:text-text-dark">Timeline: 15-20 Business Days</span>
+                  </div>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark">
+                    Our expert team handles all authority interactions simultaneously to minimize processing time while ensuring complete compliance.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </main>

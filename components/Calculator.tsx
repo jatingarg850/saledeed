@@ -56,10 +56,38 @@ const Calculator = () => {
   }
 
   const services = [
-    'Celebrating 1 Lac Successful Deals',
-    'Team of Experts with 50+ Years Experience',
-    'Best in Class Lawyers / Valuers / Engineers',
+    'Direct Liaison with MCD, DDA, L&DO, SRO',
+    'Expert Team with 50+ Years Authority Experience',
+    'Government-Registered Lawyers & Valuers',
+    'Complete Authority Process Management',
     'Doorstep Consultation @ ₹999/-'
+  ]
+
+  const authorities = [
+    {
+      name: 'MCD',
+      fullName: 'Municipal Corporation of Delhi',
+      icon: 'building-2',
+      description: 'Property tax & building approvals'
+    },
+    {
+      name: 'DDA',
+      fullName: 'Delhi Development Authority',
+      icon: 'landmark',
+      description: 'Land development & layout approvals'
+    },
+    {
+      name: 'L&DO',
+      fullName: 'Land & Development Office',
+      icon: 'map',
+      description: 'Leasehold conversions & land records'
+    },
+    {
+      name: 'SRO',
+      fullName: 'Sub-Registrar Office',
+      icon: 'file-check',
+      description: 'Document registration & validation'
+    }
   ]
 
   return (
@@ -72,27 +100,53 @@ const Calculator = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8"
+            className="space-y-8"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <CalcIcon className="w-8 h-8 text-blue-600 mr-3" />
-              Services Overview
-            </h3>
-            <ul className="space-y-4">
-              {services.map((service, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start space-x-3"
-                >
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700 font-medium">{service}</span>
-                </motion.li>
-              ))}
-            </ul>
+            {/* Services List */}
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 border border-primary/20">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center font-display">
+                <CalcIcon className="w-8 h-8 text-primary mr-3" />
+                Our Authority Expertise
+              </h3>
+              <ul className="space-y-4">
+                {services.map((service, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-start space-x-3"
+                  >
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-700 font-medium">{service}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Authorities Grid */}
+            <div className="bg-white rounded-3xl p-6 shadow-lg border border-yellow-200/50">
+              <h4 className="text-lg font-bold text-gray-900 mb-4 font-display">Government Authorities We Work With</h4>
+              <div className="grid grid-cols-2 gap-4">
+                {authorities.map((authority, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-center p-3 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mx-auto mb-2">
+                      <i className="text-white text-sm" data-lucide={authority.icon}></i>
+                    </div>
+                    <h5 className="font-bold text-gray-900 text-sm">{authority.name}</h5>
+                    <p className="text-xs text-gray-600 mt-1">{authority.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Calculator */}

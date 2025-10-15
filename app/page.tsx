@@ -11,8 +11,8 @@ export default function Home() {
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/services">Services</a>
+              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="/authorities">Authorities</a>
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">About</a>
-              <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">FAQ</a>
               <a className="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary text-base font-medium leading-normal transition-colors" href="#">Contact</a>
             </nav>
             <div className="flex items-center gap-3">
@@ -173,6 +173,160 @@ export default function Home() {
                   <span className="truncate">Book Free Consultation</span>
                   <i className="ml-2 transition-transform duration-300 group-hover:rotate-12" data-lucide="phone"></i>
                 </button>
+              </div>
+            </div>
+
+            {/* Government Authorities Section */}
+            <div className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl mb-16">
+              <div className="text-center mb-12">
+                <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4">
+                  We Work With All Major Authorities
+                </h2>
+                <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
+                  Our expert team has direct experience with all government departments and authorities in Delhi for seamless property documentation.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="building-2"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">MCD</h3>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Municipal Corporation of Delhi</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    Property tax assessments, building plan approvals, and municipal clearances for property transactions.
+                  </p>
+                </div>
+
+                <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="landmark"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">DDA</h3>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Delhi Development Authority</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    Land development permissions, layout approvals, and conversion certificates for DDA properties.
+                  </p>
+                </div>
+
+                <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="map"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">L&DO</h3>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Land & Development Office</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    Leasehold to freehold conversions, ground rent clearances, and land use change permissions.
+                  </p>
+                </div>
+
+                <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="file-check"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">SRO</h3>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Sub-Registrar Office</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    Document registration, stamp duty verification, and legal validation of property transfers.
+                  </p>
+                </div>
+
+                <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="receipt"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">Collector Office</h3>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Property Tax Department</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    Property tax assessments, revenue records, and mutation of property ownership records.
+                  </p>
+                </div>
+
+                <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="shield-check"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">NDMC</h3>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">New Delhi Municipal Council</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    Special area clearances, premium property documentation, and Lutyens Delhi property services.
+                  </p>
+                </div>
+              </div>
+
+              {/* Video Section */}
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-8 border border-yellow-200/50">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark font-display mb-4">
+                    See Our Authorities in Action
+                  </h3>
+                  <p className="text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
+                    Watch how our expert team navigates through different government offices to ensure your property documentation is completed efficiently.
+                  </p>
+                </div>
+                
+                <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 text-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+                    <i className="text-white text-3xl" data-lucide="play"></i>
+                  </div>
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-2 font-display">
+                    Complete Authority Process Walkthrough
+                  </h4>
+                  <p className="text-subtext-light dark:text-subtext-dark mb-6">
+                    A comprehensive 5-minute video showing our team's interaction with MCD, DDA, L&DO, SRO, and Collector offices for a complete property registration process.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                      <i className="text-primary" data-lucide="check"></i>
+                      <span>MCD Clearance Process</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-primary" data-lucide="check"></i>
+                      <span>DDA Approval Steps</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-primary" data-lucide="check"></i>
+                      <span>L&DO Documentation</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-primary" data-lucide="check"></i>
+                      <span>SRO Registration</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-primary" data-lucide="check"></i>
+                      <span>Tax Assessment</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-primary" data-lucide="check"></i>
+                      <span>Final Handover</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
