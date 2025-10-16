@@ -77,6 +77,12 @@ export default function Navigation({ currentPage }: NavigationProps) {
             : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
         }`} href="/services">Services</a>
         
+        <a className={`text-base font-medium leading-normal transition-colors ${
+          currentPage === 'documents' 
+            ? 'text-amber-700 dark:text-secondary font-semibold' 
+            : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
+        }`} href="/documents">Documents</a>
+        
         {/* Company Dropdown */}
         <div className="relative group">
           <button className="text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary text-base font-medium leading-normal transition-colors flex items-center gap-1">
@@ -142,6 +148,18 @@ export default function Navigation({ currentPage }: NavigationProps) {
               }`}
             >
               Services
+            </a>
+
+            <a 
+              href="/documents" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block text-base font-medium transition-colors ${
+                currentPage === 'documents' 
+                  ? 'text-amber-700 dark:text-secondary font-semibold' 
+                  : 'text-black dark:text-subtext-dark'
+              }`}
+            >
+              Documents
             </a>
 
             <a 
