@@ -11,7 +11,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'What is saledeed.com all about?',
-      answer: 'saledeed.com is a one stop platform which offers comprehensive services in the real estate industry. From property verification to deed drafting, from registration to real estate liaisoning. Everything from Agreement to Sell to Will Testament - we handle all your property documentation needs.'
+      answer: 'saledeed.com is a one stop platform which offers comprehensive services in the real estate industry. From property verification to deed drafting, from registration to real estate liaisoning. In brief every from - sale to deed.'
     },
     {
       question: 'Is a sale deed really required?',
@@ -19,19 +19,19 @@ const FAQ = () => {
     },
     {
       question: 'Can I get my sale deed registered sitting at home?',
-      answer: 'Yes, saledeed.com offers packages that include everything required in a sale process. But for physical (bio metric) verification you may have to be present at the sub-registrar office. We always try to make your visit as comfortable as possible. It takes approximately 20-40 minutes in most of the cases through us in case of technical delay & error we\'ll keep you informed.'
+      answer: 'Yes, saledeed.com offers packages that include everything required in a sale process. But for physical (bio metric) verification you may have to be present at the sub-registrar office. We always try to make your visit as comfortable as possible. It takes approximately 20 minutes in most of the cases through us in case of technical delay & error, we will keep you informed.'
     },
     {
       question: 'List of services that you provide?',
-      answer: 'Sale Deed, Gift Deed, Agreement to Sell, Exchange Deed, Will Testament, Power of Attorney, Lease Deed, Relinquishment Deed, Simple Mortgage, property verification, registration assistance, NOC certificates, bank loan support, valuation reports, mutation services, and complete real estate documentation.'
+      answer: 'sale/purchase/renting at minimum commission, all deeds drafting & registration, noc, bank loan, valuation report, Mutation, freehold, regularization, real estate liaisoning, renovation, relocation, and everything related to property.'
     },
     {
       question: 'How does it work?',
-      answer: 'You buy a service (book now/from our website that comes with a complementary home visit), our team connects with you over a call, discuss your case, starts the process, visit you in person, follow all legalities and you witness a hassle free work experience exclusively by saledeed.com'
+      answer: 'You buy a service (book now) from our website that comes with a complementary home visit, our team connects with you over a call, discuss your case, starts the process, visit you in person, follow all legalities and you witness a hassle free work experience exclusively by saledeed.com'
     },
     {
       question: 'Is my payment secured?',
-      answer: 'You buy a service (book now/from our website that comes with a complementary home visit), our team connects with you over a call, discuss your case, starts the process, visit you in person, follow all legalities and you witness a hassle free work experience exclusively by saledeed.com'
+      answer: 'Yes the payment made through our website is 100% safe & secure done through renowned pay sources. Proper receipt & acknowledgement are provides after the success of payment.'
     },
     {
       question: 'What is the refund policy?',
@@ -39,11 +39,11 @@ const FAQ = () => {
     },
     {
       question: 'Will my data remain confidential?',
-      answer: 'Yes, undoubtedly. We give 100% guarantee and assure you of our no compromise privacy policy. All your property data and your personal information remains fully secured with only and only us. We don\'t use your property documents as sample documents or your particular case as a reference medium. We meet you, satisfy you through our work ethics, forget you. Our brand promise – privacy kept at every step.'
+      answer: 'Ye, undoubtedly. We give 100% guarantee and assure you of our no compromise privacy policy. All your property data and your personal information remains fully secured with only and only us. We don\'t use your property documents as sample documents or your particular case as a reference medium. We meet you, satisfy you through our work ethics, forget you. Our brand promise – privacy kept at every step.'
     },
     {
       question: 'Can I partner with saledeed.com?',
-      answer: 'Yes saledeed.com welcomes every one who are willing to partner us. Whether you are a deed writer, a property dealer/lawyer, or just a reference giver. We assure you a professional and profitable association saledeed.com.'
+      answer: 'Yes saledeed.com welcomes everyone who are willing to partner us. Whether you are a deed writer, a property dealer, lawyer, or just a reference giver. We assure you a professional and profitable association saledeed.com'
     }
   ]
 

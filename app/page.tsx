@@ -2,22 +2,29 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Navigation from '../components/Navigation';
+import Navigation from '../components/Navigation'
+import AIChatbot from '../components/AIChatbot'
 
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
+  const [showChatbot, setShowChatbot] = useState(false)
 
-  // Handle ESC key to close modal
+  // Handle ESC key to close modals
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && showDoorstepModal) {
-        setShowDoorstepModal(false)
+      if (e.key === 'Escape') {
+        if (showDoorstepModal) {
+          setShowDoorstepModal(false)
+        }
+        if (showChatbot) {
+          setShowChatbot(false)
+        }
       }
     }
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [showDoorstepModal])
+  }, [showDoorstepModal, showChatbot])
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
       <div className="layout-container flex h-full grow flex-col">
@@ -127,13 +134,13 @@ export default function Home() {
                   <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Instant state-wise calculation.</p>
                 </a>
                 
-                <div className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200">
+                <Link href="/contact" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer">
                   <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
                     <i className="text-primary w-10 h-10" data-lucide="headset"></i>
                   </div>
                   <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Expert Advice</h3>
                   <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Free 15-minute consultation.</p>
-                </div>
+                </Link>
 
                 <a href="/documents" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200">
                   <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
@@ -825,6 +832,29 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* Floating AI Chat Button */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <button
+          onClick={() => setShowChatbot(true)}
+          className="group bg-gradient-to-r from-primary to-secondary text-white w-14 h-14 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center hover:scale-110 animate-pulse hover:animate-none"
+          title="Ask AI Assistant"
+        >
+          <i data-lucide="bot" className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"></i>
+        </button>
+        
+        {/* Tooltip */}
+        <div className="absolute bottom-16 right-0 bg-black text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+          Ask AI about property docs
+          <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black"></div>
+        </div>
+      </div>
+
+      {/* AI Chatbot Modal */}
+      <AIChatbot 
+        isOpen={showChatbot} 
+        onClose={() => setShowChatbot(false)} 
+      />
     </div>
   )
 }

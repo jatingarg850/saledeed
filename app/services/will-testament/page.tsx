@@ -290,8 +290,8 @@ export default function WillTestamentPage() {
                     Real Story: The ₹2 Crore Family Dispute
                   </h4>
                   <p className="text-subtext-light dark:text-subtext-dark mb-3">
-                    Mr. Sharma owned properties worth ₹2 crores but died without a will. His wife and two sons spent 4 years in court, 
-                    paid ₹8 lakhs in legal fees, and the family relationships were destroyed forever. A simple will would have 
+                    Mr. Sharma owned properties worth ₹2 crores but died without a will. His wife and two sons spent 4 years in court,
+                    paid ₹8 lakhs in legal fees, and the family relationships were destroyed forever. A simple will would have
                     prevented all this pain and saved both money and relationships.
                   </p>
                   <div className="bg-white dark:bg-slate-800 p-3 rounded-lg">
