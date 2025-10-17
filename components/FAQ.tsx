@@ -11,7 +11,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'What is saledeed.com all about?',
-      answer: 'saledeed.com is a one stop platform which offers comprehensive services in the real estate industry. From property verification to deed drafting, from registration to real estate liaisoning. In brief every from - sale to deed.'
+      answer: 'saledeed.com is a one stop platform which offers comprehensive services in the real estate industry. From property verification to deed drafting, from registration to real estate liaisoning. Everything from Agreement to Sell to Will Testament - we handle all your property documentation needs.'
     },
     {
       question: 'Is a sale deed really required?',
@@ -23,7 +23,7 @@ const FAQ = () => {
     },
     {
       question: 'List of services that you provide?',
-      answer: 'sale/purchase/renting at minimum commission, all deeds drafting & registration, noc, bank loan, valuation report, Mutation, freehold, Regularisation, real estate liaisoning, renovation, relocation, and everything related to property.'
+      answer: 'Sale Deed, Gift Deed, Agreement to Sell, Exchange Deed, Will Testament, Power of Attorney, Lease Deed, Relinquishment Deed, Simple Mortgage, property verification, registration assistance, NOC certificates, bank loan support, valuation reports, mutation services, and complete real estate documentation.'
     },
     {
       question: 'How does it work?',
@@ -115,7 +115,7 @@ const FAQ = () => {
                     )}
                   </motion.div>
                 </button>
-                
+
                 <AnimatePresence>
                   {openIndex === index && (
                     <motion.div
@@ -152,7 +152,7 @@ const FAQ = () => {
           <p className="text-gray-600 mb-8">
             Can't find the answer you're looking for? Please chat to our friendly team.
           </p>
-          
+
           <motion.div
             whileHover={{ scale: 1.02 }}
             className="inline-flex items-center bg-gray-50 rounded-2xl p-4 border border-gray-200 hover:border-blue-300 transition-all duration-300"
@@ -169,17 +169,16 @@ const FAQ = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={copyEmail}
-                className={`ml-4 p-2 rounded-lg transition-all duration-200 ${
-                  copied 
-                    ? 'bg-green-500 text-white' 
-                    : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
-                }`}
+                className={`ml-4 p-2 rounded-lg transition-all duration-200 ${copied
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                  }`}
               >
                 <Copy className="w-4 h-4" />
               </motion.button>
             </div>
           </motion.div>
-          
+
           {copied && (
             <motion.p
               initial={{ opacity: 0, y: 10 }}

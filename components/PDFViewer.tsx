@@ -12,7 +12,7 @@ export default function PDFViewer({ fileName, onClose }: PDFViewerProps) {
   const [error, setError] = useState(false)
   const [scale, setScale] = useState(1)
 
-  const pdfUrl = `/assests/${fileName}`
+  const pdfUrl = `/documents/${fileName}`
 
   useEffect(() => {
     setIsLoading(true)

@@ -27,7 +27,7 @@ export default function DocumentsPage() {
     {
       id: '2', 
       title: 'Gift Deed Format',
-      description: 'Comprehensive gift deed template for transferring property as a gift to family members.',
+      description: 'Want to gift property to your loved ones? This template makes it legally bulletproof - no future family disputes, just pure love documented the right way.',
       category: 'Property Transfer',
       fileName: '2.pdf',
       fileSize: '1.8 MB',
@@ -39,7 +39,7 @@ export default function DocumentsPage() {
     {
       id: '3',
       title: 'Agreement to Sell',
-      description: 'Legal agreement template for property sale with terms, conditions and payment schedules.',
+      description: 'Your safety net when buying property - this government-approved template protects your advance money and ensures the seller can\'t back out or sell to someone else.',
       category: 'Agreements',
       fileName: '3.pdf',
       fileSize: '2.1 MB', 
@@ -51,7 +51,7 @@ export default function DocumentsPage() {
     {
       id: '4',
       title: 'Power of Attorney',
-      description: 'General and special power of attorney formats for property and legal matters.',
+      description: 'Living abroad or can\'t handle property matters yourself? This government-approved format lets someone you trust act on your behalf - legally and safely.',
       category: 'Legal Documents',
       fileName: '4.pdf',
       fileSize: '1.5 MB',
@@ -62,8 +62,8 @@ export default function DocumentsPage() {
     },
     {
       id: '5',
-      title: 'Lease Agreement',
-      description: 'Comprehensive rental and lease agreement template with tenant and landlord clauses.',
+      title: 'Lease Deed',
+      description: 'Perfect for long-term property arrangements - this government format protects both parties and covers everything from rent to maintenance responsibilities.',
       category: 'Agreements',
       fileName: '5.pdf',
       fileSize: '2.7 MB',
@@ -73,9 +73,21 @@ export default function DocumentsPage() {
       tags: ['lease', 'rental', 'tenant', 'landlord']
     },
     {
+      id: '13',
+      title: 'Exchange Deed',
+      description: 'Got two properties and want to swap? This official format makes property exchange legally smooth - no cash involved, just a fair trade between owners.',
+      category: 'Property Transfer',
+      fileName: '13.pdf',
+      fileSize: '2.2 MB',
+      pages: 8,
+      downloadCount: 420,
+      lastUpdated: '2024-01-16',
+      tags: ['exchange', 'swap', 'property', 'trade']
+    },
+    {
       id: '6',
       title: 'Will Testament',
-      description: 'Legal will and testament format for property and asset distribution.',
+      description: 'Secure your family\'s future - this government-approved will format ensures your assets go exactly where you want them, preventing family disputes after you\'re gone.',
       category: 'Legal Documents',
       fileName: '6.pdf',
       fileSize: '1.9 MB',
@@ -122,8 +134,8 @@ export default function DocumentsPage() {
     },
     {
       id: '10',
-      title: 'Mortgage Deed',
-      description: 'Mortgage agreement template for property financing and loan documentation.',
+      title: 'Simple Mortgage Deed',
+      description: 'Need a loan against your property? This government format makes property mortgaging legally secure while protecting both lender and borrower rights.',
       category: 'Financial',
       fileName: '10.pdf',
       fileSize: '2.8 MB',
@@ -131,6 +143,18 @@ export default function DocumentsPage() {
       downloadCount: 1020,
       lastUpdated: '2023-12-22',
       tags: ['mortgage', 'loan', 'financing', 'bank']
+    },
+    {
+      id: '14',
+      title: 'Relinquishment Deed',
+      description: 'Family property disputes? This official format lets you legally give up your share to other family members - clean, clear, and dispute-free.',
+      category: 'Property Transfer',
+      fileName: '14.pdf',
+      fileSize: '1.7 MB',
+      pages: 5,
+      downloadCount: 340,
+      lastUpdated: '2024-01-17',
+      tags: ['relinquishment', 'family', 'share', 'legal']
     },
     {
       id: '11',
@@ -155,6 +179,102 @@ export default function DocumentsPage() {
       downloadCount: 1180,
       lastUpdated: '2023-12-18',
       tags: ['checklist', 'registration', 'documents', 'process']
+    },
+    {
+      id: '21',
+      title: 'Property Transfer Guidelines',
+      description: 'Comprehensive guidelines for smooth property transfer process with step-by-step instructions and legal requirements.',
+      category: 'Legal Documents',
+      fileName: '21.pdf',
+      fileSize: '2.4 MB',
+      pages: 12,
+      downloadCount: 890,
+      lastUpdated: '2024-01-20',
+      tags: ['transfer', 'guidelines', 'process', 'legal']
+    },
+    {
+      id: '22',
+      title: 'Property Documentation Checklist',
+      description: 'Essential checklist for property buyers and sellers - never miss a crucial document again with this comprehensive guide.',
+      category: 'Checklists',
+      fileName: '22.doc',
+      fileSize: '850 KB',
+      pages: 6,
+      downloadCount: 1250,
+      lastUpdated: '2024-01-19',
+      tags: ['checklist', 'documentation', 'buyer', 'seller']
+    },
+    {
+      id: '23',
+      title: 'Stamp Duty Calculator Guide',
+      description: 'Calculate stamp duty accurately for different states and property types - includes latest rates and exemptions.',
+      category: 'Financial',
+      fileName: '23.pdf',
+      fileSize: '1.8 MB',
+      pages: 8,
+      downloadCount: 1450,
+      lastUpdated: '2024-01-18',
+      tags: ['stamp duty', 'calculator', 'rates', 'financial']
+    },
+    {
+      id: '24',
+      title: 'NRI Property Investment Guide',
+      description: 'Complete guide for Non-Resident Indians investing in Indian property - legal requirements, tax implications, and process.',
+      category: 'Legal Documents',
+      fileName: '24.doc',
+      fileSize: '1.2 MB',
+      pages: 15,
+      downloadCount: 780,
+      lastUpdated: '2024-01-17',
+      tags: ['nri', 'investment', 'property', 'guide']
+    },
+    {
+      id: '25',
+      title: 'Property Loan Documentation',
+      description: 'Everything you need to know about property loan documents - from application to approval, simplified for easy understanding.',
+      category: 'Financial',
+      fileName: '25.pdf',
+      fileSize: '2.1 MB',
+      pages: 10,
+      downloadCount: 1120,
+      lastUpdated: '2024-01-16',
+      tags: ['loan', 'documentation', 'bank', 'finance']
+    },
+    {
+      id: '26',
+      title: 'Property Tax Assessment Guide',
+      description: 'Understand property tax calculations, exemptions, and payment procedures across different states in India.',
+      category: 'Financial',
+      fileName: '26.pdf',
+      fileSize: '1.9 MB',
+      pages: 9,
+      downloadCount: 950,
+      lastUpdated: '2024-01-15',
+      tags: ['property tax', 'assessment', 'calculation', 'guide']
+    },
+    {
+      id: '27',
+      title: 'Legal Notice Templates',
+      description: 'Ready-to-use legal notice templates for property disputes, breach of contract, and other real estate matters.',
+      category: 'Legal Documents',
+      fileName: '27.pdf',
+      fileSize: '1.5 MB',
+      pages: 7,
+      downloadCount: 680,
+      lastUpdated: '2024-01-14',
+      tags: ['legal notice', 'templates', 'disputes', 'contract']
+    },
+    {
+      id: '28',
+      title: 'Property Registration Process Guide',
+      description: 'Step-by-step guide to property registration in India - from document preparation to final registration with timeline and costs.',
+      category: 'Legal Documents',
+      fileName: '28.pdf',
+      fileSize: '2.6 MB',
+      pages: 14,
+      downloadCount: 1380,
+      lastUpdated: '2024-01-13',
+      tags: ['registration', 'process', 'guide', 'timeline']
     }
   ]
 
@@ -179,8 +299,10 @@ export default function DocumentsPage() {
 
   const handleDownload = (fileName: string, title: string) => {
     const link = document.createElement('a')
-    link.href = `/assests/${fileName}`
-    link.download = `${title}.pdf`
+    link.href = `/documents/${fileName}`
+    // Get file extension from fileName
+    const fileExtension = fileName.split('.').pop() || 'pdf'
+    link.download = `${title}.${fileExtension}`
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)

@@ -31,9 +31,9 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Document Preview */}
-            <div
-                className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-700 dark:to-slate-600 flex items-center justify-center cursor-pointer overflow-hidden"
-                onClick={() => onPreview(document.fileName)}
+            <div 
+                className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700 dark:to-slate-600 flex items-center justify-center cursor-pointer overflow-hidden rounded-t-2xl group"
+                onClick={() => document.fileName.endsWith('.pdf') ? onPreview(document.fileName) : onDownload(document.fileName, document.title)}
             >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
@@ -43,19 +43,32 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
                     }}></div>
                 </div>
 
-                {/* PDF Icon and Preview Text */}
+                {/* Document Icon and Preview Text */}
                 <div className="relative text-center z-10">
                     <div className={`transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}>
-                        <i data-lucide="file-text" className="w-16 h-16 text-primary mb-2"></i>
+                        {document.fileName.endsWith('.pdf') ? (
+                            <i data-lucide="file-text" className="w-16 h-16 text-primary mb-2"></i>
+                        ) : document.fileName.endsWith('.doc') || document.fileName.endsWith('.docx') ? (
+                            <i data-lucide="file-type" className="w-16 h-16 text-blue-600 mb-2"></i>
+                        ) : (
+                            <i data-lucide="file" className="w-16 h-16 text-gray-600 mb-2"></i>
+                        )}
                     </div>
                     <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
-                        {isHovered ? 'Click to Preview' : 'PDF Document'}
+                        {isHovered ? 'Click to Download' : 
+                         document.fileName.endsWith('.pdf') ? 'PDF Document' :
+                         document.fileName.endsWith('.doc') || document.fileName.endsWith('.docx') ? 'Word Document' :
+                         'Document'}
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                        {document.fileName}
                     </p>
                 </div>
 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-primary/10 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'
-                    }`}></div>
+                <div className={`absolute inset-0 bg-primary/10 transition-opacity duration-300 ${
+                    isHovered ? 'opacity-100' : 'opacity-0'
+                }`}></div>
 
                 {/* Page Count Badge */}
                 <div className="absolute top-3 right-3 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
@@ -109,18 +122,28 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
                             {document.downloadCount.toLocaleString()}
                         </span>
                     </div>
-                    <span>Updated {new Date(document.lastUpdated).toLocaleDateString()}</span>
+                    <span>Updated {document.lastUpdated}</span>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">
-                    <button
-                        onClick={() => onPreview(document.fileName)}
-                        className="flex-1 bg-primary/10 text-primary px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
-                    >
-                        <i data-lucide="eye" className="w-4 h-4"></i>
-                        Preview
-                    </button>
+                    {document.fileName.endsWith('.pdf') ? (
+                        <button
+                            onClick={() => onPreview(document.fileName)}
+                            className="flex-1 bg-primary/10 text-primary px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                            <i data-lucide="eye" className="w-4 h-4"></i>
+                            Preview
+                        </button>
+                    ) : (
+                        <button
+                            onClick={() => onDownload(document.fileName, document.title)}
+                            className="flex-1 bg-blue-500/10 text-blue-600 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                            <i data-lucide="external-link" className="w-4 h-4"></i>
+                            Open
+                        </button>
+                    )}
                     <button
                         onClick={() => onDownload(document.fileName, document.title)}
                         className="flex-1 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"

@@ -59,7 +59,7 @@ export default function ContactPage() {
       icon: 'phone',
       title: 'Call Us',
       description: 'Speak directly with our experts',
-      contact: '+91 98765 43210',
+      contact: '+91 88005 05050',
       availability: 'Mon-Sat, 9 AM - 7 PM'
     },
     {
@@ -73,7 +73,7 @@ export default function ContactPage() {
       icon: 'message-circle',
       title: 'WhatsApp',
       description: 'Quick chat support',
-      contact: '+91 98765 43210',
+      contact: '+91 88005 05050',
       availability: 'Instant Response'
     },
     {
@@ -301,9 +301,14 @@ export default function ContactPage() {
 
         {/* WhatsApp Float Button */}
         <div className="fixed bottom-6 right-6 z-50">
-          <button className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+          <a
+            href="https://wa.me/918800505050?text=Hello,%20I%20need%20assistance%20regarding%20my%20property%20documentation."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+          >
             <i className="text-white text-2xl" data-lucide="message-circle"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>

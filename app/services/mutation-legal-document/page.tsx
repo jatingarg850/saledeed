@@ -239,6 +239,219 @@ export default function MutationLegalDocumentPage() {
               </div>
             </div>
 
+            {/* Comprehensive Mutation Guide */}
+            <div className="bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-green-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="home"></i>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Mutation of Property in Delhi – The Real Story</h3>
+                    <p className="text-green-100">Nobody Tells You This Critical Step</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 space-y-8">
+                {/* Introduction */}
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-xl p-6 border-l-4 border-yellow-400">
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    So you bought a property in Delhi, got your Sale Deed registered, popped a bottle of Coke (or beer 🍻), and thought <strong>bas hogaya</strong>?
+                  </p>
+                  <p className="text-subtext-light dark:text-subtext-dark mt-3 font-medium">
+                    Sorry dost, <strong>game abhi baki hai</strong>.
+                  </p>
+                  <p className="text-subtext-light dark:text-subtext-dark mt-3">
+                    Welcome to the most ignored but absolutely critical step in property ownership – <strong>Mutation</strong>.
+                  </p>
+                </div>
+
+                {/* What is Mutation */}
+                <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="help-circle" className="w-5 h-5 text-primary"></i>
+                    What Exactly is Mutation?
+                  </h4>
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed mb-4">
+                    In simple words – mutation is like updating your property's surname in the government's records.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                      <h5 className="font-bold text-blue-800 dark:text-blue-200 mb-2">Registry</h5>
+                      <p className="text-sm text-blue-700 dark:text-blue-300">Proof you bought the property.</p>
+                    </div>
+                    <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                      <h5 className="font-bold text-green-800 dark:text-green-200 mb-2">Mutation</h5>
+                      <p className="text-sm text-green-700 dark:text-green-300">Govt. saying "haan bhai, ab yeh property aapki hi hai hamare records mein bhi."</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border-l-4 border-red-400">
+                    <p className="text-sm text-red-800 dark:text-red-200">
+                      Without mutation, you may have a Sale Deed, but in the eyes of the municipal body, the old owner is still sitting on the throne.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Who Does Mutation */}
+                <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="building-2" className="w-5 h-5 text-primary"></i>
+                    Who Does Mutation in Delhi?
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 rounded-lg">
+                      <h5 className="font-bold text-blue-800 dark:text-blue-200 mb-2">MCD</h5>
+                      <p className="text-xs text-blue-700 dark:text-blue-300 mb-2">Municipal Corporation of Delhi</p>
+                      <p className="text-sm text-blue-600 dark:text-blue-400">For houses, flats, plots</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 rounded-lg">
+                      <h5 className="font-bold text-green-800 dark:text-green-200 mb-2">DDA or L&DO</h5>
+                      <p className="text-xs text-green-700 dark:text-green-300 mb-2">Development Authority</p>
+                      <p className="text-sm text-green-600 dark:text-green-400">If property is under leasehold/freehold conversion</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-4 rounded-lg">
+                      <h5 className="font-bold text-purple-800 dark:text-purple-200 mb-2">Revenue Department</h5>
+                      <p className="text-xs text-purple-700 dark:text-purple-300 mb-2">Tehsildar</p>
+                      <p className="text-sm text-purple-600 dark:text-purple-400">For agricultural land</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Documents Required */}
+                <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="file-text" className="w-5 h-5 text-primary"></i>
+                    Documents You Need for Mutation (Delhi)
+                  </h4>
+                  <p className="text-subtext-light dark:text-subtext-dark mb-4">
+                    Think of this as your property ka Aadhaar KYC –
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      'Copy of Sale Deed (registered one)',
+                      'Mutation Application Form (from MCD/DDA)',
+                      'Affidavit with buyer details',
+                      'Indemnity Bond (basically a promise ki koi fraud nahi hua)',
+                      'Proof of payment of mutation fee & property tax clearance',
+                      'Latest Electricity/Water Bill (ownership proof ke liye)'
+                    ].map((doc, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-slate-700 rounded-lg">
+                        <span className="w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                          {index + 1}
+                        </span>
+                        <span className="text-sm text-subtext-light dark:text-subtext-dark">{doc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Types of Mutation */}
+                <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="refresh-cw" className="w-5 h-5 text-primary"></i>
+                    Types of Mutation
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
+                      <h5 className="font-bold text-blue-800 dark:text-blue-200 mb-2">Sale Deed Mutation</h5>
+                      <p className="text-sm text-blue-700 dark:text-blue-300">When property is sold</p>
+                    </div>
+                    <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-700">
+                      <h5 className="font-bold text-green-800 dark:text-green-200 mb-2">Inheritance Mutation</h5>
+                      <p className="text-sm text-green-700 dark:text-green-300">When owner passes away and heirs claim it</p>
+                    </div>
+                    <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
+                      <h5 className="font-bold text-purple-800 dark:text-purple-200 mb-2">Gift Deed Mutation</h5>
+                      <p className="text-sm text-purple-700 dark:text-purple-300">Jab property gift hoti hai</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Timeline */}
+                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl p-6 border border-indigo-200 dark:border-indigo-700">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="clock" className="w-5 h-5 text-indigo-600"></i>
+                    How Long Does It Take?
+                  </h4>
+                  <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
+                    <p className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">Usually 15–30 days if papers are clear.</p>
+                  </div>
+                </div>
+
+                {/* Why Important */}
+                <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="alert-triangle" className="w-5 h-5 text-orange-500"></i>
+                    Why Mutation is Super Important
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      { title: 'Property Tax Bills', desc: 'Land in your name officially' },
+                      { title: 'Future Sale', desc: 'Next buyer won\'t trust you without mutation' },
+                      { title: 'Bank Loan', desc: 'Mortgage ke liye banks check mutation records' },
+                      { title: 'Inheritance', desc: 'Your heirs won\'t face tamasha later' }
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
+                        <i data-lucide="check-circle" className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0"></i>
+                        <div>
+                          <h5 className="font-semibold text-orange-800 dark:text-orange-200">{item.title}</h5>
+                          <p className="text-sm text-orange-700 dark:text-orange-300">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Common Mistakes */}
+                <div className="bg-red-50 dark:bg-red-900/20 rounded-xl p-6 border border-red-200 dark:border-red-700">
+                  <h4 className="text-xl font-bold text-red-800 dark:text-red-200 mb-4 flex items-center gap-2">
+                    <i data-lucide="x-circle" className="w-5 h-5"></i>
+                    Common Mistakes People Do
+                  </h4>
+                  <div className="space-y-3">
+                    {[
+                      '"Registry ho gayi toh sab hogaya" → Wrong! Mutation pending toh risk hai.',
+                      'Mutation delay → Kabhi kabhi old owner ka naam hi rehta hai, aur tax bills usi pe aate hain.',
+                      'Bribe shortcut → Paperwork sahi ho toh bina paise diye bhi hota hai.'
+                    ].map((mistake, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <i data-lucide="alert-circle" className="w-4 h-4 text-red-500 mt-1 flex-shrink-0"></i>
+                        <p className="text-sm text-red-700 dark:text-red-300">{mistake}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pro Tip */}
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-700">
+                  <h4 className="text-xl font-bold text-green-800 dark:text-green-200 mb-4 flex items-center gap-2">
+                    <i data-lucide="lightbulb" className="w-5 h-5"></i>
+                    Pro Tip (Delhi Specific)
+                  </h4>
+                  <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
+                    <p className="text-green-700 dark:text-green-300 font-medium">
+                      Always keep property tax up-to-date before applying for mutation.
+                    </p>
+                    <p className="text-sm text-green-600 dark:text-green-400 mt-2">
+                      MCD officials are super quick to reject if even ₹1 is pending.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Final Word */}
+                <div className="bg-primary/10 rounded-xl p-6 text-center">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">🎯 Final Word</h4>
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed mb-3">
+                    Sale Deed may be the marriage certificate of your property deal, but Mutation is the "naamkaran" ceremony.
+                  </p>
+                  <p className="text-subtext-light dark:text-subtext-dark font-medium">
+                    Do it. Get it done. Sleep peacefully knowing the sarkari records finally respect you as the owner.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Documents Section */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
               <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-yellow-200/50 dark:border-slate-700">

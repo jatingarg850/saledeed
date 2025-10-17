@@ -4,78 +4,74 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Navigation from '../../../components/Navigation'
 
-export default function SaleDeedPage() {
+export default function LeaseDeedPage() {
   const [activeTab, setActiveTab] = useState('what-is')
 
   const tabs = [
-    { id: 'what-is', label: 'What is a Sale Deed?' },
+    { id: 'what-is', label: 'What is a Lease Deed?' },
     { id: 'when-to-use', label: 'When to Use It' },
     { id: 'legal-implications', label: 'Legal Implications' }
   ]
 
   const documents = [
     {
-      title: 'Property Title Documents',
-      description: 'Original title deeds, previous sale deeds, and complete chain of ownership documents proving clear title.'
+      title: 'Property Ownership Documents',
+      description: 'Original title deeds, sale deed, and ownership documents proving the lessor\'s clear title to the property.'
     },
     {
       title: 'Identity Proof of Both Parties',
-      description: 'Aadhaar Card, Voter ID, Passport for both seller (vendor) and buyer (vendee) with current address proof.'
+      description: 'Aadhaar Card, Voter ID, Passport, or Driver\'s License for both lessor (owner) and lessee (tenant).'
     },
     {
-      title: 'Property Tax Clearance',
-      description: 'Latest property tax receipts and clearance certificates showing all municipal dues are paid up to date.'
-    },
-    {
-      title: 'Encumbrance Certificate',
-      description: 'Encumbrance certificate for the last 15-30 years showing clear title and no pending legal issues.'
+      title: 'Property Tax Receipts',
+      description: 'Latest property tax receipts and clearance certificates showing all municipal dues are up to date.'
     },
     {
       title: 'Property Valuation Certificate',
-      description: 'Professional property valuation report for determining fair market value and stamp duty calculation.'
+      description: 'Professional property valuation report for determining appropriate lease terms and security deposit.'
     },
     {
-      title: 'NOC and Clearance Certificates',
-      description: 'No Objection Certificates from housing society, electricity board, water department, and other authorities.'
+      title: 'NOC from Society/Authority',
+      description: 'No Objection Certificate from housing society or relevant authority for leasing the property.'
     },
     {
-      title: 'Agreement to Sell (if applicable)',
-      description: 'Previously executed Agreement to Sell document if advance payment was made earlier.'
+      title: 'Utility Connection Documents',
+      description: 'Electricity, water, and gas connection documents for transfer of utility responsibilities.'
     }
   ]
 
   const process = [
     {
       step: 1,
-      title: 'Document Verification',
-      description: 'Thorough verification of all property documents, title clearance, and legal compliance checks.'
+      title: 'Property & Terms Assessment',
+      description: 'We evaluate the property, understand lease requirements, and help determine fair rental terms and conditions.'
     },
     {
       step: 2,
-      title: 'Sale Deed Drafting',
-      description: 'Professional drafting of Sale Deed using government-approved format with all necessary legal clauses.'
+      title: 'Legal Documentation',
+      description: 'Our experts prepare the Lease Deed using government-approved format with all necessary clauses and protections.'
     },
     {
       step: 3,
-      title: 'Valuation & Stamp Duty',
-      description: 'Property valuation, stamp duty calculation, and preparation for registration formalities.'
+      title: 'Terms Negotiation',
+      description: 'Assistance with finalizing lease period, rent amount, security deposit, and maintenance responsibilities.'
     },
     {
       step: 4,
       title: 'Registration Process',
-      description: 'Complete assistance with registration at Sub-Registrar Office including payment of stamp duty and fees.'
+      description: 'Complete support for stamp duty payment and registration at the Sub-Registrar Office as per legal requirements.'
     },
     {
       step: 5,
-      title: 'Possession & Handover',
-      description: 'Guidance for property possession transfer and completion of all post-registration formalities.'
+      title: 'Handover & Completion',
+      description: 'Guidance for property handover, utility transfers, and completion of all lease formalities.'
     }
   ]
 
   const tabContent = {
-    'what-is': 'A Sale Deed is the final and most important document in any property transaction - it\'s your proof of ownership. Think of it as the "marriage certificate" for you and your property. This government-approved format legally transfers ownership from seller to buyer, making you the absolute owner with full rights to use, sell, or mortgage the property. Unlike an Agreement to Sell (which is like an engagement), a Sale Deed is the actual transfer of ownership that gets registered and gives you complete legal title.',
-    'when-to-use': 'A Sale Deed is used when you\'re ready to complete the actual property purchase and take ownership. It\'s executed after all conditions in the Agreement to Sell are met, full payment is made, and you\'re ready to become the legal owner. This is the final step in property buying - whether it\'s residential, commercial, or agricultural property. It\'s also used when gifting property (Gift Deed) or in family transfers, making it the universal document for property ownership transfer.',
-    'legal-implications': 'A registered Sale Deed creates absolute ownership and is the strongest legal document for property rights. It provides complete protection under law, serves as conclusive proof of ownership, and is required for all future transactions. The deed must be executed on appropriate stamp paper, properly registered, and creates enforceable legal rights. It protects against fraud, provides legal recourse for any disputes, and is essential for property loans, insurance, and future sales.'
+    'what-is': 'A Lease Deed is a comprehensive legal agreement between a property owner (lessor) and tenant (lessee) for long-term property use. Unlike simple rent agreements, lease deeds are typically for longer periods (usually 9+ years) and provide stronger legal protection for both parties. This government-approved format covers everything from rent and security deposits to maintenance responsibilities and termination conditions. It\'s your insurance policy for a smooth landlord-tenant relationship, protecting both parties\' rights and clearly defining obligations.',
+    'when-to-use': 'Lease Deeds are ideal for long-term property arrangements, typically 9 years or more, commercial property rentals, when substantial security deposits are involved, or when you need stronger legal protection than regular rent agreements provide. They\'re perfect for business premises, long-term residential arrangements, properties with significant modifications or improvements, and situations where both parties want comprehensive legal coverage and clear terms for the entire lease period.',
+    'legal-implications': 'A registered Lease Deed creates strong legal rights and obligations for both parties, providing comprehensive protection under property law. It gives the lessee secure tenure for the agreed period and protects the lessor\'s property rights. The deed must be executed on appropriate stamp paper, properly registered, and creates enforceable legal obligations. It provides clear legal recourse for breach of contract, rent defaults, or property damage, making it much stronger than simple rental agreements.'
   }
 
   return (
@@ -91,43 +87,43 @@ export default function SaleDeedPage() {
             <i className="text-gray-400" data-lucide="chevron-right"></i>
             <Link href="/services" className="text-primary hover:underline">Our Services</Link>
             <i className="text-gray-400" data-lucide="chevron-right"></i>
-            <span className="text-text-light dark:text-text-dark">Sale Deed</span>
+            <span className="text-text-light dark:text-text-dark">Lease Deed</span>
           </div>
 
           {/* Hero Section */}
-          <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16">
+          <div className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16">
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
             <div className="relative max-w-6xl mx-auto px-8 py-16 md:py-24">
               <div className="text-center">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
-                  <i data-lucide="file-check" className="w-4 h-4"></i>
-                  Property Ownership Document
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
+                  <i data-lucide="home" className="w-4 h-4"></i>
+                  Long-term Property Agreement
                 </div>
 
                 {/* Main Heading */}
                 <h1 className="text-text-light dark:text-text-dark text-5xl md:text-7xl font-black tracking-tight font-display mb-8 leading-tight">
-                  Sale Deed
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  Lease Deed
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
                     Services
                   </span>
                 </h1>
 
                 {/* Description */}
                 <p className="text-subtext-light dark:text-subtext-dark text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed mb-12 font-medium">
-                  Your final step to property ownership. Complete legal transfer with government-approved documentation and expert guidance.
+                  Secure long-term property arrangements with comprehensive legal protection for both landlords and tenants.
                 </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
-                    Complete Your Sale Deed
+                    Create Lease Deed
                   </Link>
-                  <button className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300">
+                  <button className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-purple-600 border-2 border-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
                     <i data-lucide="download" className="w-5 h-5"></i>
                     Download Sample
                   </button>
@@ -136,32 +132,32 @@ export default function SaleDeedPage() {
                 {/* Trust Indicators */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="shield-check" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="shield-check" className="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
                     </div>
                     <div className="text-left">
-                      <div className="font-bold text-text-light dark:text-text-dark">Complete Ownership</div>
-                      <div className="text-sm text-subtext-light dark:text-subtext-dark">Legal Title Transfer</div>
+                      <div className="font-bold text-text-light dark:text-text-dark">Legal Protection</div>
+                      <div className="text-sm text-subtext-light dark:text-subtext-dark">Both Parties Covered</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="clock" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div className="text-left">
+                      <div className="font-bold text-text-light dark:text-text-dark">Long-term Security</div>
+                      <div className="text-sm text-subtext-light dark:text-subtext-dark">9+ Years Coverage</div>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
                     <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="clock" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
+                      <i data-lucide="users" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
                     </div>
                     <div className="text-left">
-                      <div className="font-bold text-text-light dark:text-text-dark">Quick Registration</div>
-                      <div className="text-sm text-subtext-light dark:text-subtext-dark">Same Day Process</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="users" className="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
-                    </div>
-                    <div className="text-left">
-                      <div className="font-bold text-text-light dark:text-text-dark">Expert Support</div>
-                      <div className="text-sm text-subtext-light dark:text-subtext-dark">End-to-End Service</div>
+                      <div className="font-bold text-text-light dark:text-text-dark">Expert Guidance</div>
+                      <div className="text-sm text-subtext-light dark:text-subtext-dark">Property Specialists</div>
                     </div>
                   </div>
                 </div>
@@ -172,16 +168,16 @@ export default function SaleDeedPage() {
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto space-y-16">
             {/* Tab Navigation */}
-            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 overflow-hidden">
-              <div className="border-b border-blue-200 dark:border-slate-700 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700">
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-purple-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="border-b border-purple-200 dark:border-slate-700 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700">
                 <div className="flex px-6 gap-8 overflow-x-auto">
                   {tabs.map((tab) => (
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex flex-col items-center justify-center border-b-[3px] pb-4 pt-6 whitespace-nowrap transition-all duration-300 ${activeTab === tab.id
-                        ? 'border-b-blue-600 text-blue-600 font-bold'
-                        : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-blue-600 hover:border-b-blue-600/50'
+                        ? 'border-b-purple-600 text-purple-600 font-bold'
+                        : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-purple-600 hover:border-b-purple-600/50'
                         }`}
                     >
                       <p className="text-sm font-semibold leading-normal tracking-[0.015em]">{tab.label}</p>
@@ -197,20 +193,20 @@ export default function SaleDeedPage() {
             </div>
 
             {/* How it Works Section */}
-            <div className="bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 rounded-full -translate-y-16 translate-x-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-indigo-600/10 to-blue-600/10 rounded-full translate-y-12 -translate-x-12"></div>
+            <div className="bg-gradient-to-br from-white via-purple-50/50 to-indigo-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-purple-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-600/10 to-indigo-600/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-indigo-600/10 to-purple-600/10 rounded-full translate-y-12 -translate-x-12"></div>
 
               <div className="relative">
                 <div className="text-center mb-12">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
                       <i className="text-white text-xl" data-lucide="workflow"></i>
                     </div>
-                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How Sale Deed Works</h3>
+                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How Lease Deed Works</h3>
                   </div>
                   <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
-                    Our comprehensive process ensures complete legal ownership transfer with full protection
+                    Our comprehensive process ensures secure and legally compliant long-term property arrangements
                   </p>
                 </div>
 
@@ -219,7 +215,7 @@ export default function SaleDeedPage() {
                     <div key={index} className="group relative">
                       <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700">
                         <div className="flex items-start gap-4 mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                          <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                             <span className="text-white font-bold text-lg">{item.step}</span>
                           </div>
                           <div className="flex-1">
@@ -230,7 +226,7 @@ export default function SaleDeedPage() {
 
                         {/* Connector Line */}
                         {index < process.length - 1 && (
-                          <div className="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-30"></div>
+                          <div className="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-30"></div>
                         )}
                       </div>
                     </div>
@@ -240,15 +236,15 @@ export default function SaleDeedPage() {
             </div>
 
             {/* Documents Required Section */}
-            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-blue-200/50 dark:border-slate-700">
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-purple-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-purple-200/50 dark:border-slate-700">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
                     <i className="text-white text-xl" data-lucide="file-text"></i>
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-text-light dark:text-text-dark font-display">Documents You'll Need</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark">Essential documents for your sale deed registration</p>
+                    <p className="text-subtext-light dark:text-subtext-dark">Essential documents for your lease deed preparation</p>
                   </div>
                 </div>
               </div>
@@ -257,14 +253,14 @@ export default function SaleDeedPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {documents.map((doc, index) => (
                     <details key={index} className="group bg-gradient-to-br from-gray-50 to-white dark:from-slate-700 dark:to-slate-600 rounded-xl border border-gray-200 dark:border-slate-600 overflow-hidden">
-                      <summary className="flex items-center justify-between cursor-pointer p-6 hover:bg-blue-600/5 dark:hover:bg-blue-600/10 transition-colors">
+                      <summary className="flex items-center justify-between cursor-pointer p-6 hover:bg-purple-600/5 dark:hover:bg-purple-600/10 transition-colors">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                            <span className="text-blue-600 font-bold text-sm">{index + 1}</span>
+                          <div className="w-8 h-8 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                            <span className="text-purple-600 font-bold text-sm">{index + 1}</span>
                           </div>
                           <h4 className="font-semibold text-text-light dark:text-text-dark">{doc.title}</h4>
                         </div>
-                        <i className="transition-transform duration-300 group-open:rotate-180 text-blue-600" data-lucide="chevron-down"></i>
+                        <i className="transition-transform duration-300 group-open:rotate-180 text-purple-600" data-lucide="chevron-down"></i>
                       </summary>
                       <div className="px-6 pb-6">
                         <p className="text-subtext-light dark:text-subtext-dark leading-relaxed pl-11">
@@ -278,25 +274,25 @@ export default function SaleDeedPage() {
             </div>
 
             {/* Final CTA Section */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-600 to-indigo-600 rounded-3xl p-12 text-center">
+            <div className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-purple-600 to-indigo-600 rounded-3xl p-12 text-center">
               <div className="absolute inset-0 bg-black/10"></div>
               <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
 
               <div className="relative">
                 <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <i data-lucide="file-check" className="w-10 h-10 text-white"></i>
+                  <i data-lucide="home" className="w-10 h-10 text-white"></i>
                 </div>
 
-                <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">Ready to Complete Your Property Purchase?</h3>
+                <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Lease Deed?</h3>
                 <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
-                  Get your Sale Deed registered with complete legal protection and expert guidance throughout the process
+                  Secure your long-term property arrangement with comprehensive legal protection and expert guidance
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Get Expert Help Now
@@ -310,7 +306,7 @@ export default function SaleDeedPage() {
                 <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
                   <div className="flex items-center gap-2">
                     <i data-lucide="check-circle" className="w-4 h-4"></i>
-                    <span>Complete Ownership</span>
+                    <span>Long-term Security</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="shield" className="w-4 h-4"></i>
@@ -318,7 +314,7 @@ export default function SaleDeedPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="clock" className="w-4 h-4"></i>
-                    <span>Same Day Registration</span>
+                    <span>Quick Processing</span>
                   </div>
                 </div>
               </div>

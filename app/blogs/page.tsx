@@ -4,6 +4,16 @@ export default function BlogsPage() {
   const blogPosts = [
     {
       id: 1,
+      title: "Agreement to Sell: Your Safety Net in Property Deals",
+      slug: "agreement-to-sell-safety-net",
+      category: "Agreement to Sell",
+      tags: ["Property Security", "Legal Protection", "Smart Buying"],
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      excerpt: "Think of it as your property insurance policy - here's why every smart buyer needs an Agreement to Sell before putting down serious money.",
+      readTime: "6 min read"
+    },
+    {
+      id: 2,
       title: "Understanding a Sale Deed",
       slug: "understanding-sale-deed",
       category: "Sale Deed",
@@ -54,6 +64,46 @@ export default function BlogsPage() {
     },
     {
       id: 6,
+      title: "Exchange Deed: The Smart Way to Swap Properties",
+      slug: "exchange-deed-smart-property-swap",
+      category: "Exchange Deed",
+      tags: ["Property Exchange", "Smart Trading", "No Cash Deals"],
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      excerpt: "Want to upgrade your home without cash hassles? Here's how property exchange can be your smartest real estate move.",
+      readTime: "5 min read"
+    },
+    {
+      id: 7,
+      title: "Power of Attorney for NRIs: Your Property Lifeline",
+      slug: "power-of-attorney-nri-guide",
+      category: "Power of Attorney",
+      tags: ["NRI Property", "Remote Management", "Legal Authorization"],
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      excerpt: "Living abroad but own property in India? Here's how Power of Attorney becomes your remote control for property management.",
+      readTime: "6 min read"
+    },
+    {
+      id: 8,
+      title: "Sale Deed vs Agreement to Sell: Know the Difference",
+      slug: "sale-deed-vs-agreement-difference",
+      category: "Sale Deed",
+      tags: ["Property Ownership", "Legal Documents", "Property Transfer"],
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      excerpt: "Confused between Sale Deed and Agreement to Sell? Here's the simple breakdown that could save you from costly mistakes.",
+      readTime: "5 min read"
+    },
+    {
+      id: 9,
+      title: "Why Every Family Needs a Will (Real Stories Inside)",
+      slug: "why-every-family-needs-will",
+      category: "Will Testament",
+      tags: ["Family Protection", "Estate Planning", "Legal Security"],
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      excerpt: "Think you're too young for a will? These real family stories will change your mind about protecting your loved ones.",
+      readTime: "7 min read"
+    },
+    {
+      id: 10,
       title: "Mutation of Property",
       slug: "mutation-of-property",
       category: "Mutation",
@@ -64,7 +114,7 @@ export default function BlogsPage() {
     }
   ];
 
-  const categories = ["All", "Sale Deed", "Gift Deed", "Partition Deed", "Will", "Rent Agreement", "Mutation"];
+  const categories = ["All", "Agreement to Sell", "Sale Deed", "Will Testament", "Exchange Deed", "Power of Attorney", "Gift Deed", "Partition Deed", "Rent Agreement", "Mutation"];
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden bg-background-light dark:bg-background-dark">

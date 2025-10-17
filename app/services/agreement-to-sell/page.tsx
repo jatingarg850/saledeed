@@ -239,7 +239,225 @@ export default function AgreementToSellPage() {
               </div>
             </div>
 
-            {/* Documents Section */}
+            {/* Official Agreement Format */}
+            <div className="bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-green-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="file-check"></i>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Official Agreement to Sell Format</h3>
+                    <p className="text-green-100">Government Approved Template (MoUD & DoLR)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 space-y-8">
+                {/* Introduction */}
+                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border-l-4 border-blue-400">
+                  <h4 className="text-lg font-bold text-blue-800 dark:text-blue-200 mb-3">
+                    What You're Getting
+                  </h4>
+                  <p className="text-blue-700 dark:text-blue-300 mb-3">
+                    This is the <strong>final model draft agreed to by Ministry of Urban Development (MoUD) and Department of Land Resources (DoLR)</strong>. Think of it as the government's official "stamp of approval" format.
+                  </p>
+                  <div className="bg-white dark:bg-slate-800 p-3 rounded-lg">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      <strong>Note:</strong> This is a model draft and may be customized according to requirements of individual cases.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Format Structure */}
+                <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-6 flex items-center gap-2">
+                    <i data-lucide="list" className="w-5 h-5 text-primary"></i>
+                    Agreement Format Structure
+                  </h4>
+                  
+                  <div className="space-y-6">
+                    {/* Basic Information */}
+                    <div className="border-l-4 border-primary pl-4">
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">1. Document Details</h5>
+                      <ul className="text-sm text-subtext-light dark:text-subtext-dark space-y-1">
+                        <li>• Nature of Document: AGREEMENT TO SELL</li>
+                        <li>• Date and Place of Execution</li>
+                        <li>• Document Registration Requirements</li>
+                      </ul>
+                    </div>
+
+                    {/* Parties Information */}
+                    <div className="border-l-4 border-secondary pl-4">
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">2. Parties Information</h5>
+                      <ul className="text-sm text-subtext-light dark:text-subtext-dark space-y-1">
+                        <li>• Seller Details: Name, Age, Father/Husband Name, Address</li>
+                        <li>• Buyer Details: Name, Age, Father/Husband Name, Address</li>
+                        <li>• Agent Details (if applicable) with Power of Attorney</li>
+                      </ul>
+                    </div>
+
+                    {/* Property Details */}
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">3. Property Information</h5>
+                      <ul className="text-sm text-subtext-light dark:text-subtext-dark space-y-1">
+                        <li>• Complete Property Schedule with measurements</li>
+                        <li>• Revenue District, Sub-Registrar Office, Village details</li>
+                        <li>• Survey numbers, boundaries, and market value</li>
+                        <li>• Built-up area, construction details, and approved use</li>
+                      </ul>
+                    </div>
+
+                    {/* Financial Terms */}
+                    <div className="border-l-4 border-orange-500 pl-4">
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">4. Financial Terms</h5>
+                      <ul className="text-sm text-subtext-light dark:text-subtext-dark space-y-1">
+                        <li>• Total Sale Consideration Amount</li>
+                        <li>• Advance Amount Paid</li>
+                        <li>• Payment Mode and Schedule</li>
+                        <li>• Stamp Duty and Registration Charges</li>
+                      </ul>
+                    </div>
+
+                    {/* Legal Conditions */}
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">5. Conditions of Sale</h5>
+                      <ul className="text-sm text-subtext-light dark:text-subtext-dark space-y-1">
+                        <li>• Seller's declarations of clear title and ownership</li>
+                        <li>• No encumbrance certificate and indemnity clauses</li>
+                        <li>• Possession delivery terms and timeline</li>
+                        <li>• Registration completion obligations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Key Legal Clauses */}
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="shield-check" className="w-5 h-5 text-yellow-600"></i>
+                    Essential Legal Protections
+                  </h4>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-3">Seller's Undertakings:</h5>
+                      <ul className="text-sm text-subtext-light dark:text-subtext-dark space-y-2">
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i>
+                          <span>Absolute ownership declaration with clear title</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i>
+                          <span>No encumbrance guarantee and indemnity protection</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i>
+                          <span>Vacant possession delivery commitment</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"></i>
+                          <span>Registration completion within agreed timeline</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-3">Buyer's Rights:</h5>
+                      <ul className="text-sm text-subtext-light dark:text-subtext-dark space-y-2">
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                          <span>Legal right to enforce specific performance</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                          <span>Protection against seller's breach of contract</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                          <span>Court enforcement rights in case of default</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <i data-lucide="check" className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                          <span>Advance amount acknowledgment and receipt</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sample Format Preview */}
+                <div className="bg-gray-50 dark:bg-slate-700 rounded-xl p-6">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="eye" className="w-5 h-5 text-gray-600"></i>
+                    Format Preview
+                  </h4>
+                  
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border-2 border-dashed border-gray-300 dark:border-slate-600">
+                    <div className="font-mono text-sm text-gray-700 dark:text-gray-300 space-y-3">
+                      <div className="text-center font-bold text-lg mb-4">AGREEMENT TO SELL</div>
+                      <div className="space-y-2">
+                        <p><strong>1. Nature of the Document:</strong> AGREEMENT TO SELL</p>
+                        <p><strong>2. (i) Date of Execution:</strong> ______________________</p>
+                        <p><strong>&nbsp;&nbsp;&nbsp;(ii) Place of execution:</strong> ______________________</p>
+                        <p><strong>3. Name of the seller:</strong> ______________________</p>
+                        <p><strong>&nbsp;&nbsp;&nbsp;Age:</strong> ______ years</p>
+                        <p><strong>&nbsp;&nbsp;&nbsp;Father/Husband Name:</strong> ______________________</p>
+                        <p><strong>&nbsp;&nbsp;&nbsp;Address:</strong> ______________________</p>
+                        <div className="text-center text-gray-500 italic py-2">... [Complete format continues] ...</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 flex gap-3">
+                    <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                      <i data-lucide="download" className="w-4 h-4"></i>
+                      Download Full Format
+                    </button>
+                    <button className="flex items-center gap-2 bg-gray-200 dark:bg-slate-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-slate-500 transition-colors">
+                      <i data-lucide="eye" className="w-4 h-4"></i>
+                      View Complete Sample
+                    </button>
+                  </div>
+                </div>
+
+                {/* Why This Format Matters */}
+                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl p-6 border border-indigo-200/50 dark:border-indigo-700/50">
+                  <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
+                    <i data-lucide="info" className="w-5 h-5 text-indigo-600"></i>
+                    Why This Government Format Matters
+                  </h4>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="text-center p-4">
+                      <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="award" className="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                      </div>
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">Official Recognition</h5>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Approved by central government ministries for nationwide use</p>
+                    </div>
+                    
+                    <div className="text-center p-4">
+                      <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="shield" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">Legal Compliance</h5>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Ensures all legal requirements and protections are included</p>
+                    </div>
+                    
+                    <div className="text-center p-4">
+                      <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="users" className="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
+                      </div>
+                      <h5 className="font-semibold text-text-light dark:text-text-dark mb-2">Universal Acceptance</h5>
+                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Recognized by all registrar offices and legal authorities</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Documents Required Section */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
               <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-yellow-200/50 dark:border-slate-700">
                 <div className="flex items-center gap-4 mb-4">
