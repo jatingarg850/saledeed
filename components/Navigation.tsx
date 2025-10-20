@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface NavigationProps {
   currentPage?: string;
@@ -8,6 +8,31 @@ interface NavigationProps {
 
 export default function Navigation({ currentPage }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY
+
+      // Show navbar when at top of page
+      if (currentScrollY < 10) {
+        setIsVisible(true)
+      }
+      // Hide navbar when scrolling down, show when scrolling up
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+        setIsMobileMenuOpen(false) // Close mobile menu when hiding
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', controlNavbar)
+    return () => window.removeEventListener('scroll', controlNavbar)
+  }, [lastScrollY])
 
   const services = [
     { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -24,14 +49,37 @@ export default function Navigation({ currentPage }: NavigationProps) {
   ]
   return (
     <>
-      <header className="flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10">
-        <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-          <div className="bg-gradient-to-r from-primary to-secondary px-10 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+      <header className={`flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10 transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}>
+        <a href="/" className="flex items-center group transition-all duration-300">
+          <div className="bg-gradient-to-r from-primary to-secondary px-10 py-2 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 animate-slideInFromLeft animate-pulse-gentle relative overflow-hidden group-hover:rotate-1">
+            {/* Shimmer effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out animate-shimmer-continuous"></div>
+
+            {/* Background pulse rings */}
+            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 animate-pulse-ring"></div>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 animate-pulse-ring-delayed"></div>
+            </div>
+
+            {/* Floating particles effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute top-1 left-2 w-1 h-1 bg-white/60 rounded-full animate-float-particle-1"></div>
+              <div className="absolute top-3 right-3 w-1 h-1 bg-white/40 rounded-full animate-float-particle-2"></div>
+              <div className="absolute bottom-2 left-4 w-0.5 h-0.5 bg-white/50 rounded-full animate-float-particle-3"></div>
+            </div>
+
             <img
               src="/WhatsApp_Image_2025-10-12_at_14.25.14_6e8e2615-removebg-preview.png"
               alt="SaleDeed.com Logo"
-              className="h-10 w-auto object-contain max-w-none"
+              className="h-10 w-auto object-contain max-w-none group-hover:scale-110 group-hover:animate-logo-bounce transition-all duration-500 ease-out animate-fadeInUp animate-float-gentle relative z-10"
             />
+
+            {/* Glow effect on hover */}
+            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-primary/20 to-secondary/20 blur-sm -z-10 animate-glow-pulse"></div>
+
+            {/* Border glow animation */}
+            <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-white/20 transition-all duration-300 animate-border-glow"></div>
           </div>
         </a>
 

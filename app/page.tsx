@@ -26,43 +26,66 @@ export default function Home() {
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [showDoorstepModal, showChatbot])
+
+  // Scroll-triggered animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-reveal-on-scroll')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Observe elements with scroll animation class
+    const scrollElements = document.querySelectorAll('.scroll-animate')
+    scrollElements.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load">
       <div className="layout-container flex h-full grow flex-col">
         <div className="w-full">
           <Navigation currentPage="home" />
 
           {/* Main Content */}
-          <main className="px-6 md:px-10 lg:px-20 py-10">
+          <main className="px-6 md:px-10 lg:px-20 py-10 animate-content-slide-up">
             {/* Compact Hero Section */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16">
+            <div className="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16 animate-hero-entrance">
               <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
               <div className="relative max-w-6xl mx-auto px-8 py-16 md:py-20">
-                <div className="text-center">
+                <div className="text-center animate-hero-content-fade-in">
                   {/* Badge */}
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg animate-fade-in-up animate-delay-100">
                     <i data-lucide="shield-check" className="w-4 h-4"></i>
                     Trusted Property Documentation Platform
                   </div>
 
                   {/* Main Heading */}
-                  <h1 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Everything from Agreement to Will</span>
-                    <span className="block text-3xl md:text-4xl mt-2 font-medium">Complete Property Documentation</span>
+                  <h1 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight animate-fade-in-up animate-delay-200">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-text-shimmer">Everything from Agreement to Will</span>
+                    <span className="block text-3xl md:text-4xl mt-2 font-medium animate-fade-in-up animate-delay-300">Complete Property Documentation</span>
                   </h1>
 
                   {/* Subtitle */}
-                  <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8">
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up animate-delay-400">
                     From Sale Deeds to Wills, Exchange Deeds to Power of Attorney - all your property documentation needs covered by expert lawyers.
                   </p>
 
                   {/* Process Steps - Verify, Draft, Register */}
-                  <div className="mb-12">
-                    <h3 className="text-text-light dark:text-text-dark text-2xl md:text-3xl font-bold mb-8">
+                  <div className="mb-12 animate-fade-in-up animate-delay-500">
+                    <h3 className="text-text-light dark:text-text-dark text-2xl md:text-3xl font-bold mb-8 animate-fade-in-up animate-delay-600">
                       Verify - Draft - Register
                     </h3>
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto animate-stagger-children">
                       {/* Step 1: Verify */}
                       <div className="flex flex-col items-center text-center group">
                         <div className="relative mb-4">
@@ -137,7 +160,7 @@ export default function Home() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animate-delay-700">
                     <Link href="/services" className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                       <span>Start Your Deed Now</span>
                       <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -185,9 +208,9 @@ export default function Home() {
             </div>
 
             {/* User Type Selection Section */}
-            <div className="py-20 bg-white dark:bg-slate-800/30">
+            <div className="py-20 bg-white dark:bg-slate-800/30 animate-section-slide-in">
               <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20">
-                <div className="text-center mb-16">
+                <div className="text-center mb-16 animate-fade-in-up">
                   <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
                     Everything from Sale to Deed
                   </h2>
@@ -196,7 +219,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto animate-stagger-grid">
                   {/* I Am a Buyer */}
                   <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
                     <div className="w-20 h-20 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -262,8 +285,8 @@ export default function Home() {
             </div>
 
             {/* Services Grid */}
-            <div className="py-16">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+            <div className="py-16 animate-reveal-on-scroll">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 text-center animate-stagger-grid">
                 <div
                   onClick={() => setShowDoorstepModal(true)}
                   className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer"
