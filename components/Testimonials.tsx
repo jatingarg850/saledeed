@@ -1,159 +1,215 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
+import { useEffect, useRef } from 'react'
 
-const Testimonials = () => {
+export default function Testimonials() {
+  const upperTrackRef = useRef<HTMLDivElement>(null)
+  const lowerTrackRef = useRef<HTMLDivElement>(null)
+
   const testimonials = [
     {
-      name: 'Anant Mehta',
-      text: 'Perfect for NRIs like me. I was made aware about the building bye-laws and regulations. After the process they even got my property removed from the municipal corporation\'s online list of blacklisted properties. I am fully satisfied with the regularisation of my property. Thank you team saledeed.com!',
-      rating: 5
+      name: "Anant Mehta",
+      text: "Perfect for NRI's like me. I was made aware about the building bye-laws and regulations. After the process they even got my property removed from the municipal corporation's online list of blacklisted properties. I am fully satisfied with the regularisation of my property. Thank you team saledeed.com!"
     },
     {
-      name: 'Mansi Mittal',
-      text: 'Got my sale deed registered through saledeed.com! I had to travel and they informed me of a single slab available at the registrar office. Must appreciate, I wasn\'t asked for any extra money even though I declared in advance that I can pay if they can expedite the process.',
-      rating: 5
+      name: "Mansi Mittal",
+      text: "Got my sale deed registered through saledeed.com! I had to travel and they informed me of a single slab available at the registrar office. Must appreciate, I wasn't asked for any extra money even though I declared in advance that I can pay if they can expedite the process."
     },
     {
-      name: 'Poonam Rana',
-      text: 'I got the capital gain valuation done by saledeed.com! I wasn\'t aware of the exemptions I was eligible for. I am happy to save around 2.40 lacs of tax on my property sale.',
-      rating: 5
+      name: "Poonam Rana",
+      text: "I got the capital gain valuation done by saledeed.com! I wasn't aware of the exemptions I was eligible for. I am happy to save around 2.40 lacs of tax on my property sale."
     },
     {
-      name: 'Mahesh Goswami',
-      text: 'I got my property mutated by saledeed.com! It was done in 4 days. I wasn\'t able to provide the property tax receipts for 2 years but they managed somehow.',
-      rating: 5
+      name: "Mahesh Goswami",
+      text: "I got my property mutated by saledeed.com! It was done in 4 days. I wasn't able to provide the property tax receipts for 2 years but they managed somehow."
     },
     {
-      name: 'Keshav Gupta',
-      text: 'I tried getting my property freehold back in 2004 through someone but due to some legality I failed. saledeed.com got it done in around 2 months and also got the previously paid official fee around 65k adjusted in the conversion charges. I felt wow.',
-      rating: 5
+      name: "Keshav Gupta",
+      text: "I tried getting my property freehold back in 2004 through someone but due to some legality I failed. saledeed.com got it done in around 2 months and also got the previously paid official fee around 65k adjusted in the conversion charges. I felt wow."
     },
     {
-      name: 'Jeet Bansal',
-      text: 'I approached saledeed.com randomly to know my property price. I was offered a price around 18 lacs more than my dealer friend. I instantly agreed and they took care of everything from beginning till the end. Today I am sitting in the balcony of my new abode and typing this message. Thank you team saledeed.com.',
-      rating: 5
+      name: "Jeet Bansal",
+      text: "I approached saledeed.com randomly to know my property price. I was offered a price around 18 lacs more than my dealer friend. I instantly agreed and they took care of everything from beginning till the end. Today I am sitting in the balcony of my new abode and typing this message. Thank you team saledeed.com."
+    },
+    {
+      name: "Deepa Rathee",
+      text: "I got my relinquishment deed done through saledeed.com! The experience was good and now I am able to apply for loan against my property."
+    },
+    {
+      name: "S.Chaddha",
+      text: "I got a no objection certificate through saledeed.com from L&DO. I was provided the NOC within a week. Now I can sell my property without any doubt. The team asked me to give a review but were honest enough to say that - just mention your real life experience be it good or bad. Really appreciate this honesty."
+    },
+    {
+      name: "Ganesh Sinha",
+      text: "I got my commercial property rented out to a well known jewellery brand through saledeed.com! They charged me half the commission which was actually a surprise to me. I approximately saved 5 lacs commission. Keep up the good work."
+    },
+    {
+      name: "Hitesh Jain",
+      text: "I got my okhla industrial property freehold from saledeed.com! My property had some serious issues and even got a notice from DDA for the sealing of my property. saledeed.com guided me through all the legalities and got my property converted from leasehold to freehold. Soon after, I got my property transferred to my son through gift deed from them. Happy to give them a 100/100."
     }
   ]
 
-  return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What our <span className="gradient-text">clients say</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear directly from the people who've experienced our work firsthand.
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mt-6"></div>
-        </motion.div>
+  useEffect(() => {
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      @keyframes scroll-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+      
+      .scroll-left {
+        animation: scroll-left 60s linear infinite;
+      }
+      
+      .scroll-right {
+        animation: scroll-right 60s linear infinite;
+      }
+    `
+    document.head.appendChild(style)
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 relative"
-            >
-              {/* Quote Icon */}
-              <div className="absolute top-4 right-4">
-                <Quote className="w-8 h-8 text-blue-200" />
-              </div>
+    return () => {
+      document.head.removeChild(style)
+    }
+  }, [])
 
-              {/* Stars */}
-              <div className="flex space-x-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-
-              {/* Testimonial Text */}
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                "{testimonial.text}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold text-lg">
-                    {testimonial.name.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-gray-600 text-sm">Verified Customer</p>
-                </div>
-              </div>
-            </motion.div>
+  const TestimonialCard = ({ name, text }: { name: string; text: string }) => (
+    <div className="testimonial-card flex-shrink-0 w-80 mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-slate-700">
+      <div className="flex items-start justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-lg">{name.charAt(0)}</span>
+          </div>
+          <h4 className="font-bold text-text-light dark:text-text-dark">{name}</h4>
+        </div>
+        <div className="flex items-center gap-1">
+          {[...Array(5)].map((_, i) => (
+            <i key={i} data-lucide="star" className="w-4 h-4 text-yellow-400 fill-current"></i>
           ))}
         </div>
+      </div>
+      <div className="relative">
+        <svg className="absolute top-0 left-0 w-6 h-6 text-primary/20" fill="currentColor" viewBox="0 0 975.036 975.036">
+          <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+        </svg>
+        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed pl-8 italic">
+          "{text}"
+        </p>
+      </div>
+    </div>
+  )
 
-        {/* Trust Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-center text-white relative overflow-hidden"
-        >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 left-10 w-20 h-20 border-2 border-white rounded-full"></div>
-            <div className="absolute bottom-10 right-10 w-16 h-16 border-2 border-white rounded-full"></div>
-            <div className="absolute top-1/2 left-1/4 w-12 h-12 border-2 border-white rounded-full"></div>
+  return (
+    <div className="py-20 bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20 mb-16">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
+            <i data-lucide="heart" className="w-4 h-4"></i>
+            Customer Stories
           </div>
+          
+          <h2 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight">
+            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Customers Say</span>
+          </h2>
+          
+          <p className="text-subtext-light dark:text-subtext-dark text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-12">
+            Real experiences from 1000 of satisfied customers who trusted us with their property documentation needs.
+          </p>
 
-          <div className="relative z-10">
-            <motion.h3
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold mb-4"
-            >
-              Trusted by 20 Lakh+ People
-            </motion.h3>
-            <p className="text-xl mb-8 opacity-90">
-              Join millions who trust us for our reliable and no nonsense services.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
+              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                <i data-lucide="users" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-text-light dark:text-text-dark">10,000+</div>
+                <div className="text-sm text-subtext-light dark:text-subtext-dark">Happy Customers</div>
+              </div>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { number: '100K+', label: 'Successful deals' },
-                { number: '100%', label: 'Legal Compliance' },
-                { number: '50+', label: 'Year of Experience' }
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-lg opacity-90">{stat.label}</div>
-                </motion.div>
-              ))}
+            <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
+              <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center">
+                <i data-lucide="star" className="w-6 h-6 text-yellow-600 dark:text-yellow-400"></i>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-text-light dark:text-text-dark">4.9/5</div>
+                <div className="text-sm text-subtext-light dark:text-subtext-dark">Average Rating</div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                <i data-lucide="shield-check" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-text-light dark:text-text-dark">100%</div>
+                <div className="text-sm text-subtext-light dark:text-subtext-dark">Success Rate</div>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </section>
+
+      {/* Scrolling Testimonials */}
+      <div className="testimonials-wrapper">
+        {/* Upper Track - Scrolling Left */}
+        <div className="slider-container mb-8">
+          <div ref={upperTrackRef} className="slide-track scroll-left flex">
+            {/* First set */}
+            {testimonials.slice(0, 5).map((testimonial, index) => (
+              <TestimonialCard key={`upper-${index}`} name={testimonial.name} text={testimonial.text} />
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {testimonials.slice(0, 5).map((testimonial, index) => (
+              <TestimonialCard key={`upper-dup-${index}`} name={testimonial.name} text={testimonial.text} />
+            ))}
+          </div>
+        </div>
+
+        {/* Lower Track - Scrolling Right */}
+        <div className="slider-container">
+          <div ref={lowerTrackRef} className="slide-track scroll-right flex">
+            {/* First set */}
+            {testimonials.slice(5, 10).map((testimonial, index) => (
+              <TestimonialCard key={`lower-${index}`} name={testimonial.name} text={testimonial.text} />
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {testimonials.slice(5, 10).map((testimonial, index) => (
+              <TestimonialCard key={`lower-dup-${index}`} name={testimonial.name} text={testimonial.text} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="max-w-4xl mx-auto px-6 md:px-10 lg:px-20 mt-16 text-center">
+        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Join 1000 of Satisfied Customers</h3>
+          <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
+            Experience the same level of professional service and legal expertise that our customers rave about.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <i data-lucide="arrow-right" className="w-5 h-5"></i>
+              Start Your Journey
+            </a>
+            <a
+              href="/services"
+              className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
+            >
+              <i data-lucide="eye" className="w-5 h-5"></i>
+              View All Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
-
-export default Testimonials

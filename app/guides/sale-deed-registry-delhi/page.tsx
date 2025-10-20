@@ -44,7 +44,7 @@ export default function SaleDeedRegistryDelhiPage() {
                 <div className="flex items-center justify-center gap-4 text-sm text-subtext-light dark:text-subtext-dark">
                   <div className="flex items-center gap-2">
                     <i data-lucide="calendar" className="w-4 h-4"></i>
-                    <span>Updated January 2024</span>
+                    <span>Updated January 2025</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="clock" className="w-4 h-4"></i>

@@ -21,7 +21,7 @@ export default function DocumentsPage() {
       fileSize: '2.3 MB',
       pages: 8,
       downloadCount: 1250,
-      lastUpdated: '2024-01-15',
+      lastUpdated: '2025-01-15',
       tags: ['deed', 'delhi', 'ncr', 'property', 'transfer', 'legal']
     },
     {
@@ -33,7 +33,7 @@ export default function DocumentsPage() {
       fileSize: '1.8 MB',
       pages: 6,
       downloadCount: 890,
-      lastUpdated: '2024-01-12',
+      lastUpdated: '2025-01-12',
       tags: ['commercial', 'business', 'property', 'lease', 'legal']
     },
     {
@@ -45,7 +45,7 @@ export default function DocumentsPage() {
       fileSize: '2.1 MB', 
       pages: 7,
       downloadCount: 1100,
-      lastUpdated: '2024-01-10',
+      lastUpdated: '2025-01-10',
       tags: ['construction', 'development', 'building', 'permits', 'approval']
     },
     {
@@ -57,7 +57,7 @@ export default function DocumentsPage() {
       fileSize: '850 KB',
       pages: 4,
       downloadCount: 650,
-      lastUpdated: '2024-01-20',
+      lastUpdated: '2025-01-20',
       tags: ['deed', 'agreement', 'contract', 'legal', 'property']
     },
     {
@@ -69,7 +69,7 @@ export default function DocumentsPage() {
       fileSize: '2.5 MB',
       pages: 10,
       downloadCount: 1100,
-      lastUpdated: '2024-01-18',
+      lastUpdated: '2025-01-18',
       tags: ['deed', 'documents', 'transfer', 'legal', 'templates']
     },
     {
@@ -81,7 +81,7 @@ export default function DocumentsPage() {
       fileSize: '1.5 MB',
       pages: 5,
       downloadCount: 750,
-      lastUpdated: '2024-01-08',
+      lastUpdated: '2025-01-08',
       tags: ['dispute', 'legal', 'court', 'resolution', 'litigation']
     },
     {
@@ -93,7 +93,7 @@ export default function DocumentsPage() {
       fileSize: '2.7 MB',
       pages: 10,
       downloadCount: 1350,
-      lastUpdated: '2024-01-05',
+      lastUpdated: '2025-01-05',
       tags: ['financial', 'mortgage', 'loan', 'bank', 'financing']
     },
     {
@@ -105,7 +105,7 @@ export default function DocumentsPage() {
       fileSize: '750 KB',
       pages: 3,
       downloadCount: 890,
-      lastUpdated: '2024-01-17',
+      lastUpdated: '2025-01-17',
       tags: ['power of attorney', 'legal', 'representation', 'authorization', 'property']
     },
     {
@@ -117,7 +117,7 @@ export default function DocumentsPage() {
       fileSize: '2.2 MB',
       pages: 8,
       downloadCount: 420,
-      lastUpdated: '2024-01-16',
+      lastUpdated: '2025-01-16',
       tags: ['government', 'mcd', 'dda', 'ldo', 'regulatory', 'compliance']
     },
     {
@@ -129,7 +129,7 @@ export default function DocumentsPage() {
       fileSize: '1.9 MB',
       pages: 6,
       downloadCount: 680,
-      lastUpdated: '2024-01-03',
+      lastUpdated: '2025-01-03',
       tags: ['government', 'official', 'procedures', 'compliance', 'legal']
     },
     {
@@ -141,7 +141,7 @@ export default function DocumentsPage() {
       fileSize: '3.2 MB',
       pages: 12,
       downloadCount: 920,
-      lastUpdated: '2024-01-01',
+      lastUpdated: '2025-01-01',
       tags: ['inheritance', 'family', 'succession', 'will', 'property']
     },
     {

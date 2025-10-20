@@ -294,7 +294,7 @@ export default function RelinquishmentDeedPage() {
 
                 <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">Ready to Get Your Relinquishment Deed?</h3>
                 <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
-                  Join thousands of satisfied customers who trust us with their property documentation needs
+                  Join 1000 of satisfied customers who trust us with their property documentation needs
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -371,7 +371,7 @@ export default function RelinquishmentDeedPage() {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-yellow-200 dark:border-slate-800 text-center text-sm text-subtext-light dark:text-subtext-dark">
-              <p>© 2024 SaleDeed.com. All rights reserved.</p>
+              <p>© 2025 SaleDeed.com. All rights reserved.</p>
             </div>
           </div>
         </footer>

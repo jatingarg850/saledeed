@@ -277,7 +277,7 @@ export default function AuthoritiesPage() {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-yellow-200 dark:border-slate-800 text-center text-sm text-subtext-light dark:text-subtext-dark">
-              <p>© 2024 SaleDeed.com. All rights reserved.</p>
+              <p>© 2025 SaleDeed.com. All rights reserved.</p>
             </div>
           </div>
         </footer>

@@ -18,7 +18,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
       excerpt: "A comprehensive guide to understanding sale deeds and their importance in property transactions.",
       readTime: "5 min read",
-      publishDate: "December 15, 2024",
+      publishDate: "December 15, 2025",
       author: "Legal Team",
       content: `
         <p>A Sale Deed is one of the most important legal documents in property transactions. It serves as conclusive proof of the transfer of ownership from the seller to the buyer.</p>
@@ -68,7 +68,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
       excerpt: "Learn about gift deeds and how they facilitate property transfers within families.",
       readTime: "4 min read",
-      publishDate: "December 12, 2024",
+      publishDate: "December 12, 2025",
       author: "Legal Team",
       content: `
         <p>A Gift Deed is a legal document that facilitates the transfer of property from one person to another without any monetary consideration. It's commonly used for transferring property within families.</p>
@@ -106,7 +106,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
       excerpt: "Understanding partition deeds and their role in dividing jointly owned properties.",
       readTime: "6 min read",
-      publishDate: "December 10, 2024",
+      publishDate: "December 10, 2025",
       author: "Legal Team",
       content: `
         <p>A Partition Deed is a legal document used to divide jointly owned property among co-owners. It helps in clearly defining individual ownership rights.</p>
@@ -133,7 +133,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
       excerpt: "Why having a will is crucial for estate planning and protecting your family's future.",
       readTime: "7 min read",
-      publishDate: "December 8, 2024",
+      publishDate: "December 8, 2025",
       author: "Legal Team",
       content: `
         <p>A Will is a legal document that specifies how a person's assets should be distributed after their death. It's an essential part of estate planning.</p>
@@ -159,7 +159,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
       excerpt: "Essential elements every rent agreement should contain to protect both parties.",
       readTime: "5 min read",
-      publishDate: "December 5, 2024",
+      publishDate: "December 5, 2025",
       author: "Legal Team",
       content: `
         <p>A Rent Agreement is a legal contract between a landlord and tenant that outlines the terms and conditions of the rental arrangement.</p>
@@ -186,7 +186,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       image: "https://images.unsplash.com/photo-1554224154-26032fced8bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
       excerpt: "Understanding the mutation process and its importance in updating property records.",
       readTime: "4 min read",
-      publishDate: "December 3, 2024",
+      publishDate: "December 3, 2025",
       author: "Legal Team",
       content: `
         <p>Mutation is the process of updating property records in government databases to reflect the current ownership status.</p>
@@ -356,7 +356,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
               
               <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
-                <p className="text-base">© 2024 SaleDeed.com. All rights reserved.</p>
+                <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
                 <div className="flex space-x-6 mt-4 sm:mt-0">
                   <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
                     <i data-lucide="facebook"></i>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import AIChatbot from '../components/AIChatbot'
+import Testimonials from '../components/Testimonials'
 
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
@@ -36,7 +37,7 @@ export default function Home() {
             {/* Compact Hero Section */}
             <div className="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16">
               <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-              
+
               <div className="relative max-w-6xl mx-auto px-8 py-16 md:py-20">
                 <div className="text-center">
                   {/* Badge */}
@@ -55,6 +56,85 @@ export default function Home() {
                   <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8">
                     From Sale Deeds to Wills, Exchange Deeds to Power of Attorney - all your property documentation needs covered by expert lawyers.
                   </p>
+
+                  {/* Process Steps - Verify, Draft, Register */}
+                  <div className="mb-12">
+                    <h3 className="text-text-light dark:text-text-dark text-2xl md:text-3xl font-bold mb-8">
+                      Verify - Draft - Register
+                    </h3>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
+                      {/* Step 1: Verify */}
+                      <div className="flex flex-col items-center text-center group">
+                        <div className="relative mb-4">
+                          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="search-check" className="w-8 h-8 text-white"></i>
+                          </div>
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">1</span>
+                          </div>
+                        </div>
+                        <h4 className="text-text-light dark:text-text-dark font-bold text-lg mb-2">Verify</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark text-sm max-w-xs">
+                          Complete property verification and legal compliance check
+                        </p>
+                      </div>
+
+                      {/* Arrow 1 */}
+                      <div className="hidden md:block">
+                        <i data-lucide="arrow-right" className="w-6 h-6 text-primary"></i>
+                      </div>
+                      <div className="md:hidden">
+                        <i data-lucide="arrow-down" className="w-6 h-6 text-primary"></i>
+                      </div>
+
+                      {/* Step 2: Draft */}
+                      <div className="flex flex-col items-center text-center group">
+                        <div className="relative mb-4">
+                          <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="file-pen-line" className="w-8 h-8 text-white"></i>
+                          </div>
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">2</span>
+                          </div>
+                        </div>
+                        <h4 className="text-text-light dark:text-text-dark font-bold text-lg mb-2">Draft</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark text-sm max-w-xs">
+                          Professional deed drafting by registered lawyers
+                        </p>
+                      </div>
+
+                      {/* Arrow 2 */}
+                      <div className="hidden md:block">
+                        <i data-lucide="arrow-right" className="w-6 h-6 text-primary"></i>
+                      </div>
+                      <div className="md:hidden">
+                        <i data-lucide="arrow-down" className="w-6 h-6 text-primary"></i>
+                      </div>
+
+                      {/* Step 3: Register */}
+                      <div className="flex flex-col items-center text-center group">
+                        <div className="relative mb-4">
+                          <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="file-check" className="w-8 h-8 text-white"></i>
+                          </div>
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">3</span>
+                          </div>
+                        </div>
+                        <h4 className="text-text-light dark:text-text-dark font-bold text-lg mb-2">Register</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark text-sm max-w-xs">
+                          Complete registration at Sub-Registrar office
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Process Summary */}
+                    <div className="mt-8 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl max-w-2xl mx-auto">
+                      <p className="text-text-light dark:text-text-dark text-sm font-medium text-center">
+                        <span className="text-primary font-bold">All Property Documents</span> • <span className="text-secondary font-bold">Hassle-Free</span> • <span className="text-green-600 font-bold">Legal Expert</span>
+                      </p>
+                    </div>
+                  </div>
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -104,10 +184,87 @@ export default function Home() {
               </div>
             </div>
 
+            {/* User Type Selection Section */}
+            <div className="py-20 bg-white dark:bg-slate-800/30">
+              <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20">
+                <div className="text-center mb-16">
+                  <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
+                    Everything from Sale to Deed
+                  </h2>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                    Choose your role to get personalized property documentation solutions
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                  {/* I Am a Buyer */}
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-20 h-20 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="home" className="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 className="text-text-light dark:text-text-dark text-xl font-bold mb-4">I Am a Buyer</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-sm mb-6 leading-relaxed">
+                      Complete support from property selection to purchase. Pricing guidance and legal protection throughout your buying journey.
+                    </p>
+                    <Link 
+                      href="/solutions/buyer" 
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-teal-500 text-teal-600 dark:text-teal-400 px-6 py-3 rounded-full font-semibold text-sm hover:bg-teal-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                    >
+                      LEARN MORE
+                      <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                    </Link>
+                  </div>
+
+                  {/* I Am a Seller */}
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-20 h-20 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="handshake" className="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 className="text-text-light dark:text-text-dark text-xl font-bold mb-4">I Am a Seller</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-sm mb-6 leading-relaxed">
+                      Step-by-step help from property search to sale deed registration. Legal checks and complete documentation support.
+                    </p>
+                    <Link 
+                      href="/solutions/seller" 
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-red-500 text-red-600 dark:text-red-400 px-6 py-3 rounded-full font-semibold text-sm hover:bg-red-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                    >
+                      LEARN MORE
+                      <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                    </Link>
+                  </div>
+
+                  {/* I Am a Landlord */}
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="building" className="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 className="text-text-light dark:text-text-dark text-xl font-bold mb-4">I Am a Landlord</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-sm mb-6 leading-relaxed">
+                      Find verified tenants quickly. Hassle-free rent agreements and property support for landlords.
+                    </p>
+                    <Link 
+                      href="/solutions/landlord" 
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-purple-500 text-purple-600 dark:text-purple-400 px-6 py-3 rounded-full font-semibold text-sm hover:bg-purple-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                    >
+                      LEARN MORE
+                      <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Additional Info */}
+                <div className="mt-12 text-center">
+                  <p className="text-subtext-light dark:text-subtext-dark text-sm">
+                    Not sure which category fits you? <Link href="/contact" className="text-primary hover:underline font-medium">Get free consultation</Link> to find the right solution.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Services Grid */}
             <div className="py-16">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
-                <div 
+                <div
                   onClick={() => setShowDoorstepModal(true)}
                   className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer"
                 >
@@ -117,7 +274,7 @@ export default function Home() {
                   <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Doorstep Advice</h3>
                   <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Professional legal advisors at your home.</p>
                 </div>
-                
+
                 <Link href="/documents" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer">
                   <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
                     <i className="text-primary w-10 h-10" data-lucide="file-pen-line"></i>
@@ -125,7 +282,7 @@ export default function Home() {
                   <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Get Your Deed Drafted</h3>
                   <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">By registered property lawyers.</p>
                 </Link>
-                
+
                 <a href="/calculator" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer">
                   <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
                     <i className="text-primary w-10 h-10" data-lucide="calculator"></i>
@@ -133,7 +290,7 @@ export default function Home() {
                   <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Calculate Stamp Duty</h3>
                   <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Instant state-wise calculation.</p>
                 </a>
-                
+
                 <Link href="/contact" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer">
                   <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
                     <i className="text-primary w-10 h-10" data-lucide="headset"></i>
@@ -157,7 +314,7 @@ export default function Home() {
               <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight text-center pb-12 font-times">Popular Deed Types</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 px-4">
                 <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                  <div className="w-full h-52 bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCppKWYqPtTGEv7uWjlioc1NO5VJAcMnrOEfUokCtRsL15GNhn9eiBSSS2sYNW60VnncdcmApHMDs5SRJv1-LPMjYXJWq6DuYhldT6j--s32i-gzBrekBLL-KRP_Jp-BAznzx3J-hfQrDNaOa3tDTmuKBRbgGLlBh0K7lkKJ6NaQLQemNlJ7Tu1Qs93tFEHvFWcoRAXJnIGdWAorzOc4M00vV8eaI_scaPGRbgtnPa5FNKWmiybm6txj3aIlw00cnIBsPZfeXRCrbAS")'}}></div>
+                  <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCppKWYqPtTGEv7uWjlioc1NO5VJAcMnrOEfUokCtRsL15GNhn9eiBSSS2sYNW60VnncdcmApHMDs5SRJv1-LPMjYXJWq6DuYhldT6j--s32i-gzBrekBLL-KRP_Jp-BAznzx3J-hfQrDNaOa3tDTmuKBRbgGLlBh0K7lkKJ6NaQLQemNlJ7Tu1Qs93tFEHvFWcoRAXJnIGdWAorzOc4M00vV8eaI_scaPGRbgtnPa5FNKWmiybm6txj3aIlw00cnIBsPZfeXRCrbAS")' }}></div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Sale Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">A crucial legal document proving the sale and transfer of property ownership from a seller to a buyer.</p>
@@ -166,9 +323,9 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                  <div className="w-full h-52 bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVYxhhPbzpDjQCrXXZsAlY5OFyCalEiT0nqMzNyNZOZdu2RzvnHBhz3W2d4esf9vfULSR09DrT6W3FrVJ3gWaBAT1jAPPuAIXdNmg8uemkE3sGhhihst8xeX9g6guvYpvvn-0lbpL1YRbIVadLcccWYszTEq-g3bGnu80p0qS3Ky2HoNuh0F4XnHiADuIg1x1AL4ovdjL0Rr8jPern_zcVYiXTSVf5N_uXH-IBJIRSdzWjCEpHFeaAEcIAy1sDCm9xswaK7JMeu2kb")'}}></div>
+                  <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVYxhhPbzpDjQCrXXZsAlY5OFyCalEiT0nqMzNyNZOZdu2RzvnHBhz3W2d4esf9vfULSR09DrT6W3FrVJ3gWaBAT1jAPPuAIXdNmg8uemkE3sGhhihst8xeX9g6guvYpvvn-0lbpL1YRbIVadLcccWYszTEq-g3bGnu80p0qS3Ky2HoNuh0F4XnHiADuIg1x1AL4ovdjL0Rr8jPern_zcVYiXTSVf5N_uXH-IBJIRSdzWjCEpHFeaAEcIAy1sDCm9xswaK7JMeu2kb")' }}></div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Gift Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">Transfer property ownership to a loved one as a gift, without any monetary exchange, through this document.</p>
@@ -177,9 +334,9 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                  <div className="w-full h-52 bg-cover bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCv98UpkUzIaIzYR8Jx9l1mZrpnFDESlm7KRxBRlwKhkKkGM1lODIzlptL8i6jFFF9tRrw_LSPD4sPHZGoZp7R3K5UD-kmUw4lbR0oCVsxnQ9_L_0aBAMR5xuLogXpv0kwEAUwaW8roMUrftzK6irjThN1-QPmC7SANkHMc6dx8laeNS8FTogcZ23tcJOGynF0iAu72uPWw_ZEjl2ZXwxNYTrsfzgQNfk4nGYTnfB3pRNU4GZN4nz3IwiXm3GdQp_N-F_ni7IsP71w7")'}}></div>
+                  <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCv98UpkUzIaIzYR8Jx9l1mZrpnFDESlm7KRxBRlwKhkKkGM1lODIzlptL8i6jFFF9tRrw_LSPD4sPHZGoZp7R3K5UD-kmUw4lbR0oCVsxnQ9_L_0aBAMR5xuLogXpv0kwEAUwaW8roMUrftzK6irjThN1-QPmC7SANkHMc6dx8laeNS8FTogcZ23tcJOGynF0iAu72uPWw_ZEjl2ZXwxNYTrsfzgQNfk4nGYTnfB3pRNU4GZN4nz3IwiXm3GdQp_N-F_ni7IsP71w7")' }}></div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Relinquishment Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">Allows a co-owner to gracefully give up their share in a joint property in favour of other co-owners.</p>
@@ -190,7 +347,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                  <div className="w-full h-52 bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")'}}></div>
+                  <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")' }}></div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Will Agreement</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">A formal legal declaration specifying how property and assets will be distributed after death.</p>
@@ -201,7 +358,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                  <div className="w-full h-52 bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80")'}}></div>
+                  <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80")' }}></div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Partition Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">A legal document that divides jointly-owned property among co-owners, ensuring each gets a clear share.</p>
@@ -227,6 +384,9 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Customer Testimonials Section */}
+            <Testimonials />
+
             {/* Government Authorities Section */}
             <div className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl mb-16">
               <div className="text-center mb-12">
@@ -237,7 +397,7 @@ export default function Home() {
                   Our expert team has direct experience with all government departments and authorities in Delhi for seamless property documentation.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
                   <div className="flex items-center gap-4 mb-4">
@@ -340,7 +500,7 @@ export default function Home() {
                     Watch how our expert team navigates through different government offices to ensure your property documentation is completed efficiently.
                   </p>
                 </div>
-                
+
                 <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 text-center">
                   <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform duration-300">
                     <i className="text-white text-3xl" data-lucide="play"></i>
@@ -623,7 +783,7 @@ export default function Home() {
 
             {/* Testimonials */}
             <div className="py-16">
-              <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight text-center pb-12 font-display">Trusted By Thousands Across India</h2>
+              <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight text-center pb-12 font-display">Trusted By 1000 Across India</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-yellow-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="flex items-center mb-4 text-secondary">
@@ -635,14 +795,14 @@ export default function Home() {
                   </div>
                   <p className="text-subtext-light dark:text-subtext-dark italic">"The process was so simple and fast. SaleDeed.com handled everything professionally. Highly recommended for anyone dealing with property documents."</p>
                   <div className="flex items-center mt-6">
-                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWRWYPynWC5k5uu7_FPhIvt9WKB7Hnp1OcZbi2wZL2pi0oMIEuo7JLUWlyycgyES-N9KF4Y0uV14nrCCcP2SaMoqORDE2P-is-zgIPi_GJKNivbVWvLqyOlzLvlF4KmUs87PHtM8MWfyQbAgHAD18C3UWhWHIq_yTkr0w3UuzmxswA9W3GG2GILPM8gwmvASRDxT35wvcSLQ1ECiru0gozseTj9qDejPfYm09D8uD7qU4DZ1cVkdRHzDnLNYnZdj0IF8Scyafjvouc"/>
+                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWRWYPynWC5k5uu7_FPhIvt9WKB7Hnp1OcZbi2wZL2pi0oMIEuo7JLUWlyycgyES-N9KF4Y0uV14nrCCcP2SaMoqORDE2P-is-zgIPi_GJKNivbVWvLqyOlzLvlF4KmUs87PHtM8MWfyQbAgHAD18C3UWhWHIq_yTkr0w3UuzmxswA9W3GG2GILPM8gwmvASRDxT35wvcSLQ1ECiru0gozseTj9qDejPfYm09D8uD7qU4DZ1cVkdRHzDnLNYnZdj0IF8Scyafjvouc" />
                     <div>
                       <p className="font-bold text-text-light dark:text-text-dark font-display">Priya Sharma</p>
                       <p className="text-sm text-subtext-light dark:text-subtext-dark">Mumbai</p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-yellow-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="flex items-center mb-4 text-secondary">
                     <i className="fill-current" data-lucide="star"></i>
@@ -653,14 +813,14 @@ export default function Home() {
                   </div>
                   <p className="text-subtext-light dark:text-subtext-dark italic">"I was dreading the paperwork, but their team made it a breeze. The doorstep service is a game-changer. Excellent support!"</p>
                   <div className="flex items-center mt-6">
-                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmuMBONJwWlXUUows2Cm4oROk1Ze9__nSak4snIwBXTbutQ2MDWYY_7mEyjS_PEwEDwDpW39iRAbUJkVwEi5cJYcC0bFYdSb5UHB4GX48TnICC6NRYuHb0c3dAm6j9ap3QFIbFu4KKJ963joq53MgvyzmKArqBvAmXB3HYkzHuktXAJkuAy-yC1naH9paum66JFCg8n3lRjlw4bnNXolLSWl7mXjhiQYufLg7wNXmFbXQioemgbMzuOfS2J4K_FYWXNe-rdwyefRa"/>
+                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmuMBONJwWlXUUows2Cm4oROk1Ze9__nSak4snIwBXTbutQ2MDWYY_7mEyjS_PEwEDwDpW39iRAbUJkVwEi5cJYcC0bFYdSb5UHB4GX48TnICC6NRYuHb0c3dAm6j9ap3QFIbFu4KKJ963joq53MgvyzmKArqBvAmXB3HYkzHuktXAJkuAy-yC1naH9paum66JFCg8n3lRjlw4bnNXolLSWl7mXjhiQYufLg7wNXmFbXQioemgbMzuOfS2J4K_FYWXNe-rdwyefRa" />
                     <div>
                       <p className="font-bold text-text-light dark:text-text-dark font-display">Arjun Singh</p>
                       <p className="text-sm text-subtext-light dark:text-subtext-dark">Delhi</p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-yellow-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="flex items-center mb-4 text-secondary">
                     <i className="fill-current" data-lucide="star"></i>
@@ -671,7 +831,7 @@ export default function Home() {
                   </div>
                   <p className="text-subtext-light dark:text-subtext-dark italic">"Got my gift deed drafted and registered without any hassle. The expert advice was invaluable. A truly trustworthy platform."</p>
                   <div className="flex items-center mt-6">
-                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqL2rTtY27a8lB3uB8OaPpQ2qvkIfweLuQshPuc8r_N4MTraw70d_8lxnZER4jD0JigHRT9djXddsz5QZ8kY6AmtAc0DhR25sdnTBaFkl4-G3vQqQzrAaofSM3BOK3YLqVTqD4-vm2OduE0MvKrrw67EN7fvDS0AITkanro0hDG0lj6z_DPHCwS7B2_wby-2Awn3IqkvVr_r3ndHx4Fb_k9nrnPLV9WIhPGc9e9B11qW6klWxvp93SEK9fUDhDghy50bAHLq9yFwCp"/>
+                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqL2rTtY27a8lB3uB8OaPpQ2qvkIfweLuQshPuc8r_N4MTraw70d_8lxnZER4jD0JigHRT9djXddsz5QZ8kY6AmtAc0DhR25sdnTBaFkl4-G3vQqQzrAaofSM3BOK3YLqVTqD4-vm2OduE0MvKrrw67EN7fvDS0AITkanro0hDG0lj6z_DPHCwS7B2_wby-2Awn3IqkvVr_r3ndHx4Fb_k9nrnPLV9WIhPGc9e9B11qW6klWxvp93SEK9fUDhDghy50bAHLq9yFwCp" />
                     <div>
                       <p className="font-bold text-text-light dark:text-text-dark font-display">Ananya Reddy</p>
                       <p className="text-sm text-subtext-light dark:text-subtext-dark">Bengaluru</p>
@@ -693,7 +853,7 @@ export default function Home() {
                   </div>
                   <p className="mt-4 text-base">Simplifying property documentation for everyone across India.</p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -703,7 +863,7 @@ export default function Home() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Stamp Duty Calculation</a></li>
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Company</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -713,7 +873,7 @@ export default function Home() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -722,9 +882,9 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-              
+
               <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
-                <p className="text-base">© 2024 SaleDeed.com. All rights reserved.</p>
+                <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
                 <div className="flex space-x-6 mt-4 sm:mt-0">
                   <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
                     <i data-lucide="facebook"></i>
@@ -744,11 +904,11 @@ export default function Home() {
 
       {/* Doorstep Advice Modal */}
       {showDoorstepModal && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={() => setShowDoorstepModal(false)}
         >
-          <div 
+          <div
             className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
@@ -780,7 +940,7 @@ export default function Home() {
                   Expert Legal Advice at Your Doorstep
                 </h4>
                 <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
-                  In our doorstep service, our property advisor will visit you, review your case and documents, 
+                  In our doorstep service, our property advisor will visit you, review your case and documents,
                   and guide you on what needs to be done and how to proceed.
                 </p>
               </div>
@@ -842,7 +1002,7 @@ export default function Home() {
         >
           <i data-lucide="bot" className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"></i>
         </button>
-        
+
         {/* Tooltip */}
         <div className="absolute bottom-16 right-0 bg-black text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
           Ask AI about property docs
@@ -851,9 +1011,9 @@ export default function Home() {
       </div>
 
       {/* AI Chatbot Modal */}
-      <AIChatbot 
-        isOpen={showChatbot} 
-        onClose={() => setShowChatbot(false)} 
+      <AIChatbot
+        isOpen={showChatbot}
+        onClose={() => setShowChatbot(false)}
       />
     </div>
   )

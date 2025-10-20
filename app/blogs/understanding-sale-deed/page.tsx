@@ -166,7 +166,7 @@ export default function UnderstandingSaleDeedPage() {
               </div>
               
               <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
-                <p className="text-base">© 2024 SaleDeed.com. All rights reserved.</p>
+                <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
                 <div className="flex space-x-6 mt-4 sm:mt-0">
                   <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
                     <i data-lucide="facebook"></i>

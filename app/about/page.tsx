@@ -12,8 +12,8 @@ export default function About() {
             {/* Hero Section */}
             <div className="flex min-h-[600px] flex-col gap-6 items-center justify-center text-center p-8 rounded-xl relative overflow-hidden mb-16">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/70 to-yellow-900/90 z-0"></div>
-              <div className="absolute inset-0 w-full h-full object-cover -z-10 animate-zoom-in bg-center" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5qr8WARKh3rkwHse1OTDWTQ4DKTdKRTy1C-bTzQS-vAHHUTiLRIMMRpptjyh7tibuz1yvpBMiyqQCP6C4Z3Or2wFFs8UmGvrtAw0BmFEaMwf5MyIBNP9DHMfqh0MwSgiyOx1j8hk-Jc1U3lVGvs7A06kOutPu7dK2tGqxNQ1bsfYgInEYXq6t0vJn0vAMAzZaMbjHM3ELjCiBlY_CFfyYMcOTZDIiDj83T1xxyzov06SrQeTb4lV3J8vMwFGmZGKhoPISKREhy3El")'}}></div>
-              
+              <div className="absolute inset-0 w-full h-full object-cover -z-10 animate-zoom-in bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5qr8WARKh3rkwHse1OTDWTQ4DKTdKRTy1C-bTzQS-vAHHUTiLRIMMRpptjyh7tibuz1yvpBMiyqQCP6C4Z3Or2wFFs8UmGvrtAw0BmFEaMwf5MyIBNP9DHMfqh0MwSgiyOx1j8hk-Jc1U3lVGvs7A06kOutPu7dK2tGqxNQ1bsfYgInEYXq6t0vJn0vAMAzZaMbjHM3ELjCiBlY_CFfyYMcOTZDIiDj83T1xxyzov06SrQeTb4lV3J8vMwFGmZGKhoPISKREhy3El")' }}></div>
+
               <div className="flex flex-col gap-4 max-w-4xl z-10 animate-fade-in-up">
                 <h1 className="text-black text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter font-display">Your Trusted Real Estate Partner</h1>
                 <p className="text-black text-lg md:text-2xl font-normal max-w-3xl mx-auto">Three generations of expertise. <span className="font-semibold text-black">Five decades of trust.</span></p>
@@ -122,7 +122,7 @@ export default function About() {
                     We've built our reputation on trust, expertise, and personalized service that spans three generations.
                   </p>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -133,7 +133,7 @@ export default function About() {
                       Three generations of real estate professionals with five decades of combined experience in property documentation.
                     </p>
                   </div>
-                  
+
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                       <i className="text-white text-2xl" data-lucide="map-pin"></i>
@@ -143,7 +143,7 @@ export default function About() {
                       Free home visits and call assistance. We come to you to discuss your property needs and provide tailored solutions.
                     </p>
                   </div>
-                  
+
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                       <i className="text-white text-2xl" data-lucide="award"></i>
@@ -162,7 +162,7 @@ export default function About() {
                   Ready to Experience the Difference?
                 </h2>
                 <p className="text-black dark:text-subtext-dark text-lg mb-8 max-w-3xl mx-auto">
-                  Let our three generations of expertise work for you. Get started with a free consultation and discover why thousands trust us with their most valuable assets.
+                  Let our three generations of expertise work for you. Get started with a free consultation and discover why 1000 trust us with their most valuable assets.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="/contact" className="group flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-gradient-to-r from-primary to-secondary text-white text-lg font-bold leading-normal tracking-wide transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-primary/30">
@@ -189,7 +189,7 @@ export default function About() {
                   </div>
                   <p className="mt-4 text-base">Simplifying property documentation for everyone across India.</p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -199,7 +199,7 @@ export default function About() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Stamp Duty Calculation</a></li>
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Company</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -209,7 +209,7 @@ export default function About() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Press</a></li>
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -218,9 +218,9 @@ export default function About() {
                   </ul>
                 </div>
               </div>
-              
+
               <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
-                <p className="text-base">© 2024 SaleDeed.com. All rights reserved.</p>
+                <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
                 <div className="flex space-x-6 mt-4 sm:mt-0">
                   <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
                     <i data-lucide="facebook"></i>

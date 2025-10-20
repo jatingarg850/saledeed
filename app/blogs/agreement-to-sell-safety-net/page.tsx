@@ -41,7 +41,7 @@ export default function AgreementToSellBlogPage() {
               <div className="flex items-center gap-4 text-sm text-subtext-light dark:text-subtext-dark">
                 <div className="flex items-center gap-2">
                   <i data-lucide="calendar" className="w-4 h-4"></i>
-                  <span>January 15, 2024</span>
+                  <span>January 15, 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <i data-lucide="user" className="w-4 h-4"></i>

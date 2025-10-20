@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   title: 'SaleDeed.com - Your Property Document Partner',
   description: 'Verify - Draft - Register. All Property Documents. Hassle Free. Your trusted platform to draft, verify, and register any property document — 100% legally verified.',
   keywords: 'property documentation, sale deed, gift deed, property registration, real estate services, legal compliance',
+  icons: {
+    icon: '/WhatsApp_Image_2025-10-12_at_14.25.14_6e8e2615-removebg-preview.png',
+    shortcut: '/WhatsApp_Image_2025-10-12_at_14.25.14_6e8e2615-removebg-preview.png',
+    apple: '/WhatsApp_Image_2025-10-12_at_14.25.14_6e8e2615-removebg-preview.png',
+  },
 }
 
 export default function RootLayout({
