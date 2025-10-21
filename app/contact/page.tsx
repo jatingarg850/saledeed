@@ -124,7 +124,7 @@ export default function ContactPage() {
                 <i className="text-primary text-2xl" data-lucide="send"></i>
                 <h2 className="text-2xl font-bold text-text-light dark:text-text-dark font-display">Send us a message</h2>
               </div>
-              
+
               <p className="text-subtext-light dark:text-subtext-dark mb-6">
                 Fill the form and we'll be happy to help you
               </p>
@@ -217,8 +217,8 @@ export default function ContactPage() {
 
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <details 
-                    key={index} 
+                  <details
+                    key={index}
                     className="group cursor-pointer"
                     open={openFaq === index}
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}

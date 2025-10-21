@@ -32,52 +32,54 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
         >
             {/* Document Preview */}
             <div 
-                className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700 dark:to-slate-600 flex items-center justify-center cursor-pointer overflow-hidden rounded-t-2xl group"
+                className="relative h-48 cursor-pointer overflow-hidden rounded-t-2xl group"
                 onClick={() => document.fileName.endsWith('.pdf') ? onPreview(document.fileName) : onDownload(document.fileName, document.title)}
             >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="w-full h-full bg-repeat" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='0.1'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3C/g%3E%3C/svg%3E")`,
-                        backgroundSize: '20px 20px'
-                    }}></div>
-                </div>
-
-                {/* Document Icon and Preview Text */}
-                <div className="relative text-center z-10">
-                    <div className={`transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}>
-                        {document.fileName.endsWith('.pdf') ? (
-                            <i data-lucide="file-text" className="w-16 h-16 text-primary mb-2"></i>
-                        ) : document.fileName.endsWith('.doc') || document.fileName.endsWith('.docx') ? (
-                            <i data-lucide="file-type" className="w-16 h-16 text-blue-600 mb-2"></i>
-                        ) : (
-                            <i data-lucide="file" className="w-16 h-16 text-gray-600 mb-2"></i>
-                        )}
-                    </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
-                        {isHovered ? 'Click to Download' : 
-                         document.fileName.endsWith('.pdf') ? 'PDF Document' :
-                         document.fileName.endsWith('.doc') || document.fileName.endsWith('.docx') ? 'Word Document' :
-                         'Document'}
-                    </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                        {document.fileName}
-                    </p>
-                </div>
+                {/* Thumbnail Image */}
+                <img 
+                    src="/thumbnails/thumbnail.png" 
+                    alt={document.title}
+                    className={`w-full h-full object-cover transition-all duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`}
+                />
 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-primary/10 transition-opacity duration-300 ${
+                <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 flex items-center justify-center ${
                     isHovered ? 'opacity-100' : 'opacity-0'
-                }`}></div>
+                }`}>
+                    <div className="text-center text-white">
+                        <i data-lucide="download" className="w-12 h-12 mx-auto mb-2"></i>
+                        <p className="text-sm font-semibold">Click to {document.fileName.endsWith('.pdf') ? 'Preview' : 'Download'}</p>
+                    </div>
+                </div>
 
                 {/* Page Count Badge */}
-                <div className="absolute top-3 right-3 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+                <div className="absolute top-3 right-3 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
                     {document.pages} pages
                 </div>
 
                 {/* Category Badge */}
-                <div className="absolute top-3 left-3 bg-white/90 dark:bg-slate-800/90 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+                <div className="absolute top-3 left-3 bg-white/90 dark:bg-slate-800/90 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
                     {document.category}
+                </div>
+
+                {/* File Type Badge */}
+                <div className="absolute bottom-3 left-3 bg-black/60 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm flex items-center gap-1">
+                    {document.fileName.endsWith('.pdf') ? (
+                        <>
+                            <i data-lucide="file-text" className="w-3 h-3"></i>
+                            PDF
+                        </>
+                    ) : document.fileName.endsWith('.doc') || document.fileName.endsWith('.docx') ? (
+                        <>
+                            <i data-lucide="file-type" className="w-3 h-3"></i>
+                            DOC
+                        </>
+                    ) : (
+                        <>
+                            <i data-lucide="file" className="w-3 h-3"></i>
+                            FILE
+                        </>
+                    )}
                 </div>
             </div>
 

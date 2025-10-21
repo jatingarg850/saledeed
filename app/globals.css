@@ -1571,4 +1571,309 @@ anced SaleDeed Loader Animations */
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}/*
+ Video Logo Animations */
+
+/* Video entrance animation */
+@keyframes video-logo-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg) translateY(-20px);
+    filter: blur(5px);
+  }
+  30% {
+    opacity: 0.6;
+    transform: scale(0.8) rotate(5deg) translateY(-10px);
+    filter: blur(2px);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(1.1) rotate(-2deg) translateY(5px);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-video-logo-entrance {
+  animation: video-logo-entrance 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Video hover effects */
+@keyframes video-hover-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(161, 98, 7, 0.4)) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(161, 98, 7, 0.8)) brightness(1.1);
+  }
+}
+
+.animate-video-hover-glow {
+  animation: video-hover-glow 2s ease-in-out infinite;
+}
+
+/* Video pulse effect */
+@keyframes video-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    transform: scale(1.03);
+    filter: brightness(1.1) contrast(1.1);
+  }
+}
+
+.animate-video-pulse {
+  animation: video-pulse 3s ease-in-out infinite;
+}
+
+/* Video floating animation */
+@keyframes video-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-0.5deg);
+  }
+}
+
+.animate-video-float {
+  animation: video-float 6s ease-in-out infinite;
+}
+
+/* Video shimmer overlay */
+@keyframes video-shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+    opacity: 0;
+  }
+}
+
+.video-shimmer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: video-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Video border animation */
+@keyframes video-border-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 2px transparent;
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgba(161, 98, 7, 0.6);
+  }
+}
+
+.animate-video-border-glow {
+  animation: video-border-glow 2.5s ease-in-out infinite;
+}
+
+/* Video scale bounce */
+@keyframes video-scale-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.05);
+  }
+  20% {
+    transform: scale(0.98);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.animate-video-scale-bounce {
+  animation: video-scale-bounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Video rotation effect */
+@keyframes video-rotate-gentle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+}
+
+.animate-video-rotate-gentle {
+  animation: video-rotate-gentle 4s ease-in-out infinite;
+}
+
+/* Enhanced video container */
+.video-logo-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Video loading state */
+@keyframes video-loading {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.video-loading {
+  animation: video-loading 1.5s ease-in-out infinite;
+}
+
+/* Particle effects for video */
+.video-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.group:hover .video-particles {
+  opacity: 1;
+}
+
+.video-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.video-particle-1 {
+  top: 20%;
+  left: 15%;
+  animation: float-particle-1 3s ease-in-out infinite;
+}
+
+.video-particle-2 {
+  top: 60%;
+  right: 20%;
+  animation: float-particle-2 4s ease-in-out infinite;
+}
+
+.video-particle-3 {
+  bottom: 30%;
+  left: 70%;
+  animation: float-particle-3 3.5s ease-in-out infinite;
+}
+
+/* Video quality optimization */
+video.logo-video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Responsive video adjustments */
+@media (max-width: 768px) {
+  .video-logo-container {
+    transform: scale(0.9);
+  }
+  
+  .animate-video-float {
+    animation-duration: 4s;
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-video-logo-entrance,
+  .animate-video-hover-glow,
+  .animate-video-pulse,
+  .animate-video-float,
+  .animate-video-border-glow,
+  .animate-video-scale-bounce,
+  .animate-video-rotate-gentle {
+    animation: none;
+  }
+  
+  .video-shimmer-overlay {
+    display: none;
+  }
+}
+/* Marquee
+ Animation */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-text {
+  padding: 0 2rem;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause marquee on hover */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Responsive marquee speed */
+@media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: 30s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-content {
+    animation: none;
+  }
 }
