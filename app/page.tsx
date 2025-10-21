@@ -5,10 +5,13 @@ import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import AIChatbot from '../components/AIChatbot'
 import Testimonials from '../components/Testimonials'
+import SaleDeedLoader from '../components/SaleDeedLoader'
 
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
   const [showChatbot, setShowChatbot] = useState(false)
+  const [showLoader, setShowLoader] = useState(true)
+  const [pageReady, setPageReady] = useState(false)
 
   // Handle ESC key to close modals
   useEffect(() => {
@@ -49,8 +52,18 @@ export default function Home() {
 
     return () => observer.disconnect()
   }, [])
+  const handleLoaderComplete = () => {
+    setShowLoader(false)
+    setPageReady(true)
+  }
+
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load">
+    <>
+      {showLoader && <SaleDeedLoader onComplete={handleLoaderComplete} />}
+      
+      <div className={`relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden transition-opacity duration-500 ${
+        pageReady ? 'animate-page-entrance animate-page-load opacity-100' : 'opacity-0'
+      }`}>
       <div className="layout-container flex h-full grow flex-col">
         <div className="w-full">
           <Navigation currentPage="home" />
@@ -71,8 +84,8 @@ export default function Home() {
 
                   {/* Main Heading */}
                   <h1 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight animate-fade-in-up animate-delay-200">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-text-shimmer">Everything from Agreement to Will</span>
-                    <span className="block text-3xl md:text-4xl mt-2 font-medium animate-fade-in-up animate-delay-300">Complete Property Documentation</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-text-shimmer">Everything from Sale to Deed</span>
+                    <span className="block text-3xl md:text-4xl mt-2 font-medium animate-fade-in-up animate-delay-300"></span>
                   </h1>
 
                   {/* Subtitle */}
@@ -219,58 +232,94 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto animate-stagger-grid">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto animate-stagger-grid">
                   {/* I Am a Buyer */}
-                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
-                    <div className="w-20 h-20 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <i data-lucide="home" className="w-10 h-10 text-white"></i>
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="home" className="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 className="text-text-light dark:text-text-dark text-xl font-bold mb-4">I Am a Buyer</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm mb-6 leading-relaxed">
+                    <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3">I Am a Buyer</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-xs mb-4 leading-relaxed">
                       Complete support from property selection to purchase. Pricing guidance and legal protection throughout your buying journey.
                     </p>
                     <Link 
                       href="/solutions/buyer" 
-                      className="inline-flex items-center gap-2 bg-transparent border-2 border-teal-500 text-teal-600 dark:text-teal-400 px-6 py-3 rounded-full font-semibold text-sm hover:bg-teal-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-teal-500 text-teal-600 dark:text-teal-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-teal-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
                     >
                       LEARN MORE
-                      <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                      <i data-lucide="arrow-right" className="w-3 h-3"></i>
                     </Link>
                   </div>
 
                   {/* I Am a Seller */}
-                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
-                    <div className="w-20 h-20 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <i data-lucide="handshake" className="w-10 h-10 text-white"></i>
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-16 h-16 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="handshake" className="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 className="text-text-light dark:text-text-dark text-xl font-bold mb-4">I Am a Seller</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm mb-6 leading-relaxed">
+                    <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3">I Am a Seller</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-xs mb-4 leading-relaxed">
                       Step-by-step help from property search to sale deed registration. Legal checks and complete documentation support.
                     </p>
                     <Link 
                       href="/solutions/seller" 
-                      className="inline-flex items-center gap-2 bg-transparent border-2 border-red-500 text-red-600 dark:text-red-400 px-6 py-3 rounded-full font-semibold text-sm hover:bg-red-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-red-500 text-red-600 dark:text-red-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-red-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
                     >
                       LEARN MORE
-                      <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                      <i data-lucide="arrow-right" className="w-3 h-3"></i>
                     </Link>
                   </div>
 
                   {/* I Am a Landlord */}
-                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
-                    <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <i data-lucide="building" className="w-10 h-10 text-white"></i>
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="building" className="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 className="text-text-light dark:text-text-dark text-xl font-bold mb-4">I Am a Landlord</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm mb-6 leading-relaxed">
+                    <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3">I Am a Landlord</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-xs mb-4 leading-relaxed">
                       Find verified tenants quickly. Hassle-free rent agreements and property support for landlords.
                     </p>
                     <Link 
                       href="/solutions/landlord" 
-                      className="inline-flex items-center gap-2 bg-transparent border-2 border-purple-500 text-purple-600 dark:text-purple-400 px-6 py-3 rounded-full font-semibold text-sm hover:bg-purple-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-purple-500 text-purple-600 dark:text-purple-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-purple-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
                     >
                       LEARN MORE
-                      <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                      <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                    </Link>
+                  </div>
+
+                  {/* I Am a Tenant */}
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="key" className="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3">I Am a Tenant</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-xs mb-4 leading-relaxed">
+                      Minimum commission services to find your perfect space. Tenant-friendly agreements.
+                    </p>
+                    <Link 
+                      href="/solutions/tenant" 
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-orange-500 text-orange-600 dark:text-orange-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-orange-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                    >
+                      LEARN MORE
+                      <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                    </Link>
+                  </div>
+
+                  {/* I Am a Builder/Developer/Institution/Society */}
+                  <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <i data-lucide="building-2" className="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3">I Am a Builder / Developer / Institution / society</h3>
+                    <p className="text-subtext-light dark:text-subtext-dark text-xs mb-4 leading-relaxed">
+                      Complete solutions for property dealings, deeds, NOC, freehold, approvals.
+                    </p>
+                    <Link 
+                      href="/solutions/developer" 
+                      className="inline-flex items-center gap-2 bg-transparent border-2 border-blue-500 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-blue-500 hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                    >
+                      LEARN MORE
+                      <i data-lucide="arrow-right" className="w-3 h-3"></i>
                     </Link>
                   </div>
                 </div>
@@ -381,7 +430,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                  <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80")' }}></div>
+                  <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://imgs.search.brave.com/KVkpw5zB4qpCeURULw5kmeop7zu7VMSUGZyHF7A3MbM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmFzaWNob21lbG9h/bi5jb20vYmxvZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8w/NC9Qcm9wZXJ0eV9Q/YXJ0aXRpb25fQmFu/bmVyLTc2OHg1NzYu/anBn")' }}></div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Partition Deed</h3>
                     <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">A legal document that divides jointly-owned property among co-owners, ensuring each gets a clear share.</p>
@@ -804,65 +853,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Testimonials */}
-            <div className="py-16">
-              <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight text-center pb-12 font-display">Trusted By 1000 Across India</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-yellow-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="flex items-center mb-4 text-secondary">
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                  </div>
-                  <p className="text-subtext-light dark:text-subtext-dark italic">"The process was so simple and fast. SaleDeed.com handled everything professionally. Highly recommended for anyone dealing with property documents."</p>
-                  <div className="flex items-center mt-6">
-                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWRWYPynWC5k5uu7_FPhIvt9WKB7Hnp1OcZbi2wZL2pi0oMIEuo7JLUWlyycgyES-N9KF4Y0uV14nrCCcP2SaMoqORDE2P-is-zgIPi_GJKNivbVWvLqyOlzLvlF4KmUs87PHtM8MWfyQbAgHAD18C3UWhWHIq_yTkr0w3UuzmxswA9W3GG2GILPM8gwmvASRDxT35wvcSLQ1ECiru0gozseTj9qDejPfYm09D8uD7qU4DZ1cVkdRHzDnLNYnZdj0IF8Scyafjvouc" />
-                    <div>
-                      <p className="font-bold text-text-light dark:text-text-dark font-display">Priya Sharma</p>
-                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Mumbai</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-yellow-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="flex items-center mb-4 text-secondary">
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                  </div>
-                  <p className="text-subtext-light dark:text-subtext-dark italic">"I was dreading the paperwork, but their team made it a breeze. The doorstep service is a game-changer. Excellent support!"</p>
-                  <div className="flex items-center mt-6">
-                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmuMBONJwWlXUUows2Cm4oROk1Ze9__nSak4snIwBXTbutQ2MDWYY_7mEyjS_PEwEDwDpW39iRAbUJkVwEi5cJYcC0bFYdSb5UHB4GX48TnICC6NRYuHb0c3dAm6j9ap3QFIbFu4KKJ963joq53MgvyzmKArqBvAmXB3HYkzHuktXAJkuAy-yC1naH9paum66JFCg8n3lRjlw4bnNXolLSWl7mXjhiQYufLg7wNXmFbXQioemgbMzuOfS2J4K_FYWXNe-rdwyefRa" />
-                    <div>
-                      <p className="font-bold text-text-light dark:text-text-dark font-display">Arjun Singh</p>
-                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Delhi</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-yellow-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="flex items-center mb-4 text-secondary">
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                    <i className="fill-current" data-lucide="star"></i>
-                  </div>
-                  <p className="text-subtext-light dark:text-subtext-dark italic">"Got my gift deed drafted and registered without any hassle. The expert advice was invaluable. A truly trustworthy platform."</p>
-                  <div className="flex items-center mt-6">
-                    <img alt="User avatar" className="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqL2rTtY27a8lB3uB8OaPpQ2qvkIfweLuQshPuc8r_N4MTraw70d_8lxnZER4jD0JigHRT9djXddsz5QZ8kY6AmtAc0DhR25sdnTBaFkl4-G3vQqQzrAaofSM3BOK3YLqVTqD4-vm2OduE0MvKrrw67EN7fvDS0AITkanro0hDG0lj6z_DPHCwS7B2_wby-2Awn3IqkvVr_r3ndHx4Fb_k9nrnPLV9WIhPGc9e9B11qW6klWxvp93SEK9fUDhDghy50bAHLq9yFwCp" />
-                    <div>
-                      <p className="font-bold text-text-light dark:text-text-dark font-display">Ananya Reddy</p>
-                      <p className="text-sm text-subtext-light dark:text-subtext-dark">Bengaluru</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
           </main>
 
           {/* Footer */}
@@ -880,28 +871,28 @@ export default function Home() {
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Deed Drafting</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Document Verification</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Registration Assistance</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Stamp Duty Calculation</a></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Deed Drafting</Link></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/documents">Document Verification</Link></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Registration Assistance</Link></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/calculator">Stamp Duty Calculation</Link></li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Company</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Contact Us</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</Link></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</Link></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/partner">Careers</Link></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Press</Link></li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Terms of Service</Link></li>
+                    <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</Link></li>
                   </ul>
                 </div>
               </div>
@@ -1038,6 +1029,7 @@ export default function Home() {
         isOpen={showChatbot}
         onClose={() => setShowChatbot(false)}
       />
-    </div>
+      </div>
+    </>
   )
 }
