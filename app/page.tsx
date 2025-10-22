@@ -176,7 +176,7 @@ export default function Home() {
                 <div className="relative max-w-6xl mx-auto px-8 py-16 md:py-20">
                   <div className="text-center animate-hero-content-fade-in">
                     {/* Badge */}
-                    
+
 
 
                     {/* Main Heading */}
@@ -251,7 +251,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              
+
 
               {/* Marquee Section */}
               <div className="relative overflow-hidden bg-gradient-to-r from-primary to-secondary py-5 shadow-lg">
@@ -374,56 +374,56 @@ export default function Home() {
                   {/* First Row - 3 Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 animate-stagger-grid">
                     {/* I Am a Buyer */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col min-h-[380px]">
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
                       <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <i data-lucide="home" className="w-8 h-8 text-white"></i>
                       </div>
-                      <h3 className="text-text-light dark:text-text-dark text-base font-bold mb-3 px-2">I Am a Buyer</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-xs mb-6 leading-relaxed flex-grow px-2">
+                      <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Buyer</h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
                         Complete support from property selection to purchase. Pricing guidance and legal protection throughout your buying journey.
                       </p>
                       <Link
                         href="/solutions/buyer"
-                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-teal-500 text-teal-600 dark:text-teal-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-teal-500 hover:text-white transition-all duration-300 group-hover:shadow-lg mt-auto w-full"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-teal-500 text-teal-600 dark:text-teal-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-teal-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
                       >
                         LEARN MORE
-                        <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                        <i data-lucide="arrow-right" className="w-4 h-4"></i>
                       </Link>
                     </div>
 
                     {/* I Am a Seller */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col min-h-[380px]">
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
                       <div className="w-16 h-16 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <i data-lucide="handshake" className="w-8 h-8 text-white"></i>
                       </div>
-                      <h3 className="text-text-light dark:text-text-dark text-base font-bold mb-3 px-2">I Am a Seller</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-xs mb-6 leading-relaxed flex-grow px-2">
+                      <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Seller</h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
                         Step-by-step help from property search to sale deed registration. Legal checks and complete documentation support.
                       </p>
                       <Link
                         href="/solutions/seller"
-                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-500 text-red-600 dark:text-red-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-red-500 hover:text-white transition-all duration-300 group-hover:shadow-lg mt-auto w-full"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-500 text-red-600 dark:text-red-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-red-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
                       >
                         LEARN MORE
-                        <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                        <i data-lucide="arrow-right" className="w-4 h-4"></i>
                       </Link>
                     </div>
 
                     {/* I Am a Landlord */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col min-h-[380px]">
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
                       <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <i data-lucide="building" className="w-8 h-8 text-white"></i>
                       </div>
-                      <h3 className="text-text-light dark:text-text-dark text-base font-bold mb-3 px-2">I Am a Landlord</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-xs mb-6 leading-relaxed flex-grow px-2">
+                      <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Landlord</h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
                         Find verified tenants quickly. Hassle-free rent agreements and property support for landlords.
                       </p>
                       <Link
                         href="/solutions/landlord"
-                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-purple-500 text-purple-600 dark:text-purple-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-purple-500 hover:text-white transition-all duration-300 group-hover:shadow-lg mt-auto w-full"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-purple-500 text-purple-600 dark:text-purple-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-purple-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
                       >
                         LEARN MORE
-                        <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                        <i data-lucide="arrow-right" className="w-4 h-4"></i>
                       </Link>
                     </div>
                   </div>
@@ -431,38 +431,38 @@ export default function Home() {
                   {/* Second Row - 2 Cards Centered */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto animate-stagger-grid">
                     {/* I Am a Tenant */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col min-h-[380px]">
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
                       <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <i data-lucide="key" className="w-8 h-8 text-white"></i>
                       </div>
-                      <h3 className="text-text-light dark:text-text-dark text-base font-bold mb-3 px-2">I Am a Tenant</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-xs mb-6 leading-relaxed flex-grow px-2">
+                      <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Tenant</h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
                         Minimum commission services to find your perfect space. Tenant-friendly agreements.
                       </p>
                       <Link
                         href="/solutions/tenant"
-                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-orange-500 text-orange-600 dark:text-orange-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-orange-500 hover:text-white transition-all duration-300 group-hover:shadow-lg mt-auto w-full"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-orange-500 text-orange-600 dark:text-orange-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-orange-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
                       >
                         LEARN MORE
-                        <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                        <i data-lucide="arrow-right" className="w-4 h-4"></i>
                       </Link>
                     </div>
 
                     {/* I Am a Builder/Developer/Institution/Society */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col min-h-[380px]">
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
                       <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <i data-lucide="building-2" className="w-8 h-8 text-white"></i>
                       </div>
-                      <h3 className="text-text-light dark:text-text-dark text-base font-bold mb-3 px-2 leading-tight">I Am a Builder / Developer / Institution / Society</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-xs mb-6 leading-relaxed flex-grow px-2">
+                      <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2 leading-tight">I Am a Builder / Developer / Institution / Society</h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
                         Complete solutions for property dealings, deeds, NOC, freehold, approvals.
                       </p>
                       <Link
                         href="/solutions/developer"
-                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-blue-500 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full font-semibold text-xs hover:bg-blue-500 hover:text-white transition-all duration-300 group-hover:shadow-lg mt-auto w-full"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-blue-500 text-blue-600 dark:text-blue-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
                       >
                         LEARN MORE
-                        <i data-lucide="arrow-right" className="w-3 h-3"></i>
+                        <i data-lucide="arrow-right" className="w-4 h-4"></i>
                       </Link>
                     </div>
                   </div>
@@ -988,7 +988,7 @@ export default function Home() {
                       Frequently Asked Questions
                     </h2>
                   </div>
-                  
+
                   <div className="space-y-4">
                     {/* FAQ 1 */}
                     <details className="group cursor-pointer" open>
@@ -1080,6 +1080,71 @@ export default function Home() {
                       </div>
                     </details>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Contact Us CTA Section */}
+            <section className="px-6 md:px-10 lg:px-20 py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+              <div className="max-w-4xl mx-auto text-center">
+                {/* Icon */}
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full mb-6 animate-bounce-gentle">
+                  <i data-lucide="phone-call" className="w-10 h-10 text-white"></i>
+                </div>
+
+                {/* Heading */}
+                <h2 className="text-text-light dark:text-text-dark text-3xl md:text-5xl font-bold tracking-tight font-display mb-4 animate-fade-in-up">
+                  Still Have Questions?
+                </h2>
+
+                {/* Subheading */}
+                <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up animate-delay-200">
+                  Our expert legal team is here to help you with all your property documentation needs. Get in touch today!
+                </p>
+
+                {/* Features */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 animate-fade-in-up animate-delay-300">
+                  <div className="flex flex-col items-center gap-2 p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm">
+                    <i data-lucide="clock" className="w-6 h-6 text-primary"></i>
+                    <span className="text-sm font-semibold text-text-light dark:text-text-dark">Quick Response</span>
+                    <span className="text-xs text-subtext-light dark:text-subtext-dark">Within 24 hours</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2 p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm">
+                    <i data-lucide="shield-check" className="w-6 h-6 text-primary"></i>
+                    <span className="text-sm font-semibold text-text-light dark:text-text-dark">Expert Guidance</span>
+                    <span className="text-xs text-subtext-light dark:text-subtext-dark">Certified lawyers</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2 p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm">
+                    <i data-lucide="headset" className="w-6 h-6 text-primary"></i>
+                    <span className="text-sm font-semibold text-text-light dark:text-text-dark">Free Consultation</span>
+                    <span className="text-xs text-subtext-light dark:text-subtext-dark">15 minutes call</span>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-400">
+                  <Link
+                    href="/contact"
+                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:scale-105"
+                  >
+                    <i data-lucide="mail" className="w-6 h-6"></i>
+                    <span>Contact Us Now</span>
+                    <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                  </Link>
+
+                  <a
+                    href="tel:+918800505050"
+                    className="inline-flex items-center gap-3 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-xl"
+                  >
+                    <i data-lucide="phone" className="w-6 h-6"></i>
+                    <span>Call: +91 88005 05050</span>
+                  </a>
+                </div>
+
+                {/* Trust Badge */}
+                <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
+                  <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
+                  <span>Trusted by 10,000+ clients across India</span>
                 </div>
               </div>
             </section>

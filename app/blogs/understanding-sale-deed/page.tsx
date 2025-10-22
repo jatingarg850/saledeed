@@ -23,11 +23,11 @@ export default function UnderstandingSaleDeedPage() {
                   Sale Deed
                 </span>
               </div>
-              
+
               <h1 className="text-black dark:text-text-dark text-4xl md:text-5xl font-extrabold tracking-tight font-display mb-6">
                 Understanding a Sale Deed
               </h1>
-              
+
               <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400 mb-8">
                 <span>5 min read</span>
                 <span>•</span>
@@ -135,7 +135,7 @@ export default function UnderstandingSaleDeedPage() {
                   </div>
                   <p className="mt-4 text-base">Simplifying property documentation for everyone across India.</p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -145,7 +145,7 @@ export default function UnderstandingSaleDeedPage() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Stamp Duty Calculation</a></li>
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Company</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -155,7 +155,7 @@ export default function UnderstandingSaleDeedPage() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
@@ -164,7 +164,7 @@ export default function UnderstandingSaleDeedPage() {
                   </ul>
                 </div>
               </div>
-              
+
               <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
                 <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
                 <div className="flex space-x-6 mt-4 sm:mt-0">
