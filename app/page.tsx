@@ -169,202 +169,181 @@ export default function Home() {
 
             {/* Main Content */}
             <main className="px-6 md:px-10 lg:px-20 py-10 animate-content-slide-up">
-              {/* Compact Hero Section */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16 animate-hero-entrance">
-                <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
-                <div className="relative max-w-6xl mx-auto px-8 py-16 md:py-20">
-                  <div className="text-center animate-hero-content-fade-in">
-                    {/* Badge */}
-
-
-
-                    {/* Main Heading */}
-                    <h1 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight animate-fade-in-up animate-delay-200">
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-text-shimmer">Everything from Sale to Deed</span>
-                      <span className="block text-3xl md:text-4xl mt-2 font-medium animate-fade-in-up animate-delay-300"></span>
-                    </h1>
-
-                    {/* Subtitle */}
-                    <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up animate-delay-400">
-                      From Sale Deeds to Wills, Exchange Deeds to Power of Attorney - all your property documentation needs covered by expert lawyers.
+              {/* Hero Section */}
+              <div className="home-container animate-in">
+                <div className="header-section">
+                  <div className="tagline">Everything from sale to&nbsp;deed</div>
+                  <div>
+                    <div className="process-steps poppins-regular">
+                      Verify - Draft - Register<br />
+                      All Property Documents Hassle Free
+                    </div>
+                    <p className="deed-para" style={{ fontSize: '17px' }}>
+                      Sale Deed | Gift Deed | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
-
-                    {/* Process Steps - Verify, Draft, Register */}
-                    <div className="mb-12 animate-fade-in-up animate-delay-500">
-                      <h3 className="text-text-light dark:text-text-dark text-2xl md:text-3xl font-bold mb-8 animate-fade-in-up animate-delay-600">
-                        Verify - Draft - Register
-                      </h3>
-
-                      {/* Process Summary */}
-                      <div className="mt-8 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl max-w-2xl mx-auto">
-                        <p className="text-text-light dark:text-text-dark text-sm font-medium text-center">
-                          <span className="text-primary font-bold">All Property Documents</span> • <span className="text-secondary font-bold">Hassle-Free</span> • <span className="text-green-600 font-bold">Legal Expert</span>
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animate-delay-700">
-                      <Link href="/services" className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                        <span>Start Your Deed Now</span>
-                        <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
-                      </Link>
-                      <Link href="/contact" className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300">
-                        <i data-lucide="phone" className="w-5 h-5"></i>
-                        Free Consultation
-                      </Link>
-                    </div>
-
-                    {/* Trust Indicators */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                      <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                        <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                          <i data-lucide="users" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                        </div>
-                        <div className="text-left">
-                          <div className="font-bold text-text-light dark:text-text-dark text-sm">Expert Lawyers</div>
-                          <div className="text-xs text-subtext-light dark:text-subtext-dark">Govt-Registered</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                        <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                          <i data-lucide="shield" className="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
-                        </div>
-                        <div className="text-left">
-                          <div className="font-bold text-text-light dark:text-text-dark text-sm">100% Secure</div>
-                          <div className="text-xs text-subtext-light dark:text-subtext-dark">Data Protection</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                        <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
-                          <i data-lucide="star" className="w-5 h-5 text-orange-600 dark:text-orange-400"></i>
-                        </div>
-                        <div className="text-left">
-                          <div className="font-bold text-text-light dark:text-text-dark text-sm">4.9/5 Rating</div>
-                          <div className="text-xs text-subtext-light dark:text-subtext-dark">10k+ Clients</div>
-                        </div>
-                      </div>
-                    </div>
+                    <p className="blinking-text">Buy/Sell/Rent at minimum commission</p>
+                  </div>
+                  <div className="header-btn">
+                    <button
+                      onClick={() => setShowDoorstepModal(true)}
+                      className="btn-primary"
+                    >
+                      Get Doorstep Advice
+                    </button>
+                    <Link href="/documents">
+                      <button className="btn-primary">Get Your Deed Drafted</button>
+                    </Link>
+                    <Link href="/calculator">
+                      <button className="btn-primary">Calculate Stamp Duty</button>
+                    </Link>
+                    <Link href="/contact">
+                      <button className="btn-primary">Expert Advice At Zero Price</button>
+                    </Link>
                   </div>
                 </div>
-              </div>
 
-
-              {/* Marquee Section */}
-              <div className="relative overflow-hidden bg-gradient-to-r from-primary to-secondary py-5 shadow-lg">
+                {/* Marquee Container */}
                 <div className="marquee-container">
-                  <div className="marquee-content flex gap-8">
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Buy/Sell/Rent At Minimum Commission</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">A To Z Buying/Selling Assistance</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">All Deeds Drafting & Registration</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Property Verification</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Sale Deed</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Gift Deed</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Relinquishment Deed</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Will</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Rent Agreement</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">No Objection Certificate (NOC)</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Valuation Report</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Mutation</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Real Estate Liaisoning</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Mcd/Dda/L&do/Ndmc</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Freehold</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Completion Certificate (C.C)</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Regularisation</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Property Tax Assessment</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Surviving Member Certificate</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Plan Sanctioning</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Residential/Commercial/Industrial</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Capital Gain</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Structural Stability Certificate</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Renovation</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Relocation</span>
+                  <div className="marquee-content">
+                    <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
+                    <span className="marquee-text">A To Z Buying/Selling Assistance</span>
+                    <span className="marquee-text">All Deeds Drafting &amp; Registration</span>
+                    <span className="marquee-text">Property Verification</span>
+                    <span className="marquee-text">Sale Deed</span>
+                    <span className="marquee-text">Gift Deed</span>
+                    <span className="marquee-text">Relinquishment Deed</span>
+                    <span className="marquee-text">Will</span>
+                    <span className="marquee-text">Rent Agreement</span>
+                    <span className="marquee-text">No Objection Certificate(NOC)</span>
+                    <span className="marquee-text">Valuation Report</span>
+                    <span className="marquee-text">Mutation</span>
+                    <span className="marquee-text">Real Estate Liaisoning</span>
+                    <span className="marquee-text">Mcd/Dda/L&amp;do/Ndmc</span>
+                    <span className="marquee-text">Freehold</span>
+                    <span className="marquee-text">Completion Certificate (C.C)</span>
+                    <span className="marquee-text">Regularisation</span>
+                    <span className="marquee-text">Property Tax Assessment</span>
+                    <span className="marquee-text">Surviving Member Certificate</span>
+                    <span className="marquee-text">Plan Sanctioning</span>
+                    <span className="marquee-text">Residential/Commercial/Industrial</span>
+                    <span className="marquee-text">Capital Gain</span>
+                    <span className="marquee-text">Structural Stability Certificate</span>
+                    <span className="marquee-text">Renovation</span>
+                    <span className="marquee-text">Relocation</span>
                     {/* Duplicate for seamless loop */}
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Buy/Sell/Rent At Minimum Commission</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">A To Z Buying/Selling Assistance</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">All Deeds Drafting & Registration</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Property Verification</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Sale Deed</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Gift Deed</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Relinquishment Deed</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Will</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Rent Agreement</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">No Objection Certificate (NOC)</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Valuation Report</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Mutation</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Real Estate Liaisoning</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Mcd/Dda/L&do/Ndmc</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Freehold</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Completion Certificate (C.C)</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Regularisation</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Property Tax Assessment</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Surviving Member Certificate</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Plan Sanctioning</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Residential/Commercial/Industrial</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Capital Gain</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Structural Stability Certificate</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Renovation</span>
-                    <span className="marquee-text text-white font-bold text-base whitespace-nowrap">Relocation</span>
+                    <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
+                    <span className="marquee-text">A To Z Buying/Selling Assistance</span>
+                    <span className="marquee-text">All Deeds Drafting &amp; Registration</span>
+                    <span className="marquee-text">Property Verification</span>
+                    <span className="marquee-text">Sale Deed</span>
+                    <span className="marquee-text">Gift Deed</span>
+                    <span className="marquee-text">Relinquishment Deed</span>
+                    <span className="marquee-text">Will</span>
+                    <span className="marquee-text">Rent Agreement</span>
+                    <span className="marquee-text">No Objection Certificate(NOC)</span>
+                    <span className="marquee-text">Valuation Report</span>
+                    <span className="marquee-text">Mutation</span>
+                    <span className="marquee-text">Real Estate Liasioning</span>
+                    <span className="marquee-text">Mcd/Dda/L&amp;do/Ndmc</span>
+                    <span className="marquee-text">Freehold</span>
+                    <span className="marquee-text">Completion Certificate (C.C)</span>
+                    <span className="marquee-text">Regularisation</span>
+                    <span className="marquee-text">Property Tax Assessment</span>
+                    <span className="marquee-text">Surviving Member Certificate</span>
+                    <span className="marquee-text">Plan Sanctioning</span>
+                    <span className="marquee-text">Residential/Commercial/Industrial</span>
+                    <span className="marquee-text">Capital Gain</span>
+                    <span className="marquee-text">Structural Stability Certificate</span>
+                    <span className="marquee-text">Renovation</span>
+                    <span className="marquee-text">Relocation</span>
+                  </div>
+                </div>
+
+                {/* Features Container */}
+                <div className="thp-features-container">
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-file-signature fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20get%20my%20deed%20registered%22"
+                        rel="noopener noreferrer"
+                      >
+                        All deeds Drafting And Registration
+                      </a>
+                    </div>
+                  </div>
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-coins fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20know%20how%20can%20i%20save%20tax%22"
+                        rel="noopener noreferrer"
+                      >
+                        Save Tax
+                      </a>
+                    </div>
+                  </div>
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-landmark fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20authority%20assistance%22"
+                        rel="noopener noreferrer"
+                      >
+                        All Authorities Assistance
+                      </a>
+                    </div>
+                  </div>
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-hand-holding-usd fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20to%20know%20more%20about%20loan%22"
+                        rel="noopener noreferrer"
+                      >
+                        Get Instant Loan
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stats Blinking Animation */}
+                <div className="stats-blink-container">
+                  <div className="stats-blink-content">
+                    <span className="stats-blink-text stats-blink-1">Every 30 minutes a loan is granted</span>
+                    <span className="stats-blink-text stats-blink-2">Every 11 minutes a valuation report is generated</span>
+                    <span className="stats-blink-text stats-blink-3">Every 4 minutes a query is answered</span>
+                    <span className="stats-blink-text stats-blink-4">Every 6 minutes a deed is drafted</span>
                   </div>
                 </div>
               </div>
 
-              {/* Services Grid */}
-              <div className="py-16 animate-reveal-on-scroll">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 text-center animate-stagger-grid">
-                  <div
-                    onClick={() => setShowDoorstepModal(true)}
-                    className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer"
-                  >
-                    <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
-                      <i className="text-primary w-10 h-10" data-lucide="map-pin"></i>
-                    </div>
-                    <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Doorstep Advice</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Professional legal advisors at your home.</p>
-                  </div>
 
-                  <Link href="/documents" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer">
-                    <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
-                      <i className="text-primary w-10 h-10" data-lucide="file-pen-line"></i>
-                    </div>
-                    <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Get Your Deed Drafted</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">By registered property lawyers.</p>
-                  </Link>
 
-                  <a href="/calculator" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer">
-                    <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
-                      <i className="text-primary w-10 h-10" data-lucide="calculator"></i>
-                    </div>
-                    <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Calculate Stamp Duty</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Instant state-wise calculation.</p>
-                  </a>
-
-                  <Link href="/contact" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200 cursor-pointer">
-                    <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
-                      <i className="text-primary w-10 h-10" data-lucide="headset"></i>
-                    </div>
-                    <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Expert Advice</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Free 15-minute consultation.</p>
-                  </Link>
-
-                  <a href="/documents" className="group flex flex-col items-center justify-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-yellow-200">
-                    <div className="bg-primary/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20 p-4 rounded-full transition-all duration-300">
-                      <i className="text-primary w-10 h-10" data-lucide="file-text"></i>
-                    </div>
-                    <h3 className="text-text-light dark:text-text-dark text-2xl font-professional font-bold">Document Library</h3>
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed px-2">Access legal document templates and formats.</p>
-                  </a>
-                </div>
-              </div>
               {/* User Type Selection Section */}
               <div className="py-20 bg-white dark:bg-slate-800/30 animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
-                      Everything from Sale to Deed
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight font-display mb-4">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
+                        Everything from Sale to Deed
+                      </span>
                     </h2>
                     <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
                       Choose your role to get personalized property documentation solutions

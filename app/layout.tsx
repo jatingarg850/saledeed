@@ -48,6 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`light ${manrope.variable} ${poppins.variable} ${roboto.variable} ${playfair.variable}`}>
       <head>
         <Script src="https://unpkg.com/lucide@latest" strategy="beforeInteractive" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
       <body className="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
         {children}

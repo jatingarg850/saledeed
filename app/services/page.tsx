@@ -6,6 +6,7 @@ import Navigation from '../../components/Navigation'
 
 export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null)
+    const [showDoorstepModal, setShowDoorstepModal] = useState(false)
 
     const services = [
         { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -98,61 +99,377 @@ export default function ServicesPage() {
                     {/* Individual Document Services - Top Priority */}
                     <div className="px-6 md:px-10 lg:px-20 py-10">
                         <div className="bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-slate-600 mb-16">
-                            <div className="text-center mb-8">
-                                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                                    <i data-lucide="star" className="w-4 h-4"></i>
-                                    Most Popular Services
-                                </div>
-                                <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-2">Individual Document Services</h2>
-                                <p className="text-lg text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
-                                    Choose from our most requested legal documentation services with transparent pricing
-                                </p>
-                            </div>
+                            
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {[
-                                    { name: 'Gift Deed', price: '₹12,999' },
-                                    { name: 'Relinquishment Deed', price: '₹9,999' },
-                                    { name: 'Will', price: '₹4,999' },
-                                    { name: 'General Power of Attorney', price: '₹6,999' },
-                                    { name: 'Partition Deed', price: '₹11,999' },
-                                    { name: 'Agreement to Sell', price: '₹10,999' },
-                                    { name: 'Rent/Lease Agreement', price: 'Starting ₹999' },
-                                    { name: 'Mutation', price: '₹19,999' },
-                                    { name: 'Builder Buyer Agreement', price: 'As per discussion' }
-                                ].map((service, index) => (
-                                    <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-slate-700">
-                                        <div className="flex items-center justify-between mb-4">
-                                            <h4 className="font-semibold text-text-light dark:text-text-dark">{service.name}</h4>
-                                            <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                                                <i data-lucide="file-text" className="w-4 h-4 text-primary"></i>
-                                            </div>
-                                        </div>
-                                        <p className="text-2xl font-bold text-primary mb-3">{service.price}</p>
-                                        <Link
-                                            href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-').replace('/', '-')}`}
-                                            className="inline-flex items-center gap-2 text-sm text-primary hover:text-secondary font-medium transition-colors"
-                                        >
-                                            Learn More
-                                            <i data-lucide="arrow-right" className="w-4 h-4"></i>
-                                        </Link>
-                                    </div>
-                                ))}
-                            </div>
+                           
 
                             {/* Special Note for Rent Agreement */}
-                            <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-700">
-                                <div className="flex items-start gap-3">
-                                    <i data-lucide="info" className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"></i>
-                                    <div>
-                                        <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Rent/Lease Agreement Special Pricing</h4>
-                                        <p className="text-sm text-blue-700 dark:text-blue-300">
-                                            <strong>Starting ₹999</strong> - With tenant verification starting ₹6,999
-                                        </p>
+                        
+                            {/* Book Our Services Section */}
+                            <section className="additional-services-info py-16">
+                                <div className="container mx-auto px-4">
+                                    <div className="text-center mb-12">
+                                        <h2 className="text-4xl font-bold text-text-light dark:text-text-dark">Book Our Services</h2>
+                                    </div>
+
+                                    {/* Services Grid */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-stretch">
+                                        {/* Doorstep Services */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Book Our Doorstep Services</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Book our property expert to assist you right at your doorstep for a detailed understanding and analysis of your specific case and procedure.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <button
+                                                        onClick={() => setShowDoorstepModal(true)}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Property Verification */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Property Verification</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹8999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Title check of property from the competent authority.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Encumbrance certificate to check the possible debt.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Past ownership checking &amp; legal clearance report.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/contact">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Saledeed Registration Package */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Saledeed Registration Package</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹12999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Drafting of sale deed as per your specific case.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Coordination with sub – registrar office.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">End to end handling of all paper work.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/sale-deed">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Agent Assistance */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Agent Assistance</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹19999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Include a thorough property check through our internal sources.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Registration of property.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Legal assistance if required.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Negotiation and personalized purchase assistance.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/contact">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Gift Deed */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Gift deed</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹12999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Draft gift deed per Delhi stamp rules, estimate duty, and assist in registry completion.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/gift-deed">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Relinquishment Deed */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Relinquishment Deed</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹9999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">We draft relinquishment deed and file registration documentation per Delhi norms.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/relinquishment-deed">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Will */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Will</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹4999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">We draft legally valid Wills, arrange registration if needed, and maintain privacy throughout the process.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/will-agreement">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* General Power of Attorney */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">General Power of attorney</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹6999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">We prepare GPA drafts as per Delhi legal requirements and facilitate registration.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/general-power-of-authority">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Partition Deed */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Partition Deed</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹11999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">We prepare partition deed with accurate share details and assist with Sub-Registrar filing.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/partition-deed">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Agreement to Sell */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Agreement to sell</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹10999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Draft ATS Specific to Delhi regulations calculate duty, and guide through registration filing</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/agreement-to-sell">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Rent/Lease Agreement */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Rent/Lease Agreement</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹4999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">We prepare e-stamped rent agreement instantly, ready for printing.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/rent-agreement">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Mutation */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Mutation</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹19999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">We draft, file, and follow up Mutation Application with Delhi local bodies (MCD/ DDA/NDMC) and deliver it to your address.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/mutation-legal-document">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Builder Buyer Agreement */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Builder Buyer Agreement</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹As per Discussion</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">We draft/review BBAs ensuring RERA compliance and protect buyer interests.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <Link href="/services/builder-buyer-agreement">
+                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
+                                                            Book Now
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
+                            </section>
                             {/* Contact CTA */}
                             <div className="text-center mt-8">
                                 <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white">
