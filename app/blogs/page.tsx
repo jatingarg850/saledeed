@@ -126,9 +126,19 @@ export default function BlogsPage() {
           <main className="px-6 md:px-10 lg:px-20 py-10">
             {/* Hero Section */}
             <div className="text-center mb-16">
-              <h1 className="text-black dark:text-text-dark text-4xl md:text-6xl font-extrabold tracking-tighter font-display mb-6">
-                The Land Journal
-              </h1>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <h1 className="text-black dark:text-text-dark text-4xl md:text-6xl font-extrabold tracking-tighter font-display">
+                  The Land Journal
+                </h1>
+                <a
+                  href="/blogs/create"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                  title="Add New Blog (Admin Only)"
+                >
+                  <i data-lucide="plus" className="w-4 h-4"></i>
+                  Add Blog
+                </a>
+              </div>
               <p className="text-black dark:text-subtext-dark text-lg md:text-xl max-w-3xl mx-auto">
                 Insights, stories & guides from the world of real estate
               </p>

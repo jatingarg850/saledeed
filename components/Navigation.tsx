@@ -52,49 +52,32 @@ export default function Navigation({ currentPage }: NavigationProps) {
       <header className={`flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10 transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>
         <a href="/" className="flex items-center group transition-all duration-300">
-          <div className="rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 animate-slideInFromLeft animate-pulse-gentle relative overflow-hidden group-hover:rotate-1 video-logo-container">
-            {/* Enhanced shimmer effect overlay */}
-            <div className="video-shimmer-overlay"></div>
-
-            {/* Background pulse rings */}
+          <div className="rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 animate-slideInFromLeft-once relative overflow-hidden group-hover:rotate-1 video-logo-container">
+            {/* Background pulse rings - only on hover */}
             <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 animate-pulse-ring"></div>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 animate-pulse-ring-delayed"></div>
-            </div>
-
-            {/* Enhanced floating particles effect */}
-            <div className="video-particles">
-              <div className="video-particle video-particle-1"></div>
-              <div className="video-particle video-particle-2"></div>
-              <div className="video-particle video-particle-3"></div>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10"></div>
             </div>
 
             <video
               src="/documents/WhatsApp Video 2025-10-21 at 18.56.42_bfdd857e.mp4"
               autoPlay
-              loop
               muted
               playsInline
-              className="h-16 w-24 object-cover max-w-none group-hover:scale-110 group-hover:animate-video-scale-bounce transition-all duration-500 ease-out animate-video-logo-entrance animate-video-float animate-video-pulse relative z-10 rounded-lg logo-video"
+              className="h-16 w-24 object-cover max-w-none group-hover:scale-110 transition-all duration-500 ease-out relative z-10 rounded-lg logo-video"
               style={{ maxWidth: 'none' }}
-              onMouseEnter={(e) => {
-                e.currentTarget.classList.add('animate-video-hover-glow');
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.classList.remove('animate-video-hover-glow');
-              }}
               title="Everything from Sale to Deed"
               aria-label="Everything from Sale to Deed - Your Complete Property Solution"
+              onEnded={(e) => {
+                // Stop at the last frame when video ends
+                e.currentTarget.pause();
+              }}
             />
 
             {/* Enhanced glow effect on hover */}
-            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-primary/30 to-secondary/30 blur-md -z-10 animate-glow-pulse"></div>
+            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-primary/30 to-secondary/30 blur-md -z-10"></div>
 
-            {/* Enhanced border glow animation */}
-            <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-white/30 transition-all duration-300 animate-video-border-glow"></div>
-            
-            {/* Additional glow ring */}
-            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 blur-xl -z-20 animate-pulse"></div>
+            {/* Border on hover */}
+            <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-white/30 transition-all duration-300"></div>
           </div>
         </a>
 

@@ -894,6 +894,12 @@ a {
   animation: slideInFromLeft 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Slide in from left - play once and stop at last frame */
+.animate-slideInFromLeft-once {
+  animation: slideInFromLeft 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  animation-iteration-count: 1;
+}
+
 /* Gentle pulse animation */
 @keyframes pulse-gentle {
 
@@ -1121,6 +1127,7 @@ a {
 @media (prefers-reduced-motion: reduce) {
 
   .animate-slideInFromLeft,
+  .animate-slideInFromLeft-once,
   .animate-pulse-gentle,
   .animate-shimmer-continuous,
   .animate-pulse-ring,

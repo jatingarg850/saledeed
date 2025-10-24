@@ -458,18 +458,18 @@ export default function Home() {
               </div>
 
               {/* Tell To Sell - Partner Section */}
-              <div className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
+              <div className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div>
-                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg animate-bounce-gentle">
+                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg animate-bounce-gentle">
                         <i data-lucide="handshake" className="w-4 h-4"></i>
                         Partnership Opportunity
                       </div>
                       
                       <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-black tracking-tight font-display mb-6 leading-tight">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
                           Tell To Sell
                         </span>
                         <span className="block mt-2">Partner With Us</span>
@@ -481,7 +481,7 @@ export default function Home() {
 
                       <div className="space-y-4 mb-8">
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
                             <i data-lucide="trending-up" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
@@ -491,7 +491,7 @@ export default function Home() {
                         </div>
 
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
                             <i data-lucide="dollar-sign" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
@@ -501,7 +501,7 @@ export default function Home() {
                         </div>
 
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
                             <i data-lucide="shield-check" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
@@ -514,7 +514,7 @@ export default function Home() {
                       <div className="flex flex-col sm:flex-row gap-4">
                         <Link
                           href="/partner"
-                          className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                          className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                         >
                           <i data-lucide="user-plus" className="w-5 h-5"></i>
                           <span>Become a Partner</span>
@@ -525,7 +525,7 @@ export default function Home() {
                           href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20partner%20with%20SaleDeed.com"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-3 bg-white dark:bg-slate-800 text-purple-600 border-2 border-purple-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-50 dark:hover:bg-slate-700 transition-all duration-300"
+                          className="inline-flex items-center justify-center gap-3 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 dark:hover:bg-slate-700 transition-all duration-300"
                         >
                           <i data-lucide="message-circle" className="w-5 h-5"></i>
                           <span>Chat on WhatsApp</span>
@@ -535,14 +535,14 @@ export default function Home() {
 
                     {/* Right Content - Visual */}
                     <div className="relative">
-                      <div className="relative bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-3xl p-8 shadow-2xl border border-purple-200/50 dark:border-purple-700/50">
-                        <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
-                        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                      <div className="relative bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-3xl p-8 shadow-2xl border border-yellow-200/50 dark:border-yellow-700/50">
+                        <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 animate-pulse"></div>
+                        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-secondary to-primary rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
                         
                         <div className="relative space-y-6">
                           <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                             <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                              <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-xl flex items-center justify-center">
                                 <i data-lucide="edit" className="w-8 h-8 text-white"></i>
                               </div>
                               <div>
@@ -554,7 +554,7 @@ export default function Home() {
 
                           <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                             <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-600 rounded-xl flex items-center justify-center">
                                 <i data-lucide="home" className="w-8 h-8 text-white"></i>
                               </div>
                               <div>
@@ -566,7 +566,7 @@ export default function Home() {
 
                           <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                             <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+                              <div className="w-16 h-16 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-xl flex items-center justify-center">
                                 <i data-lucide="scale" className="w-8 h-8 text-white"></i>
                               </div>
                               <div>
@@ -578,7 +578,7 @@ export default function Home() {
 
                           <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                             <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                              <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
                                 <i data-lucide="users" className="w-8 h-8 text-white"></i>
                               </div>
                               <div>
