@@ -83,6 +83,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
               onMouseLeave={(e) => {
                 e.currentTarget.classList.remove('animate-video-hover-glow');
               }}
+              title="Everything from Sale to Deed"
+              aria-label="Everything from Sale to Deed - Your Complete Property Solution"
             />
 
             {/* Enhanced glow effect on hover */}

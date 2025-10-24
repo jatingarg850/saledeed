@@ -7,6 +7,7 @@ import AIChatbot from '../components/AIChatbot'
 import Testimonials from '../components/Testimonials'
 import StampDutyCalculator from '../components/StampDutyCalculator'
 import PropertyDocumentCard from '../components/PropertyDocumentCard'
+import PopupNotifications from '../components/PopupNotifications'
 
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
@@ -162,6 +163,7 @@ export default function Home() {
 
   return (
     <>
+      <PopupNotifications />
       <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load">
         <div className="layout-container flex h-full grow flex-col">
           <div className="w-full">
@@ -455,6 +457,143 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Tell To Sell - Partner Section */}
+              <div className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Content */}
+                    <div>
+                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg animate-bounce-gentle">
+                        <i data-lucide="handshake" className="w-4 h-4"></i>
+                        Partnership Opportunity
+                      </div>
+                      
+                      <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-black tracking-tight font-display mb-6 leading-tight">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+                          Tell To Sell
+                        </span>
+                        <span className="block mt-2">Partner With Us</span>
+                      </h2>
+                      
+                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-8">
+                        Join our growing network of property professionals. Whether you're a deed writer, property dealer, lawyer, or reference giver - we offer a professional and profitable partnership that stands out from the rest.
+                      </p>
+
+                      <div className="space-y-4 mb-8">
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="trending-up" className="w-6 h-6 text-white"></i>
+                          </div>
+                          <div>
+                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Grow Your Business</h3>
+                            <p className="text-subtext-light dark:text-subtext-dark">Access our extensive client network and expand your reach</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="dollar-sign" className="w-6 h-6 text-white"></i>
+                          </div>
+                          <div>
+                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Earn More</h3>
+                            <p className="text-subtext-light dark:text-subtext-dark">Competitive commissions and transparent payment structure</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="shield-check" className="w-6 h-6 text-white"></i>
+                          </div>
+                          <div>
+                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Professional Support</h3>
+                            <p className="text-subtext-light dark:text-subtext-dark">Full backend support and established processes</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Link
+                          href="/partner"
+                          className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                        >
+                          <i data-lucide="user-plus" className="w-5 h-5"></i>
+                          <span>Become a Partner</span>
+                          <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </Link>
+
+                        <a
+                          href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20partner%20with%20SaleDeed.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-3 bg-white dark:bg-slate-800 text-purple-600 border-2 border-purple-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-50 dark:hover:bg-slate-700 transition-all duration-300"
+                        >
+                          <i data-lucide="message-circle" className="w-5 h-5"></i>
+                          <span>Chat on WhatsApp</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Right Content - Visual */}
+                    <div className="relative">
+                      <div className="relative bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-3xl p-8 shadow-2xl border border-purple-200/50 dark:border-purple-700/50">
+                        <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
+                        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                        
+                        <div className="relative space-y-6">
+                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div className="flex items-center gap-4">
+                              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="edit" className="w-8 h-8 text-white"></i>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Deed Writers</h4>
+                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Professional documentation</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div className="flex items-center gap-4">
+                              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="home" className="w-8 h-8 text-white"></i>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Property Dealers</h4>
+                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Expand your services</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div className="flex items-center gap-4">
+                              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="scale" className="w-8 h-8 text-white"></i>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Lawyers</h4>
+                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Legal expertise network</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div className="flex items-center gap-4">
+                              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="users" className="w-8 h-8 text-white"></i>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Reference Givers</h4>
+                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Earn commissions easily</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Stamp Duty Calculator Section */}
               <div className="py-20 bg-white dark:bg-slate-800/30 animate-section-slide-in">
                 <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20">
@@ -473,11 +612,26 @@ export default function Home() {
 
 
               {/* Delhi Property Documents */}
-              <div className="py-16 bg-white dark:bg-background-dark rounded-xl border border-yellow-200">
-                <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight text-center pb-12 font-times">Delhi Property Documents</h2>
+              <div className="py-16 bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:bg-background-dark rounded-xl border border-yellow-200 shadow-xl">
+                <div className="text-center mb-12 animate-fade-in-up">
+                  <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-times mb-4">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
+                      Delhi Property Documents
+                    </span>
+                  </h2>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
+                    Everything from Sale to Deed - Complete documentation services for all your property needs
+                  </p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
                   {propertyDocuments.map((doc, index) => (
-                    <PropertyDocumentCard key={index} document={doc} />
+                    <div 
+                      key={index}
+                      className="animate-fade-in-up"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <PropertyDocumentCard document={doc} />
+                    </div>
                   ))}
                 </div>
               </div>

@@ -69,13 +69,25 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
         <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed mb-4 line-clamp-4">
           {document.description}
         </p>
-        <Link
-          href={document.link}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
-        >
-          Learn More
-          <i data-lucide="arrow-right" className="w-4 h-4"></i>
-        </Link>
+        <div className="flex gap-2">
+          <Link
+            href={document.link}
+            className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+          >
+            View Details
+            <i data-lucide="arrow-right" className="w-4 h-4"></i>
+          </Link>
+          <a
+            href={`https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(document.title)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+            title="Chat on WhatsApp"
+          >
+            <i data-lucide="message-circle" className="w-4 h-4"></i>
+            WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   )
