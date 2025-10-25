@@ -610,6 +610,87 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Why saledeed.com Section */}
+              <div className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
+                  <div className="text-center mb-16 animate-fade-in-up">
+                    <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-display mb-4">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
+                        Why saledeed.com?
+                      </span>
+                    </h2>
+                    <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
+                      Your trusted partner for hassle-free property documentation
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* Card 1 - Affordable & Convenient */}
+                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up">
+                      <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i className="fas fa-hand-holding-usd text-white text-2xl"></i>
+                      </div>
+                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                        Affordable & Convenient
+                      </h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                        We provide affordable sale deed drafting and registration services with a dedicated agent guiding you at every step.
+                      </p>
+                    </div>
+
+                    {/* Card 2 - No Compromise Privacy */}
+                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i className="fas fa-user-secret text-white text-2xl"></i>
+                      </div>
+                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                        No Compromise Privacy
+                      </h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                        All your sale deed details, documents, and personal information remain completely confidential with us.
+                      </p>
+                    </div>
+
+                    {/* Card 3 - Money Back Guarantee */}
+                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                      <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i className="fas fa-shield-alt text-white text-2xl"></i>
+                      </div>
+                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                        Money Back Guarantee
+                      </h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                        We ensure top-quality sale deed services. If any part of the process is not satisfactory, we provide a full money-back guarantee.
+                      </p>
+                    </div>
+
+                    {/* Card 4 - Free Doorstep Advice */}
+                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i className="fas fa-home text-white text-2xl"></i>
+                      </div>
+                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                        Free Doorstep Advice
+                      </h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                        Our experts provide doorstep consultation for sale deed procedures, clarifying all legal formalities and guiding you through registration.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                    <a
+                      href="/contact"
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                    >
+                      <i className="fas fa-phone-alt"></i>
+                      <span>Get Started Today</span>
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
               {/* Delhi Property Documents */}
               <div className="py-16 bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:bg-background-dark rounded-xl border border-yellow-200 shadow-xl">

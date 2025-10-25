@@ -104,7 +104,7 @@ export default function GiftDeedPage() {
                   <i data-lucide="gift" className="w-4 h-4"></i>
                   Family Property Transfer
                 </div>
-                
+
                 {/* Main Heading */}
                 <h1 className="text-text-light dark:text-text-dark text-5xl md:text-7xl font-black tracking-tight font-display mb-8 leading-tight">
                   Gift Deed
@@ -112,7 +112,7 @@ export default function GiftDeedPage() {
                     Services
                   </span>
                 </h1>
-                
+
                 {/* Description */}
                 <p className="text-subtext-light dark:text-subtext-dark text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed mb-12 font-medium">
                   Professional gift deed drafting and registration services for seamless property transfers within families with complete legal compliance.
@@ -120,15 +120,15 @@ export default function GiftDeedPage() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Start Your Gift Deed
                   </Link>
-                  <a 
-                    href="/documents/DEED Documents.pdf" 
+                  <a
+                    href="/documents/DEED Documents.pdf"
                     download="Gift Deed Sample.pdf"
                     className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-green-600 border-2 border-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 hover:text-white transition-all duration-300"
                   >
@@ -175,6 +175,168 @@ export default function GiftDeedPage() {
 
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto space-y-16">
+            {/* Gift Deed Definition Section */}
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-green-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-green-200/50 dark:border-slate-700">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="gift"></i>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">Gift Deed</h2>
+                    <p className="text-subtext-light dark:text-subtext-dark">Legal transfer of property without monetary consideration</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 space-y-6">
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed text-lg">
+                    A Gift Deed is a legal document that allows a person (the donor) to voluntarily transfer ownership of a property or asset to another person (the donee) without any monetary consideration. It is governed under the Transfer of Property Act, 1882, and can apply to both movable and immovable property, such as land, house, vehicle, shares, or other valuable assets. The Gift Deed clearly specifies: The details of the donor and the donee A full description of the property or asset being gifted Any terms or conditions agreed upon (if any) The voluntary nature of the gift Once registered at the Sub-Registrar’s office, the Gift Deed becomes legally valid, ensuring that the transfer is recognized by law and protects the rights of both parties. Without a registered Gift Deed, the transfer is not legally enforceable, and disputes may arise in the future. In simple terms, a Gift Deed is a formal and legal way to give property or assets to someone you trust, ensuring transparency, safety, and legality of the transfer.
+                  </p>
+
+                  <h3 className="text-xl font-bold text-text-light dark:text-text-dark mt-8 mb-4">The Gift Deed clearly specifies:</h3>
+
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">The donor decides to gift property or an asset voluntarily.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">A draft of the Gift Deed is prepared, containing all details of the donor, donee, property, and any conditions.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">Both parties sign the deed in the presence of two witnesses.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">The deed is registered at the Sub-Registrar Office, and the applicable stamp duty is paid.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">After registration, the ownership is legally transferred to the donee.</span>
+                    </li>
+                  </ul>
+
+                  <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-600 p-6 rounded-r-lg mt-8">
+                    <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      <strong className="text-green-600 dark:text-green-400">Important:</strong> Once registered at the Sub-Registrar's office, the Gift Deed becomes legally valid, ensuring that the transfer is recognized by law and protects the rights of both parties. Without a registered Gift Deed, the transfer is not legally enforceable, and disputes may arise in the future.
+                    </p>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-lg mt-6">
+                    <p className="text-subtext-light dark:text-subtext-dark leading-relaxed text-center font-medium">
+                      In simple terms, a Gift Deed is a formal and legal way to give property or assets to someone you trust, ensuring transparency, safety, and legality of the transfer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How it Works Section */}
+            <div className="bg-gradient-to-br from-white via-green-50/50 to-emerald-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-green-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-600/10 to-emerald-600/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-emerald-600/10 to-green-600/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+              <div className="relative">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="workflow"></i>
+                    </div>
+                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How it Works</h3>
+                  </div>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                    Simple step-by-step process to complete your Gift Deed registration
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">1</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Voluntary Decision</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          The donor decides to gift property or an asset voluntarily.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">2</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Draft Preparation</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          A draft of the Gift Deed is prepared, containing all details of the donor, donee, property, and any conditions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">3</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Signing & Witnessing</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          Both parties sign the deed in the presence of two witnesses.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">4</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Registration</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          The deed is registered at the Sub-Registrar Office, and the applicable stamp duty is paid.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="check" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Ownership Transfer Complete</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          After registration, the ownership is legally transferred to the donee.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Tab Navigation */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-green-200/50 dark:border-slate-700 overflow-hidden">
               <div className="border-b border-green-200 dark:border-slate-700 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-700">
@@ -183,11 +345,10 @@ export default function GiftDeedPage() {
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
-                      className={`flex flex-col items-center justify-center border-b-[3px] pb-4 pt-6 whitespace-nowrap transition-all duration-300 ${
-                        activeTab === tab.id
-                          ? 'border-b-green-600 text-green-600 font-bold'
-                          : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-green-600 hover:border-b-green-600/50'
-                      }`}
+                      className={`flex flex-col items-center justify-center border-b-[3px] pb-4 pt-6 whitespace-nowrap transition-all duration-300 ${activeTab === tab.id
+                        ? 'border-b-green-600 text-green-600 font-bold'
+                        : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-green-600 hover:border-b-green-600/50'
+                        }`}
                     >
                       <p className="text-sm font-semibold leading-normal tracking-[0.015em]">{tab.label}</p>
                     </button>
@@ -205,7 +366,7 @@ export default function GiftDeedPage() {
             <div className="bg-gradient-to-br from-white via-green-50/50 to-emerald-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-green-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-600/10 to-emerald-600/10 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-emerald-600/10 to-green-600/10 rounded-full translate-y-12 -translate-x-12"></div>
-              
+
               <div className="relative">
                 <div className="text-center mb-12">
                   <div className="inline-flex items-center gap-3 mb-4">
@@ -218,7 +379,7 @@ export default function GiftDeedPage() {
                     Our streamlined process ensures your gift deed is completed efficiently and legally
                   </p>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {process.map((item, index) => (
                     <div key={index} className="group relative">
@@ -232,7 +393,7 @@ export default function GiftDeedPage() {
                           </div>
                         </div>
                         <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">{item.description}</p>
-                        
+
                         {/* Connector Line */}
                         {index < process.length - 1 && (
                           <div className="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-green-600 to-emerald-600 opacity-30"></div>
@@ -257,7 +418,7 @@ export default function GiftDeedPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {documents.map((doc, index) => (
@@ -287,27 +448,27 @@ export default function GiftDeedPage() {
               <div className="absolute inset-0 bg-black/10"></div>
               <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
-              
+
               <div className="relative">
                 <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <i data-lucide="gift" className="w-10 h-10 text-white"></i>
                 </div>
-                
+
                 <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Gift Deed?</h3>
                 <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
                   Transfer property to your loved ones with complete legal protection and tax compliance
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Get Expert Help Now
                   </Link>
-                  <a 
-                    href="/documents/DEED Documents.pdf" 
+                  <a
+                    href="/documents/DEED Documents.pdf"
                     download="Gift Deed Sample.pdf"
                     className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
                   >
@@ -315,7 +476,7 @@ export default function GiftDeedPage() {
                     Download Sample
                   </a>
                 </div>
-                
+
                 <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
                   <div className="flex items-center gap-2">
                     <i data-lucide="heart" className="w-4 h-4"></i>

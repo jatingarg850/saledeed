@@ -175,6 +175,128 @@ export default function PartitionDeedPage() {
 
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto space-y-16">
+            {/* Partition Deed Definition Section */}
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-yellow-200/50 dark:border-slate-700">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="split"></i>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">Partition Deed</h2>
+                    <p className="text-subtext-light dark:text-subtext-dark">Fair division of jointly-owned property</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 space-y-6">
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <h3 className="text-2xl font-bold text-text-light dark:text-text-dark mb-4">What is a Partition Deed?</h3>
+                  
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed text-lg">
+                    A Partition Deed is a legal document that divides jointly-owned property among co-owners, ensuring each person gets a clear and fair share. Imagine a family owning a house, land, or business property together. Over time, disagreements may arise about who owns what. A Partition Deed is the official solution to prevent conflicts and clearly define ownership.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* How it Works Section */}
+            <div className="bg-gradient-to-br from-white via-yellow-50/50 to-orange-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-secondary/10 to-primary/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+              <div className="relative">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="workflow"></i>
+                    </div>
+                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How it Works</h3>
+                  </div>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                    Step-by-step process to complete your Partition Deed
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">1</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Identify Property & Co-Owners</h4>
+                        <ul className="text-subtext-light dark:text-subtext-dark leading-relaxed space-y-1">
+                          <li>• List all properties involved.</li>
+                          <li>• Confirm the details and ownership of all co-owners.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">2</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Mutual Agreement on Shares</h4>
+                        <ul className="text-subtext-light dark:text-subtext-dark leading-relaxed space-y-1">
+                          <li>• Co-owners agree on how the property will be divided.</li>
+                          <li>• Shares can be equal or customized depending on contribution, inheritance, or mutual consent.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">3</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Drafting the Partition Deed</h4>
+                        <ul className="text-subtext-light dark:text-subtext-dark leading-relaxed space-y-1">
+                          <li>• Legal experts prepare a precise document with all agreed terms.</li>
+                          <li>• Includes property details, share percentages, and rights of each owner.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">4</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Review & Verification</h4>
+                        <ul className="text-subtext-light dark:text-subtext-dark leading-relaxed space-y-1">
+                          <li>• Each co-owner reviews the deed.</li>
+                          <li>• Verification ensures no legal loopholes and compliance with laws.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="check" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Registration of the Deed</h4>
+                        <ul className="text-subtext-light dark:text-subtext-dark leading-relaxed space-y-1">
+                          <li>• Submit the Partition Deed at the local sub-registrar office.</li>
+                          <li>• Official registration makes the deed legally binding and enforceable.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Tab Navigation */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
               <div className="border-b border-yellow-200 dark:border-slate-700 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700">

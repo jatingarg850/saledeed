@@ -8,15 +8,58 @@ export default function About() {
           <Navigation currentPage="about" />
 
           {/* Main Content */}
-          <main className="px-6 md:px-10 lg:px-20 py-10">
+          <main className="flex-1">
             {/* Hero Section */}
-            <div className="flex min-h-[600px] flex-col gap-6 items-center justify-center text-center p-8 rounded-xl relative overflow-hidden mb-16">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/70 to-yellow-900/90 z-0"></div>
-              <div className="absolute inset-0 w-full h-full object-cover -z-10 animate-zoom-in bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5qr8WARKh3rkwHse1OTDWTQ4DKTdKRTy1C-bTzQS-vAHHUTiLRIMMRpptjyh7tibuz1yvpBMiyqQCP6C4Z3Or2wFFs8UmGvrtAw0BmFEaMwf5MyIBNP9DHMfqh0MwSgiyOx1j8hk-Jc1U3lVGvs7A06kOutPu7dK2tGqxNQ1bsfYgInEYXq6t0vJn0vAMAzZaMbjHM3ELjCiBlY_CFfyYMcOTZDIiDj83T1xxyzov06SrQeTb4lV3J8vMwFGmZGKhoPISKREhy3El")' }}></div>
+            <div className="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 mx-6 md:mx-10 lg:mx-20 my-10 rounded-3xl">
+              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+              <div className="relative max-w-7xl mx-auto px-8 py-20 md:py-28 text-center">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
+                  <i data-lucide="award" className="w-4 h-4"></i>
+                  50+ Years of Excellence
+                </div>
 
-              <div className="flex flex-col gap-4 max-w-4xl z-10 animate-fade-in-up">
-                <h1 className="text-black text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter font-display">Your Trusted Real Estate Partner</h1>
-                <p className="text-black text-lg md:text-2xl font-normal max-w-3xl mx-auto">Three generations of expertise. <span className="font-semibold text-black">Five decades of trust.</span></p>
+                <h1 className="text-black dark:text-text-dark text-4xl md:text-6xl lg:text-7xl font-black tracking-tight font-display mb-6 leading-tight">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
+                    Your Trusted Real Estate
+                  </span>
+                  <span className="block mt-2">Partner</span>
+                </h1>
+
+                <p className="text-black dark:text-subtext-dark text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed mb-12 font-medium">
+                  Three generations of expertise. <span className="font-bold text-amber-900 dark:text-primary">Five decades of trust.</span>
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <i data-lucide="phone" className="w-5 h-5"></i>
+                    Get Free Consultation
+                  </a>
+                  <a
+                    href="/services"
+                    className="inline-flex items-center gap-3 bg-white dark:bg-slate-800 text-amber-900 dark:text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-amber-900 dark:border-primary"
+                  >
+                    <i data-lucide="briefcase" className="w-5 h-5"></i>
+                    Our Services
+                  </a>
+                </div>
+
+                <div className="mt-12 flex items-center justify-center gap-8 text-black dark:text-subtext-dark text-sm flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <i data-lucide="check-circle" className="w-5 h-5 text-green-600"></i>
+                    <span>3rd Generation Experts</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <i data-lucide="users" className="w-5 h-5 text-green-600"></i>
+                    <span>100+ Team Members</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <i data-lucide="star" className="w-5 h-5 text-green-600"></i>
+                    <span>10,000+ Happy Clients</span>
+                  </div>
+                </div>
               </div>
             </div>
 

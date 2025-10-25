@@ -127,8 +127,8 @@ export default function WillAgreementPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Start Your Will
                   </Link>
-                  <a 
-                    href="/documents/inheritance & Family Property Documents.pdf" 
+                  <a
+                    href="/documents/inheritance & Family Property Documents.pdf"
                     download="Will Agreement Sample.pdf"
                     className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300"
                   >
@@ -175,6 +175,167 @@ export default function WillAgreementPage() {
 
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto space-y-16">
+            {/* Will Agreement Definition Section */}
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-yellow-200/50 dark:border-slate-700">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="scroll-text"></i>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">A Will Agreement</h2>
+                    <p className="text-subtext-light dark:text-subtext-dark">Secure your legacy and protect your loved ones</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 space-y-6">
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed text-lg">
+                    A Will Agreement is a formal legal declaration made by an individual, known as the Testator, specifying how their property, money, investments, and other valuable assets will be distributed after their demise. It acts as a blueprint of the Testator’s last wishes, ensuring that the wealth accumulated over a lifetime goes to the right people without any confusion. By creating a Will, the Testator takes control of their legacy and prevents unnecessary disputes, misunderstandings, or legal battles among family members. Unlike general inheritance rules, a Will gives complete freedom to decide: Who should inherit the property How the assets will be divided When and under what conditions the beneficiaries will receive them A Will Agreement also allows the Testator to: Appoint a trusted Executor who will carry out the instructions Make provisions for spouse, children, and dependents Include specific wishes such as donations to charities, gifts to friends, or preservation of ancestral property
+                  </p>
+
+                  <h3 className="text-xl font-bold text-text-light dark:text-text-dark mt-8 mb-4">Unlike general inheritance rules, a Will gives complete freedom to decide:</h3>
+
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-amber-600 dark:text-amber-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">Who should inherit the property</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-amber-600 dark:text-amber-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">How the assets will be divided</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-amber-600 dark:text-amber-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">When and under what conditions the beneficiaries will receive them</span>
+                    </li>
+                  </ul>
+
+                  <h3 className="text-xl font-bold text-text-light dark:text-text-dark mt-8 mb-4">A Will Agreement also allows the Testator to:</h3>
+
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-amber-600 dark:text-amber-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">Appoint a trusted Executor who will carry out the instructions</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-amber-600 dark:text-amber-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">Make provisions for spouse, children, and dependents</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-amber-600 dark:text-amber-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">Include specific wishes such as donations to charities, gifts to friends, or preservation of ancestral property</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* How it Works Section */}
+            <div className="bg-gradient-to-br from-white via-yellow-50/50 to-orange-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-secondary/10 to-primary/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+              <div className="relative">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="shield-check"></i>
+                    </div>
+                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How it Works</h3>
+                  </div>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                    Key benefits of creating a Will Agreement
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="eye" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Clarity & Control</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          The Testator decides who gets what property or asset.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="shield" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Legal Protection</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          Prevents confusion, conflicts, and false claims after death.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="refresh-cw" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Flexibility</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          The Will can be changed or revoked anytime during the Testator's lifetime.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="user-check" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Executor Appointment</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          A trusted person is nominated to carry out the instructions of the Will.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="heart" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Peace of Mind</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          Ensures that the family and loved ones are secured according to the person's wishes.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Tab Navigation */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
               <div className="border-b border-yellow-200 dark:border-slate-700 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700">
@@ -184,8 +345,8 @@ export default function WillAgreementPage() {
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex flex-col items-center justify-center border-b-[3px] pb-4 pt-6 whitespace-nowrap transition-all duration-300 ${activeTab === tab.id
-                          ? 'border-b-primary text-primary font-bold'
-                          : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-primary hover:border-b-primary/50'
+                        ? 'border-b-primary text-primary font-bold'
+                        : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-primary hover:border-b-primary/50'
                         }`}
                     >
                       <p className="text-sm font-semibold leading-normal tracking-[0.015em]">{tab.label}</p>
@@ -305,8 +466,8 @@ export default function WillAgreementPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Get Expert Help Now
                   </Link>
-                  <a 
-                    href="/documents/inheritance & Family Property Documents.pdf" 
+                  <a
+                    href="/documents/inheritance & Family Property Documents.pdf"
                     download="Will Agreement Sample.pdf"
                     className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
                   >

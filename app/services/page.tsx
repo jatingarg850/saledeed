@@ -470,6 +470,300 @@ export default function ServicesPage() {
                                     </div>
                                 </div>
                             </section>
+
+                            {/* Additional Services Section */}
+                            <section className="additional-services-info py-16">
+                                <div className="container mx-auto px-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {/* NOC */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="file-contract" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">NOC (No Objection Certificate)</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Reach Us to get a noc across all major building authorities like L&do,dda,ndmc and more.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20NOC%20(No%20Objection%20Certificate)."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Buy/Sell/Rent */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="handshake" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Buy/Sell/Rent At Minimum Commission</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Whether you are a buyer/seller/landlord or a tenant,saledeed.com presents offers that youhaven't heard before.Reach us to buy,sell or rent your property with best in the market options at minimum rateof commission.Our team of experts can provide a better experience and offer than youcurrently have.Contact us now to get started.In addition to this if you decide to buy/sell/rent through us you may be eligible for freedeed drafting and even registration.(Terms & Conditions apply).</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Buy%2FSell%2FRent%20At%20Minimum%20Commission."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Get Instant Loan */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="banknote" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Get Instant Loan</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Get loans as per your personal case requirement by the most reputed banks at the lowestrate of interest.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Get%20Instant%20Loan."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* All Deed Drafting */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="file-signature" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">All Deed Drafting, Delivery and Registration</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Get your sale deed or any deed drafted,delivered and registered according to yourparticular case without hassle in the shortest possible time.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20All%20Deed%20Drafting%2C%20Delivery%20and%20Registration."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Valuation Report */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="calculator" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Valuation Report</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Save tax by getting the guidance of our team's expert financial advisors.Get Valuationreports from the most renowned government approved valuers who have mastery in thefield and who can help you save lacs of rupees in Taxation.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Valuation%20Report."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Mutation */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="repeat" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Mutation</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Mutation is the legal process of transferring the ownership from one owner to another.Contact us to get your property mutated from the competent authority by experts.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Mutation."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Government Authority Assistance */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="landmark" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Government Authority Assistance</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Get in touch with us to get guidance regarding government Compliances and real estateLiaisoning across almost all authorities</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Government%20Authority%20Assistance."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Renovation */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="hammer" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Renovation</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Get your property renovated through expert interior designers & architects or you can alsoreach us if you want to just fix your property through a contractor in a limited budget.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Renovation."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Relocation */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="truck" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Relocation</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">We can help you in shifting from anywhere in the city or the country.Reach us for a briefdiscussion and a free of cost quote.RenovationWe can design your space,to suit your taste.Get in touch for better understanding and freeof cost price quote.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Relocation."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Regularisation */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="clipboard-check" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Regularisation</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Get Regularisation of your mcd booked black listed properties as per the building bye-lawsand breathe in ease.Municipal corporation have exclusive rights to demolish the structureof any med booked property.Regularisation delist your property from the black list thusmaking it secure for sure.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Regularisation."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Freehold */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="key" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Freehold</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Freehold is the conversion of a property legal status from lease hold to Freehold.It requiresa serious understanding of the building bye-laws of the past and present times.For everyproperty a file is maintained by the competent authority.A thorough study of the same isrequired to understand your property's actual status.After understanding your property backgroundacustomized procedure is craftedexclusively for you.A Freehold application filed without proper analysis can attract heftyfines,penalties and even black listing of your property.Reach us to make it right for you.Note: A Freehold status uplifts your property value to about 20%,allows you to sell it freelyand take many legal decisions without waiting for the government approvals everytime.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Freehold."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Completion Certificate */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="award" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Completion Certificate (C.C)</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">A completion certificate is issued by the concerned municipal corporation office under whose jurisdiction the  property is located.It is a certificate that confirms that the property has been constructed following the building bye-laws applicable and all other government laws and compliances.It states that the property has been inspected by the engineers of municipal corporation and no law violations are noted at the site.It act as a protective layer over the property against the demolition and sealing drives carried out by the government from time to time.In brief : A property with a completion certificate is demolition proof.</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Completion%20Certificate%20(C.C)."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Structural Stability Certificate */}
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex items-start gap-6">
+                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="building" className="w-8 h-8 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Structural Stability Certificate</h3>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">A structural stability certificate describes the stability of a physical  structure of a property.It is issued by a structural engineer who inspects the property following the strict norms set by the government of India, regional government and municipal corporations.It is often demanded by banks on sanctioning of loans against a property,by property buyers,government authorities before further construction, land use conversion etc</p>
+                                                    <a
+                                                        href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Structural%20Stability%20Certificate."
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                                                    >
+                                                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                                                        Contact Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
                             {/* Contact CTA */}
                             <div className="text-center mt-8">
                                 <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white">

@@ -175,6 +175,121 @@ export default function RelinquishmentDeedPage() {
 
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto space-y-16">
+            {/* Relinquishment Deed Definition Section */}
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-yellow-200/50 dark:border-slate-700">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="file-text"></i>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">Relinquishment Deed</h2>
+                    <p className="text-subtext-light dark:text-subtext-dark">Voluntary transfer of co-ownership rights</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 space-y-6">
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed text-lg">
+                    A Relinquishment Deed is a legal document used when one co-owner of a property voluntarily gives up or renounces their share in favor of other co-owners. It is commonly used in cases of joint family property, inherited property, or co-owned property. The person relinquishing the property (the relinquisher) surrenders their rights without any consideration in exchange, transferring it legally to the remaining owners (the relinquishees). Without a registered Relinquishment Deed, the rights of the parties involved may remain unclear, and ownership transfer cannot be considered legally valid.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* How it Works Section */}
+            <div className="bg-gradient-to-br from-white via-yellow-50/50 to-orange-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-secondary/10 to-primary/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+              <div className="relative">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="workflow"></i>
+                    </div>
+                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How it Works</h3>
+                  </div>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                    Simple step-by-step process to complete your Relinquishment Deed registration
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">1</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Agreement on Terms</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          The co-owner (relinquisher) and other owners (relinquishees) agree on the relinquishment terms.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">2</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Draft Preparation</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          A draft of the Relinquishment Deed is prepared with details of the property, parties involved, and the share being relinquished.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">3</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Signing & Witnessing</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          All parties sign the deed in the presence of witnesses.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">4</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Registration</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          The deed is registered at the local Sub-Registrar Office by paying the applicable stamp duty and registration charges.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="check" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Ownership Transfer Complete</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          After registration, the relinquisher's share legally transfers to the remaining co-owners.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Tab Navigation */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
               <div className="border-b border-yellow-200 dark:border-slate-700 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700">

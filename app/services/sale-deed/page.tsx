@@ -127,8 +127,8 @@ export default function SaleDeedPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Complete Your Sale Deed
                   </Link>
-                  <a 
-                    href="/documents/DEED Documents.pdf" 
+                  <a
+                    href="/documents/DEED Documents.pdf"
                     download="Sale Deed Sample.pdf"
                     className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
                   >
@@ -175,6 +175,161 @@ export default function SaleDeedPage() {
 
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto space-y-16">
+            {/* Sale Deed Definition Section */}
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 overflow-hidden">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 p-8 border-b border-blue-200/50 dark:border-slate-700">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <i className="text-white text-xl" data-lucide="file-text"></i>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">Sale Deed</h2>
+                    <p className="text-subtext-light dark:text-subtext-dark">Understanding the most important property document</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 space-y-6">
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed text-lg">
+                    Sale Deed is a legally binding document that officially records the transfer of ownership of a property from the seller to the buyer. It is the most important document in any property transaction because it acts as proof of ownership. This document contains all essential details, including: Name and details of the seller and buyer Complete description of the property (address, boundaries, dimensions, survey number, etc.) The agreed sale price Payment terms and conditions Any special clauses agreed upon by both parties Without a registered Sale Deed, a property transaction is not legally valid, and the buyer does not have full legal rights over the property. Registration of the Sale Deed at the Sub-Registrar’s office ensures that the transfer is recognized by law, protects both parties, and helps avoid future disputes.
+                  </p>
+
+                  <ul className="space-y-3 mt-6">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">Buyer and Seller agree on the terms of sale (price, possession date, etc.).</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">A draft of the Sale Deed is prepared including all details of the property.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">Both parties sign the document in the presence of witnesses.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">The document is then registered with the local Sub-Registrar Office by paying the required stamp duty and registration charges.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <i data-lucide="check" className="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
+                      </div>
+                      <span className="text-subtext-light dark:text-subtext-dark">After registration, the buyer becomes the legal owner of the property.</span>
+                    </li>
+                    
+                  </ul>
+
+                  <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600 p-6 rounded-r-lg mt-8">
+                    <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      <strong className="text-blue-600 dark:text-blue-400">Important:</strong> Without a registered Sale Deed, a property transaction is not legally valid, and the buyer does not have full legal rights over the property. Registration of the Sale Deed at the Sub-Registrar's office ensures that the transfer is recognized by law, protects both parties, and helps avoid future disputes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How it Works Section */}
+            <div className="bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-indigo-600/10 to-blue-600/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+              <div className="relative">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <i className="text-white text-xl" data-lucide="workflow"></i>
+                    </div>
+                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How it Works</h3>
+                  </div>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                    Simple step-by-step process to complete your Sale Deed registration
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">1</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Agreement on Terms</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          Buyer and Seller agree on the terms of sale (price, possession date, etc.).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">2</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Draft Preparation</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          A draft of the Sale Deed is prepared including all details of the property.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">3</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Signing & Witnessing</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          Both parties sign the document in the presence of witnesses.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">4</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Registration</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          The document is then registered with the local Sub-Registrar Office by paying the required stamp duty and registration charges.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i data-lucide="check" className="w-6 h-6 text-white"></i>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">Ownership Transfer Complete</h4>
+                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                          After registration, the buyer becomes the legal owner of the property.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Tab Navigation */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 overflow-hidden">
               <div className="border-b border-blue-200 dark:border-slate-700 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700">
@@ -197,49 +352,6 @@ export default function SaleDeedPage() {
                 <p className="text-subtext-light dark:text-subtext-dark text-lg font-normal leading-relaxed">
                   {tabContent[activeTab as keyof typeof tabContent]}
                 </p>
-              </div>
-            </div>
-
-            {/* How it Works Section */}
-            <div className="bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 rounded-full -translate-y-16 translate-x-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-indigo-600/10 to-blue-600/10 rounded-full translate-y-12 -translate-x-12"></div>
-
-              <div className="relative">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
-                      <i className="text-white text-xl" data-lucide="workflow"></i>
-                    </div>
-                    <h3 className="text-3xl font-bold text-text-light dark:text-text-dark font-display">How Sale Deed Works</h3>
-                  </div>
-                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
-                    Our comprehensive process ensures complete legal ownership transfer with full protection
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {process.map((item, index) => (
-                    <div key={index} className="group relative">
-                      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                            <span className="text-white font-bold text-lg">{item.step}</span>
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-bold text-text-light dark:text-text-dark mb-2 text-lg">{item.title}</h4>
-                          </div>
-                        </div>
-                        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">{item.description}</p>
-
-                        {/* Connector Line */}
-                        {index < process.length - 1 && (
-                          <div className="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-30"></div>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
 
@@ -305,8 +417,8 @@ export default function SaleDeedPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Get Expert Help Now
                   </Link>
-                  <a 
-                    href="/documents/DEED Documents.pdf" 
+                  <a
+                    href="/documents/DEED Documents.pdf"
                     download="Sale Deed Sample.pdf"
                     className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
                   >

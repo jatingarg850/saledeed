@@ -12,7 +12,7 @@ export default function CreateBlogPage() {
   const [authKey, setAuthKey] = useState('')
   const [authError, setAuthError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  
+
   const [blogData, setBlogData] = useState({
     title: '',
     slug: '',
