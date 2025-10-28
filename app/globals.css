@@ -2059,51 +2059,7 @@ video.logo-video {
   }
 }
 
-/* Marquee
- Animation */
-.marquee-container {
-  overflow: hidden;
-  width: 100%;
-}
 
-.marquee-content {
-  display: flex;
-  animation: marquee 2s linear infinite;
-  will-change: transform;
-}
-
-.marquee-text {
-  padding: 0 2rem;
-  display: inline-block;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Pause marquee on hover */
-.marquee-container:hover .marquee-content {
-  animation-play-state: paused;
-}
-
-/* Responsive marquee speed */
-@media (max-width: 768px) {
-  .marquee-content {
-    animation-duration: 10s;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-content {
-    animation: none;
-  }
-}
 
 
 /* Hero Section Styles */
@@ -2242,13 +2198,15 @@ video.logo-video {
   padding: 1rem 0;
   margin: 2rem 0;
   position: relative;
+  width: 100%;
 }
 
 .marquee-content {
   display: flex;
   gap: 3rem;
-  animation: marquee 8s linear infinite;
+  animation: marquee 30s linear infinite;
   white-space: nowrap;
+  will-change: transform;
 }
 
 .marquee-text {
@@ -2256,6 +2214,7 @@ video.logo-video {
   font-weight: 700;
   font-size: 1rem;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 @keyframes marquee {
@@ -2265,6 +2224,48 @@ video.logo-video {
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: 40s;
+  }
+  
+  .marquee-text {
+    font-size: 0.875rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Additional Services Responsive Cards */
+.additional-services-info .bg-white,
+.additional-services-info .dark\:bg-slate-800 {
+  padding: 1rem !important;
+}
+
+.additional-services-info .flex.items-start {
+  flex-direction: column !important;
+  gap: 1rem !important;
+}
+
+@media (min-width: 640px) {
+  .additional-services-info .bg-white,
+  .additional-services-info .dark\:bg-slate-800 {
+    padding: 1.5rem !important;
+  }
+  
+  .additional-services-info .flex.items-start {
+    flex-direction: row !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .additional-services-info .bg-white,
+  .additional-services-info .dark\:bg-slate-800 {
+    padding: 2rem !important;
   }
 }
 

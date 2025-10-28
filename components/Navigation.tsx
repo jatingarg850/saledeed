@@ -10,6 +10,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null)
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -169,82 +170,217 @@ export default function Navigation({ currentPage }: NavigationProps) {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 shadow-lg">
-          <div className="px-6 py-4 space-y-4">
-            {/* Navigation Links */}
-            <div className="space-y-3">
-              <a
-                href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block text-base font-medium transition-colors ${currentPage === 'home'
-                  ? 'text-amber-700 dark:text-secondary font-semibold'
-                  : 'text-black dark:text-subtext-dark'
-                  }`}
-              >
-                Home
-              </a>
+        <div className="md:hidden bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 shadow-lg max-h-[80vh] overflow-y-auto">
+          <div className="px-6 py-4 space-y-3">
+            {/* Home */}
+            <a
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block text-base font-medium transition-colors py-2 ${currentPage === 'home'
+                ? 'text-amber-700 dark:text-secondary font-semibold'
+                : 'text-black dark:text-subtext-dark'
+                }`}
+            >
+              Home
+            </a>
 
-              <a
-                href="/services"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block text-base font-medium transition-colors ${currentPage === 'services'
-                  ? 'text-amber-700 dark:text-secondary font-semibold'
-                  : 'text-black dark:text-subtext-dark'
-                  }`}
+            {/* Deeds and Documents Dropdown */}
+            <div>
+              <button
+                onClick={() => setOpenMobileDropdown(openMobileDropdown === 'deeds' ? null : 'deeds')}
+                className="flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark py-2"
               >
-                Services
-              </a>
-
-              <a
-                href="/documents"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block text-base font-medium transition-colors ${currentPage === 'documents'
-                  ? 'text-amber-700 dark:text-secondary font-semibold'
-                  : 'text-black dark:text-subtext-dark'
-                  }`}
-              >
-                Documents
-              </a>
-
-              <a
-                href="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block text-base font-medium transition-colors ${currentPage === 'about'
-                  ? 'text-amber-700 dark:text-secondary font-semibold'
-                  : 'text-black dark:text-subtext-dark'
-                  }`}
-              >
-                About Us
-              </a>
-
-              <a
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-base font-medium text-black dark:text-subtext-dark"
-              >
-                Contact
-              </a>
+                <span>Deeds and documents</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {openMobileDropdown === 'deeds' ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  )}
+                </svg>
+              </button>
+              {openMobileDropdown === 'deeds' && (
+                <div className="pl-4 mt-2 space-y-2">
+                  <a
+                    href="/services/sale-deed"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Sale Deed
+                  </a>
+                  <a
+                    href="/services/gift-deed"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Gift Deed
+                  </a>
+                  <a
+                    href="/services/relinquishment-deed"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Relinquishment Deed
+                  </a>
+                  <a
+                    href="/services/will-agreement"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Will Agreement
+                  </a>
+                  <a
+                    href="/services/partition-deed"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Partition Deed
+                  </a>
+                </div>
+              )}
             </div>
 
-            {/* Services Section */}
-            <div className="border-t border-gray-200 dark:border-slate-700 pt-4">
-              <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Our Services</h3>
-              <div className="grid grid-cols-1 gap-2">
-                {services.map((service, index) => (
+            {/* Solution Dropdown */}
+            <div>
+              <button
+                onClick={() => setOpenMobileDropdown(openMobileDropdown === 'solution' ? null : 'solution')}
+                className="flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark py-2"
+              >
+                <span>Solution</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {openMobileDropdown === 'solution' ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  )}
+                </svg>
+              </button>
+              {openMobileDropdown === 'solution' && (
+                <div className="pl-4 mt-2 space-y-2">
                   <a
-                    key={index}
-                    href={service.href}
+                    href="/solutions/buyer"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
-                    {service.name}
+                    I am a Buyer
                   </a>
-                ))}
-              </div>
+                  <a
+                    href="/solutions/seller"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    I am a Seller
+                  </a>
+                  <a
+                    href="/solutions/landlord"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    I am a Landlord
+                  </a>
+                  <a
+                    href="/solutions/tenant"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    I am a Tenant
+                  </a>
+                  <a
+                    href="/solutions/developer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    I am a Developer / Builder / Institution / Society
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Services */}
+            <a
+              href="/services"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block text-base font-medium transition-colors py-2 ${currentPage === 'services'
+                ? 'text-amber-700 dark:text-secondary font-semibold'
+                : 'text-black dark:text-subtext-dark'
+                }`}
+            >
+              Services
+            </a>
+
+            {/* Documents */}
+            <a
+              href="/documents"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block text-base font-medium transition-colors py-2 ${currentPage === 'documents'
+                ? 'text-amber-700 dark:text-secondary font-semibold'
+                : 'text-black dark:text-subtext-dark'
+                }`}
+            >
+              Documents
+            </a>
+
+            {/* Company Dropdown */}
+            <div>
+              <button
+                onClick={() => setOpenMobileDropdown(openMobileDropdown === 'company' ? null : 'company')}
+                className="flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark py-2"
+              >
+                <span>Company</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {openMobileDropdown === 'company' ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  )}
+                </svg>
+              </button>
+              {openMobileDropdown === 'company' && (
+                <div className="pl-4 mt-2 space-y-2">
+                  <a
+                    href="/about"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block py-2 text-sm hover:text-amber-700 dark:hover:text-secondary transition-colors ${currentPage === 'about'
+                      ? 'text-amber-700 dark:text-secondary font-medium'
+                      : 'text-black dark:text-white'
+                      }`}
+                  >
+                    About Us
+                  </a>
+                  <a
+                    href="/blogs"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Blogs
+                  </a>
+                  <a
+                    href="/privacy-policy"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    href="/partner"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Partner With Us
+                  </a>
+                  <a
+                    href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Contact us
+                  </a>
+                </div>
+              )}
             </div>
 
             {/* Contact Button */}
-            <div className="border-t border-gray-200 dark:border-slate-700 pt-4">
+            <div className="border-t border-gray-200 dark:border-slate-700 pt-4 mt-4">
               <a
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}

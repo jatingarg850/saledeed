@@ -144,18 +144,6 @@ export default function BlogsPage() {
               </p>
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className="px-6 py-2 rounded-full border-2 border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white transition-all duration-300 text-sm font-medium"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
             {/* Blog Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {blogPosts.map((post) => (
@@ -186,18 +174,6 @@ export default function BlogsPage() {
                     <p className="text-black dark:text-subtext-dark text-sm leading-relaxed mb-4">
                       {post.excerpt}
                     </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {post.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="bg-yellow-100 dark:bg-slate-700 text-amber-800 dark:text-amber-200 px-2 py-1 rounded text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
 
                     {/* Read More */}
                     <div className="flex items-center justify-between">

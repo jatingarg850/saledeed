@@ -473,11 +473,11 @@ export default function ServicesPage() {
 
                             {/* Additional Services Section */}
                             <section className="additional-services-info py-16">
-                                <div className="container mx-auto px-4">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                                         {/* NOC */}
-                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
-                                            <div className="flex items-start gap-6">
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                                                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
                                                     <i data-lucide="file-contract" className="w-8 h-8 text-white"></i>
                                                 </div>
@@ -498,14 +498,14 @@ export default function ServicesPage() {
                                         </div>
 
                                         {/* Buy/Sell/Rent */}
-                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
-                                            <div className="flex items-start gap-6">
-                                                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
-                                                    <i data-lucide="handshake" className="w-8 h-8 text-white"></i>
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                                            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                                                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                                    <i data-lucide="handshake" className="w-7 h-7 sm:w-8 sm:h-8 text-white"></i>
                                                 </div>
                                                 <div className="flex-1">
-                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Buy/Sell/Rent At Minimum Commission</h3>
-                                                    <p className="text-black dark:text-subtext-dark mb-4">Whether you are a buyer/seller/landlord or a tenant,saledeed.com presents offers that youhaven't heard before.Reach us to buy,sell or rent your property with best in the market options at minimum rateof commission.Our team of experts can provide a better experience and offer than youcurrently have.Contact us now to get started.In addition to this if you decide to buy/sell/rent through us you may be eligible for freedeed drafting and even registration.(Terms & Conditions apply).</p>
+                                                    <h3 className="text-lg sm:text-xl font-bold text-black dark:text-text-dark mb-3">Buy/Sell/Rent At Minimum Commission</h3>
+                                                    <p className="text-sm sm:text-base text-black dark:text-subtext-dark mb-4">Whether you are a buyer/seller/landlord or a tenant,saledeed.com presents offers that youhaven't heard before.Reach us to buy,sell or rent your property with best in the market options at minimum rateof commission.Our team of experts can provide a better experience and offer than youcurrently have.Contact us now to get started.In addition to this if you decide to buy/sell/rent through us you may be eligible for freedeed drafting and even registration.(Terms & Conditions apply).</p>
                                                     <a
                                                         href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Buy%2FSell%2FRent%20At%20Minimum%20Commission."
                                                         target="_blank"
@@ -886,9 +886,9 @@ export default function ServicesPage() {
                         </div>
 
                         {/* Location Badge */}
-                        <div className="absolute top-0 left-0 flex items-center gap-2 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-primary/20">
-                            <i data-lucide="map-pin" className="w-4 h-4 text-primary"></i>
-                            <span className="font-medium text-text-light dark:text-text-dark">Delhi</span>
+                        <div className="absolute top-0 left-0 flex items-center gap-2 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg border border-primary/20 text-sm sm:text-base sm:px-4">
+                            <i data-lucide="map-pin" className="w-3 h-3 sm:w-4 sm:h-4 text-primary"></i>
+                            <span className="font-medium text-text-light dark:text-text-dark text-xs sm:text-sm">Delhi</span>
                         </div>
 
                         {/* View All Button */}

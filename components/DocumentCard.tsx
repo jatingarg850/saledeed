@@ -52,11 +52,6 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
                     </div>
                 </div>
 
-                {/* Page Count Badge */}
-                <div className="absolute top-3 right-3 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
-                    {document.pages} pages
-                </div>
-
                 {/* Category Badge */}
                 <div className="absolute top-3 left-3 bg-white/90 dark:bg-slate-800/90 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
                     {document.category}

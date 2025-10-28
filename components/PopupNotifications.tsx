@@ -75,10 +75,7 @@ export default function PopupNotifications() {
           className="fixed bottom-8 right-8 z-50 max-w-sm"
         >
           <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-2xl shadow-2xl p-6 backdrop-blur-lg border border-white/20">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 animate-pulse">
-                <i data-lucide={currentPopup.icon} className="w-6 h-6 text-white"></i>
-              </div>
+            <div className="flex items-start gap-3">
               <div className="flex-1">
                 <p className="font-bold text-lg mb-1">Special Offer!</p>
                 <p className="text-white/90 text-sm leading-relaxed">
@@ -87,7 +84,7 @@ export default function PopupNotifications() {
               </div>
               <button
                 onClick={() => setCurrentPopup(null)}
-                className="text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-white transition-colors flex-shrink-0"
               >
                 <i data-lucide="x" className="w-5 h-5"></i>
               </button>
