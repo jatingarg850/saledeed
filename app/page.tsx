@@ -12,6 +12,19 @@ import PopupNotifications from '../components/PopupNotifications'
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
   const [showChatbot, setShowChatbot] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Mobile detection for performance optimization
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const propertyDocuments = [
     {

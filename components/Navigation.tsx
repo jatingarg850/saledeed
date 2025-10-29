@@ -11,29 +11,78 @@ export default function Navigation({ currentPage }: NavigationProps) {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open')
+    } else {
+      document.body.classList.remove('mobile-menu-open')
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('mobile-menu-open')
+    }
+  }, [isMobileMenuOpen])
+
+  useEffect(() => {
+    // Mobile detection
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY
 
-      // Show navbar when at top of page
-      if (currentScrollY < 10) {
-        setIsVisible(true)
-      }
-      // Hide navbar when scrolling down, show when scrolling up
-      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false)
-        setIsMobileMenuOpen(false) // Close mobile menu when hiding
-      } else if (currentScrollY < lastScrollY) {
-        setIsVisible(true)
+      // Simplified scroll behavior on mobile for better performance
+      if (isMobile) {
+        if (currentScrollY < 10) {
+          setIsVisible(true)
+        } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+          setIsVisible(false)
+          setIsMobileMenuOpen(false)
+        } else if (currentScrollY < lastScrollY) {
+          setIsVisible(true)
+        }
+      } else {
+        // Desktop behavior
+        if (currentScrollY < 10) {
+          setIsVisible(true)
+        } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setIsVisible(false)
+          setIsMobileMenuOpen(false)
+        } else if (currentScrollY < lastScrollY) {
+          setIsVisible(true)
+        }
       }
 
       setLastScrollY(currentScrollY)
     }
 
-    window.addEventListener('scroll', controlNavbar)
-    return () => window.removeEventListener('scroll', controlNavbar)
-  }, [lastScrollY])
+    // Throttle scroll events on mobile for better performance
+    let ticking = false
+    const throttledControlNavbar = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          controlNavbar()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', isMobile ? throttledControlNavbar : controlNavbar, { passive: true })
+    return () => window.removeEventListener('scroll', isMobile ? throttledControlNavbar : controlNavbar)
+  }, [lastScrollY, isMobile])
 
   const services = [
     { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -168,71 +217,78 @@ export default function Navigation({ currentPage }: NavigationProps) {
         </div>
       </header>
 
+      {/* Mobile Menu Backdrop */}
+      {isMobileMenuOpen && (
+        <div 
+          className="mobile-menu-backdrop md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 shadow-lg max-h-[80vh] overflow-y-auto">
-          <div className="px-6 py-4 space-y-3">
+        <div className="mobile-menu-container mobile-menu-scroll md:hidden">
+          <div className="px-6 py-4 space-y-1 pb-8">
             {/* Home */}
-            <a
-              href="/"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block text-base font-medium transition-colors py-2 ${currentPage === 'home'
-                ? 'text-amber-700 dark:text-secondary font-semibold'
-                : 'text-black dark:text-subtext-dark'
-                }`}
-            >
-              Home
-            </a>
+            <div className="mobile-menu-item">
+              <a
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`mobile-menu-link text-base font-medium transition-colors ${currentPage === 'home'
+                  ? 'text-amber-700 dark:text-secondary font-semibold'
+                  : 'text-black dark:text-subtext-dark'
+                  }`}
+              >
+                Home
+              </a>
+            </div>
 
             {/* Deeds and Documents Dropdown */}
-            <div>
+            <div className="mobile-menu-item">
               <button
                 onClick={() => setOpenMobileDropdown(openMobileDropdown === 'deeds' ? null : 'deeds')}
-                className="flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark py-2"
+                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark"
               >
                 <span>Deeds and documents</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  {openMobileDropdown === 'deeds' ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  )}
+                <svg className="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     style={{ transform: openMobileDropdown === 'deeds' ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {openMobileDropdown === 'deeds' && (
-                <div className="pl-4 mt-2 space-y-2">
+                <div className="pl-4 mt-2 space-y-1 mobile-dropdown-enter mobile-dropdown-enter-active">
                   <a
                     href="/services/sale-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Sale Deed
                   </a>
                   <a
                     href="/services/gift-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Gift Deed
                   </a>
                   <a
                     href="/services/relinquishment-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Relinquishment Deed
                   </a>
                   <a
                     href="/services/will-agreement"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Will Agreement
                   </a>
                   <a
                     href="/services/partition-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Partition Deed
                   </a>
@@ -241,54 +297,51 @@ export default function Navigation({ currentPage }: NavigationProps) {
             </div>
 
             {/* Solution Dropdown */}
-            <div>
+            <div className="mobile-menu-item">
               <button
                 onClick={() => setOpenMobileDropdown(openMobileDropdown === 'solution' ? null : 'solution')}
-                className="flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark py-2"
+                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark"
               >
                 <span>Solution</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  {openMobileDropdown === 'solution' ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  )}
+                <svg className="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     style={{ transform: openMobileDropdown === 'solution' ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {openMobileDropdown === 'solution' && (
-                <div className="pl-4 mt-2 space-y-2">
+                <div className="pl-4 mt-2 space-y-1 mobile-dropdown-enter mobile-dropdown-enter-active">
                   <a
                     href="/solutions/buyer"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     I am a Buyer
                   </a>
                   <a
                     href="/solutions/seller"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     I am a Seller
                   </a>
                   <a
                     href="/solutions/landlord"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     I am a Landlord
                   </a>
                   <a
                     href="/solutions/tenant"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     I am a Tenant
                   </a>
                   <a
                     href="/solutions/developer"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     I am a Developer / Builder / Institution / Society
                   </a>
@@ -297,50 +350,51 @@ export default function Navigation({ currentPage }: NavigationProps) {
             </div>
 
             {/* Services */}
-            <a
-              href="/services"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block text-base font-medium transition-colors py-2 ${currentPage === 'services'
-                ? 'text-amber-700 dark:text-secondary font-semibold'
-                : 'text-black dark:text-subtext-dark'
-                }`}
-            >
-              Services
-            </a>
+            <div className="mobile-menu-item">
+              <a
+                href="/services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`mobile-menu-link text-base font-medium transition-colors ${currentPage === 'services'
+                  ? 'text-amber-700 dark:text-secondary font-semibold'
+                  : 'text-black dark:text-subtext-dark'
+                  }`}
+              >
+                Services
+              </a>
+            </div>
 
             {/* Documents */}
-            <a
-              href="/documents"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block text-base font-medium transition-colors py-2 ${currentPage === 'documents'
-                ? 'text-amber-700 dark:text-secondary font-semibold'
-                : 'text-black dark:text-subtext-dark'
-                }`}
-            >
-              Documents
-            </a>
+            <div className="mobile-menu-item">
+              <a
+                href="/documents"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`mobile-menu-link text-base font-medium transition-colors ${currentPage === 'documents'
+                  ? 'text-amber-700 dark:text-secondary font-semibold'
+                  : 'text-black dark:text-subtext-dark'
+                  }`}
+              >
+                Documents
+              </a>
+            </div>
 
             {/* Company Dropdown */}
-            <div>
+            <div className="mobile-menu-item">
               <button
                 onClick={() => setOpenMobileDropdown(openMobileDropdown === 'company' ? null : 'company')}
-                className="flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark py-2"
+                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-black dark:text-subtext-dark"
               >
                 <span>Company</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  {openMobileDropdown === 'company' ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  )}
+                <svg className="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     style={{ transform: openMobileDropdown === 'company' ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {openMobileDropdown === 'company' && (
-                <div className="pl-4 mt-2 space-y-2">
+                <div className="pl-4 mt-2 space-y-1 mobile-dropdown-enter mobile-dropdown-enter-active">
                   <a
                     href="/about"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block py-2 text-sm hover:text-amber-700 dark:hover:text-secondary transition-colors ${currentPage === 'about'
+                    className={`mobile-menu-link text-sm hover:text-amber-700 dark:hover:text-secondary transition-colors ${currentPage === 'about'
                       ? 'text-amber-700 dark:text-secondary font-medium'
                       : 'text-black dark:text-white'
                       }`}
@@ -350,28 +404,28 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   <a
                     href="/blogs"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Blogs
                   </a>
                   <a
                     href="/privacy-policy"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Privacy Policy
                   </a>
                   <a
                     href="/partner"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Partner With Us
                   </a>
                   <a
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-black dark:text-white hover:text-amber-700 dark:hover:text-secondary transition-colors"
                   >
                     Contact us
                   </a>
@@ -380,15 +434,18 @@ export default function Navigation({ currentPage }: NavigationProps) {
             </div>
 
             {/* Contact Button */}
-            <div className="border-t border-gray-200 dark:border-slate-700 pt-4 mt-4">
+            <div className="border-t border-gray-200 dark:border-slate-700 pt-4 mt-6 mb-4">
               <a
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center py-3 px-6 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold rounded-full transition-all duration-300"
+                className="block w-full text-center py-4 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold rounded-full transition-all duration-300 shadow-lg"
               >
                 Contact Us
               </a>
             </div>
+
+            {/* Scroll Indicator */}
+            <div className="mobile-menu-scroll-indicator"></div>
           </div>
         </div>
       )}

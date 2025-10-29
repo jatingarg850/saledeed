@@ -16,49 +16,94 @@ interface PropertyDocumentCardProps {
 
 export default function PropertyDocumentCard({ document }: PropertyDocumentCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [imagesLoaded, setImagesLoaded] = useState(false)
 
   useEffect(() => {
+    // Mobile detection
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    // Disable auto-slide on mobile for better performance
+    if (isMobile) return
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % document.images.length)
-    }, 3000)
+    }, 4000) // Slower on desktop
 
     return () => clearInterval(interval)
-  }, [document.images.length])
+  }, [document.images.length, isMobile])
+
+  // Lazy load images
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setImagesLoaded(true)
+    }, 100)
+    
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
-    <div className="property-card bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+    <div className={`property-card bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden ${
+      isMobile ? '' : 'hover:shadow-2xl transition-all duration-300 hover:-translate-y-2'
+    }`}>
       {/* Image Slider */}
       <div className="relative h-64 overflow-hidden">
-        <div 
-          className="flex transition-transform duration-500 ease-in-out h-full"
-          style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
-        >
-          {document.images.map((image, index) => (
-            <div key={index} className="min-w-full h-full flex-shrink-0">
-              <img
-                src={image}
-                alt={`${document.title} - Image ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        {imagesLoaded ? (
+          <div 
+            className={`flex h-full ${isMobile ? '' : 'transition-transform duration-500 ease-in-out'}`}
+            style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+          >
+            {document.images.map((image, index) => (
+              <div key={index} className="min-w-full h-full flex-shrink-0">
+                <img
+                  src={image}
+                  alt={`${document.title} - Image ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  style={{ 
+                    imageRendering: isMobile ? 'pixelated' : 'auto',
+                    transform: 'translateZ(0)' // Force hardware acceleration
+                  } as React.CSSProperties}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          // Loading placeholder
+          <div className="w-full h-full bg-gray-200 dark:bg-slate-700 flex items-center justify-center">
+            <div className="text-gray-400 dark:text-slate-500">Loading...</div>
+          </div>
+        )}
         
-        {/* Slider Indicators */}
-        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
-          {document.images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentImageIndex
-                  ? 'bg-white w-6'
-                  : 'bg-white/50 hover:bg-white/75'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+        {/* Slider Indicators - Only show if images loaded and more than 1 image */}
+        {imagesLoaded && document.images.length > 1 && (
+          <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {document.images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-2 h-2 rounded-full ${
+                  isMobile ? '' : 'transition-all duration-300'
+                } ${
+                  index === currentImageIndex
+                    ? 'bg-white w-6'
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Card Content */}
@@ -72,7 +117,11 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
         <div className="flex gap-2">
           <Link
             href={document.link}
-            className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+            className={`flex-1 inline-flex items-center justify-center gap-2 ${
+              isMobile 
+                ? 'bg-amber-700 text-white' 
+                : 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
+            } px-4 py-2.5 rounded-full font-semibold text-sm`}
           >
             View Details
             <i data-lucide="arrow-right" className="w-4 h-4"></i>
@@ -81,7 +130,9 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
             href={`https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(document.title)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+            className={`inline-flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full font-semibold text-sm ${
+              isMobile ? '' : 'hover:bg-green-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
+            }`}
             title="Chat on WhatsApp"
           >
             <i data-lucide="message-circle" className="w-4 h-4"></i>
