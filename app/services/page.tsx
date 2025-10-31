@@ -90,7 +90,7 @@ export default function ServicesPage() {
     ]
 
     return (
-        <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div className="services-page relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
             <div className="layout-container flex h-full grow flex-col">
                 <Navigation currentPage="services" />
 
@@ -1056,31 +1056,31 @@ export default function ServicesPage() {
                                 </div>
 
                                 {/* Additional Services */}
-                                <div className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-indigo-200/50 dark:border-slate-700 overflow-hidden mb-12">
-                                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8">
+                                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden mb-12">
+                                    <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                                                 <i className="text-white text-xl" data-lucide="briefcase"></i>
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-bold">Complete Real Estate Solutions</h3>
-                                                <p className="text-indigo-100">Beyond Documentation - Full Service Property Assistance</p>
+                                                <p className="text-yellow-100">Beyond Documentation - Full Service Property Assistance</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="p-8 space-y-8">
                                         {/* Expert At Home */}
-                                        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-green-500">
+                                        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-amber-500">
                                             <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
-                                                <i data-lucide="home" className="w-5 h-5 text-green-500"></i>
+                                                <i data-lucide="home" className="w-5 h-5 text-amber-600"></i>
                                                 Expert At Home
                                             </h4>
                                             <p className="text-subtext-light dark:text-subtext-dark mb-4">
                                                 We provide in detail doorstep advice for clear understanding of your property case in the comfort of your home. It includes thorough checking of your documents, explanation of the procedure and how we can help you to make it a success.
                                             </p>
-                                            <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-                                                <p className="text-sm text-green-800 dark:text-green-200 font-medium">
+                                            <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg">
+                                                <p className="text-sm text-amber-800 dark:text-amber-200 font-medium">
                                                     We work on a purpose driven ethic; so any unnecessary legality is never imposed and nothing besides necessary is even asked. If you book any service from our website this service is given to you absolutely free of cost.
                                                 </p>
                                             </div>
@@ -1222,15 +1222,15 @@ export default function ServicesPage() {
                                 </div>
 
                                 {/* Privacy Policy Section */}
-                                <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 overflow-hidden mb-12">
-                                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8">
+                                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden mb-12">
+                                    <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                                                 <i className="text-white text-xl" data-lucide="shield"></i>
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-bold">Privacy Policy (100% Guarantee)</h3>
-                                                <p className="text-blue-100">Privacy Kept at Every Step</p>
+                                                <p className="text-yellow-100">Privacy Kept at Every Step</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1241,15 +1241,15 @@ export default function ServicesPage() {
                                                 We are proud to make you aware of our top notch privacy policy following our tagline & our brand promise <strong>(privacy kept at every step)</strong>.
                                             </p>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                                                    <h5 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Complete Data Protection</h5>
-                                                    <p className="text-sm text-blue-700 dark:text-blue-300">
+                                                <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg">
+                                                    <h5 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">Complete Data Protection</h5>
+                                                    <p className="text-sm text-amber-700 dark:text-amber-300">
                                                         All your data like name, contact number, property address, your enquiry, purpose, work done by us and the process followed is never ever disclosed anytime, anywhere to anyone.
                                                     </p>
                                                 </div>
-                                                <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-                                                    <h5 className="font-semibold text-green-800 dark:text-green-200 mb-2">Family Privacy Guarantee</h5>
-                                                    <p className="text-sm text-green-700 dark:text-green-300">
+                                                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg">
+                                                    <h5 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Family Privacy Guarantee</h5>
+                                                    <p className="text-sm text-yellow-700 dark:text-yellow-300">
                                                         We understand how crucial is the information so even if your son/wife/brother etc comes to us to enquire we will never reveal.
                                                     </p>
                                                 </div>
@@ -1264,8 +1264,8 @@ export default function ServicesPage() {
                                 </div>
 
                                 {/* Refund Policy */}
-                                <div className="bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-700 rounded-2xl shadow-xl border border-gray-200/50 dark:border-slate-600 overflow-hidden mb-12">
-                                    <div className="bg-gradient-to-r from-gray-600 to-slate-600 text-white p-6">
+                                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-600 overflow-hidden mb-12">
+                                    <div className="bg-gradient-to-r from-primary to-secondary text-white p-6">
                                         <h3 className="text-xl font-bold flex items-center gap-2">
                                             <i data-lucide="refresh-ccw" className="w-5 h-5"></i>
                                             Refund Policy
@@ -1274,15 +1274,15 @@ export default function ServicesPage() {
 
                                     <div className="p-6 space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                            <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border border-red-200 dark:border-red-700">
-                                                <h5 className="font-semibold text-red-800 dark:text-red-200 mb-2">Non Refundable Services</h5>
-                                                <p className="text-sm text-red-700 dark:text-red-300">
+                                            <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg border border-amber-200 dark:border-amber-700">
+                                                <h5 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">Non Refundable Services</h5>
+                                                <p className="text-sm text-amber-700 dark:text-amber-300">
                                                     Services like verification, drafting, valuation reports and consultation fees are non refundable once paid.
                                                 </p>
                                             </div>
-                                            <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-700">
-                                                <h5 className="font-semibold text-green-800 dark:text-green-200 mb-2">Refundable Situations</h5>
-                                                <p className="text-sm text-green-700 dark:text-green-300">
+                                            <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg border border-yellow-200 dark:border-yellow-700">
+                                                <h5 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Refundable Situations</h5>
+                                                <p className="text-sm text-yellow-700 dark:text-yellow-300">
                                                     If payment is made and services could not be delivered due to technical error or unavailability from our side.
                                                 </p>
                                             </div>
@@ -1376,15 +1376,15 @@ export default function ServicesPage() {
 
                             {/* Property Transaction Guide */}
                             <div className="w-full mt-20">
-                                <div className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-indigo-200/50 dark:border-slate-700 overflow-hidden">
-                                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8">
+                                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
+                                    <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                                                 <i className="text-white text-xl" data-lucide="home"></i>
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-bold">How to Buy, Sell or Rent Property Without Hassle</h3>
-                                                <p className="text-indigo-100">Your Complete Guide to Smooth Property Transactions</p>
+                                                <p className="text-yellow-100">Your Complete Guide to Smooth Property Transactions</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1403,9 +1403,9 @@ export default function ServicesPage() {
                                         {/* 5 Steps */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                             {/* Step 1 */}
-                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-blue-500">
+                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-amber-500">
                                                 <div className="flex items-center gap-3 mb-4">
-                                                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                                                    <div className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
                                                     <h4 className="font-bold text-text-light dark:text-text-dark">Start with Clarity</h4>
                                                 </div>
                                                 <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
@@ -1416,15 +1416,15 @@ export default function ServicesPage() {
                                                     <li>• <strong>Selling property</strong> – upgrading, shifting, or liquidating assets</li>
                                                     <li>• <strong>Renting property</strong> – long-term or short-term stay</li>
                                                 </ul>
-                                                <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 font-medium">
+                                                <p className="text-xs text-amber-700 dark:text-amber-400 mt-2 font-medium">
                                                     When your intent is clear, you avoid unnecessary brokers and delays.
                                                 </p>
                                             </div>
 
                                             {/* Step 2 */}
-                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-green-500">
+                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-yellow-500">
                                                 <div className="flex items-center gap-3 mb-4">
-                                                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                                                    <div className="w-8 h-8 bg-yellow-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
                                                     <h4 className="font-bold text-text-light dark:text-text-dark">Verify Documents Early</h4>
                                                 </div>
                                                 <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
@@ -1435,7 +1435,7 @@ export default function ServicesPage() {
                                                     <li>• Ensure no loans or disputes (Encumbrance Certificate)</li>
                                                     <li>• Review property tax receipts and utility bills</li>
                                                 </ul>
-                                                <p className="text-xs text-green-600 dark:text-green-400 mt-2 font-medium">
+                                                <p className="text-xs text-yellow-700 dark:text-yellow-400 mt-2 font-medium">
                                                     For tenants, always confirm that the landlord is the actual property owner.
                                                 </p>
                                             </div>
@@ -1460,9 +1460,9 @@ export default function ServicesPage() {
                                             </div>
 
                                             {/* Step 4 */}
-                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-purple-500">
+                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-orange-500">
                                                 <div className="flex items-center gap-3 mb-4">
-                                                    <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                                                    <div className="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
                                                     <h4 className="font-bold text-text-light dark:text-text-dark">Professional Drafting</h4>
                                                 </div>
                                                 <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
@@ -1473,15 +1473,15 @@ export default function ServicesPage() {
                                                     <li>• Register at the sub-registrar office where required</li>
                                                     <li>• Use stamp duty and registration as per state rules</li>
                                                 </ul>
-                                                <p className="text-xs text-purple-600 dark:text-purple-400 mt-2 font-medium">
+                                                <p className="text-xs text-orange-700 dark:text-orange-400 mt-2 font-medium">
                                                     This ensures your transaction is legally valid and fully secure.
                                                 </p>
                                             </div>
 
                                             {/* Step 5 */}
-                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-red-500">
+                                            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-amber-700">
                                                 <div className="flex items-center gap-3 mb-4">
-                                                    <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                                                    <div className="w-8 h-8 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
                                                     <h4 className="font-bold text-text-light dark:text-text-dark">Use Online Platforms</h4>
                                                 </div>
                                                 <p className="text-sm text-subtext-light dark:text-subtext-dark mb-3">
@@ -1492,7 +1492,7 @@ export default function ServicesPage() {
                                                     <li>• Verify documents digitally</li>
                                                     <li>• Initiate property registration without brokers</li>
                                                 </ul>
-                                                <p className="text-xs text-red-600 dark:text-red-400 mt-2 font-medium">
+                                                <p className="text-xs text-amber-800 dark:text-amber-400 mt-2 font-medium">
                                                     Technology reduces hassle and saves money.
                                                 </p>
                                             </div>
@@ -1519,15 +1519,15 @@ export default function ServicesPage() {
 
                             {/* NOC in Real Estate Guide */}
                             <div className="w-full mt-20">
-                                <div className="bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-red-200/50 dark:border-slate-700 overflow-hidden">
-                                    <div className="bg-gradient-to-r from-red-600 to-pink-600 text-white p-8">
+                                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
+                                    <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                                                 <i className="text-white text-xl" data-lucide="shield-check"></i>
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-bold">NOC in Real Estate</h3>
-                                                <p className="text-red-100">Why It's More Important Than You Think</p>
+                                                <p className="text-yellow-100">Why It's More Important Than You Think</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1552,8 +1552,8 @@ export default function ServicesPage() {
                                             <p className="text-subtext-light dark:text-subtext-dark mb-4">
                                                 An NOC is an official statement from an authority saying, "We have no objection if this property is transferred/registered/sold."
                                             </p>
-                                            <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border-l-4 border-red-400">
-                                                <p className="text-sm font-semibold text-red-800 dark:text-red-200">
+                                            <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg border-l-4 border-amber-400">
+                                                <p className="text-sm font-semibold text-amber-800 dark:text-amber-200">
                                                     Without it, your sale deed may not even stand in court if challenged later.
                                                 </p>
                                             </div>
@@ -1566,21 +1566,21 @@ export default function ServicesPage() {
                                                 Why is NOC Needed?
                                             </h4>
                                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                                                    <h5 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">1. Legal Clearance</h5>
-                                                    <p className="text-sm text-blue-700 dark:text-blue-300">
+                                                <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg">
+                                                    <h5 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">1. Legal Clearance</h5>
+                                                    <p className="text-sm text-amber-700 dark:text-amber-300">
                                                         Confirms that the property is free from disputes or government restrictions.
                                                     </p>
                                                 </div>
-                                                <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-                                                    <h5 className="font-semibold text-green-800 dark:text-green-200 mb-2">2. Loan & Mortgage</h5>
-                                                    <p className="text-sm text-green-700 dark:text-green-300">
+                                                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg">
+                                                    <h5 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">2. Loan & Mortgage</h5>
+                                                    <p className="text-sm text-yellow-700 dark:text-yellow-300">
                                                         Banks demand it before sanctioning a home loan.
                                                     </p>
                                                 </div>
-                                                <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
-                                                    <h5 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">3. Registry Approval</h5>
-                                                    <p className="text-sm text-purple-700 dark:text-purple-300">
+                                                <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                                                    <h5 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">3. Registry Approval</h5>
+                                                    <p className="text-sm text-orange-700 dark:text-orange-300">
                                                         Sub-registrar offices may refuse to register your Sale Deed without the right NOCs.
                                                     </p>
                                                 </div>

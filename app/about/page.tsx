@@ -48,15 +48,15 @@ export default function About() {
 
                 <div className="mt-12 flex items-center justify-center gap-8 text-black dark:text-subtext-dark text-sm flex-wrap">
                   <div className="flex items-center gap-2">
-                    <i data-lucide="check-circle" className="w-5 h-5 text-green-600"></i>
+                    <i data-lucide="check-circle" className="w-5 h-5 text-amber-600"></i>
                     <span>3rd Generation Experts</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i data-lucide="users" className="w-5 h-5 text-green-600"></i>
+                    <i data-lucide="users" className="w-5 h-5 text-amber-600"></i>
                     <span>100+ Team Members</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i data-lucide="star" className="w-5 h-5 text-green-600"></i>
+                    <i data-lucide="star" className="w-5 h-5 text-amber-600"></i>
                     <span>10,000+ Happy Clients</span>
                   </div>
                 </div>

@@ -26,6 +26,25 @@ export default function Home() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  // Optimize animations based on device performance
+  useEffect(() => {
+    if (isMobile) {
+      // Add performance class for mobile devices
+      document.documentElement.classList.add('mobile-performance-mode')
+      
+      // Detect low-end devices and make animations even faster
+      const isLowEndDevice = window.innerWidth <= 480 || 
+                            (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) ||
+                            ((navigator as any).deviceMemory && (navigator as any).deviceMemory <= 2)
+      
+      if (isLowEndDevice) {
+        document.documentElement.classList.add('low-end-device')
+      }
+    } else {
+      document.documentElement.classList.remove('mobile-performance-mode', 'low-end-device')
+    }
+  }, [isMobile])
+
   const propertyDocuments = [
     {
       title: 'Sale Deed',
@@ -177,7 +196,7 @@ export default function Home() {
   return (
     <>
       <PopupNotifications />
-      <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load">
+      <div className="home-page relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load">
         <div className="layout-container flex h-full grow flex-col">
           <div className="w-full">
             <Navigation currentPage="home" />
@@ -964,15 +983,15 @@ export default function Home() {
 
               {/* Freehold vs Leasehold Guide */}
               <div className="py-16">
-                <div className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-emerald-200/50 dark:border-slate-700 overflow-hidden mb-16">
-                  <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-8">
+                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden mb-16">
+                  <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                         <i className="text-white text-xl" data-lucide="building"></i>
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold">Freehold vs Leasehold Property in Delhi</h3>
-                        <p className="text-emerald-100">What Every Buyer Must Know</p>
+                        <p className="text-yellow-100">What Every Buyer Must Know</p>
                       </div>
                     </div>
                   </div>
@@ -1080,15 +1099,15 @@ export default function Home() {
 
               {/* Circle Rate vs Market Rate Guide */}
               <div className="py-16">
-                <div className="bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-purple-200/50 dark:border-slate-700 overflow-hidden mb-16">
-                  <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8">
+                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden mb-16">
+                  <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                         <i className="text-white text-xl" data-lucide="trending-up"></i>
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold">Circle Rate vs Market Rate</h3>
-                        <p className="text-purple-100">The Real Truth Behind Property Valuation in Delhi</p>
+                        <p className="text-yellow-100">The Real Truth Behind Property Valuation in Delhi</p>
                       </div>
                     </div>
                   </div>
@@ -1156,9 +1175,9 @@ export default function Home() {
                             Registry charges, stamp duty, and capital gains are calculated on the higher of circle rate or declared transaction value.
                           </p>
                         </div>
-                        <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
-                          <h5 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">3. Home Loan Issues</h5>
-                          <p className="text-sm text-blue-700 dark:text-blue-300">
+                        <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg border border-amber-200 dark:border-amber-700">
+                          <h5 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">3. Home Loan Issues</h5>
+                          <p className="text-sm text-amber-700 dark:text-amber-300">
                             Banks usually lend on whichever is lower between market rate and circle rate. So if your property's market rate is much higher, be ready to arrange extra money.
                           </p>
                         </div>
@@ -1166,9 +1185,9 @@ export default function Home() {
                     </div>
 
                     {/* Practical Tips */}
-                    <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl p-6 border border-emerald-200 dark:border-emerald-700">
+                    <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-amber-900/20 dark:to-yellow-900/20 rounded-xl p-6 border border-yellow-200 dark:border-amber-700">
                       <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
-                        <i data-lucide="lightbulb" className="w-5 h-5 text-emerald-600"></i>
+                        <i data-lucide="lightbulb" className="w-5 h-5 text-amber-600"></i>
                         Practical Tips Before You Buy or Sell
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1179,8 +1198,8 @@ export default function Home() {
                           'Negotiate smartly—sometimes a seller quotes market rate way above reality. Compare with circle rate and use it to bargain.'
                         ].map((tip, index) => (
                           <div key={index} className="flex items-start gap-3">
-                            <i data-lucide="check-circle" className="w-4 h-4 text-emerald-600 mt-1 flex-shrink-0"></i>
-                            <p className="text-sm text-emerald-700 dark:text-emerald-300">{tip}</p>
+                            <i data-lucide="check-circle" className="w-4 h-4 text-amber-600 mt-1 flex-shrink-0"></i>
+                            <p className="text-sm text-amber-700 dark:text-amber-300">{tip}</p>
                           </div>
                         ))}
                       </div>

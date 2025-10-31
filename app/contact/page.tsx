@@ -305,7 +305,7 @@ export default function ContactPage() {
             href="https://wa.me/918800505050?text=Hello,%20I%20need%20assistance%20regarding%20my%20property%20documentation."
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            className="w-14 h-14 bg-gradient-to-r from-primary to-secondary hover:from-amber-700 hover:to-amber-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <i className="text-white text-2xl" data-lucide="message-circle"></i>
           </a>

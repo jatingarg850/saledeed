@@ -79,7 +79,7 @@ export default function GiftDeedPage() {
   }
 
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div className="gift-deed-page relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
       <div className="layout-container flex h-full grow flex-col">
         <Navigation currentPage="services" />
 
@@ -95,7 +95,7 @@ export default function GiftDeedPage() {
           </div>
 
           {/* Hero Section */}
-          <div className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16">
+          <div className="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-3xl mb-16">
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
             <div className="relative max-w-6xl mx-auto px-8 py-16 md:py-24">
               <div className="text-center">
@@ -130,7 +130,7 @@ export default function GiftDeedPage() {
                   <a
                     href="/documents/DEED Documents.pdf"
                     download="Gift Deed Sample.pdf"
-                    className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-green-600 border-2 border-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 hover:text-white transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-amber-700 border-2 border-amber-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-600 hover:text-white transition-all duration-300"
                   >
                     <i data-lucide="download" className="w-5 h-5"></i>
                     Download Sample
@@ -140,8 +140,8 @@ export default function GiftDeedPage() {
                 {/* Trust Indicators */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="heart" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
+                    <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="heart" className="w-6 h-6 text-amber-600 dark:text-amber-400"></i>
                     </div>
                     <div className="text-left">
                       <div className="font-bold text-text-light dark:text-text-dark">Family First</div>
@@ -150,8 +150,8 @@ export default function GiftDeedPage() {
                   </div>
 
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="shield-check" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+                    <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="shield-check" className="w-6 h-6 text-yellow-600 dark:text-yellow-400"></i>
                     </div>
                     <div className="text-left">
                       <div className="font-bold text-text-light dark:text-text-dark">Tax Compliant</div>
@@ -160,8 +160,8 @@ export default function GiftDeedPage() {
                   </div>
 
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="clock" className="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
+                    <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
+                      <i data-lucide="clock" className="w-6 h-6 text-orange-600 dark:text-orange-400"></i>
                     </div>
                     <div className="text-left">
                       <div className="font-bold text-text-light dark:text-text-dark">Quick Process</div>
