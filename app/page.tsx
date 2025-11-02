@@ -196,7 +196,7 @@ export default function Home() {
   return (
     <>
       <PopupNotifications />
-      <div className="home-page relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load">
+      <div className="home-page relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load bg-background-light dark:bg-background-dark">
         <div className="layout-container flex h-full grow flex-col">
           <div className="w-full">
             <Navigation currentPage="home" />
@@ -371,7 +371,7 @@ export default function Home() {
 
 
               {/* User Type Selection Section */}
-              <div className="py-20 bg-white dark:bg-slate-800/30 animate-section-slide-in">
+              <div className="py-20 bg-background-light dark:bg-background-dark animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="text-center mb-16 animate-fade-in-up">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight font-display mb-4">
@@ -627,7 +627,7 @@ export default function Home() {
               </div>
 
               {/* Stamp Duty Calculator Section */}
-              <div className="py-20 bg-white dark:bg-slate-800/30 animate-section-slide-in">
+              <div className="py-20 bg-background-light dark:bg-background-dark animate-section-slide-in">
                 <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="text-center mb-12">
                     <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
