@@ -3156,20 +3156,57 @@ bile Performance Enhancements */
 
   /* Final catch-all for any remaining light text */
   @media (max-width: 768px) {
-    * {
-      color: #000000 !important;
+    /* Ensure content is visible and not hidden */
+    .services-page {
+      min-height: 100vh !important;
+      overflow: visible !important;
+    }
+
+    .services-page * {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    /* Fix text colors for services page */
+    .services-page h1,
+    .services-page h2,
+    .services-page h3,
+    .services-page h4,
+    .services-page h5 {
+      color: #2D2D2D !important;
+    }
+
+    .services-page p,
+    .services-page span,
+    .services-page li {
+      color: #404040 !important;
     }
     
     /* Only preserve white text in specific contexts */
-    button,
-    .btn-primary,
-    .btn-secondary,
-    .btn-tertiary,
-    .text-white,
-    .bg-primary *,
-    .bg-secondary *,
-    .bg-gradient-to-r * {
+    .services-page button,
+    .services-page .btn-primary,
+    .services-page .btn-secondary,
+    .services-page .btn-tertiary,
+    .services-page .text-white,
+    .services-page .bg-primary *,
+    .services-page .bg-secondary * {
       color: white !important;
+    }
+
+    /* Ensure cards are visible */
+    .services-page .bg-white,
+    .services-page .dark\:bg-slate-800 {
+      background: white !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* Fix any hidden content containers */
+    .services-page .grid,
+    .services-page .flex,
+    .services-page .container {
+      opacity: 1 !important;
+      visibility: visible !important;
     }
   }
 
@@ -3255,6 +3292,36 @@ bile Performance Enhancements */
   .animate-page-load {
     opacity: 1 !important;
     transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Ensure mobile layout doesn't hide content */
+  @media (max-width: 768px) {
+    .layout-container,
+    .flex-1,
+    main {
+      min-height: auto !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    /* Fix grid layouts on mobile */
+    .grid {
+      display: grid !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* Ensure all content sections are visible */
+    section,
+    .py-10,
+    .py-16,
+    .p-6,
+    .p-8 {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+    }
   }
 
   /* Ensure specific sections are visible */

@@ -79,7 +79,7 @@ export default function BlogsPage() {
       category: "Power of Attorney",
       tags: ["NRI Property", "Remote Management", "Legal Authorization"],
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      excerpt: "Living abroad but own property in India? Here's how Power of Attorney becomes your remote control for property management.",
+      excerpt: "Living abroad but own property in Delhi? Here's how Power of Attorney becomes your remote control for property management.",
       readTime: "6 min read"
     },
     {
@@ -223,7 +223,7 @@ export default function BlogsPage() {
                     <i className="text-primary" data-lucide="home"></i>
                     <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
                   </div>
-                  <p className="mt-4 text-base">Simplifying property documentation for everyone across India.</p>
+                  <p className="mt-4 text-base">Simplifying property documentation for everyone across Delhi.</p>
                 </div>
                 
                 <div>

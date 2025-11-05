@@ -80,7 +80,7 @@ export default function ContactPage() {
       icon: 'map-pin',
       title: 'Visit Us',
       description: 'Meet us at our office',
-      contact: 'Delhi, India',
+      contact: 'Delhi, Delhi',
       availability: 'By Appointment'
     }
   ]

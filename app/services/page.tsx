@@ -99,12 +99,12 @@ export default function ServicesPage() {
                     {/* Individual Document Services - Top Priority */}
                     <div className="px-6 md:px-10 lg:px-20 py-10">
                         <div className="bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-slate-600 mb-16">
-                            
 
-                           
+
+
 
                             {/* Special Note for Rent Agreement */}
-                        
+
                             {/* Book Our Services Section */}
                             <section className="additional-services-info py-16">
                                 <div className="container mx-auto px-4">
@@ -747,7 +747,7 @@ export default function ServicesPage() {
                                                 </div>
                                                 <div className="flex-1">
                                                     <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Structural Stability Certificate</h3>
-                                                    <p className="text-black dark:text-subtext-dark mb-4">A structural stability certificate describes the stability of a physical  structure of a property.It is issued by a structural engineer who inspects the property following the strict norms set by the government of India, regional government and municipal corporations.It is often demanded by banks on sanctioning of loans against a property,by property buyers,government authorities before further construction, land use conversion etc</p>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">A structural stability certificate describes the stability of a physical  structure of a property.It is issued by a structural engineer who inspects the property following the strict norms set by the government of Delhi, regional government and municipal corporations.It is often demanded by banks on sanctioning of loans against a property,by property buyers,government authorities before further construction, land use conversion etc</p>
                                                     <a
                                                         href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Structural%20Stability%20Certificate."
                                                         target="_blank"
@@ -1393,7 +1393,7 @@ export default function ServicesPage() {
                                         {/* Introduction */}
                                         <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                                             <p className="text-subtext-light dark:text-subtext-dark leading-relaxed mb-4">
-                                                Buying, selling, or renting property in India is usually seen as a stressful task—endless paperwork, hidden charges, and running around government offices. But the truth is: <strong>property transactions can be smooth if you know the right process</strong>.
+                                                Buying, selling, or renting property in Delhi is usually seen as a stressful task—endless paperwork, hidden charges, and running around government offices. But the truth is: <strong>property transactions can be smooth if you know the right process</strong>.
                                             </p>
                                             <p className="text-subtext-light dark:text-subtext-dark">
                                                 Whether you want to buy property in Delhi, sell your flat in Gurgaon, or just make a rent agreement online, here's a clear, no-nonsense guide.

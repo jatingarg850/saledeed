@@ -232,7 +232,7 @@ Message: ${formData.message}`;
                     <i className="text-primary" data-lucide="home"></i>
                     <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
                   </div>
-                  <p className="mt-4 text-base">Simplifying property documentation for everyone across India.</p>
+                  <p className="mt-4 text-base">Simplifying property documentation for everyone across Delhi.</p>
                 </div>
                 
                 <div>

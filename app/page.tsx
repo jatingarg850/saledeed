@@ -1390,7 +1390,7 @@ export default function Home() {
                 {/* Trust Badge */}
                 <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
                   <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
-                  <span>Trusted by 10,000+ clients across India</span>
+                  <span>Trusted by 10,000+ clients across Delhi</span>
                 </div>
               </div>
             </section>
@@ -1404,7 +1404,7 @@ export default function Home() {
                       <i className="text-primary" data-lucide="home"></i>
                       <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
                     </div>
-                    <p className="mt-4 text-base">Simplifying property documentation for everyone across India.</p>
+                    <p className="mt-4 text-base">Simplifying property documentation for everyone across Delhi.</p>
                   </div>
 
                   <div>

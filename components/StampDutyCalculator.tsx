@@ -61,7 +61,7 @@ export default function StampDutyCalculator() {
           {/* Property Value */}
           <div>
             <label className="block text-text-light dark:text-text-dark font-bold mb-3 text-sm flex items-center gap-2">
-              <i data-lucide="indian-rupee" className="w-4 h-4 text-primary"></i>
+              <i data-lucide="Delhin-rupee" className="w-4 h-4 text-primary"></i>
               Property Value (INR)
             </label>
             <input

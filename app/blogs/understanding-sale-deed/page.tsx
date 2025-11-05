@@ -65,7 +65,7 @@ export default function UnderstandingSaleDeedPage() {
 
                 <h2 className="text-2xl font-bold mb-4 text-black dark:text-text-dark">Legal Requirements</h2>
                 <p className="mb-6 leading-relaxed">
-                  For a sale deed to be legally valid, it must comply with several requirements under Indian law. The document must be executed on stamp paper of appropriate value, signed by both parties in the presence of witnesses, and registered with the local sub-registrar office within four months of execution.
+                  For a sale deed to be legally valid, it must comply with several requirements under Delhin law. The document must be executed on stamp paper of appropriate value, signed by both parties in the presence of witnesses, and registered with the local sub-registrar office within four months of execution.
                 </p>
 
                 <h2 className="text-2xl font-bold mb-4 text-black dark:text-text-dark">Registration Process</h2>
@@ -133,7 +133,7 @@ export default function UnderstandingSaleDeedPage() {
                     <i className="text-primary" data-lucide="home"></i>
                     <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
                   </div>
-                  <p className="mt-4 text-base">Simplifying property documentation for everyone across India.</p>
+                  <p className="mt-4 text-base">Simplifying property documentation for everyone across Delhi.</p>
                 </div>
 
                 <div>

@@ -43,7 +43,7 @@ export default function BuyerSolutionPage() {
     },
     {
       title: 'Relocation Services',
-      description: 'Professional relocation services to help you shift to your new home from anywhere across India.'
+      description: 'Professional relocation services to help you shift to your new home from anywhere across Delhi.'
     }
   ]
 
