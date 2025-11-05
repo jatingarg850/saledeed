@@ -7,8 +7,37 @@ import { usePrank } from '../../contexts/PrankContext'
 export default function CoddyIOPage() {
   const [inputKey, setInputKey] = useState('')
   const [message, setMessage] = useState('')
+  const [testResult, setTestResult] = useState('')
   const router = useRouter()
   const { activatePrank, isPrankActive, prankStats } = usePrank()
+
+  const testJSONBin = async () => {
+    setTestResult('Testing JSONBin connection...')
+    try {
+      const binId = process.env.NEXT_PUBLIC_JSONBIN_BIN_ID
+      const apiKey = process.env.NEXT_PUBLIC_JSONBIN_API_KEY
+      
+      if (!binId || !apiKey || binId === 'YOUR_BIN_ID' || apiKey === 'YOUR_API_KEY') {
+        setTestResult('❌ Environment variables not configured')
+        return
+      }
+      
+      const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+        headers: {
+          'X-Master-Key': apiKey
+        }
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        setTestResult(`✅ JSONBin connected! Current state: ${JSON.stringify(data.record)}`)
+      } else {
+        setTestResult(`❌ JSONBin error: ${response.status}`)
+      }
+    } catch (error) {
+      setTestResult(`❌ Connection failed: ${error}`)
+    }
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -72,6 +101,39 @@ export default function CoddyIOPage() {
             {message}
           </div>
         )}
+
+        {/* Current Status Display */}
+        <div className="mt-6 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
+          <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+            Current Status:
+          </h3>
+          <div className="text-sm text-gray-600 dark:text-gray-400">
+            <div>Prank Active: {isPrankActive ? '🎪 YES' : '😇 NO'}</div>
+            {prankStats.activatedAt && (
+              <div>
+                Duration: {Math.floor((Date.now() - prankStats.activatedAt) / 1000)}s
+              </div>
+            )}
+            <div className="mt-2 text-xs">
+              External Sync: {process.env.NEXT_PUBLIC_JSONBIN_BIN_ID ? '🌍 Enabled' : '📱 Local Only'}
+            </div>
+          </div>
+          
+          {/* Test JSONBin Connection */}
+          <div className="mt-4 pt-4 border-t border-gray-300 dark:border-gray-600">
+            <button
+              onClick={testJSONBin}
+              className="w-full bg-blue-500 text-white py-2 px-4 rounded text-sm hover:bg-blue-600 transition-colors"
+            >
+              🧪 Test JSONBin Connection
+            </button>
+            {testResult && (
+              <div className="mt-2 p-2 bg-gray-50 dark:bg-gray-800 rounded text-xs">
+                {testResult}
+              </div>
+            )}
+          </div>
+        </div>
 
         <div className="mt-8 text-center">
           <button
