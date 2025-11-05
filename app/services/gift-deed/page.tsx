@@ -506,6 +506,14 @@ export default function GiftDeedPage() {
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a></li>
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                  <li>
+                    <div className="flex items-center gap-1">
+                      <i className="text-primary text-xs" data-lucide="mail"></i>
+                      <a href="mailto:support@saledeed.com" className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors">
+                        support@saledeed.com
+                      </a>
+                    </div>
+                  </li>
                 </ul>
               </div>
               <div>

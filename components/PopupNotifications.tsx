@@ -100,10 +100,11 @@ export default function PopupNotifications() {
                 href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-colors text-center flex items-center justify-center gap-2"
+                className="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors text-center flex items-center justify-center gap-2"
+                style={{ color: '#ffffff !important', backgroundColor: '#16a34a !important' }}
               >
-                <i data-lucide="message-circle" className="w-4 h-4"></i>
-                WhatsApp
+                <i data-lucide="message-circle" className="w-4 h-4" style={{ color: '#ffffff !important' }}></i>
+                <span style={{ color: '#ffffff !important' }}>WhatsApp</span>
               </a>
             </div>
           </div>

@@ -483,7 +483,7 @@ export default function ServicesPage() {
                                                 </div>
                                                 <div className="flex-1">
                                                     <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">NOC (No Objection Certificate)</h3>
-                                                    <p className="text-black dark:text-subtext-dark mb-4">Reach Us to get a noc across all major building authorities like L&do,dda,ndmc and more.</p>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Reach us to get a NOC across all major building authorities like L&DO, DDA, NDMC and more.</p>
                                                     <a
                                                         href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20NOC%20(No%20Objection%20Certificate)."
                                                         target="_blank"
@@ -505,7 +505,7 @@ export default function ServicesPage() {
                                                 </div>
                                                 <div className="flex-1">
                                                     <h3 className="text-lg sm:text-xl font-bold text-black dark:text-text-dark mb-3">Buy/Sell/Rent At Minimum Commission</h3>
-                                                    <p className="text-sm sm:text-base text-black dark:text-subtext-dark mb-4">Whether you are a buyer/seller/landlord or a tenant,saledeed.com presents offers that youhaven't heard before.Reach us to buy,sell or rent your property with best in the market options at minimum rateof commission.Our team of experts can provide a better experience and offer than youcurrently have.Contact us now to get started.In addition to this if you decide to buy/sell/rent through us you may be eligible for freedeed drafting and even registration.(Terms & Conditions apply).</p>
+                                                    <p className="text-sm sm:text-base text-black dark:text-subtext-dark mb-4">Whether you are a buyer/seller/landlord or a tenant, saledeed.com presents offers that you haven't heard before. Reach us to buy, sell or rent your property with best in the market options at minimum rate of commission. Our team of experts can provide a better experience and offer than you currently have. Contact us now to get started. In addition to this if you decide to buy/sell/rent through us you may be eligible for free deed drafting and even registration. (Terms & Conditions apply).</p>
                                                     <a
                                                         href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Buy%2FSell%2FRent%20At%20Minimum%20Commission."
                                                         target="_blank"
@@ -527,7 +527,7 @@ export default function ServicesPage() {
                                                 </div>
                                                 <div className="flex-1">
                                                     <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Get Instant Loan</h3>
-                                                    <p className="text-black dark:text-subtext-dark mb-4">Get loans as per your personal case requirement by the most reputed banks at the lowestrate of interest.</p>
+                                                    <p className="text-black dark:text-subtext-dark mb-4">Get loans as per your personal case requirement by the most reputed banks at the lowest rate of interest.</p>
                                                     <a
                                                         href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Get%20Instant%20Loan."
                                                         target="_blank"
@@ -817,6 +817,41 @@ export default function ServicesPage() {
                                 {services.map((service, index) => (
                                     <Link
                                         key={`first-${index}`}
+                                        href={service.href}
+                                        className="flex-shrink-0 w-96 group"
+                                    >
+                                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700 group-hover:border-primary/50 h-64">
+                                            <div className="flex items-start gap-4 mb-6">
+                                                <div className="w-14 h-14 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                                    <i data-lucide="file-text" className="w-7 h-7 text-white"></i>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="font-bold text-xl text-text-light dark:text-text-dark group-hover:text-primary transition-colors duration-300 mb-3">
+                                                        {service.name}
+                                                    </h3>
+                                                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                                                        Professional legal documentation and registration services with expert guidance and complete compliance.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-between mt-auto">
+                                                <div className="flex items-center gap-2 text-sm text-subtext-light dark:text-subtext-dark">
+                                                    <i data-lucide="clock" className="w-4 h-4"></i>
+                                                    <span>7-15 days</span>
+                                                </div>
+                                                <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
+                                                    <span>Learn More</span>
+                                                    <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+
+                                {/* Duplicate set for seamless infinite scroll */}
+                                {services.map((service, index) => (
+                                    <Link
+                                        key={`second-${index}`}
                                         href={service.href}
                                         className="flex-shrink-0 w-96 group"
                                     >
@@ -1855,6 +1890,14 @@ export default function ServicesPage() {
                                     <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a></li>
                                     <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
                                     <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                                    <li>
+                                        <div className="flex items-center gap-1">
+                                            <i className="text-primary text-xs" data-lucide="mail"></i>
+                                            <a href="mailto:support@saledeed.com" className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors">
+                                                support@saledeed.com
+                                            </a>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                             <div>

@@ -445,6 +445,57 @@ export default function SaleDeedPage() {
             </div>
           </div>
         </main>
+
+        {/* Footer */}
+        <footer className="bg-yellow-50 dark:bg-gray-900 border-t border-yellow-200 dark:border-slate-800 mt-12">
+          <div className="container mx-auto px-6 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Company</h4>
+                <ul className="space-y-2">
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Services</h4>
+                <ul className="space-y-2">
+                  <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/sale-deed">Sale Deed</Link></li>
+                  <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/gift-deed">Gift Deed</Link></li>
+                  <li><Link className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/services/relinquishment-deed">Relinquishment Deed</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Resources</h4>
+                <ul className="space-y-2">
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Blog</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">FAQ</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Help Center</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Legal</h4>
+                <ul className="space-y-2">
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+                </ul>
+                <div className="mt-4">
+                  <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Contact</h4>
+                  <div className="flex items-center gap-1">
+                    <i className="text-primary text-xs" data-lucide="mail"></i>
+                    <a href="mailto:support@saledeed.com" className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors">
+                      support@saledeed.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-yellow-200 dark:border-slate-800 text-center text-sm text-subtext-light dark:text-subtext-dark">
+              <p>© 2025 SaleDeed.com. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )

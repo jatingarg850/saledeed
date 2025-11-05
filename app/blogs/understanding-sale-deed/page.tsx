@@ -133,7 +133,7 @@ export default function UnderstandingSaleDeedPage() {
                     <i className="text-primary" data-lucide="home"></i>
                     <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
                   </div>
-                  <p className="mt-4 text-base">Simplifying property documentation for everyone across Delhi.</p>
+                  <p className="mt-4 text-base">A one-stop shop for every property need - indeed !</p>
                 </div>
 
                 <div>

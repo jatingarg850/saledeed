@@ -481,7 +481,7 @@ a {
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -2312,14 +2312,17 @@ video.logo-video {
   margin: 2rem 0;
   position: relative;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .marquee-content {
   display: flex;
   gap: 3rem;
-  animation: marquee 15s linear infinite;
+  animation: marquee 90s linear infinite !important;
   white-space: nowrap;
   will-change: transform;
+  width: max-content;
+  min-width: 200%;
 }
 
 .marquee-text {
@@ -2336,14 +2339,16 @@ video.logo-video {
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
 /* Mobile optimization */
 @media (max-width: 768px) {
   .marquee-content {
-    animation-duration: 6s;
+    animation-duration: 90s !important;
+    gap: 2rem;
+    min-width: 300%;
   }
   
   .marquee-text {
@@ -2660,7 +2665,9 @@ bile Performance Enhancements */
   /* Optimize marquee for mobile */
   .marquee-content,
   .custom-marquee-content {
-    animation-duration: 5s !important;
+    animation-duration: 90s !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
   }
 
   /* Reduce blur effects */
@@ -3562,10 +3569,11 @@ bile Performance Enhancements */
 
 /* Ultra-fast animations for small mobile screens */
 @media (max-width: 480px) {
-  /* Super fast marquee for small screens */
+  /* Optimized marquee for small screens */
   .marquee-content,
   .custom-marquee-content {
-    animation-duration: 3s !important;
+    animation-duration: 100s !important;
+    animation-timing-function: linear !important;
   }
 
   /* Very fast card slider */
@@ -3587,10 +3595,11 @@ bile Performance Enhancements */
 
 /* Performance boost for low-end devices */
 @media (max-width: 360px) {
-  /* Extremely fast for very small screens */
+  /* Smooth marquee for very small screens */
   .marquee-content,
   .custom-marquee-content {
-    animation-duration: 2s !important;
+    animation-duration: 120s !important;
+    animation-timing-function: linear !important;
   }
 
   .animate-slide-infinite {
@@ -3601,7 +3610,7 @@ bile Performance Enhancements */
 /* Dynamic performance optimization based on device detection */
 .mobile-performance-mode .marquee-content,
 .mobile-performance-mode .custom-marquee-content {
-  animation-duration: 4s !important;
+  animation-duration: 90s !important;
 }
 
 .mobile-performance-mode .animate-slide-infinite {
@@ -3611,7 +3620,7 @@ bile Performance Enhancements */
 /* Extra fast for low-end devices */
 .low-end-device .marquee-content,
 .low-end-device .custom-marquee-content {
-  animation-duration: 2s !important;
+  animation-duration: 120s !important;
 }
 
 .low-end-device .animate-slide-infinite {
@@ -3929,4 +3938,286 @@ bile Performance Enhancements */
 .sale-deed-page .text-blue-600,
 .gift-deed-page .text-green-600 {
   color: var(--primary-color) !important;
+}
+/* 
+Mobile Services Page Content Visibility Fixes */
+@media (max-width: 768px) {
+  /* Ensure all service boxes are visible and properly spaced */
+  .services-page .additional-services-info {
+    padding: 2rem 0 !important;
+  }
+  
+  .services-page .additional-services-info .grid {
+    gap: 1.5rem !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Fix service box content visibility */
+  .services-page .bg-white,
+  .services-page .dark\:bg-slate-800 {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 1rem !important;
+    padding: 1.5rem !important;
+    border-radius: 1rem !important;
+  }
+  
+  /* Ensure text content is visible */
+  .services-page .bg-white h3,
+  .services-page .bg-white p,
+  .services-page .dark\:bg-slate-800 h3,
+  .services-page .dark\:bg-slate-800 p {
+    color: #1f2937 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Fix flex layouts on mobile */
+  .services-page .flex-col.sm\:flex-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  
+  /* Ensure icons are visible */
+  .services-page [data-lucide] {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Fix button visibility */
+  .services-page .bg-gradient-to-r {
+    background: linear-gradient(to right, #A16207, #D69E2E) !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 9999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+}/* Love Mo
+de Heart Animations */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(0) rotate(-5deg);
+  }
+  25% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Animation classes */
+.animate-float-up {
+  animation: float-up linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway ease-in-out infinite;
+}
+
+.animate-heart-beat {
+  animation: heart-beat ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle ease-in-out infinite;
+}/*
+ Chaotic Prank Mode Animations */
+@keyframes crazy-shake {
+  0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+  10% { transform: translateX(-2px) translateY(-1px) rotate(-1deg); }
+  20% { transform: translateX(2px) translateY(1px) rotate(1deg); }
+  30% { transform: translateX(-1px) translateY(-2px) rotate(-1deg); }
+  40% { transform: translateX(1px) translateY(2px) rotate(1deg); }
+  50% { transform: translateX(-2px) translateY(1px) rotate(-1deg); }
+  60% { transform: translateX(2px) translateY(-1px) rotate(1deg); }
+  70% { transform: translateX(-1px) translateY(2px) rotate(-1deg); }
+  80% { transform: translateX(1px) translateY(-2px) rotate(1deg); }
+  90% { transform: translateX(-2px) translateY(-1px) rotate(-1deg); }
+}
+
+@keyframes rainbow-text {
+  0% { color: #ff0000; }
+  16.66% { color: #ff8000; }
+  33.33% { color: #ffff00; }
+  50% { color: #00ff00; }
+  66.66% { color: #0080ff; }
+  83.33% { color: #8000ff; }
+  100% { color: #ff0000; }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes zoom-crazy {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(5deg); }
+  50% { transform: scale(0.8) rotate(-5deg); }
+  75% { transform: scale(1.1) rotate(3deg); }
+}
+
+/* Prank mode classes */
+.animate-crazy-shake {
+  animation: crazy-shake 0.5s ease-in-out infinite;
+}
+
+.animate-rainbow-text {
+  animation: rainbow-text 2s linear infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.animate-zoom-crazy {
+  animation: zoom-crazy 1s ease-in-out infinite;
+}
+
+/* Make the whole overlay more chaotic */
+.prank-mode {
+  animation: crazy-shake 10s ease-in-out infinite;
+}
+/* Enhance
+d mobile marquee optimizations */
+@media (max-width: 480px) {
+  .marquee-content {
+    animation-duration: 100s !important;
+    gap: 1.5rem !important;
+    min-width: 400% !important;
+  }
+  
+  .marquee-text {
+    font-size: 0.75rem !important;
+    padding: 0 0.5rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .marquee-content {
+    animation-duration: 120s !important;
+    gap: 1rem !important;
+    min-width: 500% !important;
+  }
+}
+
+/* Force hardware acceleration for marquee */
+.marquee-content {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+}
+
+/* Ensure marquee works on iOS Safari */
+@supports (-webkit-appearance: none) {
+  .marquee-container {
+    -webkit-transform: translateZ(0);
+  }
+  
+  .marquee-content {
+    -webkit-animation: marquee 120s linear infinite !important;
+  }
+}/* FINA
+L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
+.marquee-content,
+.custom-marquee-content {
+  animation: marquee 90s linear infinite !important;
+  -webkit-animation: marquee 90s linear infinite !important;
+}
+
+/* Mobile specific overrides with higher specificity */
+@media (max-width: 768px) {
+  .marquee-container .marquee-content,
+  .marquee-container .custom-marquee-content {
+    animation-duration: 90s !important;
+    -webkit-animation-duration: 90s !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-container .marquee-content,
+  .marquee-container .custom-marquee-content {
+    animation-duration: 100s !important;
+    -webkit-animation-duration: 100s !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .marquee-container .marquee-content,
+  .marquee-container .custom-marquee-content {
+    animation-duration: 120s !important;
+    -webkit-animation-duration: 120s !important;
+  }
+}
+
+/* Override any performance mode classes */
+.mobile-performance-mode .marquee-container .marquee-content,
+.low-end-device .marquee-container .marquee-content,
+.mobile-performance-mode .marquee-container .custom-marquee-content,
+.low-end-device .marquee-container .custom-marquee-content {
+  animation-duration: 90s !important;
+  -webkit-animation-duration: 90s !important;
 }

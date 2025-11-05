@@ -360,6 +360,15 @@ export default function GeneralPowerOfAuthorityPage() {
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
                 </ul>
+                <div className="mt-4">
+                  <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Contact</h4>
+                  <div className="flex items-center gap-1">
+                    <i className="text-primary text-xs" data-lucide="mail"></i>
+                    <a href="mailto:support@saledeed.com" className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors">
+                      support@saledeed.com
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-yellow-200 dark:border-slate-800 text-center text-sm text-subtext-light dark:text-subtext-dark">

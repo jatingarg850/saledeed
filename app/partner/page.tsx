@@ -232,7 +232,7 @@ Message: ${formData.message}`;
                     <i className="text-primary" data-lucide="home"></i>
                     <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
                   </div>
-                  <p className="mt-4 text-base">Simplifying property documentation for everyone across Delhi.</p>
+                  <p className="mt-4 text-base">A one-stop shop for every property need - indeed !</p>
                 </div>
                 
                 <div>
@@ -261,6 +261,16 @@ Message: ${formData.message}`;
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</a></li>
                   </ul>
+                </div>
+                
+                <div>
+                  <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Contact</h3>
+                  <div className="mt-4 flex items-center gap-2">
+                    <i className="text-primary" data-lucide="mail"></i>
+                    <a href="mailto:support@saledeed.com" className="text-base hover:text-primary dark:hover:text-secondary transition-colors">
+                      support@saledeed.com
+                    </a>
+                  </div>
                 </div>
               </div>
               

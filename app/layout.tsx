@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Manrope, Poppins, Roboto, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import LoveModeOverlay from '../components/LoveModeOverlay'
+import { PrankProvider } from '../contexts/PrankContext'
 
 const manrope = Manrope({ 
   subsets: ['latin'],
@@ -51,7 +53,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
       <body className="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark">
-        {children}
+        <PrankProvider>
+          {children}
+          <LoveModeOverlay />
+        </PrankProvider>
         <Script id="lucide-init" strategy="afterInteractive">
           {`lucide.createIcons();`}
         </Script>

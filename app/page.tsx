@@ -290,6 +290,32 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
+                    {/* Third duplicate for better mobile performance */}
+                    <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
+                    <span className="marquee-text">A To Z Buying/Selling Assistance</span>
+                    <span className="marquee-text">All Deeds Drafting &amp; Registration</span>
+                    <span className="marquee-text">Property Verification</span>
+                    <span className="marquee-text">Sale Deed</span>
+                    <span className="marquee-text">Gift Deed</span>
+                    <span className="marquee-text">Relinquishment Deed</span>
+                    <span className="marquee-text">Will</span>
+                    <span className="marquee-text">Rent Agreement</span>
+                    <span className="marquee-text">No Objection Certificate(NOC)</span>
+                    <span className="marquee-text">Valuation Report</span>
+                    <span className="marquee-text">Mutation</span>
+                    <span className="marquee-text">Real Estate Liaisoning</span>
+                    <span className="marquee-text">Mcd/Dda/L&amp;do/Ndmc</span>
+                    <span className="marquee-text">Freehold</span>
+                    <span className="marquee-text">Completion Certificate (C.C)</span>
+                    <span className="marquee-text">Regularisation</span>
+                    <span className="marquee-text">Property Tax Assessment</span>
+                    <span className="marquee-text">Surviving Member Certificate</span>
+                    <span className="marquee-text">Plan Sanctioning</span>
+                    <span className="marquee-text">Residential/Commercial/Industrial</span>
+                    <span className="marquee-text">Capital Gain</span>
+                    <span className="marquee-text">Structural Stability Certificate</span>
+                    <span className="marquee-text">Renovation</span>
+                    <span className="marquee-text">Relocation</span>
                   </div>
                 </div>
 
@@ -1404,7 +1430,13 @@ export default function Home() {
                       <i className="text-primary" data-lucide="home"></i>
                       <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
                     </div>
-                    <p className="mt-4 text-base">Simplifying property documentation for everyone across Delhi.</p>
+                    <p className="mt-4 text-base">A one-stop shop for every property need - indeed !</p>
+                    <div className="mt-4 flex items-center gap-2">
+                      <i className="text-primary" data-lucide="mail"></i>
+                      <a href="mailto:support@saledeed.com" className="text-base hover:text-primary dark:hover:text-secondary transition-colors">
+                        support@saledeed.com
+                      </a>
+                    </div>
                   </div>
 
                   <div>
