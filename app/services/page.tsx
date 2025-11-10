@@ -526,7 +526,7 @@ export default function ServicesPage() {
                                                     <i data-lucide="banknote" className="w-8 h-8 text-white"></i>
                                                 </div>
                                                 <div className="flex-1">
-                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Get Instant Loan</h3>
+                                                    <h3 className="text-xl font-bold text-black dark:text-text-dark mb-3">Get Loan At Minimum Interest</h3>
                                                     <p className="text-black dark:text-subtext-dark mb-4">Get loans as per your personal case requirement by the most reputed banks at the lowest rate of interest.</p>
                                                     <a
                                                         href="https://wa.me/918800505050?text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20Get%20Instant%20Loan."

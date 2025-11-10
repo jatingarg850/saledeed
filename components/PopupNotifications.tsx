@@ -23,7 +23,7 @@ export default function PopupNotifications() {
     },
     {
       id: 2,
-      message: 'Reach for Everything from Sale to Deed in a Seamless Process',
+      message: 'For Every Property Need - Indeed, Seamless Process Guaranteed',
       type: 'seamless',
       icon: 'check-circle'
     },

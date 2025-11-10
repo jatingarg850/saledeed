@@ -111,8 +111,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
             style={{ 
               maxWidth: 'none'
             }}
-            title="Everything from Sale to Deed"
-            aria-label="Everything from Sale to Deed - Your Complete Property Solution"
+            title="For Every Property Need - Indeed"
+            aria-label="For Every Property Need - Indeed - Your Complete Property Solution"
             onEnded={(e) => {
               // Stop at the last frame when video ends
               e.currentTarget.pause();

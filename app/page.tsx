@@ -213,9 +213,18 @@ export default function Home() {
                       All Property Documents Hassle Free
                     </div>
                     <p className="deed-para" style={{ fontSize: '17px' }}>
-                      Sale Deed | Gift Deed | Relinquishment Deed | Valuation Report | NOC &amp; More
+                      Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
-                    <p className="blinking-text">Buy/Sell/Rent at minimum commission</p>
+                    <div className="mt-4">
+                      <Link
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20please%20offer%20me%20the%20best%20deal%20at%20lowest%20commission"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+                      >
+                        Buy/Sell/Rent at Minimum Commission
+                      </Link>
+                    </div>
                   </div>
                   <div className="header-btn">
                     <button
@@ -225,7 +234,7 @@ export default function Home() {
                       Get Doorstep Advice
                     </button>
                     <Link href="/documents">
-                      <button className="btn-primary">Get Your Deed Drafted</button>
+                      <button className="btn-primary">Get Customised Deed Drafted</button>
                     </Link>
                     <Link href="/calculator">
                       <button className="btn-primary">Calculate Stamp Duty</button>
@@ -238,7 +247,7 @@ export default function Home() {
 
                 {/* Marquee Container */}
                 <div className="marquee-container">
-                  <div className="marquee-content">
+                  <div className="marquee-content ">
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
                     <span className="marquee-text">All Deeds Drafting &amp; Registration</span>
@@ -264,6 +273,7 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
+                    <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                     {/* Duplicate for seamless loop */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -290,6 +300,7 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
+                    <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                     {/* Third duplicate for better mobile performance */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -316,101 +327,10 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
+                    <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                   </div>
                 </div>
-
-                {/* Features Container */}
-                <div className="thp-features-container">
-                  <div className="thp-feature-card">
-                    <div className="thp-feature-icon">
-                      <i className="fa-file-signature fas"></i>
-                    </div>
-                    <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20get%20my%20deed%20registered%22"
-                        rel="noopener noreferrer"
-                      >
-                        All deeds Drafting And Registration
-                      </a>
-                    </div>
-                  </div>
-                  <div className="thp-feature-card">
-                    <div className="thp-feature-icon">
-                      <i className="fa-coins fas"></i>
-                    </div>
-                    <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20know%20how%20can%20i%20save%20tax%22"
-                        rel="noopener noreferrer"
-                      >
-                        Save Tax
-                      </a>
-                    </div>
-                  </div>
-                  <div className="thp-feature-card">
-                    <div className="thp-feature-icon">
-                      <i className="fa-landmark fas"></i>
-                    </div>
-                    <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20authority%20assistance%22"
-                        rel="noopener noreferrer"
-                      >
-                        All Authorities Assistance
-                      </a>
-                    </div>
-                  </div>
-                  <div className="thp-feature-card">
-                    <div className="thp-feature-icon">
-                      <i className="fa-hand-holding-usd fas"></i>
-                    </div>
-                    <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20to%20know%20more%20about%20loan%22"
-                        rel="noopener noreferrer"
-                      >
-                        Get Instant Loan
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Stats Blinking Animation */}
-                <div className="stats-blink-container">
-                  <div className="stats-blink-content">
-                    <span className="stats-blink-text stats-blink-1">Every 30 minutes a loan is granted</span>
-                    <span className="stats-blink-text stats-blink-2">Every 11 minutes a valuation report is generated</span>
-                    <span className="stats-blink-text stats-blink-3">Every 4 minutes a query is answered</span>
-                    <span className="stats-blink-text stats-blink-4">Every 6 minutes a deed is drafted</span>
-                  </div>
-                </div>
-              </div>
-
-
-
-              {/* User Type Selection Section */}
-              <div className="py-20 bg-background-light dark:bg-background-dark animate-section-slide-in">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
-                  <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight font-display mb-4">
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
-                        Everything from Sale to Deed
-                      </span>
-                    </h2>
-                    <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
-                      Choose your role to get personalized property documentation solutions
-                    </p>
-                  </div>
-
-                  {/* First Row - 3 Cards */}
+                 {/* First Row - 3 Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 animate-stagger-grid">
                     {/* I Am a Buyer */}
                     <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
@@ -512,6 +432,215 @@ export default function Home() {
                       Not sure which category fits you? <Link href="/contact" className="text-primary hover:underline font-medium">Get free consultation</Link> to find the right solution.
                     </p>
                   </div>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <div className="text-center mb-12">
+                  <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4">
+                    We Work With All Major Authorities
+                  </h2>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
+                    We Work With All Major Authorities
+Our expert team consists of professionals with in-depth experience of real estate Liaisoning in all building Authorities.Reach Us Today For A Customized Guidance For Your Specific Property. </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="building-2"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">MCD</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Municipal Corporation of Delhi</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Property tax assessments, building plan approvals, and municipal clearances for property transactions.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="landmark"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">DDA</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Delhi Development Authority</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Land development permissions, layout approvals, and conversion certificates for DDA properties.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="map"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">L&DO</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Land & Development Office</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Leasehold to freehold conversions, ground rent clearances, and land use change permissions.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="file-check"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">SRO</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Sub-Registrar Office</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Document registration, stamp duty verification, and legal validation of property transfers.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="receipt"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">Collector Office</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Property Tax Department</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Property tax assessments, revenue records, and mutation of property ownership records.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="shield-check"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">NDMC</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">New Delhi Municipal Council</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Special area clearances, premium property documentation, and Lutyens Delhi property services.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Features Container */}
+                <div className="thp-features-container">
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-file-signature fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20get%20my%20deed%20registered%22"
+                        rel="noopener noreferrer"
+                      >
+                        All Deeds Drafting And Registration
+                      </a>
+                    </div>
+                  </div>
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-coins fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20know%20how%20can%20i%20save%20tax%22"
+                        rel="noopener noreferrer"
+                      >
+                        Save Maximum Tax
+                      </a>
+                    </div>
+                  </div>
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-landmark fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20authority%20assistance%22"
+                        rel="noopener noreferrer"
+                      >
+                        Building Authorities Assistance
+                      </a>
+                    </div>
+                  </div>
+                  <div className="thp-feature-card">
+                    <div className="thp-feature-icon">
+                      <i className="fa-hand-holding-usd fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      <a
+                        target="_blank"
+                        className="feature-link"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20to%20know%20more%20about%20loan%22"
+                        rel="noopener noreferrer"
+                      >
+                        Get Loan At Minimum Interest
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stats Blinking Animation */}
+                <div className="stats-blink-container">
+                  <div className="stats-blink-content">
+                    <span className="stats-blink-text stats-blink-1">Every 30 minutes a loan is granted</span>
+                    <span className="stats-blink-text stats-blink-2">Every 11 minutes a valuation report is generated</span>
+                    <span className="stats-blink-text stats-blink-3">Every 4 minutes a query is answered</span>
+                    <span className="stats-blink-text stats-blink-4">Every 6 minutes a deed is drafted</span>
+                  </div>
+                </div>
+              </div>
+
+
+
+              {/* User Type Selection Section */}
+              <div className="py-20 bg-background-light dark:bg-background-dark animate-section-slide-in">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
+                  <div className="text-center mb-16 animate-fade-in-up">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight font-display mb-4">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
+                        For Every Property Need - Indeed
+                      </span>
+                    </h2>
+                    <div className="mt-8 bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-2xl border-2 border-yellow-200 dark:border-yellow-700">
+                      <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">Still Have A Doubt?</h3>
+                      <p className="text-gray-700 dark:text-gray-300 mb-4">Get Free Consultation For A Best In City Experience.</p>
+                      <Link
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20Have%20A%20Query%3B%20Please%20Connect%20Me%20To%20An%20Expert!"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      >
+                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                        Get Free Consultation
+                      </Link>
+                    </div>
+                    <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
+                      Choose your role to get personalized property documentation solutions
+                    </p>
+                  </div>
+
+                 
                 </div>
               </div>
 
@@ -686,52 +815,52 @@ export default function Home() {
                     {/* Card 1 - Affordable & Convenient */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up">
                       <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i className="fas fa-hand-holding-usd text-white text-2xl"></i>
+                        <i data-lucide="dollar-sign" className="text-white w-8 h-8"></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         Affordable & Convenient
                       </h3>
                       <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
-                        We provide affordable sale deed drafting and registration services with a dedicated agent guiding you at every step.
+                        We provide affordable A-Z property services with a dedicated agent guiding you at every step.
                       </p>
                     </div>
 
                     {/* Card 2 - No Compromise Privacy */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                       <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i className="fas fa-user-secret text-white text-2xl"></i>
+                        <i data-lucide="shield-check" className="text-white w-8 h-8"></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         No Compromise Privacy
                       </h3>
                       <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
-                        All your sale deed details, documents, and personal information remain completely confidential with us.
+                        Whether you are our client or a service provider in our network all your personal & professional details are completely safe and confidential with us.
                       </p>
                     </div>
 
                     {/* Card 3 - Money Back Guarantee */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                       <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i className="fas fa-shield-alt text-white text-2xl"></i>
+                        <i data-lucide="badge-check" className="text-white w-8 h-8"></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         Money Back Guarantee
                       </h3>
                       <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
-                        We ensure top-quality sale deed services. If any part of the process is not satisfactory, we provide a full money-back guarantee.
+                        At saledeed.com we ensure you best in class services always but if at any point you are not satisfied with our service we promise to pay you back as per our return policies.
                       </p>
                     </div>
 
-                    {/* Card 4 - Free Doorstep Advice */}
+                    {/* Card 4 - Doorstep Advice */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                       <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i className="fas fa-home text-white text-2xl"></i>
+                        <i data-lucide="home" className="text-white w-8 h-8"></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
-                        Free Doorstep Advice
+                        Doorstep Advice
                       </h3>
                       <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
-                        Our experts provide doorstep consultation for sale deed procedures, clarifying all legal formalities and guiding you through registration.
+                        We provide expertise for your every property need right at your doorstep. All you have to do is book a doorstep service from a service section and you are all sorted.
                       </p>
                     </div>
                   </div>
@@ -759,7 +888,7 @@ export default function Home() {
                     </span>
                   </h2>
                   <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
-                    Everything from Sale to Deed - Complete documentation services for all your property needs
+                    For Every Property Need - Indeed - Complete documentation services for all your property needs
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -855,106 +984,7 @@ export default function Home() {
 
               {/* Government Authorities Section */}
               <div className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl mb-16">
-                <div className="text-center mb-12">
-                  <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4">
-                    We Work With All Major Authorities
-                  </h2>
-                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
-                    Our expert team has direct experience with all government departments and authorities in Delhi for seamless property documentation.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="building-2"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">MCD</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Municipal Corporation of Delhi</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Property tax assessments, building plan approvals, and municipal clearances for property transactions.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="landmark"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">DDA</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Delhi Development Authority</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Land development permissions, layout approvals, and conversion certificates for DDA properties.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="map"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">L&DO</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Land & Development Office</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Leasehold to freehold conversions, ground rent clearances, and land use change permissions.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="file-check"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">SRO</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Sub-Registrar Office</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Document registration, stamp duty verification, and legal validation of property transfers.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="receipt"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">Collector Office</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Property Tax Department</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Property tax assessments, revenue records, and mutation of property ownership records.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="shield-check"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">NDMC</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">New Delhi Municipal Council</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Special area clearances, premium property documentation, and Lutyens Delhi property services.
-                    </p>
-                  </div>
-                </div>
+                
 
                 {/* Video Section */}
                 <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-8 border border-yellow-200/50">

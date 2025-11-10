@@ -31,7 +31,7 @@ export default function EverythingSaleToDeedPage() {
                 </div>
 
                 <h1 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight">
-                  Everything from Sale to Deed
+                  For Every Property Need - Indeed
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-3xl md:text-4xl mt-2 font-medium">
                     Complete Property Documentation Journey
                   </span>

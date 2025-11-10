@@ -2328,7 +2328,7 @@ video.logo-video {
 .marquee-text {
   color: white;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: inline-block;
   flex-shrink: 0;
 }
@@ -2352,7 +2352,7 @@ video.logo-video {
   }
   
   .marquee-text {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     padding: 0 1rem;
   }
 }
@@ -3588,7 +3588,7 @@ bile Performance Enhancements */
 
   /* Simplify marquee text */
   .marquee-text {
-    font-size: 0.75rem !important;
+    font-size: 1rem !important;
     padding: 0 0.5rem !important;
   }
 }
@@ -4150,7 +4150,7 @@ d mobile marquee optimizations */
   }
   
   .marquee-text {
-    font-size: 0.75rem !important;
+    font-size: 1rem !important;
     padding: 0 0.5rem !important;
   }
 }

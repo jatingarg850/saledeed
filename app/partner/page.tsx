@@ -46,18 +46,18 @@ Message: ${formData.message}`;
                 Partner With Us
               </h1>
               <p className="text-black dark:text-subtext-dark text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-                We welcome everyone who is willing to partner with us. Whether you are a deed writer, a property dealer, a lawyer, or just a reference giver, we assure you of a professional and profitable association with saledeed.com.
+                We welcome everyone who is willing to partner with us. Whether you are a deed writer, a property dealer, a lawyer, ex-government employee, real estate liaison agent, or just a reference giver, we assure you of a professional and profitable association with saledeed.com.
               </p>
             </div>
 
             {/* Partnership Benefits */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="edit"></i>
+                  <i className="text-white text-2xl" data-lucide="users"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Deed Writers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Join our network of professional deed writers and expand your client base.</p>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Reference Givers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Earn referral commission by referring clients to our professional services.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -65,7 +65,7 @@ Message: ${formData.message}`;
                   <i className="text-white text-2xl" data-lucide="home"></i>
                 </div>
                 <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Property Dealers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Partner with us to offer comprehensive property documentation services.</p>
+                <p className="text-black dark:text-subtext-dark text-sm">Get share in commission by partnering with us for comprehensive property services.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -73,15 +73,39 @@ Message: ${formData.message}`;
                   <i className="text-white text-2xl" data-lucide="scale"></i>
                 </div>
                 <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Lawyers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Collaborate with our legal team and provide expert legal services.</p>
+                <p className="text-black dark:text-subtext-dark text-sm">Earn by sharing your expertise with our legal team.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="users"></i>
+                  <i className="text-white text-2xl" data-lucide="edit"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Reference Givers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Earn commissions by referring clients to our professional services.</p>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Deed Writers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Grow your business upto 10x by joining our network of professional deed writers.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="ruler"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Architects/Structural Engineers/Interior Designers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Elevate your income by joining us and expanding your client base.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="briefcase"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Liaison Agent</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Partner with us to provide comprehensive liaison services.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Ex-Government Employees</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
               </div>
             </div>
 
