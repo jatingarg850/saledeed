@@ -446,11 +446,11 @@ export default function Home() {
                   <br></br>
                   <div className="text-center mb-12">
                   <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4">
-                    We Work With All Major Authorities
+                    Reach Us For Anything At
                   </h2>
                   <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
-                    We Work With All Major Authorities
-Our expert team consists of professionals with in-depth experience of real estate Liaisoning in all building Authorities.Reach Us Today For A Customized Guidance For Your Specific Property. </p>
+                    Our expert team consists of professionals with in-depth experience of real estate liaisoning in all building authorities. Reach us today for a customized guidance for your specific property.
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -465,7 +465,7 @@ Our expert team consists of professionals with in-depth experience of real estat
                       </div>
                     </div>
                     <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Property tax assessments, building plan approvals, and municipal clearances for property transactions.
+                      Building plan drafting & sanctioning, Regularisation (removal of red stamp from property title), Completion Certificate etc.
                     </p>
                   </div>
 
@@ -480,7 +480,7 @@ Our expert team consists of professionals with in-depth experience of real estat
                       </div>
                     </div>
                     <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Land development permissions, layout approvals, and conversion certificates for DDA properties.
+                      Freehold, Land use conversion, mutation, departmental permissions, auctions assistance etc.
                     </p>
                   </div>
 
@@ -495,7 +495,7 @@ Our expert team consists of professionals with in-depth experience of real estat
                       </div>
                     </div>
                     <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Leasehold to freehold conversions, ground rent clearances, and land use change permissions.
+                      Leasehold to freehold, ground rent clearances, mutation, no objection certificate (NOC) etc.
                     </p>
                   </div>
 
@@ -510,7 +510,7 @@ Our expert team consists of professionals with in-depth experience of real estat
                       </div>
                     </div>
                     <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Document registration, stamp duty verification, and legal validation of property transfers.
+                      Deeds, documents, will registration, title verification, succession certificate (surviving members certificate) etc.
                     </p>
                   </div>
 
@@ -520,12 +520,12 @@ Our expert team consists of professionals with in-depth experience of real estat
                         <i className="text-white text-xl" data-lucide="receipt"></i>
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">Collector Office</h3>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">Assistant Assessor & Collector Office</h3>
                         <p className="text-sm text-subtext-light dark:text-subtext-dark">Property Tax Department</p>
                       </div>
                     </div>
                     <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Property tax assessments, revenue records, and mutation of property ownership records.
+                      Property tax assessments, amnesty scheme benefits, revenue records, mutation of property etc.
                     </p>
                   </div>
 
@@ -1455,61 +1455,87 @@ Our expert team consists of professionals with in-depth experience of real estat
             {/* Footer */}
             <footer className="bg-yellow-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">
               <div className="px-6 md:px-10 lg:px-20 py-16">
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
-                  <div className="col-span-2 lg:col-span-2">
-                    <div className="flex items-center gap-3">
-                      <i className="text-primary" data-lucide="home"></i>
-                      <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
-                    </div>
-                    <p className="mt-4 text-base">A one-stop shop for every property need - indeed !</p>
-                    <div className="mt-4 flex items-center gap-2">
-                      <i className="text-primary" data-lucide="mail"></i>
-                      <a href="mailto:support@saledeed.com" className="text-base hover:text-primary dark:hover:text-secondary transition-colors">
-                        support@saledeed.com
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                  {/* Column 1 - Some Tips & Tricks */}
+                  <div>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Some Tips & Tricks</h3>
+                    <ul className="space-y-3 text-base">
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Property Tips</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Legal Advice</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Tax Saving Tips</Link></li>
+                    </ul>
+                  </div>
+
+                  {/* Column 2 - FAQ & Contact */}
+                  <div>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Frequently Asked Questions</h3>
+                    <ul className="space-y-3 text-base">
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="#faq">View FAQs</Link></li>
+                    </ul>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mt-6 mb-4">Contact Us</h3>
+                    <ul className="space-y-3 text-base">
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Get In Touch</Link></li>
+                    </ul>
+                  </div>
+
+                  {/* Column 3 - 100 Baat Ki 1 Baat */}
+                  <div>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">100 Baat Ki 1 Baat</h3>
+                    <div className="space-y-3">
+                      <a 
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20need%20assistance"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-base hover:text-primary dark:hover:text-secondary transition-colors"
+                      >
+                        <i data-lucide="message-circle" className="w-5 h-5"></i>
+                        WhatsApp
+                      </a>
+                      <a 
+                        href="tel:+918800505050"
+                        className="flex items-center gap-2 text-base hover:text-primary dark:hover:text-secondary transition-colors"
+                      >
+                        <i data-lucide="phone" className="w-5 h-5"></i>
+                        Call Us
                       </a>
                     </div>
+                    <p className="mt-4 text-sm font-semibold text-primary">Trusted By 1 Lac + Clients</p>
                   </div>
 
+                  {/* Column 4 - Possible Pages */}
                   <div>
-                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
-                    <ul className="mt-4 space-y-3 text-base">
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Deed Drafting</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/documents">Document Verification</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Registration Assistance</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/calculator">Stamp Duty Calculation</Link></li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Company</h3>
-                    <ul className="mt-4 space-y-3 text-base">
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/partner">Careers</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Press</Link></li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
-                    <ul className="mt-4 space-y-3 text-base">
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Terms of Service</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</Link></li>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Possible Pages</h3>
+                    <ul className="space-y-3 text-base">
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/">Home</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Deed And Documents</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/solutions/buyer">Custom Solutions</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">All Services</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">Company</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us Now</Link></li>
                     </ul>
                   </div>
                 </div>
 
-                <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
-                  <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
-                  <div className="flex space-x-6 mt-4 sm:mt-0">
-                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                      <i data-lucide="facebook"></i>
+                {/* Footer Bottom */}
+                <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8">
+                  <div className="text-center space-y-2">
+                    <p className="text-base font-semibold">All Right Reserved with Saledeed.com ™</p>
+                    <p className="text-sm">A Unit of Bharatiya Bhoomi Group</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Powered By - 31 Son Redefining The Defined.</p>
+                  </div>
+                  
+                  <div className="flex justify-center space-x-6 mt-6">
+                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="Facebook">
+                      <i data-lucide="facebook" className="w-6 h-6"></i>
                     </a>
-                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                      <i data-lucide="twitter"></i>
+                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="Twitter">
+                      <i data-lucide="twitter" className="w-6 h-6"></i>
                     </a>
-                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                      <i data-lucide="linkedin"></i>
+                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="LinkedIn">
+                      <i data-lucide="linkedin" className="w-6 h-6"></i>
+                    </a>
+                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="Instagram">
+                      <i data-lucide="instagram" className="w-6 h-6"></i>
                     </a>
                   </div>
                 </div>

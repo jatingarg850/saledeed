@@ -126,7 +126,7 @@ export default function Testimonials() {
                 <i data-lucide="users" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
               </div>
               <div className="text-left">
-                <div className="font-bold text-text-light dark:text-text-dark">10,000+</div>
+                <div className="font-bold text-text-light dark:text-text-dark">11,000+</div>
                 <div className="text-sm text-subtext-light dark:text-subtext-dark">Happy Customers</div>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function Testimonials() {
                 <i data-lucide="shield-check" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
               </div>
               <div className="text-left">
-                <div className="font-bold text-text-light dark:text-text-dark">100%</div>
+                <div className="font-bold text-text-light dark:text-text-dark">99%</div>
                 <div className="text-sm text-subtext-light dark:text-subtext-dark">Success Rate</div>
               </div>
             </div>
