@@ -330,6 +330,15 @@ export default function Home() {
                     <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                   </div>
                 </div>
+
+                {/* For Every Property Need - Indeed Section */}
+                <div className="text-center mb-12 mt-16">
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    For Every Property Need - Indeed
+                  </h2>
+                  
+                </div>
+
                  {/* First Row - 3 Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 animate-stagger-grid">
                     {/* I Am a Buyer */}
@@ -611,38 +620,24 @@ Our expert team consists of professionals with in-depth experience of real estat
                 </div>
               </div>
 
-
-
-              {/* User Type Selection Section */}
-              <div className="py-20 bg-background-light dark:bg-background-dark animate-section-slide-in">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
-                  <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight font-display mb-4">
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-                        For Every Property Need - Indeed
-                      </span>
+              {/* Stamp Duty Calculator Section */}
+              <div className="py-20 bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:bg-background-dark animate-section-slide-in">
+                <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20">
+                  <div className="text-center mb-12">
+                    <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
+                      Stamp Duty Calculator
                     </h2>
-                    <div className="mt-8 bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-2xl border-2 border-yellow-200 dark:border-yellow-700">
-                      <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">Still Have A Doubt?</h3>
-                      <p className="text-gray-700 dark:text-gray-300 mb-4">Get Free Consultation For A Best In City Experience.</p>
-                      <Link
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20Have%20A%20Query%3B%20Please%20Connect%20Me%20To%20An%20Expert!"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                      >
-                        <i data-lucide="message-circle" className="w-5 h-5"></i>
-                        Get Free Consultation
-                      </Link>
-                    </div>
                     <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
-                      Choose your role to get personalized property documentation solutions
+                      Calculate stamp duty, registration fees, and other charges instantly
                     </p>
                   </div>
 
-                 
+                  <StampDutyCalculator />
                 </div>
               </div>
+
+              {/* User Type Selection Section */}
+
 
               {/* Tell To Sell - Partner Section */}
               <div className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
@@ -651,72 +646,79 @@ Our expert team consists of professionals with in-depth experience of real estat
                     {/* Left Content */}
                     <div>
                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg animate-bounce-gentle">
-                        <i data-lucide="handshake" className="w-4 h-4"></i>
-                        Partnership Opportunity
+                        <i data-lucide="home" className="w-4 h-4"></i>
+                        Property Services
                       </div>
                       
                       <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-black tracking-tight font-display mb-6 leading-tight">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
-                          Tell To Sell
-                        </span>
-                        <span className="block mt-2">Partner With Us</span>
+                        Submit Your Property Details/Requirements
                       </h2>
                       
-                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-8">
-                        Join our growing network of property professionals. Whether you're a deed writer, property dealer, lawyer, or reference giver - we offer a professional and profitable partnership that stands out from the rest.
+                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-4">
+                        Submit your property address in case you want to sell or just tell a bit about your preferences if you want to buy or rent your property through us.
                       </p>
+                      
+                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-4">
+                        We will get back to you at the earliest.
+                      </p>
+                      
+                      <div className="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-600 p-4 rounded-lg mb-8">
+                        <p className="text-gray-800 dark:text-gray-200 font-semibold">
+                          <span className="font-bold">Note:</span> We guarantee to charge minimum commission in exchange of a best in class seamless property deal.
+                        </p>
+                      </div>
 
                       <div className="space-y-4 mb-8">
                         <div className="flex items-start gap-4">
                           <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="trending-up" className="w-6 h-6 text-white"></i>
+                            <i data-lucide="percent" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
-                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Grow Your Business</h3>
-                            <p className="text-subtext-light dark:text-subtext-dark">Access our extensive client network and expand your reach</p>
+                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Minimum Commission</h3>
+                            <p className="text-subtext-light dark:text-subtext-dark">We charge the lowest commission in the market</p>
                           </div>
                         </div>
 
                         <div className="flex items-start gap-4">
                           <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="dollar-sign" className="w-6 h-6 text-white"></i>
+                            <i data-lucide="check-circle" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
-                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Earn More</h3>
-                            <p className="text-subtext-light dark:text-subtext-dark">Competitive commissions and transparent payment structure</p>
+                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Seamless Process</h3>
+                            <p className="text-subtext-light dark:text-subtext-dark">Best in class property deal experience from start to finish</p>
                           </div>
                         </div>
 
                         <div className="flex items-start gap-4">
                           <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="shield-check" className="w-6 h-6 text-white"></i>
+                            <i data-lucide="clock" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
-                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Professional Support</h3>
-                            <p className="text-subtext-light dark:text-subtext-dark">Full backend support and established processes</p>
+                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Quick Response</h3>
+                            <p className="text-subtext-light dark:text-subtext-dark">We will get back to you at the earliest with the best options</p>
                           </div>
                         </div>
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <Link
-                          href="/partner"
-                          className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-                        >
-                          <i data-lucide="user-plus" className="w-5 h-5"></i>
-                          <span>Become a Partner</span>
-                          <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </Link>
-
                         <a
-                          href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20partner%20with%20SaleDeed.com"
+                          href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20submit%20my%20property%20details%20for%20buying%2Fselling%2Frenting"
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                        >
+                          <i data-lucide="send" className="w-5 h-5"></i>
+                          <span>Submit Property Details</span>
+                          <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+
+                        <Link
+                          href="/contact"
                           className="inline-flex items-center justify-center gap-3 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 dark:hover:bg-slate-700 transition-all duration-300"
                         >
-                          <i data-lucide="message-circle" className="w-5 h-5"></i>
-                          <span>Chat on WhatsApp</span>
-                        </a>
+                          <i data-lucide="phone" className="w-5 h-5"></i>
+                          <span>Contact Us</span>
+                        </Link>
                       </div>
                     </div>
 
@@ -781,21 +783,7 @@ Our expert team consists of professionals with in-depth experience of real estat
                 </div>
               </div>
 
-              {/* Stamp Duty Calculator Section */}
-              <div className="py-20 bg-background-light dark:bg-background-dark animate-section-slide-in">
-                <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20">
-                  <div className="text-center mb-12">
-                    <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
-                      Stamp Duty Calculator
-                    </h2>
-                    <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-2xl mx-auto">
-                      Calculate stamp duty, registration fees, and other charges instantly
-                    </p>
-                  </div>
 
-                  <StampDutyCalculator />
-                </div>
-              </div>
 
               {/* Why saledeed.com Section */}
               <div className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
@@ -1450,6 +1438,19 @@ Our expert team consists of professionals with in-depth experience of real estat
                 </div>
               </div>
             </section>
+            <center><div className="max-w-3xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-2xl border-2 border-yellow-200 dark:border-yellow-700">
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">Still Have A Doubt?</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">Get Free Consultation For A Best In City Experience.</p>
+                    <Link
+                      href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20Have%20A%20Query%3B%20Please%20Connect%20Me%20To%20An%20Expert!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    >
+                      <i data-lucide="message-circle" className="w-5 h-5"></i>
+                      Get Free Consultation
+                    </Link>
+                  </div></center>
 
             {/* Footer */}
             <footer className="bg-yellow-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">

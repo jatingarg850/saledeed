@@ -109,7 +109,7 @@ export default function ServicesPage() {
                             <section className="additional-services-info py-16">
                                 <div className="container mx-auto px-4">
                                     <div className="text-center mb-12">
-                                        <h2 className="text-4xl font-bold text-text-light dark:text-text-dark">Book Our Services</h2>
+                                        <h2 className="text-4xl font-bold text-text-light dark:text-text-dark">Our Services At A Glance</h2>
                                     </div>
 
                                     {/* Services Grid */}

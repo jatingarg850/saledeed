@@ -211,7 +211,7 @@ Message: ${formData.message}`;
             {/* Why Partner With Us */}
             <div className="mt-16 bg-gradient-to-r from-primary to-yellow-800 dark:from-primary/80 dark:to-yellow-900 p-8 md:p-12 rounded-xl shadow-2xl text-center">
               <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tight font-display mb-6">
-                Why Partner With SaleDeed.com?
+                Why SaleDeed.com?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                 <div className="text-center">

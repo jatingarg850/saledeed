@@ -42,7 +42,7 @@ export default function About() {
                     className="inline-flex items-center gap-3 bg-white dark:bg-slate-800 text-amber-900 dark:text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-amber-900 dark:border-primary"
                   >
                     <i data-lucide="briefcase" className="w-5 h-5"></i>
-                    Our Services
+                    Our Services At A Glance
                   </a>
                 </div>
 
