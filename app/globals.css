@@ -3640,6 +3640,112 @@ bile Performance Enhancements */
   background: var(--primary-color) !important;
 }
 
+/* Hero CTA Button Animations - Always enabled on all devices */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@-webkit-keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes hero-float-pulse {
+  0% {
+    transform: translateY(0px) scale(1);
+    -webkit-transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+    -webkit-transform: translateY(-8px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    -webkit-transform: translateY(0px) scale(1);
+  }
+}
+
+@-webkit-keyframes hero-float-pulse {
+  0% {
+    -webkit-transform: translateY(0px) scale(1);
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    -webkit-transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.02);
+  }
+  100% {
+    -webkit-transform: translateY(0px) scale(1);
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Hero CTA button base styles - High specificity to override everything */
+a.hero-cta-button,
+a.hero-cta-button:link,
+a.hero-cta-button:visited {
+  background: linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68)) !important;
+  background-size: 200% 200% !important;
+  animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+  will-change: transform, background-position;
+  transition: none !important;
+}
+
+a.hero-cta-button:hover {
+  background: linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68)) !important;
+  background-size: 200% 200% !important;
+  animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+  transform: scale(1.05) !important;
+}
+
+/* Exception: Keep hero CTA button animated on all devices */
+.low-end-device a.hero-cta-button,
+.mobile-performance-mode a.hero-cta-button,
+.low-end-device a.hero-cta-button:hover,
+.mobile-performance-mode a.hero-cta-button:hover {
+  background: linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68)) !important;
+  background-size: 200% 200% !important;
+  animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+  will-change: transform, background-position;
+}
+
+/* Disable performance mode restrictions for this button */
+@media (prefers-reduced-motion: no-preference) {
+  a.hero-cta-button {
+    animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+  }
+}
+
+/* Force on mobile devices with higher specificity */
+@media (max-width: 768px) {
+  a.hero-cta-button,
+  a.hero-cta-button:link,
+  a.hero-cta-button:visited,
+  a.hero-cta-button:hover,
+  a.hero-cta-button:active {
+    background: linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68)) !important;
+    background-size: 200% 200% !important;
+    animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+    -webkit-animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+    will-change: transform, background-position !important;
+    transition: none !important;
+  }
+  
+  /* Override any Tailwind or other styles on mobile */
+  .hero-cta-button * {
+    pointer-events: none;
+  }
+}
+
 /* Theme Color Overrides for Services Page */
 .services-page .text-green-500,
 .services-page .text-green-600,

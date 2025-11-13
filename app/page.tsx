@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import AIChatbot from '../components/AIChatbot'
@@ -13,6 +13,7 @@ export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
   const [showChatbot, setShowChatbot] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   // Mobile detection for performance optimization
   useEffect(() => {
@@ -44,6 +45,28 @@ export default function Home() {
       document.documentElement.classList.remove('mobile-performance-mode', 'low-end-device')
     }
   }, [isMobile])
+
+  // Video play once functionality
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      // Play video once and stop
+      const handleEnded = () => {
+        video.pause()
+      }
+      
+      video.addEventListener('ended', handleEnded)
+      
+      // Attempt to play the video
+      video.play().catch(error => {
+        console.log('Video autoplay prevented:', error)
+      })
+      
+      return () => {
+        video.removeEventListener('ended', handleEnded)
+      }
+    }
+  }, [])
 
   const propertyDocuments = [
     {
@@ -196,40 +219,44 @@ export default function Home() {
   return (
     <>
       <PopupNotifications />
-      <div className="home-page relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden animate-page-entrance animate-page-load bg-background-light dark:bg-background-dark">
+      <div className="home-page relative flex h-auto min-h-screen w-full flex-col group/design-root animate-page-entrance animate-page-load bg-background-light dark:bg-background-dark overflow-x-hidden">
+        <Navigation currentPage="home" />
+        
+        {/* Hero Video Section - Full Width */}
+        <div className="relative w-full overflow-hidden">
+          {/* Video Background */}
+          <video
+            ref={videoRef}
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-auto max-w-full"
+            style={{ 
+              width: '100%',
+              height: 'auto',
+              maxWidth: '100%',
+              display: 'block'
+            }}
+          >
+            <source src="/ani/herosec.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Subtle Bottom Gradient for smooth transition */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
+              <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+
         <div className="layout-container flex h-full grow flex-col">
           <div className="w-full">
-            <Navigation currentPage="home" />
-
             {/* Main Content */}
             <main className="animate-content-slide-up">
-              {/* Hero Video Section */}
-              <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
-                {/* Video Background */}
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ 
-                    objectFit: 'cover'
-                  }}
-                >
-                  <source src="/ani/herosec.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-
-                {/* Subtle Bottom Gradient for smooth transition */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
-
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-                  <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
-                    <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
-                  </div>
-                </div>
-              </div>
 
               {/* Original Hero Section */}
               <div className="px-6 md:px-10 lg:px-20 py-10">
@@ -249,9 +276,17 @@ export default function Home() {
                         href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20please%20offer%20me%20the%20best%20deal%20at%20lowest%20commission"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+                        className="hero-cta-button relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-full overflow-hidden group shadow-lg hover:shadow-2xl"
+                        style={{
+                          background: 'linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68))',
+                          backgroundSize: '200% 200%',
+                          animation: 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite',
+                          WebkitAnimation: 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite',
+                          willChange: 'transform, background-position'
+                        } as React.CSSProperties}
                       >
-                        Buy/Sell/Rent at Minimum Commission
+                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                        <span className="relative">Buy/Sell/Rent at Minimum Commission</span>
                       </Link>
                     </div>
                   </div>
@@ -359,7 +394,6 @@ export default function Home() {
                     <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                   </div>
                 </div>
-              </div>
               </div>
 
               {/* For Every Property Need - Indeed Section */}
@@ -495,9 +529,11 @@ export default function Home() {
                   </div>
                   <br></br>
                   <br></br>
-                  <br></br><center>
-<div className='text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4'>Our Services At A Glance</div>
-                </center>{/* Features Container */}
+                  <br></br>
+                  <center>
+                    <div className='text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4'>Our Services At A Glance</div>
+                  </center>
+                  {/* Features Container */}
                 <div className="thp-features-container">
                   <div className="thp-feature-card">
                     <div className="thp-feature-icon">
@@ -571,7 +607,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
- <center><div className="max-w-5xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-10 md:p-16 rounded-3xl border-4 border-yellow-200 dark:border-yellow-700 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
+              <center>
+                <div className="max-w-5xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-10 md:p-16 rounded-3xl border-4 border-yellow-200 dark:border-yellow-700 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
                     <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">Still Have A Doubt?</h3>
                     <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 font-medium">Get Free Consultation For A Best In City Experience.</p>
                     <Link
@@ -583,10 +620,11 @@ export default function Home() {
                       <i data-lucide="message-circle" className="w-7 h-7"></i>
                       Get Free Consultation
                     </Link>
-                  </div></center>
-                  <br></br>
-                  <br></br>
-                  
+                  </div>
+                </center>
+                <br></br>
+                <br></br>
+              </div>
 
               {/* Stamp Duty Calculator Section */}
               <div className="py-20 bg-gray-50 dark:bg-slate-800 animate-section-slide-in">
@@ -610,9 +648,7 @@ export default function Home() {
               {/* Submit Your Property Section */}
               <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Content */}
-                    <div>
+                  <div>
                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg animate-bounce-gentle">
                         <i data-lucide="home" className="w-4 h-4"></i>
                         Property Services
@@ -688,71 +724,14 @@ export default function Home() {
                           <span>Contact Us</span>
                         </Link>
                       </div>
-                    </div>
-
-                    {/* Right Content - Visual */}
-                    <div className="relative">
-                      <div className="relative bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-3xl p-8 shadow-2xl border border-yellow-200/50 dark:border-yellow-700/50">
-                        <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 animate-pulse"></div>
-                        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-secondary to-primary rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                        
-                        <div className="relative space-y-6">
-                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-xl flex items-center justify-center">
-                                <i data-lucide="edit" className="w-8 h-8 text-white"></i>
-                              </div>
-                              <div>
-                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Deed Writers</h4>
-                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Professional documentation</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-600 rounded-xl flex items-center justify-center">
-                                <i data-lucide="home" className="w-8 h-8 text-white"></i>
-                              </div>
-                              <div>
-                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Property Dealers</h4>
-                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Expand your services</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-xl flex items-center justify-center">
-                                <i data-lucide="scale" className="w-8 h-8 text-white"></i>
-                              </div>
-                              <div>
-                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Lawyers</h4>
-                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Legal expertise network</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex items-center gap-4">
-                              <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
-                                <i data-lucide="users" className="w-8 h-8 text-white"></i>
-                              </div>
-                              <div>
-                                <h4 className="font-bold text-text-light dark:text-text-dark text-lg">Reference Givers</h4>
-                                <p className="text-subtext-light dark:text-subtext-dark text-sm">Earn commissions easily</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
-              <br></br>
-             {/* Hero Section */}
-            <div className="text-center mb-16">
+
+              {/* Partner With Us Section */}
+              <div className="px-6 md:px-10 lg:px-20 py-16">
+                {/* Hero Section */}
+                <div className="text-center mb-16">
               <h1 className="text-black dark:text-text-dark text-4xl md:text-6xl font-extrabold tracking-tighter font-display mb-6">
                 Partner With Us
               </h1>
@@ -819,7 +798,7 @@ export default function Home() {
                 <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
               </div>
             </div>
-
+              </div>
 
               {/* Why saledeed.com Section */}
               <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
@@ -839,7 +818,7 @@ export default function Home() {
                     {/* Card 1 - Affordable & Convenient */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up">
                       <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
-                        <i data-lucide="dollar-sign" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
+                        <i data-lucide="indian-rupee" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         Affordable & Convenient
@@ -1245,11 +1224,8 @@ export default function Home() {
                 </div>
               </div>
 
-
-            </main>
-
-            {/* FAQ Section */}
-            <section className="px-6 md:px-10 lg:px-20 py-16 bg-white dark:bg-slate-900">
+              {/* FAQ Section */}
+              <section className="px-6 md:px-10 lg:px-20 py-16 bg-white dark:bg-slate-900">
               <div className="max-w-4xl mx-auto">
                 <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -1419,7 +1395,7 @@ export default function Home() {
                 </div>
               </div>
             </section>
-           
+            </main>
 
             {/* Footer */}
             <footer className="bg-yellow-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">
