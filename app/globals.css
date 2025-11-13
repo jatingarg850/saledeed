@@ -4302,11 +4302,11 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   }
   
   /* Authority cards background */
-  .bg-white.dark\:bg-slate-800\/50 {
+  .bg-white {
     background-color: #ffffff !important;
   }
   
-  .dark .bg-white.dark\:bg-slate-800\/50 {
+  .dark .bg-slate-800 {
     background-color: #1e293b !important;
   }
 }
