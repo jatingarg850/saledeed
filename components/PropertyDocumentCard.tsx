@@ -56,7 +56,7 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
       isMobile ? '' : 'hover:shadow-2xl transition-all duration-300 hover:-translate-y-2'
     }`}>
       {/* Image Slider */}
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
         {imagesLoaded ? (
           <div 
             className={`flex h-full ${isMobile ? '' : 'transition-transform duration-500 ease-in-out'}`}
@@ -67,11 +67,12 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
                 <img
                   src={image}
                   alt={`${document.title} - Image ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain sm:object-cover bg-white dark:bg-slate-800"
                   loading="lazy"
                   decoding="async"
                   style={{ 
-                    imageRendering: isMobile ? 'pixelated' : 'auto',
+                    maxWidth: '100%',
+                    maxHeight: '100%',
                     transform: 'translateZ(0)' // Force hardware acceleration
                   } as React.CSSProperties}
                 />

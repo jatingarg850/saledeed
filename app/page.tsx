@@ -333,8 +333,8 @@ export default function Home() {
 
                 {/* For Every Property Need - Indeed Section */}
                 <div className="text-center mb-12 mt-16">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                    For Every Property Need - Indeed
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">
+                    Every Property Need - <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">Indeed</span>
                   </h2>
                   
                 </div>
@@ -463,109 +463,9 @@ export default function Home() {
                   </div>
                   <br></br>
                   <br></br>
-                  <br></br>
-                  <div className="text-center mb-12">
-                  <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4">
-                    Reach Us For Anything At
-                  </h2>
-                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
-                    Our expert team consists of professionals with in-depth experience of real estate liaisoning in all building authorities. Reach us today for a customized guidance for your specific property.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="building-2"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">MCD</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Municipal Corporation of Delhi</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Building plan drafting & sanctioning, Regularisation (removal of red stamp from property title), Completion Certificate etc.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="landmark"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">DDA</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Delhi Development Authority</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Freehold, Land use conversion, mutation, departmental permissions, auctions assistance etc.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="map"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">L&DO</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Land & Development Office</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Leasehold to freehold, ground rent clearances, mutation, no objection certificate (NOC) etc.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="file-check"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">SRO</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Sub-Registrar Office</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Deeds, documents, will registration, title verification, succession certificate (surviving members certificate) etc.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="receipt"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">Assistant Assessor & Collector Office</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Property Tax Department</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Property tax assessments, amnesty scheme benefits, revenue records, mutation of property etc.
-                    </p>
-                  </div>
-
-                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                        <i className="text-white text-xl" data-lucide="shield-check"></i>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">NDMC</h3>
-                        <p className="text-sm text-subtext-light dark:text-subtext-dark">New Delhi Municipal Council</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
-                      Special area clearances, premium property documentation, and Lutyens Delhi property services.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Features Container */}
+                  <br></br><center>
+<div className='text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4'>Our Services At A Glance</div>
+                </center>{/* Features Container */}
                 <div className="thp-features-container">
                   <div className="thp-feature-card">
                     <div className="thp-feature-icon">
@@ -639,6 +539,22 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+ <center><div className="max-w-5xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-10 md:p-16 rounded-3xl border-4 border-yellow-200 dark:border-yellow-700 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">Still Have A Doubt?</h3>
+                    <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 font-medium">Get Free Consultation For A Best In City Experience.</p>
+                    <Link
+                      href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20Have%20A%20Query%3B%20Please%20Connect%20Me%20To%20An%20Expert!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+                    >
+                      <i data-lucide="message-circle" className="w-7 h-7"></i>
+                      Get Free Consultation
+                    </Link>
+                  </div></center>
+                  <br></br>
+                  <br></br>
+                  
 
               {/* Stamp Duty Calculator Section */}
               <div className="py-20 bg-gray-50 dark:bg-slate-800 animate-section-slide-in">
@@ -802,7 +718,75 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              <br></br>
+             {/* Hero Section */}
+            <div className="text-center mb-16">
+              <h1 className="text-black dark:text-text-dark text-4xl md:text-6xl font-extrabold tracking-tighter font-display mb-6">
+                Partner With Us
+              </h1>
+              <p className="text-black dark:text-subtext-dark text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+                We welcome everyone who is willing to partner with us. Whether you are a deed writer, a property dealer, a lawyer, ex-government employee, real estate liaison agent, or just a reference giver, we assure you of a professional and profitable association with saledeed.com.
+              </p>
+            </div>
 
+            {/* Partnership Benefits */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="users"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Reference Givers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Earn referral commission by referring clients to our professional services.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="home"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Property Dealers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Get share in commission by partnering with us for comprehensive property services.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="scale"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Lawyers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Earn by sharing your expertise with our legal team.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="edit"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Deed Writers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Grow your business upto 10x by joining our network of professional deed writers.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="ruler"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Architects/Structural Engineers/Interior Designers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Elevate your income by joining us and expanding your client base.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="briefcase"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Liaison Agent</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Partner with us to provide comprehensive liaison services.</p>
+              </div>
+
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Ex-Government Employees</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
+              </div>
+            </div>
 
 
               {/* Why saledeed.com Section */}
@@ -822,8 +806,8 @@ export default function Home() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Card 1 - Affordable & Convenient */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up">
-                      <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="dollar-sign" className="text-white w-8 h-8"></i>
+                      <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                        <i data-lucide="dollar-sign" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         Affordable & Convenient
@@ -835,8 +819,8 @@ export default function Home() {
 
                     {/* Card 2 - No Compromise Privacy */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="shield-check" className="text-white w-8 h-8"></i>
+                      <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                        <i data-lucide="shield-check" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         No Compromise Privacy
@@ -848,8 +832,8 @@ export default function Home() {
 
                     {/* Card 3 - Money Back Guarantee */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                      <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="badge-check" className="text-white w-8 h-8"></i>
+                      <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                        <i data-lucide="badge-check" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         Money Back Guarantee
@@ -861,8 +845,8 @@ export default function Home() {
 
                     {/* Card 4 - Doorstep Advice */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="home" className="text-white w-8 h-8"></i>
+                      <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                        <i data-lucide="home" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
                         Doorstep Advice
@@ -912,66 +896,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Old Popular Deed Types - Keeping for reference, can be removed */}
-              <div className="hidden py-16 bg-white dark:bg-background-dark rounded-xl border border-yellow-200">
-                <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight text-center pb-12 font-times">Popular Deed Types (Old)</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 px-4">
-                  <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                    <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCppKWYqPtTGEv7uWjlioc1NO5VJAcMnrOEfUokCtRsL15GNhn9eiBSSS2sYNW60VnncdcmApHMDs5SRJv1-LPMjYXJWq6DuYhldT6j--s32i-gzBrekBLL-KRP_Jp-BAznzx3J-hfQrDNaOa3tDTmuKBRbgGLlBh0K7lkKJ6NaQLQemNlJ7Tu1Qs93tFEHvFWcoRAXJnIGdWAorzOc4M00vV8eaI_scaPGRbgtnPa5FNKWmiybm6txj3aIlw00cnIBsPZfeXRCrbAS")' }}></div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Sale Deed</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">A crucial legal document proving the sale and transfer of property ownership from a seller to a buyer.</p>
-                      <a href="/services/sale-deed" className="mt-4 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                        <span className="truncate">Draft a Sale Deed</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                    <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVYxhhPbzpDjQCrXXZsAlY5OFyCalEiT0nqMzNyNZOZdu2RzvnHBhz3W2d4esf9vfULSR09DrT6W3FrVJ3gWaBAT1jAPPuAIXdNmg8uemkE3sGhhihst8xeX9g6guvYpvvn-0lbpL1YRbIVadLcccWYszTEq-g3bGnu80p0qS3Ky2HoNuh0F4XnHiADuIg1x1AL4ovdjL0Rr8jPern_zcVYiXTSVf5N_uXH-IBJIRSdzWjCEpHFeaAEcIAy1sDCm9xswaK7JMeu2kb")' }}></div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Gift Deed</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">Transfer property ownership to a loved one as a gift, without any monetary exchange, through this document.</p>
-                      <a href="/services/gift-deed" className="mt-4 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                        <span className="truncate">Create a Gift Deed</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                    <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCv98UpkUzIaIzYR8Jx9l1mZrpnFDESlm7KRxBRlwKhkKkGM1lODIzlptL8i6jFFF9tRrw_LSPD4sPHZGoZp7R3K5UD-kmUw4lbR0oCVsxnQ9_L_0aBAMR5xuLogXpv0kwEAUwaW8roMUrftzK6irjThN1-QPmC7SANkHMc6dx8laeNS8FTogcZ23tcJOGynF0iAu72uPWw_ZEjl2ZXwxNYTrsfzgQNfk4nGYTnfB3pRNU4GZN4nz3IwiXm3GdQp_N-F_ni7IsP71w7")' }}></div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Relinquishment Deed</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">Allows a co-owner to gracefully give up their share in a joint property in favour of other co-owners.</p>
-                      <a href="/services/relinquishment-deed" className="mt-4 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                        <span className="truncate">Make a Relinquishment Deed</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                    <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")' }}></div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Will Agreement</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">A formal legal declaration specifying how property and assets will be distributed after death.</p>
-                      <a href="/services/will-agreement" className="mt-4 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                        <span className="truncate">Create a Will</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col rounded-xl shadow-lg bg-background-light dark:bg-slate-800 overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl duration-300 group">
-                    <div className="w-full h-52 bg-cover bg-center" style={{ backgroundImage: 'url("https://imgs.search.brave.com/KVkpw5zB4qpCeURULw5kmeop7zu7VMSUGZyHF7A3MbM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmFzaWNob21lbG9h/bi5jb20vYmxvZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8w/NC9Qcm9wZXJ0eV9Q/YXJ0aXRpb25fQmFu/bmVyLTc2OHg1NzYu/anBn")' }}></div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-text-light dark:text-text-dark text-2xl font-bold font-playfair">Partition Deed</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mt-2 flex-grow">A legal document that divides jointly-owned property among co-owners, ensuring each gets a clear share.</p>
-                      <a href="/services/partition-deed" className="mt-4 flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg">
-                        <span className="truncate">Create Partition Deed</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Testimonials Section */}
+              
 
               {/* Expert Advice CTA */}
               <div className="my-20 bg-gradient-to-r from-amber-600 to-yellow-600 dark:from-amber-700 dark:to-yellow-700 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transform transition-transform duration-300 hover:-translate-y-2">
@@ -1406,7 +1332,8 @@ export default function Home() {
 
                 {/* Heading */}
                 <h2 className="text-text-light dark:text-text-dark text-3xl md:text-5xl font-bold tracking-tight font-display mb-4 animate-fade-in-up">
-                  Still Have Questions?
+                 100 Baat Ki 1 Baat
+
                 </h2>
 
                 {/* Subheading */}
@@ -1456,23 +1383,11 @@ export default function Home() {
                 {/* Trust Badge */}
                 <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
                   <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
-                  <span>Trusted by 10,000+ clients across Delhi</span>
+                  <span>Trusted by 1 Lac+ clients across Delhi</span>
                 </div>
               </div>
             </section>
-            <center><div className="max-w-3xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-2xl border-2 border-yellow-200 dark:border-yellow-700">
-                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">Still Have A Doubt?</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">Get Free Consultation For A Best In City Experience.</p>
-                    <Link
-                      href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20Have%20A%20Query%3B%20Please%20Connect%20Me%20To%20An%20Expert!"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                    >
-                      <i data-lucide="message-circle" className="w-5 h-5"></i>
-                      Get Free Consultation
-                    </Link>
-                  </div></center>
+           
 
             {/* Footer */}
             <footer className="bg-yellow-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">

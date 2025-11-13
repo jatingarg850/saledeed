@@ -143,10 +143,10 @@ export default function Navigation({ currentPage }: NavigationProps) {
             </div>
           </div>
 
-          {/* Solution Dropdown */}
+          {/* Custom Solutions Dropdown */}
           <div className="relative group">
             <button className="text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary text-base font-medium leading-normal transition-colors flex items-center gap-1">
-              Solution
+              Custom Solutions
               <i className="text-xs" data-lucide="chevron-down"></i>
             </button>
             <div className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-yellow-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -163,7 +163,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
           <a className={`text-base font-medium leading-normal transition-colors ${currentPage === 'services'
             ? 'text-amber-700 dark:text-secondary font-semibold'
             : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
-            }`} href="/services">Services</a>
+            }`} href="/services">All Services</a>
 
           <a className={`text-base font-medium leading-normal transition-colors ${currentPage === 'documents'
             ? 'text-amber-700 dark:text-secondary font-semibold'
@@ -285,13 +285,13 @@ export default function Navigation({ currentPage }: NavigationProps) {
               )}
             </div>
 
-            {/* Solution Dropdown */}
+            {/* Custom Solutions Dropdown */}
             <div className="mobile-menu-item">
               <button
                 onClick={() => setOpenMobileDropdown(openMobileDropdown === 'solution' ? null : 'solution')}
                 className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
               >
-                <span>Solution</span>
+                <span>Custom Solutions</span>
                 <svg className="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                      style={{ transform: openMobileDropdown === 'solution' ? 'rotate(180deg)' : 'rotate(0deg)' }}>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -338,7 +338,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
               )}
             </div>
 
-            {/* Services */}
+            {/* All Services */}
             <div className="mobile-menu-item">
               <a
                 href="/services"
@@ -348,7 +348,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   : 'text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
                   }`}
               >
-                Services
+                All Services
               </a>
             </div>
 

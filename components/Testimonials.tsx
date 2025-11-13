@@ -194,11 +194,13 @@ export default function Testimonials() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="/contact"
+              href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20Saledeed.com%2C%20I%20am%20interested%20in%20your%20services"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <i data-lucide="arrow-right" className="w-5 h-5"></i>
-              Start Your Journey
+              Start to Journey
             </a>
             <a
               href="/services"
@@ -208,7 +210,108 @@ export default function Testimonials() {
               View All Services
             </a>
           </div>
-        </div>
+        </div><br/><br/><br/>
+        
+                  <div className="text-center mb-12">
+                  <h2 className="text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4">
+                    Reach Us For Anything At
+                  </h2>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
+                    Our expert team consists of professionals with in-depth experience of real estate liaisoning in all building authorities. Reach us today for a customized guidance for your specific property.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="building-2"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">MCD</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Municipal Corporation of Delhi</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Building plan drafting & sanctioning, Regularisation (removal of red stamp from property title), Completion Certificate etc.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="landmark"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">DDA</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Delhi Development Authority</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Freehold, Land use conversion, mutation, departmental permissions, auctions assistance etc.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="map"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">L&DO</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Land & Development Office</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Leasehold to freehold, ground rent clearances, mutation, no objection certificate (NOC) etc.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="file-check"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">SRO</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Sub-Registrar Office</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Deeds, documents, will registration, title verification, succession certificate (surviving members certificate) etc.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="receipt"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">Assistant Assessor & Collector Office</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">Property Tax Department</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Property tax assessments, amnesty scheme benefits, revenue records, mutation of property etc.
+                    </p>
+                  </div>
+
+                  <div className="group bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i className="text-white text-xl" data-lucide="shield-check"></i>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-text-light dark:text-text-dark font-display">NDMC</h3>
+                        <p className="text-sm text-subtext-light dark:text-subtext-dark">New Delhi Municipal Council</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-subtext-light dark:text-subtext-dark leading-relaxed">
+                      Special area clearances, premium property documentation, and Lutyens Delhi property services.
+                    </p>
+                  </div>
+                </div>
       </div>
     </div>
   )
