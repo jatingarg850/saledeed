@@ -396,8 +396,8 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Second Row - 2 Cards Centered */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto animate-stagger-grid">
+                  {/* Second Row - 3 Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-grid">
                     {/* I Am a Tenant */}
                     <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
                       <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
@@ -432,6 +432,26 @@ export default function Home() {
                         LEARN MORE
                         <i data-lucide="arrow-right" className="w-4 h-4"></i>
                       </Link>
+                    </div>
+
+                    {/* I Need Liaisoning Assistance */}
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <i data-lucide="briefcase" className="w-8 h-8 text-white"></i>
+                      </div>
+                      <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Need Liaisoning Assistance</h3>
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
+                        Expert assistance for all building authorities, permissions, and government clearances.
+                      </p>
+                      <a
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20need%20liaisoning%20assistance%20for%20my%20property"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-purple-500 text-purple-600 dark:text-purple-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-purple-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
+                      >
+                        LEARN MORE
+                        <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                      </a>
                     </div>
                   </div>
 
@@ -621,7 +641,7 @@ export default function Home() {
               </div>
 
               {/* Stamp Duty Calculator Section */}
-              <div className="py-20 bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:bg-background-dark animate-section-slide-in">
+              <div className="py-20 bg-gray-50 dark:bg-slate-800 animate-section-slide-in">
                 <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="text-center mb-12">
                     <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
@@ -639,8 +659,8 @@ export default function Home() {
               {/* User Type Selection Section */}
 
 
-              {/* Tell To Sell - Partner Section */}
-              <div className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
+              {/* Submit Your Property Section */}
+              <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
@@ -650,7 +670,7 @@ export default function Home() {
                         Property Services
                       </div>
                       
-                      <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-black tracking-tight font-display mb-6 leading-tight">
+                      <h2 className="text-text-light dark:text-text-dark text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight font-display mb-6 leading-tight break-words">
                         Submit Your Property Details/Requirements
                       </h2>
                       
@@ -786,7 +806,7 @@ export default function Home() {
 
 
               {/* Why saledeed.com Section */}
-              <div className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 animate-section-slide-in">
+              <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="text-center mb-16 animate-fade-in-up">
                     <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-display mb-4">
@@ -868,7 +888,7 @@ export default function Home() {
               </div>
 
               {/* Delhi Property Documents */}
-              <div className="py-16 bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:bg-background-dark rounded-xl border border-yellow-200 shadow-xl">
+              <div className="py-16 bg-gray-50 dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-xl">
                 <div className="text-center mb-12 animate-fade-in-up">
                   <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-times mb-4">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
@@ -954,7 +974,7 @@ export default function Home() {
               </div>
 
               {/* Expert Advice CTA */}
-              <div className="my-20 bg-gradient-to-r from-primary to-yellow-800 dark:from-primary/80 dark:to-yellow-900 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transform transition-transform duration-300 hover:-translate-y-2">
+              <div className="my-20 bg-gradient-to-r from-amber-600 to-yellow-600 dark:from-amber-700 dark:to-yellow-700 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transform transition-transform duration-300 hover:-translate-y-2">
                 <div className="flex-1 text-center lg:text-left">
                   <h2 className="text-white text-4xl font-bold tracking-tight font-display">Expert Advice At Zero Price</h2>
                   <p className="text-yellow-50 dark:text-yellow-200 mt-4 max-w-2xl text-lg">Unsure where to start? Our legal experts are here to help. Get a free consultation to understand your needs and get your questions answered, with no obligations.</p>
@@ -962,7 +982,9 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <Link href="/contact" className="group flex min-w-[240px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-10 bg-gradient-to-r from-secondary to-yellow-600 text-white text-xl font-bold leading-normal tracking-wide hover:from-yellow-600 hover:to-secondary transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl shadow-xl shadow-secondary/40">
                     <span className="truncate">Book Free Consultation</span>
-                    <i className="ml-2 transition-transform duration-300 group-hover:rotate-12" data-lucide="phone"></i>
+                    <svg className="ml-2 w-6 h-6 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
                   </Link>
                 </div>
               </div>
@@ -1027,7 +1049,7 @@ export default function Home() {
 
               {/* Freehold vs Leasehold Guide */}
               <div className="py-16">
-                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden mb-16">
+                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-700 overflow-hidden mb-16">
                   <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
@@ -1143,7 +1165,7 @@ export default function Home() {
 
               {/* Circle Rate vs Market Rate Guide */}
               <div className="py-16">
-                <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden mb-16">
+                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-700 overflow-hidden mb-16">
                   <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">

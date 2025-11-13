@@ -104,7 +104,7 @@ export default function Testimonials() {
   )
 
   return (
-    <div className="py-20 bg-gradient-to-br from-yellow-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
+    <div className="py-20 bg-gray-50 dark:bg-slate-900 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20 mb-16">
         <div className="text-center">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">

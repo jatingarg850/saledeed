@@ -4221,3 +4221,169 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   animation-duration: 90s !important;
   -webkit-animation-duration: 90s !important;
 }
+/
+* Mobile Color Grading Improvements for Better Readability */
+@media (max-width: 768px) {
+  /* Lighten background gradients on mobile */
+  .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #fef3c7, #fef9e7) !important;
+  }
+  
+  /* Override heavy orange/brown gradients */
+  .bg-gradient-to-r.from-yellow-50,
+  .bg-gradient-to-br.from-yellow-50 {
+    background: #fffbeb !important;
+  }
+  
+  /* Improve section backgrounds */
+  section,
+  .py-20,
+  .py-16 {
+    background-color: #ffffff !important;
+  }
+  
+  /* Dark mode adjustments */
+  .dark section,
+  .dark .py-20,
+  .dark .py-16 {
+    background-color: #1e293b !important;
+  }
+  
+  /* Ensure card backgrounds are clean */
+  .bg-white {
+    background-color: #ffffff !important;
+  }
+  
+  .dark .bg-white {
+    background-color: #1e293b !important;
+  }
+  
+  /* Improve text contrast on mobile */
+  .text-subtext-light {
+    color: #374151 !important;
+  }
+  
+  .dark .text-subtext-dark {
+    color: #d1d5db !important;
+  }
+  
+  /* Clean up gradient backgrounds that cause readability issues */
+  .bg-gradient-to-br.from-yellow-50.via-orange-50.to-amber-50 {
+    background: #fffbeb !important;
+  }
+  
+  .dark .bg-gradient-to-br.from-slate-900.via-slate-800.to-slate-900 {
+    background: #1e293b !important;
+  }
+  
+  /* Property document cards - ensure clean white background */
+  .rounded-2xl.shadow-lg,
+  .rounded-xl.shadow-lg {
+    background-color: #ffffff !important;
+  }
+  
+  .dark .rounded-2xl.shadow-lg,
+  .dark .rounded-xl.shadow-lg {
+    background-color: #1e293b !important;
+  }
+  
+  /* Footer background improvement */
+  footer.bg-yellow-50 {
+    background-color: #fefce8 !important;
+  }
+  
+  .dark footer.bg-gray-900 {
+    background-color: #111827 !important;
+  }
+  
+  /* Ensure Delhi Property Documents section has clean background */
+  .bg-gradient-to-br.from-yellow-50.via-white.to-orange-50 {
+    background: #ffffff !important;
+  }
+  
+  /* Authority cards background */
+  .bg-white.dark\:bg-slate-800\/50 {
+    background-color: #ffffff !important;
+  }
+  
+  .dark .bg-white.dark\:bg-slate-800\/50 {
+    background-color: #1e293b !important;
+  }
+}
+
+/* Additional mobile readability improvements */
+@media (max-width: 480px) {
+  /* Even cleaner backgrounds for small screens */
+  body {
+    background-color: #ffffff !important;
+  }
+  
+  .dark body {
+    background-color: #0f172a !important;
+  }
+  
+  /* Remove all gradient overlays on very small screens */
+  [class*="gradient"] {
+    background-image: none !important;
+  }
+  
+  /* Ensure maximum contrast */
+  .text-text-light {
+    color: #111827 !important;
+  }
+  
+  .dark .text-text-dark {
+    color: #f9fafb !important;
+  }
+}
+
+/* Prevent text overflow on mobile */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure containers don't overflow */
+  .text-4xl,
+  .text-5xl,
+  .text-6xl {
+    font-size: 1.875rem !important; /* 30px */
+    line-height: 2.25rem !important;
+  }
+  
+  /* Specific fix for long headings */
+  .font-black.tracking-tight {
+    letter-spacing: -0.025em !important;
+  }
+  
+  /* Ensure proper padding on mobile */
+  .px-6,
+  .px-8,
+  .px-10 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .text-4xl,
+  .text-5xl,
+  .text-6xl {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 2rem !important;
+  }
+  
+  .text-3xl {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.75rem !important;
+  }
+  
+  .text-2xl {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important;
+  }
+}
