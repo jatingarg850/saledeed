@@ -202,8 +202,37 @@ export default function Home() {
             <Navigation currentPage="home" />
 
             {/* Main Content */}
-            <main className="px-6 md:px-10 lg:px-20 py-10 animate-content-slide-up">
-              {/* Hero Section */}
+            <main className="animate-content-slide-up">
+              {/* Hero Video Section */}
+              <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
+                {/* Video Background */}
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ 
+                    objectFit: 'cover'
+                  }}
+                >
+                  <source src="/ani/herosec.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                {/* Subtle Bottom Gradient for smooth transition */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
+
+                {/* Scroll Indicator */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+                  <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
+                    <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Original Hero Section */}
+              <div className="px-6 md:px-10 lg:px-20 py-10">
               <div className="home-container animate-in">
                 <div className="header-section">
                   <div className="tagline">Everything from sale to&nbsp;deed</div>
@@ -330,8 +359,11 @@ export default function Home() {
                     <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                   </div>
                 </div>
+              </div>
+              </div>
 
-                {/* For Every Property Need - Indeed Section */}
+              {/* For Every Property Need - Indeed Section */}
+              <div className="px-6 md:px-10 lg:px-20 py-10">
                 <div className="text-center mb-12 mt-16">
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">
                     Every Property Need - <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">Indeed</span>
