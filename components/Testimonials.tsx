@@ -63,14 +63,120 @@ export default function Testimonials() {
       }
       
       .scroll-left {
-        animation: scroll-left 60s linear infinite;
+        animation: scroll-left 20s linear infinite;
       }
       
       .scroll-right {
-        animation: scroll-right 60s linear infinite;
+        animation: scroll-right 20s linear infinite;
+      }
+      
+      .slider-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(217, 119, 6, 0.3) transparent;
+        cursor: grab;
+        user-select: none;
+      }
+      
+      .slider-container:active {
+        cursor: grabbing;
+      }
+      
+      .slider-container::-webkit-scrollbar {
+        height: 6px;
+      }
+      
+      .slider-container::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      
+      .slider-container::-webkit-scrollbar-thumb {
+        background: rgba(217, 119, 6, 0.3);
+        border-radius: 3px;
+      }
+      
+      .slider-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(217, 119, 6, 0.5);
+      }
+      
+      .slide-track {
+        transition: transform 0.1s ease-out;
+      }
+      
+      .slider-container:hover .slide-track,
+      .slider-container:active .slide-track {
+        animation-play-state: paused !important;
+      }
+      
+      @media (max-width: 768px) {
+        .slider-container::-webkit-scrollbar {
+          height: 4px;
+        }
       }
     `
     document.head.appendChild(style)
+
+    // Add touch/mouse drag functionality
+    const containers = document.querySelectorAll('.slider-container')
+    
+    containers.forEach((container) => {
+      let isDown = false
+      let startX: number
+      let scrollLeft: number
+
+      const handleMouseDown = (e: MouseEvent | TouchEvent) => {
+        isDown = true
+        const slider = container as HTMLElement
+        slider.style.cursor = 'grabbing'
+        
+        if (e instanceof MouseEvent) {
+          startX = e.pageX - slider.offsetLeft
+          scrollLeft = slider.scrollLeft
+        } else {
+          startX = e.touches[0].pageX - slider.offsetLeft
+          scrollLeft = slider.scrollLeft
+        }
+      }
+
+      const handleMouseLeave = () => {
+        isDown = false
+        const slider = container as HTMLElement
+        slider.style.cursor = 'grab'
+      }
+
+      const handleMouseUp = () => {
+        isDown = false
+        const slider = container as HTMLElement
+        slider.style.cursor = 'grab'
+      }
+
+      const handleMouseMove = (e: MouseEvent | TouchEvent) => {
+        if (!isDown) return
+        e.preventDefault()
+        const slider = container as HTMLElement
+        
+        if (e instanceof MouseEvent) {
+          const x = e.pageX - slider.offsetLeft
+          const walk = (x - startX) * 2
+          slider.scrollLeft = scrollLeft - walk
+        } else {
+          const x = e.touches[0].pageX - slider.offsetLeft
+          const walk = (x - startX) * 2
+          slider.scrollLeft = scrollLeft - walk
+        }
+      }
+
+      container.addEventListener('mousedown', handleMouseDown as EventListener)
+      container.addEventListener('mouseleave', handleMouseLeave)
+      container.addEventListener('mouseup', handleMouseUp)
+      container.addEventListener('mousemove', handleMouseMove as EventListener)
+      
+      container.addEventListener('touchstart', handleMouseDown as EventListener)
+      container.addEventListener('touchend', handleMouseUp)
+      container.addEventListener('touchmove', handleMouseMove as EventListener)
+    })
 
     return () => {
       document.head.removeChild(style)

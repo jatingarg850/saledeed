@@ -4460,6 +4460,17 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     box-shadow: none !important;
   }
   
+  /* Property Need heading - no background */
+  .property-need-heading,
+  .property-need-heading * {
+    background-color: transparent !important;
+  }
+  
+  .property-need-heading > span:first-child {
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  
   /* Mobile specific for Why saledeed.com */
   @media (max-width: 768px) {
     .why-saledeed-heading {
@@ -4467,6 +4478,18 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     }
     
     .why-saledeed-heading > span:first-child {
+      background: linear-gradient(to right, #d97706, #ea580c, #d97706) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+    
+    /* Property Need heading */
+    .property-need-heading {
+      background: none !important;
+    }
+    
+    .property-need-heading > span:first-child {
       background: linear-gradient(to right, #d97706, #ea580c, #d97706) !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;

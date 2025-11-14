@@ -389,8 +389,13 @@ export default function Home() {
               {/* For Every Property Need - Indeed Section */}
               <div className="px-6 md:px-10 lg:px-20 py-10">
                 <div className="text-center mb-12 mt-16">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">
-                    for Every Property Need - <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">Indeed</span>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    <span className="relative inline-block property-need-heading" style={{ background: 'transparent' }}>
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer" style={{ background: 'linear-gradient(to right, #d97706, #ea580c, #d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                        For Every Property Need - Indeed
+                      </span>
+                      <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-full"></span>
+                    </span>
                   </h2>
                   
                 </div>
@@ -1401,9 +1406,9 @@ export default function Home() {
                   <div>
                     <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Some Tips & Tricks</h3>
                     <ul className="space-y-3 text-base">
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Property Tips</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Legal Advice</Link></li>
-                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Tax Saving Tips</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/property-tips">Property Tips</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/legal-advice">Legal Advice</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/tax-saving-tips">Tax Saving Tips</Link></li>
                     </ul>
                   </div>
 
