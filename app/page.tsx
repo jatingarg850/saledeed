@@ -1417,7 +1417,7 @@ export default function Home() {
                     <ul className="space-y-3 text-base">
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="#faq">View FAQs</Link></li>
                     </ul>
-                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mt-6 mb-4">Contact Us</h3>
+                    
                     <ul className="space-y-3 text-base">
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Get In Touch</Link></li>
                     </ul>
