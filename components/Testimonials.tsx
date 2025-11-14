@@ -113,7 +113,10 @@ export default function Testimonials() {
           </div>
           
           <h2 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight">
-            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Customers Say</span>
+            What Our <span className="relative inline-block customers-say-heading">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Customers Say</span>
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
+            </span>
           </h2>
           
           <p className="text-subtext-light dark:text-subtext-dark text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-12">

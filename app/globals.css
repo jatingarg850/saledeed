@@ -3640,6 +3640,12 @@ bile Performance Enhancements */
   background: var(--primary-color) !important;
 }
 
+/* Exception: Keep icon backgrounds with gradients on all devices */
+.low-end-device .icon-container,
+.mobile-performance-mode .icon-container {
+  /* Inline styles with !important will override this */
+}
+
 /* Hero CTA Button Animations - Always enabled on all devices */
 @keyframes gradient-shift {
   0%, 100% {
@@ -4327,18 +4333,28 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   animation-duration: 90s !important;
   -webkit-animation-duration: 90s !important;
 }
-/
-* Mobile Color Grading Improvements for Better Readability */
+
+/* Mobile Color Grading Improvements for Better Readability */
 @media (max-width: 768px) {
-  /* Lighten background gradients on mobile */
-  .bg-gradient-to-br {
+  /* Lighten background gradients on mobile - but NOT blue gradients */
+  .bg-gradient-to-br:not(.from-blue-50):not(.from-blue-600) {
     background: linear-gradient(to bottom right, #fef3c7, #fef9e7) !important;
+  }
+  
+  /* Keep blue gradients on mobile */
+  .bg-gradient-to-br.from-blue-50 {
+    background: linear-gradient(to bottom right, #eff6ff, #e0e7ff) !important;
   }
   
   /* Override heavy orange/brown gradients */
   .bg-gradient-to-r.from-yellow-50,
   .bg-gradient-to-br.from-yellow-50 {
     background: #fffbeb !important;
+  }
+  
+  /* Exception: Keep icon container backgrounds with inline styles */
+  .icon-container[style*="background"] {
+    /* Inline styles with !important will take precedence */
   }
   
   /* Improve section backgrounds */
@@ -4405,6 +4421,72 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   /* Ensure Delhi Property Documents section has clean background */
   .bg-gradient-to-br.from-yellow-50.via-white.to-orange-50 {
     background: #ffffff !important;
+  }
+  
+  /* Remove any background from Delhi Property Documents heading */
+  .delhi-property-heading,
+  .delhi-property-heading * {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  /* Ensure text gradient works without background box */
+  .delhi-property-heading span {
+    padding: 0 !important;
+  }
+  
+  /* Mobile specific - no background, only underline */
+  @media (max-width: 768px) {
+    .delhi-property-heading {
+      background: none !important;
+    }
+    
+    .delhi-property-heading > span:first-child {
+      background: linear-gradient(to right, #d97706, #ea580c, #d97706) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+  }
+  
+  /* Why saledeed.com heading - no background */
+  .why-saledeed-heading,
+  .why-saledeed-heading * {
+    background-color: transparent !important;
+  }
+  
+  .why-saledeed-heading > span:first-child {
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  /* Mobile specific for Why saledeed.com */
+  @media (max-width: 768px) {
+    .why-saledeed-heading {
+      background: none !important;
+    }
+    
+    .why-saledeed-heading > span:first-child {
+      background: linear-gradient(to right, #d97706, #ea580c, #d97706) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+    
+    /* Force icon backgrounds to be visible on mobile */
+    .w-20.h-20.rounded-2xl[style*="background"] {
+      background: inherit !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+  
+  /* Ensure icons are visible with proper contrast */
+  [data-lucide] {
+    display: inline-block !important;
+    stroke-width: 2 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
   
   /* Authority cards background */

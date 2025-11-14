@@ -244,13 +244,6 @@ export default function Home() {
 
           {/* Subtle Bottom Gradient for smooth transition */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-            <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
-              <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
-            </div>
-          </div>
         </div>
 
         <div className="layout-container flex h-full grow flex-col">
@@ -337,7 +330,6 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
-                    <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                     {/* Duplicate for seamless loop */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -364,7 +356,6 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
-                    <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                     {/* Third duplicate for better mobile performance */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -391,7 +382,6 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
-                    <span className="marquee-text">Every 30 Minutes A Loan Is Sanctioned</span>
                   </div>
                 </div>
               </div>
@@ -400,7 +390,7 @@ export default function Home() {
               <div className="px-6 md:px-10 lg:px-20 py-10">
                 <div className="text-center mb-12 mt-16">
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">
-                    Every Property Need - <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">Indeed</span>
+                    for Every Property Need - <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer inline-block">Indeed</span>
                   </h2>
                   
                 </div>
@@ -600,7 +590,7 @@ export default function Home() {
                 {/* Stats Blinking Animation */}
                 <div className="stats-blink-container">
                   <div className="stats-blink-content">
-                    <span className="stats-blink-text stats-blink-1">Every 30 minutes a loan is granted</span>
+                    <span className="stats-blink-text stats-blink-1">Every 30 minutes a loan is Sanctioned</span>
                     <span className="stats-blink-text stats-blink-2">Every 11 minutes a valuation report is generated</span>
                     <span className="stats-blink-text stats-blink-3">Every 4 minutes a query is answered</span>
                     <span className="stats-blink-text stats-blink-4">Every 6 minutes a deed is drafted</span>
@@ -805,8 +795,11 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="text-center mb-16 animate-fade-in-up">
                     <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-display mb-4">
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
-                        Why saledeed.com?
+                      <span className="relative inline-block why-saledeed-heading" style={{ background: 'transparent' }}>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer" style={{ background: 'linear-gradient(to right, #d97706, #ea580c, #d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                          Why saledeed.com?
+                        </span>
+                        <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"></span>
                       </span>
                     </h2>
                     <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
@@ -817,7 +810,7 @@ export default function Home() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Card 1 - Affordable & Convenient */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up">
-                      <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(34, 197, 94), rgb(5, 150, 105)) !important', opacity: 1, visibility: 'visible' }}>
                         <i data-lucide="indian-rupee" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
@@ -830,7 +823,7 @@ export default function Home() {
 
                     {/* Card 2 - No Compromise Privacy */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                      <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(59, 130, 246), rgb(79, 70, 229)) !important', opacity: 1, visibility: 'visible' }}>
                         <i data-lucide="shield-check" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
@@ -843,7 +836,7 @@ export default function Home() {
 
                     {/* Card 3 - Money Back Guarantee */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                      <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(217, 119, 6), rgb(234, 88, 12)) !important', opacity: 1, visibility: 'visible' }}>
                         <i data-lucide="badge-check" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
@@ -856,7 +849,7 @@ export default function Home() {
 
                     {/* Card 4 - Doorstep Advice */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                      <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ opacity: 1, visibility: 'visible' }}>
+                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(249, 115, 22), rgb(220, 38, 38)) !important', opacity: 1, visibility: 'visible' }}>
                         <i data-lucide="home" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
@@ -874,7 +867,7 @@ export default function Home() {
                       href="/contact"
                       className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                     >
-                      <i className="fas fa-phone-alt"></i>
+                      <i className="fas fa-phone-alt" style={{ transform: 'rotate(0deg)' }}></i>
                       <span>Get Started Today</span>
                       <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     </a>
@@ -886,8 +879,11 @@ export default function Home() {
               <div className="py-16 bg-gray-50 dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-xl">
                 <div className="text-center mb-12 animate-fade-in-up">
                   <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-times mb-4">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
-                      Delhi Property Documents
+                    <span className="relative inline-block delhi-property-heading">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
+                        Delhi Property Documents
+                      </span>
+                      <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"></span>
                     </span>
                   </h2>
                   <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
@@ -911,13 +907,13 @@ export default function Home() {
               
 
               {/* Expert Advice CTA */}
-              <div className="my-20 bg-gradient-to-r from-amber-600 to-yellow-600 dark:from-amber-700 dark:to-yellow-700 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transform transition-transform duration-300 hover:-translate-y-2">
+              <div className="my-20 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transform transition-transform duration-300 hover:-translate-y-2">
                 <div className="flex-1 text-center lg:text-left">
                   <h2 className="text-white text-4xl font-bold tracking-tight font-display">Expert Advice At Zero Price</h2>
-                  <p className="text-yellow-50 dark:text-yellow-200 mt-4 max-w-2xl text-lg">Unsure where to start? Our legal experts are here to help. Get a free consultation to understand your needs and get your questions answered, with no obligations.</p>
+                  <p className="text-blue-50 dark:text-blue-100 mt-4 max-w-2xl text-lg">Unsure where to start? Our legal experts are here to help. Get a free consultation to understand your needs and get your questions answered, with no obligations.</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <Link href="/contact" className="group flex min-w-[240px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-10 bg-gradient-to-r from-secondary to-yellow-600 text-white text-xl font-bold leading-normal tracking-wide hover:from-yellow-600 hover:to-secondary transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl shadow-xl shadow-secondary/40">
+                  <Link href="/contact" className="group flex min-w-[240px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-10 bg-white text-blue-600 text-xl font-bold leading-normal tracking-wide hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl shadow-xl">
                     <span className="truncate">Book Free Consultation</span>
                     <svg className="ml-2 w-6 h-6 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -930,11 +926,11 @@ export default function Home() {
               <Testimonials />
 
               {/* Government Authorities Section */}
-              <div className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl mb-16">
+              <div className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl mb-16" style={{ background: 'linear-gradient(to bottom right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
                 
 
                 {/* Video Section */}
-                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-8 border border-yellow-200/50">
+                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-8 border border-blue-200/50 dark:border-slate-700">
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold text-text-light dark:text-text-dark font-display mb-4">
                       See Our Authorities in Action
@@ -944,8 +940,8 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 text-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform duration-300">
+                  <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-800 rounded-xl p-8 text-center" style={{ background: 'linear-gradient(to bottom right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
+                    <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg">
                       <i className="text-white text-3xl" data-lucide="play"></i>
                     </div>
                     <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-2 font-display">
@@ -956,27 +952,27 @@ export default function Home() {
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                       <div className="flex items-center gap-2">
-                        <i className="text-primary" data-lucide="check"></i>
+                        <i className="text-blue-600" data-lucide="check"></i>
                         <span>MCD Clearance Process</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <i className="text-primary" data-lucide="check"></i>
+                        <i className="text-blue-600" data-lucide="check"></i>
                         <span>DDA Approval Steps</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <i className="text-primary" data-lucide="check"></i>
+                        <i className="text-blue-600" data-lucide="check"></i>
                         <span>L&DO Documentation</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <i className="text-primary" data-lucide="check"></i>
+                        <i className="text-blue-600" data-lucide="check"></i>
                         <span>SRO Registration</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <i className="text-primary" data-lucide="check"></i>
+                        <i className="text-blue-600" data-lucide="check"></i>
                         <span>Tax Assessment</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <i className="text-primary" data-lucide="check"></i>
+                        <i className="text-blue-600" data-lucide="check"></i>
                         <span>Final Handover</span>
                       </div>
                     </div>
@@ -1209,13 +1205,13 @@ export default function Home() {
                     </div>
 
                     {/* Bottom Line */}
-                    <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-6 text-center border border-primary/20">
+                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-800 rounded-xl p-6 text-center border border-blue-200 dark:border-slate-600" style={{ background: 'linear-gradient(to right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
                       <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">The Bottom Line</h4>
                       <p className="text-subtext-light dark:text-subtext-dark leading-relaxed mb-4">
                         Circle rate is the government's way of keeping a floor under property values, while market rate is the reality check of what people are actually paying. As a buyer or seller, the real game is to strike a balance—stay legal, stay practical, and don't get trapped in cash-heavy deals.
                       </p>
                       <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
-                        <p className="text-sm font-medium text-primary">
+                        <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
                           💡 Want to navigate this without confusion? At SaleDeed.com, we simplify the paperwork, check the legalities, and make sure your transaction is smooth and transparent—exactly the way property deals should be.
                         </p>
                       </div>

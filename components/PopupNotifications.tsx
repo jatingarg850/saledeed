@@ -74,7 +74,7 @@ export default function PopupNotifications() {
           transition={{ duration: 0.5, type: 'spring', stiffness: 200 }}
           className="fixed bottom-8 right-8 z-50 max-w-sm"
         >
-          <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-2xl shadow-2xl p-6 backdrop-blur-lg border border-white/20">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl shadow-2xl p-6 backdrop-blur-lg border border-white/20">
             <div className="flex items-start gap-3">
               <div className="flex-1">
                 <p className="font-bold text-lg mb-1">Special Offer!</p>
@@ -92,7 +92,7 @@ export default function PopupNotifications() {
             <div className="mt-4 flex gap-2">
               <a
                 href="/contact"
-                className="flex-1 bg-white text-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-50 transition-colors text-center"
+                className="flex-1 bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors text-center"
               >
                 Learn More
               </a>
