@@ -59,14 +59,25 @@ const Footer = () => {
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
                 <span className="text-gray-400">support@saledeed.com</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-400">+91 88005 05050</span>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-blue-400" />
+                  <span className="text-gray-400">+91 88005 05050</span>
+                </div>
+                <p className="text-sm text-gray-500 ml-8">
+                  Get in touch with our expert team
+                </p>
+                <p className="text-sm text-gray-500 ml-8">
+                  Available Mon-Sat, 9 AM - 7 PM IST
+                </p>
+                <p className="text-sm text-gray-500 ml-8">
+                  Instant support for all property documentation needs
+                </p>
               </div>
             </div>
           </motion.div>

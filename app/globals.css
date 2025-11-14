@@ -3669,14 +3669,17 @@ bile Performance Enhancements */
   0% {
     transform: translateY(0px) scale(1);
     -webkit-transform: translateY(0px) scale(1);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
   }
   50% {
-    transform: translateY(-8px) scale(1.02);
-    -webkit-transform: translateY(-8px) scale(1.02);
+    transform: translateY(-10px) scale(1.05);
+    -webkit-transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.5);
   }
   100% {
     transform: translateY(0px) scale(1);
     -webkit-transform: translateY(0px) scale(1);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
   }
 }
 
@@ -3684,14 +3687,74 @@ bile Performance Enhancements */
   0% {
     -webkit-transform: translateY(0px) scale(1);
     transform: translateY(0px) scale(1);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
   }
   50% {
-    -webkit-transform: translateY(-8px) scale(1.02);
-    transform: translateY(-8px) scale(1.02);
+    -webkit-transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.5);
   }
   100% {
     -webkit-transform: translateY(0px) scale(1);
     transform: translateY(0px) scale(1);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+  }
+}
+
+/* Enhanced mobile-specific animations for hero button */
+@keyframes hero-mobile-bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    -webkit-transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.03);
+    -webkit-transform: translateY(-8px) scale(1.03);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.05);
+    -webkit-transform: translateY(-12px) scale(1.05);
+  }
+  75% {
+    transform: translateY(-8px) scale(1.03);
+    -webkit-transform: translateY(-8px) scale(1.03);
+  }
+}
+
+@-webkit-keyframes hero-mobile-bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0px) scale(1);
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    -webkit-transform: translateY(-8px) scale(1.03);
+    transform: translateY(-8px) scale(1.03);
+  }
+  50% {
+    -webkit-transform: translateY(-12px) scale(1.05);
+    transform: translateY(-12px) scale(1.05);
+  }
+  75% {
+    -webkit-transform: translateY(-8px) scale(1.03);
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+@keyframes hero-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4), 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  50% {
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6), 0 0 0 8px rgba(245, 158, 11, 0);
+  }
+}
+
+@-webkit-keyframes hero-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4), 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  50% {
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6), 0 0 0 8px rgba(245, 158, 11, 0);
   }
 }
 
@@ -3704,6 +3767,8 @@ a.hero-cta-button:visited {
   animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
   will-change: transform, background-position;
   transition: none !important;
+  color: #000000 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
 }
 
 a.hero-cta-button:hover {
@@ -3711,6 +3776,34 @@ a.hero-cta-button:hover {
   background-size: 200% 200% !important;
   animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
   transform: scale(1.05) !important;
+}
+
+/* Ensure text doesn't block background and is centered */
+a.hero-cta-button,
+a.hero-cta-animated {
+  display: block !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  position: relative !important;
+}
+
+a.hero-cta-button span:not(.absolute),
+a.hero-cta-animated span:not(.absolute) {
+  position: relative !important;
+  z-index: 10 !important;
+  color: #000000 !important;
+  mix-blend-mode: normal !important;
+  display: block !important;
+  text-align: center !important;
+  line-height: 1.4 !important;
+}
+
+/* Center the button container */
+.header-section .mt-4 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
 }
 
 /* Exception: Keep hero CTA button animated on all devices */
@@ -3731,24 +3824,171 @@ a.hero-cta-button:hover {
   }
 }
 
-/* Force on mobile devices with higher specificity */
+/* Force on mobile devices with higher specificity and enhanced animations */
 @media (max-width: 768px) {
   a.hero-cta-button,
   a.hero-cta-button:link,
   a.hero-cta-button:visited,
   a.hero-cta-button:hover,
-  a.hero-cta-button:active {
+  a.hero-cta-button:active,
+  a.hero-cta-animated,
+  a.hero-cta-animated:link,
+  a.hero-cta-animated:visited,
+  a.hero-cta-animated:hover,
+  a.hero-cta-animated:active {
     background: linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68)) !important;
     background-size: 200% 200% !important;
-    animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
-    -webkit-animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
-    will-change: transform, background-position !important;
+    animation: gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite !important;
+    -webkit-animation: gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite !important;
+    animation-play-state: running !important;
+    -webkit-animation-play-state: running !important;
+    will-change: transform, background-position, box-shadow !important;
     transition: none !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    position: relative !important;
+    overflow: visible !important;
+    color: #000000 !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4) !important;
+  }
+  
+  /* Ensure text is visible on mobile */
+  a.hero-cta-button span,
+  a.hero-cta-animated span {
+    color: #000000 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    mix-blend-mode: normal !important;
+    background: transparent !important;
+  }
+  
+  /* Add a pulsing ring effect on mobile */
+  a.hero-cta-button::before,
+  a.hero-cta-animated::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -4px !important;
+    left: -4px !important;
+    right: -4px !important;
+    bottom: -4px !important;
+    border-radius: 9999px !important;
+    background: linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68)) !important;
+    opacity: 0.3 !important;
+    z-index: -1 !important;
+    animation: hero-ring-pulse 2s ease-in-out infinite !important;
+    -webkit-animation: hero-ring-pulse 2s ease-in-out infinite !important;
   }
   
   /* Override any Tailwind or other styles on mobile */
   .hero-cta-button * {
     pointer-events: none;
+  }
+}
+
+/* Ring pulse animation for mobile */
+@keyframes hero-ring-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hero-ring-pulse {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Extra specificity for mobile with class combination */
+@media (max-width: 768px) {
+  .hero-cta-button.hero-cta-animated,
+  a[data-animated="true"].hero-cta-button,
+  a[data-animated="true"].hero-cta-animated {
+    animation: gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite !important;
+    -webkit-animation: gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite !important;
+  }
+}
+
+/* Ultra-specific rule for mobile devices - highest priority */
+@media screen and (max-width: 768px) {
+  a.hero-cta-button[data-animated="true"],
+  a.hero-cta-animated[data-animated="true"] {
+    animation: gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite !important;
+    -webkit-animation: gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite !important;
+    animation-play-state: running !important;
+    -webkit-animation-play-state: running !important;
+  }
+}
+
+/* Ensure animations work on all mobile browsers */
+@supports (animation: gradient-shift 2.5s ease infinite) {
+  @media (max-width: 768px) {
+    a.hero-cta-button,
+    a[data-animated="true"] {
+      animation: gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite !important;
+    }
+  }
+}
+
+/* Fallback for older mobile browsers */
+@media (max-width: 768px) {
+  a.hero-cta-button {
+    animation-name: gradient-shift, hero-float-pulse !important;
+    animation-duration: 3s, 3s !important;
+    animation-timing-function: ease, ease-in-out !important;
+    animation-iteration-count: infinite, infinite !important;
+    animation-play-state: running, running !important;
+  }
+}
+
+/* Nuclear option - maximum specificity for mobile */
+html body main div div a.hero-cta-button[data-animated="true"],
+html body main div div a.hero-cta-animated[data-animated="true"],
+html body div a.hero-cta-button,
+html body div a[data-animated] {
+  animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+  -webkit-animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+  -moz-animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite !important;
+  animation-play-state: running !important;
+  -webkit-animation-play-state: running !important;
+}
+
+/* Mobile-specific nuclear option with enhanced visibility */
+@media only screen and (max-width: 768px) {
+  html body a.hero-cta-button,
+  html body a[data-animated="true"] {
+    animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite, mobile-glow-pulse 2s ease-in-out infinite !important;
+    -webkit-animation: gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite, mobile-glow-pulse 2s ease-in-out infinite !important;
+  }
+}
+
+/* Mobile-specific glow animation for better visibility */
+@keyframes mobile-glow-pulse {
+  0%, 100% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.15) saturate(1.2);
+  }
+}
+
+@-webkit-keyframes mobile-glow-pulse {
+  0%, 100% {
+    -webkit-filter: brightness(1) saturate(1);
+  }
+  50% {
+    -webkit-filter: brightness(1.15) saturate(1.2);
   }
 }
 

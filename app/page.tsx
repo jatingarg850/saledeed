@@ -14,6 +14,7 @@ export default function Home() {
   const [showChatbot, setShowChatbot] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const heroButtonRef = useRef<HTMLAnchorElement>(null)
 
   // Mobile detection for performance optimization
   useEffect(() => {
@@ -67,6 +68,42 @@ export default function Home() {
       }
     }
   }, [])
+
+  // Force hero button animation on mobile with enhanced effects
+  useEffect(() => {
+    const button = heroButtonRef.current
+    if (button) {
+      console.log('Button found, applying animations. isMobile:', isMobile)
+      
+      // Remove any conflicting classes
+      button.classList.remove('mobile-optimized')
+      
+      // Apply different animations based on device
+      const animationValue = isMobile 
+        ? 'gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite'
+        : 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite'
+      
+      // Force enable animations by setting inline styles with high priority
+      button.style.setProperty('animation', animationValue, 'important')
+      button.style.setProperty('-webkit-animation', animationValue, 'important')
+      button.style.setProperty('animation-play-state', 'running', 'important')
+      button.style.setProperty('-webkit-animation-play-state', 'running', 'important')
+      button.style.setProperty('will-change', 'transform, background-position, box-shadow', 'important')
+      
+      // Check computed styles
+      const computedStyle = window.getComputedStyle(button)
+      console.log('Animation value:', computedStyle.animation)
+      console.log('Animation play state:', computedStyle.animationPlayState)
+      
+      // Force a reflow to ensure animations start
+      void button.offsetWidth
+      
+      // Try to trigger animation after a short delay
+      setTimeout(() => {
+        button.style.setProperty('animation', animationValue, 'important')
+      }, 100)
+    }
+  }, [isMobile])
 
   const propertyDocuments = [
     {
@@ -264,22 +301,32 @@ export default function Home() {
                     <p className="deed-para" style={{ fontSize: '17px' }}>
                       Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
-                    <div className="mt-4">
+                    <div className="mt-4 flex justify-center items-center w-full">
                       <Link
+                        ref={heroButtonRef}
                         href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20please%20offer%20me%20the%20best%20deal%20at%20lowest%20commission"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hero-cta-button relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-full overflow-hidden group shadow-lg hover:shadow-2xl"
+                        data-animated="true"
+                        className="hero-cta-button hero-cta-animated px-8 py-4 text-lg font-bold rounded-full group"
                         style={{
                           background: 'linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68))',
                           backgroundSize: '200% 200%',
                           animation: 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite',
                           WebkitAnimation: 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite',
-                          willChange: 'transform, background-position'
+                          willChange: 'transform, background-position',
+                          animationPlayState: 'running',
+                          WebkitAnimationPlayState: 'running',
+                          color: '#000000',
+                          textShadow: '0 1px 2px rgba(255, 255, 255, 0.3)',
+                          position: 'relative',
+                          overflow: 'visible',
+                          display: 'block',
+                          textAlign: 'center'
                         } as React.CSSProperties}
                       >
-                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
-                        <span className="relative">Buy/Sell/Rent at Minimum Commission</span>
+                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none"></span>
+                        <span style={{ position: 'relative', zIndex: 10, color: '#000000', display: 'block', textAlign: 'center' }}>Buy/Sell/Rent at Minimum Commission</span>
                       </Link>
                     </div>
                   </div>
@@ -1437,13 +1484,18 @@ export default function Home() {
                         <i data-lucide="message-circle" className="w-5 h-5"></i>
                         WhatsApp
                       </a>
-                      <a 
-                        href="tel:+918800505050"
-                        className="flex items-center gap-2 text-base hover:text-primary dark:hover:text-secondary transition-colors"
-                      >
-                        <i data-lucide="phone" className="w-5 h-5"></i>
-                        Call Us
-                      </a>
+                      <div>
+                        <a 
+                          href="tel:+918800505050"
+                          className="flex items-center gap-2 text-base hover:text-primary dark:hover:text-secondary transition-colors"
+                        >
+                          <i data-lucide="phone" className="w-5 h-5"></i>
+                          Call Us
+                        </a>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 ml-7">Get in touch with our expert team</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 ml-7">Available Now</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 ml-7">Instant support for property documentation</p>
+                      </div>
                     </div>
                     <p className="mt-4 text-sm font-semibold text-primary">Trusted By 1 Lac + Clients</p>
                   </div>
