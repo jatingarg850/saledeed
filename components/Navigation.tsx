@@ -132,13 +132,20 @@ export default function Navigation({ currentPage }: NavigationProps) {
               Deeds and documents
               <i className="text-xs" data-lucide="chevron-down"></i>
             </button>
-            <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-yellow-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-yellow-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
               <div className="py-2">
                 <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/sale-deed">Sale Deed</a>
                 <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/gift-deed">Gift Deed</a>
                 <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/relinquishment-deed">Relinquishment Deed</a>
                 <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/will-agreement">Will Agreement</a>
                 <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/partition-deed">Partition Deed</a>
+                <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/general-power-of-authority">General Power of Authority</a>
+                <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/agreement-to-sell">Agreement to Sell</a>
+                <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/builder-buyer-agreement">Builder Buyer Agreement</a>
+                <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/rent-agreement">Rent Agreement</a>
+                <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors" href="/services/mutation-legal-document">Mutation Legal Document</a>
+                <div className="border-t border-gray-200 dark:border-slate-600 my-1"></div>
+                <a className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 transition-colors font-medium" href="/documents">All Documents</a>
               </div>
             </div>
           </div>
@@ -164,11 +171,6 @@ export default function Navigation({ currentPage }: NavigationProps) {
             ? 'text-amber-700 dark:text-secondary font-semibold'
             : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
             }`} href="/services">All Services</a>
-
-          <a className={`text-base font-medium leading-normal transition-colors ${currentPage === 'documents'
-            ? 'text-amber-700 dark:text-secondary font-semibold'
-            : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
-            }`} href="/documents">Documents</a>
 
           {/* Company Dropdown */}
           <div className="relative group">
@@ -281,6 +283,49 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   >
                     Partition Deed
                   </a>
+                  <a
+                    href="/services/general-power-of-authority"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    General Power of Authority
+                  </a>
+                  <a
+                    href="/services/agreement-to-sell"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Agreement to Sell
+                  </a>
+                  <a
+                    href="/services/builder-buyer-agreement"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Builder Buyer Agreement
+                  </a>
+                  <a
+                    href="/services/rent-agreement"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Rent Agreement
+                  </a>
+                  <a
+                    href="/services/mutation-legal-document"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                  >
+                    Mutation Legal Document
+                  </a>
+                  <div className="border-t border-gray-200 dark:border-slate-600 my-2"></div>
+                  <a
+                    href="/documents"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors font-medium"
+                  >
+                    All Documents
+                  </a>
                 </div>
               )}
             </div>
@@ -349,20 +394,6 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   }`}
               >
                 All Services
-              </a>
-            </div>
-
-            {/* Documents */}
-            <div className="mobile-menu-item">
-              <a
-                href="/documents"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`mobile-menu-link text-base font-medium transition-colors ${currentPage === 'documents'
-                  ? 'text-amber-700 dark:text-secondary font-semibold'
-                  : 'text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
-                  }`}
-              >
-                Documents
               </a>
             </div>
 
