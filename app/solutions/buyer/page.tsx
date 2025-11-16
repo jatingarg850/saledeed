@@ -19,7 +19,7 @@ export default function BuyerSolutionPage() {
     },
     {
       title: 'Loan Assistance',
-      description: 'Best fit loan solutions according to your requirements. We ensure that the loan is granted at the earliest without any hassle at competitive interest rates.'
+      description: 'Customised loan solutions according to your requirements. We ensure that the loan is granted at the earliest without any hassle at competitive interest rates.'
     },
     {
       title: 'Sale of Existing Property',
@@ -63,7 +63,7 @@ export default function BuyerSolutionPage() {
               </div>
 
               <h1 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-8 leading-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
+                <span className="text-primary">
                   Expert guidance
                 </span>
                 <span className="block mt-2">and complete assistance for property buyers</span>
@@ -96,12 +96,12 @@ export default function BuyerSolutionPage() {
                 </div>
 
                 <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
                     <i data-lucide="percent" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
                   </div>
                   <div className="text-left">
                     <div className="font-bold text-text-light dark:text-text-dark">Minimum Commission</div>
-                    <div className="text-sm text-subtext-light dark:text-subtext-dark">Best Rates</div>
+                    <div className="text-sm text-subtext-light dark:text-subtext-dark">Best in Market</div>
                   </div>
                 </div>
 

@@ -5,16 +5,16 @@ import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import PDFViewer from '../../components/PDFViewer'
 import DocumentCard from '../../components/DocumentCard'
+import ScrollToTop from '../../components/ScrollToTop'
 
 export default function DocumentsPage() {
   const [selectedDocument, setSelectedDocument] = useState<string | null>(null)
-  const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
 
   const documents = [
     {
       id: '1',
-      title: 'Deed Documents (Delhi NCR Context)',
+      title: 'Property Transfer (Delhi NCR Context)',
       description: 'Comprehensive collection of deed templates specifically designed for Delhi NCR region with local legal requirements and formats.',
       category: 'Property Transfer',
       fileName: 'Deed, Delhi NCR context.pdf',
@@ -62,7 +62,7 @@ export default function DocumentsPage() {
     },
     {
       id: '5',
-      title: 'DEED Documents',
+      title: 'Property Transfer',
       description: 'Complete collection of deed document templates for various property transfer scenarios and legal requirements.',
       category: 'Property Transfer',
       fileName: 'DEED Documents.pdf',
@@ -211,11 +211,8 @@ export default function DocumentsPage() {
   ]
 
   const filteredDocuments = documents.filter(doc => {
-    const matchesSearch = doc.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         doc.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         doc.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
     const matchesCategory = selectedCategory === 'all' || doc.category === selectedCategory
-    return matchesSearch && matchesCategory
+    return matchesCategory
   })
 
   const handleDownload = (fileName: string, title: string) => {
@@ -254,9 +251,10 @@ export default function DocumentsPage() {
                 </div>
 
                 <h1 className="text-text-light dark:text-text-dark text-5xl md:text-7xl font-black tracking-tight font-display mb-8 leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                  <span className="text-primary">
                     Document
                   </span>
+                  {' '}
                   <span className="block">Library</span>
                 </h1>
 
@@ -266,8 +264,12 @@ export default function DocumentsPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="download" className="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600 dark:text-blue-400">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                      </svg>
                     </div>
                     <div className="text-left">
                       <div className="font-bold text-text-light dark:text-text-dark">Free Downloads</div>
@@ -276,8 +278,11 @@ export default function DocumentsPage() {
                   </div>
 
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="eye" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
+                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-600 dark:text-green-400">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                      </svg>
                     </div>
                     <div className="text-left">
                       <div className="font-bold text-text-light dark:text-text-dark">Preview Available</div>
@@ -286,8 +291,11 @@ export default function DocumentsPage() {
                   </div>
 
                   <div className="flex items-center justify-center gap-3 p-4 bg-white/80 dark:bg-slate-800/80 rounded-xl backdrop-blur-sm shadow-md">
-                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
-                      <i data-lucide="shield-check" className="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
+                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600 dark:text-purple-400">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                      </svg>
                     </div>
                     <div className="text-left">
                       <div className="font-bold text-text-light dark:text-text-dark">Legal Compliance</div>
@@ -352,37 +360,22 @@ export default function DocumentsPage() {
             </div>
           </div>
 
-          {/* Search and Filter Section */}
+          {/* Category Filter Section */}
           <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 p-8 mb-8">
-            <div className="flex flex-col lg:flex-row gap-6 items-center">
-              <div className="flex-1 w-full">
-                <div className="relative">
-                  <i data-lucide="search" className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"></i>
-                  <input
-                    type="text"
-                    placeholder="Search documents by title, description, or tags..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 border border-gray-200 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700 text-text-light dark:text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  />
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                      selectedCategory === category
-                        ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
-                        : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20'
-                    }`}
-                  >
-                    {category === 'all' ? 'All Categories' : category}
-                  </button>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category
+                      ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg transform scale-105'
+                      : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20'
+                  }`}
+                >
+                  {category === 'all' ? 'All Categories' : category}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -433,6 +426,9 @@ export default function DocumentsPage() {
             onClose={() => setSelectedDocument(null)}
           />
         )}
+        
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </div>
     </div>
   )

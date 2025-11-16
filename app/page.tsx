@@ -8,6 +8,7 @@ import Testimonials from '../components/Testimonials'
 import StampDutyCalculator from '../components/StampDutyCalculator'
 import PropertyDocumentCard from '../components/PropertyDocumentCard'
 import PopupNotifications from '../components/PopupNotifications'
+import ScrollToTop from '../components/ScrollToTop'
 
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
@@ -299,7 +300,7 @@ export default function Home() {
                       All Property Documents Hassle Free
                     </div>
                     <p className="deed-para" style={{ fontSize: '17px' }}>
-                      Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
+                      Customised | Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
                     <div className="mt-4 flex justify-center items-center w-full">
                       <Link
@@ -441,7 +442,7 @@ export default function Home() {
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer" style={{ background: 'linear-gradient(to right, #d97706, #ea580c, #d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                         For Every Property Need - Indeed
                       </span>
-                      <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-full"></span>
+                      
                     </span>
                   </h2>
                   
@@ -563,12 +564,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Additional Info */}
-                  <div className="mt-12 text-center">
-                    <p className="text-subtext-light dark:text-subtext-dark text-sm">
-                      Not sure which category fits you? <Link href="/contact" className="text-primary hover:underline font-medium">Get free consultation</Link> to find the right solution.
-                    </p>
-                  </div>
+
                   <br></br>
                   <br></br>
                   <br></br>
@@ -588,7 +584,7 @@ export default function Home() {
                         href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20get%20my%20deed%20registered%22"
                         rel="noopener noreferrer"
                       >
-                        All Deeds Drafting And Registration
+                        Customized Deeds Drafting And Registration
                       </a>
                     </div>
                   </div>
@@ -618,7 +614,7 @@ export default function Home() {
                         href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20authority%20assistance%22"
                         rel="noopener noreferrer"
                       >
-                        Building Authorities Assistance
+                        Building Authority Assistance
                       </a>
                     </div>
                   </div>
@@ -778,7 +774,7 @@ export default function Home() {
                 Partner With Us
               </h1>
               <p className="text-black dark:text-subtext-dark text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-                We welcome everyone who is willing to partner with us. Whether you are a deed writer, a property dealer, a lawyer, ex-government employee, real estate liaison agent, or just a reference giver, we assure you of a professional and profitable association with saledeed.com.
+                We welcome everyone who is willing to partner with us. Whether you are a deed writer, a property dealer, a lawyer, ex-government employee, real estate liaison agent, or just a reference giver, we assure you of a overwhelming and profitable association with saledeed.com.
               </p>
             </div>
 
@@ -789,7 +785,7 @@ export default function Home() {
                   <i className="text-white text-2xl" data-lucide="users"></i>
                 </div>
                 <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Reference Givers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Earn referral commission by referring clients to our professional services.</p>
+                <p className="text-black dark:text-subtext-dark text-sm">Earn referral commission by referring clients to our overwhelming services.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -813,7 +809,7 @@ export default function Home() {
                   <i className="text-white text-2xl" data-lucide="edit"></i>
                 </div>
                 <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Deed Writers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Grow your business upto 10x by joining our network of professional deed writers.</p>
+                <p className="text-black dark:text-subtext-dark text-sm">Grow your business upto 10x by joining our network of overwhelming deed writers.</p>
               </div>
 
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -839,6 +835,20 @@ export default function Home() {
                 <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Ex-Government Employees</h3>
                 <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
               </div>
+                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Builder/Developers</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Build your Projects and Network with us,</p>
+              </div>
+                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Service</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Selling and Buying made it easier for you.</p>
+              </div>
             </div>
               </div>
 
@@ -851,7 +861,7 @@ export default function Home() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer" style={{ background: 'linear-gradient(to right, #d97706, #ea580c, #d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                           Why saledeed.com?
                         </span>
-                        <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"></span>
+
                       </span>
                     </h2>
                     <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
@@ -908,21 +918,21 @@ export default function Home() {
                         Doorstep Advice
                       </h3>
                       <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
-                        We provide expertise for your every property need right at your doorstep. All you have to do is book a doorstep service from a service section and you are all sorted.
+                        We provide expertise for your every property need right at your doorstep. All you have to do is book a doorstep service and you are all sorted.
                       </p>
                     </div>
                   </div>
 
                   {/* CTA Button */}
                   <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                    <a
-                      href="/contact"
+                    <button
+                      onClick={() => setShowDoorstepModal(true)}
                       className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                     >
-                      <i className="fas fa-phone-alt" style={{ transform: 'rotate(0deg)' }}></i>
-                      <span>Get Started Today</span>
+                      <i className="fas fa-phone-alt" style={{ transform: 'rotate(90deg)' }}></i>
+                      <span>Book Doorstep Assistance</span>
                       <i data-lucide="arrow-right" className="w-5 h-5"></i>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -933,13 +943,12 @@ export default function Home() {
                   <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-times mb-4">
                     <span className="relative inline-block delhi-property-heading">
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
-                        Delhi Property Documents
+                        Seamless Property Documents
                       </span>
-                      <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"></span>
-                    </span>
+                       </span>
                   </h2>
                   <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
-                    For Every Property Need - Indeed - Complete documentation services for all your property needs
+                    Complete documentation services for all your property needs
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -1394,7 +1403,7 @@ export default function Home() {
 
                 {/* Subheading */}
                 <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up animate-delay-200">
-                  Our expert legal team is here to help you with all your property documentation needs. Get in touch today!
+                  Our expert legal team is here to help you with all your property need documentation. Get in touch today!
                 </p>
 
                 {/* Features */}
@@ -1439,7 +1448,7 @@ export default function Home() {
                 {/* Trust Badge */}
                 <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
                   <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
-                  <span>Trusted by 1 Lac+ clients across Delhi</span>
+                  <span>Trusted by 1 Lac+ clients </span>
                 </div>
               </div>
             </section>
@@ -1451,7 +1460,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                   {/* Column 1 - Some Tips & Tricks */}
                   <div>
-                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Some Tips & Tricks</h3>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Useful Information</h3>
                     <ul className="space-y-3 text-base">
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/property-tips">Property Tips</Link></li>
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/legal-advice">Legal Advice</Link></li>
@@ -1502,7 +1511,7 @@ export default function Home() {
 
                   {/* Column 4 - Possible Pages */}
                   <div>
-                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Possible Pages</h3>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Pages</h3>
                     <ul className="space-y-3 text-base">
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/">Home</Link></li>
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Deed And Documents</Link></li>
@@ -1517,25 +1526,12 @@ export default function Home() {
                 {/* Footer Bottom */}
                 <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8">
                   <div className="text-center space-y-2">
-                    <p className="text-base font-semibold">All Right Reserved with Saledeed.com ™</p>
+                    <p className="text-base font-semibold">All Right Reserved saledeed.com ™</p>
                     <p className="text-sm">A Unit of Bharatiya Bhoomi Group</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Powered By - 31 Son Redefining The Defined.</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Powered By - 31 Son</p><p> Redefining The Defined.</p>
                   </div>
                   
-                  <div className="flex justify-center space-x-6 mt-6">
-                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="Facebook">
-                      <i data-lucide="facebook" className="w-6 h-6"></i>
-                    </a>
-                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="Twitter">
-                      <i data-lucide="twitter" className="w-6 h-6"></i>
-                    </a>
-                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="LinkedIn">
-                      <i data-lucide="linkedin" className="w-6 h-6"></i>
-                    </a>
-                    <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#" aria-label="Instagram">
-                      <i data-lucide="instagram" className="w-6 h-6"></i>
-                    </a>
-                  </div>
+                  
                 </div>
               </div>
             </footer>
@@ -1655,6 +1651,9 @@ export default function Home() {
           isOpen={showChatbot}
           onClose={() => setShowChatbot(false)}
         />
+        
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </div>
     </>
   )

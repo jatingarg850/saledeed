@@ -114,8 +114,6 @@ export default function BlogsPage() {
     }
   ];
 
-  const categories = ["All", "Agreement to Sell", "Sale Deed", "Will Testament", "Exchange Deed", "Power of Attorney", "Gift Deed", "Partition Deed", "Rent Agreement", "Mutation"];
-
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden bg-background-light dark:bg-background-dark">
       <div className="layout-container flex h-full grow flex-col">
@@ -158,11 +156,6 @@ export default function BlogsPage() {
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
-                    </div>
                   </div>
 
                   {/* Content */}

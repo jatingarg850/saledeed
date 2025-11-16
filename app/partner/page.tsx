@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Navigation from '../../components/Navigation';
+import ScrollToTop from '../../components/ScrollToTop';
 
 export default function PartnerPage() {
   const [formData, setFormData] = useState({
@@ -315,6 +316,9 @@ Message: ${formData.message}`;
             </div>
           </footer>
         </div>
+        
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </div>
     </div>
   );

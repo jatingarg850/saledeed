@@ -4,7 +4,7 @@ export default function DeveloperSolutionPage() {
   const services = [
     {
       title: 'Outright Properties',
-      description: 'Complete solutions for outright purchase & sale of properties at competitive market rates.',
+      description: 'Packages for outright purchase & sale of properties at competitive market rates.',
       icon: 'building'
     },
     {

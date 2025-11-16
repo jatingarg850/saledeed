@@ -183,6 +183,8 @@ export default function Testimonials() {
     }
   }, [])
 
+
+
   const TestimonialCard = ({ name, text }: { name: string; text: string }) => (
     <div className="testimonial-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-80 mx-2 sm:mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-100 dark:border-slate-700">
       <div className="flex flex-col sm:flex-row items-start justify-between mb-4 gap-3">
@@ -219,14 +221,11 @@ export default function Testimonials() {
           </div>
           
           <h2 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight">
-            What Our <span className="relative inline-block customers-say-heading">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Customers Say</span>
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
-            </span>
+            What Our <span className="text-primary">Customers Say</span>
           </h2>
           
           <p className="text-subtext-light dark:text-subtext-dark text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-12">
-            Real experiences from 1000 of satisfied customers who trusted us with their property documentation needs.
+            Real experiences from our satisfied customers who trusted us with their property documentation needs.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
@@ -297,7 +296,7 @@ export default function Testimonials() {
       {/* CTA Section */}
       <div className="max-w-4xl mx-auto px-6 md:px-10 lg:px-20 mt-16 text-center">
         <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">Join 1000 of Satisfied Customers</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Let's Connect for a Seamless property Experience</h3>
           <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
             Experience the same level of professional service and legal expertise that our customers rave about.
           </p>
@@ -309,7 +308,7 @@ export default function Testimonials() {
               className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <i data-lucide="arrow-right" className="w-5 h-5"></i>
-              Start to Journey
+              Get Started
             </a>
             <a
               href="/services"
@@ -327,7 +326,7 @@ export default function Testimonials() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
           <div className="text-center mb-16">
             <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-display mb-6">
-              Reach Us For Anything At
+              Reach Us For Anything
             </h2>
             <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
               Our expert team consists of professionals with in-depth experience of real estate liaisoning in all building authorities. Reach us today for a customized guidance for your specific property.
