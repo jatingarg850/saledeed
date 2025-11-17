@@ -861,6 +861,18 @@ export default function Home() {
                 <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
               </div>
             </div>
+
+            {/* Partner CTA Button */}
+            <div className="text-center mt-12">
+              <Link
+                href="/partner"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <i data-lucide="handshake" className="w-5 h-5"></i>
+                <span>Become a Partner</span>
+                <i data-lucide="arrow-right" className="w-5 h-5"></i>
+              </Link>
+            </div>
               </div>
 
               {/* Why saledeed.com Section */}
@@ -1481,7 +1493,7 @@ export default function Home() {
                 {/* Trust Badge */}
                 <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
                   <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
-                  <span>Trusted by 1 Lac+ clients </span>
+                  <span>Trusted by 1 Lac+ Happy Clients </span>
                 </div>
               </div>
             </section>
@@ -1539,7 +1551,7 @@ export default function Home() {
                         <p className="text-sm text-gray-600 dark:text-gray-400 ml-7">Instant support for property documentation</p>
                       </div>
                     </div>
-                    <p className="mt-4 text-sm font-semibold text-primary">Trusted By 1 Lac + Clients</p>
+                    <p className="mt-4 text-sm font-semibold text-primary">Trusted By 1 Lac + Happy Clients</p>
                   </div>
 
                   {/* Column 4 - Possible Pages */}

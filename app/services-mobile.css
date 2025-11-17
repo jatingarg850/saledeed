@@ -1,0 +1,787 @@
+/* Mobile Responsive Fixes for Services Page */
+
+/* Hide decorative circular elements on mobile */
+@media (max-width: 640px) {
+  .services-page .bg-gradient-to-br > div[class*="absolute"][class*="rounded-full"],
+  .services-page .bg-gradient-to-r > div[class*="absolute"][class*="rounded-full"],
+  .services-page div[class*="absolute"][class*="rounded-full"][class*="w-"],
+  .services-page div[class*="absolute"][class*="rounded-full"][class*="h-"] {
+    display: none !important;
+  }
+
+  /* Remove gradient backgrounds that appear as circles on mobile */
+  .services-page .bg-gradient-to-r.from-emerald-50,
+  .services-page .bg-gradient-to-r.from-red-50 {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  .dark .services-page .bg-gradient-to-r.from-emerald-50,
+  .dark .services-page .bg-gradient-to-r.from-red-50 {
+    background: rgba(30, 41, 59, 1) !important;
+    background-image: none !important;
+  }
+
+  /* Remove rounded borders from Special Services cards */
+  .services-page .bg-gradient-to-r.from-emerald-50,
+  .services-page .bg-gradient-to-r.from-red-50 {
+    border-radius: 0 !important;
+  }
+
+  /* Fix inner content boxes that are overflowing */
+  .services-page .bg-gradient-to-r .bg-white,
+  .services-page .bg-gradient-to-r .bg-emerald-100,
+  .services-page .bg-gradient-to-r .rounded-lg {
+    max-width: 100% !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Fix text overflow in cards */
+  .services-page .bg-gradient-to-r p,
+  .services-page .bg-gradient-to-r h4 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+
+  /* Force vertical layout for card content */
+  .services-page .bg-gradient-to-r.from-emerald-50,
+  .services-page .bg-gradient-to-r.from-red-50 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .services-page .bg-gradient-to-r.from-emerald-50 > *,
+  .services-page .bg-gradient-to-r.from-red-50 > * {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Fix Privacy Policy section */
+  .services-page .bg-gradient-to-r.from-primary {
+    background: var(--primary-color) !important;
+    background-image: none !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* Fix Privacy Policy header section */
+  .services-page .bg-gradient-to-br.from-yellow-50 {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  .dark .services-page .bg-gradient-to-br.from-yellow-50 {
+    background: rgba(30, 41, 59, 1) !important;
+    background-image: none !important;
+  }
+
+  /* Remove ALL gradient backgrounds that create rounded shapes */
+  .services-page .bg-gradient-to-br,
+  .services-page .bg-gradient-to-r,
+  .services-page .bg-gradient-to-l,
+  .services-page .bg-gradient-to-t,
+  .services-page .bg-gradient-to-b {
+    background-image: none !important;
+  }
+
+  /* Set solid backgrounds for all sections */
+  .services-page .bg-gradient-to-br.from-yellow-50,
+  .services-page .bg-gradient-to-br.from-gray-50 {
+    background: white !important;
+  }
+
+  .dark .services-page .bg-gradient-to-br.from-yellow-50,
+  .dark .services-page .bg-gradient-to-br.from-gray-50 {
+    background: rgba(30, 41, 59, 1) !important;
+  }
+
+  /* Keep primary color sections solid */
+  .services-page .bg-gradient-to-r.from-primary,
+  .services-page .bg-gradient-to-br.from-primary {
+    background: var(--primary-color) !important;
+  }
+
+  /* Apply to all pages, not just services-page */
+  body .bg-gradient-to-br,
+  body .bg-gradient-to-r,
+  body .bg-gradient-to-l,
+  body .bg-gradient-to-t,
+  body .bg-gradient-to-b {
+    background-image: none !important;
+  }
+
+  /* Solid backgrounds for common gradient sections */
+  body .bg-gradient-to-br.from-yellow-50,
+  body .bg-gradient-to-br.from-gray-50,
+  body .bg-gradient-to-r.from-emerald-50,
+  body .bg-gradient-to-r.from-red-50 {
+    background: white !important;
+  }
+
+  .dark body .bg-gradient-to-br.from-yellow-50,
+  .dark body .bg-gradient-to-br.from-gray-50,
+  .dark body .bg-gradient-to-r.from-emerald-50,
+  .dark body .bg-gradient-to-r.from-red-50 {
+    background: rgba(30, 41, 59, 1) !important;
+  }
+
+  /* Keep primary sections with solid color */
+  body .bg-gradient-to-r.from-primary,
+  body .bg-gradient-to-br.from-primary {
+    background: var(--primary-color) !important;
+  }
+}
+
+/* Remove ALL gradients globally on mobile - except navigation */
+@media (max-width: 640px) {
+  .services-page * {
+    background-image: none !important;
+  }
+
+  /* Override any gradient classes in services page only */
+  .services-page [class*="bg-gradient"] {
+    background-image: none !important;
+  }
+
+  /* Don't affect navigation elements */
+  nav *,
+  header *,
+  [role="navigation"] * {
+    background-image: revert !important;
+  }
+
+  /* Remove rounded borders that create circular shapes */
+  .rounded-full,
+  [class*="rounded-full"] {
+    border-radius: 0.5rem !important;
+  }
+
+  /* Target large rounded elements specifically */
+  div[class*="rounded-"][class*="w-"],
+  div[class*="rounded-"][class*="h-"] {
+    border-radius: 0.5rem !important;
+  }
+
+  /* Force all sections to have white/dark background without gradients */
+  .services-page section,
+  .services-page div[class*="bg-gradient"] {
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .dark .services-page section,
+  .dark .services-page div[class*="bg-gradient"] {
+    background: rgba(30, 41, 59, 1) !important;
+    background-color: rgba(30, 41, 59, 1) !important;
+    background-image: none !important;
+  }
+
+  /* Force vertical layout for all content */
+  .services-page section,
+  .services-page div[class*="bg-gradient"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Remove rounded corners from all elements */
+  .services-page .rounded-xl,
+  .services-page .rounded-2xl,
+  .services-page .rounded-3xl,
+  .services-page .rounded-lg {
+    border-radius: 0.5rem !important;
+  }
+
+  /* Fix service card backgrounds */
+  .services-page .bg-white,
+  .services-page .bg-gray-50,
+  .services-page [class*="bg-"] {
+    background-image: none !important;
+  }
+
+  /* Remove golden/primary color backgrounds from cards */
+  .services-page [class*="from-primary"],
+  .services-page [class*="to-secondary"],
+  .services-page [class*="bg-primary"] {
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  .dark .services-page [class*="from-primary"],
+  .dark .services-page [class*="to-secondary"],
+  .dark .services-page [class*="bg-primary"] {
+    background: rgba(30, 41, 59, 1) !important;
+    background-color: rgba(30, 41, 59, 1) !important;
+    border: 1px solid rgba(71, 85, 105, 1) !important;
+  }
+
+  /* Fix card slider items */
+  .services-page .animate-slide-infinite .bg-white,
+  .services-page .flex-shrink-0 > div {
+    background: white !important;
+    background-image: none !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .dark .services-page .animate-slide-infinite .bg-white,
+  .dark .services-page .flex-shrink-0 > div {
+    background: rgba(30, 41, 59, 1) !important;
+  }
+}
+
+/* Base mobile optimizations */
+@media (max-width: 640px) {
+  /* Typography adjustments */
+  .services-page h1 {
+    font-size: 1.75rem !important;
+    line-height: 2rem !important;
+  }
+
+  .services-page h2 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .services-page h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .services-page h4 {
+    font-size: 1.125rem !important;
+    line-height: 1.5rem !important;
+  }
+
+  .services-page h5 {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+
+  .services-page p {
+    font-size: 0.875rem !important;
+    line-height: 1.5rem !important;
+  }
+
+  /* Price text adjustments */
+  .services-page h2[class*="text-4xl"] {
+    font-size: 2rem !important;
+  }
+
+  /* Padding and spacing adjustments */
+  .services-page section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .services-page .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Card adjustments */
+  .services-page .rounded-2xl {
+    border-radius: 1rem !important;
+  }
+
+  .services-page .rounded-xl {
+    border-radius: 0.75rem !important;
+  }
+
+  /* Grid gap adjustments */
+  .services-page .gap-6 {
+    gap: 1rem !important;
+  }
+
+  .services-page .gap-8 {
+    gap: 1.5rem !important;
+  }
+
+  /* Button adjustments */
+  .services-page button,
+  .services-page a[class*="btn"] {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Icon size adjustments - make icons larger */
+  .services-page i[data-lucide],
+  .services-page svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+
+  /* Make checkmark icons larger */
+  .services-page .fa-check-circle,
+  .services-page [class*="check"] {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  /* Make card header icons larger */
+  .services-page .text-center > i,
+  .services-page h5 + i,
+  .services-page .mb-4 i {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 2rem !important;
+  }
+
+  .services-page .w-12,
+  .services-page .h-12 {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  .services-page .w-14,
+  .services-page .h-14 {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .services-page .w-16,
+  .services-page .h-16 {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  /* Service card adjustments */
+  .services-page .shadow-lg {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .services-page .shadow-xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Disable hover effects on mobile */
+  .services-page .hover\:shadow-2xl:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .services-page .hover\:-translate-y-2:hover {
+    transform: translateY(0) !important;
+  }
+
+  /* Slider adjustments - faster animation */
+  .services-page .animate-slide-infinite {
+    animation-duration: 10s !important;
+  }
+
+  /* Speed up testimonials/card sliders */
+  [class*="animate-slide"],
+  [class*="animate-scroll"] {
+    animation-duration: 8s !important;
+  }
+
+  .services-page .w-96 {
+    width: 20rem !important;
+  }
+
+  /* Table responsiveness */
+  .services-page table {
+    font-size: 0.75rem !important;
+  }
+
+  .services-page th,
+  .services-page td {
+    padding: 0.5rem !important;
+  }
+
+  /* Modal and overlay adjustments */
+  .services-page .fixed {
+    padding: 1rem !important;
+  }
+
+  /* Reduce animation complexity on mobile */
+  .services-page .transition-all {
+    transition: none !important;
+  }
+
+  /* Optimize images */
+  .services-page img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .services-page h1 {
+    font-size: 2rem !important;
+  }
+
+  .services-page h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .services-page h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .services-page section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .services-page .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* Specific component fixes */
+
+/* Services Grid */
+@media (max-width: 640px) {
+  .services-page .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  /* Service card content */
+  .services-page .p-6 {
+    padding: 1rem !important;
+  }
+
+  .services-page .p-8 {
+    padding: 1.25rem !important;
+  }
+
+  /* Spacing between elements */
+  .services-page .mb-12 {
+    margin-bottom: 2rem !important;
+  }
+
+  .services-page .mb-16 {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .services-page .mt-20 {
+    margin-top: 3rem !important;
+  }
+
+  /* Text alignment on mobile */
+  .services-page .text-center {
+    text-align: left !important;
+  }
+
+  .services-page .text-center h2,
+  .services-page .text-center h3 {
+    text-align: center !important;
+  }
+
+  /* Flex direction adjustments */
+  .services-page .flex-col.sm\:flex-row {
+    flex-direction: column !important;
+  }
+
+  /* Gap adjustments for flex containers */
+  .services-page .gap-4.sm\:gap-6 {
+    gap: 0.75rem !important;
+  }
+}
+
+/* Additional Services Section */
+@media (max-width: 640px) {
+  .services-page .additional-services-info .grid {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+  }
+
+  .services-page .additional-services-info .lg\:col-span-2 {
+    grid-column: span 1 !important;
+  }
+
+  /* Special Services - Freehold and Regularization cards */
+  .services-page .grid.grid-cols-1.lg\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Ensure cards are fully visible without overflow */
+  .services-page .bg-gradient-to-r {
+    position: relative !important;
+    overflow: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Reduce padding on Special Services cards */
+  .services-page .bg-gradient-to-r.from-emerald-50,
+  .services-page .bg-gradient-to-r.from-red-50 {
+    padding: 1rem !important;
+  }
+}
+
+/* Comparison Table */
+@media (max-width: 640px) {
+  .services-page .overflow-x-auto {
+    overflow-x: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .services-page table {
+    min-width: 600px !important;
+  }
+}
+
+/* FAQ Section */
+@media (max-width: 640px) {
+  .services-page details {
+    padding: 0.75rem !important;
+  }
+
+  .services-page summary {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Contact CTA */
+@media (max-width: 640px) {
+  .services-page #custom-quote-cta {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .services-page #custom-quote-cta > div {
+    padding: 1.5rem 1rem !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Card Slider */
+@media (max-width: 640px) {
+  .services-page .animate-slide-infinite .w-96 {
+    width: 18rem !important;
+  }
+
+  .services-page .animate-slide-infinite .p-8 {
+    padding: 1.25rem !important;
+  }
+
+  .services-page .animate-slide-infinite h3 {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* Location Badge */
+@media (max-width: 640px) {
+  .services-page .absolute.top-0.left-0 {
+    position: relative !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Performance optimizations */
+@media (max-width: 640px) {
+  /* Disable expensive CSS properties */
+  .services-page .backdrop-blur-sm,
+  .services-page .backdrop-blur-md {
+    backdrop-filter: none !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .dark .services-page .backdrop-blur-sm,
+  .dark .services-page .backdrop-blur-md {
+    background-color: rgba(30, 41, 59, 0.95) !important;
+  }
+
+  /* Simplify gradients */
+  .services-page .bg-gradient-to-br,
+  .services-page .bg-gradient-to-r {
+    background-image: none !important;
+  }
+
+  /* Reduce shadow complexity */
+  .services-page .shadow-2xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (max-width: 640px) {
+  /* Increase touch target sizes */
+  .services-page button,
+  .services-page a[role="button"],
+  .services-page summary {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Add spacing between interactive elements */
+  .services-page button + button,
+  .services-page a + a {
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Horizontal scroll fix */
+@media (max-width: 640px) {
+  .services-page {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  .services-page * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .services-page .container {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Prevent specific elements from exceeding viewport */
+  .services-page .bg-gradient-to-r,
+  .services-page .rounded-2xl,
+  .services-page .rounded-xl,
+  .services-page .rounded-lg {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Fix padding that might cause overflow */
+  .services-page .px-6,
+  .services-page .px-8,
+  .services-page .px-10,
+  .services-page .px-20 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Ensure grid items don't overflow */
+  .services-page .grid > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Text readability improvements */
+@media (max-width: 640px) {
+  .services-page {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+
+  .services-page .text-sm {
+    font-size: 0.875rem !important;
+  }
+
+  .services-page .text-xs {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Fix icon container width on mobile */
+@media (max-width: 640px) {
+  /* Target icon containers with gradient backgrounds */
+  .services-page div[class*="bg-gradient"][class*="rounded"][class*="flex"] {
+    width: 3.5rem !important;
+    min-width: 3.5rem !important;
+    max-width: 3.5rem !important;
+    height: 3.5rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Override width classes for icon containers */
+  .services-page .w-14[class*="bg-gradient"],
+  .services-page .w-16[class*="bg-gradient"] {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  /* Ensure flex containers don't stretch icon boxes */
+  .services-page .flex.items-start > div[class*="bg-gradient"]:first-child,
+  .services-page .flex.items-center > div[class*="bg-gradient"]:first-child {
+    width: 3.5rem !important;
+    min-width: 3.5rem !important;
+    max-width: 3.5rem !important;
+    height: 3.5rem !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Fix Book Now button visibility on mobile - only in service cards */
+@media (max-width: 640px) {
+  /* Target only buttons inside service cards grid */
+  .services-page .additional-services-info .grid button,
+  .services-page .grid.grid-cols-1 button.btn {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 9999px !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Ensure button containers in service cards are visible */
+  .services-page .additional-services-info .text-center.mt-auto {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Override any hiding rules for buttons in service cards only */
+  .services-page .additional-services-info button[class*="bg-primary"],
+  .services-page .grid.grid-cols-1 button[class*="rounded-full"] {
+    background: var(--primary-color) !important;
+    background-color: var(--primary-color) !important;
+    background-image: none !important;
+    color: white !important;
+  }
+}
+
+/* Enable horizontal scrolling for All Legal Services section on mobile */
+@media (max-width: 640px) {
+  /* Enable the card slider animation */
+  .services-page .animate-slide-infinite {
+    animation: slideInfinite 15s linear infinite !important;
+    animation-play-state: running !important;
+  }
+
+  /* Ensure the slider container allows overflow */
+  .services-page .relative.overflow-hidden.py-8 {
+    overflow-x: visible !important;
+    overflow-y: hidden !important;
+  }
+
+  /* Make sure the flex container can scroll */
+  .services-page .flex.gap-6.animate-slide-infinite {
+    display: flex !important;
+    flex-direction: row !important;
+    animation: slideInfinite 15s linear infinite !important;
+  }
+
+  /* Ensure cards maintain their width */
+  .services-page .flex-shrink-0.w-96 {
+    flex-shrink: 0 !important;
+    width: 24rem !important;
+  }
+}
+
+/* Define the slide animation */
+@keyframes slideInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

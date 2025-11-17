@@ -765,30 +765,43 @@ export default function ServicesPage() {
                                 </div>
                             </section>
 
-                            {/* Contact CTA */}
-                            <div className="text-center mt-8">
-                                <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white">
-                                    <h3 className="text-xl font-bold mb-3">Need a Custom Quote?</h3>
-                                    <p className="text-base mb-4 opacity-90">
-                                        Every property case is unique. Get personalized pricing for your specific requirements.
-                                    </p>
-                                    <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                                        <Link
-                                            href="/contact"
-                                            className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-bold hover:bg-yellow-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                                        >
-                                            <i data-lucide="phone" className="w-4 h-4"></i>
-                                            Get Custom Quote
-                                        </Link>
-                                        <a
-                                            href="https://wa.me/918800505050?text=Hello,%20I%20need%20assistance%20regarding%20my%20property."
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                                        >
-                                            <i data-lucide="message-circle" className="w-4 h-4"></i>
-                                            WhatsApp Us
-                                        </a>
+                            {/* Contact CTA - Simple Box */}
+                            <div id="custom-quote-cta" className="w-full my-8 px-4">
+                                <div 
+                                    className="bg-gradient-to-r from-primary to-secondary text-white mx-auto overflow-hidden"
+                                    style={{ 
+                                        maxWidth: '800px',
+                                        borderRadius: '16px',
+                                        padding: '2rem 1.5rem',
+                                        position: 'relative',
+                                        zIndex: 1
+                                    }}
+                                >
+                                    <div style={{ position: 'relative', zIndex: 2 }}>
+                                        <h3 className="text-xl sm:text-2xl font-bold mb-3 text-center">Need a Custom Quote?</h3>
+                                        <p className="text-sm sm:text-base mb-6 opacity-90 text-center">
+                                            Every property case is unique. Get personalized pricing for your specific requirements.
+                                        </p>
+                                        <div className="flex flex-col sm:flex-row gap-3 justify-center" style={{ maxWidth: '500px', margin: '0 auto' }}>
+                                            <Link
+                                                href="/contact"
+                                                className="flex-1 inline-flex items-center justify-center gap-2 bg-white text-primary font-bold text-sm transition-all"
+                                                style={{ padding: '12px 24px', borderRadius: '9999px' }}
+                                            >
+                                                <i data-lucide="phone" className="w-4 h-4"></i>
+                                                <span>Get Custom Quote</span>
+                                            </Link>
+                                            <a
+                                                href="https://wa.me/918800505050?text=Hello,%20I%20need%20assistance%20regarding%20my%20property."
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-1 inline-flex items-center justify-center gap-2 bg-green-500 text-white font-bold text-sm transition-all"
+                                                style={{ padding: '12px 24px', borderRadius: '9999px' }}
+                                            >
+                                                <i data-lucide="message-circle" className="w-4 h-4"></i>
+                                                <span>WhatsApp Us</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -799,10 +812,7 @@ export default function ServicesPage() {
                     <div className="relative mb-16 mx-6 md:mx-10 lg:mx-20 mt-10">
                         {/* Header */}
                         <div className="text-center mb-8">
-                            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                                <i data-lucide="briefcase" className="w-4 h-4"></i>
-                                Our Legal Services
-                            </div>
+                            
                             <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-2">
                                 All Legal Services
                             </h2>
@@ -1123,7 +1133,7 @@ export default function ServicesPage() {
                                         </div>
 
                                         {/* Additional Services Grid */}
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
                                             {/* Buy/Sell/Rent */}
                                             <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                                                 <div className="flex items-center gap-3 mb-4">
@@ -1172,7 +1182,7 @@ export default function ServicesPage() {
                                             {/* Government Authority Assistance */}
                                             <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
                                                 <div className="flex items-center gap-3 mb-4">
-                                                    <div className="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center">
+                                                    <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
                                                         <i data-lucide="building-2" className="w-5 h-5 text-orange-500"></i>
                                                     </div>
                                                     <h5 className="font-bold text-text-light dark:text-text-dark">Government Authority Assistance</h5>
@@ -1216,39 +1226,39 @@ export default function ServicesPage() {
                                         </div>
 
                                         {/* Special Services */}
-                                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                                             {/* Freehold Conversion */}
-                                            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl p-6 border border-emerald-200 dark:border-emerald-700">
-                                                <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
-                                                    <i data-lucide="key" className="w-5 h-5 text-emerald-600"></i>
-                                                    Freehold Conversion
+                                            <div className="relative bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-emerald-200 dark:border-emerald-700 overflow-hidden">
+                                                <h4 className="text-base sm:text-lg md:text-xl font-bold text-text-light dark:text-text-dark mb-3 sm:mb-4 flex items-center gap-2">
+                                                    <i data-lucide="key" className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0"></i>
+                                                    <span>Freehold Conversion</span>
                                                 </h4>
-                                                <p className="text-subtext-light dark:text-subtext-dark mb-4">
+                                                <p className="text-xs sm:text-sm md:text-base text-subtext-light dark:text-subtext-dark mb-3 sm:mb-4">
                                                     Freehold is the conversion of a property legal status from lease hold to Freehold. It requires a serious understanding of the building bye-laws of the past and present times.
                                                 </p>
-                                                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg mb-4">
-                                                    <p className="text-sm text-emerald-700 dark:text-emerald-300">
+                                                <div className="bg-white dark:bg-slate-800 p-2 sm:p-3 md:p-4 rounded-lg mb-3 sm:mb-4">
+                                                    <p className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-300">
                                                         After understanding your property background a customized procedure is crafted exclusively for you. A Freehold application filed without proper analysis can attract hefty fines, penalties and even black listing of your property.
                                                     </p>
                                                 </div>
-                                                <div className="bg-emerald-100 dark:bg-emerald-900/30 p-3 rounded-lg">
-                                                    <p className="text-sm font-medium text-emerald-800 dark:text-emerald-200">
+                                                <div className="bg-emerald-100 dark:bg-emerald-900/30 p-2 sm:p-3 rounded-lg">
+                                                    <p className="text-xs sm:text-sm font-medium text-emerald-800 dark:text-emerald-200">
                                                         <strong>Note:</strong> A Freehold status uplifts your property value by about 20%, allows you to sell it freely and take many legal decisions without waiting for government approvals everytime.
                                                     </p>
                                                 </div>
                                             </div>
 
                                             {/* Regularization */}
-                                            <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-red-200 dark:border-red-700">
-                                                <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
-                                                    <i data-lucide="shield-check" className="w-5 h-5 text-red-600"></i>
-                                                    Regularization
+                                            <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-red-200 dark:border-red-700">
+                                                <h4 className="text-base sm:text-lg md:text-xl font-bold text-text-light dark:text-text-dark mb-3 sm:mb-4 flex items-center gap-2">
+                                                    <i data-lucide="shield-check" className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 flex-shrink-0"></i>
+                                                    <span>Regularization</span>
                                                 </h4>
-                                                <p className="text-subtext-light dark:text-subtext-dark mb-4">
+                                                <p className="text-xs sm:text-sm md:text-base text-subtext-light dark:text-subtext-dark mb-3 sm:mb-4">
                                                     Get Regularization of your MCD booked black listed properties as per the building bye-laws and breathe in ease.
                                                 </p>
-                                                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
-                                                    <p className="text-sm text-red-700 dark:text-red-300">
+                                                <div className="bg-white dark:bg-slate-800 p-2 sm:p-3 md:p-4 rounded-lg">
+                                                    <p className="text-xs sm:text-sm text-red-700 dark:text-red-300">
                                                         Municipal corporation have exclusive rights to demolish the structure of any MCD booked property. Regularization delist your property from the black list thus making it secure for sure.
                                                     </p>
                                                 </div>
@@ -1830,48 +1840,49 @@ export default function ServicesPage() {
                             </div>
 
                             {/* Contact CTA */}
-                            <div className="w-full mt-20 relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary rounded-3xl p-12 text-center">
+                            <div className="w-full mt-12 sm:mt-16 md:mt-20 relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary rounded-xl sm:rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 text-center">
                                 <div className="absolute inset-0 bg-black/10"></div>
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
-                                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
 
                                 <div className="relative">
-                                    <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                        <i data-lucide="headphones" className="w-10 h-10 text-white"></i>
+                                    <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                                        <i data-lucide="headphones" className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white"></i>
                                     </div>
 
-                                    <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
+                                    <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
                                         Need Expert Guidance?
                                     </h2>
-                                    <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
+                                    <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
                                         Our legal experts are here to help you choose the right service and guide you through the process
                                     </p>
 
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                    <div className="flex flex-col gap-3 sm:gap-4 max-w-md mx-auto px-2">
                                         <Link
                                             href="/contact"
-                                            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                                            className="w-full inline-flex items-center justify-center gap-2 bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-yellow-50 hover:shadow-xl transition-all duration-300"
                                         >
-                                            <i data-lucide="phone" className="w-5 h-5"></i>
+                                            <i data-lucide="phone" className="w-4 h-4 sm:w-5 sm:h-5"></i>
                                             Contact Support
                                         </Link>
-                                        <button className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
-                                            <i data-lucide="calendar" className="w-5 h-5"></i>
+                                        <Link
+                                            href="/contact"
+                                            className="w-full inline-flex items-center justify-center gap-2 bg-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
+                                        >
+                                            <i data-lucide="calendar" className="w-4 h-4 sm:w-5 sm:h-5"></i>
                                             Schedule Consultation
-                                        </button>
+                                        </Link>
                                     </div>
 
-                                    <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
+                                    <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/80 text-xs sm:text-sm">
                                         <div className="flex items-center gap-2">
-                                            <i data-lucide="check-circle" className="w-4 h-4"></i>
+                                            <i data-lucide="check-circle" className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"></i>
                                             <span>Free Consultation</span>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <i data-lucide="shield" className="w-4 h-4"></i>
+                                            <i data-lucide="shield" className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"></i>
                                             <span>100% Secure</span>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <i data-lucide="clock" className="w-4 h-4"></i>
+                                            <i data-lucide="clock" className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"></i>
                                             <span>Quick Response</span>
                                         </div>
                                     </div>

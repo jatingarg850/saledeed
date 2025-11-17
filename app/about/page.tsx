@@ -57,7 +57,7 @@ export default function About() {
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="star" className="w-5 h-5 text-amber-600"></i>
-                    <span>10,000+ Happy Clients</span>
+                    <span>10,000+ Happy Happy Clients</span>
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function About() {
                         </div>
                         <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                           <div className="text-3xl font-bold text-amber-700 dark:text-primary mb-2">10k+</div>
-                          <div className="text-sm text-black dark:text-subtext-dark">Happy Clients</div>
+                          <div className="text-sm text-black dark:text-subtext-dark">Happy Happy Clients</div>
                         </div>
                       </div>
                     </div>
