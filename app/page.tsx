@@ -689,7 +689,7 @@ export default function Home() {
                   <div>
                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg animate-bounce-gentle">
                         <i data-lucide="home" className="w-4 h-4"></i>
-                        Property Services
+                        Buy / Sell / Rent at minimum commission
                       </div>
                       
                       <h2 className="text-text-light dark:text-text-dark text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight font-display mb-6 leading-tight break-words">
@@ -828,26 +828,27 @@ export default function Home() {
                 <p className="text-black dark:text-subtext-dark text-sm">Partner with us to provide comprehensive liaison services.</p>
               </div>
 
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
-                </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Ex-Government Employees</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
-              </div>
+             
                 <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="text-white text-2xl" data-lucide="shield-check"></i>
                 </div>
                 <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Builder/Developers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Build your Projects and Network with us,</p>
+                <p className="text-black dark:text-subtext-dark text-sm">Sell your new construction or reach us for potential buyers and investors for booking before construction.</p>
               </div>
                 <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="text-white text-2xl" data-lucide="shield-check"></i>
                 </div>
                 <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Service</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Selling and Buying made it easier for you.</p>
+                <p className="text-black dark:text-subtext-dark text-sm">If you are into any kind of service or business related to real estate you can submit your profile for association with us.</p>
+              </div>
+               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                </div>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Ex-Government Employees</h3>
+                <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
               </div>
             </div>
               </div>
@@ -865,7 +866,7 @@ export default function Home() {
                       </span>
                     </h2>
                     <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
-                      Your trusted partner for hassle-free property documentation
+                      A trusted property guide with just one motive - Your Satisfaction!
                     </p>
                   </div>
 
