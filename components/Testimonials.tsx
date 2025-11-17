@@ -262,8 +262,8 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Scrolling Testimonials - Desktop */}
-      <div className="testimonials-wrapper hidden md:block">
+      {/* Scrolling Testimonials - All Screens */}
+      <div className="testimonials-wrapper">
         {/* Upper Track - Scrolling Left */}
         <div className="slider-container mb-8">
           <div ref={upperTrackRef} className="slide-track scroll-left flex">
@@ -290,15 +290,6 @@ export default function Testimonials() {
               <TestimonialCard key={`lower-dup-${index}`} name={testimonial.name} text={testimonial.text} />
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* Vertical Grid - Mobile */}
-      <div className="md:hidden px-6 max-w-2xl mx-auto">
-        <div className="grid grid-cols-1 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={`mobile-${index}`} name={testimonial.name} text={testimonial.text} />
-          ))}
         </div>
       </div>
 
