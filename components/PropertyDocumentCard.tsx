@@ -18,6 +18,7 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const [imagesLoaded, setImagesLoaded] = useState(false)
+  const [showPricePopup, setShowPricePopup] = useState(false)
 
   useEffect(() => {
     // Mobile detection
@@ -51,10 +52,24 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
     return () => clearTimeout(timer)
   }, [])
 
+  const handleBookNow = () => {
+    setShowPricePopup(true)
+  }
+
+  const handleWhatsAppRedirect = () => {
+    window.open(
+      `https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(document.title)}`,
+      '_blank',
+      'noopener,noreferrer'
+    )
+    setShowPricePopup(false)
+  }
+
   return (
-    <div className={`property-card bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden ${
-      isMobile ? '' : 'hover:shadow-2xl transition-all duration-300 hover:-translate-y-2'
-    }`}>
+    <>
+      <div className={`property-card bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden ${
+        isMobile ? '' : 'hover:shadow-2xl transition-all duration-300 hover:-translate-y-2'
+      }`}>
       {/* Image Slider */}
       <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
         {imagesLoaded ? (
@@ -127,20 +142,77 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
             View Details
             <i data-lucide="arrow-right" className="w-4 h-4"></i>
           </Link>
-          <a
-            href={`https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(document.title)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full font-semibold text-sm ${
+          <button
+            onClick={handleBookNow}
+            className={`flex-1 inline-flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full font-semibold text-sm ${
               isMobile ? '' : 'hover:bg-green-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
             }`}
-            title="Chat on WhatsApp"
+            title="Book Now"
           >
-            <i data-lucide="message-circle" className="w-4 h-4"></i>
-            WhatsApp
-          </a>
+            <i data-lucide="calendar-check" className="w-4 h-4"></i>
+            Book Now
+          </button>
         </div>
       </div>
     </div>
+
+      {/* Price Popup Modal */}
+      {showPricePopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-8 animate-fade-in-up border-4 border-primary">
+            {/* Icon */}
+            <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="indian-rupee" className="w-8 h-8 text-white"></i>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-2xl font-bold text-center text-text-light dark:text-text-dark mb-3">
+              Our Services Start From
+            </h3>
+
+            {/* Price */}
+            <div className="text-center mb-6">
+              <div className="text-5xl font-black text-primary mb-2">₹4,000</div>
+              <p className="text-subtext-light dark:text-subtext-dark text-sm">
+                All-inclusive pricing with no hidden charges
+              </p>
+            </div>
+
+            {/* Features */}
+            <div className="space-y-2 mb-6">
+              <div className="flex items-center gap-2 text-sm text-text-light dark:text-text-dark">
+                <i data-lucide="check-circle" className="w-4 h-4 text-green-500"></i>
+                <span>Expert Legal Consultation</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-text-light dark:text-text-dark">
+                <i data-lucide="check-circle" className="w-4 h-4 text-green-500"></i>
+                <span>Complete Documentation Support</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-text-light dark:text-text-dark">
+                <i data-lucide="check-circle" className="w-4 h-4 text-green-500"></i>
+                <span>Registration Assistance</span>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowPricePopup(false)}
+                className="flex-1 px-6 py-3 rounded-full border-2 border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 font-semibold hover:bg-gray-100 dark:hover:bg-slate-700 transition-all duration-300"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleWhatsAppRedirect}
+                className="flex-1 px-6 py-3 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <i data-lucide="message-circle" className="w-4 h-4"></i>
+                WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
