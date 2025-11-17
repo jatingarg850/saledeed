@@ -785,3 +785,19 @@
     transform: translateX(-100%);
   }
 }
+
+/* Hide Download Sample buttons from all service pages */
+@media (max-width: 9999px) {
+  /* Hide all download sample buttons */
+  button:has(i[data-lucide="download"]),
+  a[download*="Sample"],
+  button:contains("Download Sample"),
+  a:contains("Download Sample") {
+    display: none !important;
+  }
+
+  /* More specific targeting */
+  [class*="inline-flex"]:has(i[data-lucide="download"]) {
+    display: none !important;
+  }
+}
