@@ -10,6 +10,8 @@ export default function ContactPage() {
     phone: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
@@ -49,9 +51,39 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    // You can add your form submission logic here
+    setIsSubmitting(true)
+
+    try {
+      // Create WhatsApp message with form data
+      const message = 
+        `*Contact Form Submission - SaleDeed.com*\n\n` +
+        `*Name:* ${formData.name}\n` +
+        `*Email:* ${formData.email}\n` +
+        `*Phone:* ${formData.phone || 'Not provided'}\n\n` +
+        `*Message:*\n${formData.message}`
+      
+      // Open WhatsApp with the message
+      window.open(
+        `https://api.whatsapp.com/send?phone=918800505050&text=${encodeURIComponent(message)}`,
+        '_blank',
+        'noopener,noreferrer'
+      )
+      
+      // Show success message
+      setTimeout(() => {
+        setIsSubmitting(false)
+        setSubmitSuccess(true)
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false)
+          setFormData({ name: '', email: '', phone: '', message: '' })
+        }, 3000)
+      }, 500)
+    } catch (error) {
+      console.error('Error:', error)
+      setIsSubmitting(false)
+      alert('Something went wrong. Please try again.')
+    }
   }
 
   const contactMethods = [
@@ -129,6 +161,15 @@ export default function ContactPage() {
                 Fill the form and we'll be happy to help you
               </p>
 
+              {submitSuccess && (
+                <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center gap-3">
+                  <i data-lucide="check-circle" className="w-5 h-5 text-green-600"></i>
+                  <p className="text-green-700 dark:text-green-400 text-sm font-medium">
+                    Message sent successfully via WhatsApp! We'll get back to you soon.
+                  </p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-text-light dark:text-text-dark mb-2">
@@ -200,10 +241,20 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-secondary hover:to-primary transition-all transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  <span>Send Message</span>
-                  <i className="ml-2" data-lucide="arrow-right"></i>
+                  {isSubmitting ? (
+                    <>
+                      <i className="mr-2 animate-spin" data-lucide="loader"></i>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send via WhatsApp</span>
+                      <i className="ml-2" data-lucide="message-circle"></i>
+                    </>
+                  )}
                 </button>
               </form>
             </div>

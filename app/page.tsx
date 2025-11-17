@@ -14,6 +14,16 @@ export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
   const [showChatbot, setShowChatbot] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [showProfileModal, setShowProfileModal] = useState(false)
+  const [profileForm, setProfileForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    expertise: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const heroButtonRef = useRef<HTMLAnchorElement>(null)
 
@@ -987,6 +997,28 @@ export default function Home() {
               {/* Customer Testimonials Section */}
               <Testimonials />
 
+              {/* Share Your Profile Section */}
+              <div className="my-20 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 p-8 md:p-12 rounded-2xl shadow-2xl border-2 border-primary/20">
+                <div className="max-w-4xl mx-auto text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="user-plus" className="w-8 h-8 text-white"></i>
+                  </div>
+                  <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
+                    Join Our Team
+                  </h2>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                    Share your profile with us and tell us how you can contribute to saledeed.com
+                  </p>
+                  <button
+                    onClick={() => setShowProfileModal(true)}
+                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <i data-lucide="send" className="w-5 h-5"></i>
+                    Share Your Profile
+                  </button>
+                </div>
+              </div>
+
               {/* Government Authorities Section */}
               <div className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl mb-16" style={{ background: 'linear-gradient(to bottom right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
                 
@@ -1652,6 +1684,202 @@ export default function Home() {
           isOpen={showChatbot}
           onClose={() => setShowChatbot(false)}
         />
+
+        {/* Share Profile Modal */}
+        {showProfileModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-primary to-secondary p-6 rounded-t-2xl">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                      <i data-lucide="user-plus" className="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">Share Your Profile</h3>
+                      <p className="text-white/80 text-sm">Tell us how you can contribute</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setShowProfileModal(false)
+                      setSubmitSuccess(false)
+                      setProfileForm({ name: '', email: '', phone: '', expertise: '', message: '' })
+                    }}
+                    className="text-white hover:bg-white/20 rounded-full p-2 transition-colors"
+                  >
+                    <i data-lucide="x" className="w-6 h-6"></i>
+                  </button>
+                </div>
+              </div>
+
+              {/* Form */}
+              <div className="p-6">
+                {submitSuccess ? (
+                  <div className="text-center py-8">
+                    <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <i data-lucide="check-circle" className="w-10 h-10 text-green-600"></i>
+                    </div>
+                    <h4 className="text-2xl font-bold text-text-light dark:text-text-dark mb-2">
+                      Profile Sent via WhatsApp!
+                    </h4>
+                    <p className="text-subtext-light dark:text-subtext-dark mb-6">
+                      Your profile has been sent to our team via WhatsApp. We'll review it and get back to you soon at {profileForm.email || 'your email'}.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setShowProfileModal(false)
+                        setSubmitSuccess(false)
+                        setProfileForm({ name: '', email: '', phone: '', expertise: '', message: '' })
+                      }}
+                      className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+                    >
+                      Close
+                    </button>
+                  </div>
+                ) : (
+                  <form
+                    onSubmit={async (e) => {
+                      e.preventDefault()
+                      setIsSubmitting(true)
+
+                      try {
+                        // Create WhatsApp message with form data
+                        const message = 
+                          `*New Profile Submission - SaleDeed.com*\n\n` +
+                          `*Name:* ${profileForm.name}\n` +
+                          `*Email:* ${profileForm.email}\n` +
+                          `*Phone:* ${profileForm.phone}\n` +
+                          `*Expertise/Role:* ${profileForm.expertise}\n\n` +
+                          `*How I can contribute:*\n${profileForm.message}\n\n` +
+                          `_Please forward this to support@saledeed.com_`
+                        
+                        // Open WhatsApp with the message
+                        window.open(
+                          `https://api.whatsapp.com/send?phone=918800505050&text=${encodeURIComponent(message)}`,
+                          '_blank',
+                          'noopener,noreferrer'
+                        )
+                        
+                        // Show success message
+                        setTimeout(() => {
+                          setIsSubmitting(false)
+                          setSubmitSuccess(true)
+                        }, 500)
+                      } catch (error) {
+                        console.error('Error:', error)
+                        setIsSubmitting(false)
+                        alert('Something went wrong. Please try again.')
+                      }
+                    }}
+                    className="space-y-4"
+                  >
+                    <div>
+                      <label className="block text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={profileForm.name}
+                        onChange={(e) => setProfileForm({ ...profileForm, name: e.target.value })}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={profileForm.email}
+                        onChange={(e) => setProfileForm({ ...profileForm, email: e.target.value })}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={profileForm.phone}
+                        onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="+91 XXXXX XXXXX"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                        Your Expertise/Role *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={profileForm.expertise}
+                        onChange={(e) => setProfileForm({ ...profileForm, expertise: e.target.value })}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="e.g., Legal Expert, Property Consultant, Developer"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                        How can you contribute to SaleDeed.com? *
+                      </label>
+                      <textarea
+                        required
+                        value={profileForm.message}
+                        onChange={(e) => setProfileForm({ ...profileForm, message: e.target.value })}
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                        placeholder="Tell us about your skills, experience, and how you can help us serve our customers better..."
+                      />
+                    </div>
+
+                    <div className="flex gap-3 pt-4">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowProfileModal(false)
+                          setProfileForm({ name: '', email: '', phone: '', expertise: '', message: '' })
+                        }}
+                        className="flex-1 px-6 py-3 rounded-full border-2 border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 font-semibold hover:bg-gray-100 dark:hover:bg-slate-700 transition-all duration-300"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="flex-1 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <i data-lucide="loader" className="w-4 h-4 animate-spin"></i>
+                            Submitting...
+                          </>
+                        ) : (
+                          <>
+                            <i data-lucide="send" className="w-4 h-4"></i>
+                            Submit Profile
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
         
         {/* Scroll to Top Button */}
         <ScrollToTop />

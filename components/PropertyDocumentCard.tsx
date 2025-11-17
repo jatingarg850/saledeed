@@ -167,14 +167,14 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
 
             {/* Title */}
             <h3 className="text-2xl font-bold text-center text-text-light dark:text-text-dark mb-3">
-              Our Services Start From
+              Book From Just
             </h3>
 
             {/* Price */}
             <div className="text-center mb-6">
-              <div className="text-5xl font-black text-primary mb-2">₹4,000</div>
+              <div className="text-5xl font-black text-primary mb-2">4,000 INR</div>
               <p className="text-subtext-light dark:text-subtext-dark text-sm">
-                All-inclusive pricing with no hidden charges
+                Remaining payment will be charged after consultation.
               </p>
             </div>
 
