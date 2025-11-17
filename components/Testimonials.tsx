@@ -63,21 +63,32 @@ export default function Testimonials() {
       }
       
       .scroll-left {
-        animation: scroll-left 20s linear infinite;
+        animation: scroll-left 15s linear infinite;
       }
       
       .scroll-right {
-        animation: scroll-right 20s linear infinite;
+        animation: scroll-right 15s linear infinite;
+      }
+      
+      @media (max-width: 768px) {
+        .scroll-left {
+          animation: scroll-left 10s linear infinite;
+        }
+        
+        .scroll-right {
+          animation: scroll-right 10s linear infinite;
+        }
       }
       
       .slider-container {
         overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: visible;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
         scrollbar-color: rgba(217, 119, 6, 0.3) transparent;
         cursor: grab;
         user-select: none;
+        touch-action: pan-x pan-y;
       }
       
       .slider-container:active {

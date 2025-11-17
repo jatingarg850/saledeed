@@ -286,7 +286,7 @@ export default function Home() {
               display: 'block'
             }}
           >
-            <source src="/ani/herosec.mp4" type="video/mp4" />
+            <source src="/ani/lv_0_20251118004148.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
@@ -313,7 +313,7 @@ export default function Home() {
                       Customised | Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
                     <div className="mt-4 flex justify-center items-center w-full">
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white px-6 py-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg inline-block">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white px-8 py-4 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full inline-block shadow-lg">
                         Buy/Sell/Rent at Minimum Commission
                       </h2>
                     </div>
@@ -674,9 +674,9 @@ export default function Home() {
               <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                   <div className="text-center">
-                      <div className="inline-flex items-center justify-center gap-3 bg-yellow-100 dark:bg-yellow-900/30 px-6 py-3 rounded-lg mb-6 mx-auto">
-                        <i data-lucide="home" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary dark:text-secondary"></i>
-                        <h3 className="text-primary dark:text-secondary text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                      <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#FF9933] via-[#FF8800] to-[#FF9933] px-6 sm:px-8 py-3 sm:py-4 rounded-full mb-6 mx-auto shadow-xl property-section-header">
+                        <i data-lucide="home" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white"></i>
+                        <h3 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
                           Buy / Sell / Rent at minimum commission
                         </h3>
                       </div>

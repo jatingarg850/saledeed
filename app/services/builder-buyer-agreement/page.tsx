@@ -108,9 +108,7 @@ export default function BuilderBuyerAgreementPage() {
                 {/* Main Heading */}
                 <h1 className="text-text-light dark:text-text-dark text-5xl md:text-7xl font-black tracking-tight font-display mb-8 leading-tight">
                   Builder Buyer Agreement
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                    Services
-                  </span>
+                  Services
                 </h1>
 
                 {/* Description */}

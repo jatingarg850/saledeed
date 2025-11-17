@@ -145,14 +145,18 @@
     background-image: none !important;
   }
 
-  /* Don't affect navigation elements, popups, and service card icons */
+  /* Don't affect navigation elements, popups, service card icons, and property section headers */
   nav *,
   header *,
   [role="navigation"] *,
   .fixed.bottom-8 *,
   [class*="fixed"][class*="bottom"] *,
   .w-16.h-16.bg-gradient-to-r,
-  [class*="w-16"][class*="h-16"][class*="bg-gradient"] {
+  [class*="w-16"][class*="h-16"][class*="bg-gradient"],
+  .header-section h2,
+  .header-section .bg-gradient-to-r,
+  .property-section-header,
+  .property-section-header * {
     background-image: revert !important;
   }
 
