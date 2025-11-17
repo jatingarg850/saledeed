@@ -127,14 +127,7 @@ export default function WillAgreementPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Start Your Will
                   </Link>
-                  <a
-                    href="/documents/inheritance & Family Property Documents.pdf"
-                    download="Will Agreement Sample.pdf"
-                    className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300"
-                  >
-                    <i data-lucide="download" className="w-5 h-5"></i>
-                    Download Sample
-                  </a>
+                  
                 </div>
 
                 {/* Trust Indicators */}
@@ -336,30 +329,7 @@ export default function WillAgreementPage() {
               </div>
             </div>
 
-            {/* Tab Navigation */}
-            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">
-              <div className="border-b border-yellow-200 dark:border-slate-700 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-700">
-                <div className="flex px-6 gap-8 overflow-x-auto">
-                  {tabs.map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setActiveTab(tab.id)}
-                      className={`flex flex-col items-center justify-center border-b-[3px] pb-4 pt-6 whitespace-nowrap transition-all duration-300 ${activeTab === tab.id
-                        ? 'border-b-primary text-primary font-bold'
-                        : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-primary hover:border-b-primary/50'
-                        }`}
-                    >
-                      <p className="text-sm font-semibold leading-normal tracking-[0.015em]">{tab.label}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div className="p-8">
-                <p className="text-subtext-light dark:text-subtext-dark text-lg font-normal leading-relaxed">
-                  {tabContent[activeTab as keyof typeof tabContent]}
-                </p>
-              </div>
-            </div>
+          
 
             {/* How it Works Section */}
             <div className="bg-gradient-to-br from-white via-yellow-50/50 to-orange-50/50 dark:from-slate-800 dark:via-slate-800/50 dark:to-slate-700/50 rounded-2xl shadow-xl border border-yellow-200/50 dark:border-slate-700 p-8 overflow-hidden relative">
@@ -466,14 +436,7 @@ export default function WillAgreementPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Get Expert Help Now
                   </Link>
-                  <a
-                    href="/documents/inheritance & Family Property Documents.pdf"
-                    download="Will Agreement Sample.pdf"
-                    className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
-                  >
-                    <i data-lucide="download" className="w-5 h-5"></i>
-                    Download Sample
-                  </a>
+                
                 </div>
 
                 <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">

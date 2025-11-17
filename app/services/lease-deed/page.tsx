@@ -123,10 +123,7 @@ export default function LeaseDeedPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Create Lease Deed
                   </Link>
-                  <button className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-purple-600 border-2 border-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
-                    <i data-lucide="download" className="w-5 h-5"></i>
-                    Download Sample
-                  </button>
+                
                 </div>
 
                 {/* Trust Indicators */}
@@ -297,10 +294,7 @@ export default function LeaseDeedPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Get Expert Help Now
                   </Link>
-                  <button className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
-                    <i data-lucide="download" className="w-5 h-5"></i>
-                    Download Sample
-                  </button>
+                  
                 </div>
 
                 <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">

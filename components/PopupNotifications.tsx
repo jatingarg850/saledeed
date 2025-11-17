@@ -74,7 +74,7 @@ export default function PopupNotifications() {
           transition={{ duration: 0.5, type: 'spring', stiffness: 200 }}
           className="fixed bottom-8 right-8 z-50 max-w-sm"
         >
-          <div className="bg-gradient-to-r from-yellow-700 to-amber-700 text-white rounded-2xl shadow-2xl p-6 backdrop-blur-lg border border-white/20" style={{ background: 'linear-gradient(to right, #a16207, #b45309)' }}>
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl shadow-2xl p-6 backdrop-blur-lg border border-white/20" style={{ background: 'linear-gradient(to right, #2563eb, #1d4ed8)' }}>
             <div className="flex items-start gap-3">
               <div className="flex-1">
                 <p className="font-bold text-lg mb-1">Special Offer!</p>
@@ -92,13 +92,13 @@ export default function PopupNotifications() {
             <div className="mt-4 flex gap-2">
               <a
                 href="/contact"
-                className="flex-1 bg-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-50 transition-colors text-center"
-                style={{ color: '#a16207' }}
+                className="flex-1 bg-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors text-center"
+                style={{ color: '#2563eb' }}
               >
                 Learn More
               </a>
               <a
-                href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+                href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors text-center flex items-center justify-center gap-2"

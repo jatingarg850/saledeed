@@ -313,32 +313,9 @@ export default function Home() {
                       Customised | Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
                     <div className="mt-4 flex justify-center items-center w-full">
-                      <Link
-                        ref={heroButtonRef}
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20please%20offer%20me%20the%20best%20deal%20at%20lowest%20commission"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-animated="true"
-                        className="hero-cta-button hero-cta-animated px-8 py-4 text-lg font-bold rounded-full group"
-                        style={{
-                          background: 'linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68))',
-                          backgroundSize: '200% 200%',
-                          animation: 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite',
-                          WebkitAnimation: 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite',
-                          willChange: 'transform, background-position',
-                          animationPlayState: 'running',
-                          WebkitAnimationPlayState: 'running',
-                          color: '#000000',
-                          textShadow: '0 1px 2px rgba(255, 255, 255, 0.3)',
-                          position: 'relative',
-                          overflow: 'visible',
-                          display: 'block',
-                          textAlign: 'center'
-                        } as React.CSSProperties}
-                      >
-                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none"></span>
-                        <span style={{ position: 'relative', zIndex: 10, color: '#000000', display: 'block', textAlign: 'center' }}>Buy/Sell/Rent at Minimum Commission</span>
-                      </Link>
+                      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white px-4">
+                        Buy/Sell/Rent at Minimum Commission
+                      </h2>
                     </div>
                   </div>
                   <div className="header-btn">
@@ -401,7 +378,7 @@ export default function Home() {
                     <span className="marquee-text">No Objection Certificate(NOC)</span>
                     <span className="marquee-text">Valuation Report</span>
                     <span className="marquee-text">Mutation</span>
-                    <span className="marquee-text">Real Estate Liasioning</span>
+                    <span className="marquee-text">Real Estate Liaisioning</span>
                     <span className="marquee-text">Mcd/Dda/L&amp;do/Ndmc</span>
                     <span className="marquee-text">Freehold</span>
                     <span className="marquee-text">Completion Certificate (C.C)</span>
@@ -563,7 +540,7 @@ export default function Home() {
                         Expert assistance for all building authorities, permissions, and government clearances.
                       </p>
                       <a
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20need%20liaisoning%20assistance%20for%20my%20property"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20need%20liaisoning%20assistance%20for%20my%20property"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-purple-500 text-purple-600 dark:text-purple-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-purple-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
@@ -591,7 +568,7 @@ export default function Home() {
                       <a
                         target="_blank"
                         className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20get%20my%20deed%20registered%22"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20get%20my%20deed%20registered"
                         rel="noopener noreferrer"
                       >
                         Customized Deeds Drafting And Registration
@@ -606,7 +583,7 @@ export default function Home() {
                       <a
                         target="_blank"
                         className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20I%20want%20to%20know%20how%20can%20i%20save%20tax%22"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20how%20can%20I%20save%20tax"
                         rel="noopener noreferrer"
                       >
                         Save Maximum Tax
@@ -621,7 +598,7 @@ export default function Home() {
                       <a
                         target="_blank"
                         className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20authority%20assistance%22"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20authority%20assistance"
                         rel="noopener noreferrer"
                       >
                         Building Authority Assistance
@@ -636,7 +613,7 @@ export default function Home() {
                       <a
                         target="_blank"
                         className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=%20%22Hello%20i%20want%20to%20know%20more%20about%20loan%22"
+                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20loan"
                         rel="noopener noreferrer"
                       >
                         Get Loan At Minimum Interest
@@ -660,7 +637,7 @@ export default function Home() {
                     <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">Still Have A Doubt?</h3>
                     <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 font-medium">Get Free Consultation For A Best In City Experience.</p>
                     <Link
-                      href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20Have%20A%20Query%3B%20Please%20Connect%20Me%20To%20An%20Expert!"
+                      href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20have%20a%20query%3B%20please%20connect%20me%20to%20an%20expert!"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
@@ -696,31 +673,32 @@ export default function Home() {
               {/* Submit Your Property Section */}
               <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
-                  <div>
-                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg animate-bounce-gentle">
-                        <i data-lucide="home" className="w-4 h-4"></i>
+                  <div className="text-center">
+                      <h3 className="flex items-center justify-center gap-3 text-primary dark:text-secondary text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+                        <i data-lucide="home" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"></i>
                         Buy / Sell / Rent at minimum commission
-                      </div>
+                      </h3>
                       
                       <h2 className="text-text-light dark:text-text-dark text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight font-display mb-6 leading-tight break-words">
                         Submit Your Property Details/Requirements
                       </h2>
                       
-                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-4">
+                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-4 max-w-4xl mx-auto">
                         Submit your property address in case you want to sell or just tell a bit about your preferences if you want to buy or rent your property through us.
                       </p>
                       
-                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-4">
+                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-8 max-w-4xl mx-auto">
                         We will get back to you at the earliest.
                       </p>
+                      </div>
                       
-                      <div className="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-600 p-4 rounded-lg mb-8">
+                      <div className="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-600 p-4 rounded-lg mb-8 max-w-4xl mx-auto">
                         <p className="text-gray-800 dark:text-gray-200 font-semibold">
                           <span className="font-bold">Note:</span> We guarantee to charge minimum commission in exchange of a best in class seamless property deal.
                         </p>
                       </div>
 
-                      <div className="space-y-4 mb-8">
+                      <div className="space-y-4 mb-8 max-w-4xl mx-auto text-left">
                         <div className="flex items-start gap-4">
                           <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
                             <i data-lucide="percent" className="w-6 h-6 text-white"></i>
@@ -752,7 +730,7 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <div className="flex flex-col sm:flex-row gap-4">
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-4xl mx-auto">
                         <a
                           href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20submit%20my%20property%20details%20for%20buying%2Fselling%2Frenting"
                           target="_blank"
@@ -760,7 +738,7 @@ export default function Home() {
                           className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                         >
                           <i data-lucide="send" className="w-5 h-5"></i>
-                          <span>Submit Property Details</span>
+                          <span>Submit Your Property Details</span>
                           <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
                         </a>
 
@@ -772,7 +750,6 @@ export default function Home() {
                           <span>Contact Us</span>
                         </Link>
                       </div>
-                  </div>
                 </div>
               </div>
 
@@ -865,7 +842,7 @@ export default function Home() {
             {/* Partner CTA Button */}
             <div className="text-center mt-12">
               <Link
-                href="/partner"
+                href="/partner#contact-form"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <i data-lucide="handshake" className="w-5 h-5"></i>
@@ -1010,26 +987,7 @@ export default function Home() {
               <Testimonials />
 
               {/* Share Your Profile Section */}
-              <div className="my-20 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 p-8 md:p-12 rounded-2xl shadow-2xl border-2 border-primary/20">
-                <div className="max-w-4xl mx-auto text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="user-plus" className="w-8 h-8 text-white"></i>
-                  </div>
-                  <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
-                    Join Our Team
-                  </h2>
-                  <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-                    Share your profile with us and tell us how you can contribute to saledeed.com
-                  </p>
-                  <button
-                    onClick={() => setShowProfileModal(true)}
-                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <i data-lucide="send" className="w-5 h-5"></i>
-                    Share Your Profile
-                  </button>
-                </div>
-              </div>
+             
 
               {/* Government Authorities Section */}
               <div className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl mb-16" style={{ background: 'linear-gradient(to bottom right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
@@ -1086,8 +1044,16 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Useful Information Header */}
+              <div className="py-12 text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-text-light dark:text-text-dark tracking-tight font-display mb-4">
+                  Useful Information
+                </h2>
+                <div className="h-1.5 w-32 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+              </div>
+
               {/* Freehold vs Leasehold Guide */}
-              <div className="py-16">
+              <div className="py-8">
                 <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-700 overflow-hidden mb-16">
                   <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
                     <div className="flex items-center gap-4 mb-4">
@@ -1448,8 +1414,8 @@ export default function Home() {
 
                 {/* Subheading */}
                 <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up animate-delay-200">
-                  Our expert legal team is here to help you with all your property need documentation. Get in touch today!
-                </p>
+                  Our team of experts is here to answer all your queries and provide customised solutions for your specific property need.Get In Touch Right Now!
+  </p>
 
                 {/* Features */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 animate-fade-in-up animate-delay-300">
@@ -1490,6 +1456,52 @@ export default function Home() {
                   </a>
                 </div>
 
+                {/* Services Overview */}
+                <div className="mt-12 max-w-3xl mx-auto bg-white dark:bg-slate-800/50 rounded-2xl p-8 shadow-xl border border-yellow-200/50 dark:border-slate-700">
+                  <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-6 text-center">
+                    Services Overview
+                  </h2>
+                  <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Celebrating 1 Lac Successful Deals
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Team of Experts with 50+ Years Experience
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Best in Class Lawyers / Valuers / Engineers
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Doorstep Consultation @ ₹999/-
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Trust Badge */}
                 <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
                   <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
@@ -1505,7 +1517,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                   {/* Column 1 - Some Tips & Tricks */}
                   <div>
-                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Useful Information</h3>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Tips and Tricks</h3>
                     <ul className="space-y-3 text-base">
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/property-tips">Property Tips</Link></li>
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/legal-advice">Legal Advice</Link></li>

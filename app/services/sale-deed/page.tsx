@@ -127,14 +127,7 @@ export default function SaleDeedPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Complete Your Sale Deed
                   </Link>
-                  <a
-                    href="/documents/DEED Documents.pdf"
-                    download="Sale Deed Sample.pdf"
-                    className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-amber-700 border-2 border-amber-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-600 hover:text-white transition-all duration-300"
-                  >
-                    <i data-lucide="download" className="w-5 h-5"></i>
-                    Download Sample
-                  </a>
+                  
                 </div>
 
                 {/* Trust Indicators */}
@@ -330,30 +323,7 @@ export default function SaleDeedPage() {
               </div>
             </div>
 
-            {/* Tab Navigation */}
-            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 overflow-hidden">
-              <div className="border-b border-blue-200 dark:border-slate-700 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700">
-                <div className="flex px-6 gap-8 overflow-x-auto">
-                  {tabs.map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setActiveTab(tab.id)}
-                      className={`flex flex-col items-center justify-center border-b-[3px] pb-4 pt-6 whitespace-nowrap transition-all duration-300 ${activeTab === tab.id
-                        ? 'border-b-blue-600 text-blue-600 font-bold'
-                        : 'border-b-transparent text-subtext-light dark:text-subtext-dark hover:text-blue-600 hover:border-b-blue-600/50'
-                        }`}
-                    >
-                      <p className="text-sm font-semibold leading-normal tracking-[0.015em]">{tab.label}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div className="p-8">
-                <p className="text-subtext-light dark:text-subtext-dark text-lg font-normal leading-relaxed">
-                  {tabContent[activeTab as keyof typeof tabContent]}
-                </p>
-              </div>
-            </div>
+            
 
             {/* Documents Required Section */}
             <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl border border-blue-200/50 dark:border-slate-700 overflow-hidden">
@@ -417,14 +387,7 @@ export default function SaleDeedPage() {
                     <i data-lucide="arrow-right" className="w-5 h-5"></i>
                     Get Expert Help Now
                   </Link>
-                  <a
-                    href="/documents/DEED Documents.pdf"
-                    download="Sale Deed Sample.pdf"
-                    className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
-                  >
-                    <i data-lucide="download" className="w-5 h-5"></i>
-                    Download Sample
-                  </a>
+                  
                 </div>
 
                 <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">

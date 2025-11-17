@@ -22,15 +22,28 @@ export default function PartnerPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission - could integrate with WhatsApp API or email service
-    const whatsappMessage = `New Partnership Inquiry:
+    
+    // Create WhatsApp message with all form data
+    const whatsappMessage = `Hello saledeed.com, New Partnership Inquiry:
+
 Name: ${formData.fullName}
 Email: ${formData.email}
 Phone: ${formData.phone}
-Message: ${formData.message}`;
+
+Message:
+${formData.message}`;
     
+    // Open WhatsApp with the message
     const whatsappUrl = `https://api.whatsapp.com/send?phone=918800505050&text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
+    
+    // Reset form after submission
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
   };
 
   return (
@@ -111,7 +124,7 @@ Message: ${formData.message}`;
             </div>
 
             {/* Contact Form Section */}
-            <div className="max-w-2xl mx-auto">
+            <div id="contact-form" className="max-w-2xl mx-auto">
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-8 md:p-12 shadow-lg border border-yellow-200/50">
                 <div className="text-center mb-8">
                   <h2 className="text-black dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
@@ -208,6 +221,26 @@ Message: ${formData.message}`;
                 </form>
               </div>
             </div>
+             <div className="my-20 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 p-8 md:p-12 rounded-2xl shadow-2xl border-2 border-primary/20">
+                <div className="max-w-4xl mx-auto text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="user-plus" className="w-8 h-8 text-white"></i>
+                  </div>
+                  <h2 className="text-text-light dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display mb-4">
+                    Join Our Team
+                  </h2>
+                  <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                    Share your profile with us and tell us how you can contribute to saledeed.com
+                  </p>
+                  <button
+                    onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <i data-lucide="send" className="w-5 h-5"></i>
+                    Share Your Profile
+                  </button>
+                </div>
+              </div>
 
             {/* Why Partner With Us */}
             <div className="mt-16 bg-gradient-to-r from-primary to-yellow-800 dark:from-primary/80 dark:to-yellow-900 p-8 md:p-12 rounded-xl shadow-2xl text-center">

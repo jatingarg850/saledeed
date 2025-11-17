@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Navigation from '../../components/Navigation'
+import { Phone, Mail, MessageCircle, MapPin, Send, User, HelpCircle, ChevronDown, Loader } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -49,67 +50,66 @@ export default function ContactPage() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      // Create WhatsApp message with form data
-      const message = 
-        `*Contact Form Submission - SaleDeed.com*\n\n` +
-        `*Name:* ${formData.name}\n` +
-        `*Email:* ${formData.email}\n` +
-        `*Phone:* ${formData.phone || 'Not provided'}\n\n` +
-        `*Message:*\n${formData.message}`
-      
-      // Open WhatsApp with the message
-      window.open(
-        `https://api.whatsapp.com/send?phone=918800505050&text=${encodeURIComponent(message)}`,
-        '_blank',
-        'noopener,noreferrer'
-      )
-      
-      // Show success message
-      setTimeout(() => {
+      // Send email via API
+      const emailResponse = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const emailResult = await emailResponse.json()
+
+      if (emailResult.success) {
+        // Show success message
         setIsSubmitting(false)
         setSubmitSuccess(true)
+        
         // Reset form after 3 seconds
         setTimeout(() => {
           setSubmitSuccess(false)
           setFormData({ name: '', email: '', phone: '', message: '' })
         }, 3000)
-      }, 500)
+      } else {
+        throw new Error(emailResult.message || 'Failed to send email')
+      }
     } catch (error) {
       console.error('Error:', error)
       setIsSubmitting(false)
-      alert('Something went wrong. Please try again.')
+      alert('Something went wrong. Please try again or contact us directly.')
     }
   }
 
   const contactMethods = [
     {
-      icon: 'phone',
+      icon: Phone,
       title: 'Call Us',
       description: 'Speak directly with our experts',
       contact: '+91 88005 05050',
       availability: 'Mon-Sat, 9 AM - 7 PM'
     },
     {
-      icon: 'mail',
+      icon: Mail,
       title: 'Email Us',
       description: 'Send us your queries anytime',
       contact: 'support@saledeed.com',
       availability: '24/7 Response'
     },
     {
-      icon: 'message-circle',
+      icon: MessageCircle,
       title: 'WhatsApp',
       description: 'Quick chat support',
       contact: '+91 88005 05050',
       availability: 'Instant Response'
     },
     {
-      icon: 'map-pin',
+      icon: MapPin,
       title: 'Visit Us',
       description: 'Meet us at our office',
       contact: 'Delhi, Delhi',
@@ -136,24 +136,27 @@ export default function ContactPage() {
 
           {/* Contact Methods */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {contactMethods.map((method, index) => (
-              <div key={index} className="bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md border border-yellow-200/50 dark:border-slate-700 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-xl" data-lucide={method.icon}></i>
+            {contactMethods.map((method, index) => {
+              const IconComponent = method.icon
+              return (
+                <div key={index} className="bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-md border border-yellow-200/50 dark:border-slate-700 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="text-white w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-text-light dark:text-text-dark mb-2 font-display">{method.title}</h3>
+                  <p className="text-sm text-subtext-light dark:text-subtext-dark mb-2">{method.description}</p>
+                  <p className="text-primary font-semibold text-sm">{method.contact}</p>
+                  <p className="text-xs text-subtext-light dark:text-subtext-dark mt-1">{method.availability}</p>
                 </div>
-                <h3 className="text-lg font-bold text-text-light dark:text-text-dark mb-2 font-display">{method.title}</h3>
-                <p className="text-sm text-subtext-light dark:text-subtext-dark mb-2">{method.description}</p>
-                <p className="text-primary font-semibold text-sm">{method.contact}</p>
-                <p className="text-xs text-subtext-light dark:text-subtext-dark mt-1">{method.availability}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-8">
               <div className="flex items-center gap-3 mb-6">
-                <i className="text-primary text-2xl" data-lucide="send"></i>
+                <Send className="text-primary w-6 h-6" />
                 <h2 className="text-2xl font-bold text-text-light dark:text-text-dark font-display">Send us a message</h2>
               </div>
 
@@ -163,9 +166,11 @@ export default function ContactPage() {
 
               {submitSuccess && (
                 <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center gap-3">
-                  <i data-lucide="check-circle" className="w-5 h-5 text-green-600"></i>
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <p className="text-green-700 dark:text-green-400 text-sm font-medium">
-                    Message sent successfully via WhatsApp! We'll get back to you soon.
+                    Message sent successfully! We'll get back to you soon.
                   </p>
                 </div>
               )}
@@ -176,7 +181,7 @@ export default function ContactPage() {
                     Your Name *
                   </label>
                   <div className="relative">
-                    <i className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" data-lucide="user"></i>
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input
                       type="text"
                       name="name"
@@ -194,7 +199,7 @@ export default function ContactPage() {
                     Email *
                   </label>
                   <div className="relative">
-                    <i className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" data-lucide="mail"></i>
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input
                       type="email"
                       name="email"
@@ -212,7 +217,7 @@ export default function ContactPage() {
                     Phone Number
                   </label>
                   <div className="relative">
-                    <i className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" data-lucide="phone"></i>
+                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input
                       type="tel"
                       name="phone"
@@ -246,13 +251,13 @@ export default function ContactPage() {
                 >
                   {isSubmitting ? (
                     <>
-                      <i className="mr-2 animate-spin" data-lucide="loader"></i>
+                      <Loader className="mr-2 animate-spin w-5 h-5" />
                       <span>Sending...</span>
                     </>
                   ) : (
                     <>
-                      <span>Send via WhatsApp</span>
-                      <i className="ml-2" data-lucide="message-circle"></i>
+                      <span>Send Message</span>
+                      <Send className="ml-2 w-5 h-5" />
                     </>
                   )}
                 </button>
@@ -262,28 +267,33 @@ export default function ContactPage() {
             {/* FAQ Section */}
             <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-8">
               <div className="flex items-center gap-3 mb-6">
-                <i className="text-primary text-2xl" data-lucide="help-circle"></i>
+                <HelpCircle className="text-primary w-6 h-6" />
                 <h2 className="text-2xl font-bold text-text-light dark:text-text-dark font-display">Frequently Asked Questions</h2>
               </div>
 
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <details
+                  <div
                     key={index}
-                    className="group cursor-pointer"
-                    open={openFaq === index}
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="cursor-pointer"
                   >
-                    <summary className="flex items-center justify-between p-4 rounded-lg bg-background-light/50 dark:bg-slate-700/50 hover:bg-secondary/10 dark:hover:bg-slate-700 transition-colors list-none">
+                    <div 
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="flex items-center justify-between p-4 rounded-lg bg-background-light/50 dark:bg-slate-700/50 hover:bg-secondary/10 dark:hover:bg-slate-700 transition-colors"
+                    >
                       <h4 className="font-medium text-text-light dark:text-text-dark pr-4">{faq.question}</h4>
-                      <i className="transition-transform duration-300 group-open:rotate-180 text-primary flex-shrink-0" data-lucide="chevron-down"></i>
-                    </summary>
-                    <div className="mt-2 px-4 pb-4">
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      <ChevronDown 
+                        className={`transition-transform duration-300 text-primary flex-shrink-0 w-5 h-5 ${openFaq === index ? 'rotate-180' : ''}`}
+                      />
                     </div>
-                  </details>
+                    {openFaq === index && (
+                      <div className="mt-2 px-4 pb-4">
+                        <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
@@ -370,7 +380,7 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             className="w-14 h-14 bg-gradient-to-r from-primary to-secondary hover:from-amber-700 hover:to-amber-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
-            <i className="text-white text-2xl" data-lucide="message-circle"></i>
+            <MessageCircle className="text-white w-6 h-6" />
           </a>
         </div>
       </div>

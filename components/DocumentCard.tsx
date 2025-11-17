@@ -26,13 +26,13 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
 
     return (
         <div
-            className="group bg-white dark:bg-slate-800/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700 overflow-hidden"
+            className="group bg-white dark:bg-slate-800/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-slate-700 overflow-hidden flex flex-col h-full"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Document Preview */}
             <div 
-                className="relative h-48 cursor-pointer overflow-hidden rounded-t-2xl group"
+                className="relative h-48 cursor-pointer overflow-hidden flex-shrink-0"
                 onClick={() => document.fileName.endsWith('.pdf') ? onPreview(document.fileName) : onDownload(document.fileName, document.title)}
             >
                 {/* Thumbnail Image */}
@@ -79,36 +79,34 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
             </div>
 
             {/* Document Info */}
-            <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-bold text-lg text-text-light dark:text-text-dark group-hover:text-primary transition-colors line-clamp-2 leading-tight">
-                        {document.title}
-                    </h3>
-                </div>
+            <div className="p-6 flex flex-col flex-grow">
+                <h3 className="font-bold text-lg text-text-light dark:text-text-dark group-hover:text-primary transition-colors mb-3 min-h-[3.5rem] leading-tight">
+                    {document.title}
+                </h3>
 
-                <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 line-clamp-3 leading-relaxed">
+                <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 line-clamp-3 leading-relaxed min-h-[4.5rem]">
                     {document.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-4">
+                <div className="flex flex-wrap gap-1 mb-4 min-h-[2rem]">
                     {document.tags.slice(0, 3).map((tag, index) => (
                         <span
                             key={index}
-                            className="bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded text-xs"
+                            className="bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded text-xs h-fit"
                         >
                             #{tag}
                         </span>
                     ))}
                     {document.tags.length > 3 && (
-                        <span className="text-gray-400 text-xs px-2 py-1">
+                        <span className="text-gray-400 text-xs px-2 py-1 h-fit">
                             +{document.tags.length - 3} more
                         </span>
                     )}
                 </div>
 
                 {/* File Info */}
-                <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-4">
+                <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-4 mt-auto">
                     <div className="flex items-center gap-3">
                         <span className="flex items-center gap-1">
                             <i data-lucide="hard-drive" className="w-3 h-3"></i>
@@ -119,7 +117,7 @@ export default function DocumentCard({ document, onPreview, onDownload }: Docume
                             {document.downloadCount.toLocaleString()}
                         </span>
                     </div>
-                    <span>Updated {document.lastUpdated}</span>
+                    <span className="whitespace-nowrap">Updated {document.lastUpdated}</span>
                 </div>
 
                 {/* Action Buttons */}

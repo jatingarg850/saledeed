@@ -221,11 +221,11 @@ export default function Testimonials() {
           </div>
           
           <h2 className="text-text-light dark:text-text-dark text-4xl md:text-6xl font-black tracking-tight font-display mb-6 leading-tight">
-            What Our <span className="text-primary">Customers Say</span>
+            What Our <span className="text-primary">Clients Say</span>
           </h2>
           
           <p className="text-subtext-light dark:text-subtext-dark text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-12">
-            Real experiences from our satisfied customers who trusted us with their property documentation needs.
+            Real experiences from our satisfied customers who trusted us with their property  needs.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
@@ -262,8 +262,8 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Scrolling Testimonials */}
-      <div className="testimonials-wrapper">
+      {/* Scrolling Testimonials - Desktop */}
+      <div className="testimonials-wrapper hidden md:block">
         {/* Upper Track - Scrolling Left */}
         <div className="slider-container mb-8">
           <div ref={upperTrackRef} className="slide-track scroll-left flex">
@@ -290,6 +290,15 @@ export default function Testimonials() {
               <TestimonialCard key={`lower-dup-${index}`} name={testimonial.name} text={testimonial.text} />
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Vertical Grid - Mobile */}
+      <div className="md:hidden px-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={`mobile-${index}`} name={testimonial.name} text={testimonial.text} />
+          ))}
         </div>
       </div>
 
@@ -326,7 +335,8 @@ export default function Testimonials() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
           <div className="text-center mb-16">
             <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-display mb-6">
-              Reach Us For Anything
+              Reach Us For Anything Related To Property
+
             </h2>
             <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
               Our expert team consists of professionals with in-depth experience of real estate liaisoning in all building authorities. Reach us today for a customized guidance for your specific property.

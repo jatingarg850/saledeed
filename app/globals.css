@@ -2340,7 +2340,7 @@ video.logo-video {
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-33.33%);
   }
 }
 
@@ -3743,19 +3743,19 @@ bile Performance Enhancements */
 
 @keyframes hero-glow-pulse {
   0%, 100% {
-    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4), 0 0 0 0 rgba(245, 158, 11, 0.7);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.6);
   }
   50% {
-    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6), 0 0 0 8px rgba(245, 158, 11, 0);
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.7);
   }
 }
 
 @-webkit-keyframes hero-glow-pulse {
   0%, 100% {
-    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4), 0 0 0 0 rgba(245, 158, 11, 0.7);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.6);
   }
   50% {
-    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6), 0 0 0 8px rgba(245, 158, 11, 0);
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.7);
   }
 }
 
@@ -3865,21 +3865,10 @@ a.hero-cta-animated span:not(.absolute) {
     background: transparent !important;
   }
   
-  /* Add a pulsing ring effect on mobile */
+  /* Add a pulsing ring effect on mobile - removed to eliminate glow mismatch */
   a.hero-cta-button::before,
   a.hero-cta-animated::before {
-    content: '' !important;
-    position: absolute !important;
-    top: -4px !important;
-    left: -4px !important;
-    right: -4px !important;
-    bottom: -4px !important;
-    border-radius: 9999px !important;
-    background: linear-gradient(to right, rgb(245, 158, 11), rgb(249, 115, 22), rgb(239, 68, 68)) !important;
-    opacity: 0.3 !important;
-    z-index: -1 !important;
-    animation: hero-ring-pulse 2s ease-in-out infinite !important;
-    -webkit-animation: hero-ring-pulse 2s ease-in-out infinite !important;
+    display: none !important;
   }
   
   /* Override any Tailwind or other styles on mobile */
@@ -4952,5 +4941,39 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   }
   50% {
     box-shadow: 0 4px 25px rgba(217, 119, 6, 0.7), 0 0 15px rgba(217, 119, 6, 0.4);
+  }
+}
+
+/* Fix Buy/Sell/Rent button glow to match gradient */
+.hero-cta-button,
+.hero-cta-animated {
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4) !important;
+  filter: none !important;
+}
+
+.hero-cta-button:hover,
+.hero-cta-animated:hover {
+  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.5) !important;
+}
+
+/* Make Buy/Sell/Rent badge text larger on all screens */
+.inline-flex.items-center.gap-2[class*="bg-gradient-to-r"]:has(i[data-lucide="home"]) {
+  font-size: 1.125rem !important;
+  padding: 0.875rem 1.5rem !important;
+}
+
+/* Mobile specific */
+@media (max-width: 640px) {
+  .inline-flex.items-center.gap-2[class*="bg-gradient-to-r"]:has(i[data-lucide="home"]) {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+}
+
+/* Desktop specific */
+@media (min-width: 641px) {
+  .inline-flex.items-center.gap-2[class*="bg-gradient-to-r"]:has(i[data-lucide="home"]) {
+    font-size: 1.25rem !important;
+    padding: 1rem 1.75rem !important;
   }
 }
