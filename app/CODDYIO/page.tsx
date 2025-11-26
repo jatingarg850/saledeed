@@ -57,7 +57,7 @@ export default function CoddyIOPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-red-100 dark:from-pink-900 dark:to-red-900 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-pink-100 dark:bg-pink-900 flex items-center justify-center p-6">
       <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8 max-w-md w-full">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
@@ -86,7 +86,7 @@ export default function CoddyIOPage() {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-pink-500 to-red-500 text-white py-3 px-6 rounded-lg font-semibold hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-pink-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-pink-600 transition-all duration-300 transform hover:scale-105"
           >
             Unlock Magic ✨
           </button>

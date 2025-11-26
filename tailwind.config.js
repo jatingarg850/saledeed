@@ -12,12 +12,12 @@ module.exports = {
         "primary": "var(--primary-color)",
         "secondary": "var(--secondary-color)",
         "accent": "var(--accent-color)",
-        "background-light": "#FEFCE8",
-        "background-dark": "#1C1917",
-        "text-light": "#5D4037",
-        "text-dark": "#FDE68A",
-        "subtext-light": "#78350F",
-        "subtext-dark": "#FCD34D"
+        "background-light": "#FFFFFF",
+        "background-dark": "#000000",
+        "text-light": "#000000",
+        "text-dark": "#FFFFFF",
+        "subtext-light": "#475569",
+        "subtext-dark": "#E5E7EB"
       },
       fontFamily: {
         "display": ["var(--font-poppins)", "sans-serif"],

@@ -200,7 +200,7 @@ export default function Testimonials() {
     <div className="testimonial-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-80 mx-2 sm:mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-100 dark:border-slate-700">
       <div className="flex flex-col sm:flex-row items-start justify-between mb-4 gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-base sm:text-lg">{name.charAt(0)}</span>
           </div>
           <h4 className="font-bold text-text-light dark:text-text-dark text-sm sm:text-base">{name}</h4>
@@ -226,7 +226,7 @@ export default function Testimonials() {
     <div className="py-20 bg-gray-50 dark:bg-slate-900 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20 mb-16">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
+          <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg">
             <i data-lucide="heart" className="w-4 h-4"></i>
             Customer Stories
           </div>
@@ -306,7 +306,7 @@ export default function Testimonials() {
 
       {/* CTA Section */}
       <div className="max-w-4xl mx-auto px-6 md:px-10 lg:px-20 mt-16 text-center">
-        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
+        <div className="bg-blue-600 rounded-2xl p-8 text-white">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">Let's Connect for a Seamless property Experience</h3>
           <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
             Experience the same level of professional service and legal expertise that our customers rave about.
@@ -348,7 +348,7 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   <i className="text-white text-2xl" data-lucide="building-2"></i>
                 </div>
                 <div className="flex-1">
@@ -363,7 +363,7 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   <i className="text-white text-2xl" data-lucide="landmark"></i>
                 </div>
                 <div className="flex-1">
@@ -378,7 +378,7 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   <i className="text-white text-2xl" data-lucide="map"></i>
                 </div>
                 <div className="flex-1">
@@ -393,7 +393,7 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   <i className="text-white text-2xl" data-lucide="file-check"></i>
                 </div>
                 <div className="flex-1">
@@ -408,7 +408,7 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   <i className="text-white text-2xl" data-lucide="receipt"></i>
                 </div>
                 <div className="flex-1">
@@ -423,7 +423,7 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   <i className="text-white text-2xl" data-lucide="shield-check"></i>
                 </div>
                 <div className="flex-1">

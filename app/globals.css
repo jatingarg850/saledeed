@@ -4,9 +4,9 @@
 @import './services-mobile.css';
 
 :root {
-  --primary-color: #A16207;
-  --secondary-color: #D69E2E;
-  --accent-color: #B45309;
+  --primary-color: #1E4ED8;
+  --secondary-color: #3B82F6;
+  --accent-color: #2563EB;
 }
 
 * {
@@ -20,14 +20,14 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: #FEFCE8; /* background-light */
+  background-color: #FFFFFF; /* background-light */
   color: #5D4037; /* text-light */
 }
 
 .dark html,
 .dark body {
   background-color: #1C1917; /* background-dark */
-  color: #FDE68A; /* text-dark */
+  color: #F3F4F6; /* text-dark */
 }
 
 a {
@@ -101,7 +101,7 @@ a {
 }
 
 .group-hover\:bg-gradient-to-br:hover {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  background-color: #1E4ED8;
 }
 
 /*
@@ -154,10 +154,7 @@ a {
 
 /* Grid Pattern Background */
 .bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 /* Hover effects for carousel items */
@@ -175,11 +172,11 @@ a {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(161, 98, 7, 0.5);
+    box-shadow: 0 0 20px rgba(30, 78, 216, 0.5);
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(161, 98, 7, 0.8);
+    box-shadow: 0 0 40px rgba(30, 78, 216, 0.8);
   }
 }
 
@@ -259,12 +256,12 @@ a {
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 0 30px rgba(161, 98, 7, 0.4);
+    box-shadow: 0 0 30px rgba(30, 78, 216, 0.4);
   }
 
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 60px rgba(161, 98, 7, 0.8);
+    box-shadow: 0 0 60px rgba(30, 78, 216, 0.8);
   }
 }
 
@@ -430,11 +427,11 @@ a {
 
 /* Enhanced Shadows and Glows */
 .shadow-glow {
-  box-shadow: 0 0 20px rgba(161, 98, 7, 0.3);
+  box-shadow: 0 0 20px rgba(30, 78, 216, 0.3);
 }
 
 .shadow-glow-hover:hover {
-  box-shadow: 0 0 40px rgba(161, 98, 7, 0.6);
+  box-shadow: 0 0 40px rgba(30, 78, 216, 0.6);
 }
 
 /* Backdrop Blur Enhancement */
@@ -444,17 +441,12 @@ a {
 
 /* Custom Border Gradients */
 .border-gradient {
-  border: 2px solid;
-  border-image: linear-gradient(45deg, #A16207, #D69E2E) 1;
+  border: 2px solid #1E4ED8;
 }
 
 /* Holographic Shimmer Effect */
 .holographic-shimmer {
-  background: linear-gradient(45deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.5) 50%,
-      transparent 70%);
-  animation: shimmer 2s infinite;
+  background: transparent;
 }
 
 @keyframes shimmer {
@@ -562,12 +554,12 @@ a {
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 4px 15px rgba(161, 98, 7, 0.3);
+    box-shadow: 0 4px 15px rgba(30, 78, 216, 0.3);
   }
 
   50% {
     transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(161, 98, 7, 0.4);
+    box-shadow: 0 6px 20px rgba(30, 78, 216, 0.4);
   }
 }
 
@@ -619,11 +611,11 @@ a {
 
   0%,
   100% {
-    filter: drop-shadow(0 0 5px rgba(161, 98, 7, 0.3));
+    filter: drop-shadow(0 0 5px rgba(30, 78, 216, 0.3));
   }
 
   50% {
-    filter: drop-shadow(0 0 15px rgba(161, 98, 7, 0.6));
+    filter: drop-shadow(0 0 15px rgba(30, 78, 216, 0.6));
   }
 }
 
@@ -750,14 +742,7 @@ a {
 }
 
 .animate-text-shimmer {
-  background: linear-gradient(90deg,
-      #A16207 25%,
-      #D69E2E 50%,
-      #A16207 75%);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: text-shimmer 3s ease-in-out infinite;
+  color: #1E4ED8;
 }
 
 @keyframes stagger-children {
@@ -942,12 +927,12 @@ a {
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 4px 15px rgba(161, 98, 7, 0.2);
+    box-shadow: 0 4px 15px rgba(30, 78, 216, 0.2);
   }
 
   50% {
     transform: scale(1.02);
-    box-shadow: 0 6px 25px rgba(161, 98, 7, 0.4);
+    box-shadow: 0 6px 25px rgba(30, 78, 216, 0.4);
   }
 }
 
@@ -1121,11 +1106,11 @@ a {
 
   0%,
   100% {
-    filter: drop-shadow(0 0 8px rgba(161, 98, 7, 0.3));
+    filter: drop-shadow(0 0 8px rgba(30, 78, 216, 0.3));
   }
 
   50% {
-    filter: drop-shadow(0 0 20px rgba(161, 98, 7, 0.6));
+    filter: drop-shadow(0 0 20px rgba(30, 78, 216, 0.6));
   }
 }
 
@@ -1419,10 +1404,7 @@ ed Loader Animations */
 
 /* Grid pattern background for loader */
 .bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(161, 98, 7, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(161, 98, 7, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-color: rgba(30, 78, 216, 0.02);
 }
 
 /* Smooth transitions for loader visibility */
@@ -1532,11 +1514,11 @@ anced SaleDeed Loader Animations */
 
   0%,
   100% {
-    text-shadow: 0 0 10px rgba(161, 98, 7, 0.3);
+    text-shadow: 0 0 10px rgba(30, 78, 216, 0.3);
   }
 
   50% {
-    text-shadow: 0 0 20px rgba(161, 98, 7, 0.6), 0 0 30px rgba(161, 98, 7, 0.4);
+    text-shadow: 0 0 20px rgba(30, 78, 216, 0.6), 0 0 30px rgba(30, 78, 216, 0.4);
   }
 }
 
@@ -1918,11 +1900,11 @@ anced SaleDeed Loader Animations */
 
   0%,
   100% {
-    filter: drop-shadow(0 0 10px rgba(161, 98, 7, 0.4)) brightness(1);
+    filter: drop-shadow(0 0 10px rgba(30, 78, 216, 0.4)) brightness(1);
   }
 
   50% {
-    filter: drop-shadow(0 0 25px rgba(161, 98, 7, 0.8)) brightness(1.1);
+    filter: drop-shadow(0 0 25px rgba(30, 78, 216, 0.8)) brightness(1.1);
   }
 }
 
@@ -2014,7 +1996,7 @@ anced SaleDeed Loader Animations */
   }
 
   50% {
-    box-shadow: 0 0 0 2px rgba(161, 98, 7, 0.6);
+    box-shadow: 0 0 0 2px rgba(30, 78, 216, 0.6);
   }
 }
 
@@ -2189,7 +2171,7 @@ video.logo-video {
 .header-section {
   padding: 3rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 50%, #FCD34D 100%);
+  background: transparent;
   border-radius: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -2197,7 +2179,7 @@ video.logo-video {
 .tagline {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #78350F;
+  color: #FFFFFF;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
 }
@@ -2205,7 +2187,7 @@ video.logo-video {
 .process-steps {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #92400E;
+  color: #FFFFFF;
   margin-bottom: 1rem;
   line-height: 1.6;
 }
@@ -2216,7 +2198,7 @@ video.logo-video {
 
 .deed-para {
   font-size: 1.1rem;
-  color: #78350F;
+  color: #FFFFFF;
   margin: 1rem 0;
   font-weight: 500;
 }
@@ -2252,8 +2234,8 @@ video.logo-video {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #A16207 0%, #D69E2E 100%);
-  color: white;
+  background: white;
+  color: #1E4ED8;
   padding: 0.875rem 2rem;
   border-radius: 9999px;
   font-weight: 700;
@@ -2267,28 +2249,29 @@ video.logo-video {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background: #F3F4F6;
 }
 
 .btn-secondary {
   background: white;
-  color: #A16207;
+  color: #1E4ED8;
   padding: 0.875rem 2rem;
   border-radius: 9999px;
   font-weight: 700;
   font-size: 1rem;
-  border: 2px solid #A16207;
+  border: 2px solid #1E4ED8;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background: #A16207;
+  background: #1E4ED8;
   color: white;
   transform: translateY(-2px);
 }
 
 .btn-tertiary {
-  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  background: #DC2626;
   color: white;
   padding: 0.875rem 2rem;
   border-radius: 9999px;
@@ -2308,7 +2291,7 @@ video.logo-video {
 /* Marquee Styles */
 .marquee-container {
   overflow: hidden;
-  background: linear-gradient(90deg, #A16207 0%, #D69E2E 50%, #A16207 100%);
+  background: #1E4ED8;
   padding: 1rem 0;
   margin: 2rem 0;
   position: relative;
@@ -2410,43 +2393,43 @@ video.logo-video {
 .thp-feature-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-color: #FCD34D;
+  border-color: #E5E7EB;
 }
 
 .thp-feature-icon {
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1rem;
-  background: linear-gradient(135deg, #FEF3C7 0%, #FCD34D 100%);
+  background: #E5E7EB;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: #A16207;
+  color: #1E4ED8;
 }
 
 .thp-feature-title {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #78350F;
+  color: #000000;
   margin-top: 1rem;
 }
 
 .feature-link {
-  color: #78350F;
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .feature-link:hover {
-  color: #A16207;
+  color: #1E4ED8;
 }
 
 /* Custom Marquee */
 .custom-marquee-container {
   overflow: hidden;
-  background: linear-gradient(90deg, #DC2626 0%, #EF4444 50%, #DC2626 100%);
+  background: #DC2626;
   padding: 0.75rem 0;
   margin: 2rem 0;
 }
@@ -2504,34 +2487,34 @@ video.logo-video {
 
 /* Dark Mode Support */
 .dark .header-section {
-  background: linear-gradient(135deg, #78350F 0%, #92400E 50%, #A16207 100%);
+  background: #1F2937;
 }
 
 .dark .tagline,
 .dark .process-steps,
 .dark .deed-para {
-  color: #FEF3C7;
+  color: #FFFFFF;
 }
 
 .dark .thp-feature-card {
   background: rgba(30, 41, 59, 0.8);
-  border-color: rgba(161, 98, 7, 0.3);
+  border-color: rgba(30, 78, 216, 0.3);
 }
 
 .dark .thp-feature-title,
 .dark .feature-link {
-  color: #FCD34D;
+  color: #E5E7EB;
 }
 
 .dark .feature-link:hover {
-  color: #FEF3C7;
+  color: #FFFFFF;
 }
 
 
 /* Stats Blinking Animation */
 .stats-blink-container {
   overflow: hidden;
-  background: linear-gradient(90deg, #A16207 0%, #D69E2E 50%, #A16207 100%);
+  background: #1E4ED8;
   padding: 0.75rem 0;
   margin: 2rem 0;
   position: relative;
@@ -2621,7 +2604,7 @@ video.logo-video {
 
 /* Dark Mode Support */
 .dark .stats-blink-container {
-  background: linear-gradient(90deg, #78350F 0%, #92400E 50%, #78350F 100%);
+  background: #1F2937;
 }
 /* Mo
 bile Performance Enhancements */
@@ -2679,7 +2662,7 @@ bile Performance Enhancements */
   /* Simplify box shadows */
   .shadow-glow,
   .shadow-glow-hover:hover {
-    box-shadow: 0 2px 8px rgba(161, 98, 7, 0.2) !important;
+    box-shadow: 0 2px 8px rgba(30, 78, 216, 0.2) !important;
   }
 }
 
@@ -2781,12 +2764,9 @@ bile Performance Enhancements */
     transform: none !important;
   }
 
-  /* Use lighter cream color for all backgrounds */
-  .bg-gradient-to-r,
-  .bg-gradient-to-br,
-  .bg-gradient-to-l,
-  .bg-gradient-to-t {
-    background: #FFFEF7 !important; /* Lighter cream color */
+  /* Preserve blue backgrounds on mobile */
+  .bg-blue-600 {
+    background: #1E4ED8 !important;
   }
 
   /* Use lighter cream color for all yellow/orange elements */
@@ -2916,12 +2896,9 @@ bile Performance Enhancements */
     color: #000000 !important;
   }
 
-  /* Remove any remaining colored backgrounds */
-  .home-page [class*="bg-gradient"],
-  .home-page [class*="from-"],
-  .home-page [class*="via-"],
-  .home-page [class*="to-"] {
-    background: transparent !important;
+  /* Preserve blue backgrounds on mobile */
+  .bg-blue-600 {
+    background-color: #1E4ED8 !important;
   }
 
   /* Ensure footer and other sections are clean */
@@ -2934,44 +2911,24 @@ bile Performance Enhancements */
   .absolute.w-32,
   .absolute.-top-
 
-  /* Use very dark text colors for maximum readability */
-  .bg-gradient-to-br .text-text-light,
-  .bg-gradient-to-r .text-text-light,
-  .bg-gradient-to-l .text-text-light,
-  .bg-gradient-to-br h1,
-  .bg-gradient-to-br h2,
-  .bg-gradient-to-br h3,
-  .bg-gradient-to-r h1,
-  .bg-gradient-to-r h2,
-  .bg-gradient-to-r h3 {
-    color: #1F1F1F !important; /* Very dark gray for headings */
-  }
-
-  .bg-gradient-to-br .text-subtext-light,
-  .bg-gradient-to-r .text-subtext-light,
-  .bg-gradient-to-br p,
-  .bg-gradient-to-r p {
-    color: #2D2D2D !important; /* Dark gray for paragraphs */
-  }
-
-  /* Fix text contrast on gradient backgrounds that become solid on mobile */
-  .bg-gradient-to-br .text-text-light,
-  .bg-gradient-to-r .text-text-light,
-  .bg-gradient-to-l .text-text-light {
-    color: #FDE68A !important; /* text-dark */
-  }
-
-  .bg-gradient-to-br .text-subtext-light,
-  .bg-gradient-to-r .text-subtext-light,
-  .bg-gradient-to-l .text-subtext-light {
-    color: #FCD34D !important; /* subtext-dark */
+  /* Mobile: Preserve white text on blue backgrounds */
+  .bg-blue-600 h1,
+  .bg-blue-600 h2,
+  .bg-blue-600 h3,
+  .bg-blue-600 h4,
+  .bg-blue-600 h5,
+  .bg-blue-600 h6,
+  .bg-blue-600 p,
+  .bg-blue-600 span:not(.bg-white *),
+  .bg-blue-600 div:not(.bg-white):not(.bg-white *) {
+    color: white !important;
   }
 
   /* Ensure gradient text remains visible */
   .bg-gradient-to-br .text-transparent,
   .bg-gradient-to-r .text-transparent,
   .bg-gradient-to-l .text-transparent {
-    color: #FDE68A !important; /* text-dark */
+    color: #F3F4F6 !important; /* text-dark */
     background: none !important;
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
@@ -3090,7 +3047,7 @@ bile Performance Enhancements */
 
   /* Simplify text effects while maintaining original colors */
   .text-transparent {
-    color: #A16207 !important; /* primary color for visibility */
+    color: #1E4ED8 !important; /* primary color for visibility */
     background: none !important;
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
@@ -3102,7 +3059,7 @@ bile Performance Enhancements */
   
   /* Only fix specific problematic cases */
   .text-transparent {
-    color: #A16207 !important; /* Primary color for visibility */
+    color: #1E4ED8 !important; /* Primary color for visibility */
     background: none !important;
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
@@ -3129,37 +3086,37 @@ bile Performance Enhancements */
     color: #000000 !important;
   }
 
-  /* Comprehensive dark text overrides for mobile */
-  h1, h2, h3, h4, h5, h6 {
-    color: #000000 !important; /* Pure black for headings */
-  }
-
-  p, span, div {
-    color: #1A1A1A !important; /* Very dark gray for body text */
-  }
-
-  /* Override all text elements with maximum darkness */
-  *:not(.text-white):not(button):not(.btn-primary):not(.btn-secondary):not(.btn-tertiary) {
-    color: #000000 !important; /* Force all text to be pure black */
-  }
-
-  /* Extra aggressive text overrides */
-  .home-page * {
-    color: #000000 !important;
-  }
-
-  /* Preserve white text where needed */
-  .text-white,
-  .bg-gradient-to-r .text-white,
-  button .text-white,
-  .btn-primary,
-  .btn-secondary,
-  .btn-tertiary,
-  .bg-primary *,
-  .bg-secondary *,
-  .bg-gradient-to-r.from-primary *,
-  .bg-gradient-to-r.to-secondary * {
+  /* Mobile text color preservation - maintain desktop theme */
+  /* Preserve white text on blue backgrounds */
+  .bg-blue-600 *:not(.bg-white *):not(.bg-white):not(button.bg-white):not(a.bg-white):not(.border-white) {
     color: white !important;
+  }
+
+  /* Preserve blue text in white boxes */
+  .bg-white h1,
+  .bg-white h2,
+  .bg-white h3,
+  .bg-white h4,
+  .bg-white h5,
+  .bg-white h6 {
+    color: #1E4ED8 !important;
+  }
+
+  .bg-white p,
+  .bg-white span:not(.text-white) {
+    color: #374151 !important;
+  }
+
+  /* Preserve button styling */
+  .btn-primary,
+  button.bg-white,
+  a.bg-white {
+    color: #1E4ED8 !important;
+  }
+
+  /* Preserve icon colors */
+  .text-blue-600 {
+    color: #1E4ED8 !important;
   }
 
   /* Final catch-all for any remaining light text */
@@ -3234,18 +3191,7 @@ bile Performance Enhancements */
     color: #2D2D2D !important; /* Dark gray instead of light colors */
   }
 
-  /* Fix transparent text with gradient backgrounds */
-  .text-transparent {
-    color: #2D2D2D !important; /* Dark gray text */
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    background-clip: unset !important;
-  }
-
-  /* Specifically fix the "Customers Say" text */
-  .text-transparent.bg-clip-text {
-    color: #2D2D2D !important;
-    background: transparent !important;
+  /* Mobile: Maintain color scheme consistency */
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
   }
@@ -3402,35 +3348,35 @@ bile Performance Enhancements */
   }
 
   .bg-gradient-to-r.from-teal-400.to-teal-500 {
-    background: linear-gradient(to right, #2DD4BF, #14B8A6) !important;
+    background: #1E4ED8 !important;
   }
 
   .bg-gradient-to-r.from-red-400.to-red-500 {
-    background: linear-gradient(to right, #F87171, #EF4444) !important;
+    background: #1E4ED8 !important;
   }
 
   .bg-gradient-to-r.from-purple-400.to-purple-500 {
-    background: linear-gradient(to right, #A78BFA, #8B5CF6) !important;
+    background: #1E4ED8 !important;
   }
 
   .bg-gradient-to-r.from-orange-400.to-orange-500 {
-    background: linear-gradient(to right, #FB923C, #F97316) !important;
+    background: #1E4ED8 !important;
   }
 
   .bg-gradient-to-r.from-blue-500.to-indigo-600 {
-    background: linear-gradient(to right, #3B82F6, #4F46E5) !important;
+    background: #1E4ED8 !important;
   }
 
   .bg-gradient-to-r.from-amber-500.to-yellow-600 {
-    background: linear-gradient(to right, #F59E0B, #D97706) !important;
+    background: #1E4ED8 !important;
   }
 
   .bg-gradient-to-r.from-orange-500.to-amber-600 {
-    background: linear-gradient(to right, #F97316, #D97706) !important;
+    background: #1E4ED8 !important;
   }
 
   .bg-gradient-to-r.from-yellow-600.to-orange-600 {
-    background: linear-gradient(to right, #D97706, #EA580C) !important;
+    background: #1E4ED8 !important;
   }
 
   /* Optimize animations */
@@ -3454,7 +3400,6 @@ bile Performance Enhancements */
   .navbar-transition {
     will-change: transform !important;
   }
-}
 
 /* Performance optimization for all devices */
 .performance-optimized {
@@ -3512,7 +3457,7 @@ bile Performance Enhancements */
     left: 0;
     right: 0;
     bottom: 0;
-    background: #FEFCE8; /* background-light */
+    background: #FFFFFF; /* background-light */
     z-index: 40;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -3648,23 +3593,6 @@ bile Performance Enhancements */
 }
 
 /* Hero CTA Button Animations - Always enabled on all devices */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@-webkit-keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
 @keyframes hero-float-pulse {
   0% {
@@ -4070,7 +3998,7 @@ html body div a[data-animated] {
 .services-page .bg-red-500\/20,
 .services-page .bg-teal-500\/20,
 .services-page .bg-emerald-500\/20 {
-  background-color: rgba(217, 119, 6, 0.2) !important; /* amber-600/20 */
+  background-color: rgba(30, 78, 216, 0.2) !important; /* amber-600/20 */
 }
 
 /* Gradient backgrounds */
@@ -4261,20 +4189,20 @@ html body div a[data-animated] {
 .sale-deed-page .to-indigo-600\/10,
 .gift-deed-page .from-green-600\/10,
 .gift-deed-page .to-emerald-600\/10 {
-  --tw-gradient-from: rgba(217, 119, 6, 0.1) !important; /* amber-600/10 */
-  --tw-gradient-to: rgba(217, 119, 6, 0.1) !important; /* amber-600/10 */
+  --tw-gradient-from: rgba(30, 78, 216, 0.1) !important; /* amber-600/10 */
+  --tw-gradient-to: rgba(30, 78, 216, 0.1) !important; /* amber-600/10 */
 }
 
 .sale-deed-page .bg-blue-600\/20,
 .gift-deed-page .bg-green-600\/20 {
-  background-color: rgba(217, 119, 6, 0.2) !important; /* amber-600/20 */
+  background-color: rgba(30, 78, 216, 0.2) !important; /* amber-600/20 */
 }
 
 .sale-deed-page .hover\:bg-blue-600\/5:hover,
 .sale-deed-page .hover\:bg-blue-600\/10:hover,
 .gift-deed-page .hover\:bg-green-600\/5:hover,
 .gift-deed-page .hover\:bg-green-600\/10:hover {
-  background-color: rgba(217, 119, 6, 0.1) !important; /* amber-600/10 */
+  background-color: rgba(30, 78, 216, 0.1) !important; /* amber-600/10 */
 }
 
 .sale-deed-page .text-blue-600,
@@ -4330,7 +4258,7 @@ Mobile Services Page Content Visibility Fixes */
   
   /* Fix button visibility */
   .services-page .bg-gradient-to-r {
-    background: linear-gradient(to right, #A16207, #D69E2E) !important;
+    background: #1E4ED8 !important;
     color: white !important;
     padding: 0.75rem 1.5rem !important;
     border-radius: 9999px !important;
@@ -4568,12 +4496,12 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
 @media (max-width: 768px) {
   /* Lighten background gradients on mobile - but NOT blue gradients */
   .bg-gradient-to-br:not(.from-blue-50):not(.from-blue-600) {
-    background: linear-gradient(to bottom right, #fef3c7, #fef9e7) !important;
+    background: #1E4ED8 !important;
   }
   
   /* Keep blue gradients on mobile */
   .bg-gradient-to-br.from-blue-50 {
-    background: linear-gradient(to bottom right, #eff6ff, #e0e7ff) !important;
+    background: #1E4ED8 !important;
   }
   
   /* Override heavy orange/brown gradients */
@@ -4641,7 +4569,7 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   
   /* Footer background improvement */
   footer.bg-yellow-50 {
-    background-color: #fefce8 !important;
+    background-color: #FFFFFF !important;
   }
   
   .dark footer.bg-gray-900 {
@@ -4672,7 +4600,7 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     }
     
     .delhi-property-heading > span:first-child {
-      background: linear-gradient(to right, #d97706, #ea580c, #d97706) !important;
+      background: #1E4ED8 !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
       background-clip: text !important;
@@ -4708,7 +4636,7 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     }
     
     .why-saledeed-heading > span:first-child {
-      background: linear-gradient(to right, #d97706, #ea580c, #d97706) !important;
+      background: #1E4ED8 !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
       background-clip: text !important;
@@ -4720,7 +4648,7 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     }
     
     .property-need-heading > span:first-child {
-      background: linear-gradient(to right, #d97706, #ea580c, #d97706) !important;
+      background: #1E4ED8 !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
       background-clip: text !important;
@@ -4770,8 +4698,8 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   
   /* Exception: Keep scroll to top button gradient */
   .scroll-to-top-button {
-    background: linear-gradient(135deg, #d97706, #ea580c) !important;
-    background-image: linear-gradient(135deg, #d97706, #ea580c) !important;
+    background: #1E4ED8 !important;
+    background-image: none !important;
   }
   
   /* Ensure maximum contrast */
@@ -4866,22 +4794,22 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d97706, #ea580c);
+  background: #1E4ED8;
   color: white;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.5);
+  box-shadow: 0 4px 20px rgba(30, 78, 216, 0.5);
   transition: all 0.3s ease;
   animation: fadeInUpCenter 0.3s ease-out, pulseGlow 2s ease-in-out infinite;
 }
 
 .scroll-to-top-button:hover {
   transform: translateX(-50%) translateY(-8px);
-  box-shadow: 0 8px 30px rgba(217, 119, 6, 0.7);
-  background: linear-gradient(135deg, #ea580c, #dc2626);
+  box-shadow: 0 8px 30px rgba(30, 78, 216, 0.7);
+  background: #1E4ED8;
 }
 
 .scroll-to-top-button:active {
@@ -4905,7 +4833,7 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     bottom: 20px;
     width: 52px;
     height: 52px;
-    background: linear-gradient(135deg, #d97706, #ea580c) !important;
+    background: #1E4ED8 !important;
   }
   
   .scroll-to-top-button svg {
@@ -4917,8 +4845,8 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
 /* Force background on very small screens */
 @media (max-width: 480px) {
   .scroll-to-top-button {
-    background: linear-gradient(135deg, #d97706, #ea580c) !important;
-    background-image: linear-gradient(135deg, #d97706, #ea580c) !important;
+    background: #1E4ED8 !important;
+    background-image: none !important;
   }
 }
 
@@ -4937,10 +4865,10 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
 /* Pulsing glow effect */
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.5);
+    box-shadow: 0 4px 20px rgba(30, 78, 216, 0.5);
   }
   50% {
-    box-shadow: 0 4px 25px rgba(217, 119, 6, 0.7), 0 0 15px rgba(217, 119, 6, 0.4);
+    box-shadow: 0 4px 25px rgba(30, 78, 216, 0.7), 0 0 15px rgba(30, 78, 216, 0.4);
   }
 }
 
@@ -4975,5 +4903,175 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   .inline-flex.items-center.gap-2[class*="bg-gradient-to-r"]:has(i[data-lucide="home"]) {
     font-size: 1.25rem !important;
     padding: 1rem 1.75rem !important;
+  }
+}
+
+
+/* ===== MOBILE COLOR SCHEME FIX ===== */
+@media (max-width: 768px) {
+  /* Hero section and all blue background sections */
+  .bg-blue-600,
+  .bg-blue-600 * {
+    background-color: #1E4ED8 !important;
+  }
+
+  /* White text on blue backgrounds */
+  .bg-blue-600 h1,
+  .bg-blue-600 h2,
+  .bg-blue-600 h3,
+  .bg-blue-600 h4,
+  .bg-blue-600 h5,
+  .bg-blue-600 h6,
+  .bg-blue-600 p,
+  .bg-blue-600 span:not(.bg-white *):not(.bg-white),
+  .bg-blue-600 div:not(.bg-white):not(.bg-white *):not(button):not(a) {
+    color: white !important;
+  }
+
+  /* White boxes inside blue sections */
+  .bg-blue-600 .bg-white,
+  .bg-blue-600 .bg-white * {
+    background-color: white !important;
+  }
+
+  /* Blue text in white boxes */
+  .bg-blue-600 .bg-white h1,
+  .bg-blue-600 .bg-white h2,
+  .bg-blue-600 .bg-white h3,
+  .bg-blue-600 .bg-white h4,
+  .bg-blue-600 .bg-white h5,
+  .bg-blue-600 .bg-white h6 {
+    color: #1E4ED8 !important;
+  }
+
+  .bg-blue-600 .bg-white p,
+  .bg-blue-600 .bg-white span {
+    color: #374151 !important;
+  }
+
+  /* White buttons with blue text */
+  .bg-blue-600 button.bg-white,
+  .bg-blue-600 a.bg-white {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* White outlined buttons */
+  .bg-blue-600 .border-white {
+    border-color: white !important;
+    color: white !important;
+  }
+
+  /* White icons on blue background */
+  .bg-blue-600 .text-white,
+  .bg-blue-600 .border-white i,
+  .bg-blue-600 .border-white svg {
+    color: white !important;
+  }
+
+  /* Blue icons in white boxes */
+  .bg-blue-600 .bg-white .text-blue-600,
+  .bg-blue-600 .bg-white .border-blue-600 i,
+  .bg-blue-600 .bg-white .border-blue-600 svg {
+    color: #1E4ED8 !important;
+  }
+
+  /* Ensure white cards are visible */
+  .bg-white {
+    background-color: white !important;
+  }
+
+  /* Default text colors for white backgrounds */
+  body:not(.bg-blue-600) h1,
+  body:not(.bg-blue-600) h2,
+  body:not(.bg-blue-600) h3,
+  .bg-white h1:not(.text-white),
+  .bg-white h2:not(.text-white),
+  .bg-white h3:not(.text-white) {
+    color: #1E4ED8 !important;
+  }
+
+  body:not(.bg-blue-600) p,
+  .bg-white p:not(.text-white) {
+    color: #374151 !important;
+  }
+
+  /* Marquee text */
+  .marquee-text {
+    color: white !important;
+  }
+
+  /* Button text colors */
+  .btn-primary {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+}
+
+
+/* ===== ULTRA-SPECIFIC MOBILE FIX FOR BUTTONS ===== */
+@media (max-width: 768px) {
+  /* Force button text visibility with maximum specificity */
+  .home-page .bg-blue-600 button,
+  .home-page .bg-blue-600 .btn-primary,
+  .home-page .header-btn button,
+  .home-page .header-btn .btn-primary {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* Force all text inside buttons to be blue */
+  .home-page .bg-blue-600 button *,
+  .home-page .bg-blue-600 .btn-primary *,
+  .home-page .header-btn button *,
+  .home-page .header-btn .btn-primary * {
+    color: #1E4ED8 !important;
+  }
+
+  /* Override any white text in buttons */
+  .home-page button:not(.border-white),
+  .home-page .btn-primary:not(.border-white) {
+    color: #1E4ED8 !important;
+  }
+
+  /* Specific fix for hero section buttons */
+  .home-container .header-btn button,
+  .home-container .btn-primary,
+  .header-section button,
+  .header-section .btn-primary {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* Remove any text-white class effects on buttons */
+  button.text-white,
+  .btn-primary.text-white {
+    color: #1E4ED8 !important;
+  }
+
+  /* Fix for all clickable elements in blue sections */
+  .bg-blue-600 a:not(.border-white):not(.text-white),
+  .bg-blue-600 button:not(.border-white):not(.text-white) {
+    color: #1E4ED8 !important;
+    background-color: white !important;
+  }
+}
+
+/* ===== NUCLEAR OPTION - MAXIMUM SPECIFICITY ===== */
+@media screen and (max-width: 768px) {
+  html body .home-page .bg-blue-600 .header-btn button,
+  html body .home-page .bg-blue-600 .header-btn .btn-primary,
+  html body .home-page .home-container button,
+  html body .home-page .header-section button {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+    border: none !important;
+  }
+
+  html body .home-page .bg-blue-600 .header-btn button span,
+  html body .home-page .bg-blue-600 .header-btn .btn-primary span,
+  html body .home-page .home-container button span,
+  html body .home-page .header-section button span {
+    color: #1E4ED8 !important;
   }
 }

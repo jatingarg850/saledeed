@@ -91,15 +91,15 @@ export default function Home() {
       
       // Apply different animations based on device
       const animationValue = isMobile 
-        ? 'gradient-shift 2.5s ease infinite, hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite'
-        : 'gradient-shift 3s ease infinite, hero-float-pulse 3s ease-in-out infinite'
+        ? 'hero-mobile-bounce 2.5s ease-in-out infinite, hero-glow-pulse 2s ease-in-out infinite'
+        : 'hero-float-pulse 3s ease-in-out infinite'
       
       // Force enable animations by setting inline styles with high priority
       button.style.setProperty('animation', animationValue, 'important')
       button.style.setProperty('-webkit-animation', animationValue, 'important')
       button.style.setProperty('animation-play-state', 'running', 'important')
       button.style.setProperty('-webkit-animation-play-state', 'running', 'important')
-      button.style.setProperty('will-change', 'transform, background-position, box-shadow', 'important')
+      button.style.setProperty('will-change', 'transform, box-shadow', 'important')
       
       // Check computed styles
       const computedStyle = window.getComputedStyle(button)
@@ -268,40 +268,14 @@ export default function Home() {
     <>
       <PopupNotifications />
       <div className="home-page relative flex h-auto min-h-screen w-full flex-col group/design-root animate-page-entrance animate-page-load bg-background-light dark:bg-background-dark overflow-x-hidden">
-        <Navigation currentPage="home" />
-        
-        {/* Hero Video Section - Full Width */}
-        <div className="relative w-full overflow-hidden">
-          {/* Video Background */}
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-auto max-w-full"
-            style={{ 
-              width: '100%',
-              height: 'auto',
-              maxWidth: '100%',
-              display: 'block'
-            }}
-          >
-            <source src="/ani/lv_0_20251118004148.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          {/* Subtle Bottom Gradient for smooth transition */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
-        </div>
-
-        <div className="layout-container flex h-full grow flex-col">
+        <Navigation currentPage="home" /> <div className="layout-container flex h-full grow flex-col">
           <div className="w-full">
             {/* Main Content */}
             <main className="animate-content-slide-up">
 
               {/* Original Hero Section */}
               <div className="px-6 md:px-10 lg:px-20 py-10">
-              <div className="home-container animate-in">
+              <div className="home-container animate-in bg-blue-600 rounded-3xl">
                 <div className="header-section">
                   <div className="tagline">Everything from sale to&nbsp;deed</div>
                   <div>
@@ -313,7 +287,7 @@ export default function Home() {
                       Customised | Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
                     <div className="mt-4 flex justify-center items-center w-full">
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white px-8 py-4 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full inline-block shadow-lg">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-600 px-8 py-4 bg-white rounded-lg">
                         Buy/Sell/Rent at Minimum Commission
                       </h2>
                     </div>
@@ -424,13 +398,8 @@ export default function Home() {
               {/* For Every Property Need - Indeed Section */}
               <div className="px-6 md:px-10 lg:px-20 py-10">
                 <div className="text-center mb-12 mt-16">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                    <span className="relative inline-block property-need-heading" style={{ background: 'transparent' }}>
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-text-shimmer" style={{ background: 'linear-gradient(to right, #d97706, #ea580c, #d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                        For Every Property Need - Indeed
-                      </span>
-                      
-                    </span>
+                  <h2 className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-6">
+                    For Every Property Need - Indeed
                   </h2>
                   
                 </div>
@@ -438,12 +407,12 @@ export default function Home() {
                  {/* First Row - 3 Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 animate-stagger-grid">
                     {/* I Am a Buyer */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
-                      <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <i data-lucide="home" className="w-8 h-8 text-white"></i>
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col justify-between h-full">
+                      <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="home" className="w-8 h-8 text-blue-600"></i>
                       </div>
                       <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Buyer</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2 flex-grow">
                         Complete support from property selection to purchase. Pricing guidance and legal protection throughout your buying journey.
                       </p>
                       <Link
@@ -456,12 +425,12 @@ export default function Home() {
                     </div>
 
                     {/* I Am a Seller */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
-                      <div className="w-16 h-16 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <i data-lucide="handshake" className="w-8 h-8 text-white"></i>
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col justify-between h-full">
+                      <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="handshake" className="w-8 h-8 text-blue-600"></i>
                       </div>
                       <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Seller</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2 flex-grow">
                         Step-by-step help from property search to sale deed registration. Legal checks and complete documentation support.
                       </p>
                       <Link
@@ -474,12 +443,12 @@ export default function Home() {
                     </div>
 
                     {/* I Am a Landlord */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <i data-lucide="building" className="w-8 h-8 text-white"></i>
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col justify-between h-full">
+                      <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="building" className="w-8 h-8 text-blue-600"></i>
                       </div>
                       <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Landlord</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2 flex-grow">
                         Find verified tenants quickly. Hassle-free rent agreements and property support for landlords.
                       </p>
                       <Link
@@ -495,17 +464,17 @@ export default function Home() {
                   {/* Second Row - 3 Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-grid">
                     {/* I Am a Tenant */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
-                      <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <i data-lucide="key" className="w-8 h-8 text-white"></i>
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col justify-between h-full">
+                      <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="key" className="w-8 h-8 text-blue-600"></i>
                       </div>
                       <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Am a Tenant</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2 flex-grow">
                         Minimum commission services to find your perfect space. Tenant-friendly agreements.
                       </p>
                       <Link
                         href="/solutions/tenant"
-                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-orange-500 text-orange-600 dark:text-orange-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-orange-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-blue-500 text-blue-600 dark:text-blue-400 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 group-hover:shadow-lg w-full"
                       >
                         LEARN MORE
                         <i data-lucide="arrow-right" className="w-4 h-4"></i>
@@ -513,12 +482,12 @@ export default function Home() {
                     </div>
 
                     {/* I Am a Builder/Developer/Institution/Society */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <i data-lucide="building-2" className="w-8 h-8 text-white"></i>
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col justify-between h-full">
+                      <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="building-2" className="w-8 h-8 text-blue-600"></i>
                       </div>
                       <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2 leading-tight">I Am a Builder / Developer / Institution / Society</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2 flex-grow">
                         Complete solutions for property dealings, deeds, NOC, freehold, approvals.
                       </p>
                       <Link
@@ -531,12 +500,12 @@ export default function Home() {
                     </div>
 
                     {/* I Need Liaisoning Assistance */}
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col">
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <i data-lucide="briefcase" className="w-8 h-8 text-white"></i>
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-2 flex flex-col justify-between h-full">
+                      <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="briefcase" className="w-8 h-8 text-blue-600"></i>
                       </div>
                       <h3 className="text-text-light dark:text-text-dark text-lg font-bold mb-3 px-2">I Need Liaisoning Assistance</h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2">
+                      <p className="text-subtext-light dark:text-subtext-dark text-sm mb-4 leading-relaxed px-2 flex-grow">
                         Expert assistance for all building authorities, permissions, and government clearances.
                       </p>
                       <a
@@ -632,21 +601,21 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <center>
-                <div className="max-w-5xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-10 md:p-16 rounded-3xl border-4 border-yellow-200 dark:border-yellow-700 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
-                    <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">Still Have A Doubt?</h3>
-                    <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 font-medium">Get Free Consultation For A Best In City Experience.</p>
+              <div className="px-6 md:px-10 lg:px-20 py-10">
+                <div className="max-w-5xl mx-auto bg-blue-600 rounded-3xl px-8 py-12 text-center">
+                    <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Still Have A Doubt?</h3>
+                    <p className="text-xl md:text-2xl text-white mb-8 font-medium">Get Free Consultation For A Best In City Experience.</p>
                     <Link
                       href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20have%20a%20query%3B%20please%20connect%20me%20to%20an%20expert!"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+                      className="inline-flex items-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-full text-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
                     >
                       <i data-lucide="message-circle" className="w-7 h-7"></i>
                       Get Free Consultation
                     </Link>
                   </div>
-                </center>
+                </div>
                 <br></br>
                 <br></br>
               </div>
@@ -671,63 +640,63 @@ export default function Home() {
 
 
               {/* Submit Your Property Section */}
-              <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
+              <div className="px-6 md:px-10 lg:px-20 py-10">
+                <div className="max-w-7xl mx-auto bg-blue-600 rounded-3xl px-8 py-12">
                   <div className="text-center">
-                      <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#FF9933] via-[#FF8800] to-[#FF9933] px-6 sm:px-8 py-3 sm:py-4 rounded-full mb-6 mx-auto shadow-xl property-section-header">
-                        <i data-lucide="home" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white"></i>
-                        <h3 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                      <div className="inline-flex items-center justify-center gap-3 bg-white rounded-full px-6 py-3 mb-6">
+                        <i data-lucide="home" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-600"></i>
+                        <h3 className="text-blue-600 text-xl sm:text-2xl md:text-3xl font-bold">
                           Buy / Sell / Rent at minimum commission
                         </h3>
                       </div>
                       
-                      <h2 className="text-text-light dark:text-text-dark text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight font-display mb-6 leading-tight break-words">
+                      <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight font-display mb-6 leading-tight break-words">
                         Submit Your Property Details/Requirements
                       </h2>
                       
-                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-4 max-w-4xl mx-auto">
+                      <p className="text-white text-lg leading-relaxed mb-4 max-w-4xl mx-auto">
                         Submit your property address in case you want to sell or just tell a bit about your preferences if you want to buy or rent your property through us.
                       </p>
                       
-                      <p className="text-subtext-light dark:text-subtext-dark text-lg leading-relaxed mb-8 max-w-4xl mx-auto">
+                      <p className="text-white text-lg leading-relaxed mb-8 max-w-4xl mx-auto">
                         We will get back to you at the earliest.
                       </p>
                       </div>
                       
-                      <div className="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-600 p-4 rounded-lg mb-8 max-w-4xl mx-auto">
-                        <p className="text-gray-800 dark:text-gray-200 font-semibold">
+                      <div className="bg-white/10 border-l-4 border-white p-4 rounded-lg mb-8 max-w-4xl mx-auto">
+                        <p className="text-white font-semibold">
                           <span className="font-bold">Note:</span> We guarantee to charge minimum commission in exchange of a best in class seamless property deal.
                         </p>
                       </div>
 
                       <div className="space-y-4 mb-8 max-w-4xl mx-auto text-left">
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-transparent border-2 border-white rounded-full flex items-center justify-center flex-shrink-0">
                             <i data-lucide="percent" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
-                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Minimum Commission</h3>
-                            <p className="text-subtext-light dark:text-subtext-dark">We charge the lowest commission in the market</p>
+                            <h3 className="font-bold text-white text-lg mb-1">Minimum Commission</h3>
+                            <p className="text-white/90">We charge the lowest commission in the market</p>
                           </div>
                         </div>
 
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-transparent border-2 border-white rounded-full flex items-center justify-center flex-shrink-0">
                             <i data-lucide="check-circle" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
-                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Seamless Process</h3>
-                            <p className="text-subtext-light dark:text-subtext-dark">Best in class property deal experience from start to finish</p>
+                            <h3 className="font-bold text-white text-lg mb-1">Seamless Process</h3>
+                            <p className="text-white/90">Best in class property deal experience from start to finish</p>
                           </div>
                         </div>
 
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-transparent border-2 border-white rounded-full flex items-center justify-center flex-shrink-0">
                             <i data-lucide="clock" className="w-6 h-6 text-white"></i>
                           </div>
                           <div>
-                            <h3 className="font-bold text-text-light dark:text-text-dark text-lg mb-1">Quick Response</h3>
-                            <p className="text-subtext-light dark:text-subtext-dark">We will get back to you at the earliest with the best options</p>
+                            <h3 className="font-bold text-white text-lg mb-1">Quick Response</h3>
+                            <p className="text-white/90">We will get back to you at the earliest with the best options</p>
                           </div>
                         </div>
                       </div>
@@ -737,7 +706,7 @@ export default function Home() {
                           href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20submit%20my%20property%20details%20for%20buying%2Fselling%2Frenting"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                          className="group inline-flex items-center justify-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
                         >
                           <i data-lucide="send" className="w-5 h-5"></i>
                           <span>Submit Your Property Details</span>
@@ -746,7 +715,7 @@ export default function Home() {
 
                         <Link
                           href="/contact"
-                          className="inline-flex items-center justify-center gap-3 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-50 dark:hover:bg-slate-700 transition-all duration-300"
+                          className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300"
                         >
                           <i data-lucide="phone" className="w-5 h-5"></i>
                           <span>Contact Us</span>
@@ -756,88 +725,89 @@ export default function Home() {
               </div>
 
               {/* Partner With Us Section */}
-              <div className="px-6 md:px-10 lg:px-20 py-16">
+              <div className="px-6 md:px-10 lg:px-20 py-10">
+                <div className="bg-blue-600 rounded-3xl px-8 py-12">
                 {/* Hero Section */}
                 <div className="text-center mb-16">
-              <h1 className="text-black dark:text-text-dark text-4xl md:text-6xl font-extrabold tracking-tighter font-display mb-6">
+              <h1 className="text-white text-4xl md:text-6xl font-extrabold tracking-tighter font-display mb-6">
                 Partner With Us
               </h1>
-              <p className="text-black dark:text-subtext-dark text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+              <p className="text-white text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
                 We welcome everyone who is willing to partner with us. Whether you are a deed writer, a property dealer, a lawyer, ex-government employee, real estate liaison agent, or just a reference giver, we assure you of a overwhelming and profitable association with saledeed.com.
               </p>
             </div>
 
             {/* Partnership Benefits */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="users"></i>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="users"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Reference Givers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Earn referral commission by referring clients to our overwhelming services.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Reference Givers</h3>
+                <p className="text-gray-700 text-sm">Earn referral commission by referring clients to our overwhelming services.</p>
               </div>
 
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="home"></i>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="home"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Property Dealers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Get share in commission by partnering with us for comprehensive property services.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Property Dealers</h3>
+                <p className="text-gray-700 text-sm">Get share in commission by partnering with us for comprehensive property services.</p>
               </div>
 
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="scale"></i>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="scale"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Lawyers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Earn by sharing your expertise with our legal team.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Lawyers</h3>
+                <p className="text-gray-700 text-sm">Earn by sharing your expertise with our legal team.</p>
               </div>
 
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="edit"></i>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="edit"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Deed Writers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Grow your business upto 10x by joining our network of overwhelming deed writers.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Deed Writers</h3>
+                <p className="text-gray-700 text-sm">Grow your business upto 10x by joining our network of overwhelming deed writers.</p>
               </div>
 
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="ruler"></i>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="ruler"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Architects/Structural Engineers/Interior Designers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Elevate your income by joining us and expanding your client base.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Architects/Structural Engineers/Interior Designers</h3>
+                <p className="text-gray-700 text-sm">Elevate your income by joining us and expanding your client base.</p>
               </div>
 
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="briefcase"></i>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="briefcase"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Liaison Agent</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Partner with us to provide comprehensive liaison services.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Real Estate Liaison Agent</h3>
+                <p className="text-gray-700 text-sm">Partner with us to provide comprehensive liaison services.</p>
               </div>
 
              
-                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="shield-check"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Builder/Developers</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Sell your new construction or reach us for potential buyers and investors for booking before construction.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Builder/Developers</h3>
+                <p className="text-gray-700 text-sm">Sell your new construction or reach us for potential buyers and investors for booking before construction.</p>
               </div>
-                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="shield-check"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Service</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">If you are into any kind of service or business related to real estate you can submit your profile for association with us.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Real Estate Service</h3>
+                <p className="text-gray-700 text-sm">If you are into any kind of service or business related to real estate you can submit your profile for association with us.</p>
               </div>
-               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <i className="text-blue-600 text-2xl" data-lucide="shield-check"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Ex-Government Employees</h3>
-                <p className="text-black dark:text-subtext-dark text-sm">Encash your knowledge and experience by partnering with us.</p>
+                <h3 className="text-blue-600 text-xl font-bold font-display mb-2">Ex-Government Employees</h3>
+                <p className="text-gray-700 text-sm">Encash your knowledge and experience by partnering with us.</p>
               </div>
             </div>
 
@@ -845,7 +815,7 @@ export default function Home() {
             <div className="text-center mt-12">
               <Link
                 href="/partner#contact-form"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
               >
                 <i data-lucide="handshake" className="w-5 h-5"></i>
                 <span>Become a Partner</span>
@@ -855,71 +825,66 @@ export default function Home() {
               </div>
 
               {/* Why saledeed.com Section */}
-              <div className="py-20 bg-white dark:bg-slate-900 animate-section-slide-in">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
+              <div className="px-6 md:px-10 lg:px-20 py-10">
+                <div className="max-w-7xl mx-auto bg-blue-600 rounded-3xl px-8 py-12">
                   <div className="text-center mb-16 animate-fade-in-up">
-                    <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-display mb-4">
-                      <span className="relative inline-block why-saledeed-heading" style={{ background: 'transparent' }}>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer" style={{ background: 'linear-gradient(to right, #d97706, #ea580c, #d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                          Why saledeed.com?
-                        </span>
-
-                      </span>
+                    <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight font-display mb-4">
+                      Why saledeed.com?
                     </h2>
-                    <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
+                    <p className="text-white text-lg max-w-3xl mx-auto">
                       A trusted property guide with just one motive - Your Satisfaction!
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Card 1 - Affordable & Convenient */}
-                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up">
-                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(34, 197, 94), rgb(5, 150, 105)) !important', opacity: 1, visibility: 'visible' }}>
-                        <i data-lucide="indian-rupee" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
+                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-fade-in-up">
+                      <div className="icon-container w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto border-2 border-blue-600">
+                        <i data-lucide="indian-rupee" className="text-blue-600 w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                      <h3 className="text-xl font-bold text-blue-600 mb-4 text-center">
                         Affordable & Convenient
                       </h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                      <p className="text-gray-700 text-center leading-relaxed">
                         We provide affordable A-Z property services with a dedicated agent guiding you at every step.
                       </p>
                     </div>
 
                     {/* Card 2 - No Compromise Privacy */}
-                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(59, 130, 246), rgb(79, 70, 229)) !important', opacity: 1, visibility: 'visible' }}>
-                        <i data-lucide="shield-check" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
+                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                      <div className="icon-container w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto border-2 border-blue-600">
+                        <i data-lucide="shield-check" className="text-blue-600 w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                      <h3 className="text-xl font-bold text-blue-600 mb-4 text-center">
                         No Compromise Privacy
                       </h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                      <p className="text-gray-700 text-center leading-relaxed">
                         Whether you are our client or a service provider in our network all your personal & professional details are completely safe and confidential with us.
                       </p>
                     </div>
 
                     {/* Card 3 - Money Back Guarantee */}
-                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(217, 119, 6), rgb(234, 88, 12)) !important', opacity: 1, visibility: 'visible' }}>
-                        <i data-lucide="badge-check" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
+                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                      <div className="icon-container w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto border-2 border-blue-600">
+                        <i data-lucide="badge-check" className="text-blue-600 w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                      <h3 className="text-xl font-bold text-blue-600 mb-4 text-center">
                         Money Back Guarantee
                       </h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                      <p className="text-gray-700 text-center leading-relaxed">
                         At saledeed.com we ensure you best in class services always but if at any point you are not satisfied with our service we promise to pay you back as per our return policies.
                       </p>
                     </div>
 
                     {/* Card 4 - Doorstep Advice */}
-                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(249, 115, 22), rgb(220, 38, 38)) !important', opacity: 1, visibility: 'visible' }}>
-                        <i data-lucide="home" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
+                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                      <div className="icon-container w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto border-2 border-blue-600">
+                        <i data-lucide="home" className="text-blue-600 w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
-                      <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
+                      <h3 className="text-xl font-bold text-blue-600 mb-4 text-center">
                         Doorstep Advice
                       </h3>
-                      <p className="text-subtext-light dark:text-subtext-dark text-center leading-relaxed">
+                      <p className="text-gray-700 text-center leading-relaxed">
                         We provide expertise for your every property need right at your doorstep. All you have to do is book a doorstep service and you are all sorted.
                       </p>
                     </div>
@@ -929,7 +894,7 @@ export default function Home() {
                   <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <button
                       onClick={() => setShowDoorstepModal(true)}
-                      className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                      className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
                     >
                       <i className="fas fa-phone-alt" style={{ transform: 'rotate(90deg)' }}></i>
                       <span>Book Doorstep Assistance</span>
@@ -937,17 +902,14 @@ export default function Home() {
                     </button>
                   </div>
                 </div>
+                </div>
               </div>
 
               {/* Delhi Property Documents */}
               <div className="py-16 bg-gray-50 dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-xl">
                 <div className="text-center mb-12 animate-fade-in-up">
-                  <h2 className="text-text-light dark:text-text-dark text-4xl md:text-5xl font-bold tracking-tight font-times mb-4">
-                    <span className="relative inline-block delhi-property-heading">
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
-                        Seamless Property Documents
-                      </span>
-                       </span>
+                  <h2 className="text-blue-600 dark:text-blue-400 text-4xl md:text-5xl font-bold tracking-tight font-times mb-4">
+                    Seamless Property Documents
                   </h2>
                   <p className="text-subtext-light dark:text-subtext-dark text-lg max-w-3xl mx-auto">
                     Complete documentation services for all your property needs
@@ -970,18 +932,22 @@ export default function Home() {
               
 
               {/* Expert Advice CTA */}
-              <div className="my-20 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transform transition-transform duration-300 hover:-translate-y-2">
-                <div className="flex-1 text-center lg:text-left">
-                  <h2 className="text-white text-4xl font-bold tracking-tight font-display">Expert Advice At Zero Price</h2>
-                  <p className="text-blue-50 dark:text-blue-100 mt-4 max-w-2xl text-lg">Unsure where to start? Our legal experts are here to help. Get a free consultation to understand your needs and get your questions answered, with no obligations.</p>
-                </div>
-                <div className="flex-shrink-0">
-                  <Link href="/contact" className="group flex min-w-[240px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-10 bg-white text-blue-600 text-xl font-bold leading-normal tracking-wide hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl shadow-xl">
-                    <span className="truncate">Book Free Consultation</span>
-                    <svg className="ml-2 w-6 h-6 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </Link>
+              <div className="px-6 md:px-10 lg:px-20 py-10">
+                <div className="max-w-7xl mx-auto bg-blue-600 rounded-3xl px-8 py-12">
+                  <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div className="flex-1 text-center lg:text-left">
+                      <h2 className="text-white text-4xl font-bold tracking-tight font-display">Expert Advice At Zero Price</h2>
+                      <p className="text-white mt-4 max-w-2xl text-lg">Unsure where to start? Our legal experts are here to help. Get a free consultation to understand your needs and get your questions answered, with no obligations.</p>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <Link href="/contact" className="group flex min-w-[240px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-10 bg-white text-blue-600 text-xl font-bold leading-normal tracking-wide hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl shadow-xl">
+                        <span className="truncate">Book Free Consultation</span>
+                        <svg className="ml-2 w-6 h-6 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -992,79 +958,82 @@ export default function Home() {
              
 
               {/* Government Authorities Section */}
-              <div className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl mb-16" style={{ background: 'linear-gradient(to bottom right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
-                
+              <div className="px-6 md:px-10 lg:px-20 py-10">
+                <div className="bg-blue-600 rounded-3xl px-8 py-12">
 
                 {/* Video Section */}
-                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-8 border border-blue-200/50 dark:border-slate-700">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-text-light dark:text-text-dark font-display mb-4">
-                      See Our Authorities in Action
-                    </h3>
-                    <p className="text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
-                      Watch how our expert team navigates through different government offices to ensure your property documentation is completed efficiently.
-                    </p>
-                  </div>
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white font-display mb-4">
+                    See Our Authorities in Action
+                  </h3>
+                  <p className="text-white max-w-2xl mx-auto">
+                    Watch how our expert team navigates through different government offices to ensure your property documentation is completed efficiently.
+                  </p>
+                </div>
 
-                  <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-800 rounded-xl p-8 text-center" style={{ background: 'linear-gradient(to bottom right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <i className="text-white text-3xl" data-lucide="play"></i>
-                    </div>
-                    <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-2 font-display">
-                      Complete Authority Process Walkthrough
-                    </h4>
-                    <p className="text-subtext-light dark:text-subtext-dark mb-6">
-                      A comprehensive 5-minute video showing our team's interaction with MCD, DDA, L&DO, SRO, and Collector offices for a complete property registration process.
-                    </p>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <i className="text-blue-600" data-lucide="check"></i>
-                        <span>MCD Clearance Process</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <i className="text-blue-600" data-lucide="check"></i>
-                        <span>DDA Approval Steps</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <i className="text-blue-600" data-lucide="check"></i>
-                        <span>L&DO Documentation</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <i className="text-blue-600" data-lucide="check"></i>
-                        <span>SRO Registration</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <i className="text-blue-600" data-lucide="check"></i>
-                        <span>Tax Assessment</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <i className="text-blue-600" data-lucide="check"></i>
-                        <span>Final Handover</span>
-                      </div>
+                <div className="bg-white rounded-2xl p-8">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="w-20 h-20 bg-transparent border-2 border-blue-600 rounded-full flex items-center justify-center">
+                      <i className="text-blue-600 text-3xl" data-lucide="play"></i>
                     </div>
                   </div>
+                  <h4 className="text-xl font-bold text-blue-600 mb-2 font-display text-center">
+                    Complete Authority Process Walkthrough
+                  </h4>
+                  <p className="text-gray-700 mb-6 text-center">
+                    A comprehensive 5-minute video showing our team's interaction with MCD, DDA, L&DO, SRO, and Collector offices for a complete property registration process.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm text-gray-700">
+                    <div className="flex items-center gap-2">
+                      <i className="text-blue-600" data-lucide="check"></i>
+                      <span>MCD Clearance Process</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-blue-600" data-lucide="check"></i>
+                      <span>DDA Approval Steps</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-blue-600" data-lucide="check"></i>
+                      <span>L&DO Documentation</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-blue-600" data-lucide="check"></i>
+                      <span>SRO Registration</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-blue-600" data-lucide="check"></i>
+                      <span>Tax Assessment</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="text-blue-600" data-lucide="check"></i>
+                      <span>Final Handover</span>
+                    </div>
+                  </div>
+                </div>
                 </div>
               </div>
 
               {/* Useful Information Header */}
-              <div className="py-12 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-text-light dark:text-text-dark tracking-tight font-display mb-4">
-                  Useful Information
-                </h2>
-                <div className="h-1.5 w-32 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+              <div className="px-6 md:px-10 lg:px-20 py-10">
+                <div className="bg-blue-600 rounded-3xl px-8 py-12 text-center">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight font-display mb-4">
+                    Useful Information
+                  </h2>
+                  <div className="h-1.5 w-32 bg-white mx-auto rounded-full"></div>
+                </div>
               </div>
 
               {/* Freehold vs Leasehold Guide */}
               <div className="py-8">
                 <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-700 overflow-hidden mb-16">
-                  <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
-                    <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-blue-600 px-8 py-6">
+                    <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                         <i className="text-white text-xl" data-lucide="building"></i>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold">Freehold vs Leasehold Property in Delhi</h3>
-                        <p className="text-yellow-100">What Every Buyer Must Know</p>
+                        <h3 className="text-2xl font-bold text-white">Freehold vs Leasehold Property in Delhi</h3>
+                        <p className="text-white/90">What Every Buyer Must Know</p>
                       </div>
                     </div>
                   </div>
@@ -1076,9 +1045,9 @@ export default function Home() {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       {/* Leasehold */}
-                      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-orange-500">
+                      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-blue-500">
                         <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
-                          <i data-lucide="clock" className="w-5 h-5 text-orange-500"></i>
+                          <i data-lucide="clock" className="w-5 h-5 text-blue-500"></i>
                           What is Leasehold Property?
                         </h4>
                         <p className="text-subtext-light dark:text-subtext-dark mb-4">
@@ -1086,19 +1055,19 @@ export default function Home() {
                         </p>
                         <ul className="space-y-2 text-sm text-subtext-light dark:text-subtext-dark">
                           <li className="flex items-start gap-2">
-                            <i data-lucide="minus" className="w-4 h-4 text-orange-500 mt-1 flex-shrink-0"></i>
+                            <i data-lucide="minus" className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0"></i>
                             Once the lease period ends, you must get it renewed
                           </li>
                           <li className="flex items-start gap-2">
-                            <i data-lucide="minus" className="w-4 h-4 text-orange-500 mt-1 flex-shrink-0"></i>
+                            <i data-lucide="minus" className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0"></i>
                             Any sale or transfer requires approval/NOC from the authority
                           </li>
                           <li className="flex items-start gap-2">
-                            <i data-lucide="minus" className="w-4 h-4 text-orange-500 mt-1 flex-shrink-0"></i>
+                            <i data-lucide="minus" className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0"></i>
                             Banks are cautious in giving loans since ownership is not permanent
                           </li>
                         </ul>
-                        <div className="mt-4 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
+                        <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                           <p className="text-sm text-orange-800 dark:text-orange-200 font-medium">
                             In short: you use the property, but the government authority remains the actual landlord.
                           </p>
@@ -1160,9 +1129,9 @@ export default function Home() {
                     </div>
 
                     {/* Bottom Line */}
-                    <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-6 text-center border border-primary/20">
-                      <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">👉 Bottom Line</h4>
-                      <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
+                    <div className="bg-blue-600 px-8 py-6 rounded-lg">
+                      <h4 className="text-xl font-bold text-white mb-3">👉 Bottom Line</h4>
+                      <p className="text-white/90 leading-relaxed">
                         Leasehold is like being a tenant of the government; Freehold means you are the true owner. In Delhi's real estate market, freehold always commands more value, less hassle, and stronger investment security.
                       </p>
                     </div>
@@ -1173,14 +1142,14 @@ export default function Home() {
               {/* Circle Rate vs Market Rate Guide */}
               <div className="py-16">
                 <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-700 overflow-hidden mb-16">
-                  <div className="bg-gradient-to-r from-primary to-secondary text-white p-8">
-                    <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-blue-600 px-8 py-6">
+                    <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                         <i className="text-white text-xl" data-lucide="trending-up"></i>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold">Circle Rate vs Market Rate</h3>
-                        <p className="text-yellow-100">The Real Truth Behind Property Valuation in Delhi</p>
+                        <h3 className="text-2xl font-bold text-white">Circle Rate vs Market Rate</h3>
+                        <p className="text-white/90">The Real Truth Behind Property Valuation in Delhi</p>
                       </div>
                     </div>
                   </div>
@@ -1232,7 +1201,7 @@ export default function Home() {
                     {/* Why This Difference Matters */}
                     <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                       <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
-                        <i data-lucide="alert-triangle" className="w-5 h-5 text-orange-500"></i>
+                        <i data-lucide="alert-triangle" className="w-5 h-5 text-blue-500"></i>
                         Why does this difference matter?
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1242,15 +1211,15 @@ export default function Home() {
                             If market rate {'>'} circle rate, buyers and sellers often deal partly in cash to cover the difference. Risky, unaccounted, and a big red flag for tax authorities.
                           </p>
                         </div>
-                        <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg border border-yellow-200 dark:border-yellow-700">
-                          <h5 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">2. Higher Stamp Duty & Taxes</h5>
-                          <p className="text-sm text-yellow-700 dark:text-yellow-300">
+                        <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
+                          <h5 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">2. Higher Stamp Duty & Taxes</h5>
+                          <p className="text-sm text-blue-700 dark:text-blue-300">
                             Registry charges, stamp duty, and capital gains are calculated on the higher of circle rate or declared transaction value.
                           </p>
                         </div>
-                        <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg border border-amber-200 dark:border-amber-700">
-                          <h5 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">3. Home Loan Issues</h5>
-                          <p className="text-sm text-amber-700 dark:text-amber-300">
+                        <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
+                          <h5 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">3. Home Loan Issues</h5>
+                          <p className="text-sm text-blue-700 dark:text-blue-300">
                             Banks usually lend on whichever is lower between market rate and circle rate. So if your property's market rate is much higher, be ready to arrange extra money.
                           </p>
                         </div>
@@ -1258,9 +1227,9 @@ export default function Home() {
                     </div>
 
                     {/* Practical Tips */}
-                    <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-amber-900/20 dark:to-yellow-900/20 rounded-xl p-6 border border-yellow-200 dark:border-amber-700">
-                      <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 flex items-center gap-2">
-                        <i data-lucide="lightbulb" className="w-5 h-5 text-amber-600"></i>
+                    <div className="bg-blue-600 px-8 py-6 rounded-lg">
+                      <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="lightbulb" className="w-5 h-5 text-white"></i>
                         Practical Tips Before You Buy or Sell
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1271,21 +1240,21 @@ export default function Home() {
                           'Negotiate smartly—sometimes a seller quotes market rate way above reality. Compare with circle rate and use it to bargain.'
                         ].map((tip, index) => (
                           <div key={index} className="flex items-start gap-3">
-                            <i data-lucide="check-circle" className="w-4 h-4 text-amber-600 mt-1 flex-shrink-0"></i>
-                            <p className="text-sm text-amber-700 dark:text-amber-300">{tip}</p>
+                            <i data-lucide="check-circle" className="w-4 h-4 text-white mt-1 flex-shrink-0"></i>
+                            <p className="text-sm text-white/90">{tip}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Bottom Line */}
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-800 rounded-xl p-6 text-center border border-blue-200 dark:border-slate-600" style={{ background: 'linear-gradient(to right, rgb(239, 246, 255), rgb(224, 231, 255))' }}>
-                      <h4 className="text-xl font-bold text-text-light dark:text-text-dark mb-3">The Bottom Line</h4>
-                      <p className="text-subtext-light dark:text-subtext-dark leading-relaxed mb-4">
+                    <div className="bg-blue-600 px-8 py-6 rounded-lg">
+                      <h4 className="text-xl font-bold text-white mb-3">The Bottom Line</h4>
+                      <p className="text-white/90 leading-relaxed mb-4">
                         Circle rate is the government's way of keeping a floor under property values, while market rate is the reality check of what people are actually paying. As a buyer or seller, the real game is to strike a balance—stay legal, stay practical, and don't get trapped in cash-heavy deals.
                       </p>
-                      <div className="bg-white dark:bg-slate-800 p-4 rounded-lg">
-                        <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                      <div className="bg-white p-4 rounded-lg">
+                        <p className="text-sm font-medium text-blue-600">
                           💡 Want to navigate this without confusion? At SaleDeed.com, we simplify the paperwork, check the legalities, and make sure your transaction is smooth and transparent—exactly the way property deals should be.
                         </p>
                       </div>
@@ -1297,7 +1266,7 @@ export default function Home() {
               {/* FAQ Section */}
               <section className="px-6 md:px-10 lg:px-20 py-16 bg-white dark:bg-slate-900">
               <div className="max-w-4xl mx-auto">
-                <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-yellow-200/50 dark:border-slate-700 p-8">
+                <div className="bg-white dark:bg-slate-800/50 rounded-xl shadow-md border border-blue-200/50 dark:border-slate-700 p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <i data-lucide="help-circle" className="text-primary text-2xl"></i>
                     <h2 className="text-2xl font-bold text-text-light dark:text-text-dark font-display">
@@ -1401,40 +1370,41 @@ export default function Home() {
             </section>
 
             {/* Contact Us CTA Section */}
-            <section className="px-6 md:px-10 lg:px-20 py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+            <section className="px-6 md:px-10 lg:px-20 py-10">
+              <div className="bg-blue-600 rounded-3xl px-8 py-12">
               <div className="max-w-4xl mx-auto text-center">
                 {/* Icon */}
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full mb-6 animate-bounce-gentle">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-transparent border-2 border-white rounded-full mb-6">
                   <i data-lucide="phone-call" className="w-10 h-10 text-white"></i>
                 </div>
 
                 {/* Heading */}
-                <h2 className="text-text-light dark:text-text-dark text-3xl md:text-5xl font-bold tracking-tight font-display mb-4 animate-fade-in-up">
+                <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight font-display mb-4 animate-fade-in-up">
                  100 Baat Ki 1 Baat
 
                 </h2>
 
                 {/* Subheading */}
-                <p className="text-subtext-light dark:text-subtext-dark text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up animate-delay-200">
+                <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in-up animate-delay-200">
                   Our team of experts is here to answer all your queries and provide customised solutions for your specific property need.Get In Touch Right Now!
   </p>
 
                 {/* Features */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 animate-fade-in-up animate-delay-300">
-                  <div className="flex flex-col items-center gap-2 p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm">
-                    <i data-lucide="clock" className="w-6 h-6 text-primary"></i>
-                    <span className="text-sm font-semibold text-text-light dark:text-text-dark">Quick Response</span>
-                    <span className="text-xs text-subtext-light dark:text-subtext-dark">Within 24 hours</span>
+                  <div className="flex flex-col items-center gap-2 p-4 bg-white rounded-xl">
+                    <i data-lucide="clock" className="w-6 h-6 text-blue-600"></i>
+                    <span className="text-sm font-semibold text-blue-600">Quick Response</span>
+                    <span className="text-xs text-gray-700">Within 24 hours</span>
                   </div>
-                  <div className="flex flex-col items-center gap-2 p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm">
-                    <i data-lucide="shield-check" className="w-6 h-6 text-primary"></i>
-                    <span className="text-sm font-semibold text-text-light dark:text-text-dark">Expert Guidance</span>
-                    <span className="text-xs text-subtext-light dark:text-subtext-dark">Certified lawyers</span>
+                  <div className="flex flex-col items-center gap-2 p-4 bg-white rounded-xl">
+                    <i data-lucide="shield-check" className="w-6 h-6 text-blue-600"></i>
+                    <span className="text-sm font-semibold text-blue-600">Expert Guidance</span>
+                    <span className="text-xs text-gray-700">Certified lawyers</span>
                   </div>
-                  <div className="flex flex-col items-center gap-2 p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl backdrop-blur-sm">
-                    <i data-lucide="headset" className="w-6 h-6 text-primary"></i>
-                    <span className="text-sm font-semibold text-text-light dark:text-text-dark">Free Consultation</span>
-                    <span className="text-xs text-subtext-light dark:text-subtext-dark">15 minutes call</span>
+                  <div className="flex flex-col items-center gap-2 p-4 bg-white rounded-xl">
+                    <i data-lucide="headset" className="w-6 h-6 text-blue-600"></i>
+                    <span className="text-sm font-semibold text-blue-600">Free Consultation</span>
+                    <span className="text-xs text-gray-700">15 minutes call</span>
                   </div>
                 </div>
 
@@ -1442,7 +1412,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-400">
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:scale-105"
+                    className="group inline-flex items-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl"
                   >
                     <i data-lucide="mail" className="w-6 h-6"></i>
                     <span>Contact Us Now</span>
@@ -1451,26 +1421,27 @@ export default function Home() {
 
                   <a
                     href="tel:+918800505050"
-                    className="inline-flex items-center gap-3 bg-white dark:bg-slate-800 text-primary border-2 border-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-xl"
+                    className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300"
                   >
                     <i data-lucide="phone" className="w-6 h-6"></i>
                     <span>Call: +91 88005 05050</span>
                   </a>
                 </div>
+              </div>
 
                 {/* Services Overview */}
-                <div className="mt-12 max-w-3xl mx-auto bg-white dark:bg-slate-800/50 rounded-2xl p-8 shadow-xl border border-yellow-200/50 dark:border-slate-700">
-                  <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-6 text-center">
+                <div className="mt-12 max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-xl">
+                  <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-6 text-center">
                     Services Overview
                   </h2>
-                  <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
+                  <div className="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
                   
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                         <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
                       </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                      <p className="text-lg text-gray-700 font-medium">
                         Celebrating 1 Lac Successful Deals
                       </p>
                     </div>
@@ -1479,7 +1450,7 @@ export default function Home() {
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                         <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
                       </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                      <p className="text-lg text-gray-700 font-medium">
                         Team of Experts with 50+ Years Experience
                       </p>
                     </div>
@@ -1488,7 +1459,7 @@ export default function Home() {
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                         <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
                       </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                      <p className="text-lg text-gray-700 font-medium">
                         Best in Class Lawyers / Valuers / Engineers
                       </p>
                     </div>
@@ -1497,7 +1468,7 @@ export default function Home() {
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
                         <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
                       </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                      <p className="text-lg text-gray-700 font-medium">
                         Doorstep Consultation @ ₹999/-
                       </p>
                     </div>
@@ -1505,8 +1476,8 @@ export default function Home() {
                 </div>
 
                 {/* Trust Badge */}
-                <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
-                  <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
+                <div className="mt-8 flex items-center text-white justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
+                  <i data-lucide="shield" className="w-4 h-4 text-white"></i>
                   <span>Trusted by 1 Lac+ Happy Clients </span>
                 </div>
               </div>
@@ -1514,10 +1485,9 @@ export default function Home() {
             </main>
 
             {/* Footer */}
-            <footer className="bg-yellow-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">
+            <footer className="bg-blue-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">
               <div className="px-6 md:px-10 lg:px-20 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                  {/* Column 1 - Some Tips & Tricks */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">{/* Column 1 - Some Tips & Tricks */}
                   <div>
                     <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Tips and Tricks</h3>
                     <ul className="space-y-3 text-base">
@@ -1536,10 +1506,21 @@ export default function Home() {
                     
                     <ul className="space-y-3 text-base">
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Get In Touch</Link></li>
+                    </ul>                  </div>
+
+                  {/* Column 3 - Legal */}
+                  <div>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Legal</h3>
+                    <ul className="space-y-3 text-base">
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/refund-policy">Refund Policy</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/payment-policy">Payment Policy</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/cookie-policy">Cookie Policy</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/terms-conditions">Terms & Conditions</Link></li>
                     </ul>
                   </div>
 
-                  {/* Column 3 - 100 Baat Ki 1 Baat */}
+                  {/* Column 4 - 100 Baat Ki 1 Baat */}
                   <div>
                     <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">100 Baat Ki 1 Baat</h3>
                     <div className="space-y-3">
@@ -1568,7 +1549,7 @@ export default function Home() {
                     <p className="mt-4 text-sm font-semibold text-primary">Trusted By 1 Lac + Happy Clients</p>
                   </div>
 
-                  {/* Column 4 - Possible Pages */}
+                  {/* Column 5 - Possible Pages */}
                   <div>
                     <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Pages</h3>
                     <ul className="space-y-3 text-base">
@@ -1583,7 +1564,7 @@ export default function Home() {
                 </div>
 
                 {/* Footer Bottom */}
-                <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8">
+                <div className="mt-16 border-t border-blue-200 dark:border-slate-700 pt-8">
                   <div className="text-center space-y-2">
                     <p className="text-base font-semibold">All Right Reserved saledeed.com ™</p>
                     <p className="text-sm">A Unit of Bharatiya Bhoomi Group</p>
@@ -1608,11 +1589,11 @@ export default function Home() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-primary to-secondary text-white p-6">
+              <div className="bg-blue-600">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                      <i data-lucide="map-pin" className="w-5 h-5 text-white"></i>
+                      <i data-lucide="map-pin" className="w-5 h-5 text-blue-600"></i>
                     </div>
                     <h3 className="text-xl font-bold">Doorstep Advice Service</h3>
                   </div>
@@ -1620,7 +1601,7 @@ export default function Home() {
                     onClick={() => setShowDoorstepModal(false)}
                     className="p-2 hover:bg-white/20 rounded-lg transition-colors"
                   >
-                    <i data-lucide="x" className="w-5 h-5 text-white"></i>
+                    <i data-lucide="x" className="w-5 h-5 text-blue-600"></i>
                   </button>
                 </div>
               </div>
@@ -1661,7 +1642,7 @@ export default function Home() {
                 </div>
 
                 {/* Pricing */}
-                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-4 mb-6 text-center">
+                <div className="bg-blue-600">
                   <div className="text-2xl font-bold text-primary mb-1">₹999</div>
                   <div className="text-sm text-subtext-light dark:text-subtext-dark">One-time consultation fee</div>
                 </div>
@@ -1671,7 +1652,7 @@ export default function Home() {
                   href="https://wa.me/918800505050?text=Hello,%20I%20would%20like%20to%20book%20a%20doorstep%20advice%20service%20for%20₹999.%20Please%20provide%20more%20details."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-xl font-bold text-center flex items-center justify-center gap-2 hover:from-green-600 hover:to-green-700 transition-all duration-300 hover:shadow-lg"
+                  className="w-full bg-blue-600"
                 >
                   <i data-lucide="message-circle" className="w-5 h-5"></i>
                   Book via WhatsApp
@@ -1692,14 +1673,14 @@ export default function Home() {
         <div className="fixed bottom-6 right-6 z-40">
           <button
             onClick={() => setShowChatbot(true)}
-            className="group bg-gradient-to-r from-primary to-secondary text-white w-14 h-14 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center hover:scale-110 animate-pulse hover:animate-none"
+            className="group bg-blue-600"
             title="Ask AI Assistant"
           >
             <i data-lucide="bot" className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"></i>
           </button>
 
           {/* Tooltip */}
-          <div className="absolute bottom-16 right-0 bg-black text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+          <div className="absolute bottom-16 right-0 bg-black text-blue-600 text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
             Ask AI about property docs
             <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black"></div>
           </div>
@@ -1716,15 +1697,15 @@ export default function Home() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
             <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Header */}
-              <div className="bg-gradient-to-r from-primary to-secondary p-6 rounded-t-2xl">
+              <div className="bg-blue-600">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                      <i data-lucide="user-plus" className="w-6 h-6 text-white"></i>
+                      <i data-lucide="user-plus" className="w-6 h-6 text-blue-600"></i>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white">Share Your Profile</h3>
-                      <p className="text-white/80 text-sm">Tell us how you can contribute</p>
+                      <h3 className="text-2xl font-bold text-blue-600">Share Your Profile</h3>
+                      <p className="text-blue-600/80 text-sm">Tell us how you can contribute</p>
                     </div>
                   </div>
                   <button
@@ -1733,7 +1714,7 @@ export default function Home() {
                       setSubmitSuccess(false)
                       setProfileForm({ name: '', email: '', phone: '', expertise: '', message: '' })
                     }}
-                    className="text-white hover:bg-white/20 rounded-full p-2 transition-colors"
+                    className="text-blue-600 hover:bg-white/20 rounded-full p-2 transition-colors"
                   >
                     <i data-lucide="x" className="w-6 h-6"></i>
                   </button>
@@ -1759,7 +1740,7 @@ export default function Home() {
                         setSubmitSuccess(false)
                         setProfileForm({ name: '', email: '', phone: '', expertise: '', message: '' })
                       }}
-                      className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+                      className="bg-blue-600"
                     >
                       Close
                     </button>
@@ -1885,7 +1866,7 @@ export default function Home() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="flex-1 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        className="flex-1 px-6 py-3 rounded-full bg-blue-600"
                       >
                         {isSubmitting ? (
                           <>
