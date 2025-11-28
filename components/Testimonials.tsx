@@ -348,8 +348,8 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <i className="text-white text-2xl" data-lucide="building-2"></i>
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="text-blue-600 text-2xl" data-lucide="building-2"></i>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display mb-2">MCD</h3>
@@ -363,8 +363,8 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <i className="text-white text-2xl" data-lucide="landmark"></i>
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="text-blue-600 text-2xl" data-lucide="landmark"></i>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display mb-2">DDA</h3>
@@ -378,8 +378,8 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <i className="text-white text-2xl" data-lucide="map"></i>
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="text-blue-600 text-2xl" data-lucide="map"></i>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display mb-2">L&DO</h3>
@@ -393,8 +393,8 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <i className="text-white text-2xl" data-lucide="file-check"></i>
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="text-blue-600 text-2xl" data-lucide="file-check"></i>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display mb-2">SRO</h3>
@@ -408,8 +408,8 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <i className="text-white text-2xl" data-lucide="receipt"></i>
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="text-blue-600 text-2xl" data-lucide="receipt"></i>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display mb-2">Assistant Assessor & Collector Office</h3>
@@ -423,8 +423,8 @@ export default function Testimonials() {
 
             <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <i className="text-white text-2xl" data-lucide="shield-check"></i>
+                <div className="w-16 h-16 bg-transparent border-2 border-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="text-blue-600 text-2xl" data-lucide="shield-check"></i>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-text-light dark:text-text-dark font-display mb-2">NDMC</h3>

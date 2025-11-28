@@ -5655,3 +5655,161 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     color: white !important;
   }
 }
+
+
+/* ===== MOBILE ICON FIX - TRANSPARENT BACKGROUNDS WITH BLUE OUTLINES ===== */
+@media screen and (max-width: 768px) {
+  /* All icon containers should have transparent backgrounds with blue borders */
+  .w-12.h-12,
+  .w-16.h-16,
+  .w-20.h-20,
+  [class*="w-12"][class*="h-12"],
+  [class*="w-16"][class*="h-16"],
+  [class*="w-20"][class*="h-20"] {
+    background-color: transparent !important;
+    border: 2px solid #1E4ED8 !important;
+    border-radius: 50% !important;
+  }
+
+  /* Icons inside should be blue */
+  .w-12.h-12 i,
+  .w-16.h-16 i,
+  .w-20.h-20 i,
+  .w-12.h-12 svg,
+  .w-16.h-16 svg,
+  .w-20.h-20 svg {
+    color: #1E4ED8 !important;
+    stroke: #1E4ED8 !important;
+  }
+
+  /* Exception: Icons in blue backgrounds should have white borders and white icons */
+  .bg-blue-600 .w-12.h-12,
+  .bg-blue-600 .w-16.h-16,
+  .bg-blue-600 .w-20.h-20 {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+  }
+
+  .bg-blue-600 .w-12.h-12 i,
+  .bg-blue-600 .w-16.h-16 i,
+  .bg-blue-600 .w-20.h-20 i,
+  .bg-blue-600 .w-12.h-12 svg,
+  .bg-blue-600 .w-16.h-16 svg,
+  .bg-blue-600 .w-20.h-20 svg {
+    color: white !important;
+    stroke: white !important;
+  }
+}
+
+
+/* ===== ENSURE ICONS ARE VISIBLE ON MOBILE ===== */
+@media screen and (max-width: 768px) {
+  /* Force all icon containers to be visible */
+  .w-12.h-12,
+  .w-16.h-16,
+  .w-20.h-20,
+  .icon-container {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Force all icons to be visible */
+  i[data-lucide],
+  svg[data-lucide],
+  .w-12.h-12 i,
+  .w-16.h-16 i,
+  .w-20.h-20 i,
+  .icon-container i {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Ensure Lucide icons render properly */
+  [data-lucide] {
+    stroke: currentColor !important;
+    fill: none !important;
+    stroke-width: 2 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+  }
+
+  /* Icon containers in white cards */
+  .bg-white .w-12.h-12,
+  .bg-white .w-16.h-16,
+  .bg-white .w-20.h-20,
+  .bg-white .icon-container {
+    background-color: transparent !important;
+    border: 2px solid #1E4ED8 !important;
+    border-radius: 50% !important;
+  }
+
+  .bg-white .w-12.h-12 i,
+  .bg-white .w-16.h-16 i,
+  .bg-white .w-20.h-20 i,
+  .bg-white .icon-container i {
+    color: #1E4ED8 !important;
+  }
+
+  /* Icon containers in blue backgrounds */
+  .bg-blue-600 .w-12.h-12,
+  .bg-blue-600 .w-16.h-16,
+  .bg-blue-600 .w-20.h-20,
+  .bg-blue-600 .icon-container {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    border-radius: 50% !important;
+  }
+
+  .bg-blue-600 .w-12.h-12 i,
+  .bg-blue-600 .w-16.h-16 i,
+  .bg-blue-600 .w-20.h-20 i,
+  .bg-blue-600 .icon-container i {
+    color: white !important;
+  }
+}
+
+
+/* ===== FIX ICONS IN WHITE CARDS INSIDE BLUE SECTIONS ===== */
+@media screen and (max-width: 768px) {
+  /* White cards inside blue backgrounds should have blue icons */
+  .bg-blue-600 .bg-white .w-12.h-12,
+  .bg-blue-600 .bg-white .w-16.h-16,
+  .bg-blue-600 .bg-white .w-20.h-20,
+  .bg-blue-600 .bg-white .icon-container,
+  .bg-blue-600 > * > .bg-white .w-12.h-12,
+  .bg-blue-600 > * > .bg-white .w-16.h-16,
+  .bg-blue-600 > * > .bg-white .w-20.h-20 {
+    background-color: transparent !important;
+    border: 2px solid #1E4ED8 !important;
+    border-radius: 50% !important;
+  }
+
+  .bg-blue-600 .bg-white .w-12.h-12 i,
+  .bg-blue-600 .bg-white .w-16.h-16 i,
+  .bg-blue-600 .bg-white .w-20.h-20 i,
+  .bg-blue-600 .bg-white .icon-container i,
+  .bg-blue-600 > * > .bg-white .w-12.h-12 i,
+  .bg-blue-600 > * > .bg-white .w-16.h-16 i,
+  .bg-blue-600 > * > .bg-white .w-20.h-20 i {
+    color: #1E4ED8 !important;
+    stroke: #1E4ED8 !important;
+  }
+
+  /* Override the previous rule that made them white */
+  .bg-blue-600 .rounded-2xl.bg-white .w-16.h-16,
+  .bg-blue-600 .rounded-2xl.bg-white .w-20.h-20 {
+    border-color: #1E4ED8 !important;
+  }
+
+  .bg-blue-600 .rounded-2xl.bg-white .w-16.h-16 i,
+  .bg-blue-600 .rounded-2xl.bg-white .w-20.h-20 i {
+    color: #1E4ED8 !important;
+    stroke: #1E4ED8 !important;
+  }
+}

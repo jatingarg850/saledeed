@@ -819,39 +819,161 @@
   }
 }
 
-/* Force gradient backgrounds on service card icons on mobile */
+/* Remove backgrounds from service card icons and make icons blue on mobile */
 @media (max-width: 640px) {
-  /* Restore gradient backgrounds for icon containers */
+  /* Remove all backgrounds from icon containers */
   .w-16.h-16[class*="bg-gradient"],
   div[class*="w-16"][class*="h-16"][class*="bg-gradient"],
   .rounded-full[class*="bg-gradient-to-r"] {
-    background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+    background: transparent !important;
+    background-image: none !important;
+    background-color: transparent !important;
   }
 
-  /* Specific gradients for each icon type */
-  .from-purple-500.to-pink-600 {
-    background: linear-gradient(to right, rgb(168, 85, 247), rgb(219, 39, 119)) !important;
-    background-image: linear-gradient(to right, rgb(168, 85, 247), rgb(219, 39, 119)) !important;
+  /* CRITICAL: Make ALL Lucide icons visible and blue by default */
+  i[data-lucide],
+  i[data-lucide] svg,
+  svg[data-lucide] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+    fill: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+    width: inherit !important;
+    height: inherit !important;
   }
 
-  .from-blue-500.to-indigo-600 {
-    background: linear-gradient(to right, rgb(59, 130, 246), rgb(79, 70, 229)) !important;
-    background-image: linear-gradient(to right, rgb(59, 130, 246), rgb(79, 70, 229)) !important;
+  /* Override any currentColor or inherit that might make icons white */
+  i[data-lucide] svg path,
+  i[data-lucide] svg circle,
+  i[data-lucide] svg line,
+  i[data-lucide] svg polyline,
+  i[data-lucide] svg rect,
+  svg[data-lucide] path,
+  svg[data-lucide] circle,
+  svg[data-lucide] line,
+  svg[data-lucide] polyline,
+  svg[data-lucide] rect {
+    stroke: #2563eb !important;
+    fill: none !important;
   }
 
-  .from-green-500.to-emerald-600 {
-    background: linear-gradient(to right, rgb(34, 197, 94), rgb(5, 150, 105)) !important;
-    background-image: linear-gradient(to right, rgb(34, 197, 94), rgb(5, 150, 105)) !important;
+  /* Force SVG elements inside Lucide icons to be visible */
+  i[data-lucide] > svg,
+  [data-lucide] > svg {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+    fill: none !important;
+    stroke-width: 2 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
   }
 
-  .from-orange-500.to-red-600 {
-    background: linear-gradient(to right, rgb(249, 115, 22), rgb(220, 38, 38)) !important;
-    background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(220, 38, 38)) !important;
+  /* Target all icon sizes and ensure they inherit size */
+  i[data-lucide].w-10 svg,
+  i[data-lucide].w-8 svg,
+  i[data-lucide].w-6 svg,
+  i[data-lucide].w-5 svg,
+  i[data-lucide].h-10 svg,
+  i[data-lucide].h-8 svg,
+  i[data-lucide].h-6 svg,
+  i[data-lucide].h-5 svg {
+    width: 100% !important;
+    height: 100% !important;
+    color: #2563eb !important;
+    stroke: #2563eb !important;
   }
 
-  .from-yellow-500.to-orange-600 {
-    background: linear-gradient(to right, rgb(234, 179, 8), rgb(234, 88, 12)) !important;
-    background-image: linear-gradient(to right, rgb(234, 179, 8), rgb(234, 88, 12)) !important;
+  /* Icons with text-blue-600 class */
+  i[data-lucide].text-blue-600,
+  i[data-lucide].text-blue-600 svg,
+  i[data-lucide].text-blue-600 svg *,
+  svg[data-lucide].text-blue-600,
+  svg[data-lucide].text-blue-600 *,
+  .text-blue-600 i[data-lucide],
+  .text-blue-600 i[data-lucide] svg,
+  .text-blue-600 i[data-lucide] svg *,
+  .text-blue-600 svg[data-lucide],
+  .text-blue-600 svg[data-lucide] * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Force blue on icons with text-2xl class (Partner section) */
+  i[data-lucide].text-2xl,
+  i[data-lucide].text-2xl svg,
+  i[data-lucide].text-2xl svg * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Icons in white cards */
+  .bg-white i[data-lucide],
+  .bg-white i[data-lucide] svg,
+  .bg-white svg[data-lucide] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Icons in icon containers with borders */
+  .border-blue-600 i[data-lucide],
+  .border-blue-600 i[data-lucide] svg,
+  .border-blue-600 svg[data-lucide],
+  .icon-container i[data-lucide],
+  .icon-container i[data-lucide] svg,
+  .icon-container svg[data-lucide] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* EXCEPTION: Keep white icons white ONLY on blue backgrounds */
+  .bg-blue-600 i[data-lucide].text-white,
+  .bg-blue-600 i[data-lucide].text-white svg,
+  .bg-blue-600 svg[data-lucide].text-white,
+  .bg-blue-600 .text-white i[data-lucide],
+  .bg-blue-600 .text-white i[data-lucide] svg,
+  .bg-blue-600 .text-white svg[data-lucide] {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* CRITICAL FIX: Override white color on white backgrounds - make them blue */
+  .bg-white i[data-lucide],
+  .bg-white i[data-lucide] svg,
+  .bg-white svg[data-lucide],
+  .bg-white .text-white i[data-lucide],
+  .bg-white .text-white i[data-lucide] svg,
+  .bg-white .text-white svg[data-lucide] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Force blue color on icons in white cards even if they have text-white class */
+  .rounded-2xl.bg-white i[data-lucide],
+  .rounded-2xl.bg-white i[data-lucide] svg,
+  .rounded-2xl.bg-white svg[data-lucide] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Target FontAwesome icons */
+  .fa,
+  .fas,
+  .far,
+  .fal,
+  .fab,
+  i[class*="fa-"] {
+    color: #2563eb !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* FontAwesome in white cards */
+  .bg-white .fa,
+  .bg-white .fas,
+  .bg-white i[class*="fa-"] {
+    color: #2563eb !important;
   }
 }
 
@@ -872,5 +994,361 @@
   .hero-cta-animated {
     padding: 1rem 2rem !important;
     font-size: 1.25rem !important;
+  }
+}
+
+/* Fix invisible text in form inputs on mobile */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select {
+    color: #1F2937 !important;
+    background-color: white !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #9CA3AF !important;
+  }
+
+  .dark input,
+  .dark textarea,
+  .dark select {
+    color: #F3F4F6 !important;
+    background-color: #1F2937 !important;
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #6B7280 !important;
+  }
+
+  /* Specific fix for white background inputs */
+  .bg-white input,
+  .bg-white textarea,
+  .rounded-xl input,
+  .rounded-xl textarea {
+    color: #1F2937 !important;
+  }
+}
+
+/* Global icon color fix for mobile - make icons blue on white cards only */
+@media (max-width: 640px) {
+  /* Target icons in service cards and white containers */
+  .rounded-2xl.bg-white i[data-lucide],
+  .rounded-2xl.bg-white svg,
+  .rounded-xl.bg-white i[data-lucide],
+  .rounded-xl.bg-white svg,
+  .shadow-lg.bg-white i[data-lucide],
+  .shadow-lg.bg-white svg {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Target dark mode cards */
+  .dark .bg-slate-800 i[data-lucide]:not(.text-white),
+  .dark .bg-slate-800 svg:not(.text-white) {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Ensure icons with text-blue-600 class stay blue */
+  i[data-lucide].text-blue-600,
+  svg.text-blue-600,
+  .text-blue-600 i[data-lucide],
+  .text-blue-600 svg {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* CRITICAL: Force ALL text to DARK BLACK on blue backgrounds for better visibility */
+  .bg-blue-600 p:not(.text-white):not([class*="text-white"]),
+  .bg-blue-600 h4:not(.text-white):not([class*="text-white"]),
+  .bg-blue-600 span:not(.text-white):not([class*="text-white"]),
+  .bg-blue-600 div:not(.text-white):not([class*="text-white"]),
+  .rounded-lg.bg-blue-600 p:not(.text-white):not([class*="text-white"]),
+  .rounded-lg.bg-blue-600 span:not(.text-white):not([class*="text-white"]),
+  div[class*="bg-blue-600"] p:not(.text-white):not([class*="text-white"]),
+  div[class*="bg-blue-600"] span:not(.text-white):not([class*="text-white"]) {
+    color: #000000 !important;
+  }
+
+  /* Keep headings and explicitly white text as white */
+  .bg-blue-600 h1,
+  .bg-blue-600 h2,
+  .bg-blue-600 h3,
+  .text-white,
+  .text-white\/90,
+  .text-white\/80,
+  .text-white\/70,
+  [class*="text-white"],
+  .bg-blue-600 .text-white,
+  .bg-blue-600 [class*="text-white"] {
+    color: white !important;
+  }
+
+  /* Force dark black on text size classes inside blue backgrounds */
+  .bg-blue-600 .text-sm:not(.text-white):not([class*="text-white"]),
+  .bg-blue-600 .text-base:not(.text-white):not([class*="text-white"]),
+  .bg-blue-600 .text-lg:not(.text-white):not([class*="text-white"]),
+  .bg-blue-600 .text-xl:not(.text-white):not([class*="text-white"]) {
+    color: #000000 !important;
+  }
+
+  /* Override any subtext or gray text colors to dark black on blue backgrounds */
+  .bg-blue-600 .text-subtext-light:not(.text-white),
+  .bg-blue-600 .text-subtext-dark:not(.text-white),
+  .bg-blue-600 .text-gray-700:not(.text-white),
+  .bg-blue-600 .text-gray-600:not(.text-white),
+  .bg-blue-600 [class*="text-gray"]:not(.text-white) {
+    color: #000000 !important;
+  }
+}
+
+
+/* Fix Practical Tips header visibility on mobile */
+@media (max-width: 640px) {
+  /* Ensure lightbulb icon is visible */
+  .bg-gradient-to-br i[data-lucide="lightbulb"],
+  .bg-gradient-to-br i[data-lucide="lightbulb"] svg {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Ensure white circular background for icon is visible */
+  .bg-gradient-to-br .bg-white.rounded-full {
+    background: white !important;
+    opacity: 1 !important;
+  }
+
+  /* Make header text clearly visible */
+  .bg-gradient-to-br h4.text-white {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Ensure gradient background is visible */
+  .bg-gradient-to-br.from-blue-600 {
+    background: linear-gradient(to bottom right, #2563eb, #1d4ed8) !important;
+    background-image: linear-gradient(to bottom right, #2563eb, #1d4ed8) !important;
+  }
+}
+
+
+/* Mobile Menu Styling - Blue and White Theme */
+@media (max-width: 768px) {
+  /* Mobile menu backdrop */
+  .mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(37, 99, 235, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 40;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  /* Mobile menu container */
+  .mobile-menu-container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    z-index: 50;
+    overflow-y: auto;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+  }
+
+  .dark .mobile-menu-container {
+    background: linear-gradient(to bottom, #1e293b, #0f172a);
+  }
+
+  /* Mobile menu items */
+  .mobile-menu-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .dark .mobile-menu-item {
+    border-bottom: 1px solid #334155;
+  }
+
+  /* Mobile menu links - consistent styling for ALL items */
+  .mobile-menu-link,
+  .mobile-menu-link:hover,
+  .mobile-menu-link:active,
+  .mobile-menu-link:focus,
+  a.mobile-menu-link,
+  button.mobile-menu-link {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    padding: 1rem !important;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    color: #374151 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .dark .mobile-menu-link,
+  .dark .mobile-menu-link:hover,
+  .dark .mobile-menu-link:active {
+    color: #d1d5db !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Hover state - only change text color */
+  .mobile-menu-link:hover {
+    color: #2563eb !important;
+    transform: translateX(4px);
+  }
+
+  .dark .mobile-menu-link:hover {
+    color: #60a5fa !important;
+  }
+
+  /* Active/current page - bold blue text, no background */
+  .mobile-menu-link.text-blue-600,
+  .mobile-menu-link.font-bold,
+  a.mobile-menu-link.text-blue-600,
+  a.mobile-menu-link[class*="text-blue"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #2563eb !important;
+    font-weight: 700 !important;
+  }
+
+  .dark .mobile-menu-link.text-blue-400,
+  .dark .mobile-menu-link.font-bold,
+  .dark a.mobile-menu-link[class*="text-blue"] {
+    color: #60a5fa !important;
+    background: transparent !important;
+  }
+
+  /* Dropdown items - consistent with main items */
+  .mobile-menu-item .pl-4 a {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #6b7280 !important;
+    font-size: 0.875rem !important;
+    padding: 0.75rem 1rem !important;
+    display: block;
+  }
+
+  .mobile-menu-item .pl-4 a:hover {
+    color: #2563eb !important;
+    background: transparent !important;
+    transform: translateX(4px);
+  }
+
+  /* Ensure buttons and links have same styling */
+  .mobile-menu-item > a,
+  .mobile-menu-item > button {
+    padding: 1rem !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+  }
+
+  /* Dropdown animation */
+  .mobile-dropdown-enter {
+    animation: slideIn 0.2s ease-out;
+  }
+
+  /* Hamburger button */
+  button.size-10 {
+    background: linear-gradient(to right, #2563eb, #1d4ed8) !important;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+  }
+
+  button.size-10:hover {
+    background: linear-gradient(to right, #1d4ed8, #1e40af) !important;
+    transform: scale(1.05);
+  }
+
+  button.size-10 i {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* Contact button in mobile menu - only the actual button, not menu links */
+  .mobile-menu-container .border-t a[href="/contact"] {
+    background: linear-gradient(to right, #2563eb, #1d4ed8) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    color: white !important;
+  }
+
+  .mobile-menu-container .border-t a[href="/contact"]:hover {
+    background: linear-gradient(to right, #1d4ed8, #1e40af) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+  }
+
+  /* Override any Tailwind classes that might add backgrounds */
+  .mobile-menu-container .mobile-menu-item a:not([class*="border-t"]),
+  .mobile-menu-container .mobile-menu-item button {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Scroll indicator */
+  .mobile-menu-scroll-indicator {
+    position: sticky;
+    bottom: 0;
+    height: 4px;
+    background: linear-gradient(to right, #2563eb, #60a5fa);
+    border-radius: 2px;
+    margin: 1rem;
+  }
+
+  /* Prevent body scroll when menu is open */
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }

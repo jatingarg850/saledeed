@@ -226,8 +226,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`mobile-menu-link text-base font-medium transition-colors ${currentPage === 'home'
-                  ? 'text-amber-700 dark:text-secondary font-semibold'
-                  : 'text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
+                  ? 'text-blue-600 dark:text-blue-400 font-bold'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                   }`}
               >
                 Home
@@ -238,7 +238,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
             <div className="mobile-menu-item">
               <button
                 onClick={() => setOpenMobileDropdown(openMobileDropdown === 'deeds' ? null : 'deeds')}
-                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <span>Deeds and documents</span>
                 <svg className="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -251,70 +251,70 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   <a
                     href="/services/sale-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Sale Deed
                   </a>
                   <a
                     href="/services/gift-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Gift Deed
                   </a>
                   <a
                     href="/services/relinquishment-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Relinquishment Deed
                   </a>
                   <a
                     href="/services/will-agreement"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Will Agreement
                   </a>
                   <a
                     href="/services/partition-deed"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Partition Deed
                   </a>
                   <a
                     href="/services/general-power-of-authority"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     General Power of Authority
                   </a>
                   <a
                     href="/services/agreement-to-sell"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Agreement to Sell
                   </a>
                   <a
                     href="/services/builder-buyer-agreement"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Builder Buyer Agreement
                   </a>
                   <a
                     href="/services/rent-agreement"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Rent Agreement
                   </a>
                   <a
                     href="/services/mutation-legal-document"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Mutation Legal Document
                   </a>
@@ -322,7 +322,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   <a
                     href="/documents"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors font-medium"
+                    className="mobile-menu-link text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors font-semibold"
                   >
                     All Documents
                   </a>
@@ -334,7 +334,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
             <div className="mobile-menu-item">
               <button
                 onClick={() => setOpenMobileDropdown(openMobileDropdown === 'solution' ? null : 'solution')}
-                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <span>Custom Solutions</span>
                 <svg className="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -347,35 +347,35 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   <a
                     href="/solutions/buyer"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     I am a Buyer
                   </a>
                   <a
                     href="/solutions/seller"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     I am a Seller
                   </a>
                   <a
                     href="/solutions/landlord"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     I am a Landlord
                   </a>
                   <a
                     href="/solutions/tenant"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     I am a Tenant
                   </a>
                   <a
                     href="/solutions/developer"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     I am a Developer / Builder / Institution / Society
                   </a>
@@ -389,8 +389,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
                 href="/services"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`mobile-menu-link text-base font-medium transition-colors ${currentPage === 'services'
-                  ? 'text-amber-700 dark:text-secondary font-semibold'
-                  : 'text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
+                  ? 'text-blue-600 dark:text-blue-400 font-bold'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                   }`}
               >
                 All Services
@@ -401,7 +401,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
             <div className="mobile-menu-item">
               <button
                 onClick={() => setOpenMobileDropdown(openMobileDropdown === 'company' ? null : 'company')}
-                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                className="mobile-menu-link flex items-center justify-between w-full text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 <span>Company</span>
                 <svg className="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -414,9 +414,9 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   <a
                     href="/about"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`mobile-menu-link text-sm hover:text-amber-700 dark:hover:text-secondary transition-colors ${currentPage === 'about'
-                      ? 'text-amber-700 dark:text-secondary font-medium'
-                      : 'text-subtext-light dark:text-subtext-dark'
+                    className={`mobile-menu-link text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${currentPage === 'about'
+                      ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                      : 'text-gray-600 dark:text-gray-400'
                       }`}
                   >
                     About Us
@@ -424,28 +424,28 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   <a
                     href="/blogs"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Blogs
                   </a>
                   <a
                     href="/privacy-policy"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Privacy Policy
                   </a>
                   <a
                     href="/partner"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Partner With Us
                   </a>
                   <a
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="mobile-menu-link text-sm text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary transition-colors"
+                    className="mobile-menu-link text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Contact us
                   </a>

@@ -116,6 +116,32 @@ export default function Home() {
     }
   }, [isMobile])
 
+  // Re-initialize Lucide icons on mobile
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).lucide) {
+      // Initial icon creation
+      (window as any).lucide.createIcons()
+      
+      // Re-create icons after a short delay to ensure DOM is ready
+      const timer = setTimeout(() => {
+        (window as any).lucide.createIcons()
+      }, 500)
+      
+      // Re-create icons on mobile specifically
+      if (isMobile) {
+        const mobileTimer = setTimeout(() => {
+          (window as any).lucide.createIcons()
+        }, 1000)
+        return () => {
+          clearTimeout(timer)
+          clearTimeout(mobileTimer)
+        }
+      }
+      
+      return () => clearTimeout(timer)
+    }
+  }, [isMobile])
+
   const propertyDocuments = [
     {
       title: 'Sale Deed',
@@ -1227,11 +1253,20 @@ export default function Home() {
                     </div>
 
                     {/* Practical Tips */}
-                    <div className="bg-blue-600 px-8 py-6 rounded-lg">
-                      <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <i data-lucide="lightbulb" className="w-5 h-5 text-white"></i>
-                        Practical Tips Before You Buy or Sell
-                      </h4>
+                    <div className="bg-blue-600 px-6 py-8 rounded-2xl shadow-xl">
+                      <div className="text-center mb-6">
+                        <div className="inline-flex items-center justify-center w-20 h-20 bg-yellow-400 rounded-full mb-4 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                            <path d="M9 18h6"/>
+                            <path d="M10 22h4"/>
+                          </svg>
+                        </div>
+                        <h4 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                          Practical Tips Before You Buy or Sell
+                        </h4>
+                        <div className="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+                      </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {[
                           'Check the circle rate of your area on Delhi Govt. Revenue Dept. website before finalizing any deal.',
@@ -1239,9 +1274,15 @@ export default function Home() {
                           'Avoid under-the-table deals—it may look attractive today, but can kill resale value and even create legal troubles later.',
                           'Negotiate smartly—sometimes a seller quotes market rate way above reality. Compare with circle rate and use it to bargain.'
                         ].map((tip, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <i data-lucide="check-circle" className="w-4 h-4 text-white mt-1 flex-shrink-0"></i>
-                            <p className="text-sm text-white/90">{tip}</p>
+                          <div key={index} className="bg-white rounded-xl p-5 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                            <div className="flex items-start gap-3">
+                              <div className="flex-shrink-0 w-7 h-7 bg-green-500 rounded-full flex items-center justify-center mt-0.5 shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                  <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                              </div>
+                              <p className="text-sm text-gray-800 font-medium leading-relaxed">{tip}</p>
+                            </div>
                           </div>
                         ))}
                       </div>
