@@ -5009,69 +5009,649 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
 }
 
 
-/* ===== ULTRA-SPECIFIC MOBILE FIX FOR BUTTONS ===== */
+/* ===== AGGRESSIVE MOBILE TEXT FIX ===== */
 @media (max-width: 768px) {
-  /* Force button text visibility with maximum specificity */
-  .home-page .bg-blue-600 button,
-  .home-page .bg-blue-600 .btn-primary,
-  .home-page .header-btn button,
-  .home-page .header-btn .btn-primary {
+  /* Force button text to be visible */
+  .bg-blue-600 button,
+  .bg-blue-600 .btn-primary,
+  .bg-blue-600 a.bg-white,
+  .bg-blue-600 button.bg-white {
     background-color: white !important;
     color: #1E4ED8 !important;
   }
 
-  /* Force all text inside buttons to be blue */
-  .home-page .bg-blue-600 button *,
-  .home-page .bg-blue-600 .btn-primary *,
-  .home-page .header-btn button *,
-  .home-page .header-btn .btn-primary * {
+  .bg-blue-600 button *,
+  .bg-blue-600 .btn-primary *,
+  .bg-blue-600 a.bg-white *,
+  .bg-blue-600 button.bg-white * {
     color: #1E4ED8 !important;
   }
 
-  /* Override any white text in buttons */
-  .home-page button:not(.border-white),
-  .home-page .btn-primary:not(.border-white) {
-    color: #1E4ED8 !important;
-  }
-
-  /* Specific fix for hero section buttons */
-  .home-container .header-btn button,
-  .home-container .btn-primary,
-  .header-section button,
-  .header-section .btn-primary {
+  /* Hero section buttons specifically */
+  .header-btn button,
+  .header-btn .btn-primary {
     background-color: white !important;
     color: #1E4ED8 !important;
   }
 
-  /* Remove any text-white class effects on buttons */
-  button.text-white,
-  .btn-primary.text-white {
+  .header-btn button *,
+  .header-btn .btn-primary * {
     color: #1E4ED8 !important;
   }
 
-  /* Fix for all clickable elements in blue sections */
-  .bg-blue-600 a:not(.border-white):not(.text-white),
-  .bg-blue-600 button:not(.border-white):not(.text-white) {
-    color: #1E4ED8 !important;
+  /* White box with blue text inside blue background */
+  .bg-blue-600 > * > .bg-white,
+  .bg-blue-600 .rounded-lg.bg-white,
+  .bg-blue-600 .rounded-full.bg-white {
     background-color: white !important;
+  }
+
+  .bg-blue-600 > * > .bg-white *,
+  .bg-blue-600 .rounded-lg.bg-white *,
+  .bg-blue-600 .rounded-full.bg-white * {
+    color: #1E4ED8 !important;
+  }
+
+  /* Specific fix for commission banner */
+  .bg-blue-600 h2.bg-white,
+  .bg-blue-600 h2.text-blue-600 {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* Override any white text in white boxes */
+  .bg-white .text-white,
+  button.bg-white .text-white,
+  a.bg-white .text-white {
+    color: #1E4ED8 !important;
+  }
+
+  /* Nuclear option for button text */
+  button span,
+  .btn-primary span,
+  a.bg-white span {
+    color: inherit !important;
+  }
+
+  /* Ensure all text in white buttons is blue */
+  .bg-blue-600 button:not(.border-white),
+  .bg-blue-600 a:not(.border-white) {
+    color: #1E4ED8 !important;
   }
 }
 
-/* ===== NUCLEAR OPTION - MAXIMUM SPECIFICITY ===== */
-@media screen and (max-width: 768px) {
-  html body .home-page .bg-blue-600 .header-btn button,
-  html body .home-page .bg-blue-600 .header-btn .btn-primary,
-  html body .home-page .home-container button,
-  html body .home-page .header-section button {
+
+/* ===== ULTIMATE MOBILE BUTTON TEXT FIX ===== */
+@media (max-width: 768px) {
+  /* Maximum specificity for button text visibility */
+  .home-page .bg-blue-600 button.btn-primary,
+  .home-page .bg-blue-600 .header-btn button,
+  .home-page .bg-blue-600 .header-btn .btn-primary,
+  .home-page .header-section button,
+  .home-page .header-section .btn-primary {
     background-color: white !important;
     color: #1E4ED8 !important;
     border: none !important;
   }
 
-  html body .home-page .bg-blue-600 .header-btn button span,
-  html body .home-page .bg-blue-600 .header-btn .btn-primary span,
-  html body .home-page .home-container button span,
-  html body .home-page .header-section button span {
+  /* Force all text inside buttons to be blue */
+  .home-page .bg-blue-600 button.btn-primary *,
+  .home-page .bg-blue-600 .header-btn button *,
+  .home-page .bg-blue-600 .header-btn .btn-primary *,
+  .home-page .header-section button *,
+  .home-page .header-section .btn-primary * {
     color: #1E4ED8 !important;
+  }
+
+  /* Commission banner text */
+  .home-page .bg-blue-600 h2.text-blue-600,
+  .home-page .bg-blue-600 h2.bg-white {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* All white elements inside blue backgrounds must have blue text */
+  .home-page .bg-blue-600 .bg-white,
+  .home-page .bg-blue-600 .bg-white * {
+    color: #1E4ED8 !important;
+  }
+
+  /* Override any conflicting text-white classes */
+  .home-page .bg-blue-600 .bg-white.text-white,
+  .home-page .bg-blue-600 .bg-white .text-white {
+    color: #1E4ED8 !important;
+  }
+}
+
+
+/* ===== FINAL MOBILE FIX - HIGHEST PRIORITY ===== */
+@media screen and (max-width: 768px) {
+  /* Force all buttons to have visible text (except colored buttons) */
+  button:not(.bg-green-500):not(.bg-green-600):not(.bg-amber-700):not([title="Book Now"]),
+  .btn-primary,
+  a.btn-primary,
+  .header-btn button,
+  .header-btn .btn-primary {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Force button text to be visible (except colored buttons) */
+  button:not(.bg-green-500):not(.bg-green-600):not(.bg-amber-700):not([title="Book Now"]) *,
+  .btn-primary *,
+  a.btn-primary *,
+  .header-btn button *,
+  .header-btn .btn-primary * {
+    color: #1E4ED8 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Remove any text-white from buttons */
+  button.text-white,
+  button .text-white,
+  .btn-primary.text-white,
+  .btn-primary .text-white {
+    color: #1E4ED8 !important;
+  }
+
+  /* Ensure white backgrounds are actually white */
+  .bg-white,
+  button.bg-white,
+  a.bg-white {
+    background-color: #FFFFFF !important;
+  }
+
+  /* Blue backgrounds stay blue */
+  .bg-blue-600 {
+    background-color: #1E4ED8 !important;
+  }
+
+  /* White text on blue backgrounds */
+  .bg-blue-600 > *:not(button):not(a):not(.bg-white) {
+    color: white !important;
+  }
+
+  /* Blue text in white elements */
+  .bg-white *:not(.text-white) {
+    color: #1E4ED8 !important;
+  }
+}
+
+
+/* ===== ABSOLUTE FINAL MOBILE BUTTON FIX ===== */
+@media screen and (max-width: 768px) {
+  html body .home-page button.btn-primary,
+  html body .home-page .header-btn button,
+  html body button.btn-primary,
+  html body .btn-primary {
+    background-color: #FFFFFF !important;
+    color: #1E4ED8 !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    padding: 0.875rem 2rem !important;
+    border-radius: 9999px !important;
+    border: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+  }
+
+  html body .home-page button.btn-primary:hover,
+  html body button.btn-primary:hover {
+    background-color: #F3F4F6 !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* Ensure text inside buttons is never white */
+  html body button *,
+  html body .btn-primary * {
+    color: inherit !important;
+  }
+}
+
+
+/* ===== NUCLEAR OPTION - FORCE BUTTON TEXT TO BE BLUE ===== */
+@media screen and (max-width: 768px) {
+  /* Target every possible text element inside buttons */
+  button,
+  button *,
+  button span,
+  button div,
+  button p,
+  .btn-primary,
+  .btn-primary *,
+  .btn-primary span,
+  .btn-primary div,
+  .btn-primary p,
+  .header-btn button,
+  .header-btn button *,
+  .header-btn button span,
+  .header-btn .btn-primary,
+  .header-btn .btn-primary *,
+  .header-btn .btn-primary span {
+    color: #1E4ED8 !important;
+    background-color: transparent !important;
+    -webkit-text-fill-color: #1E4ED8 !important;
+  }
+
+  /* Ensure button backgrounds are white */
+  button.btn-primary,
+  .header-btn button,
+  .header-btn .btn-primary {
+    background-color: #FFFFFF !important;
+  }
+
+  /* Override any inherited white color */
+  .bg-blue-600 button,
+  .bg-blue-600 button *,
+  .bg-blue-600 .btn-primary,
+  .bg-blue-600 .btn-primary * {
+    color: #1E4ED8 !important;
+    -webkit-text-fill-color: #1E4ED8 !important;
+  }
+
+  /* Remove text-white class effects */
+  .text-white.btn-primary,
+  button.text-white,
+  .btn-primary.text-white,
+  .text-white button,
+  button .text-white {
+    color: #1E4ED8 !important;
+    -webkit-text-fill-color: #1E4ED8 !important;
+  }
+}
+
+
+/* ===== ENSURE BUTTON TEXT IS VISIBLE AND BLUE ===== */
+@media screen and (max-width: 768px) {
+  /* Force visibility and color on all button text */
+  html body button,
+  html body button *,
+  html body .btn-primary,
+  html body .btn-primary * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline !important;
+    color: #1E4ED8 !important;
+    -webkit-text-fill-color: #1E4ED8 !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure button container is visible */
+  html body .header-btn,
+  html body .header-btn * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+
+/* ===== MOBILE SPACING AND LAYOUT FIXES ===== */
+@media screen and (max-width: 768px) {
+  /* Add spacing between blue sections */
+  .bg-blue-600.rounded-3xl {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Ensure sections don't overlap */
+  .px-6.md\:px-10.lg\:px-20.py-10 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Fix popup notification colors */
+  .fixed.bottom-4,
+  .fixed.bottom-6,
+  [class*="fixed"][class*="bottom"] {
+    background-color: #1E4ED8 !important;
+    color: white !important;
+  }
+
+  .fixed.bottom-4 *,
+  .fixed.bottom-6 *,
+  [class*="fixed"][class*="bottom"] * {
+    color: white !important;
+  }
+
+  /* Popup buttons */
+  .fixed.bottom-4 button,
+  .fixed.bottom-6 button,
+  [class*="fixed"][class*="bottom"] button {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* Ensure proper spacing for all sections */
+  .home-page > div > div > div {
+    margin-bottom: 0 !important;
+  }
+
+  /* Add gap between sections */
+  main > div {
+    margin-bottom: 1rem !important;
+  }
+}
+
+
+/* ===== POPUP NOTIFICATION MOBILE FIX ===== */
+@media screen and (max-width: 768px) {
+  /* Popup container */
+  .fixed.bottom-8.right-8,
+  .fixed.z-50 {
+    background: transparent !important;
+  }
+
+  /* Popup content box */
+  .fixed.bottom-8 > div,
+  .fixed.z-50 > div {
+    background: linear-gradient(to right, #2563eb, #1d4ed8) !important;
+  }
+
+  /* Popup text */
+  .fixed.bottom-8 p,
+  .fixed.z-50 p,
+  .fixed.bottom-8 .text-white,
+  .fixed.z-50 .text-white {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Learn More button */
+  .fixed.bottom-8 a.bg-white,
+  .fixed.z-50 a.bg-white {
+    background-color: white !important;
+    color: #2563eb !important;
+  }
+
+  /* WhatsApp button */
+  .fixed.bottom-8 a.bg-green-600,
+  .fixed.z-50 a.bg-green-600,
+  .fixed.bottom-8 a[href*="whatsapp"],
+  .fixed.z-50 a[href*="whatsapp"] {
+    background-color: #16a34a !important;
+    color: white !important;
+  }
+
+  .fixed.bottom-8 a.bg-green-600 *,
+  .fixed.z-50 a.bg-green-600 *,
+  .fixed.bottom-8 a[href*="whatsapp"] *,
+  .fixed.z-50 a[href*="whatsapp"] * {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Adjust popup position on mobile */
+  .fixed.bottom-8.right-8 {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    left: 1rem !important;
+    max-width: calc(100% - 2rem) !important;
+  }
+}
+
+
+/* ===== PROPERTY DOCUMENT CARD BUTTONS MOBILE FIX ===== */
+@media screen and (max-width: 768px) {
+  /* View Details button */
+  a.bg-amber-700,
+  a[href*="/services"] {
+    background-color: #b45309 !important;
+    color: white !important;
+  }
+
+  a.bg-amber-700 *,
+  a[href*="/services"] * {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Book Now button */
+  button.bg-green-500,
+  button[title="Book Now"] {
+    background-color: #22c55e !important;
+    color: white !important;
+  }
+
+  button.bg-green-500 *,
+  button[title="Book Now"] * {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Ensure icons in these buttons are white */
+  a.bg-amber-700 i,
+  a.bg-amber-700 svg,
+  button.bg-green-500 i,
+  button.bg-green-500 svg,
+  button[title="Book Now"] i,
+  button[title="Book Now"] svg {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* Override any conflicting rules for document card buttons */
+  .bg-white a.bg-amber-700,
+  .bg-white button.bg-green-500 {
+    color: white !important;
+  }
+
+  .bg-white a.bg-amber-700 *,
+  .bg-white button.bg-green-500 * {
+    color: white !important;
+  }
+}
+
+
+/* ===== BOOK NOW BUTTON ULTIMATE FIX ===== */
+@media screen and (max-width: 768px) {
+  /* Target Book Now button with maximum specificity */
+  html body button.bg-green-500,
+  html body button[title="Book Now"],
+  html body .bg-green-500,
+  button:has(i[data-lucide="calendar-check"]) {
+    background-color: #22c55e !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Force white text in Book Now button */
+  html body button.bg-green-500 *,
+  html body button[title="Book Now"] *,
+  html body .bg-green-500 *,
+  button:has(i[data-lucide="calendar-check"]) * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+
+  /* Target the span/text inside Book Now button */
+  button.bg-green-500 span,
+  button[title="Book Now"] span,
+  button:has(i[data-lucide="calendar-check"]) span {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Ensure calendar icon is white */
+  i[data-lucide="calendar-check"],
+  button.bg-green-500 i,
+  button[title="Book Now"] i {
+    color: white !important;
+    stroke: white !important;
+    fill: none !important;
+  }
+
+  /* Override any blue color on green buttons */
+  button.bg-green-500:not(.bg-blue-600),
+  button[title="Book Now"]:not(.bg-blue-600) {
+    background-color: #22c55e !important;
+    color: white !important;
+  }
+}
+
+
+/* ===== EXCEPTION FOR GREEN AND COLORED BUTTONS ===== */
+@media screen and (max-width: 768px) {
+  /* Green buttons must stay green */
+  button.bg-green-500,
+  button.bg-green-600,
+  a.bg-green-500,
+  a.bg-green-600,
+  button[title="Book Now"],
+  button[class*="bg-green"] {
+    background-color: #22c55e !important;
+    color: white !important;
+  }
+
+  button.bg-green-500 *,
+  button.bg-green-600 *,
+  a.bg-green-500 *,
+  a.bg-green-600 *,
+  button[title="Book Now"] *,
+  button[class*="bg-green"] * {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Amber/Orange buttons must stay amber */
+  button.bg-amber-700,
+  a.bg-amber-700,
+  button[class*="bg-amber"],
+  a[class*="bg-amber"] {
+    background-color: #b45309 !important;
+    color: white !important;
+  }
+
+  button.bg-amber-700 *,
+  a.bg-amber-700 *,
+  button[class*="bg-amber"] *,
+  a[class*="bg-amber"] * {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+}
+
+
+/* ===== ABSOLUTE FINAL FIX FOR BOOK NOW BUTTON ===== */
+@media screen and (max-width: 768px) {
+  /* Nuclear option - force green buttons to be green with white text */
+  html body button.bg-green-500,
+  html body button.bg-green-600,
+  html body button[title="Book Now"],
+  html body a.bg-green-500,
+  html body a.bg-green-600 {
+    background-color: #22c55e !important;
+    color: #FFFFFF !important;
+    border: none !important;
+  }
+
+  /* Force all children to have white text */
+  html body button.bg-green-500 *,
+  html body button.bg-green-600 *,
+  html body button[title="Book Now"] *,
+  html body a.bg-green-500 *,
+  html body a.bg-green-600 * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+
+  /* Force amber buttons to be amber with white text */
+  html body button.bg-amber-700,
+  html body a.bg-amber-700 {
+    background-color: #b45309 !important;
+    color: #FFFFFF !important;
+  }
+
+  html body button.bg-amber-700 *,
+  html body a.bg-amber-700 * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+
+  /* Ensure icons are white */
+  html body button.bg-green-500 i,
+  html body button.bg-green-600 i,
+  html body button[title="Book Now"] i,
+  html body button.bg-green-500 svg,
+  html body button.bg-green-600 svg,
+  html body button[title="Book Now"] svg {
+    color: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+  }
+}
+
+
+/* ===== ULTIMATE NUCLEAR OPTION FOR GREEN BUTTONS ===== */
+@media screen and (max-width: 768px) {
+  /* Target by multiple attributes */
+  button[class*="bg-green"][class*="text-white"],
+  button[title="Book Now"][class*="text-white"],
+  .bg-green-500.text-white,
+  .bg-green-600.text-white {
+    background-color: #22c55e !important;
+    color: white !important;
+  }
+
+  button[class*="bg-green"][class*="text-white"] *,
+  button[title="Book Now"][class*="text-white"] *,
+  .bg-green-500.text-white *,
+  .bg-green-600.text-white * {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Override Tailwind's text-white when on green background */
+  .bg-green-500.text-white,
+  .bg-green-600.text-white,
+  button.bg-green-500.text-white,
+  button.bg-green-600.text-white {
+    color: #FFFFFF !important;
+  }
+
+  /* Force using attribute selector for maximum specificity */
+  [class~="bg-green-500"][class~="text-white"],
+  [class~="bg-green-600"][class~="text-white"] {
+    background-color: #22c55e !important;
+    color: #FFFFFF !important;
+  }
+
+  [class~="bg-green-500"][class~="text-white"] *,
+  [class~="bg-green-600"][class~="text-white"] * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+}
+
+
+/* ===== FIX TESTIMONIALS SECTION MOBILE ===== */
+@media screen and (max-width: 768px) {
+  /* Remove any unwanted backgrounds from text elements in blue sections */
+  .bg-blue-600 h3,
+  .bg-blue-600 p,
+  .bg-blue-600 .text-white {
+    background-color: transparent !important;
+    background: none !important;
+    color: white !important;
+  }
+
+  /* Ensure buttons in blue sections have correct colors */
+  .bg-blue-600 a.bg-white {
+    background-color: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  .bg-blue-600 a.bg-white * {
+    color: #1E4ED8 !important;
+  }
+
+  /* Semi-transparent white buttons */
+  .bg-blue-600 a[class*="bg-white/"] {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+  }
+
+  .bg-blue-600 a[class*="bg-white/"] * {
+    color: white !important;
   }
 }

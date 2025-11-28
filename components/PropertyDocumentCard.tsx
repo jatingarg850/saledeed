@@ -147,10 +147,11 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
             className={`flex-1 inline-flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full font-semibold text-sm ${
               isMobile ? '' : 'hover:bg-green-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
             }`}
+            style={isMobile ? { backgroundColor: '#22c55e', color: '#FFFFFF' } : {}}
             title="Book Now"
           >
-            <i data-lucide="calendar-check" className="w-4 h-4"></i>
-            Book Now
+            <i data-lucide="calendar-check" className="w-4 h-4" style={isMobile ? { color: '#FFFFFF' } : {}}></i>
+            <span style={isMobile ? { color: '#FFFFFF' } : {}}>Book Now</span>
           </button>
         </div>
       </div>
