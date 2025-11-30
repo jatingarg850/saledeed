@@ -155,7 +155,7 @@ export default function Testimonials() {
       let currentTranslate = 0
       let prevTranslate = 0
       let isDragging = false
-      let animationID: number
+      let animationID: number | null = null
       
       // Get current transform value
       const getTranslateX = () => {
@@ -173,7 +173,9 @@ export default function Testimonials() {
         
         // Pause animation
         track.style.animationPlayState = 'paused'
-        cancelAnimationFrame(animationID)
+        if (animationID !== null) {
+          cancelAnimationFrame(animationID)
+        }
       }
 
       const touchMove = (e: TouchEvent | MouseEvent) => {

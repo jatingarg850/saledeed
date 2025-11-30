@@ -1573,3 +1573,51 @@
     stroke: currentColor !important;
   }
 }
+
+
+/* Doorstep modal - white text on mobile */
+@media (max-width: 768px) {
+  /* Modal content text */
+  .fixed.inset-0 .bg-white h4,
+  .fixed.inset-0 .bg-white p,
+  .fixed.inset-0 .bg-white span {
+    color: white !important;
+  }
+
+  /* Modal background to blue on mobile */
+  .fixed.inset-0 .bg-white {
+    background: linear-gradient(to bottom, #2563eb, #1d4ed8) !important;
+  }
+
+  /* Keep pricing section visible */
+  .fixed.inset-0 .bg-blue-50 {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .fixed.inset-0 .bg-blue-50 div {
+    color: white !important;
+  }
+
+  /* Make all icons white */
+  .fixed.inset-0 svg,
+  .fixed.inset-0 svg path,
+  .fixed.inset-0 svg circle,
+  .fixed.inset-0 svg line,
+  .fixed.inset-0 i {
+    stroke: white !important;
+    color: white !important;
+    fill: none !important;
+  }
+
+  /* Home icon in center */
+  .fixed.inset-0 .text-primary {
+    color: white !important;
+  }
+
+  /* Checkmark icons - keep them white too for consistency */
+  .fixed.inset-0 .text-green-500,
+  .fixed.inset-0 .text-green-500 svg {
+    color: white !important;
+    stroke: white !important;
+  }
+}

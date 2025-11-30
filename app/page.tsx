@@ -1445,7 +1445,9 @@ export default function Home() {
               <div className="max-w-4xl mx-auto text-center">
                 {/* Icon */}
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-transparent border-2 border-white rounded-full mb-6">
-                  <i data-lucide="phone-call" className="w-10 h-10 text-white"></i>
+                  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
                 </div>
 
                 {/* Heading */}
@@ -1493,7 +1495,7 @@ export default function Home() {
                     href="tel:+918800505050"
                     className="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300"
                   >
-                    <i data-lucide="phone" className="w-6 h-6"></i>
+                    <i data-lucide="phone" className="w-6 h-6" style={{ color: 'white', stroke: 'white' }}></i>
                     <span>Call: +91 88005 05050</span>
                   </a>
                 </div>
@@ -1659,19 +1661,25 @@ export default function Home() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="bg-blue-600">
+              <div className="bg-blue-600 p-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                      <i data-lucide="map-pin" className="w-5 h-5 text-blue-600"></i>
+                      <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                      </svg>
                     </div>
-                    <h3 className="text-xl font-bold">Doorstep Advice Service</h3>
+                    <h3 className="text-xl font-bold text-white">Doorstep Advice Service</h3>
                   </div>
                   <button
                     onClick={() => setShowDoorstepModal(false)}
                     className="p-2 hover:bg-white/20 rounded-lg transition-colors"
                   >
-                    <i data-lucide="x" className="w-5 h-5 text-blue-600"></i>
+                    <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <line x1="18" y1="6" x2="6" y2="18"/>
+                      <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -1712,9 +1720,9 @@ export default function Home() {
                 </div>
 
                 {/* Pricing */}
-                <div className="bg-blue-600">
-                  <div className="text-2xl font-bold text-primary mb-1">₹999</div>
-                  <div className="text-sm text-subtext-light dark:text-subtext-dark">One-time consultation fee</div>
+                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-4 mb-6">
+                  <div className="text-3xl font-bold text-blue-600 mb-1">₹999</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">One-time consultation fee</div>
                 </div>
 
                 {/* CTA Button */}
@@ -1722,10 +1730,12 @@ export default function Home() {
                   href="https://wa.me/918800505050?text=Hello,%20I%20would%20like%20to%20book%20a%20doorstep%20advice%20service%20for%20₹999.%20Please%20provide%20more%20details."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-blue-600"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
                 >
-                  <i data-lucide="message-circle" className="w-5 h-5"></i>
-                  Book via WhatsApp
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                  <span>Book via WhatsApp</span>
                 </a>
 
                 <p className="text-xs text-center text-subtext-light dark:text-subtext-dark mt-3">
