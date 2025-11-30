@@ -1438,6 +1438,51 @@ export default function Home() {
                 </div>
               </div>
             </section>
+{/* Services Overview */}
+                <div className="mt-12 max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-xl">
+                  <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-6 text-center">
+                    Services Overview
+                  </h2>
+                  <div className="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-gray-700 font-medium">
+                        Celebrating 1 Lac Successful Deals
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-gray-700 font-medium">
+                        Team of Experts with 50+ Years Experience
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-gray-700 font-medium">
+                        Best in Class Lawyers / Valuers / Engineers
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-gray-700 font-medium">
+                        Doorstep Consultation @ ₹999/-
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
             {/* Contact Us CTA Section */}
             <section className="px-6 md:px-10 lg:px-20 py-10">
@@ -1501,52 +1546,7 @@ export default function Home() {
                 </div>
               </div>
 
-                {/* Services Overview */}
-                <div className="mt-12 max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-xl">
-                  <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-6 text-center">
-                    Services Overview
-                  </h2>
-                  <div className="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-gray-700 font-medium">
-                        Celebrating 1 Lac Successful Deals
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-gray-700 font-medium">
-                        Team of Experts with 50+ Years Experience
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-gray-700 font-medium">
-                        Best in Class Lawyers / Valuers / Engineers
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-gray-700 font-medium">
-                        Doorstep Consultation @ ₹999/-
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
+                
                 {/* Trust Badge */}
                 <div className="mt-8 flex items-center text-white justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
                   <i data-lucide="shield" className="w-4 h-4 text-white"></i>
