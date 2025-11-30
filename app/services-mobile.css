@@ -1621,3 +1621,300 @@
     stroke: white !important;
   }
 }
+
+/* Hero Section Mobile Fixes - Override aggressive text color rules */
+@media (max-width: 768px) {
+  /* Preserve hero section white text on blue background */
+  .home-container.bg-blue-600,
+  .home-container.bg-blue-600 *,
+  .header-section,
+  .header-section * {
+    color: white !important;
+  }
+
+  /* Preserve tagline, process-steps, and deed-para white text */
+  .tagline,
+  .process-steps,
+  .deed-para,
+  .blinking-text {
+    color: white !important;
+  }
+
+  /* Ensure buttons in hero section maintain their styling */
+  .header-btn .btn-primary {
+    background: white !important;
+    color: #1E4ED8 !important;
+  }
+
+  /* Preserve white text in the "Buy/Sell/Rent" heading */
+  .home-container h2.text-blue-600 {
+    color: #1E4ED8 !important;
+    background: white !important;
+  }
+
+  /* Marquee text should remain white */
+  .marquee-text {
+    color: white !important;
+  }
+
+  /* Remove any overlay or pseudo-elements that might be covering content */
+  .home-container::before,
+  .home-container::after,
+  .header-section::before,
+  .header-section::after {
+    display: none !important;
+  }
+
+  /* Ensure no z-index issues */
+  .home-container {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .header-section {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /* Ensure all text is visible and not hidden */
+  .home-container *,
+  .header-section * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Remove all shadows from buttons to prevent overlay effect */
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary,
+  .header-btn button,
+  .header-btn a button,
+  .header-btn > button,
+  .header-btn button.btn-primary,
+  button.btn-primary,
+  a button.btn-primary {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-tertiary:hover,
+  .header-btn button:hover,
+  .header-btn a button:hover {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+  }
+
+  /* Specifically target the Get Doorstep Advice button */
+  .header-btn > button:first-child,
+  button[class*="btn-primary"]:not(a button) {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+}
+
+/* Additional global fix for all buttons in hero section */
+@media (max-width: 768px) {
+  .home-container button,
+  .home-container a button,
+  .header-section button,
+  .header-section a button {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    position: relative !important;
+    z-index: 10 !important;
+    isolation: isolate !important;
+  }
+
+  /* Remove any pseudo-elements that might create shadows */
+  .home-container button::before,
+  .home-container button::after,
+  .home-container a button::before,
+  .home-container a button::after,
+  .header-section button::before,
+  .header-section button::after,
+  .header-section a button::before,
+  .header-section a button::after,
+  .btn-primary::before,
+  .btn-primary::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Ensure buttons are fully opaque */
+  .home-container button,
+  .home-container a button {
+    opacity: 1 !important;
+    background-color: white !important;
+    background: white !important;
+  }
+
+  /* Remove any filters that might create shadows */
+  .home-container button,
+  .home-container a button {
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+
+  /* Specifically target Link components wrapping buttons */
+  .header-btn > a,
+  .header-btn a {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* Remove any pseudo-elements from Link tags */
+  .header-btn > a::before,
+  .header-btn > a::after,
+  .header-btn a::before,
+  .header-btn a::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Ensure Link tags don't add any visual effects */
+  .header-btn > a,
+  .header-btn a {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: none !important;
+  }
+
+  /* Target buttons inside Link tags specifically */
+  .header-btn > a > button,
+  .header-btn a > button,
+  .header-btn a button {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    border: none !important;
+    outline: none !important;
+    position: relative !important;
+    z-index: 11 !important;
+    isolation: isolate !important;
+  }
+
+  /* Remove any transform effects on Link hover */
+  .header-btn > a:hover,
+  .header-btn a:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+
+/* Global fix for Next.js Link components in hero section */
+@media (max-width: 768px) {
+  /* Remove all visual effects from Link components */
+  .home-container a,
+  .header-section a,
+  .header-btn a {
+    text-decoration: none !important;
+    color: inherit !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    text-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Ensure Link components don't interfere with button styling */
+  .home-container a:hover,
+  .home-container a:active,
+  .home-container a:focus,
+  .header-section a:hover,
+  .header-section a:active,
+  .header-section a:focus,
+  .header-btn a:hover,
+  .header-btn a:active,
+  .header-btn a:focus {
+    background: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    outline: none !important;
+  }
+
+  /* Remove any webkit/moz specific styling on links */
+  .home-container a,
+  .header-btn a {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+  }
+}
+
+
+/* Fix Calculate Stamp Duty button text color - MAXIMUM SPECIFICITY */
+@media (max-width: 768px) {
+  /* Target ALL gradient buttons */
+  button.bg-gradient-to-r,
+  button[class*="bg-gradient"],
+  .bg-gradient-to-br button,
+  .rounded-2xl button,
+  button.from-primary,
+  button.to-secondary {
+    color: white !important;
+  }
+
+  /* Ensure all text and icons inside gradient buttons are white */
+  button.bg-gradient-to-r *,
+  button[class*="bg-gradient"] *,
+  button[class*="from-primary"] *,
+  button[class*="to-secondary"] *,
+  .bg-gradient-to-br button *,
+  .rounded-2xl button * {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* Ultra-specific targeting for calculator button */
+  button.w-full.bg-gradient-to-r.from-primary.to-secondary,
+  button.w-full.bg-gradient-to-r.from-primary.to-secondary *,
+  button.w-full.bg-gradient-to-r.from-primary.to-secondary span,
+  button.w-full.bg-gradient-to-r.from-primary.to-secondary i {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* Override any conflicting text color classes */
+  button[class*="text-blue"],
+  button[class*="text-primary"],
+  button *[class*="text-blue"],
+  button *[class*="text-primary"] {
+    color: white !important;
+  }
+}
+
+/* Global override for all buttons with gradient backgrounds */
+button.bg-gradient-to-r,
+button[class*="bg-gradient"] {
+  color: white !important;
+}
+
+button.bg-gradient-to-r *,
+button[class*="bg-gradient"] * {
+  color: white !important;
+  stroke: white !important;
+}

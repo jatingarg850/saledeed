@@ -114,9 +114,10 @@ export default function StampDutyCalculator() {
         <button
           onClick={calculateStampDuty}
           className="w-full bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl text-lg flex items-center justify-center gap-2"
+          style={{ color: 'white' }}
         >
-          <i data-lucide="calculator" className="w-5 h-5"></i>
-          Calculate Stamp Duty
+          <i data-lucide="calculator" className="w-5 h-5" style={{ color: 'white', stroke: 'white' }}></i>
+          <span style={{ color: 'white' }}>Calculate Stamp Duty</span>
         </button>
       </div>
 
