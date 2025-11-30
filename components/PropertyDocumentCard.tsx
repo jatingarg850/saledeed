@@ -130,28 +130,26 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
         <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed mb-4 line-clamp-4">
           {document.description}
         </p>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <Link
             href={document.link}
-            className={`flex-1 inline-flex items-center justify-center gap-2 ${
-              isMobile 
-                ? 'bg-amber-700 text-white' 
-                : 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
-            } px-4 py-2.5 rounded-full font-semibold text-sm`}
+            className="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 border-blue-600 text-blue-600 px-4 py-3 rounded-full font-bold text-sm hover:bg-blue-50 transition-all duration-300 shadow-md hover:shadow-lg"
           >
             View Details
             <i data-lucide="arrow-right" className="w-4 h-4"></i>
           </Link>
           <button
             onClick={handleBookNow}
-            className={`flex-1 inline-flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full font-semibold text-sm ${
-              isMobile ? '' : 'hover:bg-green-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
-            }`}
-            style={isMobile ? { backgroundColor: '#22c55e', color: '#FFFFFF' } : {}}
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full font-bold text-sm transition-all duration-300 shadow-md hover:shadow-lg"
+            style={{ 
+              backgroundColor: '#2563eb',
+              color: '#ffffff',
+              border: 'none'
+            }}
             title="Book Now"
           >
-            <i data-lucide="calendar-check" className="w-4 h-4" style={isMobile ? { color: '#FFFFFF' } : {}}></i>
-            <span style={isMobile ? { color: '#FFFFFF' } : {}}>Book Now</span>
+            <i data-lucide="calendar-check" className="w-4 h-4" style={{ color: '#ffffff' }}></i>
+            <span style={{ color: '#ffffff' }}>Book Now</span>
           </button>
         </div>
       </div>
@@ -182,15 +180,15 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
             {/* Features */}
             <div className="space-y-2 mb-6">
               <div className="flex items-center gap-2 text-sm text-text-light dark:text-text-dark">
-                <i data-lucide="check-circle" className="w-4 h-4 text-green-500"></i>
+                <i data-lucide="check-circle" className="w-4 h-4 text-blue-600"></i>
                 <span>Expert Legal Consultation</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-text-light dark:text-text-dark">
-                <i data-lucide="check-circle" className="w-4 h-4 text-green-500"></i>
+                <i data-lucide="check-circle" className="w-4 h-4 text-blue-600"></i>
                 <span>Complete Documentation Support</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-text-light dark:text-text-dark">
-                <i data-lucide="check-circle" className="w-4 h-4 text-green-500"></i>
+                <i data-lucide="check-circle" className="w-4 h-4 text-blue-600"></i>
                 <span>Registration Assistance</span>
               </div>
             </div>
@@ -205,7 +203,7 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
               </button>
               <button
                 onClick={handleWhatsAppRedirect}
-                className="flex-1 px-6 py-3 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2"
+                className="flex-1 px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <i data-lucide="message-circle" className="w-4 h-4"></i>
                 WhatsApp

@@ -57,70 +57,85 @@ export default function Testimonials() {
         100% { transform: translateX(-50%); }
       }
       
+      @-webkit-keyframes scroll-left {
+        0% { -webkit-transform: translateX(0); transform: translateX(0); }
+        100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+      }
+      
       @keyframes scroll-right {
         0% { transform: translateX(-50%); }
         100% { transform: translateX(0); }
       }
       
+      @-webkit-keyframes scroll-right {
+        0% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+        100% { -webkit-transform: translateX(0); transform: translateX(0); }
+      }
+      
       .scroll-left {
-        animation: scroll-left 15s linear infinite;
+        animation: scroll-left 30s linear infinite;
+        animation-play-state: running;
       }
       
       .scroll-right {
-        animation: scroll-right 15s linear infinite;
+        animation: scroll-right 30s linear infinite;
+        animation-play-state: running;
       }
       
       @media (max-width: 768px) {
         .scroll-left {
-          animation: scroll-left 10s linear infinite;
+          animation: scroll-left 25s linear infinite !important;
+          animation-play-state: running !important;
+          -webkit-animation: scroll-left 25s linear infinite !important;
+          -webkit-animation-play-state: running !important;
         }
         
         .scroll-right {
-          animation: scroll-right 10s linear infinite;
+          animation: scroll-right 25s linear infinite !important;
+          animation-play-state: running !important;
+          -webkit-animation: scroll-right 25s linear infinite !important;
+          -webkit-animation-play-state: running !important;
         }
       }
       
       .slider-container {
-        overflow-x: auto;
-        overflow-y: visible;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(217, 119, 6, 0.3) transparent;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
         cursor: grab;
         user-select: none;
-        touch-action: pan-x pan-y;
+        touch-action: pan-y;
+      }
+      
+      @media (max-width: 768px) {
+        .slider-container {
+          cursor: default;
+          touch-action: pan-y;
+        }
       }
       
       .slider-container:active {
         cursor: grabbing;
       }
       
-      .slider-container::-webkit-scrollbar {
-        height: 6px;
-      }
-      
-      .slider-container::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      
-      .slider-container::-webkit-scrollbar-thumb {
-        background: rgba(217, 119, 6, 0.3);
-        border-radius: 3px;
-      }
-      
-      .slider-container::-webkit-scrollbar-thumb:hover {
-        background: rgba(217, 119, 6, 0.5);
-      }
-      
       .slide-track {
-        transition: transform 0.1s ease-out;
+        display: flex;
+        width: max-content;
+        will-change: transform;
       }
       
-      .slider-container:hover .slide-track,
-      .slider-container:active .slide-track {
+      .slider-container:hover .slide-track {
         animation-play-state: paused !important;
       }
       
+      @media (max-width: 768px) {
+        .slider-container:active .slide-track,
+        .slider-container:focus .slide-track {
+          animation-play-state: paused !important;
+        }
+      }
+      
+
       @media (max-width: 768px) {
         .slider-container::-webkit-scrollbar {
           height: 4px;
@@ -129,64 +144,69 @@ export default function Testimonials() {
     `
     document.head.appendChild(style)
 
-    // Add touch/mouse drag functionality
+    // Add touch/swipe functionality for manual control
     const containers = document.querySelectorAll('.slider-container')
     
     containers.forEach((container) => {
-      let isDown = false
-      let startX: number
-      let scrollLeft: number
-
-      const handleMouseDown = (e: MouseEvent | TouchEvent) => {
-        isDown = true
-        const slider = container as HTMLElement
-        slider.style.cursor = 'grabbing'
-        
-        if (e instanceof MouseEvent) {
-          startX = e.pageX - slider.offsetLeft
-          scrollLeft = slider.scrollLeft
-        } else {
-          startX = e.touches[0].pageX - slider.offsetLeft
-          scrollLeft = slider.scrollLeft
-        }
-      }
-
-      const handleMouseLeave = () => {
-        isDown = false
-        const slider = container as HTMLElement
-        slider.style.cursor = 'grab'
-      }
-
-      const handleMouseUp = () => {
-        isDown = false
-        const slider = container as HTMLElement
-        slider.style.cursor = 'grab'
-      }
-
-      const handleMouseMove = (e: MouseEvent | TouchEvent) => {
-        if (!isDown) return
-        e.preventDefault()
-        const slider = container as HTMLElement
-        
-        if (e instanceof MouseEvent) {
-          const x = e.pageX - slider.offsetLeft
-          const walk = (x - startX) * 2
-          slider.scrollLeft = scrollLeft - walk
-        } else {
-          const x = e.touches[0].pageX - slider.offsetLeft
-          const walk = (x - startX) * 2
-          slider.scrollLeft = scrollLeft - walk
-        }
-      }
-
-      container.addEventListener('mousedown', handleMouseDown as EventListener)
-      container.addEventListener('mouseleave', handleMouseLeave)
-      container.addEventListener('mouseup', handleMouseUp)
-      container.addEventListener('mousemove', handleMouseMove as EventListener)
+      const track = container.querySelector('.slide-track') as HTMLElement
+      if (!track) return
       
-      container.addEventListener('touchstart', handleMouseDown as EventListener)
-      container.addEventListener('touchend', handleMouseUp)
-      container.addEventListener('touchmove', handleMouseMove as EventListener)
+      let startX = 0
+      let currentTranslate = 0
+      let prevTranslate = 0
+      let isDragging = false
+      let animationID: number
+      
+      // Get current transform value
+      const getTranslateX = () => {
+        const style = window.getComputedStyle(track)
+        const matrix = style.transform
+        if (matrix === 'none') return 0
+        const values = matrix.split('(')[1].split(')')[0].split(',')
+        return parseInt(values[4]) || 0
+      }
+
+      const touchStart = (e: TouchEvent | MouseEvent) => {
+        isDragging = true
+        startX = e instanceof TouchEvent ? e.touches[0].clientX : e.clientX
+        prevTranslate = getTranslateX()
+        
+        // Pause animation
+        track.style.animationPlayState = 'paused'
+        cancelAnimationFrame(animationID)
+      }
+
+      const touchMove = (e: TouchEvent | MouseEvent) => {
+        if (!isDragging) return
+        
+        const currentX = e instanceof TouchEvent ? e.touches[0].clientX : e.clientX
+        const diff = currentX - startX
+        currentTranslate = prevTranslate + diff
+        
+        // Apply transform
+        track.style.transform = `translateX(${currentTranslate}px)`
+      }
+
+      const touchEnd = () => {
+        isDragging = false
+        
+        // Resume animation after a delay
+        setTimeout(() => {
+          track.style.animationPlayState = 'running'
+          track.style.transform = ''
+        }, 100)
+      }
+
+      // Mouse events
+      container.addEventListener('mousedown', touchStart as EventListener)
+      container.addEventListener('mousemove', touchMove as EventListener)
+      container.addEventListener('mouseup', touchEnd)
+      container.addEventListener('mouseleave', touchEnd)
+      
+      // Touch events
+      container.addEventListener('touchstart', touchStart as EventListener, { passive: true })
+      container.addEventListener('touchmove', touchMove as EventListener, { passive: true })
+      container.addEventListener('touchend', touchEnd)
     })
 
     return () => {
@@ -197,8 +217,8 @@ export default function Testimonials() {
 
 
   const TestimonialCard = ({ name, text }: { name: string; text: string }) => (
-    <div className="testimonial-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-80 mx-2 sm:mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-100 dark:border-slate-700">
-      <div className="flex flex-col sm:flex-row items-start justify-between mb-4 gap-3">
+    <div className="testimonial-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-80 mx-2 sm:mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-blue-200 dark:border-slate-700 flex flex-col">
+      <div className="flex items-start justify-between mb-4 gap-3">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-base sm:text-lg">{name.charAt(0)}</span>
@@ -207,12 +227,14 @@ export default function Testimonials() {
         </div>
         <div className="flex items-center gap-1 flex-shrink-0">
           {[...Array(5)].map((_, i) => (
-            <i key={i} data-lucide="star" className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+            <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
           ))}
         </div>
       </div>
       <div className="relative">
-        <svg className="absolute top-0 left-0 w-5 h-5 sm:w-6 sm:h-6 text-primary/20" fill="currentColor" viewBox="0 0 975.036 975.036">
+        <svg className="absolute top-0 left-0 w-5 h-5 sm:w-6 sm:h-6 text-blue-600/20 pointer-events-none" fill="currentColor" viewBox="0 0 975.036 975.036">
           <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
         </svg>
         <p className="text-subtext-light dark:text-subtext-dark leading-relaxed pl-6 sm:pl-8 italic text-xs sm:text-sm">

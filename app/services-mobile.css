@@ -1061,47 +1061,53 @@
     stroke: #2563eb !important;
   }
 
-  /* CRITICAL: Force ALL text to DARK BLACK on blue backgrounds for better visibility */
-  .bg-blue-600 p:not(.text-white):not([class*="text-white"]),
-  .bg-blue-600 h4:not(.text-white):not([class*="text-white"]),
-  .bg-blue-600 span:not(.text-white):not([class*="text-white"]),
-  .bg-blue-600 div:not(.text-white):not([class*="text-white"]),
-  .rounded-lg.bg-blue-600 p:not(.text-white):not([class*="text-white"]),
-  .rounded-lg.bg-blue-600 span:not(.text-white):not([class*="text-white"]),
-  div[class*="bg-blue-600"] p:not(.text-white):not([class*="text-white"]),
-  div[class*="bg-blue-600"] span:not(.text-white):not([class*="text-white"]) {
-    color: #000000 !important;
-  }
-
-  /* Keep headings and explicitly white text as white */
+  /* CRITICAL: Keep ALL text white on blue backgrounds - remove conflicting backgrounds */
+  .bg-blue-600 *,
+  .bg-blue-600 p,
   .bg-blue-600 h1,
   .bg-blue-600 h2,
   .bg-blue-600 h3,
+  .bg-blue-600 h4,
+  .bg-blue-600 h5,
+  .bg-blue-600 span,
+  .bg-blue-600 div,
+  .rounded-lg.bg-blue-600 *,
+  .rounded-3xl.bg-blue-600 *,
+  div[class*="bg-blue-600"] * {
+    color: white !important;
+  }
+
+  /* Remove any background colors on text elements inside blue sections */
+  .bg-blue-600 p,
+  .bg-blue-600 h4,
+  .bg-blue-600 span,
+  .bg-blue-600 div:not(.bg-white):not([class*="bg-white"]),
+  .bg-blue-600 .text-white,
+  .bg-blue-600 [class*="text-white"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Ensure text-white classes stay white */
   .text-white,
   .text-white\/90,
   .text-white\/80,
   .text-white\/70,
-  [class*="text-white"],
-  .bg-blue-600 .text-white,
-  .bg-blue-600 [class*="text-white"] {
+  [class*="text-white"] {
     color: white !important;
+    background: transparent !important;
   }
 
-  /* Force dark black on text size classes inside blue backgrounds */
-  .bg-blue-600 .text-sm:not(.text-white):not([class*="text-white"]),
-  .bg-blue-600 .text-base:not(.text-white):not([class*="text-white"]),
-  .bg-blue-600 .text-lg:not(.text-white):not([class*="text-white"]),
-  .bg-blue-600 .text-xl:not(.text-white):not([class*="text-white"]) {
-    color: #000000 !important;
-  }
-
-  /* Override any subtext or gray text colors to dark black on blue backgrounds */
-  .bg-blue-600 .text-subtext-light:not(.text-white),
-  .bg-blue-600 .text-subtext-dark:not(.text-white),
-  .bg-blue-600 .text-gray-700:not(.text-white),
-  .bg-blue-600 .text-gray-600:not(.text-white),
-  .bg-blue-600 [class*="text-gray"]:not(.text-white) {
-    color: #000000 !important;
+  /* Remove backgrounds from boxes/divs on blue backgrounds */
+  .bg-blue-600 .bg-white\/10,
+  .bg-blue-600 .bg-white\/20,
+  .bg-blue-600 [class*="bg-white\/"],
+  .bg-blue-600 .rounded-lg:not(.bg-white),
+  .bg-blue-600 .rounded-xl:not(.bg-white) {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
 }
 
@@ -1270,18 +1276,25 @@
 
   /* Hamburger button */
   button.size-10 {
-    background: linear-gradient(to right, #2563eb, #1d4ed8) !important;
-    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
   button.size-10:hover {
-    background: linear-gradient(to right, #1d4ed8, #1e40af) !important;
-    transform: scale(1.05);
+    background: transparent !important;
+    transform: none;
   }
 
-  button.size-10 i {
-    color: white !important;
-    stroke: white !important;
+  button.size-10 i,
+  button.size-10 svg {
+    color: #000000 !important;
+    stroke: #000000 !important;
+  }
+
+  .dark button.size-10 i,
+  .dark button.size-10 svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
   }
 
   /* Contact button in mobile menu - only the actual button, not menu links */
@@ -1350,5 +1363,213 @@
       opacity: 1;
       transform: translateX(0);
     }
+  }
+}
+
+
+/* Fix Contact Us button icon visibility on mobile */
+@media (max-width: 640px) {
+  /* Remove background from icon containers */
+  .bg-blue-600 a[href="/contact"] i[data-lucide],
+  .bg-blue-600 Link[href="/contact"] i[data-lucide],
+  .border-white i[data-lucide],
+  .text-white i[data-lucide] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Ensure phone icon in Contact Us button is white and visible */
+  .bg-blue-600 a[href="/contact"] i[data-lucide="phone"],
+  .bg-blue-600 a[href="/contact"] i[data-lucide="phone"] svg,
+  .bg-blue-600 Link[href="/contact"] i[data-lucide="phone"],
+  .border-white i[data-lucide="phone"],
+  .border-white i[data-lucide="phone"] svg,
+  .text-white i[data-lucide],
+  .text-white i[data-lucide] svg,
+  .text-white svg[data-lucide] {
+    color: white !important;
+    stroke: white !important;
+    fill: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+  }
+
+  /* Ensure all icons in buttons with border-white are white */
+  .border-2.border-white i[data-lucide],
+  .border-2.border-white i[data-lucide] svg,
+  .border-2.border-white svg[data-lucide] {
+    color: white !important;
+    stroke: white !important;
+    background: transparent !important;
+  }
+
+  /* Fix all Lucide icons on blue backgrounds that should be white */
+  .bg-blue-600 .text-white i[data-lucide] svg path,
+  .bg-blue-600 .text-white i[data-lucide] svg circle,
+  .bg-blue-600 .text-white i[data-lucide] svg line,
+  .bg-blue-600 .text-white svg[data-lucide] path,
+  .bg-blue-600 .text-white svg[data-lucide] circle,
+  .bg-blue-600 .text-white svg[data-lucide] line {
+    stroke: white !important;
+    fill: none !important;
+  }
+
+  /* Remove any circular backgrounds from icons on blue sections */
+  .bg-blue-600 .w-12.h-12,
+  .bg-blue-600 .w-16.h-16,
+  .bg-blue-600 .w-20.h-20,
+  .bg-blue-600 .rounded-full {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
+
+
+/* Property Document Card Button Styling - Blue and White Theme */
+@media (max-width: 640px) {
+  /* View Details button - white with blue border */
+  .property-card a[href*="/services/"] {
+    background: white !important;
+    background-color: white !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+  }
+
+  .property-card a[href*="/services/"] i[data-lucide],
+  .property-card a[href*="/services/"] svg {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Book Now button - FORCE blue background, remove ALL green */
+  .property-card button,
+  .property-card button[title="Book Now"],
+  button[title="Book Now"],
+  .property-card .bg-green-500,
+  .property-card .bg-green-600,
+  button.bg-green-500,
+  button.bg-green-600 {
+    background: #2563eb !important;
+    background-color: #2563eb !important;
+    background-image: none !important;
+    color: white !important;
+  }
+
+  .property-card button i[data-lucide],
+  .property-card button svg,
+  .property-card button span,
+  button[title="Book Now"] i[data-lucide],
+  button[title="Book Now"] svg,
+  button[title="Book Now"] span {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* Ensure icons are visible */
+  .property-card i[data-lucide="arrow-right"],
+  .property-card i[data-lucide="calendar-check"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Override any Tailwind green classes */
+  .property-card [class*="bg-green"],
+  button[class*="bg-green"] {
+    background: #2563eb !important;
+    background-color: #2563eb !important;
+  }
+}
+
+/* Force blue on all screen sizes for Book Now button */
+@media (min-width: 641px) {
+  .property-card button[title="Book Now"],
+  .property-card .bg-green-500,
+  .property-card .bg-green-600 {
+    background: #2563eb !important;
+    background-color: #2563eb !important;
+  }
+
+  .property-card button[title="Book Now"]:hover {
+    background: #1d4ed8 !important;
+    background-color: #1d4ed8 !important;
+  }
+}
+
+
+/* Fix footer links - remove orange/golden backgrounds on mobile */
+@media (max-width: 768px) {
+  footer a,
+  footer a:link,
+  footer a:visited {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    color: #475569 !important;
+  }
+
+  /* Ensure footer links use blue color on hover/active */
+  footer a:hover,
+  footer a:active,
+  footer a:focus {
+    color: #2563eb !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Remove any mark or highlight elements */
+  footer mark,
+  footer a mark {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Target specific links that have orange background */
+  footer a[href="/services"],
+  footer a[href="/services"]:hover,
+  footer a[href="/services"]:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Remove any pseudo-element backgrounds */
+  footer a::before,
+  footer a::after {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
+
+
+/* Fix popup notifications on mobile */
+@media (max-width: 768px) {
+  /* Ensure popup is visible and properly sized */
+  .fixed.bottom-8.right-8 {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    left: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  /* Make Learn More button text visible */
+  .fixed a[href="/contact"],
+  .fixed a[href="/contact"] span {
+    color: #000000 !important;
+    background-color: white !important;
+  }
+
+  /* Keep WhatsApp button white text */
+  .fixed a[href*="whatsapp"],
+  .fixed a[href*="whatsapp"] span {
+    color: #ffffff !important;
+  }
+
+  /* Ensure icons are visible */
+  .fixed svg {
+    stroke: currentColor !important;
   }
 }

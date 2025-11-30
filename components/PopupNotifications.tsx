@@ -89,23 +89,18 @@ export default function PopupNotifications() {
                 <i data-lucide="x" className="w-5 h-5"></i>
               </button>
             </div>
-            <div className="mt-4 flex gap-2">
-              <a
-                href="/contact"
-                className="flex-1 bg-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors text-center"
-                style={{ color: '#2563eb' }}
-              >
-                Learn More
-              </a>
+            <div className="mt-4">
               <a
                 href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors text-center flex items-center justify-center gap-2"
-                style={{ color: '#ffffff !important', backgroundColor: '#16a34a !important' }}
+                className="w-full bg-green-600 px-4 py-3 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                style={{ backgroundColor: '#16a34a' }}
               >
-                <i data-lucide="message-circle" className="w-4 h-4" style={{ color: '#ffffff !important' }}></i>
-                <span style={{ color: '#ffffff !important' }}>WhatsApp</span>
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span style={{ color: '#ffffff' }}>WhatsApp</span>
               </a>
             </div>
           </div>
