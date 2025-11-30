@@ -727,7 +727,7 @@ export default function Home() {
                       <div className="space-y-4 mb-8 max-w-4xl mx-auto text-left">
                         <div className="flex items-start gap-4">
                           <div className="w-12 h-12 bg-transparent border-2 border-white rounded-full flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="percent" className="w-6 h-6 text-white"></i>
+                            <i data-lucide="percent" className="w-6 h-6 text-white bg-white"></i>
                           </div>
                           <div>
                             <h3 className="font-bold text-white text-lg mb-1">Minimum Commission</h3>

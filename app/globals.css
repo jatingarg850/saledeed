@@ -3227,6 +3227,50 @@ bile Performance Enhancements */
     color: #000000 !important;
   }
 
+  /* CRITICAL EXCEPTION: Make ALL text WHITE on blue backgrounds - MAXIMUM SPECIFICITY */
+  body [class*="bg-blue"],
+  body [class*="bg-blue"] *,
+  body [class*="bg-blue"] div,
+  body [class*="bg-blue"] div *,
+  body [class*="bg-blue"] p,
+  body [class*="bg-blue"] span,
+  body [class*="bg-blue"] h1,
+  body [class*="bg-blue"] h2,
+  body [class*="bg-blue"] h3,
+  body [class*="bg-blue"] h4,
+  body [class*="bg-blue"] h5,
+  body [class*="bg-blue"] h6,
+  body [class*="from-blue"],
+  body [class*="from-blue"] *,
+  body [class*="from-blue"] div,
+  body [class*="from-blue"] div *,
+  body [class*="from-blue"] p,
+  body [class*="from-blue"] span,
+  body [class*="to-blue"],
+  body [class*="to-blue"] *,
+  body [class*="to-blue"] div,
+  body [class*="to-blue"] div *,
+  body [class*="to-blue"] p,
+  body [class*="to-blue"] span,
+  body [class*="to-indigo"],
+  body [class*="to-indigo"] *,
+  body [class*="to-indigo"] div,
+  body [class*="to-indigo"] div *,
+  body [class*="to-indigo"] p,
+  body [class*="to-indigo"] span,
+  body .bg-blue-600,
+  body .bg-blue-600 *,
+  body .bg-blue-600 div,
+  body .bg-blue-600 div *,
+  body .bg-blue-600 p,
+  body .bg-blue-600 span,
+  body .bg-blue-500,
+  body .bg-blue-500 *,
+  body .bg-blue-700,
+  body .bg-blue-700 * {
+    color: white !important;
+  }
+
   /* Ensure modal and popup content is visible with natural colors */
   .fixed .bg-white,
   .fixed .dark\:bg-slate-800 {

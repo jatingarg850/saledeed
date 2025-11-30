@@ -212,7 +212,7 @@ export default function About() {
                     <span className="truncate">Get Free Consultation</span>
                     <i className="ml-2 transition-transform duration-300 group-hover:translate-x-1" data-lucide="arrow-right"></i>
                   </a>
-                  <a href="/contact" className="flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-transparent text-amber-700 dark:text-white text-lg font-bold leading-normal tracking-wide border-2 border-amber-700 hover:bg-amber-700/10 transition-all duration-300 hover:-translate-y-1">
+                  <a href="/contact" className="flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-transparent text-blue-600 dark:text-white text-lg font-bold leading-normal tracking-wide border-2 border-blue-600 hover:bg-blue-600/10 transition-all duration-300 hover:-translate-y-1">
                     <span className="truncate">Call Us Now</span>
                     <i className="ml-2" data-lucide="phone"></i>
                   </a>

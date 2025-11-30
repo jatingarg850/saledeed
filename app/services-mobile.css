@@ -1918,3 +1918,566 @@ button[class*="bg-gradient"] * {
   color: white !important;
   stroke: white !important;
 }
+
+
+/* Calculate Stamp Duty button - transparent with blue border on mobile */
+@media (max-width: 768px) {
+  button.bg-transparent.border-blue-600,
+  button[class*="border-blue-600"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+  }
+
+  button.bg-transparent.border-blue-600 *,
+  button.bg-transparent.border-blue-600 span,
+  button.bg-transparent.border-blue-600 svg,
+  button.bg-transparent.border-blue-600 i {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Hover state */
+  button.bg-transparent.border-blue-600:hover {
+    background: #2563eb !important;
+    color: white !important;
+  }
+
+  button.bg-transparent.border-blue-600:hover *,
+  button.bg-transparent.border-blue-600:hover span,
+  button.bg-transparent.border-blue-600:hover svg {
+    color: white !important;
+    stroke: white !important;
+  }
+}
+
+
+/* Remove orange/amber background from breadcrumb links on mobile */
+@media (max-width: 768px) {
+  /* Target breadcrumb links */
+  main a[href="/services"],
+  main a[href*="/services"],
+  .flex.items-center.gap-2 a,
+  nav a,
+  .text-primary {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Remove any mark or highlight elements */
+  main a mark,
+  main a[href="/services"] mark {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Ensure text color is blue */
+  main a[href="/services"],
+  main a.text-primary {
+    color: #2563eb !important;
+  }
+}
+
+
+/* Fix ALL text on blue backgrounds to be white */
+@media (max-width: 768px) {
+  /* Target ALL elements with bg-gradient-to-r that have blue colors */
+  .bg-gradient-to-r[class*="from-blue"] .text-subtext-light,
+  .bg-gradient-to-r[class*="from-blue"] .text-text-light,
+  .bg-gradient-to-r[class*="from-blue"] p,
+  .bg-gradient-to-r[class*="from-blue"] h3,
+  .bg-gradient-to-r[class*="from-blue"] h4,
+  .bg-gradient-to-r[class*="to-indigo"] .text-subtext-light,
+  .bg-gradient-to-r[class*="to-indigo"] .text-text-light,
+  .bg-gradient-to-r[class*="to-indigo"] p,
+  .bg-gradient-to-r[class*="to-indigo"] h3 {
+    color: white !important;
+  }
+
+  /* Target bg-blue-600 sections */
+  .bg-blue-600 .text-subtext-light,
+  .bg-blue-600 .text-text-light,
+  .bg-blue-600 p,
+  .bg-blue-600 h2,
+  .bg-blue-600 h3,
+  .bg-blue-600 h4 {
+    color: white !important;
+  }
+
+  /* Target rounded boxes with blue backgrounds */
+  .rounded-2xl.bg-blue-600 *,
+  .rounded-xl.bg-blue-600 * {
+    color: white !important;
+  }
+}
+
+/* Global fix for all screen sizes */
+.bg-gradient-to-r[class*="from-blue"] .text-subtext-light,
+.bg-gradient-to-r[class*="from-blue"] .text-text-light,
+.bg-gradient-to-r[class*="to-indigo"] .text-subtext-light,
+.bg-gradient-to-r[class*="to-indigo"] .text-text-light,
+.bg-blue-600 .text-subtext-light,
+.bg-blue-600 .text-text-light {
+  color: white !important;
+}
+
+
+/* NUCLEAR OPTION: Make ALL text white on ANY blue background */
+@media (max-width: 768px) {
+  /* Target ANY element with blue background */
+  [class*="bg-blue"],
+  [class*="from-blue"],
+  [class*="to-blue"],
+  [class*="to-indigo"],
+  .bg-blue-600,
+  .bg-blue-500,
+  .bg-blue-700 {
+    color: white !important;
+  }
+
+  /* Make ALL children white too */
+  [class*="bg-blue"] *,
+  [class*="from-blue"] *,
+  [class*="to-blue"] *,
+  [class*="to-indigo"] *,
+  .bg-blue-600 *,
+  .bg-blue-500 *,
+  .bg-blue-700 * {
+    color: white !important;
+  }
+
+  /* Specifically target all text elements */
+  [class*="bg-blue"] h1,
+  [class*="bg-blue"] h2,
+  [class*="bg-blue"] h3,
+  [class*="bg-blue"] h4,
+  [class*="bg-blue"] h5,
+  [class*="bg-blue"] h6,
+  [class*="bg-blue"] p,
+  [class*="bg-blue"] span,
+  [class*="bg-blue"] div,
+  [class*="bg-blue"] summary {
+    color: white !important;
+  }
+
+  /* EXCEPTION: Keep white boxes white with dark text */
+  .bg-white,
+  .bg-white *,
+  [class*="bg-blue"] .bg-white,
+  [class*="bg-blue"] .bg-white * {
+    color: #000000 !important;
+    background: white !important;
+  }
+
+  .bg-white h4 {
+    color: #000000 !important;
+  }
+
+  .bg-white p {
+    color: #475569 !important;
+  }
+}
+
+
+/* FINAL FIX: Make text white ONLY on BLUE gradient backgrounds on mobile */
+@media (max-width: 768px) {
+  /* Target ONLY blue/indigo/green gradient elements (not gray/white) */
+  [class*="from-blue"] .text-subtext-light,
+  [class*="from-blue"] .text-text-light,
+  [class*="from-blue"] p,
+  [class*="from-blue"] h3,
+  [class*="from-blue"] h4,
+  [class*="to-blue"] .text-subtext-light,
+  [class*="to-blue"] .text-text-light,
+  [class*="to-indigo"] .text-subtext-light,
+  [class*="to-indigo"] .text-text-light,
+  [class*="from-green"] .text-subtext-light,
+  [class*="from-green"] .text-text-light,
+  [class*="to-green"] .text-subtext-light,
+  [class*="to-green"] .text-text-light,
+  [class*="to-emerald"] .text-subtext-light,
+  [class*="to-emerald"] .text-text-light {
+    color: white !important;
+  }
+
+  /* Keep text dark on gray/white gradients */
+  [class*="from-gray"] .text-text-light,
+  [class*="from-gray"] h4,
+  [class*="to-white"] .text-text-light,
+  [class*="to-white"] h4,
+  [class*="from-white"] .text-text-light,
+  [class*="from-white"] h4 {
+    color: #000000 !important;
+  }
+
+  [class*="from-gray"] .text-subtext-light,
+  [class*="from-gray"] p,
+  [class*="to-white"] .text-subtext-light,
+  [class*="to-white"] p {
+    color: #475569 !important;
+  }
+}
+
+
+/* FORCE thin borders (1px) on definition sections on mobile - MAXIMUM SPECIFICITY */
+@media (max-width: 768px) {
+  /* Ultra-specific targeting for white definition boxes */
+  .bg-white.rounded-2xl.shadow-xl,
+  .bg-white.rounded-2xl.shadow-xl.border,
+  .bg-white.rounded-2xl.border,
+  .bg-white.rounded-2xl,
+  .bg-white[class*="border"],
+  .rounded-2xl[class*="border-green"],
+  .rounded-2xl[class*="border-blue"],
+  .rounded-2xl.border-green-200\/50,
+  .rounded-2xl.border-blue-200\/50,
+  .overflow-hidden.rounded-2xl,
+  .overflow-hidden.rounded-2xl.border,
+  div.bg-white.rounded-2xl,
+  div.rounded-2xl.border {
+    border-width: 1px !important;
+    border-color: rgba(229, 231, 235, 0.3) !important;
+    border-style: solid !important;
+    box-shadow: none !important; /* Remove shadow that might look like thick border */
+  }
+
+  /* Thin border-bottom for header sections */
+  .bg-gradient-to-r.from-green-50,
+  .bg-gradient-to-r.from-blue-50,
+  [class*="from-green-50"],
+  [class*="from-blue-50"],
+  .border-b,
+  div.border-b {
+    border-bottom-width: 1px !important;
+    border-bottom-color: rgba(229, 231, 235, 0.2) !important;
+    border-bottom-style: solid !important;
+  }
+
+  /* Target the specific definition section with all possible class combinations */
+  .dark\:bg-slate-800\/50.rounded-2xl,
+  .bg-white.dark\:bg-slate-800\/50,
+  .bg-white.dark\:bg-slate-800\/50.rounded-2xl.shadow-xl.border {
+    border-width: 1px !important;
+    border-color: rgba(229, 231, 235, 0.3) !important;
+  }
+}
+
+
+/* Remove white box - make definition sections transparent on blue backgrounds */
+@media (max-width: 768px) {
+  /* Make the white definition box transparent */
+  .bg-white.rounded-2xl.shadow-xl.border,
+  .bg-white.dark\:bg-slate-800\/50.rounded-2xl {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Make the header section transparent too */
+  .bg-gradient-to-r.from-green-50,
+  .bg-gradient-to-r.from-blue-50,
+  [class*="from-green-50"],
+  [class*="from-blue-50"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+  }
+
+  /* Ensure all text in these sections is white */
+  .bg-white.rounded-2xl h2,
+  .bg-white.rounded-2xl p,
+  .bg-white.rounded-2xl h3,
+  .bg-gradient-to-r h2,
+  .bg-gradient-to-r p {
+    color: white !important;
+  }
+
+  /* Target "How it Works" heading specifically */
+  .text-center h3.text-3xl,
+  .text-center h3.font-bold,
+  .text-center h3.text-text-light,
+  h3.text-3xl.font-bold.text-text-light {
+    color: white !important;
+  }
+
+  /* Target the subtitle paragraph */
+  .text-center p.text-subtext-light,
+  .text-center p.text-lg,
+  p.text-subtext-light.text-lg {
+    color: white !important;
+  }
+}
+
+/* Fix orange/brown phone button or input field to transparent with blue border */
+@media (max-width: 9999px) {
+  /* Target any orange/brown colored buttons or inputs */
+  button[style*="background"][style*="rgb"],
+  input[style*="background"][style*="rgb"],
+  div[style*="background"][style*="rgb"],
+  a[style*="background"][style*="rgb"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  /* Target elements with inline styles containing brown/orange hex colors */
+  [style*="#B45309"],
+  [style*="#C2410C"],
+  [style*="#EA580C"],
+  [style*="#F97316"],
+  [style*="#FB923C"],
+  [style*="rgb(180, 83, 9)"],
+  [style*="rgb(194, 65, 12)"],
+  [style*="rgb(234, 88, 12)"],
+  [style*="rgb(249, 115, 22)"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  /* Target Tailwind orange/brown classes */
+  .bg-orange-600,
+  .bg-orange-700,
+  .bg-orange-800,
+  .bg-amber-600,
+  .bg-amber-700,
+  .bg-amber-800,
+  .bg-yellow-700,
+  .bg-yellow-800 {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  /* Target phone/call related buttons with orange colors */
+  button[class*="phone"],
+  button[class*="call"],
+  a[href*="tel:"],
+  a[class*="phone"],
+  a[class*="call"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+}
+
+/* Fix About page orange/amber colors to blue on mobile */
+@media (max-width: 768px) {
+  /* Change hero section gradient from yellow/orange to blue */
+  .bg-gradient-to-br.from-yellow-50,
+  [class*="from-yellow-50"],
+  [class*="via-orange-50"],
+  [class*="to-amber-50"] {
+    background: linear-gradient(to bottom right, #dbeafe, #bfdbfe, #93c5fd) !important;
+    background-image: linear-gradient(to bottom right, #dbeafe, #bfdbfe, #93c5fd) !important;
+  }
+
+  /* Change amber-900 text to blue-600 */
+  .text-amber-900,
+  [class*="text-amber-900"] {
+    color: #2563eb !important;
+  }
+
+  /* Change amber-600 icons to blue-600 */
+  .text-amber-600,
+  [class*="text-amber-600"] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Change amber-700 text to blue-600 */
+  .text-amber-700,
+  [class*="text-amber-700"] {
+    color: #2563eb !important;
+  }
+
+  /* Change yellow border colors to blue */
+  .border-yellow-200,
+  [class*="border-yellow-200"] {
+    border-color: #bfdbfe !important;
+  }
+
+  /* Change yellow background to blue */
+  .bg-yellow-50 {
+    background-color: #eff6ff !important;
+  }
+
+  /* Change amber-700 border to blue-600 */
+  .border-amber-700,
+  [class*="border-amber-700"] {
+    border-color: #2563eb !important;
+  }
+
+  /* Change amber-700 text color to blue-600 */
+  .text-amber-700,
+  [class*="text-amber-700"] {
+    color: #2563eb !important;
+  }
+
+  /* Change amber-700 hover background to blue */
+  .hover\:bg-amber-700\/10:hover {
+    background-color: rgba(37, 99, 235, 0.1) !important;
+  }
+}
+
+/* Aggressive fix for any orange/brown elements - make transparent with blue border */
+@media (max-width: 9999px) {
+  /* Target any element with orange/brown background using RGB values */
+  *[style*="background-color: rgb(194"],
+  *[style*="background-color: rgb(180"],
+  *[style*="background-color: rgb(234"],
+  *[style*="background-color: rgb(249"],
+  *[style*="background: rgb(194"],
+  *[style*="background: rgb(180"],
+  *[style*="background: rgb(234"],
+  *[style*="background: rgb(249"],
+  *[style*="backgroundColor"][style*="194"],
+  *[style*="backgroundColor"][style*="180"],
+  *[style*="backgroundColor"][style*="234"],
+  *[style*="backgroundColor"][style*="249"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  /* Target divs, buttons, and links with orange-ish backgrounds */
+  div[style*="background"][style*="194"],
+  div[style*="background"][style*="180"],
+  button[style*="background"][style*="194"],
+  button[style*="background"][style*="180"],
+  a[style*="background"][style*="194"],
+  a[style*="background"][style*="180"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+}
+
+/* Ultra-aggressive fix - target ALL elements and check their computed background color */
+@media (max-width: 9999px) {
+  /* Use attribute selectors to catch inline styles with orange/brown colors */
+  [style*="background"][style*="180, 83"],
+  [style*="background"][style*="194, 65"],
+  [style*="background"][style*="234, 88"],
+  [style*="background"][style*="249, 115"],
+  [style*="background"][style*="251, 146"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  /* Target common orange Tailwind classes that might be used */
+  .bg-orange-500,
+  .bg-orange-600,
+  .bg-orange-700,
+  .bg-orange-800,
+  .bg-orange-900 {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 2px solid #2563eb !important;
+  }
+}
+
+/* Fix specific orange/yellow gradient button to transparent with blue border */
+@media (max-width: 9999px) {
+  /* Target the specific gradient button from yellow to orange */
+  .from-yellow-500.to-orange-500,
+  [class*="from-yellow-500"][class*="to-orange-500"],
+  .bg-gradient-to-r.from-yellow-500.to-orange-500 {
+    background: transparent !important;
+    background-image: none !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+  }
+
+  /* Target any link or button with tel: href that has orange/yellow gradient */
+  a[href^="tel:"][class*="from-yellow"],
+  a[href^="tel:"][class*="to-orange"],
+  a[href^="tel:"][class*="orange"] {
+    background: transparent !important;
+    background-image: none !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+  }
+
+  /* Make sure the icon inside is also blue */
+  a[href^="tel:"] svg {
+    stroke: #2563eb !important;
+  }
+}
+
+/* Fix Call Us Now button - change amber to blue */
+@media (max-width: 9999px) {
+  /* Target the specific Call Us Now button with amber colors */
+  a[href="/contact"].text-amber-700,
+  a[href="/contact"][class*="text-amber-700"],
+  a[href="/contact"][class*="border-amber-700"] {
+    color: #2563eb !important;
+    border-color: #2563eb !important;
+  }
+
+  /* Target hover state */
+  a[href="/contact"][class*="hover:bg-amber-700"]:hover {
+    background-color: rgba(37, 99, 235, 0.1) !important;
+  }
+
+  /* Make sure the phone icon is also blue */
+  a[href="/contact"][class*="text-amber-700"] svg,
+  a[href="/contact"][class*="border-amber-700"] svg {
+    stroke: #2563eb !important;
+  }
+
+  /* More specific targeting for the button */
+  .text-amber-700.border-amber-700,
+  [class*="text-amber-700"][class*="border-amber-700"] {
+    color: #2563eb !important;
+    border-color: #2563eb !important;
+  }
+
+  .text-amber-700.border-amber-700 svg,
+  [class*="text-amber-700"][class*="border-amber-700"] svg {
+    stroke: #2563eb !important;
+  }
+}
+
+/* Fix blue line above Partner text on About page - remove text gradient on mobile */
+@media (max-width: 768px) {
+  /* Remove text gradient and make text solid black */
+  .text-transparent.bg-clip-text.bg-gradient-to-r {
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+
+  /* Dark mode */
+  .dark .text-transparent.bg-clip-text.bg-gradient-to-r {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  /* Specifically target the heading with gradient text */
+  h1 .text-transparent.bg-clip-text,
+  h1 span.text-transparent.bg-clip-text {
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+
+  .dark h1 .text-transparent.bg-clip-text,
+  .dark h1 span.text-transparent.bg-clip-text {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
