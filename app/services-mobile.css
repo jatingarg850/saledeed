@@ -2197,287 +2197,1447 @@ button[class*="bg-gradient"] * {
   .bg-gradient-to-r p {
     color: white !important;
   }
+}
 
-  /* Target "How it Works" heading specifically */
-  .text-center h3.text-3xl,
-  .text-center h3.font-bold,
-  .text-center h3.text-text-light,
-  h3.text-3xl.font-bold.text-text-light {
+
+/* Fix white text on white buttons in hero section on mobile */
+@media (max-width: 768px) {
+  /* Target the white button-like elements in hero section */
+  .bg-gradient-to-br .flex.flex-col.sm\:flex-row a,
+  .bg-gradient-to-br .flex.flex-col.sm\:flex-row button,
+  .bg-gradient-to-br .mb-12 a,
+  .bg-gradient-to-br .mb-12 button {
+    background: white !important;
+    color: #2563eb !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  /* Make text inside these buttons blue */
+  .bg-gradient-to-br .flex.flex-col.sm\:flex-row a *,
+  .bg-gradient-to-br .flex.flex-col.sm\:flex-row button *,
+  .bg-gradient-to-br .mb-12 a *,
+  .bg-gradient-to-br .mb-12 button * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Target inline-flex buttons specifically */
+  .bg-gradient-to-br a.inline-flex,
+  .bg-gradient-to-br button.inline-flex {
+    background: white !important;
+    color: #2563eb !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  .bg-gradient-to-br a.inline-flex *,
+  .bg-gradient-to-br button.inline-flex * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Ensure rounded-full buttons have visible text */
+  .bg-gradient-to-br .rounded-full {
+    background: white !important;
+    color: #2563eb !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  .bg-gradient-to-br .rounded-full * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Target buttons with gradient backgrounds that should be white with blue text */
+  .bg-gradient-to-br a[class*="bg-gradient-to-r"],
+  .bg-gradient-to-br button[class*="bg-gradient-to-r"] {
+    background: white !important;
+    background-image: none !important;
+    color: #2563eb !important;
+    border: 2px solid #2563eb !important;
+  }
+
+  .bg-gradient-to-br a[class*="bg-gradient-to-r"] *,
+  .bg-gradient-to-br button[class*="bg-gradient-to-r"] * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+}
+
+
+/* Fix white buttons with white text in hero section - DESKTOP VIEW */
+@media (min-width: 769px) {
+  /* Target all buttons in header-btn section */
+  .header-btn button.btn-primary,
+  .header-btn .btn-primary,
+  .header-section .btn-primary {
+    background: white !important;
+    color: #2563eb !important;
+    border: 2px solid white !important;
+  }
+
+  /* Make text and icons inside these buttons blue */
+  .header-btn button.btn-primary *,
+  .header-btn .btn-primary *,
+  .header-section .btn-primary * {
+    color: #2563eb !important;
+  }
+
+  /* Hover state */
+  .header-btn button.btn-primary:hover,
+  .header-btn .btn-primary:hover {
+    background: #2563eb !important;
+    color: white !important;
+    border: 2px solid white !important;
+  }
+
+  .header-btn button.btn-primary:hover *,
+  .header-btn .btn-primary:hover * {
+    color: white !important;
+  }
+}
+
+/* Fix for ALL screen sizes - ensure buttons are visible */
+.header-btn button.btn-primary,
+.header-btn .btn-primary,
+.header-section .btn-primary {
+  background: white !important;
+  color: #2563eb !important;
+  border: 2px solid white !important;
+  font-weight: 600 !important;
+}
+
+.header-btn button.btn-primary *,
+.header-btn .btn-primary *,
+.header-section .btn-primary * {
+  color: #2563eb !important;
+}
+
+/* Hover state for all screens */
+.header-btn button.btn-primary:hover,
+.header-btn .btn-primary:hover {
+  background: #2563eb !important;
+  color: white !important;
+  border: 2px solid white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-btn button.btn-primary:hover *,
+.header-btn .btn-primary:hover * {
+  color: white !important;
+}
+
+
+/* Fix white icon backgrounds in Partner and Why sections - ALL SCREENS */
+/* Remove backgrounds from icon containers */
+.icon-container,
+.w-16.h-16.bg-transparent,
+.w-20.h-20.rounded-full,
+div[class*="w-16"][class*="h-16"][class*="border-2"],
+div[class*="w-20"][class*="h-20"][class*="border-2"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Ensure all icons in white cards are blue and visible */
+.bg-white .icon-container i,
+.bg-white .icon-container svg,
+.bg-white .w-16.h-16 i,
+.bg-white .w-16.h-16 svg,
+.bg-white .w-20.h-20 i,
+.bg-white .w-20.h-20 svg,
+.bg-white [class*="border-blue-600"] i,
+.bg-white [class*="border-blue-600"] svg {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  fill: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Target specific Lucide icons in white cards */
+.bg-white i[data-lucide="users"],
+.bg-white i[data-lucide="home"],
+.bg-white i[data-lucide="scale"],
+.bg-white i[data-lucide="edit"],
+.bg-white i[data-lucide="ruler"],
+.bg-white i[data-lucide="briefcase"],
+.bg-white i[data-lucide="shield-check"],
+.bg-white i[data-lucide="indian-rupee"],
+.bg-white i[data-lucide="badge-check"],
+.bg-white svg[data-lucide] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  fill: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure SVG paths are visible */
+.bg-white i[data-lucide] svg path,
+.bg-white i[data-lucide] svg circle,
+.bg-white i[data-lucide] svg line,
+.bg-white svg[data-lucide] path,
+.bg-white svg[data-lucide] circle,
+.bg-white svg[data-lucide] line {
+  stroke: #2563eb !important;
+  fill: none !important;
+}
+
+/* Fix icon containers with border-2 border-blue-600 */
+.border-2.border-blue-600 {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.border-2.border-blue-600 i,
+.border-2.border-blue-600 svg {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+}
+
+/* Fix rounded-2xl white cards */
+.rounded-2xl.bg-white .text-blue-600 {
+  color: #2563eb !important;
+}
+
+.rounded-2xl.bg-white i,
+.rounded-2xl.bg-white svg {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+}
+
+/* Specific fix for Partner section cards */
+.bg-blue-600 .bg-white.rounded-2xl i,
+.bg-blue-600 .bg-white.rounded-2xl svg {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix Why saledeed.com section icons */
+.bg-blue-600 .grid .bg-white i[data-lucide],
+.bg-blue-600 .grid .bg-white svg[data-lucide] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure text-2xl icons are visible */
+i.text-2xl[data-lucide],
+svg.text-2xl[data-lucide] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix any remaining white icon issues */
+.bg-white [class*="text-blue-600"] i,
+.bg-white [class*="text-blue-600"] svg {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+}
+
+
+/* DESKTOP VIEW FIXES - Ensure all elements are visible */
+@media (min-width: 769px) {
+  /* Fix white buttons on blue backgrounds - make text visible */
+  .bg-blue-600 a.bg-white,
+  .bg-blue-600 button.bg-white,
+  .bg-blue-600 .bg-white.rounded-full,
+  .bg-blue-600 a[class*="bg-white"],
+  .bg-blue-600 button[class*="bg-white"] {
+    background: white !important;
+    color: #2563eb !important;
+  }
+
+  .bg-blue-600 a.bg-white *,
+  .bg-blue-600 button.bg-white *,
+  .bg-blue-600 .bg-white.rounded-full *,
+  .bg-blue-600 a[class*="bg-white"] *,
+  .bg-blue-600 button[class*="bg-white"] * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Fix "Submit Your Property Details" button */
+  .bg-blue-600 a[href*="whatsapp"] {
+    background: white !important;
+    color: #2563eb !important;
+  }
+
+  .bg-blue-600 a[href*="whatsapp"] span,
+  .bg-blue-600 a[href*="whatsapp"] i,
+  .bg-blue-600 a[href*="whatsapp"] svg {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Fix "Contact Us" button with border */
+  .bg-blue-600 a.border-white,
+  .bg-blue-600 button.border-white,
+  .bg-blue-600 .border-2.border-white {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid white !important;
+  }
+
+  .bg-blue-600 a.border-white *,
+  .bg-blue-600 button.border-white *,
+  .bg-blue-600 .border-2.border-white * {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* Fix icons in circular containers on blue backgrounds */
+  .bg-blue-600 .w-12.h-12 i,
+  .bg-blue-600 .w-12.h-12 svg,
+  .bg-blue-600 .border-white i,
+  .bg-blue-600 .border-white svg {
+    color: white !important;
+    stroke: white !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Fix "Why saledeed.com?" section - white cards with icons */
+  .bg-blue-600 .grid .bg-white {
+    background: white !important;
+  }
+
+  .bg-blue-600 .grid .bg-white h3,
+  .bg-blue-600 .grid .bg-white p {
+    color: #1f2937 !important;
+  }
+
+  .bg-blue-600 .grid .bg-white .text-blue-600 {
+    color: #2563eb !important;
+  }
+
+  /* Ensure all icons in white cards are blue */
+  .bg-blue-600 .bg-white i[data-lucide],
+  .bg-blue-600 .bg-white svg[data-lucide] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Fix icon containers - remove any white backgrounds */
+  .bg-blue-600 .bg-white .w-20.h-20,
+  .bg-blue-600 .bg-white .icon-container {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Fix "Become a Partner" button */
+  .bg-blue-600 a[href*="/partner"] {
+    background: white !important;
+    color: #2563eb !important;
+  }
+
+  .bg-blue-600 a[href*="/partner"] *,
+  .bg-blue-600 a[href*="/partner"] span,
+  .bg-blue-600 a[href*="/partner"] i {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Fix all rounded-full buttons on blue backgrounds */
+  .bg-blue-600 .rounded-full.bg-white {
+    background: white !important;
+    color: #2563eb !important;
+  }
+
+  .bg-blue-600 .rounded-full.bg-white * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+  }
+
+  /* Fix transparent buttons with border */
+  .bg-blue-600 .bg-transparent.border-2 {
+    background: transparent !important;
     color: white !important;
   }
 
-  /* Target the subtitle paragraph */
-  .text-center p.text-subtext-light,
-  .text-center p.text-lg,
-  p.text-subtext-light.text-lg {
+  .bg-blue-600 .bg-transparent.border-2 * {
+    color: white !important;
+    stroke: white !important;
+  }
+
+  /* Ensure text in white sections on blue background is visible */
+  .bg-blue-600 .bg-white\/10 {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .bg-blue-600 .bg-white\/10 * {
     color: white !important;
   }
-}
 
-/* Fix orange/brown phone button or input field to transparent with blue border */
-@media (max-width: 9999px) {
-  /* Target any orange/brown colored buttons or inputs */
-  button[style*="background"][style*="rgb"],
-  input[style*="background"][style*="rgb"],
-  div[style*="background"][style*="rgb"],
-  a[style*="background"][style*="rgb"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
+  /* Fix icons with specific data-lucide attributes */
+  .bg-blue-600 i[data-lucide="percent"],
+  .bg-blue-600 i[data-lucide="check-circle"],
+  .bg-blue-600 i[data-lucide="clock"],
+  .bg-blue-600 i[data-lucide="send"],
+  .bg-blue-600 i[data-lucide="phone"],
+  .bg-blue-600 i[data-lucide="arrow-right"],
+  .bg-blue-600 i[data-lucide="handshake"] {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
-  /* Target elements with inline styles containing brown/orange hex colors */
-  [style*="#B45309"],
-  [style*="#C2410C"],
-  [style*="#EA580C"],
-  [style*="#F97316"],
-  [style*="#FB923C"],
-  [style*="rgb(180, 83, 9)"],
-  [style*="rgb(194, 65, 12)"],
-  [style*="rgb(234, 88, 12)"],
-  [style*="rgb(249, 115, 22)"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
+  /* Fix white icons on blue background (in bordered circles) */
+  .bg-blue-600 .border-2.border-white i[data-lucide],
+  .bg-blue-600 .border-2.border-white svg[data-lucide] {
+    color: white !important;
+    stroke: white !important;
   }
 
-  /* Target Tailwind orange/brown classes */
-  .bg-orange-600,
-  .bg-orange-700,
-  .bg-orange-800,
-  .bg-amber-600,
-  .bg-amber-700,
-  .bg-amber-800,
-  .bg-yellow-700,
-  .bg-yellow-800 {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
-  }
-
-  /* Target phone/call related buttons with orange colors */
-  button[class*="phone"],
-  button[class*="call"],
-  a[href*="tel:"],
-  a[class*="phone"],
-  a[class*="call"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
+  /* Fix blue icons in white cards */
+  .bg-white .border-2.border-blue-600 i[data-lucide],
+  .bg-white .border-2.border-blue-600 svg[data-lucide] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
   }
 }
 
-/* Fix About page orange/amber colors to blue on mobile */
+/* Global fix for all screen sizes - white buttons on blue backgrounds */
+.bg-blue-600 a.bg-white,
+.bg-blue-600 button.bg-white,
+.bg-blue-600 .bg-white.rounded-full {
+  background: white !important;
+  color: #2563eb !important;
+}
+
+.bg-blue-600 a.bg-white *,
+.bg-blue-600 button.bg-white *,
+.bg-blue-600 .bg-white.rounded-full * {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+}
+
+/* Ensure bordered buttons stay with white text */
+.bg-blue-600 .border-2.border-white {
+  color: white !important;
+}
+
+.bg-blue-600 .border-2.border-white * {
+  color: white !important;
+  stroke: white !important;
+}
+
+
+/* Fix "See Our Authorities in Action" section - white card with play icon */
+.bg-blue-600 .bg-white.rounded-2xl {
+  background: white !important;
+}
+
+.bg-blue-600 .bg-white.rounded-2xl h4,
+.bg-blue-600 .bg-white.rounded-2xl p {
+  color: #1f2937 !important;
+}
+
+.bg-blue-600 .bg-white.rounded-2xl .text-blue-600 {
+  color: #2563eb !important;
+}
+
+.bg-blue-600 .bg-white.rounded-2xl .text-gray-700 {
+  color: #374151 !important;
+}
+
+/* Fix play icon in authorities section */
+.bg-blue-600 .bg-white .w-20.h-20 i[data-lucide="play"],
+.bg-blue-600 .bg-white .w-20.h-20 svg[data-lucide="play"] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix check icons in authorities section */
+.bg-blue-600 .bg-white i[data-lucide="check"],
+.bg-blue-600 .bg-white svg[data-lucide="check"] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix all icons in white cards on blue backgrounds */
+.bg-blue-600 .bg-white i[data-lucide],
+.bg-blue-600 .bg-white svg[data-lucide] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure icon containers are transparent */
+.bg-blue-600 .bg-white .w-20.h-20.border-2,
+.bg-blue-600 .bg-white .w-12.h-12.bg-white\/20 {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Fix text-3xl icons */
+i.text-3xl[data-lucide],
+svg.text-3xl[data-lucide] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix icons in Useful Information sections */
+.bg-white i[data-lucide="building"],
+.bg-white i[data-lucide="clock"],
+.bg-white i[data-lucide="home"],
+.bg-white i[data-lucide="minus"],
+.bg-white i[data-lucide="check"],
+.bg-white i[data-lucide="refresh-cw"],
+.bg-white i[data-lucide="trending-up"],
+.bg-white i[data-lucide="file-text"],
+.bg-white i[data-lucide="bar-chart"],
+.bg-white i[data-lucide="alert-triangle"] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix icons in colored backgrounds */
+.bg-blue-600 .w-12.h-12.bg-white\/20 i,
+.bg-blue-600 .w-12.h-12.bg-white\/20 svg {
+  color: white !important;
+  stroke: white !important;
+}
+
+/* Fix text-xl icons */
+i.text-xl[data-lucide],
+svg.text-xl[data-lucide] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure all SVG elements are visible */
+.bg-white svg[data-lucide] path,
+.bg-white svg[data-lucide] circle,
+.bg-white svg[data-lucide] line,
+.bg-white svg[data-lucide] polyline {
+  stroke: #2563eb !important;
+  fill: none !important;
+}
+
+/* Fix icons with specific sizes */
+.w-5.h-5[data-lucide],
+.w-4.h-4[data-lucide] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix green and blue colored icons */
+.text-green-500 i[data-lucide],
+.text-green-500 svg[data-lucide] {
+  color: #22c55e !important;
+  stroke: #22c55e !important;
+}
+
+.text-blue-500 i[data-lucide],
+.text-blue-500 svg[data-lucide] {
+  color: #3b82f6 !important;
+  stroke: #3b82f6 !important;
+}
+
+/* Fix icons in border-l-4 sections */
+.border-l-4 i[data-lucide],
+.border-l-4 svg[data-lucide] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.border-l-4.border-blue-500 i[data-lucide],
+.border-l-4.border-blue-500 svg[data-lucide] {
+  color: #3b82f6 !important;
+  stroke: #3b82f6 !important;
+}
+
+.border-l-4.border-green-500 i[data-lucide],
+.border-l-4.border-green-500 svg[data-lucide] {
+  color: #22c55e !important;
+  stroke: #22c55e !important;
+}
+
+
+/* Fix camouflaged text in authorities section - make gray text darker */
+.bg-white .grid .text-gray-700,
+.bg-white .text-gray-700 {
+  color: #1f2937 !important;
+}
+
+/* Fix text in grid with checkmarks */
+.bg-white .grid.grid-cols-2 span,
+.bg-white .grid.grid-cols-3 span,
+.bg-white .grid[class*="grid-cols"] span {
+  color: #1f2937 !important;
+  font-weight: 500 !important;
+}
+
+/* Ensure all span elements in white cards are visible */
+.bg-white span {
+  color: #1f2937 !important;
+}
+
+/* Fix text-sm text-gray-700 specifically */
+.text-sm.text-gray-700 {
+  color: #1f2937 !important;
+}
+
+/* Fix all gray text on white backgrounds */
+.bg-white .text-gray-700,
+.bg-white.rounded-2xl .text-gray-700,
+.rounded-2xl.bg-white .text-gray-700 {
+  color: #1f2937 !important;
+}
+
+/* Ensure paragraph text in white cards is visible */
+.bg-white p.text-gray-700 {
+  color: #374151 !important;
+}
+
+/* Fix text in flex items with gap */
+.bg-white .flex.items-center.gap-2 span {
+  color: #1f2937 !important;
+  font-weight: 500 !important;
+}
+
+/* Global fix for text-gray-700 on light backgrounds */
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+/* Fix text in authorities grid specifically */
+.bg-blue-600 .bg-white .grid span {
+  color: #1f2937 !important;
+  font-weight: 500 !important;
+}
+
+
+/* Make all footer text blue - COMPREHENSIVE FIX */
+footer,
+footer *,
+footer a,
+footer p,
+footer span,
+footer div,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer li,
+footer ul,
+footer ol,
+footer small {
+  color: #2563eb !important;
+}
+
+/* Footer links */
+footer a:link,
+footer a:visited,
+footer a:hover,
+footer a:active {
+  color: #2563eb !important;
+  text-decoration: none !important;
+}
+
+/* Footer icons */
+footer i,
+footer svg,
+footer [data-lucide],
+footer .fa,
+footer .fas,
+footer .far {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+}
+
+/* Override ALL text color classes in footer */
+footer [class*="text-"],
+footer .text-gray-400,
+footer .text-gray-500,
+footer .text-gray-600,
+footer .text-gray-700,
+footer .text-gray-800,
+footer .text-gray-900,
+footer .text-white,
+footer .text-subtext-light,
+footer .text-text-light,
+footer .text-black {
+  color: #2563eb !important;
+}
+
+/* Footer on ANY background */
+footer[class*="bg-"],
+footer.bg-yellow-50,
+footer.bg-gray-50,
+footer.bg-white,
+footer.bg-gray-100 {
+  color: #2563eb !important;
+}
+
+footer[class*="bg-"] *,
+footer.bg-yellow-50 *,
+footer.bg-gray-50 *,
+footer.bg-white *,
+footer.bg-gray-100 * {
+  color: #2563eb !important;
+}
+
+/* EXCEPTION: Footer on dark backgrounds keeps white text */
+footer.bg-gray-900,
+footer.bg-slate-900,
+footer.bg-black,
+footer.bg-gray-800,
+footer.bg-slate-800 {
+  color: white !important;
+}
+
+footer.bg-gray-900 *,
+footer.bg-slate-900 *,
+footer.bg-black *,
+footer.bg-gray-800 *,
+footer.bg-slate-800 * {
+  color: white !important;
+}
+
+/* Force blue on light footer backgrounds */
+body > footer:not([class*="bg-gray-9"]):not([class*="bg-slate-9"]):not(.bg-black),
+body > footer:not([class*="bg-gray-9"]):not([class*="bg-slate-9"]):not(.bg-black) * {
+  color: #2563eb !important;
+}
+
+/* Specific footer sections and elements */
+.footer-section,
+.footer-content,
+.footer-links,
+.footer-text,
+.footer-heading,
+.footer-item {
+  color: #2563eb !important;
+}
+
+/* Footer copyright and small text */
+footer .text-sm,
+footer small,
+footer .copyright {
+  color: #2563eb !important;
+  font-size: 0.875rem !important;
+}
+
+/* Ensure footer buttons and interactive elements are visible */
+footer button,
+footer .btn {
+  color: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+/* Footer hover states */
+footer a:hover,
+footer button:hover {
+  color: #1d4ed8 !important;
+  opacity: 0.8 !important;
+}
+
+
+/* SPECIFIC FIX for footer with bg-blue-50 background */
+footer.bg-blue-50,
+footer.bg-blue-50 * {
+  color: #2563eb !important;
+}
+
+/* Footer headings */
+footer.bg-blue-50 h3,
+footer.bg-blue-50 .font-bold {
+  color: #2563eb !important;
+}
+
+/* Footer links and text */
+footer.bg-blue-50 a,
+footer.bg-blue-50 .text-subtext-light,
+footer.bg-blue-50 p,
+footer.bg-blue-50 span,
+footer.bg-blue-50 li {
+  color: #2563eb !important;
+}
+
+/* Footer hover states */
+footer.bg-blue-50 a:hover {
+  color: #1d4ed8 !important;
+}
+
+/* Override gray text in footer */
+footer.bg-blue-50 .text-gray-600,
+footer.bg-blue-50 .text-gray-400 {
+  color: #2563eb !important;
+}
+
+/* Footer icons */
+footer.bg-blue-50 i,
+footer.bg-blue-50 svg,
+footer.bg-blue-50 [data-lucide] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+}
+
+/* Footer bottom section */
+footer.bg-blue-50 .border-t p,
+footer.bg-blue-50 .border-t span {
+  color: #2563eb !important;
+}
+
+/* Specific footer text elements */
+footer.bg-blue-50 .text-sm,
+footer.bg-blue-50 .text-base,
+footer.bg-blue-50 .font-semibold {
+  color: #2563eb !important;
+}
+
+/* Dark mode footer */
+footer.dark\:bg-gray-900 {
+  color: white !important;
+}
+
+footer.dark\:bg-gray-900 * {
+  color: white !important;
+}
+
+/* But in light mode, force blue */
+@media (prefers-color-scheme: light) {
+  footer.bg-blue-50,
+  footer.bg-blue-50 *,
+  footer.bg-blue-50 a,
+  footer.bg-blue-50 p,
+  footer.bg-blue-50 h3,
+  footer.bg-blue-50 li,
+  footer.bg-blue-50 span,
+  footer.bg-blue-50 div {
+    color: #2563eb !important;
+  }
+}
+
+/* Override ALL Tailwind text color classes in footer */
+footer [class*="text-subtext"],
+footer [class*="text-gray"],
+footer [class*="text-text"] {
+  color: #2563eb !important;
+}
+
+/* Footer on light backgrounds - comprehensive */
+footer:not(.bg-gray-900):not(.bg-slate-900):not(.bg-black),
+footer:not(.bg-gray-900):not(.bg-slate-900):not(.bg-black) * {
+  color: #2563eb !important;
+}
+
+/* Ensure footer links are always blue */
+footer a[href],
+footer a[href] * {
+  color: #2563eb !important;
+}
+
+/* Footer copyright and bottom text */
+footer .text-center p,
+footer .text-center span {
+  color: #2563eb !important;
+}
+
+
+/* Remove background from Book Now button icon */
+button[title="Book Now"] i[data-lucide="calendar-check"],
+button[title="Book Now"] svg[data-lucide="calendar-check"],
+button i[data-lucide="calendar-check"],
+button svg[data-lucide="calendar-check"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Ensure icon is blue and visible */
+button[title="Book Now"] i[data-lucide="calendar-check"],
+button[title="Book Now"] svg[data-lucide="calendar-check"] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  fill: none !important;
+}
+
+/* Remove any circular or rounded backgrounds from button icons */
+button i[data-lucide],
+button svg[data-lucide] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ensure all button icons have no background */
+.border-blue-600 i[data-lucide],
+.border-blue-600 svg[data-lucide] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+
+/* Desktop fix for Book Now button - remove blue background */
+@media (min-width: 769px) {
+  /* Remove background from Book Now button icon */
+  button[title="Book Now"] i[data-lucide="calendar-check"],
+  button[title="Book Now"] svg[data-lucide="calendar-check"],
+  button i[data-lucide="calendar-check"],
+  button svg[data-lucide="calendar-check"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Ensure icon is blue and visible */
+  button[title="Book Now"] i[data-lucide="calendar-check"],
+  button[title="Book Now"] svg[data-lucide="calendar-check"] {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
+    fill: none !important;
+  }
+
+  /* Remove any backgrounds from all button icons */
+  button i[data-lucide],
+  button svg[data-lucide] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Property card buttons */
+  .property-card button i[data-lucide],
+  .property-card button svg[data-lucide] {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
+
+/* Global fix for all screen sizes */
+button[title="Book Now"] i,
+button[title="Book Now"] svg,
+button i[data-lucide="calendar-check"],
+button svg[data-lucide="calendar-check"] {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Ensure button icons inherit text color */
+button.border-blue-600 i,
+button.border-blue-600 svg {
+  color: inherit !important;
+  stroke: currentColor !important;
+  background: transparent !important;
+}
+
+/* Remove backgrounds from icons in property cards */
+.property-card button i[data-lucide],
+.property-card button svg[data-lucide],
+.bg-white button i[data-lucide],
+.bg-white button svg[data-lucide] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
+/* Fix Book Now button visibility on mobile */
 @media (max-width: 768px) {
-  /* Change hero section gradient from yellow/orange to blue */
-  .bg-gradient-to-br.from-yellow-50,
-  [class*="from-yellow-50"],
-  [class*="via-orange-50"],
-  [class*="to-amber-50"] {
-    background: linear-gradient(to bottom right, #dbeafe, #bfdbfe, #93c5fd) !important;
-    background-image: linear-gradient(to bottom right, #dbeafe, #bfdbfe, #93c5fd) !important;
-  }
-
-  /* Change amber-900 text to blue-600 */
-  .text-amber-900,
-  [class*="text-amber-900"] {
-    color: #2563eb !important;
-  }
-
-  /* Change amber-600 icons to blue-600 */
-  .text-amber-600,
-  [class*="text-amber-600"] {
-    color: #2563eb !important;
-    stroke: #2563eb !important;
-  }
-
-  /* Change amber-700 text to blue-600 */
-  .text-amber-700,
-  [class*="text-amber-700"] {
-    color: #2563eb !important;
-  }
-
-  /* Change yellow border colors to blue */
-  .border-yellow-200,
-  [class*="border-yellow-200"] {
-    border-color: #bfdbfe !important;
-  }
-
-  /* Change yellow background to blue */
-  .bg-yellow-50 {
-    background-color: #eff6ff !important;
-  }
-
-  /* Change amber-700 border to blue-600 */
-  .border-amber-700,
-  [class*="border-amber-700"] {
-    border-color: #2563eb !important;
-  }
-
-  /* Change amber-700 text color to blue-600 */
-  .text-amber-700,
-  [class*="text-amber-700"] {
-    color: #2563eb !important;
-  }
-
-  /* Change amber-700 hover background to blue */
-  .hover\:bg-amber-700\/10:hover {
-    background-color: rgba(37, 99, 235, 0.1) !important;
-  }
-}
-
-/* Aggressive fix for any orange/brown elements - make transparent with blue border */
-@media (max-width: 9999px) {
-  /* Target any element with orange/brown background using RGB values */
-  *[style*="background-color: rgb(194"],
-  *[style*="background-color: rgb(180"],
-  *[style*="background-color: rgb(234"],
-  *[style*="background-color: rgb(249"],
-  *[style*="background: rgb(194"],
-  *[style*="background: rgb(180"],
-  *[style*="background: rgb(234"],
-  *[style*="background: rgb(249"],
-  *[style*="backgroundColor"][style*="194"],
-  *[style*="backgroundColor"][style*="180"],
-  *[style*="backgroundColor"][style*="234"],
-  *[style*="backgroundColor"][style*="249"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
-  }
-
-  /* Target divs, buttons, and links with orange-ish backgrounds */
-  div[style*="background"][style*="194"],
-  div[style*="background"][style*="180"],
-  button[style*="background"][style*="194"],
-  button[style*="background"][style*="180"],
-  a[style*="background"][style*="194"],
-  a[style*="background"][style*="180"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
-  }
-}
-
-/* Ultra-aggressive fix - target ALL elements and check their computed background color */
-@media (max-width: 9999px) {
-  /* Use attribute selectors to catch inline styles with orange/brown colors */
-  [style*="background"][style*="180, 83"],
-  [style*="background"][style*="194, 65"],
-  [style*="background"][style*="234, 88"],
-  [style*="background"][style*="249, 115"],
-  [style*="background"][style*="251, 146"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
-  }
-
-  /* Target common orange Tailwind classes that might be used */
-  .bg-orange-500,
-  .bg-orange-600,
-  .bg-orange-700,
-  .bg-orange-800,
-  .bg-orange-900 {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: 2px solid #2563eb !important;
-  }
-}
-
-/* Fix specific orange/yellow gradient button to transparent with blue border */
-@media (max-width: 9999px) {
-  /* Target the specific gradient button from yellow to orange */
-  .from-yellow-500.to-orange-500,
-  [class*="from-yellow-500"][class*="to-orange-500"],
-  .bg-gradient-to-r.from-yellow-500.to-orange-500 {
-    background: transparent !important;
+  /* Ensure Book Now button has white background with blue border */
+  button[title="Book Now"],
+  .property-card button[title="Book Now"] {
+    background: white !important;
+    background-color: white !important;
     background-image: none !important;
     border: 2px solid #2563eb !important;
     color: #2563eb !important;
   }
 
-  /* Target any link or button with tel: href that has orange/yellow gradient */
-  a[href^="tel:"][class*="from-yellow"],
-  a[href^="tel:"][class*="to-orange"],
-  a[href^="tel:"][class*="orange"] {
+  /* Ensure button text is blue */
+  button[title="Book Now"] span,
+  button[title="Book Now"] *:not(i):not(svg) {
+    color: #2563eb !important;
+  }
+
+  /* Ensure icon is blue */
+  button[title="Book Now"] i,
+  button[title="Book Now"] svg {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
     background: transparent !important;
-    background-image: none !important;
+  }
+
+  /* Property card buttons - ensure both buttons match */
+  .property-card .flex.gap-3 button {
+    background: white !important;
     border: 2px solid #2563eb !important;
     color: #2563eb !important;
   }
 
-  /* Make sure the icon inside is also blue */
-  a[href^="tel:"] svg {
+  /* Hover state */
+  button[title="Book Now"]:hover {
+    background: #eff6ff !important;
+  }
+
+  /* Remove any blue backgrounds from buttons in property cards */
+  .property-card button {
+    background: white !important;
+    background-color: white !important;
+  }
+
+  /* Ensure all button content is blue */
+  .property-card button * {
+    color: #2563eb !important;
     stroke: #2563eb !important;
   }
 }
 
-/* Fix Call Us Now button - change amber to blue */
-@media (max-width: 9999px) {
-  /* Target the specific Call Us Now button with amber colors */
-  a[href="/contact"].text-amber-700,
-  a[href="/contact"][class*="text-amber-700"],
-  a[href="/contact"][class*="border-amber-700"] {
-    color: #2563eb !important;
-    border-color: #2563eb !important;
-  }
-
-  /* Target hover state */
-  a[href="/contact"][class*="hover:bg-amber-700"]:hover {
-    background-color: rgba(37, 99, 235, 0.1) !important;
-  }
-
-  /* Make sure the phone icon is also blue */
-  a[href="/contact"][class*="text-amber-700"] svg,
-  a[href="/contact"][class*="border-amber-700"] svg {
-    stroke: #2563eb !important;
-  }
-
-  /* More specific targeting for the button */
-  .text-amber-700.border-amber-700,
-  [class*="text-amber-700"][class*="border-amber-700"] {
-    color: #2563eb !important;
-    border-color: #2563eb !important;
-  }
-
-  .text-amber-700.border-amber-700 svg,
-  [class*="text-amber-700"][class*="border-amber-700"] svg {
-    stroke: #2563eb !important;
-  }
+/* Global fix for Book Now button */
+button[title="Book Now"] {
+  background: white !important;
+  background-color: white !important;
+  border: 2px solid #2563eb !important;
+  color: #2563eb !important;
 }
 
-/* Fix blue line above Partner text on About page - remove text gradient on mobile */
+button[title="Book Now"] * {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  background: transparent !important;
+}
+
+
+/* CRITICAL FIX: Force Book Now button to match View Details button style */
+/* Maximum specificity to override any conflicting styles */
+.property-card button[title="Book Now"],
+.property-card .flex.gap-3 button:last-child,
+.bg-white button[title="Book Now"],
+.bg-gray-50 button[title="Book Now"],
+button.flex-1[title="Book Now"] {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+  border: 2px solid #2563eb !important;
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+}
+
+/* Ensure all content inside Book Now button is blue */
+.property-card button[title="Book Now"] *,
+.property-card .flex.gap-3 button:last-child *,
+button.flex-1[title="Book Now"] * {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Hover state */
+.property-card button[title="Book Now"]:hover,
+button.flex-1[title="Book Now"]:hover {
+  background: #eff6ff !important;
+  background-color: #eff6ff !important;
+}
+
+/* Mobile specific override */
 @media (max-width: 768px) {
-  /* Remove text gradient and make text solid black */
-  .text-transparent.bg-clip-text.bg-gradient-to-r {
-    background: none !important;
+  .property-card button[title="Book Now"],
+  button.flex-1[title="Book Now"] {
+    background: white !important;
+    background-color: white !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+  }
+}
+
+/* Desktop specific override */
+@media (min-width: 769px) {
+  .property-card button[title="Book Now"],
+  button.flex-1[title="Book Now"] {
+    background: white !important;
+    background-color: white !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+  }
+}
+
+
+/* NUCLEAR OPTION: Force all buttons with calendar-check icon to have white background */
+/* This targets the Book Now button specifically by its icon */
+button:has(i[data-lucide="calendar-check"]),
+button:has(svg[data-lucide="calendar-check"]) {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+  border: 2px solid #2563eb !important;
+  color: #2563eb !important;
+}
+
+button:has(i[data-lucide="calendar-check"]) *,
+button:has(svg[data-lucide="calendar-check"]) * {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  background: transparent !important;
+}
+
+/* Target by button text content */
+button:has(span:contains("Book Now")),
+button[title*="Book"],
+.flex.gap-3 button:nth-child(2) {
+  background: white !important;
+  background-color: white !important;
+  border: 2px solid #2563eb !important;
+  color: #2563eb !important;
+}
+
+/* Ultra-specific: target the second button in flex gap-3 containers */
+.property-card .flex.gap-3 > button:nth-child(2),
+.bg-white .flex.gap-3 > button:nth-child(2),
+.bg-gray-50 .flex.gap-3 > button:nth-child(2),
+div[class*="bg-"] .flex.gap-3 > button:nth-child(2) {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+  border: 2px solid #2563eb !important;
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+}
+
+/* Ensure content is blue */
+.property-card .flex.gap-3 > button:nth-child(2) *,
+.bg-white .flex.gap-3 > button:nth-child(2) *,
+.bg-gray-50 .flex.gap-3 > button:nth-child(2) * {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  background: transparent !important;
+}
+
+/* Desktop-only fix with maximum specificity */
+@media (min-width: 769px) {
+  .property-card .flex.gap-3 > button:nth-child(2),
+  button[title="Book Now"],
+  button.flex-1:nth-child(2) {
+    background: white !important;
+    background-color: white !important;
     background-image: none !important;
-    -webkit-background-clip: unset !important;
-    background-clip: unset !important;
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
   }
-
-  /* Dark mode */
-  .dark .text-transparent.bg-clip-text.bg-gradient-to-r {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
+  
+  .property-card .flex.gap-3 > button:nth-child(2) *,
+  button[title="Book Now"] *,
+  button.flex-1:nth-child(2) * {
+    color: #2563eb !important;
+    stroke: #2563eb !important;
   }
+}
 
-  /* Specifically target the heading with gradient text */
-  h1 .text-transparent.bg-clip-text,
-  h1 span.text-transparent.bg-clip-text {
-    background: none !important;
+/* Override any inline styles */
+button[style*="background"] {
+  background: white !important;
+  background-color: white !important;
+}
+
+button[title="Book Now"][style] {
+  background: white !important;
+  background-color: white !important;
+  border: 2px solid #2563eb !important;
+  color: #2563eb !important;
+}
+
+
+/* FINAL FIX: Override Tailwind classes for Book Now button */
+/* Target all buttons with these specific Tailwind classes */
+button.bg-white.border-2.border-blue-600.text-blue-600,
+button.flex-1.inline-flex.bg-white.border-2.border-blue-600 {
+  background-color: #ffffff !important;
+  border-width: 2px !important;
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+}
+
+/* Ensure no other background is applied */
+button.bg-white.border-2.border-blue-600.text-blue-600:not(:hover),
+button.flex-1.inline-flex.bg-white.border-2.border-blue-600:not(:hover) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Hover state */
+button.bg-white.border-2.border-blue-600.text-blue-600:hover,
+button.flex-1.inline-flex.bg-white.border-2.border-blue-600:hover {
+  background-color: #eff6ff !important;
+}
+
+/* Target button content */
+button.bg-white.border-2.border-blue-600 i,
+button.bg-white.border-2.border-blue-600 svg {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  background: transparent !important;
+}
+
+/* Specific fix for calendar-check icon */
+button i.w-4.h-4[data-lucide="calendar-check"],
+button svg.w-4.h-4[data-lucide="calendar-check"] {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Override any conflicting Tailwind utilities */
+.bg-white.border-blue-600 {
+  background-color: #ffffff !important;
+}
+
+.text-blue-600 {
+  color: #2563eb !important;
+}
+
+.border-blue-600 {
+  border-color: #2563eb !important;
+}
+
+/* Force all flex-1 buttons to respect their classes */
+button.flex-1[class*="bg-white"] {
+  background-color: #ffffff !important;
+}
+
+button.flex-1[class*="border-blue"] {
+  border-color: #2563eb !important;
+}
+
+button.flex-1[class*="text-blue"] {
+  color: #2563eb !important;
+}
+
+
+/* DESKTOP SPECIFIC FIX - Maximum Priority */
+@media (min-width: 1024px) {
+  /* Target all buttons in property cards */
+  .property-card button,
+  .bg-white button,
+  .bg-gray-50 button,
+  div[class*="bg-"] button {
+    background-color: #ffffff !important;
     background-image: none !important;
-    -webkit-background-clip: unset !important;
-    background-clip: unset !important;
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
   }
+  
+  /* Ensure border and text color */
+  .property-card button.border-2,
+  .bg-white button.border-2,
+  .bg-gray-50 button.border-2 {
+    border-width: 2px !important;
+    border-color: #2563eb !important;
+    color: #2563eb !important;
+  }
+  
+  /* Target buttons with calendar icon specifically */
+  button:has([data-lucide="calendar-check"]) {
+    background-color: #ffffff !important;
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+  }
+}
 
-  .dark h1 .text-transparent.bg-clip-text,
-  .dark h1 span.text-transparent.bg-clip-text {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-  }
+/* ALL SCREEN SIZES - Nuclear option */
+button.rounded-full.font-bold,
+button.px-4.py-3,
+button[title="Book Now"],
+.flex.gap-3 button {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border: 2px solid #2563eb !important;
+  color: #2563eb !important;
+}
+
+button.rounded-full.font-bold *,
+button.px-4.py-3 *,
+button[title="Book Now"] *,
+.flex.gap-3 button * {
+  color: #2563eb !important;
+  stroke: #2563eb !important;
+  background: transparent !important;
+}
+
+/* Override ANY background on buttons */
+button[class*="flex-1"] {
+  background-color: #ffffff !important;
+}
+
+button[class*="inline-flex"][class*="items-center"] {
+  background-color: #ffffff !important;
+}
+
+/* Force white background on all buttons with these classes */
+.inline-flex.items-center.justify-center.gap-2 {
+  background-color: #ffffff !important;
+}
+
+
+/* Fix white/invisible text on sale-deed and service pages */
+/* Make text-subtext-light blue for better visibility */
+.bg-white .text-subtext-light,
+.bg-gray-50 .text-subtext-light,
+.rounded-xl .text-subtext-light,
+.rounded-2xl .text-subtext-light,
+.bg-gradient-to-br .text-subtext-light {
+  color: #2563eb !important;
+}
+
+/* Fix text in "How it Works" section */
+.bg-gradient-to-br p.text-subtext-light,
+.bg-white p.text-subtext-light,
+.rounded-xl p.text-subtext-light {
+  color: #374151 !important;
+}
+
+/* Fix headings to be darker */
+.bg-white h4.text-text-light,
+.rounded-xl h4.text-text-light,
+.bg-gradient-to-br h3.text-text-light {
+  color: #1f2937 !important;
+}
+
+/* Fix list items text */
+.bg-white li span.text-subtext-light,
+.rounded-xl li span.text-subtext-light {
+  color: #374151 !important;
+}
+
+/* Fix text in white cards */
+.bg-white.rounded-xl .text-subtext-light,
+.bg-white.shadow-lg .text-subtext-light {
+  color: #374151 !important;
+}
+
+/* Ensure all paragraph text is visible */
+.bg-white p,
+.bg-gray-50 p,
+.rounded-xl p,
+.rounded-2xl p {
+  color: #374151 !important;
+}
+
+/* Fix text in gradient backgrounds */
+.bg-gradient-to-br .bg-white p,
+.bg-gradient-to-br .bg-white h4 {
+  color: #1f2937 !important;
+}
+
+/* Override text-subtext-light globally on light backgrounds */
+.text-subtext-light {
+  color: #374151 !important;
+}
+
+/* Fix text-text-light on white backgrounds */
+.bg-white .text-text-light,
+.bg-gray-50 .text-text-light {
+  color: #1f2937 !important;
+}
+
+
+/* Fix white headings on light backgrounds */
+/* Target all heading levels */
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4,
+.bg-white h5,
+.bg-white h6,
+.bg-gray-50 h1,
+.bg-gray-50 h2,
+.bg-gray-50 h3,
+.bg-gray-50 h4,
+.bg-gray-50 h5,
+.bg-gray-50 h6,
+.bg-blue-50 h1,
+.bg-blue-50 h2,
+.bg-blue-50 h3,
+.bg-blue-50 h4,
+.bg-blue-50 h5,
+.bg-blue-50 h6 {
+  color: #1f2937 !important;
+}
+
+/* Fix headings in gradient backgrounds */
+.bg-gradient-to-br h1,
+.bg-gradient-to-br h2,
+.bg-gradient-to-br h3,
+.bg-gradient-to-br h4,
+.bg-gradient-to-br h5,
+.bg-gradient-to-br h6 {
+  color: #1f2937 !important;
+}
+
+/* Fix headings in rounded containers */
+.rounded-xl h1,
+.rounded-xl h2,
+.rounded-xl h3,
+.rounded-xl h4,
+.rounded-xl h5,
+.rounded-xl h6,
+.rounded-2xl h1,
+.rounded-2xl h2,
+.rounded-2xl h3,
+.rounded-2xl h4,
+.rounded-2xl h5,
+.rounded-2xl h6 {
+  color: #1f2937 !important;
+}
+
+/* Fix headings with text-white class on light backgrounds */
+.bg-white .text-white,
+.bg-gray-50 .text-white,
+.bg-blue-50 .text-white,
+.rounded-xl .text-white,
+.rounded-2xl .text-white {
+  color: #1f2937 !important;
+}
+
+/* Fix headings in white cards */
+.bg-white.rounded-xl h3,
+.bg-white.rounded-2xl h3,
+.bg-white.shadow-lg h3 {
+  color: #1f2937 !important;
+}
+
+/* Specific fix for Sale Deed section headings */
+.bg-gradient-to-br .bg-white h3,
+.bg-gradient-to-br .bg-white h4 {
+  color: #1f2937 !important;
+}
+
+/* Override any white text on light backgrounds */
+.bg-white *:not(.bg-blue-600 *):not(.bg-blue-600),
+.bg-gray-50 *:not(.bg-blue-600 *):not(.bg-blue-600),
+.bg-blue-50 *:not(.bg-blue-600 *):not(.bg-blue-600) {
+  color: #1f2937 !important;
+}
+
+/* Exception: Keep blue text blue */
+.text-blue-600,
+.text-blue-400 {
+  color: #2563eb !important;
+}
+
+/* Exception: Keep white text on blue backgrounds */
+.bg-blue-600 *,
+.bg-gradient-to-r.from-blue-600 * {
+  color: white !important;
 }

@@ -140,16 +140,11 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
           </Link>
           <button
             onClick={handleBookNow}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full font-bold text-sm transition-all duration-300 shadow-md hover:shadow-lg"
-            style={{ 
-              backgroundColor: '#2563eb',
-              color: '#ffffff',
-              border: 'none'
-            }}
+            className="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 border-blue-600 text-blue-600 px-4 py-3 rounded-full font-bold text-sm hover:bg-blue-50 transition-all duration-300 shadow-md hover:shadow-lg"
             title="Book Now"
           >
-            <i data-lucide="calendar-check" className="w-4 h-4" style={{ color: '#ffffff' }}></i>
-            <span style={{ color: '#ffffff' }}>Book Now</span>
+            <i data-lucide="calendar-check" className="w-4 h-4"></i>
+            Book Now
           </button>
         </div>
       </div>
