@@ -88,7 +88,7 @@ export default function Testimonials() {
         scrollbar-color: rgba(217, 119, 6, 0.3) transparent;
         cursor: grab;
         user-select: none;
-        touch-action: pan-x pan-y;
+        touch-action: pan-y;
       }
       
       .slider-container:active {
@@ -148,6 +148,7 @@ export default function Testimonials() {
     containers.forEach((container) => {
       let isDown = false
       let startX: number
+      let startY: number
       let scrollLeft: number
 
       const handleMouseDown = (e: MouseEvent | TouchEvent) => {
@@ -160,6 +161,7 @@ export default function Testimonials() {
           scrollLeft = slider.scrollLeft
         } else {
           startX = e.touches[0].pageX - slider.offsetLeft
+          startY = e.touches[0].pageY
           scrollLeft = slider.scrollLeft
         }
       }
@@ -178,7 +180,6 @@ export default function Testimonials() {
 
       const handleMouseMove = (e: MouseEvent | TouchEvent) => {
         if (!isDown) return
-        e.preventDefault()
         const slider = container as HTMLElement
         
         if (e instanceof MouseEvent) {
@@ -187,8 +188,18 @@ export default function Testimonials() {
           slider.scrollLeft = scrollLeft - walk
         } else {
           const x = e.touches[0].pageX - slider.offsetLeft
-          const walk = (x - startX) * 2
-          slider.scrollLeft = scrollLeft - walk
+          const y = e.touches[0].pageY
+          
+          // Calculate vertical and horizontal movement
+          const verticalMove = Math.abs(y - startY)
+          const horizontalMove = Math.abs(x - startX)
+          
+          // Only prevent default if horizontal movement is greater than vertical
+          if (horizontalMove > verticalMove) {
+            e.preventDefault()
+            const walk = (x - startX) * 2
+            slider.scrollLeft = scrollLeft - walk
+          }
         }
       }
 

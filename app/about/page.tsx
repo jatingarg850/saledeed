@@ -19,14 +19,12 @@ export default function About() {
                 </div>
 
                 <h1 className="text-black dark:text-text-dark text-4xl md:text-6xl lg:text-7xl font-black tracking-tight font-display mb-6 leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-text-shimmer">
-                    Your Trusted Real Estate
-                  </span>
-                  <span className="block mt-2">Partner</span>
+                 
+                  <span className="block mt-2">Your Trusted Real Estate Partner</span>
                 </h1>
 
                 <p className="text-black dark:text-subtext-dark text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed mb-12 font-medium">
-                  Three generations of expertise. <span className="font-bold text-amber-900 dark:text-primary">Five decades of trust.</span>
+                  For Every Property  <p> Need-Indeed!</p><span className="font-bold text-amber-900 dark:text-primary">5 decades of trust.</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -49,7 +47,7 @@ export default function About() {
                 <div className="mt-12 flex items-center justify-center gap-8 text-black dark:text-subtext-dark text-sm flex-wrap">
                   <div className="flex items-center gap-2">
                     <i data-lucide="check-circle" className="w-5 h-5 text-amber-600"></i>
-                    <span>3rd Generation Experts</span>
+                    <span>Everything Related To Property</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="users" className="w-5 h-5 text-amber-600"></i>
@@ -57,7 +55,7 @@ export default function About() {
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="star" className="w-5 h-5 text-amber-600"></i>
-                    <span>10,000+ Happy Happy Clients</span>
+                    <span>1 Lac+  Happy Clients</span>
                   </div>
                 </div>
               </div>
@@ -74,37 +72,18 @@ export default function About() {
                     </h2>
                     <div className="space-y-6 text-black dark:text-subtext-dark text-lg leading-relaxed">
                       <p>
-                        We are a team of <strong className="text-amber-900 dark:text-primary">real estate professionals by background and hustlers by nature</strong>. Being the 3rd generation into real estate liaisoning, we are blessed with the expertise of our elders that they have earned over the past five decades.
+                        We are a team of <strong className="text-amber-900 dark:text-primary">real estate professionals by background and hustlers by nature</strong>. Over the time, we have evolved into a team consisting of <strong className="text-amber-900 dark:text-primary">100's of experts from various fields in the real estate sector</strong>.
                       </p>
                       <p>
-                        We consider it our responsibility to carry their name with utmost dedication – not only to make the process convenient for our clients but also to ensure that it adds the greatest value.
+                        Each one of us contribute with their different expertise like knowledge of different locations on fingertips, rental masters for unmatched rental yields, Property management team to provide end to end property services and last but not the least <strong className="text-amber-900 dark:text-primary">Over 50 years of sacred and hard earned knowledge in real estate liaisoning & property investments</strong>.
                       </p>
                       <p>
-                        Over time, we have evolved into a team of <strong className="text-amber-900 dark:text-primary">hundreds of experts from different locations</strong>, making us a one-stop solution for your property needs. We make sure that the standards we have set are religiously followed by everyone we are connected with.
+                        Thus making us a <strong className="text-amber-900 dark:text-primary">one-stop shop for all your every property need - Indeed!</strong> Reach Us Today To Know Something About Your Property - You Think You Already Know!
                       </p>
                     </div>
                   </div>
                   <div className="relative">
-                    <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-yellow-200/30">
-                      <div className="grid grid-cols-2 gap-6 text-center">
-                        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
-                          <div className="text-3xl font-bold text-amber-700 dark:text-primary mb-2">50+</div>
-                          <div className="text-sm text-black dark:text-subtext-dark">Years of Experience</div>
-                        </div>
-                        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
-                          <div className="text-3xl font-bold text-amber-700 dark:text-primary mb-2">3rd</div>
-                          <div className="text-sm text-black dark:text-subtext-dark">Generation Experts</div>
-                        </div>
-                        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
-                          <div className="text-3xl font-bold text-amber-700 dark:text-primary mb-2">100s</div>
-                          <div className="text-sm text-black dark:text-subtext-dark">Expert Team Members</div>
-                        </div>
-                        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
-                          <div className="text-3xl font-bold text-amber-700 dark:text-primary mb-2">10k+</div>
-                          <div className="text-sm text-black dark:text-subtext-dark">Happy Happy Clients</div>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -147,7 +126,7 @@ export default function About() {
                     <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
                       <i className="text-white text-xl" data-lucide="lock"></i>
                     </div>
-                    <h3 className="text-xl font-bold text-black dark:text-text-dark font-display">Privacy Promise</h3>
+                    <h3 className="text-xl font-bold text-black dark:text-text-dark font-display">Privacy Kept At Every Step</h3>
                   </div>
                   <p className="text-black dark:text-subtext-dark leading-relaxed">
                     <strong className="text-amber-900 dark:text-primary">Icing on the cake:</strong> Hum badaam nahi khaate – isiliye aapki personal information yaad rakh kar kahin nahi bataate! Your privacy and confidentiality are our top priorities.
@@ -162,28 +141,20 @@ export default function About() {
                     Why Choose Us?
                   </h2>
                   <p className="text-black dark:text-subtext-dark text-lg max-w-3xl mx-auto">
-                    We've built our reputation on trust, expertise, and personalized service that spans three generations.
+                    We've built our reputation on trust, expertise, and personalized service that spans across 5 decades.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <i className="text-white text-2xl" data-lucide="users"></i>
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 font-display text-black dark:text-text-dark">Generational Expertise</h3>
-                    <p className="text-black dark:text-subtext-dark leading-relaxed">
-                      Three generations of real estate professionals with five decades of combined experience in property documentation.
-                    </p>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  
 
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <i className="text-white text-2xl" data-lucide="map-pin"></i>
+                      <i className="text-white text-2xl" data-lucide="handshake"></i>
                     </div>
                     <h3 className="text-xl font-bold mb-3 font-display text-black dark:text-text-dark">Personalized Service</h3>
                     <p className="text-black dark:text-subtext-dark leading-relaxed">
-                      Free home visits and call assistance. We come to you to discuss your property needs and provide tailored solutions.
+                      Free home visits and call assistance.We come to you to discuss your property needs and provide tailored solutions.
                     </p>
                   </div>
 
@@ -207,12 +178,12 @@ export default function About() {
                 <p className="text-black dark:text-subtext-dark text-lg mb-8 max-w-3xl mx-auto">
                   Let our three generations of expertise work for you. Get started with a free consultation and discover why 1000 trust us with their most valuable assets.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="/contact" className="group flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-gradient-to-r from-primary to-secondary text-white text-lg font-bold leading-normal tracking-wide transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-primary/30">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
+                  <a href="/contact" className="group flex w-full sm:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-gradient-to-r from-primary to-secondary text-white text-lg font-bold leading-normal tracking-wide transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-primary/30">
                     <span className="truncate">Get Free Consultation</span>
                     <i className="ml-2 transition-transform duration-300 group-hover:translate-x-1" data-lucide="arrow-right"></i>
                   </a>
-                  <a href="/contact" className="flex min-w-[200px] max-w-[300px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-transparent text-amber-700 dark:text-white text-lg font-bold leading-normal tracking-wide border-2 border-amber-700 hover:bg-amber-700/10 transition-all duration-300 hover:-translate-y-1">
+                  <a href="/contact" className="group flex w-full sm:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-transparent text-amber-700 dark:text-white text-lg font-bold leading-normal tracking-wide border-2 border-amber-700 hover:bg-amber-700/10 transition-all duration-300 hover:-translate-y-1">
                     <span className="truncate">Call Us Now</span>
                     <i className="ml-2" data-lucide="phone"></i>
                   </a>
@@ -223,19 +194,19 @@ export default function About() {
 
           {/* Footer */}
           <footer className="bg-yellow-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">
-            <div className="px-6 md:px-10 lg:px-20 py-16">
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
-                <div className="col-span-2 lg:col-span-2">
-                  <div className="flex items-center gap-3">
-                    <i className="text-primary" data-lucide="home"></i>
-                    <h2 className="text-text-light dark:text-text-dark text-2xl font-bold font-display">SaleDeed.com</h2>
+            <div className="px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-12">
+                <div className="sm:col-span-2 md:col-span-3 lg:col-span-2">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <i className="text-primary flex-shrink-0" data-lucide="home"></i>
+                    <h2 className="text-text-light dark:text-text-dark text-xl sm:text-2xl font-bold font-display">SaleDeed.com</h2>
                   </div>
-                  <p className="mt-4 text-base">A one-stop shop for every property need - indeed !</p>
+                  <p className="mt-4 text-sm sm:text-base">A one-stop shop for every property need - indeed !</p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
-                  <ul className="mt-4 space-y-3 text-base">
+                  <h3 className="font-bold text-text-light dark:text-text-dark text-base sm:text-lg font-display">Services</h3>
+                  <ul className="mt-4 space-y-2 sm:space-y-3 text-sm sm:text-base">
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Deed Drafting</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Document Verification</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Registration Assistance</a></li>
@@ -244,8 +215,8 @@ export default function About() {
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Company</h3>
-                  <ul className="mt-4 space-y-3 text-base">
+                  <h3 className="font-bold text-text-light dark:text-text-dark text-base sm:text-lg font-display">Company</h3>
+                  <ul className="mt-4 space-y-2 sm:space-y-3 text-sm sm:text-base">
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Careers</a></li>
@@ -254,8 +225,8 @@ export default function About() {
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
-                  <ul className="mt-4 space-y-3 text-base">
+                  <h3 className="font-bold text-text-light dark:text-text-dark text-base sm:text-lg font-display">Legal</h3>
+                  <ul className="mt-4 space-y-2 sm:space-y-3 text-sm sm:text-base">
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Terms of Service</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</a></li>
                   </ul>
@@ -263,18 +234,18 @@ export default function About() {
                 
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Contact</h3>
-                  <div className="mt-4 flex items-center gap-2">
-                    <i className="text-primary" data-lucide="mail"></i>
-                    <a href="mailto:support@saledeed.com" className="text-base hover:text-primary dark:hover:text-secondary transition-colors">
+                  <div className="mt-4 flex items-start gap-2 min-w-0">
+                    <i className="text-primary flex-shrink-0 mt-0.5" data-lucide="mail"></i>
+                    <a href="mailto:support@saledeed.com" className="text-sm sm:text-base hover:text-primary dark:hover:text-secondary transition-colors break-words">
                       support@saledeed.com
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
-                <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
-                <div className="flex space-x-6 mt-4 sm:mt-0">
+              <div className="mt-12 md:mt-16 border-t border-yellow-200 dark:border-slate-700 pt-6 md:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p className="text-xs sm:text-sm md:text-base text-center sm:text-left">© 2025 SaleDeed.com. All rights reserved.</p>
+                <div className="flex space-x-4 sm:space-x-6">
                   <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
                     <i data-lucide="facebook"></i>
                   </a>

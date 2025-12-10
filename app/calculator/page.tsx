@@ -127,7 +127,7 @@ export default function CalculatorPage() {
                                             <li className="flex items-start gap-3">
                                                 <i className="text-secondary mt-1" data-lucide="check-circle"></i>
                                                 <span className="text-subtext-light dark:text-subtext-dark">
-                                                    Doorstep Consultation @ ₹999/-
+                                                    Doorstep Consultation @ ₹1999/-
                                                 </span>
                                             </li>
                                         </ul>

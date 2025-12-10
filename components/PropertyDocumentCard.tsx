@@ -19,6 +19,22 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
   const [isMobile, setIsMobile] = useState(false)
   const [imagesLoaded, setImagesLoaded] = useState(false)
   const [showPricePopup, setShowPricePopup] = useState(false)
+  const [customerDetails, setCustomerDetails] = useState({
+    name: '',
+    phone: ''
+  })
+  const [showCustomerForm, setShowCustomerForm] = useState(false)
+  const [formError, setFormError] = useState('')
+
+  // Get price based on document title
+  const getPrice = () => {
+    if (document.title.toLowerCase().includes('rent agreement')) {
+      return 2000
+    }
+    return 4000 // Default price for other documents
+  }
+
+  const price = getPrice()
 
   useEffect(() => {
     // Mobile detection
@@ -53,16 +69,130 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
   }, [])
 
   const handleBookNow = () => {
+    setShowCustomerForm(true)
+    setFormError('')
+  }
+
+  const handleCustomerDetailsSubmit = () => {
+    if (!customerDetails.name.trim()) {
+      setFormError('Please enter your name')
+      return
+    }
+    if (!customerDetails.phone.trim() || customerDetails.phone.length < 10) {
+      setFormError('Please enter a valid phone number')
+      return
+    }
+    setFormError('')
+    setShowCustomerForm(false)
     setShowPricePopup(true)
   }
 
-  const handleWhatsAppRedirect = () => {
-    window.open(
-      `https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(document.title)}`,
-      '_blank',
-      'noopener,noreferrer'
-    )
-    setShowPricePopup(false)
+  const handleRazorpayPayment = async () => {
+    if (typeof window === 'undefined') {
+      alert('Payment is not available in this context')
+      return
+    }
+
+    try {
+      // Create Razorpay order
+      const response = await fetch('/api/payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: price * 100, // Convert to paise
+          currency: 'INR',
+          receipt: `doc_${Date.now()}`,
+          notes: {
+            serviceId: 'document-consultation',
+            serviceName: document.title,
+            serviceType: 'Document Consultation'
+          }
+        })
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to create payment order')
+      }
+
+      const order = await response.json()
+
+      // Check if Razorpay script is already loaded
+      if (typeof (window as any).Razorpay === 'undefined') {
+        // Load Razorpay script
+        const scriptElement = window.document.createElement('script')
+        scriptElement.src = 'https://checkout.razorpay.com/v1/checkout.js'
+        scriptElement.async = true
+        scriptElement.onload = () => {
+          openRazorpayCheckout(order)
+        }
+        scriptElement.onerror = () => {
+          alert('Failed to load payment gateway. Please try again.')
+        }
+        window.document.body.appendChild(scriptElement)
+      } else {
+        // Razorpay already loaded
+        openRazorpayCheckout(order)
+      }
+    } catch (err) {
+      alert('Failed to initiate payment. Please try again.')
+      console.error('Payment error:', err)
+    }
+  }
+
+  const openRazorpayCheckout = async (order: any) => {
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+      amount: price * 100,
+      currency: 'INR',
+      name: 'SaleDeed.com',
+      description: `${document.title} - Document Consultation`,
+      order_id: order.id,
+      handler: async (response: any) => {
+        try {
+          // Verify payment
+          const verifyResponse = await fetch('/api/verify-payment', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+              serviceId: 'document-consultation',
+              serviceName: document.title,
+              amount: price,
+              gst: 0,
+              customerName: customerDetails.name,
+              customerEmail: '',
+              customerPhone: customerDetails.phone,
+              city: '',
+              propertyType: ''
+            })
+          })
+
+          if (verifyResponse.ok) {
+            const verifyData = await verifyResponse.json()
+            // Redirect to bill page with payment ID
+            window.location.href = `/bill/${verifyData.paymentId}`
+            setShowPricePopup(false)
+          } else {
+            alert('Payment verification failed. Please contact support.')
+          }
+        } catch (err) {
+          alert('Error processing payment. Please try again.')
+          console.error('Payment verification error:', err)
+        }
+      },
+      theme: {
+        color: '#22c55e'
+      }
+    }
+
+    const rzp = new (window as any).Razorpay(options)
+    rzp.open()
   }
 
   return (
@@ -154,6 +284,73 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
       </div>
     </div>
 
+      {/* Customer Details Form Modal */}
+      {showCustomerForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 animate-fade-in-up">
+            <h3 className="text-xl sm:text-2xl font-bold text-text-light dark:text-text-dark mb-4">
+              Your Details
+            </h3>
+            <p className="text-sm text-subtext-light dark:text-subtext-dark mb-6">
+              Please provide your details to proceed with the booking.
+            </p>
+
+            <div className="space-y-4 mb-6">
+              <div>
+                <label className="block text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  value={customerDetails.name}
+                  onChange={(e) => setCustomerDetails({ ...customerDetails, name: e.target.value })}
+                  placeholder="Enter your name"
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-text-light dark:text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  value={customerDetails.phone}
+                  onChange={(e) => setCustomerDetails({ ...customerDetails, phone: e.target.value })}
+                  placeholder="Enter your phone number"
+                  className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-text-light dark:text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+            </div>
+
+            {formError && (
+              <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-3 py-2 rounded-lg mb-4 text-xs sm:text-sm">
+                {formError}
+              </div>
+            )}
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => {
+                  setShowCustomerForm(false)
+                  setCustomerDetails({ name: '', phone: '' })
+                  setFormError('')
+                }}
+                className="flex-1 px-4 py-2 rounded-lg border-2 border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 font-semibold hover:bg-gray-100 dark:hover:bg-slate-700 transition-all duration-300 text-sm"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCustomerDetailsSubmit}
+                className="flex-1 px-4 py-2 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-all duration-300 text-sm"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Price Popup Modal */}
       {showPricePopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
@@ -170,7 +367,7 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
 
             {/* Price */}
             <div className="text-center mb-6">
-              <div className="text-5xl font-black text-primary mb-2">4,000 INR</div>
+              <div className="text-5xl font-black text-primary mb-2">{price.toLocaleString('en-IN')} INR</div>
               <p className="text-subtext-light dark:text-subtext-dark text-sm">
                 Remaining payment will be charged after consultation.
               </p>
@@ -201,11 +398,11 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
                 Cancel
               </button>
               <button
-                onClick={handleWhatsAppRedirect}
+                onClick={handleRazorpayPayment}
                 className="flex-1 px-6 py-3 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <i data-lucide="message-circle" className="w-4 h-4"></i>
-                WhatsApp
+                <span>💳</span>
+                Pay Now
               </button>
             </div>
           </div>

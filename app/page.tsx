@@ -10,9 +10,12 @@ import PropertyDocumentCard from '../components/PropertyDocumentCard'
 import PopupNotifications from '../components/PopupNotifications'
 import ScrollToTop from '../components/ScrollToTop'
 import HowItWorks from '../components/HowItWorks'
+import DoorstepBookingModal from '../components/DoorstepBookingModal'
+import PropertySubmissionModal from '../components/PropertySubmissionModal'
 
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
+  const [showPropertySubmissionModal, setShowPropertySubmissionModal] = useState(false)
   const [showChatbot, setShowChatbot] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [showProfileModal, setShowProfileModal] = useState(false)
@@ -315,7 +318,8 @@ export default function Home() {
 
               {/* Original Hero Section */}
               <div className="px-6 md:px-10 lg:px-20 py-10">
-              <div className="home-container animate-in">
+              <div className="home-container animate-in"><center>
+                <div className="tagline">"Delhi's #1 Property Documents & Real Estate Services Platform"</div></center>
                 <div className="header-section">
                   <div className="tagline">Everything from sale to&nbsp;deed</div>
                   <div>
@@ -326,7 +330,27 @@ export default function Home() {
                     <p className="deed-para" style={{ fontSize: '17px' }}>
                       Customised | Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
-                    <div className="mt-4 flex justify-center items-center w-full">
+                    
+                  </div>
+                  <div className="header-btn">
+                     <Link href="/pricing">
+                      <button className="btn-primary">Start Your Deed</button>
+                    </Link>
+                    <button
+                      onClick={() => setShowDoorstepModal(true)}
+                      className="btn-primary"
+                    >
+                      Get Doorstep Advice
+                    </button>
+                   <Link href="/contact">
+                      <button className="btn-primary">Expert Advice At Zero Price</button>
+                    </Link>
+                    <Link href="/calculator">
+                      <button className="btn-primary">Calculate Stamp Duty</button>
+                    </Link>
+                  
+                  </div>
+                  <br/><div className="mt-4 flex justify-center items-center w-full">
                       <h2 
                         onClick={handleRippleClick}
                         className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white px-8 py-4 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full inline-block shadow-lg cursor-pointer transition-all duration-200 hover:shadow-xl hover:scale-105 active:scale-95 ripple-button"
@@ -334,24 +358,6 @@ export default function Home() {
                         Buy/Sell/Rent at Minimum Commission
                       </h2>
                     </div>
-                  </div>
-                  <div className="header-btn">
-                    <button
-                      onClick={() => setShowDoorstepModal(true)}
-                      className="btn-primary"
-                    >
-                      Get Doorstep Advice
-                    </button>
-                    <Link href="/documents">
-                      <button className="btn-primary">Get Customised Deed Drafted</button>
-                    </Link>
-                    <Link href="/calculator">
-                      <button className="btn-primary">Calculate Stamp Duty</button>
-                    </Link>
-                    <Link href="/contact">
-                      <button className="btn-primary">Expert Advice At Zero Price</button>
-                    </Link>
-                  </div>
                 </div>
 
                 {/* Marquee Container */}
@@ -384,7 +390,7 @@ export default function Home() {
                     <span className="marquee-text">Relocation</span>
                     <span className="marquee-text">Property Filming</span>
                     <span className="marquee-text">Vaastu Consultation</span>
-                    <span className="marquee-text">NRI Properties</span>
+                    <span className="marquee-text">NRI Property Assistance</span>
                     {/* Duplicate for seamless loop */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -413,7 +419,7 @@ export default function Home() {
                     <span className="marquee-text">Relocation</span>
                     <span className="marquee-text">Property Filming</span>
                     <span className="marquee-text">Vaastu Consultation</span>
-                    <span className="marquee-text">NRI Properties</span>
+                    <span className="marquee-text">NRI Property Assistance</span>
                     {/* Third duplicate for better mobile performance */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -442,7 +448,7 @@ export default function Home() {
                     <span className="marquee-text">Relocation</span>
                     <span className="marquee-text">Property Filming</span>
                     <span className="marquee-text">Vaastu Consultation</span>
-                    <span className="marquee-text">NRI Properties</span>
+                    <span className="marquee-text">NRI Property Assistance</span>
                   </div>
                 </div>
               </div>
@@ -635,7 +641,7 @@ export default function Home() {
                       <i className="fa-video fas"></i>
                     </div>
                     <div className="thp-feature-title">
-                      Property Filming - #DikhegaTohBirega
+                      Property Filming - #DikhegaTohBikega
                     </div>
                     <div className="thp-feature-arrow">
                       <i data-lucide="arrow-right" className="w-5 h-5"></i>
@@ -657,7 +663,7 @@ export default function Home() {
                       <i className="fa-globe fas"></i>
                     </div>
                     <div className="thp-feature-title">
-                      NRI Properties Management
+                      NRI Property Management
                     </div>
                     <div className="thp-feature-arrow">
                       <i data-lucide="arrow-right" className="w-5 h-5"></i>
@@ -665,16 +671,16 @@ export default function Home() {
                   </Link>
                 </div>
 
-                {/* Stats Blinking Animation */}
-                <div className="stats-blink-container">
-                  <div className="stats-blink-content">
-                    <span className="stats-blink-text stats-blink-1">Every 30 minutes a loan is Sanctioned</span>
-                    <span className="stats-blink-text stats-blink-2">Every 11 minutes a valuation report is generated</span>
-                    <span className="stats-blink-text stats-blink-3">Every 4 minutes a query is answered</span>
-                    <span className="stats-blink-text stats-blink-4">Every 6 minutes a deed is drafted</span>
-                  </div>
-                </div>
-              </div>
+                                    {/* Stats Blinking Animation */}
+                                    <div className="stats-blink-container">
+                                      <div className="stats-blink-content">
+                                        <span className="stats-blink-text stats-blink-1">Every 30 minutes a loan is Sanctioned</span>
+                                        <span className="stats-blink-text stats-blink-2">Every 11 minutes a valuation report is generated</span>
+                                        <span className="stats-blink-text stats-blink-3">Every 4 minutes a query is answered</span>
+                                        <span className="stats-blink-text stats-blink-4">Every 6 minutes a deed is drafted</span>
+                                      </div>
+                                    </div>
+                                  </div>
               <center>
                 <div className="max-w-5xl mx-auto bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-10 md:p-16 rounded-3xl border-4 border-yellow-200 dark:border-yellow-700 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
                     <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">Still Have A Doubt?</h3>
@@ -776,16 +782,14 @@ export default function Home() {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-4xl mx-auto">
-                        <a
-                          href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%2C%20I%20want%20to%20submit%20my%20property%20details%20for%20buying%2Fselling%2Frenting"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          onClick={() => setShowPropertySubmissionModal(true)}
                           className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                         >
-                          <i data-lucide="send" className="w-5 h-5"></i>
+                          
                           <span>Submit Your Property Details</span>
-                          <i data-lucide="arrow-right" className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
+                          <span>→</span>
+                        </button>
 
                         <Link
                           href="/contact"
@@ -865,14 +869,14 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="text-white text-2xl" data-lucide="shield-check"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Builder/Developers</h3>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Builders/Developers</h3>
                 <p className="text-black dark:text-subtext-dark text-sm">Sell your new construction or reach us for potential buyers and investors for booking before construction.</p>
               </div>
                 <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="text-white text-2xl" data-lucide="shield-check"></i>
                 </div>
-                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Service</h3>
+                <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-2">Real Estate Services</h3>
                 <p className="text-black dark:text-subtext-dark text-sm">If you are into any kind of service or business related to real estate you can submit your profile for association with us.</p>
               </div>
                <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-6 shadow-lg border border-yellow-200/50 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -891,7 +895,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <i data-lucide="handshake" className="w-5 h-5"></i>
-                <span>Become a Partner</span>
+                <span>Become Our Partner</span>
                 <i data-lucide="arrow-right" className="w-5 h-5"></i>
               </Link>
             </div>
@@ -956,7 +960,7 @@ export default function Home() {
 
                     {/* Card 4 - Doorstep Advice */}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-yellow-200/50 dark:border-slate-700 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgb(249, 115, 22), rgb(220, 38, 38)) !important', opacity: 1, visibility: 'visible' }}>
+                      <div className="icon-container w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg" style={{ background: 'linear-gradient(to right, rgba(226, 242, 4, 1), rgba(234, 227, 10, 1)) !important', opacity: 1, visibility: 'visible' }}>
                         <i data-lucide="home" className="text-white w-10 h-10" style={{ opacity: 1, visibility: 'visible', display: 'inline-block' }}></i>
                       </div>
                       <h3 className="text-xl font-bold text-text-light dark:text-text-dark mb-4 text-center">
@@ -1016,7 +1020,7 @@ export default function Home() {
               <div className="my-20 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transform transition-transform duration-300 hover:-translate-y-2">
                 <div className="flex-1 text-center lg:text-left">
                   <h2 className="text-white text-4xl font-bold tracking-tight font-display">Expert Advice At Zero Price</h2>
-                  <p className="text-blue-50 dark:text-blue-100 mt-4 max-w-2xl text-lg">Unsure where to start? Our legal experts are here to help. Get a free consultation to understand your needs and get your questions answered, with no obligations.</p>
+                  <p className="text-blue-50 dark:text-blue-100 mt-4 max-w-2xl text-lg">Unsure where to start? Our legal experts are here to help. Get a free consultation to understand your needs and get your questions answered, with no obligations.</p><br/>
                 </div>
                 <div className="flex-shrink-0">
                   <Link href="/contact" className="group flex min-w-[240px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 px-10 bg-white text-blue-600 text-xl font-bold leading-normal tracking-wide hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl shadow-xl">
@@ -1398,19 +1402,7 @@ export default function Home() {
                     </details>
 
                     {/* FAQ 4 */}
-                    <details className="group cursor-pointer">
-                      <summary className="flex items-center justify-between p-4 rounded-lg bg-background-light/50 dark:bg-slate-700/50 hover:bg-secondary/10 dark:hover:bg-slate-700 transition-colors list-none">
-                        <h4 className="font-medium text-text-light dark:text-text-dark pr-4">
-                          I'm getting errors while searching sale deeds. What should I do?
-                        </h4>
-                        <i data-lucide="chevron-down" className="transition-transform duration-300 group-open:rotate-180 text-primary flex-shrink-0"></i>
-                      </summary>
-                      <div className="mt-2 px-4 pb-4">
-                        <p className="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
-                          Search errors can occur due to various reasons like network issues or system maintenance. Try refreshing the page, clearing your browser cache, or using a different browser. If the issue persists, contact our technical support team for assistance.
-                        </p>
-                      </div>
-                    </details>
+                   
 
                     {/* FAQ 5 */}
                     <details className="group cursor-pointer">
@@ -1485,7 +1477,7 @@ export default function Home() {
                         <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
                       </div>
                       <p className="text-lg text-text-light dark:text-text-dark font-medium">
-                        Doorstep Consultation @ ₹999/-
+                        Doorstep Consultation @ ₹1999/-
                       </p>
                     </div>
                   </div>
@@ -1643,96 +1635,17 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Doorstep Advice Modal */}
-        {showDoorstepModal && (
-          <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setShowDoorstepModal(false)}
-          >
-            <div
-              className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Header */}
-              <div className="bg-gradient-to-r from-primary to-secondary text-white p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                      <i data-lucide="map-pin" className="w-5 h-5 text-white"></i>
-                    </div>
-                    <h3 className="text-xl font-bold">Doorstep Advice Service</h3>
-                  </div>
-                  <button
-                    onClick={() => setShowDoorstepModal(false)}
-                    className="p-2 hover:bg-white/20 rounded-lg transition-colors"
-                  >
-                    <i data-lucide="x" className="w-5 h-5 text-white"></i>
-                  </button>
-                </div>
-              </div>
+        {/* Doorstep Booking Modal */}
+        <DoorstepBookingModal 
+          isOpen={showDoorstepModal} 
+          onClose={() => setShowDoorstepModal(false)} 
+        />
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="home" className="w-8 h-8 text-primary"></i>
-                  </div>
-                  <h4 className="text-lg font-bold text-text-light dark:text-text-dark mb-2">
-                    Expert Legal Advice at Your Doorstep
-                  </h4>
-                  <p className="text-subtext-light dark:text-subtext-dark leading-relaxed">
-                    In our doorstep service, our property advisor will visit you, review your case and documents,
-                    and guide you on what needs to be done and how to proceed.
-                  </p>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3">
-                    <i data-lucide="check-circle" className="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                    <span className="text-sm text-text-light dark:text-text-dark">Personal consultation at your home</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <i data-lucide="check-circle" className="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                    <span className="text-sm text-text-light dark:text-text-dark">Document review and analysis</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <i data-lucide="check-circle" className="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                    <span className="text-sm text-text-light dark:text-text-dark">Step-by-step guidance</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <i data-lucide="check-circle" className="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                    <span className="text-sm text-text-light dark:text-text-dark">Customized action plan</span>
-                  </div>
-                </div>
-
-                {/* Pricing */}
-                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-4 mb-6 text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">₹999</div>
-                  <div className="text-sm text-subtext-light dark:text-subtext-dark">One-time consultation fee</div>
-                </div>
-
-                {/* CTA Button */}
-                <a
-                  href="https://wa.me/918800505050?text=Hello,%20I%20would%20like%20to%20book%20a%20doorstep%20advice%20service%20for%20₹999.%20Please%20provide%20more%20details."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-xl font-bold text-center flex items-center justify-center gap-2 hover:from-green-600 hover:to-green-700 transition-all duration-300 hover:shadow-lg"
-                >
-                  <i data-lucide="message-circle" className="w-5 h-5"></i>
-                  Book via WhatsApp
-                </a>
-
-                <p className="text-xs text-center text-subtext-light dark:text-subtext-dark mt-3">
-                  Click to chat with us on WhatsApp and schedule your consultation
-                </p>
-                <p className="text-xs text-center text-gray-400 mt-2">
-                  Press ESC or click outside to close
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Property Submission Modal */}
+        <PropertySubmissionModal 
+          isOpen={showPropertySubmissionModal} 
+          onClose={() => setShowPropertySubmissionModal(false)} 
+        />
 
         {/* Floating AI Chat Button */}
         <div className="fixed bottom-6 right-6 z-40">

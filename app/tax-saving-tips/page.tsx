@@ -53,10 +53,10 @@ export default function TaxSavingTips() {
       title: "Gift Deed Tax Planning",
       description: "Transfer property to family members with minimal tax implications.",
       icon: "gift",
-      savings: "Zero tax on gifts",
+      savings: "Tax on gifts",
       details: [
-        "Tax-free family transfers",
-        "Avoid capital gains",
+        " Family transfers",
+        "Customize future planning",
         "Legal documentation"
       ]
     },
@@ -88,7 +88,7 @@ export default function TaxSavingTips() {
     },
     {
       title: "Tax Savings Report",
-      description: "Get detailed report with maximum tax savings"
+      description: "Get detailed valuation report for maximum tax saving"
     }
   ]
 
@@ -100,15 +100,8 @@ export default function TaxSavingTips() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-text-light dark:text-text-dark mb-6">
-              <span className="relative inline-block">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-                  Tax Saving Tips
-                </span>
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"></span>
-              </span>
-            </h1>
-            <p className="text-xl text-subtext-light dark:text-subtext-dark max-w-3xl mx-auto">
+           
+            <p className="text-xl font-bold text-subtext-light dark:text-subtext-dark max-w-3xl mx-auto">
               Expert strategies to minimize your property tax burden and maximize savings legally
             </p>
           </div>
@@ -194,7 +187,7 @@ export default function TaxSavingTips() {
                 className="inline-flex items-center justify-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all border border-white/30"
               >
                 <i data-lucide="calculator" className="w-5 h-5"></i>
-                Use Calculator
+                Use Stamp Duty Calculator
               </Link>
             </div>
           </div>

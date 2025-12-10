@@ -2583,10 +2583,10 @@ video.logo-video {
 .stats-blink-container {
   overflow: hidden;
   background: linear-gradient(90deg, #A16207 0%, #D69E2E 50%, #A16207 100%);
-  padding: 0.75rem 0;
+  padding: 1.5rem 0;
   margin: 2rem 0;
   position: relative;
-  min-height: 3rem;
+  min-height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2666,7 +2666,7 @@ video.logo-video {
   }
 
   .stats-blink-container {
-    min-height: 2.5rem;
+    min-height: 4rem;
   }
 }
 
@@ -5087,4 +5087,38 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   position: relative !important;
   overflow: visible !important;
   animation: pulseBigSmall 2s ease-in-out infinite !important;
+}
+
+/* Doorstep Booking Modal Button - Force Green */
+.doorstep-book-btn {
+  background-color: #22c55e !important;
+  background: #22c55e !important;
+}
+
+.doorstep-book-btn:hover {
+  background-color: #16a34a !important;
+  background: #16a34a !important;
+}
+
+.doorstep-book-btn:disabled {
+  background-color: #22c55e !important;
+  background: #22c55e !important;
+  opacity: 0.5 !important;
+}
+
+/* Property Submission Modal Button - Force Green */
+.property-submit-btn {
+  background-color: #22c55e !important;
+  background: #22c55e !important;
+}
+
+.property-submit-btn:hover {
+  background-color: #16a34a !important;
+  background: #16a34a !important;
+}
+
+.property-submit-btn:disabled {
+  background-color: #22c55e !important;
+  background: #22c55e !important;
+  opacity: 0.5 !important;
 }

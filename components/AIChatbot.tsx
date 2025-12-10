@@ -166,7 +166,7 @@ export default function AIChatbot({ isOpen, onClose }: AIChatbotProps) {
 
     // Services & Support
     'doorstep service': {
-      text: "Our doorstep service includes: 1) Home visit by legal expert 2) Document collection & verification 3) Consultation & guidance 4) Process explanation 5) Regular updates. Available across Delhi NCR for ₹999.",
+      text: "Our doorstep service includes: 1) Home visit by legal expert 2) Document collection & verification 3) Consultation & guidance 4) Process explanation 5) Regular updates. Available across Delhi NCR for ₹1999.",
       suggestions: ["Book doorstep service", "Service areas", "What's included"]
     },
     'legal consultation': {
@@ -281,7 +281,7 @@ export default function AIChatbot({ isOpen, onClose }: AIChatbotProps) {
 
     if (message.includes('cost') || message.includes('price') || message.includes('fee') || message.includes('charge')) {
       return {
-        text: "Transparent pricing: Government fees (stamp duty + registration), our service charges (₹5000-15000 based on complexity), doorstep service (₹999), express service (₹2000 extra). No hidden charges, detailed cost breakdown provided.",
+        text: "Transparent pricing: Government fees (stamp duty + registration), our service charges (₹5000-15000 based on complexity), doorstep service (₹1999), express service (₹2000 extra). No hidden charges, detailed cost breakdown provided.",
         suggestions: ["Get quote", "Service packages", "Payment options", "Cost breakdown"]
       }
     }

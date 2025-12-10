@@ -60,7 +60,7 @@ const Calculator = () => {
     'Expert Team with 50+ Years Authority Experience',
     'Government-Registered Lawyers & Valuers',
     'Complete Authority Process Management',
-    'Doorstep Consultation @ ₹999/-'
+    'Doorstep Consultation @ ₹1999/-'
   ]
 
   const authorities = [

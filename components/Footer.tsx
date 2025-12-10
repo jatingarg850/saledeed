@@ -43,14 +43,14 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-12">
           {/* Logo Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-4 lg:col-span-1"
+            className="flex flex-col gap-4 md:col-span-2 lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -67,22 +67,22 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-400">support@saledeed.com</span>
+              <div className="flex items-start space-x-2 min-w-0">
+                <Mail className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                <a href="mailto:support@saledeed.com" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base break-words">support@saledeed.com</a>
               </div>
               <div className="space-y-2">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-blue-400" />
-                  <span className="text-gray-400">+91 88005 05050</span>
+                <div className="flex items-center space-x-2 min-w-0">
+                  <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                  <span className="text-gray-400 text-sm md:text-base">+91 88005 05050</span>
                 </div>
-                <p className="text-sm text-gray-500 ml-8">
+                <p className="text-xs md:text-sm text-gray-500 ml-7">
                   Get in touch with our expert team
                 </p>
-                <p className="text-sm text-gray-500 ml-8">
+                <p className="text-xs md:text-sm text-gray-500 ml-7">
                   Available Mon-Sat, 9 AM - 7 PM IST
                 </p>
-                <p className="text-sm text-gray-500 ml-8">
+                <p className="text-xs md:text-sm text-gray-500 ml-7">
                   Instant support for all property documentation needs
                 </p>
               </div>

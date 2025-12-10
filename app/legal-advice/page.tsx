@@ -51,16 +51,9 @@ export default function LegalAdvice() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-text-light dark:text-text-dark mb-6">
-              <span className="relative inline-block">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-                  Legal Advice
-                </span>
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"></span>
-              </span>
-            </h1>
-            <p className="text-xl text-subtext-light dark:text-subtext-dark max-w-3xl mx-auto">
-              Expert legal guidance from government-registered lawyers with 10+ years of property law experience
+           
+            <p className="text-xl text-subtext-light font-bold dark:text-subtext-dark max-w-3xl mx-auto">
+              Expert legal guidance from government-registered lawyers with 50+ years of property law experience
             </p>
           </div>
 
@@ -72,7 +65,7 @@ export default function LegalAdvice() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i data-lucide="award" className="w-8 h-8 text-white"></i>
                 </div>
-                <h3 className="font-bold text-text-light dark:text-text-dark mb-2">10+ Years Experience</h3>
+                <h3 className="font-bold text-text-light dark:text-text-dark mb-2">50+ Years Experience</h3>
                 <p className="text-sm text-subtext-light dark:text-subtext-dark">Specialized in property law</p>
               </div>
               <div className="text-center">
@@ -131,7 +124,7 @@ export default function LegalAdvice() {
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Free Legal Consultation</h2>
             <p className="text-xl mb-8 text-blue-50">
-              Book a free 15-minute consultation with our expert property lawyers
+              Book a free 15-minutes consultation with our property experts
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

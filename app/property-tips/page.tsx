@@ -51,15 +51,8 @@ export default function PropertyTips() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-text-light dark:text-text-dark mb-6">
-              <span className="relative inline-block">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-                  Property Tips
-                </span>
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"></span>
-              </span>
-            </h1>
-            <p className="text-xl text-subtext-light dark:text-subtext-dark max-w-3xl mx-auto">
+           
+            <p className="text-xl font-bold text-subtext-light dark:text-subtext-dark max-w-3xl mx-auto">
               Expert guidance and practical tips for all your property needs in Delhi NCR
             </p>
           </div>
