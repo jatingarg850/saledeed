@@ -2397,6 +2397,14 @@ video.logo-video {
   margin: 2rem 0;
 }
 
+.thp-features-container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
 .thp-feature-card {
   background: white;
   border-radius: 1rem;
@@ -2405,6 +2413,39 @@ video.logo-video {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 2px solid transparent;
+}
+
+.thp-feature-card-clickable {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.thp-feature-card-clickable:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: #FCD34D;
+}
+
+.thp-feature-arrow {
+  color: #A16207;
+  transition: transform 0.3s ease;
+}
+
+.thp-feature-card-clickable:hover .thp-feature-arrow {
+  transform: translateX(4px);
 }
 
 .thp-feature-card:hover {
@@ -2500,6 +2541,10 @@ video.logo-video {
   .thp-features-container {
     grid-template-columns: 1fr;
   }
+  
+  .thp-features-container-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Dark Mode Support */
@@ -2516,6 +2561,12 @@ video.logo-video {
 .dark .thp-feature-card {
   background: rgba(30, 41, 59, 0.8);
   border-color: rgba(161, 98, 7, 0.3);
+}
+
+.dark .thp-feature-card-clickable {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(161, 98, 7, 0.3);
+  color: #FDE68A;
 }
 
 .dark .thp-feature-title,
@@ -2747,14 +2798,20 @@ bile Performance Enhancements */
 /* Simplified mobile styles */
 @media (max-width: 768px) {
   /* Force disable all complex animations but ensure visibility */
-  [class*="animate-"],
-  [class*="transition-"],
-  [class*="hover:"] {
+  [class*="animate-"]:not(.ripple-button),
+  [class*="transition-"]:not(.ripple-button),
+  [class*="hover:"]:not(.ripple-button) {
     animation: none !important;
     transition: opacity 0.2s ease !important;
     opacity: 1 !important; /* Ensure elements are visible when animations are disabled */
     transform: none !important; /* Reset any transforms that might hide content */
     visibility: visible !important; /* Ensure visibility */
+  }
+  
+  /* Keep ripple button animation on mobile */
+  .ripple-button {
+    animation: pulseBigSmall 2s ease-in-out infinite !important;
+    transition: all 0.2s ease !important;
   }
 
   /* Specifically ensure icons remain visible */
@@ -2782,11 +2839,16 @@ bile Performance Enhancements */
   }
 
   /* Use lighter cream color for all backgrounds */
-  .bg-gradient-to-r,
-  .bg-gradient-to-br,
-  .bg-gradient-to-l,
-  .bg-gradient-to-t {
+  .bg-gradient-to-r:not(.ripple-button),
+  .bg-gradient-to-br:not(.ripple-button),
+  .bg-gradient-to-l:not(.ripple-button),
+  .bg-gradient-to-t:not(.ripple-button) {
     background: #FFFEF7 !important; /* Lighter cream color */
+  }
+  
+  /* Keep ripple button with orange gradient */
+  .ripple-button.bg-gradient-to-r {
+    background: linear-gradient(to right, rgb(253, 185, 40), rgb(249, 115, 22), rgb(253, 185, 40)) !important;
   }
 
   /* Use lighter cream color for all yellow/orange elements */
@@ -2829,11 +2891,16 @@ bile Performance Enhancements */
   }
 
   /* Use lighter cream color for all gradient and colored backgrounds */
-  [class*="bg-gradient"],
-  [class*="from-"],
-  [class*="via-"],
-  [class*="to-"] {
+  [class*="bg-gradient"]:not(.ripple-button),
+  [class*="from-"]:not(.ripple-button),
+  [class*="via-"]:not(.ripple-button),
+  [class*="to-"]:not(.ripple-button) {
     background: #FFFEF7 !important; /* Lighter cream color */
+  }
+  
+  /* Keep ripple button with orange gradient on mobile */
+  .ripple-button {
+    background: linear-gradient(to right, rgb(253, 185, 40), rgb(249, 115, 22), rgb(253, 185, 40)) !important;
   }
 
   /* Convert all dark backgrounds to white */
@@ -4860,8 +4927,7 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
 .scroll-to-top-button {
   position: fixed;
   bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 30px;
   z-index: 1000;
   width: 56px;
   height: 56px;
@@ -4875,17 +4941,17 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   justify-content: center;
   box-shadow: 0 4px 20px rgba(217, 119, 6, 0.5);
   transition: all 0.3s ease;
-  animation: fadeInUpCenter 0.3s ease-out, pulseGlow 2s ease-in-out infinite;
+  animation: fadeInUpLeft 0.3s ease-out, pulseGlow 2s ease-in-out infinite;
 }
 
 .scroll-to-top-button:hover {
-  transform: translateX(-50%) translateY(-8px);
+  transform: translateY(-8px);
   box-shadow: 0 8px 30px rgba(217, 119, 6, 0.7);
   background: linear-gradient(135deg, #ea580c, #dc2626);
 }
 
 .scroll-to-top-button:active {
-  transform: translateX(-50%) translateY(-4px);
+  transform: translateY(-4px);
 }
 
 .scroll-to-top-button svg {
@@ -4899,10 +4965,11 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
   transform: translateY(-2px);
 }
 
-/* Mobile adjustments - keep centered */
+/* Mobile adjustments - left bottom */
 @media (max-width: 768px) {
   .scroll-to-top-button {
     bottom: 20px;
+    left: 20px;
     width: 52px;
     height: 52px;
     background: linear-gradient(135deg, #d97706, #ea580c) !important;
@@ -4923,14 +4990,14 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
 }
 
 /* Animation for button appearance - centered */
-@keyframes fadeInUpCenter {
+@keyframes fadeInUpLeft {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(30px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -4976,4 +5043,48 @@ L MARQUEE OVERRIDE - Ensures consistent speed across all devices */
     font-size: 1.25rem !important;
     padding: 1rem 1.75rem !important;
   }
+}
+
+
+/* Ripple Effect Animation - Click Ripple */
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+/* Idle Pulse Animation - Big and Small */
+@keyframes pulseBigSmall {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Ripple element styling - for click ripples */
+.ripple-element {
+  position: absolute !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  animation: ripple 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+/* Ripple button - idle animation */
+.ripple-button {
+  position: relative !important;
+  overflow: visible !important;
+  animation: pulseBigSmall 2s ease-in-out infinite !important;
 }

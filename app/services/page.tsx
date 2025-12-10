@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import ScrollToTop from '../../components/ScrollToTop'
+import HowItWorks from '../../components/HowItWorks'
 
 export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null)
@@ -1945,6 +1946,9 @@ export default function ServicesPage() {
                     </div>
                 </footer>
             </div>
+            
+            {/* How It Works Section */}
+            <HowItWorks />
             
             {/* Scroll to Top Button */}
             <ScrollToTop />

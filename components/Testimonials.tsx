@@ -72,11 +72,11 @@ export default function Testimonials() {
       
       @media (max-width: 768px) {
         .scroll-left {
-          animation: scroll-left 10s linear infinite;
+          animation: scroll-left 12s linear infinite;
         }
         
         .scroll-right {
-          animation: scroll-right 10s linear infinite;
+          animation: scroll-right 12s linear infinite;
         }
       }
       
@@ -125,11 +125,24 @@ export default function Testimonials() {
         .slider-container::-webkit-scrollbar {
           height: 4px;
         }
+        
+        .testimonials-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+      
+      @media (min-width: 769px) {
+        .testimonials-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
       }
     `
     document.head.appendChild(style)
 
-    // Add touch/mouse drag functionality
     const containers = document.querySelectorAll('.slider-container')
     
     containers.forEach((container) => {
@@ -197,25 +210,25 @@ export default function Testimonials() {
 
 
   const TestimonialCard = ({ name, text }: { name: string; text: string }) => (
-    <div className="testimonial-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-80 mx-2 sm:mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-100 dark:border-slate-700">
-      <div className="flex flex-col sm:flex-row items-start justify-between mb-4 gap-3">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
-            <span className="text-white font-bold text-base sm:text-lg">{name.charAt(0)}</span>
+    <div className="testimonial-card flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] lg:w-80 mx-2 sm:mx-3 md:mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-5 md:p-6 border border-gray-100 dark:border-slate-700 h-fit">
+      <div className="flex items-start justify-between mb-4 gap-2">
+        <div className="flex items-center gap-2 flex-1 min-w-0">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+            <span className="text-white font-bold text-sm sm:text-base">{name.charAt(0)}</span>
           </div>
-          <h4 className="font-bold text-text-light dark:text-text-dark text-sm sm:text-base">{name}</h4>
+          <h4 className="font-bold text-text-light dark:text-text-dark text-xs sm:text-sm md:text-base truncate">{name}</h4>
         </div>
-        <div className="flex items-center gap-1 flex-shrink-0">
+        <div className="flex items-center gap-0.5 flex-shrink-0">
           {[...Array(5)].map((_, i) => (
-            <i key={i} data-lucide="star" className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"></i>
+            <i key={i} data-lucide="star" className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-yellow-400 fill-current"></i>
           ))}
         </div>
       </div>
       <div className="relative">
-        <svg className="absolute top-0 left-0 w-5 h-5 sm:w-6 sm:h-6 text-primary/20" fill="currentColor" viewBox="0 0 975.036 975.036">
+        <svg className="absolute top-0 left-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary/20 flex-shrink-0" fill="currentColor" viewBox="0 0 975.036 975.036">
           <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
         </svg>
-        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed pl-6 sm:pl-8 italic text-xs sm:text-sm">
+        <p className="text-subtext-light dark:text-subtext-dark leading-relaxed pl-5 sm:pl-6 md:pl-8 italic text-xs sm:text-xs md:text-sm line-clamp-6 md:line-clamp-none">
           "{text}"
         </p>
       </div>
@@ -245,7 +258,7 @@ export default function Testimonials() {
                 <i data-lucide="users" className="w-6 h-6 text-green-600 dark:text-green-400"></i>
               </div>
               <div className="text-left">
-                <div className="font-bold text-text-light dark:text-text-dark">11,000+</div>
+                <div className="font-bold text-text-light dark:text-text-dark">1 Lac+</div>
                 <div className="text-sm text-subtext-light dark:text-subtext-dark">Happy Customers</div>
               </div>
             </div>
@@ -274,10 +287,10 @@ export default function Testimonials() {
       </div>
 
       {/* Scrolling Testimonials - All Screens */}
-      <div className="testimonials-wrapper">
+      <div className="testimonials-wrapper px-2 sm:px-4 md:px-0">
         {/* Upper Track - Scrolling Left */}
-        <div className="slider-container mb-8">
-          <div ref={upperTrackRef} className="slide-track scroll-left flex">
+        <div className="slider-container mb-6 md:mb-8 rounded-lg">
+          <div ref={upperTrackRef} className="slide-track scroll-left flex py-2">
             {/* First set */}
             {testimonials.slice(0, 5).map((testimonial, index) => (
               <TestimonialCard key={`upper-${index}`} name={testimonial.name} text={testimonial.text} />
@@ -290,8 +303,8 @@ export default function Testimonials() {
         </div>
 
         {/* Lower Track - Scrolling Right */}
-        <div className="slider-container">
-          <div ref={lowerTrackRef} className="slide-track scroll-right flex">
+        <div className="slider-container rounded-lg">
+          <div ref={lowerTrackRef} className="slide-track scroll-right flex py-2">
             {/* First set */}
             {testimonials.slice(5, 10).map((testimonial, index) => (
               <TestimonialCard key={`lower-${index}`} name={testimonial.name} text={testimonial.text} />

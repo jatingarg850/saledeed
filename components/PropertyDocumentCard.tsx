@@ -133,11 +133,9 @@ export default function PropertyDocumentCard({ document }: PropertyDocumentCardP
         <div className="flex gap-2">
           <Link
             href={document.link}
-            className={`flex-1 inline-flex items-center justify-center gap-2 ${
-              isMobile 
-                ? 'bg-amber-700 text-white' 
-                : 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
-            } px-4 py-2.5 rounded-full font-semibold text-sm`}
+            className={`flex-1 inline-flex items-center justify-center gap-2 bg-blue-500 text-white px-4 py-2.5 rounded-full font-semibold text-sm ${
+              isMobile ? '' : 'hover:bg-blue-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'
+            }`}
           >
             View Details
             <i data-lucide="arrow-right" className="w-4 h-4"></i>

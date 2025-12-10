@@ -17,7 +17,14 @@ const Footer = () => {
     { name: 'Contact us', href: '/contact' },
     { name: 'Service', href: '/service' },
     { name: 'Blog', href: '/blog' },
+  ]
+
+  const legalLinks = [
     { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms & Conditions', href: '/terms-conditions' },
+    { name: 'Refund & Cancellation', href: '/refund-cancellation-policy' },
+    { name: 'Payment & Billing', href: '/payment-billing-policy' },
+    { name: 'Cookie Policy', href: '/cookie-policy' },
   ]
 
   const supportLinks = [
@@ -36,14 +43,14 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
           {/* Logo Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:col-span-1"
+            className="flex flex-col gap-4 lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -146,6 +153,38 @@ const Footer = () => {
             </ul>
           </motion.div>
 
+          {/* Legal Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-lg font-semibold mb-6 relative">
+              Legal
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-blue-600"></span>
+            </h4>
+            <ul className="space-y-3">
+              {legalLinks.map((link, index) => (
+                <motion.li
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center group"
+                  >
+                    <span className="w-0 h-0.5 bg-blue-500 group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2 rounded-full"></span>
+                    {link.name}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
           {/* Support Links */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -163,7 +202,7 @@ const Footer = () => {
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <a

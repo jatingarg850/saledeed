@@ -9,6 +9,7 @@ import StampDutyCalculator from '../components/StampDutyCalculator'
 import PropertyDocumentCard from '../components/PropertyDocumentCard'
 import PopupNotifications from '../components/PopupNotifications'
 import ScrollToTop from '../components/ScrollToTop'
+import HowItWorks from '../components/HowItWorks'
 
 export default function Home() {
   const [showDoorstepModal, setShowDoorstepModal] = useState(false)
@@ -115,6 +116,43 @@ export default function Home() {
       }, 100)
     }
   }, [isMobile])
+
+  // Ripple effect handler
+  const handleRippleClick = (e: React.MouseEvent<HTMLElement>) => {
+    const button = e.currentTarget
+    const rect = button.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+
+    // Create ripple element
+    const ripple = document.createElement('span')
+    ripple.className = 'ripple-element'
+    ripple.style.position = 'absolute'
+    ripple.style.left = x + 'px'
+    ripple.style.top = y + 'px'
+    ripple.style.width = '20px'
+    ripple.style.height = '20px'
+    ripple.style.background = 'rgba(255, 255, 255, 0.7)'
+    ripple.style.borderRadius = '50%'
+    ripple.style.pointerEvents = 'none'
+    ripple.style.transform = 'translate(-50%, -50%) scale(0)'
+    ripple.style.animation = 'ripple 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards'
+
+    // Ensure button has position relative and overflow hidden
+    if (button.style.position !== 'relative') {
+      button.style.position = 'relative'
+    }
+    if (button.style.overflow !== 'hidden') {
+      button.style.overflow = 'hidden'
+    }
+
+    button.appendChild(ripple)
+
+    // Remove ripple after animation
+    setTimeout(() => {
+      ripple.remove()
+    }, 600)
+  }
 
   const propertyDocuments = [
     {
@@ -270,30 +308,6 @@ export default function Home() {
       <div className="home-page relative flex h-auto min-h-screen w-full flex-col group/design-root animate-page-entrance animate-page-load bg-background-light dark:bg-background-dark overflow-x-hidden">
         <Navigation currentPage="home" />
         
-        {/* Hero Video Section - Full Width */}
-        <div className="relative w-full overflow-hidden">
-          {/* Video Background */}
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-auto max-w-full"
-            style={{ 
-              width: '100%',
-              height: 'auto',
-              maxWidth: '100%',
-              display: 'block'
-            }}
-          >
-            <source src="/ani/lv_0_20251118004148.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          {/* Subtle Bottom Gradient for smooth transition */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
-        </div>
-
         <div className="layout-container flex h-full grow flex-col">
           <div className="w-full">
             {/* Main Content */}
@@ -313,7 +327,10 @@ export default function Home() {
                       Customised | Sale Deed | Gift Deed | Will | Relinquishment Deed | Valuation Report | NOC &amp; More
                     </p>
                     <div className="mt-4 flex justify-center items-center w-full">
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white px-8 py-4 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full inline-block shadow-lg">
+                      <h2 
+                        onClick={handleRippleClick}
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white px-8 py-4 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full inline-block shadow-lg cursor-pointer transition-all duration-200 hover:shadow-xl hover:scale-105 active:scale-95 ripple-button"
+                      >
                         Buy/Sell/Rent at Minimum Commission
                       </h2>
                     </div>
@@ -365,6 +382,9 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
+                    <span className="marquee-text">Property Filming</span>
+                    <span className="marquee-text">Vaastu Consultation</span>
+                    <span className="marquee-text">NRI Properties</span>
                     {/* Duplicate for seamless loop */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -391,6 +411,9 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
+                    <span className="marquee-text">Property Filming</span>
+                    <span className="marquee-text">Vaastu Consultation</span>
+                    <span className="marquee-text">NRI Properties</span>
                     {/* Third duplicate for better mobile performance */}
                     <span className="marquee-text">Buy/Sell/Rent At Minimum Commission</span>
                     <span className="marquee-text">A To Z Buying/Selling Assistance</span>
@@ -417,6 +440,9 @@ export default function Home() {
                     <span className="marquee-text">Structural Stability Certificate</span>
                     <span className="marquee-text">Renovation</span>
                     <span className="marquee-text">Relocation</span>
+                    <span className="marquee-text">Property Filming</span>
+                    <span className="marquee-text">Vaastu Consultation</span>
+                    <span className="marquee-text">NRI Properties</span>
                   </div>
                 </div>
               </div>
@@ -559,67 +585,84 @@ export default function Home() {
                     <div className='text-text-light dark:text-text-dark text-4xl font-bold tracking-tight font-display mb-4'>Our Services At A Glance</div>
                   </center>
                   {/* Features Container */}
-                <div className="thp-features-container">
-                  <div className="thp-feature-card">
+                <div className="thp-features-container-grid">
+                  <Link href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20get%20my%20deed%20registered" target="_blank" rel="noopener noreferrer" className="thp-feature-card-clickable">
                     <div className="thp-feature-icon">
                       <i className="fa-file-signature fas"></i>
                     </div>
                     <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20get%20my%20deed%20registered"
-                        rel="noopener noreferrer"
-                      >
-                        Customized Deeds Drafting And Registration
-                      </a>
+                      Customized Deeds Drafting And Registration
                     </div>
-                  </div>
-                  <div className="thp-feature-card">
+                    <div className="thp-feature-arrow">
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </div>
+                  </Link>
+                  <Link href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20how%20can%20I%20save%20tax" target="_blank" rel="noopener noreferrer" className="thp-feature-card-clickable">
                     <div className="thp-feature-icon">
                       <i className="fa-coins fas"></i>
                     </div>
                     <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20how%20can%20I%20save%20tax"
-                        rel="noopener noreferrer"
-                      >
-                        Save Maximum Tax
-                      </a>
+                      Save Maximum Tax
                     </div>
-                  </div>
-                  <div className="thp-feature-card">
+                    <div className="thp-feature-arrow">
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </div>
+                  </Link>
+                  <Link href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20authority%20assistance" target="_blank" rel="noopener noreferrer" className="thp-feature-card-clickable">
                     <div className="thp-feature-icon">
                       <i className="fa-landmark fas"></i>
                     </div>
                     <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20authority%20assistance"
-                        rel="noopener noreferrer"
-                      >
-                        Building Authority Assistance
-                      </a>
+                      Building Authority Assistance
                     </div>
-                  </div>
-                  <div className="thp-feature-card">
+                    <div className="thp-feature-arrow">
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </div>
+                  </Link>
+                  <Link href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20loan" target="_blank" rel="noopener noreferrer" className="thp-feature-card-clickable">
                     <div className="thp-feature-icon">
                       <i className="fa-hand-holding-usd fas"></i>
                     </div>
                     <div className="thp-feature-title">
-                      <a
-                        target="_blank"
-                        className="feature-link"
-                        href="https://api.whatsapp.com/send?phone=918800505050&text=Hello%20saledeed.com%2C%20I%20want%20to%20know%20more%20about%20loan"
-                        rel="noopener noreferrer"
-                      >
-                        Get Loan At Minimum Interest
-                      </a>
+                      Get Loan At Minimum Interest
                     </div>
-                  </div>
+                    <div className="thp-feature-arrow">
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </div>
+                  </Link>
+                  <Link href="/services/property-filming" className="thp-feature-card-clickable">
+                    <div className="thp-feature-icon">
+                      <i className="fa-video fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      Property Filming - #DikhegaTohBirega
+                    </div>
+                    <div className="thp-feature-arrow">
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </div>
+                  </Link>
+                  <Link href="/services/vaastu-consultation" className="thp-feature-card-clickable">
+                    <div className="thp-feature-icon">
+                      <i className="fa-om fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      Vaastu Consultation
+                    </div>
+                    <div className="thp-feature-arrow">
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </div>
+                  </Link>
+                  <Link href="/services/nri-properties" className="thp-feature-card-clickable">
+                    <div className="thp-feature-icon">
+                      <i className="fa-globe fas"></i>
+                    </div>
+                    <div className="thp-feature-title">
+                      NRI Properties Management
+                    </div>
+                    <div className="thp-feature-arrow">
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                    </div>
+                  </Link>
                 </div>
 
                 {/* Stats Blinking Animation */}
@@ -984,6 +1027,9 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
+
+              {/* How It Works Section */}
+              <HowItWorks />
 
               {/* Customer Testimonials Section */}
               <Testimonials />
@@ -1399,7 +1445,57 @@ export default function Home() {
                 </div>
               </div>
             </section>
+{/* Services Overview */}
+                <div className="mt-12 max-w-3xl mx-auto bg-white dark:bg-slate-800/50 rounded-2xl p-8 shadow-xl border border-yellow-200/50 dark:border-slate-700">
+                  <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-6 text-center">
+                    Services Overview
+                  </h2>
+                  <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Celebrating 1 Lac Successful Deals
+                      </p>
+                    </div>
 
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Team of Experts with 50+ Years Experience
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Best in Class Lawyers / Valuers / Engineers
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                      </div>
+                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
+                        Doorstep Consultation @ ₹999/-
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Trust Badge */}
+                <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
+                  <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
+                  <span>Trusted by 1 Lac+ Happy Clients </span>
+                </div>
             {/* Contact Us CTA Section */}
             <section className="px-6 md:px-10 lg:px-20 py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
               <div className="max-w-4xl mx-auto text-center">
@@ -1458,57 +1554,7 @@ export default function Home() {
                   </a>
                 </div>
 
-                {/* Services Overview */}
-                <div className="mt-12 max-w-3xl mx-auto bg-white dark:bg-slate-800/50 rounded-2xl p-8 shadow-xl border border-yellow-200/50 dark:border-slate-700">
-                  <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-6 text-center">
-                    Services Overview
-                  </h2>
-                  <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
-                        Celebrating 1 Lac Successful Deals
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
-                        Team of Experts with 50+ Years Experience
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
-                        Best in Class Lawyers / Valuers / Engineers
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <i data-lucide="check" className="w-5 h-5 text-green-600 dark:text-green-400"></i>
-                      </div>
-                      <p className="text-lg text-text-light dark:text-text-dark font-medium">
-                        Doorstep Consultation @ ₹999/-
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Trust Badge */}
-                <div className="mt-8 flex items-center justify-center gap-2 text-sm text-subtext-light dark:text-subtext-dark animate-fade-in-up animate-delay-500">
-                  <i data-lucide="shield" className="w-4 h-4 text-green-500"></i>
-                  <span>Trusted by 1 Lac+ Happy Clients </span>
-                </div>
+                
               </div>
             </section>
             </main>

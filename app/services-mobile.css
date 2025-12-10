@@ -1,5 +1,27 @@
 /* Mobile Responsive Fixes for Services Page */
 
+/* PropertyDocumentCard button colors - All screen sizes */
+.property-card .flex.gap-2 a[href*="/services/"],
+.property-card .flex.gap-2 a {
+  background: #3b82f6 !important;
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.property-card .flex.gap-2 a:hover {
+  background: #2563eb !important;
+}
+
+.property-card .flex.gap-2 button {
+  background: #22c55e !important;
+  background-color: #22c55e !important;
+  color: white !important;
+}
+
+.property-card .flex.gap-2 button:hover {
+  background: #16a34a !important;
+}
+
 /* Hide decorative circular elements on mobile */
 @media (max-width: 640px) {
   .services-page .bg-gradient-to-br > div[class*="absolute"][class*="rounded-full"],
@@ -105,11 +127,16 @@
 
   /* Apply to all pages, not just services-page */
   body .bg-gradient-to-br,
-  body .bg-gradient-to-r,
-  body .bg-gradient-to-l,
-  body .bg-gradient-to-t,
-  body .bg-gradient-to-b {
+  body .bg-gradient-to-r:not(.ripple-button),
+  body .bg-gradient-to-l:not(.ripple-button),
+  body .bg-gradient-to-t:not(.ripple-button),
+  body .bg-gradient-to-b:not(.ripple-button) {
     background-image: none !important;
+  }
+  
+  /* Keep ripple button gradient on mobile */
+  body .ripple-button.bg-gradient-to-r {
+    background-image: linear-gradient(to right, rgb(253, 185, 40), rgb(249, 115, 22), rgb(253, 185, 40)) !important;
   }
 
   /* Solid backgrounds for common gradient sections */
@@ -753,6 +780,28 @@
     background-color: var(--primary-color) !important;
     background-image: none !important;
     color: white !important;
+  }
+
+  /* PropertyDocumentCard button colors - View Details (Blue) and Book Now (Green) */
+  .property-card .flex.gap-2 a[href*="/services/"],
+  .property-card .flex.gap-2 a {
+    background: #3b82f6 !important;
+    background-color: #3b82f6 !important;
+    color: white !important;
+  }
+
+  .property-card .flex.gap-2 a:hover {
+    background: #2563eb !important;
+  }
+
+  .property-card .flex.gap-2 button {
+    background: #22c55e !important;
+    background-color: #22c55e !important;
+    color: white !important;
+  }
+
+  .property-card .flex.gap-2 button:hover {
+    background: #16a34a !important;
   }
 }
 
