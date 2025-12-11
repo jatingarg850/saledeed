@@ -7,20 +7,31 @@ import ScrollToTop from '../../components/ScrollToTop'
 import HowItWorks from '../../components/HowItWorks'
 import ServiceBookingModal from '../../components/ServiceBookingModal'
 
+interface Service {
+  id: string
+  name: string
+  price: number
+  gst: number
+  description: string
+  features: string[]
+}
+
 export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null)
-    const [showDoorstepModal, setShowDoorstepModal] = useState(false)
     const [bookingModal, setBookingModal] = useState<{
       isOpen: boolean
-      serviceName: string
-      price: number
-      gst: number
+      service: Service | null
     }>({
       isOpen: false,
-      serviceName: '',
-      price: 0,
-      gst: 0
+      service: null
     })
+
+    const handleBookService = (service: Service) => {
+      setBookingModal({
+        isOpen: true,
+        service
+      })
+    }
 
     const services = [
         { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -41,28 +52,28 @@ export default function ServicesPage() {
     const packages = [
         {
             title: 'Buyer Package',
-            price: '₹15,999',
+            price: '₹64,999',
             timeline: '10-15 Business Days',
             icon: 'user',
             popular: false,
             features: [
-                'Title Verification',
-                'Deed Drafting',
-                'Registration Assistance',
-                'Document Storage'
+                'Property Verification',
+                'Sale Deed Drafting & Registration',
+                'Mutation at Property Tax Office',
+                'Electricity & Water Bill Name Change'
             ]
         },
         {
             title: 'Seller Package',
-            price: '₹15,999',
+            price: '₹99,000',
             timeline: '10-15 Business Days',
             icon: 'briefcase',
             popular: true,
             features: [
+                'NOC Preparation',
+                'Valuation Report',
                 'Document Preparation',
-                'Tax Consultation',
-                'Sale Agreement',
-                'Notary Services'
+                'Expert Consultation'
             ]
         },
         {
@@ -135,7 +146,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹1999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -145,7 +156,14 @@ export default function ServicesPage() {
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
                                                     <button
-                                                        onClick={() => setShowDoorstepModal(true)}
+                                                        onClick={() => handleBookService({
+                                                          id: 'doorstep',
+                                                          name: 'Doorstep Consultation',
+                                                          price: 1999,
+                                                          gst: 0,
+                                                          description: 'Expert consultation at your doorstep',
+                                                          features: ['Personal consultation at your home', 'Document review and analysis', 'Step-by-step guidance', 'Customized action plan', '100% adjusted if you book any service']
+                                                        })}
                                                         className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
                                                     >
                                                         Book Now
@@ -161,7 +179,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹8999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹9999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -178,11 +196,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/contact">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'property-verification',
+                                                          name: 'Property Detailed Verification',
+                                                          price: 9999,
+                                                          gst: 18,
+                                                          description: 'Comprehensive property verification',
+                                                          features: ['Title check from competent authority', 'Encumbrance certificate', 'Past ownership checking', 'Legal clearance report']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -194,7 +220,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹12999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹17999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -211,11 +237,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/sale-deed">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'sale-deed',
+                                                          name: 'Sale Deed Registration',
+                                                          price: 17999,
+                                                          gst: 18,
+                                                          description: 'Complete sale deed registration with expert assistance',
+                                                          features: ['Deed drafting as per your case', 'Coordination with sub-registrar office', 'End-to-end paperwork handling', 'Expert property lawyer consultation']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -227,7 +261,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹19999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹9999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -248,11 +282,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/contact">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'agent-assistance',
+                                                          name: 'Agent Assistance',
+                                                          price: 9999,
+                                                          gst: 18,
+                                                          description: 'Document verification and registration assistance',
+                                                          features: ['Document verification', 'Registration assistance', 'Consultation call with expert lawyer', 'Can be clubbed with other services']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -264,7 +306,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹12999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹13999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -273,11 +315,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/gift-deed">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'gift-deed',
+                                                          name: 'Gift Deed',
+                                                          price: 13999,
+                                                          gst: 18,
+                                                          description: 'Gift deed drafting and registration',
+                                                          features: ['Deed drafting per Delhi stamp rules', 'Stamp duty estimation', 'Registry completion assistance', 'Expert guidance throughout']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -289,7 +339,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹9999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹11999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -298,11 +348,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/relinquishment-deed">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'relinquishment-deed',
+                                                          name: 'Relinquishment Deed',
+                                                          price: 11999,
+                                                          gst: 18,
+                                                          description: 'Relinquishment deed preparation and filing',
+                                                          features: ['Deed drafting and preparation', 'Sub-registrar filing assistance', 'Documentation support', 'Legal compliance check']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -314,7 +372,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹4999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹7999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -323,11 +381,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/will-agreement">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'will',
+                                                          name: 'Will Registration',
+                                                          price: 7999,
+                                                          gst: 18,
+                                                          description: 'Legally valid will drafting and registration',
+                                                          features: ['Legally valid will drafting', 'Registration if needed', 'Privacy throughout process', 'Expert legal review']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -339,7 +405,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹6999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹7999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -348,11 +414,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/general-power-of-authority">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'gpa',
+                                                          name: 'General Power of Attorney',
+                                                          price: 7999,
+                                                          gst: 18,
+                                                          description: 'GPA drafting and registration',
+                                                          features: ['GPA drafting per Delhi requirements', 'Registration facilitation', 'Legal compliance', 'Expert review']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -364,7 +438,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹11999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹13999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -373,11 +447,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/partition-deed">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'partition-deed',
+                                                          name: 'Partition Deed',
+                                                          price: 13999,
+                                                          gst: 18,
+                                                          description: 'Property partition deed preparation',
+                                                          features: ['Accurate share details', 'Deed preparation', 'Sub-registrar filing assistance', 'Legal documentation']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -389,7 +471,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹10999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹13999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -398,11 +480,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/agreement-to-sell">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'agreement-to-sell',
+                                                          name: 'Agreement to Sell',
+                                                          price: 13999,
+                                                          gst: 18,
+                                                          description: 'Agreement to sell preparation',
+                                                          features: ['Comprehensive agreement drafting', 'Legal compliance check', 'Expert review', 'Customized terms']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -414,7 +504,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹4999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹3999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -423,11 +513,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/rent-agreement">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'rent-agreement',
+                                                          name: 'Rent Agreement',
+                                                          price: 3999,
+                                                          gst: 18,
+                                                          description: 'Rent agreement drafting',
+                                                          features: ['Standard rent agreement', 'Customizable terms', 'Legal compliance', 'Quick turnaround']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -439,7 +537,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div className="p-6 flex flex-col flex-grow">
                                                 <div className="text-center mb-4">
-                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹19999</h2>
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹27999</h2>
                                                 </div>
                                                 <ul className="list-none flex-grow mb-4 space-y-2">
                                                     <li className="flex items-start">
@@ -448,11 +546,19 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/mutation-legal-document">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'mutation',
+                                                          name: 'Mutation',
+                                                          price: 27999,
+                                                          gst: 18,
+                                                          description: 'Property mutation at tax office',
+                                                          features: ['Complete mutation process', 'Property tax office coordination', 'Documentation handling', 'Expert assistance']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -473,11 +579,130 @@ export default function ServicesPage() {
                                                     </li>
                                                 </ul>
                                                 <div className="text-center mt-auto pt-4">
-                                                    <Link href="/services/builder-buyer-agreement">
-                                                        <button className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300">
-                                                            Book Now
-                                                        </button>
-                                                    </Link>
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'builder-buyer-agreement',
+                                                          name: 'Builder Buyer Agreement',
+                                                          price: 15000,
+                                                          gst: 18,
+                                                          description: 'Builder buyer agreement drafting and review',
+                                                          features: ['BBA drafting/review', 'RERA compliance', 'Buyer interest protection', 'Expert legal review']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Property Video Filming */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Property Video Filming For Boosting Sale</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹14999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Professional property video production for online listing and marketing.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">High-quality editing and optimization for all platforms.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'property-filming',
+                                                          name: 'Property Video Filming',
+                                                          price: 14999,
+                                                          gst: 18,
+                                                          description: 'Professional property video for sale',
+                                                          features: ['Professional video production', 'Multiple angles and shots', 'High-quality editing', 'Optimized for online listing']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Vaastu Consultation */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">Vaastu Consultation With Detailed Correction Advice</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹49999</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Detailed vaastu analysis of your property.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Comprehensive correction advice and remedial measures.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'vaastu-consultation',
+                                                          name: 'Vaastu Consultation',
+                                                          price: 49999,
+                                                          gst: 18,
+                                                          description: 'Detailed vaastu consultation with corrections',
+                                                          features: ['Detailed vaastu analysis', 'Correction advice', 'Remedial measures', 'Expert consultation']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* NRI Buy-Sell Process */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-primary text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">NRI Buy-Sell Process</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹99000</h2>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Complete NRI property transaction assistance and documentation.</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Power of attorney preparation and remote assistance.</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <button
+                                                        onClick={() => handleBookService({
+                                                          id: 'nri-process',
+                                                          name: 'NRI Buy-Sell Process',
+                                                          price: 99000,
+                                                          gst: 18,
+                                                          description: 'Complete NRI property transaction assistance',
+                                                          features: ['Power of attorney preparation', 'Property management support', 'Remote assistance', 'Legal consultation', 'Complete transaction handling']
+                                                        })}
+                                                        className="btn bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book Now
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -510,9 +735,14 @@ export default function ServicesPage() {
                                                     <button
                                                         onClick={() => setBookingModal({
                                                           isOpen: true,
-                                                          serviceName: '👑 VIP Deed Registration',
-                                                          price: 159000,
-                                                          gst: 18
+                                                          service: {
+                                                            id: 'vip-deed',
+                                                            name: '👑 VIP Deed Registration',
+                                                            price: 159000,
+                                                            gst: 18,
+                                                            description: 'Premium deed registration from home',
+                                                            features: ['Complete home service', 'Priority handling', 'Expert legal team', 'Dedicated support', 'All-inclusive service']
+                                                          }
                                                         })}
                                                         className="btn bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
                                                     >
@@ -1072,7 +1302,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-bold text-text-light dark:text-text-dark">Property Verification</h3>
-                                                <p className="text-blue-600 dark:text-blue-400 font-semibold">₹999</p>
+                                                <p className="text-blue-600 dark:text-blue-400 font-semibold">₹9,999</p>
                                             </div>
                                         </div>
                                         <ul className="space-y-3 text-subtext-light dark:text-subtext-dark">
@@ -1099,7 +1329,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-bold text-text-light dark:text-text-dark">Registration Package</h3>
-                                                <p className="text-green-600 dark:text-green-400 font-semibold">₹12,999</p>
+                                                <p className="text-green-600 dark:text-green-400 font-semibold">₹17,999</p>
                                             </div>
                                         </div>
                                         <ul className="space-y-3 text-subtext-light dark:text-subtext-dark">
@@ -1126,7 +1356,7 @@ export default function ServicesPage() {
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-bold text-text-light dark:text-text-dark">Buyer Assistance</h3>
-                                                <p className="text-purple-600 dark:text-purple-400 font-semibold">₹19,999</p>
+                                                <p className="text-purple-600 dark:text-purple-400 font-semibold">₹9,999</p>
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -2000,13 +2230,13 @@ export default function ServicesPage() {
             </div>
             
             {/* Service Booking Modal */}
-            <ServiceBookingModal
-              isOpen={bookingModal.isOpen}
-              onClose={() => setBookingModal({ ...bookingModal, isOpen: false })}
-              serviceName={bookingModal.serviceName}
-              price={bookingModal.price}
-              gst={bookingModal.gst}
-            />
+            {bookingModal.service && (
+              <ServiceBookingModal
+                isOpen={bookingModal.isOpen}
+                onClose={() => setBookingModal({ isOpen: false, service: null })}
+                service={bookingModal.service}
+              />
+            )}
 
             {/* How It Works Section */}
             <HowItWorks />

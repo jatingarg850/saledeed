@@ -1,200 +1,246 @@
 'use client'
 
 import { useState } from 'react'
-import { calculateTotal } from '../lib/pricing'
+import { useRouter } from 'next/navigation'
+
+interface Service {
+  id: string
+  name: string
+  price: number
+  gst: number
+  description: string
+  features: string[]
+}
 
 interface ServiceBookingModalProps {
   isOpen: boolean
   onClose: () => void
-  serviceName: string
-  price: number
-  gst: number
+  service: Service
 }
 
-export default function ServiceBookingModal({
-  isOpen,
-  onClose,
-  serviceName,
-  price,
-  gst
-}: ServiceBookingModalProps) {
+export default function ServiceBookingModal({ isOpen, onClose, service }: ServiceBookingModalProps) {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    address: ''
+    city: '',
+    propertyType: ''
   })
-  const [isProcessing, setIsProcessing] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const totalPrice = calculateTotal(price, gst)
+  const gstAmount = (service.price * service.gst) / 100
+  const totalAmount = service.price + gstAmount
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
       [name]: value
     }))
+    setError('')
   }
 
   const validateForm = () => {
     if (!formData.name.trim()) {
-      setError('Name is required')
+      setError('Please enter your name')
       return false
     }
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      setError('Valid email is required')
+    if (!formData.email.trim()) {
+      setError('Please enter your email')
       return false
     }
-    if (!formData.phone.trim() || !/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-      setError('Valid 10-digit phone number is required')
+    if (!formData.phone.trim() || formData.phone.length < 10) {
+      setError('Please enter a valid phone number')
       return false
     }
-    if (!formData.address.trim()) {
-      setError('Address is required')
+    if (!formData.city.trim()) {
+      setError('Please enter your city')
+      return false
+    }
+    if (!formData.propertyType) {
+      setError('Please select property type')
       return false
     }
     return true
   }
 
-  const handlePayment = async () => {
-    setError('')
-    
-    if (!validateForm()) {
-      return
-    }
+  const handleBooking = async () => {
+    if (!validateForm()) return
 
-    setIsProcessing(true)
+    setIsLoading(true)
+    setError('')
 
     try {
-      // Create order
-      const orderResponse = await fetch('/api/razorpay/create-order', {
+      // Create Razorpay order
+      const response = await fetch('/api/create-order', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
-          amount: totalPrice * 100,
+          amount: totalAmount,
           currency: 'INR',
-          description: serviceName,
-          receipt: `service_${Date.now()}`
+          receipt: `${service.id}_${Date.now()}`,
+          notes: {
+            serviceId: service.id,
+            serviceName: service.name,
+            customerName: formData.name,
+            customerEmail: formData.email,
+            customerPhone: formData.phone,
+            city: formData.city,
+            propertyType: formData.propertyType
+          }
         })
       })
 
-      const order = await orderResponse.json()
-
-      if (!order.id) {
-        throw new Error('Failed to create order')
+      if (!response.ok) {
+        throw new Error('Failed to create payment order')
       }
+
+      const order = await response.json()
 
       // Initialize Razorpay
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-        amount: order.amount,
-        currency: order.currency,
-        name: 'SaleDeed.com',
-        description: serviceName,
-        order_id: order.id,
-        prefill: {
-          name: formData.name,
-          email: formData.email,
-          contact: formData.phone
-        },
-        handler: async (response: any) => {
-          try {
-            // Verify payment and save booking
-            const verifyResponse = await fetch('/api/razorpay/verify-payment', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                razorpay_order_id: response.razorpay_order_id,
-                razorpay_payment_id: response.razorpay_payment_id,
-                razorpay_signature: response.razorpay_signature,
-                service: serviceName,
-                amount: totalPrice,
-                customerName: formData.name,
-                customerEmail: formData.email,
-                customerPhone: formData.phone,
-                customerAddress: formData.address,
-                basePrice: price,
-                gstAmount: totalPrice - price
-              })
-            })
-
-            const result = await verifyResponse.json()
-            
-            if (result.success) {
-              alert('Payment successful! Your booking has been confirmed. Check your email for details.')
-              onClose()
-              setFormData({ name: '', email: '', phone: '', address: '' })
-            } else {
-              setError('Payment verification failed. Please try again.')
-            }
-          } catch (error) {
-            console.error('Verification error:', error)
-            setError('Payment verification failed')
-          }
-        },
-        theme: {
-          color: '#f59e0b'
-        }
-      }
-
       const script = document.createElement('script')
       script.src = 'https://checkout.razorpay.com/v1/checkout.js'
       script.async = true
       script.onload = () => {
-        const razorpay = new (window as any).Razorpay(options)
-        razorpay.open()
+        const options = {
+          key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+          amount: Math.round(totalAmount * 100), // Convert to paise
+          currency: 'INR',
+          name: 'SaleDeed.com',
+          description: service.name,
+          order_id: order.orderId,
+          prefill: {
+            name: formData.name,
+            email: formData.email,
+            contact: formData.phone
+          },
+          handler: async (response: any) => {
+            try {
+              // Verify payment
+              const verifyResponse = await fetch('/api/verify-payment', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  razorpay_order_id: response.razorpay_order_id,
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_signature: response.razorpay_signature,
+                  serviceId: service.id,
+                  serviceName: service.name,
+                  amount: service.price,
+                  gst: gstAmount,
+                  customerName: formData.name,
+                  customerEmail: formData.email,
+                  customerPhone: formData.phone,
+                  city: formData.city,
+                  propertyType: formData.propertyType
+                })
+              })
+
+              if (verifyResponse.ok) {
+                const verifyData = await verifyResponse.json()
+                // Redirect to bill page with payment ID
+                router.push(`/bill/${verifyData.paymentId}`)
+                onClose()
+              } else {
+                setError('Payment verification failed. Please contact support.')
+              }
+            } catch (err) {
+              setError('Error processing payment. Please try again.')
+              console.error('Payment verification error:', err)
+            }
+          },
+          modal: {
+            ondismiss: () => {
+              setIsLoading(false)
+            }
+          },
+          theme: {
+            color: '#d97706'
+          }
+        }
+
+        const rzp = new (window as any).Razorpay(options)
+        rzp.open()
+        setIsLoading(false)
       }
       document.body.appendChild(script)
-    } catch (error) {
-      console.error('Payment error:', error)
+    } catch (err) {
       setError('Failed to initiate payment. Please try again.')
-    } finally {
-      setIsProcessing(false)
+      console.error('Payment error:', err)
+      setIsLoading(false)
     }
   }
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
-      <div className="bg-white dark:bg-slate-800 rounded-t-3xl sm:rounded-2xl shadow-2xl w-full sm:max-w-md sm:w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto">
+    <div
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
-        <div className="bg-gradient-to-r from-primary to-secondary text-white p-4 sm:p-6 flex justify-between items-center sticky top-0 rounded-t-3xl sm:rounded-t-2xl">
-          <h2 className="text-lg sm:text-2xl font-bold truncate pr-2">Book {serviceName}</h2>
-          <button
-            onClick={onClose}
-            className="text-white hover:bg-white/20 rounded-full p-2 transition-all flex-shrink-0"
-          >
-            <i data-lucide="x" className="w-5 sm:w-6 h-5 sm:h-6"></i>
-          </button>
+        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 sm:p-6 sticky top-0 z-10">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 text-lg sm:text-xl">
+                📋
+              </div>
+              <h3 className="text-base sm:text-xl font-bold truncate">{service.name}</h3>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-1.5 sm:p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0 text-xl sm:text-2xl leading-none"
+            >
+              ✕
+            </button>
+          </div>
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 space-y-4">
-          {/* Price Summary */}
-          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 sm:p-4 border border-blue-200 dark:border-blue-800">
-            <div className="space-y-2 text-xs sm:text-sm">
-              <div className="flex justify-between gap-2">
-                <span className="text-gray-600 dark:text-gray-400">Base Price:</span>
-                <span className="font-semibold">₹{price.toLocaleString()}</span>
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <div className="text-center">
+            <h4 className="text-base sm:text-lg font-bold text-text-light dark:text-text-dark mb-2">
+              {service.description}
+            </h4>
+            <p className="text-xs sm:text-sm text-subtext-light dark:text-subtext-dark">
+              Fill in your details below to proceed with booking
+            </p>
+          </div>
+
+          {/* Pricing Summary */}
+          <div className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-4 border border-orange-200 dark:border-orange-800">
+            <div className="space-y-2 mb-3">
+              <div className="flex justify-between text-sm">
+                <span className="text-subtext-light dark:text-subtext-dark">Service Price:</span>
+                <span className="font-semibold text-text-light dark:text-text-dark">₹{service.price.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between gap-2">
-                <span className="text-gray-600 dark:text-gray-400">GST (18%):</span>
-                <span className="font-semibold">₹{(totalPrice - price).toLocaleString()}</span>
-              </div>
-              <div className="border-t border-blue-200 dark:border-blue-800 pt-2 flex justify-between gap-2">
-                <span className="font-bold">Total:</span>
-                <span className="font-bold text-base sm:text-lg text-primary">₹{totalPrice.toLocaleString()}</span>
-              </div>
+              {service.gst > 0 && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-subtext-light dark:text-subtext-dark">GST ({service.gst}%):</span>
+                  <span className="font-semibold text-text-light dark:text-text-dark">₹{Math.round(gstAmount).toLocaleString()}</span>
+                </div>
+              )}
+            </div>
+            <div className="border-t border-orange-200 dark:border-orange-700 pt-3 flex justify-between">
+              <span className="font-bold text-text-light dark:text-text-dark">Total Amount:</span>
+              <span className="text-2xl font-bold text-orange-600 dark:text-orange-400">₹{Math.round(totalAmount).toLocaleString()}</span>
             </div>
           </div>
 
           {/* Form */}
           <div className="space-y-3 sm:space-y-4">
-            {/* Name */}
             <div>
-              <label className="block text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
+              <label className="block text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark mb-1.5 sm:mb-2">
                 Full Name *
               </label>
               <input
@@ -202,15 +248,14 @@ export default function ServiceBookingModal({
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="Enter your full name"
-                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Enter your name"
+                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-text-light dark:text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
 
-            {/* Email */}
             <div>
-              <label className="block text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
-                Email Address *
+              <label className="block text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark mb-1.5 sm:mb-2">
+                Email *
               </label>
               <input
                 type="email"
@@ -218,13 +263,12 @@ export default function ServiceBookingModal({
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Enter your email"
-                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-text-light dark:text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
 
-            {/* Phone */}
             <div>
-              <label className="block text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
+              <label className="block text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark mb-1.5 sm:mb-2">
                 Phone Number *
               </label>
               <input
@@ -232,64 +276,90 @@ export default function ServiceBookingModal({
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                placeholder="10-digit number"
-                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Enter your phone number"
+                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-text-light dark:text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
 
-            {/* Address */}
             <div>
-              <label className="block text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
-                Address *
+              <label className="block text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark mb-1.5 sm:mb-2">
+                City *
               </label>
-              <textarea
-                name="address"
-                value={formData.address}
+              <input
+                type="text"
+                name="city"
+                value={formData.city}
                 onChange={handleInputChange}
-                placeholder="Enter your address"
-                rows={2}
-                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                placeholder="Enter your city"
+                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-text-light dark:text-text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark mb-1.5 sm:mb-2">
+                Property Type *
+              </label>
+              <select
+                name="propertyType"
+                value={formData.propertyType}
+                onChange={handleInputChange}
+                className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-orange-500"
+              >
+                <option value="">Select property type</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="industrial">Industrial</option>
+                <option value="agricultural">Agricultural</option>
+                <option value="other">Other</option>
+              </select>
             </div>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-sm">
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-sm">
               {error}
             </div>
           )}
 
-          {/* Buttons */}
-          <div className="flex gap-2 sm:gap-3 pt-3 sm:pt-4">
-            <button
-              onClick={onClose}
-              className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-slate-700 transition-all"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={handlePayment}
-              disabled={isProcessing}
-              className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1 sm:gap-2"
-            >
-              {isProcessing ? (
-                <>
-                  <i data-lucide="loader" className="w-4 h-4 animate-spin"></i>
-                  <span className="hidden sm:inline">Processing...</span>
-                </>
-              ) : (
-                <>
-                  <i data-lucide="credit-card" className="w-4 h-4"></i>
-                  <span className="hidden sm:inline">Pay</span> ₹{totalPrice.toLocaleString()}
-                </>
-              )}
-            </button>
-          </div>
+          {/* CTA Button */}
+          <button
+            onClick={handleBooking}
+            disabled={isLoading}
+            className="w-full text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl font-bold text-sm sm:text-base text-center flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{
+              background: '#d97706',
+              backgroundColor: '#d97706',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#b45309';
+              e.currentTarget.style.backgroundColor = '#b45309';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#d97706';
+              e.currentTarget.style.backgroundColor = '#d97706';
+            }}
+          >
+            {isLoading ? (
+              <>
+                <span className="animate-spin">⏳</span>
+                <span className="hidden sm:inline">Processing...</span>
+                <span className="sm:hidden">Processing</span>
+              </>
+            ) : (
+              <>
+                <span className="text-lg">💳</span>
+                <span className="hidden sm:inline">Proceed to Payment</span>
+                <span className="sm:hidden">Pay Now</span>
+              </>
+            )}
+          </button>
 
-          {/* Terms */}
-          <p className="text-xs text-gray-500 dark:text-gray-400 text-center leading-tight">
-            By proceeding, you agree to our terms. A bill will be sent to your email.
+          <p className="text-xs text-center text-subtext-light dark:text-subtext-dark">
+            Secure payment powered by Razorpay
+          </p>
+          <p className="text-xs text-center text-gray-400">
+            Press ESC or click outside to close
           </p>
         </div>
       </div>

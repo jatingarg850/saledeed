@@ -28,9 +28,9 @@ export default function Navigation({ currentPage }: NavigationProps) {
   }, [isMobileMenuOpen])
 
   useEffect(() => {
-    // Mobile detection
+    // Mobile detection - use 1024px (lg breakpoint) instead of 768px
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768)
+      setIsMobile(window.innerWidth < 1024)
     }
     
     checkMobile()
@@ -99,15 +99,15 @@ export default function Navigation({ currentPage }: NavigationProps) {
   ]
   return (
     <>
-      <header className={`flex items-center justify-between whitespace-nowrap px-6 md:px-10 lg:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10 transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
+      <header className={`flex items-center justify-between gap-2 md:gap-4 px-4 md:px-10 lg:px-20 py-3 md:py-4 bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 backdrop-blur-md shadow-sm dark:shadow-yellow-900/10 transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>
-        <a href="/" className="flex items-center group transition-all duration-300">
+        <a href="/" className="flex items-center group transition-all duration-300 flex-shrink-0">
           <video
             src="/ani/dfg.mp4"
             autoPlay
             muted
             playsInline
-            className="h-16 w-24 object-cover group-hover:scale-105 transition-all duration-300 ease-out rounded-lg"
+            className="h-12 md:h-16 w-16 md:w-24 object-cover group-hover:scale-105 transition-all duration-300 ease-out rounded-lg"
             style={{ 
               maxWidth: 'none'
             }}
@@ -120,7 +120,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
           />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
+        <nav className="hidden lg:flex items-center gap-8 flex-1 justify-center">
           <a className={`text-base font-medium leading-normal transition-colors ${currentPage === 'home'
             ? 'text-amber-700 dark:text-secondary font-semibold'
             : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
@@ -172,6 +172,11 @@ export default function Navigation({ currentPage }: NavigationProps) {
             : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
             }`} href="/services">All Services</a>
 
+          <a className={`text-base font-medium leading-normal transition-colors ${currentPage === 'pricing'
+            ? 'text-amber-700 dark:text-secondary font-semibold'
+            : 'text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
+            }`} href="/pricing">Pricing</a>
+
           {/* Company Dropdown */}
           <div className="relative group">
             <button className="text-black dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary text-base font-medium leading-normal transition-colors flex items-center gap-1">
@@ -193,16 +198,16 @@ export default function Navigation({ currentPage }: NavigationProps) {
           </div>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 lg:gap-4">
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden flex items-center justify-center size-10 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors flex-shrink-0"
           >
-            <i data-lucide={isMobileMenuOpen ? "x" : "menu"} className="text-text-light dark:text-text-dark"></i>
+            <i data-lucide={isMobileMenuOpen ? "x" : "menu"} className="w-6 h-6 text-text-light dark:text-text-dark"></i>
           </button>
 
-          <a href="/contact" className="hidden md:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-secondary/40">
+          <a href="/contact" className="hidden lg:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-secondary/40">
             <span className="truncate">Contact Us</span>
           </a>
         </div>
@@ -211,14 +216,14 @@ export default function Navigation({ currentPage }: NavigationProps) {
       {/* Mobile Menu Backdrop */}
       {isMobileMenuOpen && (
         <div 
-          className="mobile-menu-backdrop md:hidden"
+          className="mobile-menu-backdrop lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="mobile-menu-container mobile-menu-scroll md:hidden">
+        <div className="mobile-menu-container mobile-menu-scroll lg:hidden">
           <div className="px-6 py-4 space-y-1 pb-8">
             {/* Home */}
             <div className="mobile-menu-item">
@@ -394,6 +399,20 @@ export default function Navigation({ currentPage }: NavigationProps) {
                   }`}
               >
                 All Services
+              </a>
+            </div>
+
+            {/* Pricing */}
+            <div className="mobile-menu-item">
+              <a
+                href="/pricing"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`mobile-menu-link text-base font-medium transition-colors ${currentPage === 'pricing'
+                  ? 'text-amber-700 dark:text-secondary font-semibold'
+                  : 'text-subtext-light dark:text-subtext-dark hover:text-amber-700 dark:hover:text-secondary'
+                  }`}
+              >
+                Pricing
               </a>
             </div>
 
