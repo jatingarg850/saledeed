@@ -70,9 +70,7 @@ export default function CalculatorPage() {
                                     <Link className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="/services">Services</Link>
                                     <a className="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary transition-colors" href="#contact">Contact</a>
                                 </div>
-                                <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-                                    <span className="truncate">Login</span>
-                                </button>
+                                
                             </div>
                             <div className="md:hidden">
                                 <button className="p-2">

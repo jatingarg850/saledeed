@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Shield, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
+import { Shield, Mail, Phone, ExternalLink } from 'lucide-react'
 
 const Footer = () => {
   const productLinks = [
@@ -233,25 +233,56 @@ const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-gray-700 pt-8"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
+          {/* Top Row - Copyright and Links */}
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 mb-6">
+            <div className="text-gray-400 text-xs md:text-sm text-center md:text-left order-1 md:order-1">
               © 2025{' '}
               <a href="https://saledeed.com" className="hover:text-white transition-colors duration-300">
                 SaleDeed
               </a>{' '}
               Professional Property Documentation Services. All rights reserved.
             </div>
-            <div className="flex items-center space-x-4 text-sm text-gray-400">
+            
+            <div className="flex items-center space-x-2 md:space-x-4 text-xs md:text-sm text-gray-400 text-center order-2 md:order-2">
               <span>All Rights Reserved</span>
-              <span>•</span>
+              <span className="hidden md:inline">•</span>
               <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">
                 Privacy Policy
               </a>
-              <span>•</span>
+              <span className="hidden md:inline">•</span>
               <a href="/terms" className="hover:text-white transition-colors duration-300">
                 Terms of Service
               </a>
             </div>
+          </div>
+
+          {/* Bottom Row - 31 Son Logo and Powered By */}
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 pt-6 border-t border-gray-700">
+            {/* Powered By Text */}
+            <div className="text-gray-500 text-xs md:text-sm text-center md:text-left order-2 md:order-1">
+              <p>Powered By - 31 Son</p>
+              <p className="text-gray-600 text-xs">Redefining The Defined.</p>
+            </div>
+            
+            {/* 31 Son Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center order-1 md:order-2"
+            >
+              <div className="relative w-20 h-20 md:w-28 md:h-28 hover:scale-110 transition-transform duration-300">
+                <img
+                  src="/logo/ffe.jpg"
+                  alt="31 Son Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Empty space for alignment on desktop */}
+            <div className="hidden md:block order-3"></div>
           </div>
         </motion.div>
       </div>

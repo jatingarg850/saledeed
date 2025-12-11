@@ -92,17 +92,17 @@ export default function ServicesPage() {
     ]
 
     const comparisonFeatures = [
-        { name: 'Title Verification', buyer: true, seller: false, nri: true },
+        { name: 'Title Verification', buyer: true, seller: true, nri: true },
         { name: 'Deed Drafting', buyer: true, seller: true, nri: true },
         { name: 'Registration Assistance', buyer: true, seller: true, nri: true },
-        { name: 'Tax Consultation', buyer: false, seller: true, nri: true },
-        { name: 'Power of Attorney', buyer: false, seller: false, nri: true }
+        { name: 'Tax Consultation', buyer: true, seller: true, nri: true },
+        { name: 'Power of Attorney', buyer: true, seller: true, nri: true }
     ]
 
     const faqs = [
         {
             question: "What if my needs don't fit a package?",
-            answer: "Our NRI Solutions package is fully customizable. Contact us for a personalized quote based on your specific requirements."
+            answer: "Our Solutions packages are fully customizable. Contact us for a personalized quote based on your specific requirements."
         },
         {
             question: "What documents do I need to provide?",
@@ -1131,7 +1131,7 @@ export default function ServicesPage() {
                                             <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm text-subtext-light dark:text-subtext-dark">
                                                     <i data-lucide="clock" className="w-4 h-4"></i>
-                                                    <span>7-15 days</span>
+                                                    <span>0-7 days</span>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
                                                     <span>Learn More</span>
@@ -1166,7 +1166,7 @@ export default function ServicesPage() {
                                             <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm text-subtext-light dark:text-subtext-dark">
                                                     <i data-lucide="clock" className="w-4 h-4"></i>
-                                                    <span>7-15 days</span>
+                                                    <span>0-7 days</span>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
                                                     <span>Learn More</span>
@@ -1201,7 +1201,7 @@ export default function ServicesPage() {
                                             <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm text-subtext-light dark:text-subtext-dark">
                                                     <i data-lucide="clock" className="w-4 h-4"></i>
-                                                    <span>7-15 days</span>
+                                                    <span>0-7 days</span>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
                                                     <span>Learn More</span>

@@ -1622,13 +1622,29 @@ export default function Home() {
 
                 {/* Footer Bottom */}
                 <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8">
-                  <div className="text-center space-y-2">
-                    <p className="text-base font-semibold">All Right Reserved saledeed.com ™</p>
-                    <p className="text-sm">A Unit of Bharatiya Bhoomi Group</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Powered By - 31 Son</p><p> Redefining The Defined.</p>
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                    {/* Left - Copyright */}
+                    <div className="text-center md:text-left">
+                      <p className="text-base font-semibold text-text-light dark:text-text-dark">All Rights Reserved saledeed.com ™</p>
+                    </div>
+                    
+                    {/* Center - Powered By Text */}
+                    <div className="text-center">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Powered By - 31 Son</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Redefining The Defined.</p>
+                    </div>
+                    
+                    {/* Right - 31 Son Logo */}
+                    <div className="flex justify-center md:justify-end">
+                      <div className="relative w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300">
+                        <img
+                          src="/logo/ffe.jpg"
+                          alt="31 Son Logo"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  
-                  
                 </div>
               </div>
             </footer>
