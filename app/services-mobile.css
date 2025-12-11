@@ -544,7 +544,7 @@
   }
 
   /* Ensure cards are fully visible without overflow */
-  .services-page .bg-gradient-to-r {
+  .services-page .bg-gradient-to-r:not(.from-yellow-500) {
     position: relative !important;
     overflow: hidden !important;
     max-width: 100% !important;
@@ -679,9 +679,9 @@
   }
 
   /* Prevent specific elements from exceeding viewport */
-  .services-page .bg-gradient-to-r,
+  .services-page .bg-gradient-to-r:not(.from-yellow-500),
   .services-page .rounded-2xl,
-  .services-page .rounded-xl,
+  .services-page .rounded-xl:not(.from-yellow-50),
   .services-page .rounded-lg {
     max-width: 100% !important;
     width: 100% !important;

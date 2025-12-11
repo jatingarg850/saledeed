@@ -24,7 +24,7 @@ export default function About() {
                 </h1>
 
                 <p className="text-black dark:text-subtext-dark text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed mb-12 font-medium">
-                  For Every Property  <p> Need-Indeed!</p><span className="font-bold text-amber-900 dark:text-primary">5 decades of trust.</span>
+                  For Every Property <span> Need-Indeed!</span><span className="font-bold text-amber-900 dark:text-primary">5 decades of trust.</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -210,7 +210,7 @@ export default function About() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Deed Drafting</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Document Verification</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Registration Assistance</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">Stamp Duty Calculation</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/calculator">Stamp Duty Calculator</a></li>
                   </ul>
                 </div>
 
@@ -220,7 +220,7 @@ export default function About() {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Careers</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Press</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Blogs</a></li>
                   </ul>
                 </div>
 
@@ -246,15 +246,7 @@ export default function About() {
               <div className="mt-12 md:mt-16 border-t border-yellow-200 dark:border-slate-700 pt-6 md:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p className="text-xs sm:text-sm md:text-base text-center sm:text-left">© 2025 SaleDeed.com. All rights reserved.</p>
                 <div className="flex space-x-4 sm:space-x-6">
-                  <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                    <i data-lucide="facebook"></i>
-                  </a>
-                  <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                    <i data-lucide="twitter"></i>
-                  </a>
-                  <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                    <i data-lucide="linkedin"></i>
-                  </a>
+                  
                 </div>
               </div>
             </div>

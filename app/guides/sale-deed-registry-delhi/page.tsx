@@ -74,7 +74,7 @@ export default function SaleDeedRegistryDelhiPage() {
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                     <i data-lucide="file-check" className="w-6 h-6 text-white"></i>
                   </div>
-                  <h3 className="font-bold text-text-light dark:text-text-dark mb-2">Same Day Registration</h3>
+                  <h3 className="font-bold text-text-light dark:text-text-dark mb-2"> Quick Registration</h3>
                   <p className="text-sm text-subtext-light dark:text-subtext-dark">Complete registration process in a single day with proper documentation</p>
                 </div>
 
@@ -328,7 +328,7 @@ export default function SaleDeedRegistryDelhiPage() {
                 <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
                   <div className="flex items-center gap-2">
                     <i data-lucide="check-circle" className="w-4 h-4"></i>
-                    <span>Same Day Registration</span>
+                    <span> Quick Registration</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="shield" className="w-4 h-4"></i>

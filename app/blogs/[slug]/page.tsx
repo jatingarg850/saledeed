@@ -342,32 +342,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Blogs</a></li>
                   </ul>
                 </div>
                 
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/">Terms of Service</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</a></li>
                   </ul>
                 </div>
               </div>
               
               <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
                 <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
-                <div className="flex space-x-6 mt-4 sm:mt-0">
-                  <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                    <i data-lucide="facebook"></i>
-                  </a>
-                  <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                    <i data-lucide="twitter"></i>
-                  </a>
-                  <a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">
-                    <i data-lucide="linkedin"></i>
-                  </a>
-                </div>
+                
               </div>
             </div>
           </footer>

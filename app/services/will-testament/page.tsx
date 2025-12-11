@@ -365,7 +365,7 @@ export default function WillTestamentPage() {
                 
                 </div>
 
-                <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white/80 text-xs sm:text-sm">
                   <div className="flex items-center gap-2">
                     <i data-lucide="check-circle" className="w-4 h-4"></i>
                     <span>Family Protection</span>
@@ -392,8 +392,8 @@ export default function WillTestamentPage() {
                 <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Company</h4>
                 <ul className="space-y-2">
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/partner">Careers</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs"></a>Blogs</li>
                 </ul>
               </div>
               <div>

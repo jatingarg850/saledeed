@@ -100,40 +100,7 @@ export default function CalculatorPage() {
 
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                 {/* Left Side - Services Overview */}
-                                <div className="lg:col-span-1">
-                                    <div className="bg-white dark:bg-slate-800/50 rounded-xl p-6 md:p-8 border border-yellow-200/50 dark:border-slate-700 sticky top-24">
-                                        <h2 className="text-text-light dark:text-text-dark text-2xl font-bold mb-6 font-display">
-                                            Services Overview
-                                        </h2>
-                                        <ul className="space-y-4">
-                                            <li className="flex items-start gap-3">
-                                                <i className="text-secondary mt-1" data-lucide="check-circle"></i>
-                                                <span className="text-subtext-light dark:text-subtext-dark">
-                                                    Celebrating 1 Lac Successful Deals
-                                                </span>
-                                            </li>
-                                            <li className="flex items-start gap-3">
-                                                <i className="text-secondary mt-1" data-lucide="check-circle"></i>
-                                                <span className="text-subtext-light dark:text-subtext-dark">
-                                                    Team of Experts with 50+ Years Experience
-                                                </span>
-                                            </li>
-                                            <li className="flex items-start gap-3">
-                                                <i className="text-secondary mt-1" data-lucide="check-circle"></i>
-                                                <span className="text-subtext-light dark:text-subtext-dark">
-                                                    Best in Class Lawyers / Valuers / Engineers
-                                                </span>
-                                            </li>
-                                            <li className="flex items-start gap-3">
-                                                <i className="text-secondary mt-1" data-lucide="check-circle"></i>
-                                                <span className="text-subtext-light dark:text-subtext-dark">
-                                                    Doorstep Consultation @ ₹1999/-
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
+                                
                                 {/* Right Side - Calculator */}
                                 <div className="lg:col-span-2">
                                     <div className="bg-white dark:bg-slate-800/50 rounded-xl border border-yellow-200/50 dark:border-slate-700 overflow-hidden">

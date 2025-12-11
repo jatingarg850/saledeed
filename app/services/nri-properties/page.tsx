@@ -86,7 +86,7 @@ export default function NRIPropertiesPage() {
                   <ul className="mt-4 space-y-3 text-base">
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Blog</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Blogs</a></li>
                   </ul>
                 </div>
                 

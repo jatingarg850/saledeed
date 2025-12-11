@@ -41,6 +41,10 @@ export default function SaleDeedPage() {
     {
       title: 'Agreement to Sell (if applicable)',
       description: 'Previously executed Agreement to Sell document if advance payment was made earlier.'
+    },
+     {
+      title: 'Stamp Papers',
+      description: 'Stamp Papers issued by the stock holding department after paying Stamp duty to the government.'
     }
   ]
 
@@ -390,7 +394,7 @@ export default function SaleDeedPage() {
                   
                 </div>
 
-                <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white/80 text-xs sm:text-sm">
                   <div className="flex items-center gap-2">
                     <i data-lucide="check-circle" className="w-4 h-4"></i>
                     <span>Complete Ownership</span>
@@ -401,7 +405,7 @@ export default function SaleDeedPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <i data-lucide="clock" className="w-4 h-4"></i>
-                    <span>Same Day Registration</span>
+                    <span> Quick Registration</span>
                   </div>
                 </div>
               </div>
@@ -416,9 +420,9 @@ export default function SaleDeedPage() {
               <div>
                 <h4 className="font-bold text-text-light dark:text-text-dark mb-3 font-display">Company</h4>
                 <ul className="space-y-2">
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/partner">Careers</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/Blogs">Blogs</a></li>
                 </ul>
               </div>
               <div>

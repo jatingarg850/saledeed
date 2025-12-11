@@ -38,7 +38,7 @@ export default function AIChatbot({ isOpen, onClose }: AIChatbotProps) {
   const predefinedResponses = {
     // Core Services
     'sale deed': {
-      text: "A Sale Deed is the final ownership transfer document. It's executed when you're ready to complete the property purchase and take full ownership. This document provides complete legal protection and is registered at the Sub-Registrar office. Processing time: Same day registration.",
+      text: "A Sale Deed is the final ownership transfer document. It's executed when you're ready to complete the property purchase and take full ownership. This document provides complete legal protection and is registered at the Sub-Registrar office. Processing time:  Quick Registration.",
       suggestions: ["Sale Deed documents needed", "Sale Deed vs Agreement to Sell", "Get Sale Deed Service"]
     },
     'gift deed': {

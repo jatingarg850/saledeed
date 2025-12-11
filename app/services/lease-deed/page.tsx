@@ -297,7 +297,7 @@ export default function LeaseDeedPage() {
                   
                 </div>
 
-                <div className="mt-8 flex items-center justify-center gap-8 text-white/80 text-sm">
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white/80 text-xs sm:text-sm">
                   <div className="flex items-center gap-2">
                     <i data-lucide="check-circle" className="w-4 h-4"></i>
                     <span>Long-term Security</span>
@@ -325,7 +325,7 @@ export default function LeaseDeedPage() {
                 <ul className="space-y-2">
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">About Us</a></li>
                   <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
-                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                  <li><a className="text-sm text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-secondary transition-colors" href="/Blogs">Blogs</a></li>
                 </ul>
               </div>
               <div>

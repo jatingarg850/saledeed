@@ -4,12 +4,14 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Navigation from '../../../components/Navigation'
+import { calculateTotal } from '../../../lib/pricing'
 
-// Service data mapping
+// Service data mapping with prices from pricing page
 const serviceData = {
   'gift-deed': {
     title: 'Gift Deed',
-    price: '₹12,999',
+    price: 13999,
+    gst: 18,
     description: 'Transfer property as a gift to family members with complete legal protection',
     category: 'Property Transfer',
     timeline: '7-10 Business Days',
@@ -39,7 +41,8 @@ const serviceData = {
   },
   'relinquishment-deed': {
     title: 'Relinquishment Deed',
-    price: '₹9,999', 
+    price: 11999,
+    gst: 18,
     description: 'Legally give up your property share to other family members',
     category: 'Property Transfer',
     timeline: '5-7 Business Days',
@@ -69,7 +72,8 @@ const serviceData = {
   },
   'will': {
     title: 'Will Testament',
-    price: '₹4,999',
+    price: 7999,
+    gst: 18,
     description: 'Secure your family\'s future with a legally binding will',
     category: 'Estate Planning',
     timeline: '3-5 Business Days',
@@ -99,7 +103,8 @@ const serviceData = {
   },
   'general-power-of-attorney': {
     title: 'General Power of Attorney',
-    price: '₹6,999',
+    price: 7999,
+    gst: 18,
     description: 'Authorize someone to handle your property matters legally',
     category: 'Legal Authorization',
     timeline: '5-7 Business Days', 
@@ -129,7 +134,8 @@ const serviceData = {
   },
   'partition-deed': {
     title: 'Partition Deed',
-    price: '₹11,999',
+    price: 13999,
+    gst: 18,
     description: 'Divide joint property among co-owners legally',
     category: 'Property Division',
     timeline: '10-15 Business Days',
@@ -159,7 +165,8 @@ const serviceData = {
   },
   'agreement-to-sell': {
     title: 'Agreement to Sell',
-    price: '₹10,999',
+    price: 13999,
+    gst: 18,
     description: 'Secure your property purchase with legal protection',
     category: 'Property Agreement',
     timeline: '5-7 Business Days',
@@ -189,7 +196,8 @@ const serviceData = {
   },
   'rent-lease-agreement': {
     title: 'Rent/Lease Agreement',
-    price: 'Starting ₹999',
+    price: 3999,
+    gst: 18,
     description: 'Comprehensive rental agreements for landlords and tenants',
     category: 'Rental Agreement',
     timeline: '2-3 Business Days',
@@ -219,7 +227,8 @@ const serviceData = {
   },
   'mutation': {
     title: 'Mutation Services',
-    price: '₹19,999',
+    price: 27999,
+    gst: 18,
     description: 'Update property records in government databases',
     category: 'Property Records',
     timeline: '15-30 Business Days',
@@ -249,7 +258,8 @@ const serviceData = {
   },
   'builder-buyer-agreement': {
     title: 'Builder Buyer Agreement',
-    price: 'As per discussion',
+    price: 0,
+    gst: 18,
     description: 'Comprehensive agreements for under-construction properties',
     category: 'Construction Agreement',
     timeline: '7-10 Business Days',
@@ -280,7 +290,8 @@ const serviceData = {
   // Additional service aliases for different URL patterns
   'will-testament': {
     title: 'Will Testament',
-    price: '₹4,999',
+    price: 7999,
+    gst: 18,
     description: 'Secure your family\'s future with a legally binding will',
     category: 'Estate Planning',
     timeline: '3-5 Business Days',
@@ -310,7 +321,8 @@ const serviceData = {
   },
   'will-agreement': {
     title: 'Will Testament',
-    price: '₹4,999',
+    price: 7999,
+    gst: 18,
     description: 'Secure your family\'s future with a legally binding will',
     category: 'Estate Planning',
     timeline: '3-5 Business Days',
@@ -340,7 +352,8 @@ const serviceData = {
   },
   'power-of-attorney': {
     title: 'Power of Attorney',
-    price: '₹6,999',
+    price: 7999,
+    gst: 18,
     description: 'Authorize someone to handle your property matters legally',
     category: 'Legal Authorization',
     timeline: '5-7 Business Days', 
@@ -370,7 +383,8 @@ const serviceData = {
   },
   'general-power-of-authority': {
     title: 'General Power of Attorney',
-    price: '₹6,999',
+    price: 7999,
+    gst: 18,
     description: 'Authorize someone to handle your property matters legally',
     category: 'Legal Authorization',
     timeline: '5-7 Business Days', 
@@ -400,7 +414,8 @@ const serviceData = {
   },
   'rent-agreement': {
     title: 'Rent Agreement',
-    price: 'Starting ₹999',
+    price: 3999,
+    gst: 18,
     description: 'Comprehensive rental agreements for landlords and tenants',
     category: 'Rental Agreement',
     timeline: '2-3 Business Days',
@@ -430,7 +445,8 @@ const serviceData = {
   },
   'mutation-legal-document': {
     title: 'Mutation Services',
-    price: '₹19,999',
+    price: 27999,
+    gst: 18,
     description: 'Update property records in government databases',
     category: 'Property Records',
     timeline: '15-30 Business Days',
@@ -460,7 +476,8 @@ const serviceData = {
   },
   'simple-mortgage': {
     title: 'Simple Mortgage Deed',
-    price: '₹8,999',
+    price: 9999,
+    gst: 18,
     description: 'Secure property loans with proper legal documentation',
     category: 'Financial Documents',
     timeline: '7-10 Business Days',
@@ -490,7 +507,8 @@ const serviceData = {
   },
   'other-deed-agreement': {
     title: 'Other Deeds & Agreements',
-    price: 'Custom Pricing',
+    price: 0,
+    gst: 18,
     description: 'Specialized legal documents for unique property requirements',
     category: 'Custom Legal Services',
     timeline: 'Varies by requirement',
@@ -522,11 +540,94 @@ const serviceData = {
 
 export default function DynamicServicePage({ params }: { params: { service: string } }) {
   const [activeTab, setActiveTab] = useState('overview')
+  const [isProcessing, setIsProcessing] = useState(false)
   
   const service = serviceData[params.service as keyof typeof serviceData]
   
   if (!service) {
     notFound()
+  }
+
+  const totalPrice = calculateTotal(service.price, service.gst)
+
+  const handleRazorpayPayment = async () => {
+    if (service.price === 0) {
+      alert('Please contact us for custom pricing')
+      return
+    }
+
+    setIsProcessing(true)
+    try {
+      const response = await fetch('/api/razorpay/create-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: totalPrice * 100,
+          currency: 'INR',
+          description: service.title,
+          receipt: `service_${Date.now()}`
+        })
+      })
+
+      const order = await response.json()
+
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: order.currency,
+        name: 'SaleDeed.com',
+        description: service.title,
+        order_id: order.id,
+        handler: async (response: any) => {
+          try {
+            const verifyResponse = await fetch('/api/razorpay/verify-payment', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                service: service.title,
+                amount: totalPrice
+              })
+            })
+
+            const result = await verifyResponse.json()
+            if (result.success) {
+              alert('Payment successful! Our team will contact you soon.')
+              window.location.href = '/contact'
+            } else {
+              alert('Payment verification failed')
+            }
+          } catch (error) {
+            console.error('Verification error:', error)
+            alert('Payment verification failed')
+          }
+        },
+        prefill: {
+          name: '',
+          email: '',
+          contact: ''
+        },
+        theme: {
+          color: '#f59e0b'
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js'
+      script.async = true
+      script.onload = () => {
+        const razorpay = new (window as any).Razorpay(options)
+        razorpay.open()
+      }
+      document.body.appendChild(script)
+    } catch (error) {
+      console.error('Payment error:', error)
+      alert('Failed to initiate payment')
+    } finally {
+      setIsProcessing(false)
+    }
   }
 
   const colorClasses = {
@@ -588,8 +689,17 @@ export default function DynamicServicePage({ params }: { params: { service: stri
                 {/* Price and Timeline */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                   <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-8 py-4">
-                    <div className="text-3xl font-bold">{service.price}</div>
-                    <div className="text-sm text-white/80">All Inclusive</div>
+                    {service.price > 0 ? (
+                      <>
+                        <div className="text-3xl font-bold">₹{service.price.toLocaleString()}</div>
+                        <div className="text-sm text-white/80">+ {service.gst}% GST = ₹{totalPrice.toLocaleString()}</div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="text-3xl font-bold">Custom Pricing</div>
+                        <div className="text-sm text-white/80">Contact for quote</div>
+                      </>
+                    )}
                   </div>
                   <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-8 py-4">
                     <div className="text-lg font-semibold">{service.timeline}</div>
@@ -599,13 +709,24 @@ export default function DynamicServicePage({ params }: { params: { service: stri
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <i data-lucide="arrow-right" className="w-5 h-5"></i>
-                    Get Started Now
-                  </Link>
+                  {service.price > 0 ? (
+                    <button
+                      onClick={handleRazorpayPayment}
+                      disabled={isProcessing}
+                      className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 disabled:opacity-50"
+                    >
+                      <i data-lucide="credit-card" className="w-5 h-5"></i>
+                      {isProcessing ? 'Processing...' : `Pay Now - ₹${totalPrice.toLocaleString()}`}
+                    </button>
+                  ) : (
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    >
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                      Get Custom Quote
+                    </Link>
+                  )}
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30"
@@ -729,13 +850,24 @@ export default function DynamicServicePage({ params }: { params: { service: stri
                   Get your {service.title.toLowerCase()} completed by legal experts with full compliance guarantee.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <i data-lucide="arrow-right" className="w-5 h-5"></i>
-                    Start Now - {service.price}
-                  </Link>
+                  {service.price > 0 ? (
+                    <button
+                      onClick={handleRazorpayPayment}
+                      disabled={isProcessing}
+                      className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 disabled:opacity-50"
+                    >
+                      <i data-lucide="credit-card" className="w-5 h-5"></i>
+                      {isProcessing ? 'Processing...' : `Pay Now - ₹${totalPrice.toLocaleString()}`}
+                    </button>
+                  ) : (
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    >
+                      <i data-lucide="arrow-right" className="w-5 h-5"></i>
+                      Get Custom Quote
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

@@ -5,10 +5,22 @@ import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import ScrollToTop from '../../components/ScrollToTop'
 import HowItWorks from '../../components/HowItWorks'
+import ServiceBookingModal from '../../components/ServiceBookingModal'
 
 export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null)
     const [showDoorstepModal, setShowDoorstepModal] = useState(false)
+    const [bookingModal, setBookingModal] = useState<{
+      isOpen: boolean
+      serviceName: string
+      price: number
+      gst: number
+    }>({
+      isOpen: false,
+      serviceName: '',
+      price: 0,
+      gst: 0
+    })
 
     const services = [
         { name: 'Sale Deed', href: '/services/sale-deed' },
@@ -466,6 +478,46 @@ export default function ServicesPage() {
                                                             Book Now
                                                         </button>
                                                     </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* VIP Deed Registration */}
+                                        <div className="flex flex-col h-full shadow-lg border-0 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800">
+                                            <div className="bg-amber-500 text-white text-center py-4">
+                                                <h5 className="font-bold text-lg mb-0">👑 VIP Deed Registration</h5>
+                                            </div>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="text-center mb-4">
+                                                    <h2 className="font-bold text-4xl text-text-light dark:text-text-dark mb-1">₹1,59,000</h2>
+                                                    <p className="text-xs text-gray-500 dark:text-gray-400">(+18% GST)</p>
+                                                </div>
+                                                <ul className="list-none flex-grow mb-4 space-y-2">
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">From the comfort of your home</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Premium end-to-end service</span>
+                                                    </li>
+                                                    <li className="flex items-start">
+                                                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                                                        <span className="text-text-light dark:text-text-dark text-sm">Dedicated expert support</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="text-center mt-auto pt-4">
+                                                    <button
+                                                        onClick={() => setBookingModal({
+                                                          isOpen: true,
+                                                          serviceName: '👑 VIP Deed Registration',
+                                                          price: 159000,
+                                                          gst: 18
+                                                        })}
+                                                        className="btn bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-full w-full transition-all duration-300"
+                                                    >
+                                                        Book VIP Service
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1947,6 +1999,15 @@ export default function ServicesPage() {
                 </footer>
             </div>
             
+            {/* Service Booking Modal */}
+            <ServiceBookingModal
+              isOpen={bookingModal.isOpen}
+              onClose={() => setBookingModal({ ...bookingModal, isOpen: false })}
+              serviceName={bookingModal.serviceName}
+              price={bookingModal.price}
+              gst={bookingModal.gst}
+            />
+
             {/* How It Works Section */}
             <HowItWorks />
             
