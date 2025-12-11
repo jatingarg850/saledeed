@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef } from 'react'
-import html2pdf from 'html2pdf.js'
 
 interface BillProps {
   orderId: string
@@ -30,17 +29,17 @@ export default function BillGenerator({
 }: BillProps) {
   const billRef = useRef<HTMLDivElement>(null)
 
-  const downloadBill = () => {
+  const downloadBill = async () => {
     if (billRef.current) {
+      const html2pdf = (await import('html2pdf.js')).default
       const element = billRef.current
-      const opt = {
+      html2pdf().set({
         margin: 10,
         filename: `SaleDeed_Bill_${paymentId}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
+        image: { type: 'png', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-      }
-      html2pdf().set(opt).from(element).save()
+      } as any).from(element).save()
     }
   }
 

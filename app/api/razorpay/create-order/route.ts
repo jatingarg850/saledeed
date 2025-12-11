@@ -21,7 +21,6 @@ export async function POST(request: NextRequest) {
       amount: Math.round(amount),
       currency,
       receipt,
-      description,
       notes: {
         service: description
       }
