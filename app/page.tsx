@@ -1554,7 +1554,7 @@ export default function Home() {
             {/* Footer */}
             <footer className="bg-yellow-50 dark:bg-gray-900 text-subtext-light dark:text-subtext-dark mt-16 font-body">
               <div className="px-6 md:px-10 lg:px-20 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
                   {/* Column 1 - Some Tips & Tricks */}
                   <div>
                     <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Tips and Tricks</h3>
@@ -1606,7 +1606,7 @@ export default function Home() {
                     <p className="mt-4 text-sm font-semibold text-primary">Trusted By 1 Lac + Happy Clients</p>
                   </div>
 
-                  {/* Column 4 - Possible Pages */}
+                  {/* Column 4 - Pages */}
                   <div>
                     <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Pages</h3>
                     <ul className="space-y-3 text-base">
@@ -1616,6 +1616,18 @@ export default function Home() {
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">All Services</Link></li>
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">Company</Link></li>
                       <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us Now</Link></li>
+                    </ul>
+                  </div>
+
+                  {/* Column 5 - Legal */}
+                  <div>
+                    <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display mb-4">Legal</h3>
+                    <ul className="space-y-3 text-base">
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/terms-conditions">Terms & Conditions</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/refund-cancellation-policy">Refund Policy</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/payment-billing-policy">Payment Policy</Link></li>
+                      <li><Link className="hover:text-primary dark:hover:text-secondary transition-colors" href="/cookie-policy">Cookie Policy</Link></li>
                     </ul>
                   </div>
                 </div>

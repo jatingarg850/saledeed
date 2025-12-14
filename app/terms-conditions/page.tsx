@@ -394,8 +394,11 @@ export default function TermsConditionsPage() {
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/terms-conditions">Terms of Service</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/terms-conditions">Terms & Conditions</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/refund-cancellation-policy">Refund Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/payment-billing-policy">Payment Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/cookie-policy">Cookie Policy</a></li>
                   </ul>
                 </div>
                 

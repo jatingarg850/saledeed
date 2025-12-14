@@ -15,7 +15,7 @@ export default function RefundCancellationPolicyPage() {
                 Refund & Cancellation Policy
               </h1>
               <p className="text-black dark:text-subtext-dark text-lg md:text-xl max-w-3xl mx-auto">
-                Transparent refund terms and cancellation guidelines for all our services.
+                Understand our refund and cancellation terms for all SaleDeed.com services.
               </p>
               <p className="text-black dark:text-subtext-dark text-sm mt-4">
                 Last Updated: 22/11/2025
@@ -34,171 +34,154 @@ export default function RefundCancellationPolicyPage() {
                     General Refund Rules
                   </h2>
                 </div>
-                
-                <div className="space-y-4">
-                  <div className="flex gap-4">
+
+                <ul className="space-y-4">
+                  <li className="flex gap-4">
                     <div className="flex-shrink-0">
                       <i className="text-primary text-xl mt-1" data-lucide="check-circle"></i>
                     </div>
                     <div>
-                      <h3 className="text-black dark:text-text-dark font-bold text-lg mb-2">Refund Processing</h3>
-                      <p className="text-black dark:text-subtext-dark">Refunds are issued to the original payment method via Razorpay.</p>
+                      <h3 className="text-black dark:text-text-dark font-bold text-lg mb-1">Refund Method</h3>
+                      <p className="text-black dark:text-subtext-dark">Refunds are issued to the original payment method via Razorpay</p>
                     </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
+                  </li>
+
+                  <li className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <i className="text-primary text-xl mt-1" data-lucide="clock"></i>
+                      <i className="text-primary text-xl mt-1" data-lucide="check-circle"></i>
                     </div>
                     <div>
-                      <h3 className="text-black dark:text-text-dark font-bold text-lg mb-2">Refund Timeline</h3>
-                      <p className="text-black dark:text-subtext-dark">7–14 working days depending on banks.</p>
+                      <h3 className="text-black dark:text-text-dark font-bold text-lg mb-1">Processing Timeline</h3>
+                      <p className="text-black dark:text-subtext-dark">Refund timelines: 7–14 working days depending on banks</p>
                     </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
+                  </li>
+
+                  <li className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <i className="text-red-600 text-xl mt-1" data-lucide="x-circle"></i>
+                      <i className="text-primary text-xl mt-1" data-lucide="check-circle"></i>
                     </div>
                     <div>
-                      <h3 className="text-black dark:text-text-dark font-bold text-lg mb-2">Non-Refundable Charges</h3>
-                      <p className="text-black dark:text-subtext-dark">Razorpay and bank fees (if charged) are non-refundable.</p>
+                      <h3 className="text-black dark:text-text-dark font-bold text-lg mb-1">Non-Refundable Fees</h3>
+                      <p className="text-black dark:text-subtext-dark">Razorpay and bank fees (if charged) are non-refundable</p>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </div>
 
               {/* Service-Specific Refund Conditions */}
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl p-8 md:p-12 shadow-lg border border-yellow-200/50 mb-12">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                    <i className="text-white text-xl" data-lucide="file-text"></i>
+                    <i className="text-white text-xl" data-lucide="layers"></i>
                   </div>
                   <h2 className="text-black dark:text-text-dark text-3xl md:text-4xl font-bold tracking-tight font-display">
                     Service-Specific Refund Conditions
                   </h2>
                 </div>
 
-                {/* Consultation */}
-                <div className="mb-8 pb-8 border-b border-yellow-200/30">
-                  <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-4 flex items-center gap-2">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">A</span>
-                    Consultation
-                  </h3>
-                  <ul className="space-y-3 ml-12">
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>Free/basic consultation:</strong> non-chargeable.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>Paid consultation:</strong> full refund if cancelled 24 hours before scheduled time.</span>
-                    </li>
-                  </ul>
-                </div>
+                <div className="space-y-8">
+                  {/* Consultation */}
+                  <div className="border-l-4 border-blue-500 pl-6">
+                    <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">A. Consultation</h3>
+                    <ul className="space-y-2">
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>Free/Basic Consultation:</strong> Non-chargeable</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>Paid Consultation:</strong> Full refund if cancelled 24 hours before scheduled time</span>
+                      </li>
+                    </ul>
+                  </div>
 
-                {/* Drafting Services */}
-                <div className="mb-8 pb-8 border-b border-yellow-200/30">
-                  <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-4 flex items-center gap-2">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">B</span>
-                    Drafting Services
-                  </h3>
-                  <ul className="space-y-3 ml-12">
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>Full refund</strong> if cancelled before drafting work begins.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>50% refund</strong> if work started but draft not yet delivered.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>No refund</strong> if first draft is delivered.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-amber-600 font-bold">!</span>
-                      <span className="text-black dark:text-subtext-dark"><em>Partial refunds will be as per the sole discretion of saledeed.com</em></span>
-                    </li>
-                  </ul>
-                </div>
+                  {/* Drafting Services */}
+                  <div className="border-l-4 border-green-500 pl-6">
+                    <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">B. Drafting Services</h3>
+                    <ul className="space-y-2">
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>Full Refund:</strong> If cancelled before drafting work begins</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>50% Refund:</strong> If work started but draft not yet delivered</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>No Refund:</strong> If first draft is delivered</span>
+                      </li>
+                    </ul>
+                    <p className="text-black dark:text-subtext-dark text-sm mt-3 italic">Partial refunds will be as per the sole discretion of saledeed.com</p>
+                  </div>
 
-                {/* Drafting + Verification */}
-                <div className="mb-8 pb-8 border-b border-yellow-200/30">
-                  <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-4 flex items-center gap-2">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">C</span>
-                    Drafting + Verification
-                  </h3>
-                  <ul className="space-y-3 ml-12">
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>Full refund</strong> if cancelled before work started.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>Partial refund</strong> depending on stage of work.</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark"><strong>No refund</strong> after document verification is completed.</span>
-                    </li>
-                  </ul>
-                </div>
+                  {/* Drafting + Verification */}
+                  <div className="border-l-4 border-purple-500 pl-6">
+                    <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">C. Drafting + Verification</h3>
+                    <ul className="space-y-2">
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>Full Refund:</strong> If cancelled before work started</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>Partial Refund:</strong> Depending on stage of work</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark"><strong>No Refund:</strong> After document verification is completed</span>
+                      </li>
+                    </ul>
+                  </div>
 
-                {/* Registration / Liaison Assistance */}
-                <div className="mb-8 pb-8 border-b border-yellow-200/30">
-                  <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-4 flex items-center gap-2">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">D</span>
-                    Registration / Liaison Assistance
-                  </h3>
-                  <p className="text-black dark:text-subtext-dark mb-4 ml-12"><strong>Government fees are always non-refundable.</strong></p>
-                  <p className="text-black dark:text-subtext-dark mb-4 ml-12">This includes:</p>
-                  <ul className="space-y-2 ml-12">
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark">Stamp duty</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark">Registration fees</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark">Appointment fees</span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-black dark:text-subtext-dark">Government filing charges</span>
-                    </li>
-                  </ul>
-                  <p className="text-black dark:text-subtext-dark mt-4 ml-12"><strong>If an appointment or fee has been initiated, refund is not possible.</strong></p>
-                </div>
+                  {/* Registration / Liaison Assistance */}
+                  <div className="border-l-4 border-red-500 pl-6">
+                    <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">D. Registration / Liaison Assistance</h3>
+                    <p className="text-black dark:text-subtext-dark mb-3">
+                      <strong className="text-red-600">Government fees are always non-refundable.</strong>
+                    </p>
+                    <p className="text-black dark:text-subtext-dark mb-3">This includes:</p>
+                    <ul className="space-y-2">
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark">Stamp duty</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark">Registration fees</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark">Appointment fees</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-black dark:text-subtext-dark">Government filing charges</span>
+                      </li>
+                    </ul>
+                    <p className="text-black dark:text-subtext-dark text-sm mt-3 italic">If an appointment or fee has been initiated, refund is not possible.</p>
+                  </div>
 
-                {/* Subscription/Retainer Services */}
-                <div>
-                  <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-4 flex items-center gap-2">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">E</span>
-                    Subscription/Retainer Services
-                  </h3>
-                  <p className="text-black dark:text-subtext-dark ml-12">Refunds are prorated or as per individual plan terms.</p>
+                  {/* Subscription/Retainer Services */}
+                  <div className="border-l-4 border-orange-500 pl-6">
+                    <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">E. Subscription/Retainer Services</h3>
+                    <p className="text-black dark:text-subtext-dark">Refunds are prorated or as per individual plan terms</p>
+                  </div>
                 </div>
               </div>
 
               {/* Money Back Guarantee */}
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 md:p-12 shadow-lg border border-green-200/50 mb-12">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                    <i className="text-white text-xl" data-lucide="shield-check"></i>
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 border-l-4 border-green-600 mb-12">
+                <div className="flex items-start gap-4">
+                  <i className="text-green-600 text-2xl mt-1" data-lucide="award"></i>
+                  <div>
+                    <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">
+                      100% Money Back Guarantee
+                    </h3>
+                    <p className="text-black dark:text-subtext-dark leading-relaxed">
+                      If any legal procedural error in draft is not corrected within 7 days, we offer a <strong>100% refund</strong> of the service charge.
+                    </p>
                   </div>
-                  <h2 className="text-black dark:text-text-dark text-2xl md:text-3xl font-bold tracking-tight font-display">
-                    Money Back Guarantee
-                  </h2>
-                </div>
-                
-                <div className="bg-white/50 dark:bg-slate-800/50 rounded-lg p-6 border-l-4 border-green-500">
-                  <p className="text-black dark:text-subtext-dark text-lg font-semibold">
-                    100% refund if any legal procedural error in draft is not corrected within 7 days.
-                  </p>
                 </div>
               </div>
 
@@ -214,12 +197,15 @@ export default function RefundCancellationPolicyPage() {
                 </div>
 
                 <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-6 border border-yellow-200/30 mb-6">
-                  <p className="text-black dark:text-subtext-dark text-lg font-semibold mb-2">
+                  <p className="text-black dark:text-subtext-dark text-lg font-semibold mb-4">
                     Email: <a href="mailto:support@saledeed.com" className="text-primary hover:underline">support@saledeed.com</a>
                   </p>
                 </div>
 
-                <p className="text-black dark:text-subtext-dark text-lg font-semibold mb-4">Include the following information:</p>
+                <p className="text-black dark:text-subtext-dark text-lg leading-relaxed mb-6">
+                  Please include the following information in your refund request:
+                </p>
+
                 <ul className="space-y-3">
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">•</span>
@@ -231,7 +217,7 @@ export default function RefundCancellationPolicyPage() {
                   </li>
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">•</span>
-                    <span className="text-black dark:text-subtext-dark">Phone</span>
+                    <span className="text-black dark:text-subtext-dark">Phone number</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">•</span>
@@ -247,13 +233,28 @@ export default function RefundCancellationPolicyPage() {
               {/* Jurisdiction */}
               <div className="bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 border-l-4 border-amber-600 mb-12">
                 <div className="flex items-start gap-4">
-                  <i className="text-amber-600 text-2xl mt-1" data-lucide="alert-triangle"></i>
+                  <i className="text-amber-600 text-2xl mt-1" data-lucide="scale"></i>
                   <div>
                     <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">
                       Jurisdiction
                     </h3>
                     <p className="text-black dark:text-subtext-dark leading-relaxed">
-                      All disputes fall under <strong>Delhi jurisdiction</strong>. Any legal proceedings related to refunds or cancellations will be governed by the laws of India and the courts of Delhi.
+                      All disputes related to refunds and cancellations fall under <strong>Delhi jurisdiction</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Important Notice */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 border-l-4 border-blue-600 mb-12">
+                <div className="flex items-start gap-4">
+                  <i className="text-blue-600 text-2xl mt-1" data-lucide="info"></i>
+                  <div>
+                    <h3 className="text-black dark:text-text-dark text-xl font-bold font-display mb-3">
+                      Important Notice
+                    </h3>
+                    <p className="text-black dark:text-subtext-dark leading-relaxed">
+                      By using our services, you acknowledge that you have read, understood, and agree to be bound by this Refund & Cancellation Policy. These policies may be updated from time to time, and continued use of our services constitutes acceptance of any changes.
                     </p>
                   </div>
                 </div>
@@ -265,7 +266,7 @@ export default function RefundCancellationPolicyPage() {
                   Questions About Our Refund Policy?
                 </h3>
                 <p className="text-black dark:text-subtext-dark text-lg mb-8">
-                  Our support team is here to help clarify any aspect of our refund and cancellation policy.
+                  Our team is ready to help clarify any aspect of our refund and cancellation policies.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
@@ -301,10 +302,9 @@ export default function RefundCancellationPolicyPage() {
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Services</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Deed Drafting</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Document Verification</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Registration Assistance</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Stamp Duty Calculation</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/services">All Services</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/calculator">Stamp Duty Calculator</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/pricing">Pricing</a></li>
                   </ul>
                 </div>
                 
@@ -313,16 +313,18 @@ export default function RefundCancellationPolicyPage() {
                   <ul className="mt-4 space-y-3 text-base">
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/about">About Us</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/contact">Contact Us</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Careers</a></li>
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Press</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/blogs">Blogs</a></li>
                   </ul>
                 </div>
                 
                 <div>
                   <h3 className="font-bold text-text-light dark:text-text-dark text-lg font-display">Legal</h3>
                   <ul className="mt-4 space-y-3 text-base">
-                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/terms-conditions">Terms & Conditions</a></li>
                     <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/refund-cancellation-policy">Refund Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/payment-billing-policy">Payment Policy</a></li>
+                    <li><a className="hover:text-primary dark:hover:text-secondary transition-colors" href="/cookie-policy">Cookie Policy</a></li>
                   </ul>
                 </div>
                 
@@ -339,9 +341,6 @@ export default function RefundCancellationPolicyPage() {
               
               <div className="mt-16 border-t border-yellow-200 dark:border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
                 <p className="text-base">© 2025 SaleDeed.com. All rights reserved.</p>
-                <div className="flex space-x-6 mt-4 sm:mt-0">
-                  
-                </div>
               </div>
             </div>
           </footer>
