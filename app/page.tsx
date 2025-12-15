@@ -351,12 +351,15 @@ export default function Home() {
                   
                   </div>
                   <br/><div className="mt-4 flex justify-center items-center w-full">
-                      <h2 
-                        onClick={handleRippleClick}
+                      <button 
+                        onClick={() => {
+                          handleRippleClick({ currentTarget: event?.currentTarget } as any)
+                          setShowPropertySubmissionModal(true)
+                        }}
                         className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white px-8 py-4 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 rounded-full inline-block shadow-lg cursor-pointer transition-all duration-200 hover:shadow-xl hover:scale-105 active:scale-95 ripple-button"
                       >
                         Buy/Sell/Rent at Minimum Commission
-                      </h2>
+                      </button>
                     </div>
                 </div>
 
