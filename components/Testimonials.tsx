@@ -52,34 +52,6 @@ export default function Testimonials() {
   useEffect(() => {
     const style = document.createElement('style')
     style.textContent = `
-      @keyframes scroll-left {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      
-      @keyframes scroll-right {
-        0% { transform: translateX(-50%); }
-        100% { transform: translateX(0); }
-      }
-      
-      .scroll-left {
-        animation: scroll-left 15s linear infinite;
-      }
-      
-      .scroll-right {
-        animation: scroll-right 15s linear infinite;
-      }
-      
-      @media (max-width: 768px) {
-        .scroll-left {
-          animation: scroll-left 12s linear infinite;
-        }
-        
-        .scroll-right {
-          animation: scroll-right 12s linear infinite;
-        }
-      }
-      
       .slider-container {
         overflow-x: auto;
         overflow-y: visible;
@@ -113,12 +85,8 @@ export default function Testimonials() {
       }
       
       .slide-track {
-        transition: transform 0.1s ease-out;
-      }
-      
-      .slider-container:hover .slide-track,
-      .slider-container:active .slide-track {
-        animation-play-state: paused !important;
+        transition: none !important;
+        animation: none !important;
       }
       
       @media (max-width: 768px) {
@@ -144,15 +112,64 @@ export default function Testimonials() {
     document.head.appendChild(style)
 
     const containers = document.querySelectorAll('.slider-container')
+    const animationIntervals: NodeJS.Timeout[] = []
     
     containers.forEach((container) => {
+      const track = container.querySelector('.slide-track') as HTMLElement
+      if (!track) return
+
       let isDown = false
       let startX: number
       let startY: number
       let scrollLeft: number
+      let isAnimating = false
+      let scrollInterval: NodeJS.Timeout | null = null
+      const scrollSpeed = 10// milliseconds between each scroll (INCREASE THIS TO SLOW DOWN)
+
+      // Calculate the width of one set of items (half of total track width)
+      const getItemSetWidth = () => {
+        const items = track.querySelectorAll('.testimonial-card')
+        if (items.length === 0) return 0
+        const itemWidth = (items[0] as HTMLElement).offsetWidth
+        const itemMargin = parseInt(window.getComputedStyle(items[0]).marginRight) + 
+                          parseInt(window.getComputedStyle(items[0]).marginLeft)
+        return (itemWidth + itemMargin) * (items.length / 2)
+      }
+
+      const smoothScroll = () => {
+        if (isDown || !isAnimating) return
+
+        const itemSetWidth = getItemSetWidth()
+        if (itemSetWidth === 0) return
+
+        let newScroll = container.scrollLeft + 1 // 1 pixel per update
+
+        // Seamless loop: when reaching the end, jump to start
+        if (newScroll >= itemSetWidth) {
+          newScroll = 0
+        }
+
+        container.scrollLeft = newScroll
+      }
+
+      const startAnimation = () => {
+        if (scrollInterval) return // Already running
+        isAnimating = true
+        scrollInterval = setInterval(smoothScroll, scrollSpeed)
+        animationIntervals.push(scrollInterval)
+      }
+
+      const stopAnimation = () => {
+        isAnimating = false
+        if (scrollInterval) {
+          clearInterval(scrollInterval)
+          scrollInterval = null
+        }
+      }
 
       const handleMouseDown = (e: MouseEvent | TouchEvent) => {
         isDown = true
+        stopAnimation()
         const slider = container as HTMLElement
         slider.style.cursor = 'grabbing'
         
@@ -167,15 +184,21 @@ export default function Testimonials() {
       }
 
       const handleMouseLeave = () => {
-        isDown = false
-        const slider = container as HTMLElement
-        slider.style.cursor = 'grab'
+        if (isDown) {
+          isDown = false
+          const slider = container as HTMLElement
+          slider.style.cursor = 'grab'
+          startAnimation()
+        }
       }
 
       const handleMouseUp = () => {
-        isDown = false
-        const slider = container as HTMLElement
-        slider.style.cursor = 'grab'
+        if (isDown) {
+          isDown = false
+          const slider = container as HTMLElement
+          slider.style.cursor = 'grab'
+          startAnimation()
+        }
       }
 
       const handleMouseMove = (e: MouseEvent | TouchEvent) => {
@@ -190,11 +213,9 @@ export default function Testimonials() {
           const x = e.touches[0].pageX - slider.offsetLeft
           const y = e.touches[0].pageY
           
-          // Calculate vertical and horizontal movement
           const verticalMove = Math.abs(y - startY)
           const horizontalMove = Math.abs(x - startX)
           
-          // Only prevent default if horizontal movement is greater than vertical
           if (horizontalMove > verticalMove) {
             e.preventDefault()
             const walk = (x - startX) * 2
@@ -211,10 +232,14 @@ export default function Testimonials() {
       container.addEventListener('touchstart', handleMouseDown as EventListener)
       container.addEventListener('touchend', handleMouseUp)
       container.addEventListener('touchmove', handleMouseMove as EventListener)
+
+      // Start animation after a small delay to ensure DOM is ready
+      setTimeout(startAnimation, 100)
     })
 
     return () => {
       document.head.removeChild(style)
+      animationIntervals.forEach(interval => clearInterval(interval))
     }
   }, [])
 
@@ -301,12 +326,12 @@ export default function Testimonials() {
       <div className="testimonials-wrapper px-2 sm:px-4 md:px-0">
         {/* Upper Track - Scrolling Left */}
         <div className="slider-container mb-6 md:mb-8 rounded-lg">
-          <div ref={upperTrackRef} className="slide-track scroll-left flex py-2">
+          <div ref={upperTrackRef} className="slide-track flex py-2">
             {/* First set */}
             {testimonials.slice(0, 5).map((testimonial, index) => (
               <TestimonialCard key={`upper-${index}`} name={testimonial.name} text={testimonial.text} />
             ))}
-            {/* Duplicate set for seamless loop */}
+            {/* Duplicate set for seamless infinite loop */}
             {testimonials.slice(0, 5).map((testimonial, index) => (
               <TestimonialCard key={`upper-dup-${index}`} name={testimonial.name} text={testimonial.text} />
             ))}
@@ -315,12 +340,12 @@ export default function Testimonials() {
 
         {/* Lower Track - Scrolling Right */}
         <div className="slider-container rounded-lg">
-          <div ref={lowerTrackRef} className="slide-track scroll-right flex py-2">
+          <div ref={lowerTrackRef} className="slide-track flex py-2">
             {/* First set */}
             {testimonials.slice(5, 10).map((testimonial, index) => (
               <TestimonialCard key={`lower-${index}`} name={testimonial.name} text={testimonial.text} />
             ))}
-            {/* Duplicate set for seamless loop */}
+            {/* Duplicate set for seamless infinite loop */}
             {testimonials.slice(5, 10).map((testimonial, index) => (
               <TestimonialCard key={`lower-dup-${index}`} name={testimonial.name} text={testimonial.text} />
             ))}
